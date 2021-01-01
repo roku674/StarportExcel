@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starport", "Starport\Starport.csproj", "{AC991394-535F-41B1-B15A-9DA6F3B49363}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC991394-535F-41B1-B15A-9DA6F3B49363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC991394-535F-41B1-B15A-9DA6F3B49363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC991394-535F-41B1-B15A-9DA6F3B49363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC991394-535F-41B1-B15A-9DA6F3B49363}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FF3BCC4-9725-4873-91E6-BC4AD01541CB}
+	EndGlobalSection
+EndGlobal
