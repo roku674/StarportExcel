@@ -7,3 +7,4 @@ C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.cspr
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.csproj.CoreCompileInputs.cache
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.exe
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.pdb
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.csprojAssemblyReference.cache
