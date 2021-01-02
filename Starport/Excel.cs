@@ -20,17 +20,26 @@ namespace Starport
 			wb = excel.Workbooks.Open(path);
 			ws = wb.Worksheets[Sheet];
 		}
-
+		/// <summary>
+		/// Read cell if string
+		/// </summary>
+		/// <param name="i">row</param>
+		/// <param name="j">column</param>
+		/// <returns></returns>
 		public string ReadCellString(int i, int j)
 		{
 			i++;
 			j++;
-			//if (ws.Cells[i, j].Value2 != null) return ws.Cells[i, j].Value2;
+			if (ws.Cells[i, j].Value2 != null) return ws.Cells[i, j].Value2;
 
-			//else return "ERROR";
-
-			return "";
+			else return i + "," + j  + " = null";
 		}
+		/// <summary>
+		/// Read cell if double
+		/// </summary>
+		/// <param name="i">row</param>
+		/// <param name="j">column</param>
+		/// <returns></returns>
 		public double ReadCellDouble(int i, int j)
 		{
 			i++;
@@ -39,7 +48,12 @@ namespace Starport
 
 			else return -1;
 		}
-
+		/// <summary>
+		/// Write to cell
+		/// </summary>
+		/// <param name="i">row</param>
+		/// <param name="j">column</param>
+		/// <param name="s">what you want to write</param>
 		public void WriteToCell(int i, int j, string s)
         {
 			i++;

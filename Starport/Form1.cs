@@ -29,8 +29,8 @@ namespace Starport
 
             //number, letter          
 
-            double arcticsZ = excel.ReadCellDouble(3, 3); //D4
-            double arctics = excel.ReadCellDouble(3, 2); //C4
+            double arcticsZ = excel.ReadCellDouble(3, 3); //4D
+            double arctics = excel.ReadCellDouble(3, 2); //4C
 
             double desertsZ = excel.ReadCellDouble(4, 3);
             double deserts = excel.ReadCellDouble(4, 2);
@@ -74,18 +74,99 @@ namespace Starport
 
         private void FindGrowing_Click(object sender, EventArgs e)
         {
-            //column 11
+
+            //all planets start at 2C
+            //zounds start at 2F
+            //Tallies are I2 == Planet I3 == Zoudns
+            for (int j = 2; j < 10; j++)
+            {
+                Excel excel = OpenFile(j);
+
+                int planet = (int)excel.ReadCellDouble(8, 2);
+
+                for (int i = 1; i < planet+1; i++)
+                {
+                    if (excel.ReadCellString(i, 2) != null)
+                    {
+                        if (excel.ReadCellString(i, 1) == null)
+                        {
+                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
+                        }
+                        string box = excel.ReadCellString(i, 2);
+
+
+                    }
+                }//end of i loop
+
+                excel.Save();
+                excel.Close();
+            }// end of J loop
+        }
+        private void AddToGrow(string colony)
+        {
             Excel excel = OpenFile(1);
+            //column 11 is growing on totals
+            for (int i = 2; i < 50; i++)
+            {
+                string box = excel.ReadCellString(i, 11);
+                if (box == null)
+                {
+                    if (excel.ReadCellString(i, 10) == null)
+                    {
+                        excel.WriteToCell(i, 10, i.ToString()); //writes to the cell to the left and just puts a number in it
+                    }
+
+                    excel.WriteToCell(i, 11, colony);
+                }
+            }
+
+            excel.Save();
+            excel.Close();
         }
 
+        private void CheckGrow_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFile(1);
+            for(int i = 2; i < 50; i++)
+            {
+                string box = excel.ReadCellString(i, 11);
+                if(box != null)
+                {
+                    Console.WriteLine(box);
+                    char[] chars = new char[box.Length];
+                    for(int j = 0; j < chars.Length; j++)
+                    {
+                        if (chars[j].Equals("."))
+                        {
+                            if (chars[j + 5].Equals("G"))
+                            {
+                                //stay
+                            }
+                            else if (chars[j + 6].Equals("G"))
+                            {
+                                //stay
+                            }
+                            else
+                            {
+                                MessageBox.Show("Removed" + box);
+                                excel.WriteToCell(i, 11, null); //yeet
+                                
+                            }
+                            break; //should break as soon as it finds the first period
+                        }
+                    }//for j
+                }//if
+            }//for i
+
+            excel.Save();
+            excel.Close();
+        }
 
         private Excel OpenFile(int num)
         {
             Excel excel = new Excel(@"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx", num);
             return excel;
         }
-
-
         public void WriteData(int num)
         {
             Excel excel = OpenFile(num);
@@ -93,6 +174,8 @@ namespace Starport
             excel.Save();
             excel.Close();
         }
+
+        
 
     }
 }

@@ -30,6 +30,7 @@
         {
             this.CreateQuote = new System.Windows.Forms.Button();
             this.FindGrowing = new System.Windows.Forms.Button();
+            this.CheckGrow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateQuote
@@ -50,11 +51,22 @@
             this.FindGrowing.TabIndex = 1;
             this.FindGrowing.Text = "Find Growing";
             this.FindGrowing.UseVisualStyleBackColor = true;
-            this.FindGrowing.Click += new System.EventHandler(this.button1_Click);
+            this.FindGrowing.Click += new System.EventHandler(this.FindGrowing_Click);
+            // 
+            // CheckGrow
+            // 
+            this.CheckGrow.Location = new System.Drawing.Point(377, 42);
+            this.CheckGrow.Name = "CheckGrow";
+            this.CheckGrow.Size = new System.Drawing.Size(75, 23);
+            this.CheckGrow.TabIndex = 2;
+            this.CheckGrow.Text = "Check Grow";
+            this.CheckGrow.UseVisualStyleBackColor = true;
+            this.CheckGrow.Click += new System.EventHandler(this.CheckGrow_Click);
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(590, 434);
+            this.Controls.Add(this.CheckGrow);
             this.Controls.Add(this.FindGrowing);
             this.Controls.Add(this.CreateQuote);
             this.Name = "Form1";
@@ -67,6 +79,7 @@
 
         private System.Windows.Forms.Button CreateQuote;
         private System.Windows.Forms.Button FindGrowing;
+        private System.Windows.Forms.Button CheckGrow;
     }
 }
 
