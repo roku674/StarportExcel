@@ -72,6 +72,98 @@ namespace Starport
                 "|~{cyan}~ Sum: " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~");
 
         }
+        private void CheckGrow_Click(object sender, EventArgs e)
+        {
+            int max = 20;
+            Excel excel = OpenFileAt(1);
+            for (int i = 2; i < max; i++)
+            {
+                string box = excel.ReadCellString(i, 11);
+                if (box != "")
+                {
+                    if (excel.ReadCellDouble(i, 10).ToString() != "")
+                    {
+                        int num = i - 1;
+                        excel.WriteToCell(i, 10, num.ToString()); //writes to the cell to the left and just puts a number in it
+                        //Console.WriteLine(i + " added");
+                    }
+                    //Console.WriteLine(box);
+                    for (int j = 0; j < box.Length; j++) //itterate through the string character by character
+                    {
+                        if (box[j].Equals('.'))
+                        {
+                            if (j + 5 < box.Length && box[j + 5].Equals('G'))
+                            {
+                                //stay
+                            }
+                            else if (j + 6 < box.Length && box[j + 6].Equals('G'))
+                            {
+                                //stay
+                            }
+                            else
+                            {
+                                //Console.WriteLine("Removed" + box);
+                                MessageBox.Show("Removed: " + box);
+                                excel.WriteToCell(i, 11, ""); //yeet
+
+                                for (int k = i; k < max; k++)
+                                {
+                                    string next = excel.ReadCellString(k + 1, 11);
+                                    if (next != "")
+                                    {
+                                        excel.WriteToCell(k, 11, next);
+                                        Console.WriteLine("Moved " + next + " up 1");
+                                    }
+                                }//for k                               
+                            }
+                            break; //should break as soon as it finds the first period
+                        } //if .
+                    }//for j
+                }//if
+            }//for i
+            excel.Save();
+            excel.Close();
+            MessageBox.Show("Check Grow Done");
+        }
+        private void CheckParenthesis_Click(object sender, EventArgs e)
+        {
+
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                //Console.WriteLine("Planet Total: " + planet);
+                for (int i = 1; i < planet + 2; i++) // goes through the planet list
+                {
+                    if (excel.ReadCellString(i, 2) != "")
+                    {
+                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        {
+                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
+                        }
+
+                        string box = excel.ReadCellString(i, 2);
+                        string replace = box;
+
+                        replace.Replace('[', '(');
+                        box = replace;
+                        excel.WriteToCell(i, 2, box);
+
+                        replace = box;
+                        replace.Replace(']', ')');
+                        box = replace;
+                        excel.WriteToCell(i, 2, box);
+
+                    } //end if                            
+                }//end of i loop
+
+                excel.Save();
+                excel.Close();
+
+            }// end of J loop
+            MessageBox.Show("converted all brackets into Parenthesis");
+        }
 
         private void FindGrowing_Click(object sender, EventArgs e)
         {
@@ -132,6 +224,7 @@ namespace Starport
         }
         private void FindTotals_Click(object sender, EventArgs e)
         {
+
             Excel totals = OpenFileAt(1);
 
             for (int i = 2; i <= 10; i++) // goes through each sheet
@@ -162,6 +255,9 @@ namespace Starport
             }// end of i loop
             totals.Save();
             totals.Close();
+            FindZounds_Click(sender, e);
+            FindGrowing_Click(sender, e);
+            FindNeedsDefense_Click(sender, e);
             MessageBox.Show("Find Totals Done");
         }
         private void FindZounds_Click(object sender, EventArgs e)
@@ -334,96 +430,10 @@ namespace Starport
             // Console.WriteLine("Grow List Cleared");
         }
 
-        private void CheckGrow_Click(object sender, EventArgs e)
-        {
-            int max = 20;
-            Excel excel = OpenFileAt(1);
-            for(int i = 2; i < max; i++)
-            {
-                string box = excel.ReadCellString(i, 11);
-                if(box != "")
-                {
-                    if (excel.ReadCellDouble(i, 10).ToString() != "")
-                    {
-                        int num = i - 1;
-                        excel.WriteToCell(i, 10, num.ToString()); //writes to the cell to the left and just puts a number in it
-                        //Console.WriteLine(i + " added");
-                    }
-                    //Console.WriteLine(box);
-                    for (int j = 0; j < box.Length; j++) //itterate through the string character by character
-                    {
-                        if (box[j].Equals('.'))
-                        {
-                            if (j + 5 < box.Length && box[j + 5].Equals('G') )
-                            {
-                                //stay
-                            }
-                            else if (j + 6 < box.Length && box[j + 6].Equals('G'))
-                            {
-                                //stay
-                            }
-                            else
-                            {
-                                //Console.WriteLine("Removed" + box);
-                                MessageBox.Show("Removed: " + box);
-                                excel.WriteToCell(i, 11, ""); //yeet
-
-                                for(int k = i; k < max; k++)
-                                {
-                                    string next = excel.ReadCellString(k + 1, 11);
-                                    if (next != "")
-                                    {
-                                        excel.WriteToCell(k, 11, next);
-                                        Console.WriteLine("Moved " + next + " up 1");
-                                    }
-                                }//for k                               
-                            }
-                            break; //should break as soon as it finds the first period
-                        } //if .
-                    }//for j
-                }//if
-            }//for i
-            excel.Save();
-            excel.Close();
-            MessageBox.Show("Check Grow Done");
-        }
-
         private Excel OpenFileAt(int num)
         {
             Excel excel = new Excel(@"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx", num);
             return excel;
-        }
-
-        private void CheckParenthesis_Click(object sender, EventArgs e)
-        {
-
-            for (int j = 2; j <= 10; j++) // goes through each sheet
-            {
-                Excel excel = OpenFileAt(j);
-
-                int planet = (int)excel.ReadCellDouble(1, 8);
-                //Console.WriteLine("Planet Total: " + planet);
-                for (int i = 1; i < planet + 2; i++) // goes through the planet list
-                {
-                    if (excel.ReadCellString(i, 2) != "")
-                    {
-                        if (excel.ReadCellDouble(i, 1).ToString() != "")
-                        {
-                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
-                        }
-
-                        string box = excel.ReadCellString(i, 2);
-                        box.Replace('[', '(');
-                        box.Replace(']', ')');
-                        
-                    } //end if                            
-                }//end of i loop
-
-                excel.Save();
-                excel.Close();
-
-            }// end of J loop
-            MessageBox.Show("converted all brackets into Parenthesis");
         }
     }
 }
