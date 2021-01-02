@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,7 @@ namespace Starport
 
         private void CreateQuote_Click(object sender, EventArgs e)
         {
-            Excel excel = OpenFile(1);
+            Excel excel = OpenFileAt(1);
 
             //number, letter          
 
@@ -47,7 +48,7 @@ namespace Starport
             double oceansZ = excel.ReadCellDouble(8, 3);
             double oceans = excel.ReadCellDouble(8, 2);
 
-            double paradisesZ = excel.ReadCellDouble(9, 3);
+            //double paradisesZ = excel.ReadCellDouble(9, 3);
             double paradises = excel.ReadCellDouble(9, 2);
 
             double rockiesZ = excel.ReadCellDouble(10, 3);
@@ -78,67 +79,100 @@ namespace Starport
             //all planets start at 2C
             //zounds start at 2F
             //Tallies are I2 == Planet I3 == Zoudns
-            for (int j = 2; j < 10; j++)
+            Excel totals = OpenFileAt(1);
+            ClearGrowList(totals);
+
+            for (int j = 2; j < 10; j++) // goes through each sheet
             {
-                Excel excel = OpenFile(j);
+                Excel excel = OpenFileAt(j);
 
-                int planet = (int)excel.ReadCellDouble(8, 2);
-
-                for (int i = 1; i < planet+1; i++)
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                Console.WriteLine("Planet Total: " + planet);
+                for (int i = 1; i < planet+1; i++) // goes through the planet list
                 {
                     if (excel.ReadCellString(i, 2) != "")
                     {
-                        if (excel.ReadCellString(i, 1) == "")
+                        if (excel.ReadCellDouble(i, 1).ToString() != "")
                         {
                             excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
                         }
+
                         string box = excel.ReadCellString(i, 2);
 
-
-                    }
+                        for (int k = 0; k < box.Length; k++) //itterate through the string character by character
+                        {
+                            if (box[k].Equals('.'))
+                            {
+                                if (k + 5 < box.Length && box[k + 5].Equals('G'))
+                                {
+                                    AddToGrow(box, totals);                                   
+                                    break;
+                                }
+                                else if (k + 6 < box.Length && box[k + 6].Equals('G'))
+                                {
+                                    AddToGrow(box, totals );
+                                    break;
+                                }
+                                else
+                                {
+                                    //do nothing
+                                }
+                            }//end if
+                        }// for k
+                    } //end if                            
                 }//end of i loop
 
                 excel.Save();
                 excel.Close();
+                
             }// end of J loop
+            totals.Save();
+            totals.Close();
+            MessageBox.Show("Find Grow Done");
         }
-        private void AddToGrow(string colony)
+        private void AddToGrow(string colony, Excel excel)
         {
-            Excel excel = OpenFile(1);
             //column 11 is growing on totals
             for (int i = 2; i < 50; i++)
             {
                 string box = excel.ReadCellString(i, 11);
                 if (box == "")
                 {
-                    if (excel.ReadCellString(i, 10) == "")
-                    {
-                        excel.WriteToCell(i, 10, i.ToString()); //writes to the cell to the left and just puts a number in it
-                    }
-
                     excel.WriteToCell(i, 11, colony);
+                    Console.WriteLine(colony + " added to grow");
+                    break;
                 }
             }
-
-            excel.Save();
-            excel.Close();
         }
-
+        private void ClearGrowList(Excel excel)
+        {
+            for (int i = 2; i < 30; i++)
+            {
+                excel.WriteToCell(i, 11, "");
+            }
+            Console.WriteLine("Grow List Cleared");
+        }
         private void CheckGrow_Click(object sender, EventArgs e)
         {
-            int max = 50;
-            Excel excel = OpenFile(1);
+            int max = 20;
+            Excel excel = OpenFileAt(1);
             for(int i = 2; i < max; i++)
             {
                 string box = excel.ReadCellString(i, 11);
                 if(box != "")
                 {
+                    if (excel.ReadCellDouble(i, 10).ToString() != "")
+                    {
+                        int num = i - 1;
+                        excel.WriteToCell(i, 10, num.ToString()); //writes to the cell to the left and just puts a number in it
+                        //Console.WriteLine(i + " added");
+                    }
                     //Console.WriteLine(box);
                     for (int j = 0; j < box.Length; j++) //itterate through the string character by character
                     {
                         if (box[j].Equals('.'))
                         {
-                            if (j + 5 <= box.Length && box[j + 5].Equals('G') )
+                            if (j + 5 < box.Length && box[j + 5].Equals('G') )
                             {
                                 //stay
                             }
@@ -167,26 +201,15 @@ namespace Starport
                     }//for j
                 }//if
             }//for i
-
-            excel.Save(); 
+            excel.Save();
             excel.Close();
-            MessageBox.Show("Closed");
+            MessageBox.Show("Check Grow Done");
         }
 
-        private Excel OpenFile(int num)
+        private Excel OpenFileAt(int num)
         {
             Excel excel = new Excel(@"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx", num);
             return excel;
-        }
-        public void WriteData(int num)
-        {
-            Excel excel = OpenFile(num);
-
-            excel.Save();
-            excel.Close();
-        }
-
-        
-
+        }       
     }
 }

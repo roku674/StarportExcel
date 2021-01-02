@@ -20,6 +20,7 @@ namespace Starport
 			wb = excel.Workbooks.Open(path);
 			ws = wb.Worksheets[Sheet];
 		}
+
 		/// <summary>
 		/// Read cell if string
 		/// </summary>
@@ -46,7 +47,7 @@ namespace Starport
 			j++;
 			if (ws.Cells[i, j].Value2 != null) return ws.Cells[i, j].Value2;
 
-			else return -1;
+			else return 0;
 		}
 		/// <summary>
 		/// Write to cell
