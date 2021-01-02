@@ -17,7 +17,7 @@ namespace Starport
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void createQuote_Click(object sender, EventArgs e)
         {
             OpenFile();
         }
@@ -26,7 +26,7 @@ namespace Starport
         {
             Excel excel = new Excel(@"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx", 1);
 
-            MessageBox.Show(excel.ReadCell(1, 1));
+            //MessageBox.Show(excel.ReadCell(1, 1));
         }
     }
 }
