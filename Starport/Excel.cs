@@ -32,7 +32,7 @@ namespace Starport
 			j++;
 			if (ws.Cells[i, j].Value2 != null) return ws.Cells[i, j].Value2;
 
-			else return i + "," + j  + " = null";
+			else return "";
 		}
 		/// <summary>
 		/// Read cell if double

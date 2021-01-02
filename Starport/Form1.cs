@@ -126,14 +126,15 @@ namespace Starport
 
         private void CheckGrow_Click(object sender, EventArgs e)
         {
+            int max = 50;
             Excel excel = OpenFile(1);
-            for(int i = 2; i < 50; i++)
+            for(int i = 2; i < max; i++)
             {
                 string box = excel.ReadCellString(i, 11);
                 if(box != null)
                 {
-                    Console.WriteLine(box);
-                    for (int j = 0; j < box.Length; j++)
+                    //Console.WriteLine(box);
+                    for (int j = 0; j < box.Length; j++) //itterate through the string character by character
                     {
                         if (box[j].Equals('.'))
                         {
@@ -147,19 +148,30 @@ namespace Starport
                             }
                             else
                             {
-                                Console.WriteLine("Removed" + box);
-                                MessageBox.Show("Removed" + box);
-                                excel.WriteToCell(i, 11, null); //yeet
+                                //Console.WriteLine("Removed" + box);
+                                MessageBox.Show("Removed: " + box);
+                                excel.WriteToCell(i, 11, ""); //yeet
+
+                                for(int k = i; k < max; k++)
+                                {
+                                    string next = excel.ReadCellString(k + 1, 11);
+                                    if (next != "")
+                                    {
+                                        excel.WriteToCell(k, 11, next);
+                                        Console.WriteLine("Moved " + next + " up 1");
+                                    }
+                                }//for k
                                 
                             }
                             break; //should break as soon as it finds the first period
-                        }
+                        } //if .
                     }//for j
                 }//if
             }//for i
 
-            excel.Save();
+            excel.Save(); 
             excel.Close();
+            MessageBox.Show("Closed");
         }
 
         private Excel OpenFile(int num)
