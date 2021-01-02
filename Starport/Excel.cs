@@ -3,7 +3,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Excel;
 
-namespace Starport
+namespace StarportExcel
 {
 
 	class Excel

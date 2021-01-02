@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Starport
+namespace StarportExcel
 {
     partial class Form1 
     {

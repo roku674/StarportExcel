@@ -2,9 +2,9 @@ C:\Users\ZANDER\Source\Repos\StarportExcel\Starport\bin\Debug\Starport.exe.confi
 C:\Users\ZANDER\Source\Repos\StarportExcel\Starport\bin\Debug\Starport.exe
 C:\Users\ZANDER\Source\Repos\StarportExcel\Starport\bin\Debug\Starport.pdb
 C:\Users\ZANDER\Source\Repos\StarportExcel\Starport\obj\Debug\StarportExcel.csprojAssemblyReference.cache
-C:\Users\ZANDER\Source\Repos\StarportExcel\Starport\obj\Debug\Starport.Form1.resources
 C:\Users\ZANDER\Source\Repos\StarportExcel\Starport\obj\Debug\Starport.Properties.Resources.resources
 C:\Users\ZANDER\Source\Repos\StarportExcel\Starport\obj\Debug\StarportExcel.csproj.GenerateResource.cache
 C:\Users\ZANDER\Source\Repos\StarportExcel\Starport\obj\Debug\StarportExcel.csproj.CoreCompileInputs.cache
 C:\Users\ZANDER\Source\Repos\StarportExcel\Starport\obj\Debug\Starport.exe
 C:\Users\ZANDER\Source\Repos\StarportExcel\Starport\obj\Debug\Starport.pdb
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.Form1.resources

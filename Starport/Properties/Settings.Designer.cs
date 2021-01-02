@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Starport.Properties
+namespace StarportExcel.Properties
 {
 
 
