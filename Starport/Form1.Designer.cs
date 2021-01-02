@@ -37,11 +37,13 @@ namespace StarportExcel
             this.FindTotals = new System.Windows.Forms.Button();
             this.FindNeedsDefense = new System.Windows.Forms.Button();
             this.CheckParenthesis = new System.Windows.Forms.Button();
+            this.PlanetOrganizer = new System.Windows.Forms.TextBox();
+            this.itsMyWindow = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CreateQuote
             // 
-            this.CreateQuote.Location = new System.Drawing.Point(245, 379);
+            this.CreateQuote.Location = new System.Drawing.Point(332, 379);
             this.CreateQuote.Name = "CreateQuote";
             this.CreateQuote.Size = new System.Drawing.Size(109, 23);
             this.CreateQuote.TabIndex = 0;
@@ -109,9 +111,27 @@ namespace StarportExcel
             this.CheckParenthesis.UseVisualStyleBackColor = true;
             this.CheckParenthesis.Click += new System.EventHandler(this.CheckParenthesis_Click);
             // 
+            // PlanetOrganizer
+            // 
+            this.PlanetOrganizer.Location = new System.Drawing.Point(31, 139);
+            this.PlanetOrganizer.Name = "PlanetOrganizer";
+            this.PlanetOrganizer.Size = new System.Drawing.Size(284, 20);
+            this.PlanetOrganizer.TabIndex = 8;
+            this.PlanetOrganizer.Text = "Insert Planet Name";
+            this.PlanetOrganizer.TextChanged += new System.EventHandler(this.PlanetOrganizer_TextChanged);
+            // 
+            // itsMyWindow
+            // 
+            this.itsMyWindow.Location = new System.Drawing.Point(332, 333);
+            this.itsMyWindow.Name = "itsMyWindow";
+            this.itsMyWindow.Size = new System.Drawing.Size(235, 20);
+            this.itsMyWindow.TabIndex = 9;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(590, 434);
+            this.Controls.Add(this.itsMyWindow);
+            this.Controls.Add(this.PlanetOrganizer);
             this.Controls.Add(this.CheckParenthesis);
             this.Controls.Add(this.FindNeedsDefense);
             this.Controls.Add(this.FindTotals);
@@ -122,6 +142,7 @@ namespace StarportExcel
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -136,6 +157,8 @@ namespace StarportExcel
         private System.Windows.Forms.Button FindTotals;
         private System.Windows.Forms.Button FindNeedsDefense;
         private System.Windows.Forms.Button CheckParenthesis;
+        private System.Windows.Forms.TextBox PlanetOrganizer;
+        private System.Windows.Forms.TextBox itsMyWindow;
     }
 }
 

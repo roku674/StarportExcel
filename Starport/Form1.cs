@@ -71,6 +71,16 @@ namespace StarportExcel
                 "|~{red}~Volcanics " + volcanicsZ + "/" + volcanics +
                 "|~{cyan}~ Sum: " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~");
 
+            itsMyWindow.Text = "Arctics " + arcticsZ + "/" + arctics +
+                "|~{yellow}~Deserts " + desertsZ + "/" + deserts +
+                "|~{green}~Earths " + earthsZ + "/" + earths +
+                "|~{orange}~Greenhouses " + greenhousesZ + "/" + greenhouses +
+                "|~{brown}~Mountains " + mountainsZ + "/" + mountains +
+                "|~{blue}~Oceans " + oceansZ + "/" + oceans +
+                "|~{pink}~Paradises ~{link}1:" + paradises + "~" +
+                "|~{gray}~Rockies " + rockiesZ + "/" + rockies +
+                "|~{red}~Volcanics " + volcanicsZ + "/" + volcanics +
+                "|~{cyan}~ Sum: " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
         }
         private void CheckGrow_Click(object sender, EventArgs e)
         {
@@ -227,6 +237,10 @@ namespace StarportExcel
 
             Excel totals = OpenFileAt(1);
 
+            FindZounds_Click(sender, e);
+            FindGrowing_Click(sender, e);
+            FindNeedsDefense_Click(sender, e);
+
             for (int i = 2; i <= 10; i++) // goes through each sheet
             {
                 Excel excel = OpenFileAt(i);
@@ -255,9 +269,7 @@ namespace StarportExcel
             }// end of i loop
             totals.Save();
             totals.Close();
-            FindZounds_Click(sender, e);
-            FindGrowing_Click(sender, e);
-            FindNeedsDefense_Click(sender, e);
+            
             MessageBox.Show("Find Totals Done");
         }
         private void FindZounds_Click(object sender, EventArgs e)
@@ -404,6 +416,20 @@ namespace StarportExcel
                 }
             }
         }
+        void AddPlanet(int sheet, string planetName)
+        {
+            Excel excel = OpenFileAt(sheet);
+
+            int planet = (int)excel.ReadCellDouble(1, 8); //read p Tally
+            int temp = planet+1; //get it ot the next row
+
+            excel.WriteToCell(temp, 2, planetName);
+            MessageBox.Show(planetName + " added to" + " sheet" + sheet);
+            PlanetOrganizer.Text = "Insert Planet Name";
+
+            excel.Save();
+            excel.Close();
+        }
 
         private void ClearGrowList(Excel excel)
         {
@@ -429,7 +455,29 @@ namespace StarportExcel
             }
             // Console.WriteLine("Grow List Cleared");
         }
+        private void PlanetOrganizer_TextChanged(object sender, EventArgs e)
+        {
+            string planetName = PlanetOrganizer.Text;
 
+            for (int i = 0; i < planetName.Length; i++)
+            {
+                if (planetName[i].Equals('A') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('c') && i + 2 < planetName.Length) { 
+                    AddPlanet(2, planetName);
+                    break;
+                }
+                else if (planetName[i].Equals('D') && planetName[i + 1].Equals('e') && planetName[i + 2].Equals('s') && i + 2 < planetName.Length ) { AddPlanet(3, planetName); break; }
+                else if (planetName[i].Equals('E') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r') && i + 2 < planetName.Length) { AddPlanet(4, planetName); break; }
+                else if (planetName[i].Equals('G') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('e') && i + 2 < planetName.Length) { AddPlanet(5, planetName); break; }
+                else if (planetName[i].Equals('M') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('u') && i + 2 < planetName.Length) { AddPlanet(6, planetName); break; }
+                else if (planetName[i].Equals('O') && planetName[i + 1].Equals('c') && planetName[i + 2].Equals('e') && i + 2 < planetName.Length) { AddPlanet(7, planetName); break; }
+                else if (planetName[i].Equals('P') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r') && i + 2 < planetName.Length) { AddPlanet(8, planetName); break; }
+                else if (planetName[i].Equals('R') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('c') && i + 2 < planetName.Length) { AddPlanet(9, planetName); break; }
+                else if (planetName[i].Equals('v') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('l') && i + 2 < planetName.Length) { AddPlanet(10, planetName); break; }
+                else { } //MessageBox.Show(planetName + " not found!");                             
+
+            }//end i
+        }
+      
         private Excel OpenFileAt(int num)
         {
             Excel excel = new Excel(@"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx", num);
