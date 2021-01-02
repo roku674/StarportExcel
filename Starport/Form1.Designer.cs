@@ -40,7 +40,7 @@ namespace Starport
             // 
             // CreateQuote
             // 
-            this.CreateQuote.Location = new System.Drawing.Point(343, 380);
+            this.CreateQuote.Location = new System.Drawing.Point(245, 379);
             this.CreateQuote.Name = "CreateQuote";
             this.CreateQuote.Size = new System.Drawing.Size(109, 23);
             this.CreateQuote.TabIndex = 0;
@@ -50,7 +50,7 @@ namespace Starport
             // 
             // FindGrowing
             // 
-            this.FindGrowing.Location = new System.Drawing.Point(343, 71);
+            this.FindGrowing.Location = new System.Drawing.Point(31, 71);
             this.FindGrowing.Name = "FindGrowing";
             this.FindGrowing.Size = new System.Drawing.Size(109, 23);
             this.FindGrowing.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace Starport
             // 
             // CheckGrow
             // 
-            this.CheckGrow.Location = new System.Drawing.Point(343, 42);
+            this.CheckGrow.Location = new System.Drawing.Point(31, 42);
             this.CheckGrow.Name = "CheckGrow";
             this.CheckGrow.Size = new System.Drawing.Size(109, 23);
             this.CheckGrow.TabIndex = 2;
@@ -70,7 +70,7 @@ namespace Starport
             // 
             // FindZounds
             // 
-            this.FindZounds.Location = new System.Drawing.Point(38, 71);
+            this.FindZounds.Location = new System.Drawing.Point(458, 71);
             this.FindZounds.Name = "FindZounds";
             this.FindZounds.Size = new System.Drawing.Size(109, 23);
             this.FindZounds.TabIndex = 3;
@@ -80,7 +80,7 @@ namespace Starport
             // 
             // FindTotals
             // 
-            this.FindTotals.Location = new System.Drawing.Point(38, 42);
+            this.FindTotals.Location = new System.Drawing.Point(458, 42);
             this.FindTotals.Name = "FindTotals";
             this.FindTotals.Size = new System.Drawing.Size(109, 23);
             this.FindTotals.TabIndex = 4;
@@ -90,9 +90,9 @@ namespace Starport
             // 
             // FindNeedsDefense
             // 
-            this.FindNeedsDefense.Location = new System.Drawing.Point(343, 101);
+            this.FindNeedsDefense.Location = new System.Drawing.Point(245, 42);
             this.FindNeedsDefense.Name = "FindNeedsDefense";
-            this.FindNeedsDefense.Size = new System.Drawing.Size(109, 23);
+            this.FindNeedsDefense.Size = new System.Drawing.Size(109, 36);
             this.FindNeedsDefense.TabIndex = 6;
             this.FindNeedsDefense.Text = "Find Needs Defense";
             this.FindNeedsDefense.UseVisualStyleBackColor = true;

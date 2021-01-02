@@ -207,7 +207,61 @@ namespace Starport
         }
         private void FindNeedsDefense_Click(object sender, EventArgs e)
         {
+            Excel totals = OpenFileAt(1);
+            ClearNDList(totals);
 
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                //Console.WriteLine("Planet Total: " + planet);
+                for (int i = 1; i < planet + 2; i++) // goes through the planet list
+                {
+                    if (excel.ReadCellString(i, 2) != "")
+                    {
+                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        {
+                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
+                        }
+
+                        string box = excel.ReadCellString(i, 2);
+
+                        for (int k = 0; k < box.Length; k++) //itterate through the string character by character
+                        {
+                            if (box[k].Equals('.'))
+                            {
+                                if (k + 6 < box.Length && box[k + 5].Equals('N') && box[k + 6].Equals('D'))
+                                {
+                                    AddToND(box, totals);
+                                    break;
+                                }
+                                else if (k + 7 < box.Length && box[k + 6].Equals('N') && box[k + 7].Equals('D'))
+                                {
+                                    AddToND(box, totals);
+                                    break;
+                                }
+                                else if (k + 8 < box.Length && box[k + 7].Equals('N') && box[k + 8].Equals('D'))
+                                {
+                                    AddToND(box, totals);
+                                    break;
+                                }
+                                else
+                                {
+                                    //do nothing
+                                }
+                            }//end if
+                        }// for k
+                    } //end if                            
+                }//end of i loop
+
+                excel.Save();
+                excel.Close();
+
+            }// end of J loop
+            totals.Save();
+            totals.Close();
+            MessageBox.Show("Find Needs Defense Done");
         }
 
         private void AddToGrow(string colony, Excel excel)
