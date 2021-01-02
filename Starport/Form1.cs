@@ -82,13 +82,13 @@ namespace Starport
             Excel totals = OpenFileAt(1);
             ClearGrowList(totals);
 
-            for (int j = 2; j < 10; j++) // goes through each sheet
+            for (int j = 2; j <= 10; j++) // goes through each sheet
             {
                 Excel excel = OpenFileAt(j);
 
                 int planet = (int)excel.ReadCellDouble(1, 8);
-                Console.WriteLine("Planet Total: " + planet);
-                for (int i = 1; i < planet+1; i++) // goes through the planet list
+                //Console.WriteLine("Planet Total: " + planet);
+                for (int i = 1; i < planet+2; i++) // goes through the planet list
                 {
                     if (excel.ReadCellString(i, 2) != "")
                     {
@@ -130,6 +130,86 @@ namespace Starport
             totals.Close();
             MessageBox.Show("Find Grow Done");
         }
+        private void FindTotals_Click(object sender, EventArgs e)
+        {
+            Excel totals = OpenFileAt(1);
+
+            for (int i = 2; i <= 10; i++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(i);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+
+                for (int j = planet+5; j >= 1; j--) // goes through the planet list
+                {
+                    if (excel.ReadCellString(j, 2) != "")
+                    {
+                        if (excel.ReadCellDouble(j, 1).ToString() != "")
+                        {
+                            excel.WriteToCell(j, 1, j.ToString()); //writes to the cell to the left and just puts a number in it
+                        }
+                        planet = (int) excel.ReadCellDouble(j, 1);
+                        excel.WriteToCell(1, 8, planet.ToString());
+                        //Console.WriteLine("Planet Total: " + planet);
+                        break;
+                    }
+                    
+                }//end of j loop
+
+                excel.Save();
+                excel.Close();
+
+            }// end of i loop
+            totals.Save();
+            totals.Close();
+            MessageBox.Show("Find Totals Done");
+        }
+        private void FindZounds_Click(object sender, EventArgs e)
+        {
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                ClearZoundsList(excel, planet);
+                //Console.WriteLine("Planet Total: " + planet);
+                for (int i = 1; i < planet + 3; i++) // goes through the planet list
+                {
+                    if (excel.ReadCellString(i, 2) != "")
+                    {
+                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        {
+                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
+                        }
+
+                        string box = excel.ReadCellString(i, 2);
+
+                        for (int k = 0; k < box.Length; k++) //itterate through the string character by character
+                        {
+                            if (box[k].Equals('.'))
+                            {
+                                if (k + 5 < box.Length && box[k + 5].Equals('Z'))
+                                {
+                                    AddToZounds(box, excel, planet);
+                                    break;
+                                }
+
+                            }//end if
+                        }// for k
+                    } //end if                            
+                }//end of i loop
+
+                excel.Save();
+                excel.Close();
+
+            }// end of J loop
+            MessageBox.Show("Find Zounds Done");
+        }
+        private void FindNeedsDefense_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void AddToGrow(string colony, Excel excel)
         {
             //column 11 is growing on totals
@@ -139,18 +219,65 @@ namespace Starport
                 if (box == "")
                 {
                     excel.WriteToCell(i, 11, colony);
-                    Console.WriteLine(colony + " added to grow");
+                   // Console.WriteLine(colony + " added to Knee Grow");
                     break;
                 }
             }
         }
+        private void AddToZounds(string colony, Excel excel, int planets)
+        {
+            for(int i = 1; i < planets; i++)
+            {
+                string box = excel.ReadCellString(i, 5);
+                if (box == "")
+                {
+                    excel.WriteToCell(i, 5, colony);
+                    //Console.WriteLine(colony + " added to Zounds");
+
+                    excel.WriteToCell(2, 8, i.ToString());
+
+                    break;
+                }
+            }
+        }
+        private void AddToND(string colony, Excel excel)
+        {
+            //column 11 is growing on totals
+            for (int i = 2; i < 50; i++)
+            {
+                string box = excel.ReadCellString(i, 14);
+                if (box == "")
+                {
+                    excel.WriteToCell(i, 14, colony);
+                    // Console.WriteLine(colony + " added to Needs Defense");
+                    break;
+                }
+            }
+        }
+
         private void ClearGrowList(Excel excel)
         {
             for (int i = 2; i < 30; i++)
             {
                 excel.WriteToCell(i, 11, "");
             }
-            Console.WriteLine("Grow List Cleared");
+           // Console.WriteLine("Grow List Cleared");
+        }
+        private void ClearZoundsList(Excel excel, int planets)
+        {
+            for(int i = 1; i < planets; i++)
+            {
+                excel.WriteToCell(i, 5, "");
+            }
+            //Console.WriteLine("Zounds List Cleared");
+        }
+        private void ClearNDList(Excel excel)
+        {
+            for (int i = 2; i < 30; i++)
+            {
+                excel.WriteToCell(i, 14, "");
+            }
+            // Console.WriteLine("Grow List Cleared");
         }
         private void CheckGrow_Click(object sender, EventArgs e)
         {
@@ -210,6 +337,8 @@ namespace Starport
         {
             Excel excel = new Excel(@"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx", num);
             return excel;
-        }       
+        }
+
+        
     }
 }

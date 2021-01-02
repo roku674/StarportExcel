@@ -1,4 +1,6 @@
-﻿namespace Starport
+﻿using System;
+
+namespace Starport
 {
     partial class Form1 
     {
@@ -31,11 +33,14 @@
             this.CreateQuote = new System.Windows.Forms.Button();
             this.FindGrowing = new System.Windows.Forms.Button();
             this.CheckGrow = new System.Windows.Forms.Button();
+            this.FindZounds = new System.Windows.Forms.Button();
+            this.FindTotals = new System.Windows.Forms.Button();
+            this.FindNeedsDefense = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateQuote
             // 
-            this.CreateQuote.Location = new System.Drawing.Point(38, 42);
+            this.CreateQuote.Location = new System.Drawing.Point(343, 380);
             this.CreateQuote.Name = "CreateQuote";
             this.CreateQuote.Size = new System.Drawing.Size(109, 23);
             this.CreateQuote.TabIndex = 0;
@@ -63,9 +68,42 @@
             this.CheckGrow.UseVisualStyleBackColor = true;
             this.CheckGrow.Click += new System.EventHandler(this.CheckGrow_Click);
             // 
+            // FindZounds
+            // 
+            this.FindZounds.Location = new System.Drawing.Point(38, 71);
+            this.FindZounds.Name = "FindZounds";
+            this.FindZounds.Size = new System.Drawing.Size(109, 23);
+            this.FindZounds.TabIndex = 3;
+            this.FindZounds.Text = "Find Zounds";
+            this.FindZounds.UseVisualStyleBackColor = true;
+            this.FindZounds.Click += new System.EventHandler(this.FindZounds_Click);
+            // 
+            // FindTotals
+            // 
+            this.FindTotals.Location = new System.Drawing.Point(38, 42);
+            this.FindTotals.Name = "FindTotals";
+            this.FindTotals.Size = new System.Drawing.Size(109, 23);
+            this.FindTotals.TabIndex = 4;
+            this.FindTotals.Text = "Find Totals";
+            this.FindTotals.UseVisualStyleBackColor = true;
+            this.FindTotals.Click += new System.EventHandler(this.FindTotals_Click);
+            // 
+            // FindNeedsDefense
+            // 
+            this.FindNeedsDefense.Location = new System.Drawing.Point(343, 101);
+            this.FindNeedsDefense.Name = "FindNeedsDefense";
+            this.FindNeedsDefense.Size = new System.Drawing.Size(109, 23);
+            this.FindNeedsDefense.TabIndex = 6;
+            this.FindNeedsDefense.Text = "Find Needs Defense";
+            this.FindNeedsDefense.UseVisualStyleBackColor = true;
+            this.FindNeedsDefense.Click += new System.EventHandler(this.FindNeedsDefense_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(590, 434);
+            this.Controls.Add(this.FindNeedsDefense);
+            this.Controls.Add(this.FindTotals);
+            this.Controls.Add(this.FindZounds);
             this.Controls.Add(this.CheckGrow);
             this.Controls.Add(this.FindGrowing);
             this.Controls.Add(this.CreateQuote);
@@ -75,11 +113,16 @@
 
         }
 
+
+
         #endregion
 
         private System.Windows.Forms.Button CreateQuote;
         private System.Windows.Forms.Button FindGrowing;
         private System.Windows.Forms.Button CheckGrow;
+        private System.Windows.Forms.Button FindZounds;
+        private System.Windows.Forms.Button FindTotals;
+        private System.Windows.Forms.Button FindNeedsDefense;
     }
 }
 

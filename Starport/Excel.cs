@@ -17,6 +17,7 @@ namespace Starport
 		public Excel(string path, int Sheet)
 		{
 			this.path = path;
+			excel.DisplayAlerts = false;
 			wb = excel.Workbooks.Open(path);
 			ws = wb.Worksheets[Sheet];
 		}
@@ -56,25 +57,27 @@ namespace Starport
 		/// <param name="j">column</param>
 		/// <param name="s">what you want to write</param>
 		public void WriteToCell(int i, int j, string s)
-        {
+		{
 			i++;
 			j++;
 			ws.Cells[i, j].Value2 = s;
-        }
+		}
 
 		public void Save()
-        {
+		{
 			wb.Save();
-        }
+		}
 		public void SaveAs(string path)
-        {
+		{
 			wb.SaveAs(path);
-        }
+		}
 
 		public void Close()
-        {
+		{
 			wb.Close();
-        }
+			GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+		}
+		//public static int ReleaseComObject(object o);       
 	}
 
 }
