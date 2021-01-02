@@ -21,14 +21,45 @@ namespace Starport
 			ws = wb.Worksheets[Sheet];
 		}
 
-		public string ReadCell(int i, int j)
+		public string ReadCellString(int i, int j)
+		{
+			i++;
+			j++;
+			//if (ws.Cells[i, j].Value2 != null) return ws.Cells[i, j].Value2;
+
+			//else return "ERROR";
+
+			return "";
+		}
+		public double ReadCellDouble(int i, int j)
 		{
 			i++;
 			j++;
 			if (ws.Cells[i, j].Value2 != null) return ws.Cells[i, j].Value2;
 
-			else return "";
+			else return -1;
 		}
+
+		public void WriteToCell(int i, int j, string s)
+        {
+			i++;
+			j++;
+			ws.Cells[i, j].Value2 = s;
+        }
+
+		public void Save()
+        {
+			wb.Save();
+        }
+		public void SaveAs(string path)
+        {
+			wb.SaveAs(path);
+        }
+
+		public void Close()
+        {
+			wb.Close();
+        }
 	}
 
 }

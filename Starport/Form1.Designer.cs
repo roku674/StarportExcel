@@ -29,26 +29,36 @@
         private void InitializeComponent()
         {
             this.CreateQuote = new System.Windows.Forms.Button();
+            this.FindGrowing = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateQuote
             // 
-            this.CreateQuote.Location = new System.Drawing.Point(98, 49);
+            this.CreateQuote.Location = new System.Drawing.Point(38, 42);
             this.CreateQuote.Name = "CreateQuote";
-            this.CreateQuote.Size = new System.Drawing.Size(130, 23);
+            this.CreateQuote.Size = new System.Drawing.Size(109, 23);
             this.CreateQuote.TabIndex = 0;
             this.CreateQuote.Text = "Create Quote";
             this.CreateQuote.UseVisualStyleBackColor = true;
-            this.CreateQuote.Click += new System.EventHandler(this.button1_Click);
+            this.CreateQuote.Click += new System.EventHandler(this.CreateQuote_Click);
+            // 
+            // FindGrowing
+            // 
+            this.FindGrowing.Location = new System.Drawing.Point(38, 72);
+            this.FindGrowing.Name = "FindGrowing";
+            this.FindGrowing.Size = new System.Drawing.Size(109, 23);
+            this.FindGrowing.TabIndex = 1;
+            this.FindGrowing.Text = "Find Growing";
+            this.FindGrowing.UseVisualStyleBackColor = true;
+            this.FindGrowing.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(590, 434);
+            this.Controls.Add(this.FindGrowing);
             this.Controls.Add(this.CreateQuote);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -56,6 +66,7 @@
         #endregion
 
         private System.Windows.Forms.Button CreateQuote;
+        private System.Windows.Forms.Button FindGrowing;
     }
 }
 
