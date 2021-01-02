@@ -133,21 +133,21 @@ namespace Starport
                 if(box != null)
                 {
                     Console.WriteLine(box);
-                    char[] chars = new char[box.Length];
-                    for(int j = 0; j < chars.Length; j++)
+                    for (int j = 0; j < box.Length; j++)
                     {
-                        if (chars[j].Equals("."))
+                        if (box[j].Equals('.'))
                         {
-                            if (chars[j + 5].Equals("G"))
+                            if (j + 5 <= box.Length && box[j + 5].Equals('G') )
                             {
                                 //stay
                             }
-                            else if (chars[j + 6].Equals("G"))
+                            else if (j + 6 < box.Length && box[j + 6].Equals('G'))
                             {
                                 //stay
                             }
                             else
                             {
+                                Console.WriteLine("Removed" + box);
                                 MessageBox.Show("Removed" + box);
                                 excel.WriteToCell(i, 11, null); //yeet
                                 
