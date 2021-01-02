@@ -36,6 +36,7 @@ namespace Starport
             this.FindZounds = new System.Windows.Forms.Button();
             this.FindTotals = new System.Windows.Forms.Button();
             this.FindNeedsDefense = new System.Windows.Forms.Button();
+            this.CheckParenthesis = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateQuote
@@ -98,9 +99,20 @@ namespace Starport
             this.FindNeedsDefense.UseVisualStyleBackColor = true;
             this.FindNeedsDefense.Click += new System.EventHandler(this.FindNeedsDefense_Click);
             // 
+            // CheckParenthesis
+            // 
+            this.CheckParenthesis.Location = new System.Drawing.Point(31, 378);
+            this.CheckParenthesis.Name = "CheckParenthesis";
+            this.CheckParenthesis.Size = new System.Drawing.Size(109, 23);
+            this.CheckParenthesis.TabIndex = 7;
+            this.CheckParenthesis.Text = "Check Parenthesis";
+            this.CheckParenthesis.UseVisualStyleBackColor = true;
+            this.CheckParenthesis.Click += new System.EventHandler(this.CheckParenthesis_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(590, 434);
+            this.Controls.Add(this.CheckParenthesis);
             this.Controls.Add(this.FindNeedsDefense);
             this.Controls.Add(this.FindTotals);
             this.Controls.Add(this.FindZounds);
@@ -123,6 +135,7 @@ namespace Starport
         private System.Windows.Forms.Button FindZounds;
         private System.Windows.Forms.Button FindTotals;
         private System.Windows.Forms.Button FindNeedsDefense;
+        private System.Windows.Forms.Button CheckParenthesis;
     }
 }
 

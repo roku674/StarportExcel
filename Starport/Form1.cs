@@ -333,6 +333,7 @@ namespace Starport
             }
             // Console.WriteLine("Grow List Cleared");
         }
+
         private void CheckGrow_Click(object sender, EventArgs e)
         {
             int max = 20;
@@ -393,6 +394,36 @@ namespace Starport
             return excel;
         }
 
-        
+        private void CheckParenthesis_Click(object sender, EventArgs e)
+        {
+
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                //Console.WriteLine("Planet Total: " + planet);
+                for (int i = 1; i < planet + 2; i++) // goes through the planet list
+                {
+                    if (excel.ReadCellString(i, 2) != "")
+                    {
+                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        {
+                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
+                        }
+
+                        string box = excel.ReadCellString(i, 2);
+                        box.Replace('[', '(');
+                        box.Replace(']', ')');
+                        
+                    } //end if                            
+                }//end of i loop
+
+                excel.Save();
+                excel.Close();
+
+            }// end of J loop
+            MessageBox.Show("converted all brackets into Parenthesis");
+        }
     }
 }
