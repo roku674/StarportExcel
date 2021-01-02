@@ -45,7 +45,7 @@
             // 
             // FindGrowing
             // 
-            this.FindGrowing.Location = new System.Drawing.Point(38, 72);
+            this.FindGrowing.Location = new System.Drawing.Point(343, 71);
             this.FindGrowing.Name = "FindGrowing";
             this.FindGrowing.Size = new System.Drawing.Size(109, 23);
             this.FindGrowing.TabIndex = 1;
@@ -55,9 +55,9 @@
             // 
             // CheckGrow
             // 
-            this.CheckGrow.Location = new System.Drawing.Point(377, 42);
+            this.CheckGrow.Location = new System.Drawing.Point(343, 42);
             this.CheckGrow.Name = "CheckGrow";
-            this.CheckGrow.Size = new System.Drawing.Size(75, 23);
+            this.CheckGrow.Size = new System.Drawing.Size(109, 23);
             this.CheckGrow.TabIndex = 2;
             this.CheckGrow.Text = "Check Grow";
             this.CheckGrow.UseVisualStyleBackColor = true;

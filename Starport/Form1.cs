@@ -86,9 +86,9 @@ namespace Starport
 
                 for (int i = 1; i < planet+1; i++)
                 {
-                    if (excel.ReadCellString(i, 2) != null)
+                    if (excel.ReadCellString(i, 2) != "")
                     {
-                        if (excel.ReadCellString(i, 1) == null)
+                        if (excel.ReadCellString(i, 1) == "")
                         {
                             excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
                         }
@@ -109,9 +109,9 @@ namespace Starport
             for (int i = 2; i < 50; i++)
             {
                 string box = excel.ReadCellString(i, 11);
-                if (box == null)
+                if (box == "")
                 {
-                    if (excel.ReadCellString(i, 10) == null)
+                    if (excel.ReadCellString(i, 10) == "")
                     {
                         excel.WriteToCell(i, 10, i.ToString()); //writes to the cell to the left and just puts a number in it
                     }
@@ -131,7 +131,7 @@ namespace Starport
             for(int i = 2; i < max; i++)
             {
                 string box = excel.ReadCellString(i, 11);
-                if(box != null)
+                if(box != "")
                 {
                     //Console.WriteLine(box);
                     for (int j = 0; j < box.Length; j++) //itterate through the string character by character
@@ -160,8 +160,7 @@ namespace Starport
                                         excel.WriteToCell(k, 11, next);
                                         Console.WriteLine("Moved " + next + " up 1");
                                     }
-                                }//for k
-                                
+                                }//for k                               
                             }
                             break; //should break as soon as it finds the first period
                         } //if .
