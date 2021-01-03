@@ -74,6 +74,7 @@ namespace StarportExcel
 
 		public void Close()
 		{
+			Save();
 			wb.Close();
 			GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
 		}

@@ -12,8 +12,10 @@ using System.Windows.Forms;
 
 namespace StarportExcel
 {
+    
     public partial class Form1 : Form
     {
+        string excelPath = @"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx";
         public Form1()
         {
             InitializeComponent();
@@ -86,7 +88,7 @@ namespace StarportExcel
         {
             int max = 20;
             Excel excel = OpenFileAt(1);
-            for (int i = 2; i < max; i++)
+            for (int i = 2; i <= max; i++)
             {
                 string box = excel.ReadCellString(i, 11);
                 if (box != "")
@@ -131,7 +133,6 @@ namespace StarportExcel
                     }//for j
                 }//if
             }//for i
-            excel.Save();
             excel.Close();
             MessageBox.Show("Check Grow Done");
         }
@@ -167,8 +168,6 @@ namespace StarportExcel
 
                     } //end if                            
                 }//end of i loop
-
-                excel.Save();
                 excel.Close();
 
             }// end of J loop
@@ -224,22 +223,20 @@ namespace StarportExcel
                     } //end if                            
                 }//end of i loop
 
-                excel.Save();
                 excel.Close();
                 
             }// end of J loop
-            totals.Save();
+
             totals.Close();
             MessageBox.Show("Find Grow Done");
         }
         private void FindTotals_Click(object sender, EventArgs e)
         {
-
-            Excel totals = OpenFileAt(1);
-
             FindZounds_Click(sender, e);
             FindGrowing_Click(sender, e);
             FindNeedsDefense_Click(sender, e);
+
+            Excel totals = OpenFileAt(1);
 
             for (int i = 2; i <= 10; i++) // goes through each sheet
             {
@@ -263,11 +260,10 @@ namespace StarportExcel
                     
                 }//end of j loop
 
-                excel.Save();
                 excel.Close();
 
             }// end of i loop
-            totals.Save();
+
             totals.Close();
             
             MessageBox.Show("Find Totals Done");
@@ -281,15 +277,8 @@ namespace StarportExcel
                 int planet = (int)excel.ReadCellDouble(1, 8);
                 ClearZoundsList(excel, planet);
                 //Console.WriteLine("Planet Total: " + planet);
-                for (int i = 1; i < planet + 3; i++) // goes through the planet list
+                for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
-                    if (excel.ReadCellString(i, 2) != "")
-                    {
-                        if (excel.ReadCellDouble(i, 1).ToString() != "")
-                        {
-                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
-                        }
-
                         string box = excel.ReadCellString(i, 2);
 
                         for (int k = 0; k < box.Length; k++) //itterate through the string character by character
@@ -304,10 +293,9 @@ namespace StarportExcel
 
                             }//end if
                         }// for k
-                    } //end if                            
+                        
                 }//end of i loop
 
-                excel.Save();
                 excel.Close();
 
             }// end of J loop
@@ -363,11 +351,10 @@ namespace StarportExcel
                     } //end if                            
                 }//end of i loop
 
-                excel.Save();
                 excel.Close();
 
             }// end of J loop
-            totals.Save();
+
             totals.Close();
             MessageBox.Show("Find Needs Defense Done");
         }
@@ -388,7 +375,7 @@ namespace StarportExcel
         }
         private void AddToZounds(string colony, Excel excel, int planets)
         {
-            for(int i = 1; i < planets; i++)
+            for (int i = 1; i < planets; i++)
             {
                 string box = excel.ReadCellString(i, 5);
                 if (box == "")
@@ -399,6 +386,13 @@ namespace StarportExcel
                     excel.WriteToCell(2, 8, i.ToString());
 
                     break;
+                }
+                if (excel.ReadCellString(i, 5) != "")
+                {
+                    if (excel.ReadCellDouble(i, 4).ToString() != "")
+                    {
+                        excel.WriteToCell(i, 4, i.ToString()); //writes to the cell to the left and just puts a number in it
+                    }
                 }
             }
         }
@@ -427,7 +421,6 @@ namespace StarportExcel
             MessageBox.Show(planetName + " added to" + " sheet" + sheet);
             PlanetOrganizer.Text = "Insert Planet Name";
 
-            excel.Save();
             excel.Close();
         }
 
@@ -480,7 +473,7 @@ namespace StarportExcel
       
         private Excel OpenFileAt(int num)
         {
-            Excel excel = new Excel(@"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx", num);
+            Excel excel = new Excel(excelPath, num);
             return excel;
         }
     }
