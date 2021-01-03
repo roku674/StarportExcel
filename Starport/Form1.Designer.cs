@@ -40,11 +40,12 @@ namespace StarportExcel
             this.PlanetOrganizer = new System.Windows.Forms.TextBox();
             this.itsMyWindow = new System.Windows.Forms.TextBox();
             this.PlanetSorter = new System.Windows.Forms.Button();
+            this.ClearZounds = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateQuote
             // 
-            this.CreateQuote.Location = new System.Drawing.Point(332, 379);
+            this.CreateQuote.Location = new System.Drawing.Point(332, 359);
             this.CreateQuote.Name = "CreateQuote";
             this.CreateQuote.Size = new System.Drawing.Size(109, 23);
             this.CreateQuote.TabIndex = 0;
@@ -74,7 +75,7 @@ namespace StarportExcel
             // 
             // FindZounds
             // 
-            this.FindZounds.Location = new System.Drawing.Point(458, 71);
+            this.FindZounds.Location = new System.Drawing.Point(332, 238);
             this.FindZounds.Name = "FindZounds";
             this.FindZounds.Size = new System.Drawing.Size(109, 23);
             this.FindZounds.TabIndex = 3;
@@ -84,9 +85,9 @@ namespace StarportExcel
             // 
             // FindTotals
             // 
-            this.FindTotals.Location = new System.Drawing.Point(458, 42);
+            this.FindTotals.Location = new System.Drawing.Point(332, 42);
             this.FindTotals.Name = "FindTotals";
-            this.FindTotals.Size = new System.Drawing.Size(109, 23);
+            this.FindTotals.Size = new System.Drawing.Size(173, 81);
             this.FindTotals.TabIndex = 4;
             this.FindTotals.Text = "Find Totals";
             this.FindTotals.UseVisualStyleBackColor = true;
@@ -94,9 +95,9 @@ namespace StarportExcel
             // 
             // FindNeedsDefense
             // 
-            this.FindNeedsDefense.Location = new System.Drawing.Point(245, 42);
+            this.FindNeedsDefense.Location = new System.Drawing.Point(31, 100);
             this.FindNeedsDefense.Name = "FindNeedsDefense";
-            this.FindNeedsDefense.Size = new System.Drawing.Size(109, 36);
+            this.FindNeedsDefense.Size = new System.Drawing.Size(109, 23);
             this.FindNeedsDefense.TabIndex = 6;
             this.FindNeedsDefense.Text = "Find Needs Defense";
             this.FindNeedsDefense.UseVisualStyleBackColor = true;
@@ -104,7 +105,7 @@ namespace StarportExcel
             // 
             // CheckParenthesis
             // 
-            this.CheckParenthesis.Location = new System.Drawing.Point(31, 378);
+            this.CheckParenthesis.Location = new System.Drawing.Point(469, 199);
             this.CheckParenthesis.Name = "CheckParenthesis";
             this.CheckParenthesis.Size = new System.Drawing.Size(109, 23);
             this.CheckParenthesis.TabIndex = 7;
@@ -114,9 +115,9 @@ namespace StarportExcel
             // 
             // PlanetOrganizer
             // 
-            this.PlanetOrganizer.Location = new System.Drawing.Point(31, 139);
+            this.PlanetOrganizer.Location = new System.Drawing.Point(332, 173);
             this.PlanetOrganizer.Name = "PlanetOrganizer";
-            this.PlanetOrganizer.Size = new System.Drawing.Size(284, 20);
+            this.PlanetOrganizer.Size = new System.Drawing.Size(246, 20);
             this.PlanetOrganizer.TabIndex = 8;
             this.PlanetOrganizer.Text = "Insert Planet Name";
             // 
@@ -129,17 +130,28 @@ namespace StarportExcel
             // 
             // PlanetSorter
             // 
-            this.PlanetSorter.Location = new System.Drawing.Point(31, 166);
+            this.PlanetSorter.Location = new System.Drawing.Point(332, 199);
             this.PlanetSorter.Name = "PlanetSorter";
-            this.PlanetSorter.Size = new System.Drawing.Size(75, 23);
+            this.PlanetSorter.Size = new System.Drawing.Size(109, 23);
             this.PlanetSorter.TabIndex = 10;
             this.PlanetSorter.Text = "Sort Planet";
             this.PlanetSorter.UseVisualStyleBackColor = true;
             this.PlanetSorter.Click += new System.EventHandler(this.PlanetSorter_Click);
             // 
+            // ClearZounds
+            // 
+            this.ClearZounds.Location = new System.Drawing.Point(469, 237);
+            this.ClearZounds.Name = "ClearZounds";
+            this.ClearZounds.Size = new System.Drawing.Size(109, 23);
+            this.ClearZounds.TabIndex = 11;
+            this.ClearZounds.Text = "Clear Zounds";
+            this.ClearZounds.UseVisualStyleBackColor = true;
+            this.ClearZounds.Click += new System.EventHandler(this.ClearZounds_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(590, 434);
+            this.Controls.Add(this.ClearZounds);
             this.Controls.Add(this.PlanetSorter);
             this.Controls.Add(this.itsMyWindow);
             this.Controls.Add(this.PlanetOrganizer);
@@ -171,6 +183,7 @@ namespace StarportExcel
         private System.Windows.Forms.TextBox PlanetOrganizer;
         private System.Windows.Forms.TextBox itsMyWindow;
         private System.Windows.Forms.Button PlanetSorter;
+        private System.Windows.Forms.Button ClearZounds;
     }
 }
 

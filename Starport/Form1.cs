@@ -18,6 +18,7 @@ namespace StarportExcel
         public Form1()
         {
             InitializeComponent();
+            MessageBox.Show("Make Sure the excel sheet is close first!");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -148,23 +149,20 @@ namespace StarportExcel
                 {
                     if (excel.ReadCellString(i, 2) != "")
                     {
-                        if (excel.ReadCellDouble(i, 1).ToString() != "")
-                        {
-                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
-                        }
-
                         string box = excel.ReadCellString(i, 2);
-                        string replace = box;
-
-                        replace.Replace('[', '(');
-                        box = replace;
-                        excel.WriteToCell(i, 2, box);
-
-                        replace = box;
-                        replace.Replace(']', ')');
-                        box = replace;
-                        excel.WriteToCell(i, 2, box);
-
+                        for(int k = 0; k < box.Length; k++)
+                        {
+                            if (box[k].Equals('['))
+                            {
+                                box = StringReplacer(k, '(', box);
+                                excel.WriteToCell(i, 2, box);
+                            }
+                            else if (box[k].Equals(']'))
+                            {
+                                box = StringReplacer(k, ')', box);
+                                excel.WriteToCell(i, 2, box);
+                            }                            
+                        }                      
                     } //end if                            
                 }//end of i loop
                 excel.Close();
@@ -266,8 +264,10 @@ namespace StarportExcel
             {
                 Excel excel = OpenFileAt(j);
 
-                int planet = (int)excel.ReadCellDouble(1, 8);
-                ClearZoundsList(excel, planet);
+                int planet = (int)excel.ReadCellDouble(1, 8);            
+                excel.WriteToCell(2, 8, 0.ToString());//clear zounds num
+
+                //ClearZoundsList(excel, planet);
                 //Console.WriteLine("Planet Total: " + planet);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
@@ -279,11 +279,15 @@ namespace StarportExcel
                         {
                             if (k + 5 < box.Length && box[k + 5].Equals('Z'))
                             {
-                                AddToZounds(box, excel, planet);
+                                AddToZounds(box, excel);
                                 break;
                             }
 
                         }//end if
+                        else if(box == " ")
+                        {
+                            break;
+                        }
                     }// for k        
 
                 }//end of i loop
@@ -350,6 +354,17 @@ namespace StarportExcel
             totals.Close();
             MessageBox.Show("Find Needs Defense Done");
         }
+        private void ClearZounds_Click(object sender, EventArgs e)
+        {
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                ClearZoundsList(excel, planet);
+                excel.Close();
+            }
+            MessageBox.Show("Zounds lists Cleared!");
+        }
 
         private void AddToGrow(string colony, Excel excel)
         {
@@ -365,26 +380,18 @@ namespace StarportExcel
                 }
             }
         }
-        private void AddToZounds(string colony, Excel excel, int planets)
+        private void AddToZounds(string colony, Excel excel)
         {
-            int temp = 0;
-            for (int i = 1; i <= planets; i++)
-            {
-                string box = excel.ReadCellString(i, 5); //read Column F
+            int zoundsCount = (int)excel.ReadCellDouble(2, 8);
+            zoundsCount++; //if it's 0 don't put it in the 0 slot
 
-                if (box == "")
-                {
-                    excel.WriteToCell(i, 5, colony); //put colony in here //Console.WriteLine(colony + " added to Zounds");
-                    temp = i+1;
+            excel.WriteToCell(zoundsCount, 5, colony); //put colony in here //
+            Console.WriteLine(colony + " added to Zounds to cell [F,"+ zoundsCount + "]");
 
-                    excel.WriteToCell(i, 4, i.ToString()); // this is the 1 2 3 4
-                    
-                    excel.WriteToCell(2, 8, i.ToString()); // changes the total zounds
+            excel.WriteToCell(zoundsCount, 4, zoundsCount.ToString()); // this is the 1 2 3 4
 
-                    break;
-                }
-                
-            }
+            excel.WriteToCell(2, 8, zoundsCount.ToString());// changes the total zounds 
+
         }
         private void AddToND(string colony, Excel excel)
         {
@@ -428,8 +435,9 @@ namespace StarportExcel
         }
         private void ClearZoundsList(Excel excel, int planets)
         {
-            for(int i = 1; i < planets; i++)
+            for(int i = 1; i <= planets; i++)
             {
+                excel.WriteToCell(2, 8, 0.ToString());
                 excel.WriteToCell(i, 5, "");
             }
             //Console.WriteLine("Zounds List Cleared");
@@ -466,10 +474,23 @@ namespace StarportExcel
             }//end i
         }
 
+        /// <summary>
+        /// Replaces a character in astring
+        /// </summary>
+        /// <param name="num">Integer in the string aray</param>
+        /// <param name="replacement">character you're replacing it with</param>
+        /// <param name="str">original string</param>
+        /// <returns></returns>
+        public string StringReplacer(int num , char replacement, string str)
+        {
+            StringBuilder sb = new StringBuilder(str);
+            sb[num] = replacement;
+            return sb.ToString();
+        }
         private Excel OpenFileAt(int num)
         {
             Excel excel = new Excel(excelPath, num);
             return excel;
-        }        
+        }       
     }
 }
