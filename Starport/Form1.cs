@@ -232,34 +232,28 @@ namespace StarportExcel
         }
         private void FindTotals_Click(object sender, EventArgs e)
         {            
-            Excel totals = OpenFileAt(1);
-
             for (int i = 2; i <= 10; i++) // goes through each sheet
             {
                 Excel excel = OpenFileAt(i);
 
                 int planet = (int)excel.ReadCellDouble(1, 8);
-
+                int temp = 0;
                 for (int j = 1; j <= planet + 5; j++) // goes through the planet list
                 {
                     if (excel.ReadCellString(j, 2) != "")
                     {
-                        if (excel.ReadCellDouble(j, 1).ToString() != "")
-                        {
-                            excel.WriteToCell(j, 1, j.ToString()); //writes to the cell to the left and just puts a number in it
-                        }
-                        
-                        excel.WriteToCell(1, 8, j.ToString());
-                        //Console.WriteLine("Planet Total: " + j);
+                        excel.WriteToCell(j, 1, j.ToString()); //writes to the cell to the left and just puts a number in it
+                        temp = j;
                     }
                     
                 }//end of j loop
 
+                excel.WriteToCell(1, 8, temp.ToString()); //changes the total planets
+                //Console.WriteLine("Planet Total: " + temp);
+
                 excel.Close();
 
             }// end of i loop
-
-            totals.Close();
 
             FindZounds_Click(sender, e);
             FindGrowing_Click(sender, e);
@@ -278,21 +272,21 @@ namespace StarportExcel
                 //Console.WriteLine("Planet Total: " + planet);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
-                        string box = excel.ReadCellString(i, 2);
+                    string box = excel.ReadCellString(i, 2); //get the contents of coulumn C
 
-                        for (int k = 0; k < box.Length; k++) //itterate through the string character by character
+                    for (int k = 0; k < box.Length; k++) //itterate through the string character by character
+                    {
+                        if (box[k].Equals('.'))
                         {
-                            if (box[k].Equals('.'))
+                            if (k + 5 < box.Length && box[k + 5].Equals('Z'))
                             {
-                                if (k + 5 < box.Length && box[k + 5].Equals('Z'))
-                                {
-                                    AddToZounds(box, excel, planet);
-                                    break;
-                                }
+                                AddToZounds(box, excel, planet);
+                                break;
+                            }
 
-                            }//end if
-                        }// for k
-                        
+                        }//end if
+                    }// for k        
+
                 }//end of i loop
 
                 excel.Close();
@@ -374,25 +368,22 @@ namespace StarportExcel
         }
         private void AddToZounds(string colony, Excel excel, int planets)
         {
+            int temp = 0;
             for (int i = 1; i <= planets; i++)
             {
-                string box = excel.ReadCellString(i, 5);
+                string box = excel.ReadCellString(i, 5); //read Column F
+
                 if (box == "")
                 {
-                    excel.WriteToCell(i, 5, colony);
+                    excel.WriteToCell(i, 5, colony); //put colony in here
+                    temp = i+1;
+                    excel.WriteToCell(i, 4, temp.ToString());
                     //Console.WriteLine(colony + " added to Zounds");
-
-                    excel.WriteToCell(2, 8, i.ToString());
+                    excel.WriteToCell(2, 8, temp.ToString()); // changes the total zounds
 
                     break;
                 }
-                if (excel.ReadCellString(i, 5) != "")
-                {
-                    if (excel.ReadCellDouble(i, 4).ToString() != "")
-                    {
-                        excel.WriteToCell(i, 4, i.ToString()); //writes to the cell to the left and just puts a number in it
-                    }
-                }
+                
             }
         }
         private void AddToND(string colony, Excel excel)
