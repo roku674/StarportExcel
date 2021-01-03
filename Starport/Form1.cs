@@ -189,7 +189,7 @@ namespace StarportExcel
 
                 int planet = (int)excel.ReadCellDouble(1, 8);
                 //Console.WriteLine("Planet Total: " + planet);
-                for (int i = 1; i < planet; i++) // goes through the planet list
+                for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
                     if (excel.ReadCellString(i, 2) != "")
                     {
@@ -305,7 +305,7 @@ namespace StarportExcel
 
                 int planet = (int)excel.ReadCellDouble(1, 8);
                 //Console.WriteLine("Planet Total: " + planet);
-                for (int i = 1; i < planet; i++) // goes through the planet list
+                for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
                     if (excel.ReadCellString(i, 2) != "")
                     {
