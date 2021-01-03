@@ -39,6 +39,7 @@ namespace StarportExcel
             this.CheckParenthesis = new System.Windows.Forms.Button();
             this.PlanetOrganizer = new System.Windows.Forms.TextBox();
             this.itsMyWindow = new System.Windows.Forms.TextBox();
+            this.PlanetSorter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateQuote
@@ -118,7 +119,6 @@ namespace StarportExcel
             this.PlanetOrganizer.Size = new System.Drawing.Size(284, 20);
             this.PlanetOrganizer.TabIndex = 8;
             this.PlanetOrganizer.Text = "Insert Planet Name";
-            this.PlanetOrganizer.TextChanged += new System.EventHandler(this.PlanetOrganizer_TextChanged);
             // 
             // itsMyWindow
             // 
@@ -127,9 +127,20 @@ namespace StarportExcel
             this.itsMyWindow.Size = new System.Drawing.Size(235, 20);
             this.itsMyWindow.TabIndex = 9;
             // 
+            // PlanetSorter
+            // 
+            this.PlanetSorter.Location = new System.Drawing.Point(31, 166);
+            this.PlanetSorter.Name = "PlanetSorter";
+            this.PlanetSorter.Size = new System.Drawing.Size(75, 23);
+            this.PlanetSorter.TabIndex = 10;
+            this.PlanetSorter.Text = "Sort Planet";
+            this.PlanetSorter.UseVisualStyleBackColor = true;
+            this.PlanetSorter.Click += new System.EventHandler(this.PlanetSorter_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(590, 434);
+            this.Controls.Add(this.PlanetSorter);
             this.Controls.Add(this.itsMyWindow);
             this.Controls.Add(this.PlanetOrganizer);
             this.Controls.Add(this.CheckParenthesis);
@@ -159,6 +170,7 @@ namespace StarportExcel
         private System.Windows.Forms.Button CheckParenthesis;
         private System.Windows.Forms.TextBox PlanetOrganizer;
         private System.Windows.Forms.TextBox itsMyWindow;
+        private System.Windows.Forms.Button PlanetSorter;
     }
 }
 

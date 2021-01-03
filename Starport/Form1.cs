@@ -11,8 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StarportExcel
-{
-    
+{    
     public partial class Form1 : Form
     {
         readonly string excelPath = @"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx";
@@ -375,11 +374,12 @@ namespace StarportExcel
 
                 if (box == "")
                 {
-                    excel.WriteToCell(i, 5, colony); //put colony in here
+                    excel.WriteToCell(i, 5, colony); //put colony in here //Console.WriteLine(colony + " added to Zounds");
                     temp = i+1;
-                    excel.WriteToCell(i, 4, temp.ToString());
-                    //Console.WriteLine(colony + " added to Zounds");
-                    excel.WriteToCell(2, 8, temp.ToString()); // changes the total zounds
+
+                    excel.WriteToCell(i, 4, i.ToString()); // this is the 1 2 3 4
+                    
+                    excel.WriteToCell(2, 8, i.ToString()); // changes the total zounds
 
                     break;
                 }
@@ -407,7 +407,11 @@ namespace StarportExcel
             int planet = (int)excel.ReadCellDouble(1, 8); //read p Tally
             int temp = planet+1; //get it ot the next row
 
-            excel.WriteToCell(temp, 2, planetName);
+            excel.WriteToCell(temp, 2, planetName); //put the planet in the box
+            excel.WriteToCell(temp, 1, temp.ToString()); //updates the number next to the cell
+
+            excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
+
             MessageBox.Show(planetName + " added to" + " sheet" + sheet);
             PlanetOrganizer.Text = "Insert Planet Name";
 
@@ -438,33 +442,34 @@ namespace StarportExcel
             }
             // Console.WriteLine("Grow List Cleared");
         }
-        private void PlanetOrganizer_TextChanged(object sender, EventArgs e)
+        private void PlanetSorter_Click(object sender, EventArgs e)
         {
             string planetName = PlanetOrganizer.Text;
 
             for (int i = 0; i < planetName.Length; i++)
             {
-                if (planetName[i].Equals('A') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('c') && i + 2 < planetName.Length) { 
+                if (planetName[i].Equals('A') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('c') && i + 2 < planetName.Length)
+                {
                     AddPlanet(2, planetName);
                     break;
                 }
-                else if (planetName[i].Equals('D') && planetName[i + 1].Equals('e') && planetName[i + 2].Equals('s') && i + 2 < planetName.Length ) { AddPlanet(3, planetName); break; }
+                else if (planetName[i].Equals('D') && planetName[i + 1].Equals('e') && planetName[i + 2].Equals('s') && i + 2 < planetName.Length) { AddPlanet(3, planetName); break; }
                 else if (planetName[i].Equals('E') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r') && i + 2 < planetName.Length) { AddPlanet(4, planetName); break; }
                 else if (planetName[i].Equals('G') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('e') && i + 2 < planetName.Length) { AddPlanet(5, planetName); break; }
                 else if (planetName[i].Equals('M') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('u') && i + 2 < planetName.Length) { AddPlanet(6, planetName); break; }
                 else if (planetName[i].Equals('O') && planetName[i + 1].Equals('c') && planetName[i + 2].Equals('e') && i + 2 < planetName.Length) { AddPlanet(7, planetName); break; }
                 else if (planetName[i].Equals('P') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r') && i + 2 < planetName.Length) { AddPlanet(8, planetName); break; }
                 else if (planetName[i].Equals('R') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('c') && i + 2 < planetName.Length) { AddPlanet(9, planetName); break; }
-                else if (planetName[i].Equals('v') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('l') && i + 2 < planetName.Length) { AddPlanet(10, planetName); break; }
+                else if (planetName[i].Equals('V') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('l') && i + 2 < planetName.Length) { AddPlanet(10, planetName); break; }
                 else { } //MessageBox.Show(planetName + " not found!");                             
 
             }//end i
         }
-      
+
         private Excel OpenFileAt(int num)
         {
             Excel excel = new Excel(excelPath, num);
             return excel;
-        }
+        }        
     }
 }
