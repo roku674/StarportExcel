@@ -141,40 +141,44 @@ namespace StarportExcel
 
             for (int j = 2; j <= 12; j++) // goes through each sheet
             {
-                    Console.WriteLine("Not scanning the Invasion list until i figure out what's going wrong");
-                    Excel excel = OpenFileAt(j);
-                    //Console.WriteLine("Sheet " + j + " opened");
-                    int planet = (int)excel.ReadCellDouble(1, 8);
-                    if (j == 12)
+                Console.WriteLine("Not scanning the Invasion list until i figure out what's going wrong");
+                Excel excel = OpenFileAt(j);
+                //Console.WriteLine("Sheet " + j + " opened");
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                if (j == 11)
+                {
+                    planet = (int)excel.ReadCellDouble(1, 10);
+                }
+                if (j == 12)
+                {
+                    planet = (int)excel.ReadCellDouble(2, 10);
+                    //Console.WriteLine(planet);
+                }
+                //Console.WriteLine("Planet Total: " + planet);
+                for (int i = planet+1; i >= 1; i--) // goes through the planet list
+                {
+                    if (excel.ReadCellString(i, 2) != "")
                     {
-                        planet = (int)excel.ReadCellDouble(2, 10);
-                        //Console.WriteLine(planet);
-                    }
-                    //Console.WriteLine("Planet Total: " + planet);
-                    for (int i = planet + 2 - 1; i >= 1; i--) // goes through the planet list
-                    {
-                        if (excel.ReadCellString(i, 2) != "")
+                        string box = excel.ReadCellString(i, 2);
+                        for (int k = 0; k < box.Length; k++)
                         {
-                            string box = excel.ReadCellString(i, 2);
-                            for (int k = 0; k < box.Length; k++)
+                            if (box[k].Equals('['))
                             {
-                                if (box[k].Equals('['))
-                                {
-                                    box = StringReplacer(k, '(', box);
-                                    excel.WriteToCell(i, 2, box);
-                                    Console.WriteLine(box + " changed!");
-                                }
-                                else if (box[k].Equals(']'))
-                                {
-                                    box = StringReplacer(k, ')', box);
-                                    excel.WriteToCell(i, 2, box);
-                                    Console.WriteLine(box + " changed!");
-                                }
+                                box = StringReplacer(k, '(', box);
+                                excel.WriteToCell(i, 2, box);
+                                Console.WriteLine(box + " changed!");
                             }
-                        } //end if                            
-                    }//end of i loop
+                            else if (box[k].Equals(']'))
+                            {
+                                box = StringReplacer(k, ')', box);
+                                excel.WriteToCell(i, 2, box);
+                                Console.WriteLine(box + " changed!");
+                            }
+                        }
+                    } //end if                            
+                }//end of i loop
 
-                    excel.Close();
+                excel.Close();
 
             }// end of J loop
             MessageBox.Show("converted all brackets into Parenthesis");
@@ -384,7 +388,8 @@ namespace StarportExcel
                 if (box == "")
                 {
                     excel.WriteToCell(i, 11, colony);
-                   // Console.WriteLine(colony + " added to Knee Grow");
+                    excel.WriteToCell(i, 10, i.ToString()); // put number in the box to the left
+                    //Console.WriteLine(colony + " added to Knee Grow");
                     break;
                 }
             }
@@ -410,7 +415,8 @@ namespace StarportExcel
                 string box = excel.ReadCellString(i, 14);
                 if (box == "")
                 {
-                    excel.WriteToCell(i, 14, colony);
+                    excel.WriteToCell(i, 14, colony); //put the colony in the slot
+                    excel.WriteToCell(i, 13, i.ToString()); // put number in the box to the left
                     // Console.WriteLine(colony + " added to Needs Defense");
                     break;
                 }
