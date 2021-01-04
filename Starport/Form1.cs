@@ -433,19 +433,18 @@ namespace StarportExcel
 
             excel.Close();
         }
-        private void ReplacePlanet(int sheet, string newPlanetName)
+        private void replacePlanet(int sheet,int row, string newPlanetName)
         {
             Excel excel = OpenFileAt(sheet);
 
             int planet = (int)excel.ReadCellDouble(1, 8); //read p Tally
-            int temp = planet+1; //get it ot the next row
 
-            excel.WriteToCell(temp, 2, planetName); //put the planet in the box
-            excel.WriteToCell(temp, 1, temp.ToString()); //updates the number next to the cell
+            excel.WriteToCell(row, 2, newPlanetName); //put the planet in the box
+            //excel.WriteToCell(row, 1, row.ToString()); //updates the number next to the cell
 
-            excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
+            MessageBox.Show(newPlanetName + " replaced" + " slot" + row + " on" + " sheet" + sheet);
 
-            MessageBox.Show(planetName + " added to" + " sheet" + sheet);
+
             PlanetOrganizer.Text = "Insert Planet Name";
 
             excel.Close();
@@ -507,17 +506,203 @@ namespace StarportExcel
             {
                 if (newPlanetName[i].Equals('A') && newPlanetName[i + 1].Equals('r') && newPlanetName[i + 2].Equals('c') && i + 2 < newPlanetName.Length)
                 {
-                    AddPlanet(2, newPlanetName);
-                    break;
+                    //i+3 and i+4 are the numbers if its triple digit 3 4 5
+                    if(newPlanetName[i+5] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        replacePlanet(2, int.Parse(s) , newPlanetName);
+                        break;
+                    }
+                    else if (newPlanetName[i + 6] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string str3 = newPlanetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        replacePlanet(2, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                    
                 }
-                else if (newPlanetName[i].Equals('D') && newPlanetName[i + 1].Equals('e') && newPlanetName[i + 2].Equals('s') && i + 2 < newPlanetName.Length) { AddPlanet(3, newPlanetName); break; }
-                else if (newPlanetName[i].Equals('E') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r') && i + 2 < newPlanetName.Length) { AddPlanet(4, newPlanetName); break; }
-                else if (newPlanetName[i].Equals('G') && newPlanetName[i + 1].Equals('r') && newPlanetName[i + 2].Equals('e') && i + 2 < newPlanetName.Length) { AddPlanet(5, newPlanetName); break; }
-                else if (newPlanetName[i].Equals('M') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('u') && i + 2 < newPlanetName.Length) { AddPlanet(6, newPlanetName); break; }
-                else if (newPlanetName[i].Equals('O') && newPlanetName[i + 1].Equals('c') && newPlanetName[i + 2].Equals('e') && i + 2 < newPlanetName.Length) { AddPlanet(7, newPlanetName); break; }
-                else if (newPlanetName[i].Equals('P') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r') && i + 2 < newPlanetName.Length) { AddPlanet(8, newPlanetName); break; }
-                else if (newPlanetName[i].Equals('R') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('c') && i + 2 < newPlanetName.Length) { AddPlanet(9, newPlanetName); break; }
-                else if (newPlanetName[i].Equals('V') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('l') && i + 2 < newPlanetName.Length) { AddPlanet(10, newPlanetName); break; }
+                else if (newPlanetName[i].Equals('D') && newPlanetName[i + 1].Equals('e') && newPlanetName[i + 2].Equals('s') && i + 2 < newPlanetName.Length) {
+
+                    if (newPlanetName[i + 5] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        replacePlanet(3, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                    else if (newPlanetName[i + 6] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string str3 = newPlanetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        replacePlanet(3, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                }
+                else if (newPlanetName[i].Equals('E') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r') && i + 2 < newPlanetName.Length) {
+
+                    if (newPlanetName[i + 5] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        replacePlanet(4, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                    else if (newPlanetName[i + 6] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string str3 = newPlanetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        replacePlanet(4, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                }
+                else if (newPlanetName[i].Equals('G') && newPlanetName[i + 1].Equals('r') && newPlanetName[i + 2].Equals('e') && i + 2 < newPlanetName.Length) {
+
+                    if (newPlanetName[i + 5] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        replacePlanet(5, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                    else if (newPlanetName[i + 6] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string str3 = newPlanetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        replacePlanet(5, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                }
+                else if (newPlanetName[i].Equals('M') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('u') && i + 2 < newPlanetName.Length) {
+
+                    if (newPlanetName[i + 5] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        replacePlanet(6, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                    else if (newPlanetName[i + 6] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string str3 = newPlanetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        replacePlanet(6, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                }
+                else if (newPlanetName[i].Equals('O') && newPlanetName[i + 1].Equals('c') && newPlanetName[i + 2].Equals('e') && i + 2 < newPlanetName.Length) {
+
+                    if (newPlanetName[i + 5] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        replacePlanet(7, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                    else if (newPlanetName[i + 6] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string str3 = newPlanetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        replacePlanet(7, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                }
+                else if (newPlanetName[i].Equals('P') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r') && i + 2 < newPlanetName.Length) {
+
+                    if (newPlanetName[i + 5] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        replacePlanet(8, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                    else if (newPlanetName[i + 6] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string str3 = newPlanetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        replacePlanet(8, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                }
+                else if (newPlanetName[i].Equals('R') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('c') && i + 2 < newPlanetName.Length) {
+
+                    if (newPlanetName[i + 5] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        replacePlanet(9, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                    else if (newPlanetName[i + 6] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string str3 = newPlanetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        replacePlanet(9, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                }
+                else if (newPlanetName[i].Equals('V') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('l') && i + 2 < newPlanetName.Length) {
+                    if (newPlanetName[i + 5] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        replacePlanet(10, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                    else if (newPlanetName[i + 6] == '.')
+                    {
+                        string str1 = newPlanetName[i + 3].ToString();
+                        string str2 = newPlanetName[i + 4].ToString();
+                        string str3 = newPlanetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        replacePlanet(10, int.Parse(s), newPlanetName);
+                        break;
+                    }
+                }
                 else { } //MessageBox.Show(newPlanetName + " not found!");                             
 
             }//end i
