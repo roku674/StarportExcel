@@ -41,6 +41,7 @@ namespace StarportExcel
             this.itsMyWindow = new System.Windows.Forms.TextBox();
             this.PlanetSorter = new System.Windows.Forms.Button();
             this.ClearZounds = new System.Windows.Forms.Button();
+            this.ReplacePlanet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateQuote
@@ -75,7 +76,7 @@ namespace StarportExcel
             // 
             // FindZounds
             // 
-            this.FindZounds.Location = new System.Drawing.Point(332, 238);
+            this.FindZounds.Location = new System.Drawing.Point(332, 265);
             this.FindZounds.Name = "FindZounds";
             this.FindZounds.Size = new System.Drawing.Size(109, 23);
             this.FindZounds.TabIndex = 3;
@@ -148,9 +149,20 @@ namespace StarportExcel
             this.ClearZounds.UseVisualStyleBackColor = true;
             this.ClearZounds.Click += new System.EventHandler(this.ClearZounds_Click);
             // 
+            // ReplacePlanet
+            // 
+            this.ReplacePlanet.Location = new System.Drawing.Point(332, 228);
+            this.ReplacePlanet.Name = "ReplacePlanet";
+            this.ReplacePlanet.Size = new System.Drawing.Size(109, 23);
+            this.ReplacePlanet.TabIndex = 12;
+            this.ReplacePlanet.Text = "Replace";
+            this.ReplacePlanet.UseVisualStyleBackColor = true;
+            this.ReplacePlanet.Click += new System.EventHandler(this.ReplacePlanet_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(590, 434);
+            this.Controls.Add(this.ReplacePlanet);
             this.Controls.Add(this.ClearZounds);
             this.Controls.Add(this.PlanetSorter);
             this.Controls.Add(this.itsMyWindow);
@@ -184,6 +196,7 @@ namespace StarportExcel
         private System.Windows.Forms.TextBox itsMyWindow;
         private System.Windows.Forms.Button PlanetSorter;
         private System.Windows.Forms.Button ClearZounds;
+        private System.Windows.Forms.Button ReplacePlanet;
     }
 }
 

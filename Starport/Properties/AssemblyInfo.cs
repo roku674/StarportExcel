@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Starport")]
 [assembly: AssemblyDescription("Edits my planet excel lists")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Starport")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2021")]
+[assembly: AssemblyCompany("Alexander Fields")]
+[assembly: AssemblyProduct("Starport Excel Editor")]
+[assembly: AssemblyCopyright("Copyright © Alexander Fields || github/roku674")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

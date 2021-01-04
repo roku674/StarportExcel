@@ -139,33 +139,42 @@ namespace StarportExcel
         private void CheckParenthesis_Click(object sender, EventArgs e)
         {
 
-            for (int j = 2; j <= 10; j++) // goes through each sheet
+            for (int j = 2; j <= 12; j++) // goes through each sheet
             {
-                Excel excel = OpenFileAt(j);
-
-                int planet = (int)excel.ReadCellDouble(1, 8);
-                //Console.WriteLine("Planet Total: " + planet);
-                for (int i = 1; i < planet + 2; i++) // goes through the planet list
-                {
-                    if (excel.ReadCellString(i, 2) != "")
+                    Console.WriteLine("Not scanning the Invasion list until i figure out what's going wrong");
+                    Excel excel = OpenFileAt(j);
+                    //Console.WriteLine("Sheet " + j + " opened");
+                    int planet = (int)excel.ReadCellDouble(1, 8);
+                    if (j == 12)
                     {
-                        string box = excel.ReadCellString(i, 2);
-                        for(int k = 0; k < box.Length; k++)
+                        planet = (int)excel.ReadCellDouble(2, 10);
+                        //Console.WriteLine(planet);
+                    }
+                    //Console.WriteLine("Planet Total: " + planet);
+                    for (int i = planet + 2 - 1; i >= 1; i--) // goes through the planet list
+                    {
+                        if (excel.ReadCellString(i, 2) != "")
                         {
-                            if (box[k].Equals('['))
+                            string box = excel.ReadCellString(i, 2);
+                            for (int k = 0; k < box.Length; k++)
                             {
-                                box = StringReplacer(k, '(', box);
-                                excel.WriteToCell(i, 2, box);
+                                if (box[k].Equals('['))
+                                {
+                                    box = StringReplacer(k, '(', box);
+                                    excel.WriteToCell(i, 2, box);
+                                    Console.WriteLine(box + " changed!");
+                                }
+                                else if (box[k].Equals(']'))
+                                {
+                                    box = StringReplacer(k, ')', box);
+                                    excel.WriteToCell(i, 2, box);
+                                    Console.WriteLine(box + " changed!");
+                                }
                             }
-                            else if (box[k].Equals(']'))
-                            {
-                                box = StringReplacer(k, ')', box);
-                                excel.WriteToCell(i, 2, box);
-                            }                            
-                        }                      
-                    } //end if                            
-                }//end of i loop
-                excel.Close();
+                        } //end if                            
+                    }//end of i loop
+
+                    excel.Close();
 
             }// end of J loop
             MessageBox.Show("converted all brackets into Parenthesis");
@@ -424,6 +433,23 @@ namespace StarportExcel
 
             excel.Close();
         }
+        private void ReplacePlanet(int sheet, string newPlanetName)
+        {
+            Excel excel = OpenFileAt(sheet);
+
+            int planet = (int)excel.ReadCellDouble(1, 8); //read p Tally
+            int temp = planet+1; //get it ot the next row
+
+            excel.WriteToCell(temp, 2, planetName); //put the planet in the box
+            excel.WriteToCell(temp, 1, temp.ToString()); //updates the number next to the cell
+
+            excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
+
+            MessageBox.Show(planetName + " added to" + " sheet" + sheet);
+            PlanetOrganizer.Text = "Insert Planet Name";
+
+            excel.Close();
+        }
 
         private void ClearGrowList(Excel excel)
         {
@@ -473,6 +499,31 @@ namespace StarportExcel
 
             }//end i
         }
+        private void ReplacePlanet_Click(object sender, EventArgs e)
+        {
+            string newPlanetName = PlanetOrganizer.Text;
+
+            for (int i = 0; i < newPlanetName.Length; i++)
+            {
+                if (newPlanetName[i].Equals('A') && newPlanetName[i + 1].Equals('r') && newPlanetName[i + 2].Equals('c') && i + 2 < newPlanetName.Length)
+                {
+                    AddPlanet(2, newPlanetName);
+                    break;
+                }
+                else if (newPlanetName[i].Equals('D') && newPlanetName[i + 1].Equals('e') && newPlanetName[i + 2].Equals('s') && i + 2 < newPlanetName.Length) { AddPlanet(3, newPlanetName); break; }
+                else if (newPlanetName[i].Equals('E') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r') && i + 2 < newPlanetName.Length) { AddPlanet(4, newPlanetName); break; }
+                else if (newPlanetName[i].Equals('G') && newPlanetName[i + 1].Equals('r') && newPlanetName[i + 2].Equals('e') && i + 2 < newPlanetName.Length) { AddPlanet(5, newPlanetName); break; }
+                else if (newPlanetName[i].Equals('M') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('u') && i + 2 < newPlanetName.Length) { AddPlanet(6, newPlanetName); break; }
+                else if (newPlanetName[i].Equals('O') && newPlanetName[i + 1].Equals('c') && newPlanetName[i + 2].Equals('e') && i + 2 < newPlanetName.Length) { AddPlanet(7, newPlanetName); break; }
+                else if (newPlanetName[i].Equals('P') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r') && i + 2 < newPlanetName.Length) { AddPlanet(8, newPlanetName); break; }
+                else if (newPlanetName[i].Equals('R') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('c') && i + 2 < newPlanetName.Length) { AddPlanet(9, newPlanetName); break; }
+                else if (newPlanetName[i].Equals('V') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('l') && i + 2 < newPlanetName.Length) { AddPlanet(10, newPlanetName); break; }
+                else { } //MessageBox.Show(newPlanetName + " not found!");                             
+
+            }//end i
+
+
+        }
 
         /// <summary>
         /// Replaces a character in astring
@@ -491,6 +542,8 @@ namespace StarportExcel
         {
             Excel excel = new Excel(excelPath, num);
             return excel;
-        }       
+        }
+
+        
     }
 }
