@@ -67,7 +67,7 @@ namespace StarportExcel
                 "|~{green}~Earths " + earthsZ + "/" + earths +
                 "|~{orange}~Greenhouses " + greenhousesZ + "/" + greenhouses +
                 "|~{brown}~Mountains " + mountainsZ + "/" + mountains +
-                "|~{blue}~Oceans " + oceansZ + "/" + oceans +
+                "|~{blue}~Oceanics " + oceansZ + "/" + oceans +
                 "|~{pink}~Paradises ~{link}1:" + paradises + "~" +
                 "|~{gray}~Rockies " + rockiesZ + "/" + rockies +
                 "|~{red}~Volcanics " + volcanicsZ + "/" + volcanics +
@@ -78,7 +78,7 @@ namespace StarportExcel
                 "|~{green}~Earths " + earthsZ + "/" + earths +
                 "|~{orange}~Greenhouses " + greenhousesZ + "/" + greenhouses +
                 "|~{brown}~Mountains " + mountainsZ + "/" + mountains +
-                "|~{blue}~Oceans " + oceansZ + "/" + oceans +
+                "|~{blue}~Oceanics " + oceansZ + "/" + oceans +
                 "|~{pink}~Paradises ~{link}1:" + paradises + "~" +
                 "|~{gray}~Rockies " + rockiesZ + "/" + rockies +
                 "|~{red}~Volcanics " + volcanicsZ + "/" + volcanics +
@@ -86,7 +86,7 @@ namespace StarportExcel
         }
         private void CheckGrow_Click(object sender, EventArgs e)
         {
-            int max = 20;
+            int max = 300;
             Excel excel = OpenFileAt(1);
             for (int i = 2; i <= max; i++)
             {
@@ -241,35 +241,134 @@ namespace StarportExcel
             MessageBox.Show("Find Grow Done");
         }
         private void FindTotals_Click(object sender, EventArgs e)
-        {            
-            for (int i = 2; i <= 10; i++) // goes through each sheet
+        {
+            //open them up and clear them
+            Excel totals = OpenFileAt(1);
+
+            ClearNDList(totals);
+            ClearGrowList(totals);
+
+            Console.WriteLine("Beginning Totals...\n");
+
+            for (int k = 2; k <= 10; k++) // goes through each sheet
             {
-                Excel excel = OpenFileAt(i);
+                Excel excel = OpenFileAt(k);
 
                 int planet = (int)excel.ReadCellDouble(1, 8);
+
+                excel.WriteToCell(2, 8, 0.ToString());//clear zounds num
+
                 int temp = 0;
                 for (int j = 1; j <= planet + 5; j++) // goes through the planet list
                 {
-                    if (excel.ReadCellString(j, 2) != "")
-                    {
+                    if (excel.ReadCellString(j, 2) != "") //if there's something there
+                    {                       
                         excel.WriteToCell(j, 1, j.ToString()); //writes to the cell to the left and just puts a number in it
                         temp = j;
+
+                        string planetName = excel.ReadCellString(j, 2); //read the name of the planet
+                        //Console.WriteLine(planetName + " found");
+                        int num = j + 1;
+                        //if statement by planet type
+                            if (k == 2)
+                            {                               
+                                string formula = "=Arctics!C" + num;
+                                CheckTotals(totals, excel, planetName, formula);
+                                //Console.WriteLine(planetName + " found");                                        
+                            }
+                            else if (k == 3) {
+                                string formula = "=Deserts!C" + num;
+                                CheckTotals(totals, excel, planetName, formula);
+                            }
+                            else if (k == 4) {
+                                string formula = "=Earths!C" + num;
+                                CheckTotals(totals, excel, planetName, formula);
+                            }
+                            else if (k == 5) {
+                                string formula = "=Greenhouses!C" + num;
+                                CheckTotals(totals, excel, planetName, formula);
+                            }
+                            else if (k == 6) {
+                                string formula = "=Mountains!C" + num;
+                                CheckTotals(totals, excel, planetName, formula);
+                            }
+                            else if (k == 7) {
+                                string formula = "=Oceanics!C" + num;
+                                CheckTotals(totals, excel, planetName, formula);
+                            }
+                            else if (k == 8) {
+                                string formula = "=Paradises!C" + num;
+                                CheckTotals(totals, excel, planetName, formula);
+                            }
+                            else if (k == 9) {
+                                string formula = "=Rockies!C" + num;
+                                CheckTotals(totals, excel, planetName, formula);
+                            }
+                            else if (k == 10) {
+                                string formula = "=Volcanics!C" + num;
+                                CheckTotals(totals, excel, planetName, formula);
+                            }
+                            else { } //MessageBox.Show(planetName + " not found!");                             
                     }
-                    
+            
                 }//end of j loop
 
                 excel.WriteToCell(1, 8, temp.ToString()); //changes the total planets
                 //Console.WriteLine("Planet Total: " + temp);
 
-                excel.Close();
+                excel.Close(); //deallocate
 
             }// end of i loop
-
-            FindZounds_Click(sender, e);
-            FindGrowing_Click(sender, e);
-            FindNeedsDefense_Click(sender, e);
-
+            totals.Close();
+            Console.Write("Done");
             MessageBox.Show("Find Totals Done");
+        }
+        /// <summary>
+        /// Check Totals all at once
+        /// </summary>
+        /// <param name="planetSheet">Planet page you're on</param>
+        /// <param name="planetName">name of planet</param>
+        /// <param name="formula">This will be the formula to be inserted</param>
+        private void CheckTotals(Excel totalsSheet , Excel planetSheet, string planetName,string formula)
+        {
+
+            //Console.WriteLine(" \n Check Totals info: " + planetName + " || " + formula);
+            for (int i = 0; i < planetName.Length; i++) //continue from the First planet letter
+            {
+                if (planetName[i].Equals('.'))
+                {
+                    if (i + 5 < planetName.Length && planetName[i + 5].Equals('Z'))
+                    {
+                        AddToZounds(formula, planetSheet);
+                    }
+                    else { }
+
+                    if (i + 5 < planetName.Length && planetName[i + 5].Equals('G'))
+                    {                       
+                        AddToGrow(formula, totalsSheet);
+                    }
+                    else if (i + 6 < planetName.Length && planetName[i + 6].Equals('G'))
+                    {
+                        AddToGrow(formula, totalsSheet);
+                    }
+                    else { }
+
+                    if (i + 6 < planetName.Length && planetName[i + 5].Equals('N') && planetName[i + 6].Equals('D'))
+                    {
+                        AddToND(formula, totalsSheet);
+                    }
+                    else if (i + 7 < planetName.Length && planetName[i + 6].Equals('N') && planetName[i + 7].Equals('D'))
+                    {
+                        AddToND(formula, totalsSheet);
+                    }
+                    else if (i + 8 < planetName.Length && planetName[i + 7].Equals('N') && planetName[i + 8].Equals('D'))
+                    {
+                        AddToND(formula, totalsSheet);
+                    }
+                    else { }
+                }
+            }
+
         }
         private void FindZounds_Click(object sender, EventArgs e)
         {
@@ -379,45 +478,48 @@ namespace StarportExcel
             MessageBox.Show("Zounds lists Cleared!");
         }
 
-        private void AddToGrow(string colony, Excel excel)
-        {
-            //column 11 is growing on totals
-            for (int i = 2; i < 50; i++)
-            {
-                string box = excel.ReadCellString(i, 11);
-                if (box == "")
-                {
-                    excel.WriteToCell(i, 11, colony);
-                    excel.WriteToCell(i, 10, i.ToString()); // put number in the box to the left
-                    //Console.WriteLine(colony + " added to Knee Grow");
-                    break;
-                }
-            }
-        }
         private void AddToZounds(string colony, Excel excel)
         {
             int zoundsCount = (int)excel.ReadCellDouble(2, 8);
             zoundsCount++; //if it's 0 don't put it in the 0 slot
 
             excel.WriteToCell(zoundsCount, 5, colony); //put colony in here //
-            Console.WriteLine(colony + " added to Zounds to cell [F,"+ zoundsCount + "]");
+            int temp = zoundsCount + 1;
+            Console.WriteLine(colony + " added to Zounds to cell [F," + temp + "]");
 
             excel.WriteToCell(zoundsCount, 4, zoundsCount.ToString()); // this is the 1 2 3 4
 
             excel.WriteToCell(2, 8, zoundsCount.ToString());// changes the total zounds 
 
         }
-        private void AddToND(string colony, Excel excel)
+        private void AddToGrow(string colony, Excel excel)
         {
             //column 11 is growing on totals
-            for (int i = 2; i < 50; i++)
+            for (int i = 2; i < 500; i++)
+            {
+                string box = excel.ReadCellString(i, 11); // column L
+                if (box == "")
+                {
+                    excel.WriteToCell(i, 11, colony);
+                    int temp = i - 1;
+                    excel.WriteToCell(i, 10, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Knee Grow");
+                    break;
+                }
+            }
+        }
+        private void AddToND(string colony, Excel excel)
+        {
+            //column 14 is Needs Defense on totals
+            for (int i = 2; i < 500; i++)
             {
                 string box = excel.ReadCellString(i, 14);
                 if (box == "")
                 {
                     excel.WriteToCell(i, 14, colony); //put the colony in the slot
-                    excel.WriteToCell(i, 13, i.ToString()); // put number in the box to the left
-                    // Console.WriteLine(colony + " added to Needs Defense");
+                    int temp = i - 1;
+                    excel.WriteToCell(i, 13, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Needs Defense");
                     break;
                 }
             }
@@ -434,16 +536,14 @@ namespace StarportExcel
 
             excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
 
-            MessageBox.Show(planetName + " added to" + " sheet" + sheet);
+            MessageBox.Show(planetName + " added to row " + temp +  " sheet " + sheet);
             PlanetOrganizer.Text = "Insert Planet Name";
 
             excel.Close();
         }
-        private void replacePlanet(int sheet,int row, string newPlanetName)
+        private void ReplacePlanetMethod(int sheet,int row, string newPlanetName)
         {
             Excel excel = OpenFileAt(sheet);
-
-            int planet = (int)excel.ReadCellDouble(1, 8); //read p Tally
 
             excel.WriteToCell(row, 2, newPlanetName); //put the planet in the box
             //excel.WriteToCell(row, 1, row.ToString()); //updates the number next to the cell
@@ -458,7 +558,7 @@ namespace StarportExcel
 
         private void ClearGrowList(Excel excel)
         {
-            for (int i = 2; i < 30; i++)
+            for (int i = 2; i < 1000; i++)
             {
                 excel.WriteToCell(i, 11, "");
             }
@@ -475,7 +575,7 @@ namespace StarportExcel
         }
         private void ClearNDList(Excel excel)
         {
-            for (int i = 2; i < 30; i++)
+            for (int i = 2; i < 1000; i++)
             {
                 excel.WriteToCell(i, 14, "");
             }
@@ -519,7 +619,7 @@ namespace StarportExcel
                         string str2 = newPlanetName[i + 4].ToString();
                         string s = str1 + str2;
 
-                        replacePlanet(2, int.Parse(s) , newPlanetName);
+                        ReplacePlanetMethod(2, int.Parse(s) , newPlanetName);
                         break;
                     }
                     else if (newPlanetName[i + 6] == '.')
@@ -529,7 +629,7 @@ namespace StarportExcel
                         string str3 = newPlanetName[i + 5].ToString();
                         string s = str1 + str2 + str3;
 
-                        replacePlanet(2, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(2, int.Parse(s), newPlanetName);
                         break;
                     }
                     
@@ -542,7 +642,7 @@ namespace StarportExcel
                         string str2 = newPlanetName[i + 4].ToString();
                         string s = str1 + str2;
 
-                        replacePlanet(3, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(3, int.Parse(s), newPlanetName);
                         break;
                     }
                     else if (newPlanetName[i + 6] == '.')
@@ -552,7 +652,7 @@ namespace StarportExcel
                         string str3 = newPlanetName[i + 5].ToString();
                         string s = str1 + str2 + str3;
 
-                        replacePlanet(3, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(3, int.Parse(s), newPlanetName);
                         break;
                     }
                 }
@@ -564,7 +664,7 @@ namespace StarportExcel
                         string str2 = newPlanetName[i + 4].ToString();
                         string s = str1 + str2;
 
-                        replacePlanet(4, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(4, int.Parse(s), newPlanetName);
                         break;
                     }
                     else if (newPlanetName[i + 6] == '.')
@@ -574,7 +674,7 @@ namespace StarportExcel
                         string str3 = newPlanetName[i + 5].ToString();
                         string s = str1 + str2 + str3;
 
-                        replacePlanet(4, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(4, int.Parse(s), newPlanetName);
                         break;
                     }
                 }
@@ -586,7 +686,7 @@ namespace StarportExcel
                         string str2 = newPlanetName[i + 4].ToString();
                         string s = str1 + str2;
 
-                        replacePlanet(5, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(5, int.Parse(s), newPlanetName);
                         break;
                     }
                     else if (newPlanetName[i + 6] == '.')
@@ -596,7 +696,7 @@ namespace StarportExcel
                         string str3 = newPlanetName[i + 5].ToString();
                         string s = str1 + str2 + str3;
 
-                        replacePlanet(5, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(5, int.Parse(s), newPlanetName);
                         break;
                     }
                 }
@@ -608,7 +708,7 @@ namespace StarportExcel
                         string str2 = newPlanetName[i + 4].ToString();
                         string s = str1 + str2;
 
-                        replacePlanet(6, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(6, int.Parse(s), newPlanetName);
                         break;
                     }
                     else if (newPlanetName[i + 6] == '.')
@@ -618,7 +718,7 @@ namespace StarportExcel
                         string str3 = newPlanetName[i + 5].ToString();
                         string s = str1 + str2 + str3;
 
-                        replacePlanet(6, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(6, int.Parse(s), newPlanetName);
                         break;
                     }
                 }
@@ -630,7 +730,7 @@ namespace StarportExcel
                         string str2 = newPlanetName[i + 4].ToString();
                         string s = str1 + str2;
 
-                        replacePlanet(7, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(7, int.Parse(s), newPlanetName);
                         break;
                     }
                     else if (newPlanetName[i + 6] == '.')
@@ -640,7 +740,7 @@ namespace StarportExcel
                         string str3 = newPlanetName[i + 5].ToString();
                         string s = str1 + str2 + str3;
 
-                        replacePlanet(7, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(7, int.Parse(s), newPlanetName);
                         break;
                     }
                 }
@@ -652,7 +752,7 @@ namespace StarportExcel
                         string str2 = newPlanetName[i + 4].ToString();
                         string s = str1 + str2;
 
-                        replacePlanet(8, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(8, int.Parse(s), newPlanetName);
                         break;
                     }
                     else if (newPlanetName[i + 6] == '.')
@@ -662,7 +762,7 @@ namespace StarportExcel
                         string str3 = newPlanetName[i + 5].ToString();
                         string s = str1 + str2 + str3;
 
-                        replacePlanet(8, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(8, int.Parse(s), newPlanetName);
                         break;
                     }
                 }
@@ -674,7 +774,7 @@ namespace StarportExcel
                         string str2 = newPlanetName[i + 4].ToString();
                         string s = str1 + str2;
 
-                        replacePlanet(9, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(9, int.Parse(s), newPlanetName);
                         break;
                     }
                     else if (newPlanetName[i + 6] == '.')
@@ -684,7 +784,7 @@ namespace StarportExcel
                         string str3 = newPlanetName[i + 5].ToString();
                         string s = str1 + str2 + str3;
 
-                        replacePlanet(9, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(9, int.Parse(s), newPlanetName);
                         break;
                     }
                 }
@@ -695,7 +795,7 @@ namespace StarportExcel
                         string str2 = newPlanetName[i + 4].ToString();
                         string s = str1 + str2;
 
-                        replacePlanet(10, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(10, int.Parse(s), newPlanetName);
                         break;
                     }
                     else if (newPlanetName[i + 6] == '.')
@@ -705,7 +805,7 @@ namespace StarportExcel
                         string str3 = newPlanetName[i + 5].ToString();
                         string s = str1 + str2 + str3;
 
-                        replacePlanet(10, int.Parse(s), newPlanetName);
+                        ReplacePlanetMethod(10, int.Parse(s), newPlanetName);
                         break;
                     }
                 }
