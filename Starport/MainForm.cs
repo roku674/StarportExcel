@@ -14,7 +14,7 @@ namespace StarportExcel
 {    
     public partial class MainForm : Form
     {
-        string excelPath = @"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx";
+        static string excelPath = @"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx";
         public MainForm()
         {
             InitializeComponent();           
@@ -31,7 +31,6 @@ namespace StarportExcel
         {
 
         }
-
         private void OpenToolStripButton_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
@@ -55,45 +54,9 @@ namespace StarportExcel
         //End of Tool strip stuff
         private void ReturnPlanet_Click(object sender, EventArgs e)
         {
-            string planetToFind = PlanetOrganizer.Text;
-
-            //CustomMessageBox customMessageBox = new CustomMessageBox();
-            /*
-            if ()
-            {
-
-
-            }
-            else if ()
-            {                    
-            }
-            else if ()
-            {                    
-            }
-            else if ()
-            {
-
-            }
-            else if ()
-            {
-            }
-            else if ()
-            {
-            }
-            else if ()
-            {
-            }
-            else if ()
-            {
-            }
-            else if ()
-            {
-            }
-            else {
-                MessageBox.Show(planetToFind + " not found!");
-            }
-            */
-
+            CustomMessageBox customMessageBox = new CustomMessageBox();
+            customMessageBox.SetExcelPath(excelPath);
+            customMessageBox.ShowDialog();           
         }
         private void PlanetSorter_Click(object sender, EventArgs e)
         {
@@ -449,7 +412,7 @@ namespace StarportExcel
                 }//if
             }//for i
             excel.Close();
-            MessageBox.Show("Check Grow Done");
+            MessageBox.Show("Check Grow Done", "Completed");
         }
         private void CheckParenthesis_Click(object sender, EventArgs e)
         {
@@ -553,7 +516,7 @@ namespace StarportExcel
             }// end of J loop
 
             totals.Close();
-            MessageBox.Show("Find Grow Done");
+            MessageBox.Show("Find Grow Done", "Completed");
         }
         private void FindTotals_Click(object sender, EventArgs e)
         {
@@ -636,7 +599,7 @@ namespace StarportExcel
             }// end of i loop
             totals.Close();
             Console.Write("Done");
-            MessageBox.Show("Find Totals Done");
+            MessageBox.Show("Find Totals Done", "Completed");
         }
        
         private void FindZounds_Click(object sender, EventArgs e)
@@ -676,7 +639,7 @@ namespace StarportExcel
                 excel.Close();
 
             }// end of J loop
-            MessageBox.Show("Find Zounds Done");
+            MessageBox.Show("Find Zounds Done", "Completed");
         }
         private void FindNeedsDefense_Click(object sender, EventArgs e)
         {
@@ -733,7 +696,7 @@ namespace StarportExcel
             }// end of J loop
 
             totals.Close();
-            MessageBox.Show("Find Needs Defense Done");
+            MessageBox.Show("Find Needs Defense Done", "Completed");
         }
         private void ClearZounds_Click(object sender, EventArgs e)
         {
@@ -744,7 +707,7 @@ namespace StarportExcel
                 ClearZoundsList(excel, planet);
                 excel.Close();
             }
-            MessageBox.Show("Zounds lists Cleared!");
+            MessageBox.Show("Zounds lists Cleared!",  "Completed");
         }
 
         private void AddToZounds(string colony, Excel excel)
@@ -829,6 +792,7 @@ namespace StarportExcel
         {
             for (int i = 2; i < 1000; i++)
             {
+                excel.WriteToCell(i, 10, "");
                 excel.WriteToCell(i, 11, "");
             }
            // Console.WriteLine("Grow List Cleared");
@@ -846,6 +810,7 @@ namespace StarportExcel
         {
             for (int i = 2; i < 1000; i++)
             {
+                excel.WriteToCell(i, 13, "");
                 excel.WriteToCell(i, 14, "");
             }
             // Console.WriteLine("Grow List Cleared");
@@ -915,6 +880,11 @@ namespace StarportExcel
         {
             Excel excel = new Excel(excelPath, num);
             return excel;
+        }
+
+        public string GetExcelPath()
+        {
+            return excelPath;
         }
         
     } //form1

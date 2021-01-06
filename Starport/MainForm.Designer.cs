@@ -55,7 +55,9 @@ namespace StarportExcel
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.HelpMeNiggaDamnToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // CreateQuote
@@ -70,7 +72,7 @@ namespace StarportExcel
             // 
             // FindGrowing
             // 
-            this.FindGrowing.Location = new System.Drawing.Point(31, 42);
+            this.FindGrowing.Location = new System.Drawing.Point(13, 198);
             this.FindGrowing.Name = "FindGrowing";
             this.FindGrowing.Size = new System.Drawing.Size(109, 23);
             this.FindGrowing.TabIndex = 1;
@@ -80,7 +82,7 @@ namespace StarportExcel
             // 
             // CheckGrow
             // 
-            this.CheckGrow.Location = new System.Drawing.Point(146, 41);
+            this.CheckGrow.Location = new System.Drawing.Point(129, 198);
             this.CheckGrow.Name = "CheckGrow";
             this.CheckGrow.Size = new System.Drawing.Size(110, 23);
             this.CheckGrow.TabIndex = 2;
@@ -90,7 +92,7 @@ namespace StarportExcel
             // 
             // FindZounds
             // 
-            this.FindZounds.Location = new System.Drawing.Point(32, 100);
+            this.FindZounds.Location = new System.Drawing.Point(14, 257);
             this.FindZounds.Name = "FindZounds";
             this.FindZounds.Size = new System.Drawing.Size(108, 23);
             this.FindZounds.TabIndex = 3;
@@ -110,11 +112,11 @@ namespace StarportExcel
             // 
             // FindNeedsDefense
             // 
-            this.FindNeedsDefense.Location = new System.Drawing.Point(32, 70);
+            this.FindNeedsDefense.Location = new System.Drawing.Point(13, 228);
             this.FindNeedsDefense.Name = "FindNeedsDefense";
             this.FindNeedsDefense.Size = new System.Drawing.Size(109, 23);
             this.FindNeedsDefense.TabIndex = 6;
-            this.FindNeedsDefense.Text = "Find Needs Defense";
+            this.FindNeedsDefense.Text = "Find Needs Def";
             this.FindNeedsDefense.UseVisualStyleBackColor = true;
             this.FindNeedsDefense.Click += new System.EventHandler(this.FindNeedsDefense_Click);
             // 
@@ -155,7 +157,7 @@ namespace StarportExcel
             // 
             // ClearZounds
             // 
-            this.ClearZounds.Location = new System.Drawing.Point(146, 100);
+            this.ClearZounds.Location = new System.Drawing.Point(128, 257);
             this.ClearZounds.Name = "ClearZounds";
             this.ClearZounds.Size = new System.Drawing.Size(110, 23);
             this.ClearZounds.TabIndex = 11;
@@ -185,7 +187,7 @@ namespace StarportExcel
             // 
             // ClearNeedsDefense
             // 
-            this.ClearNeedsDefense.Location = new System.Drawing.Point(147, 70);
+            this.ClearNeedsDefense.Location = new System.Drawing.Point(129, 227);
             this.ClearNeedsDefense.Name = "ClearNeedsDefense";
             this.ClearNeedsDefense.Size = new System.Drawing.Size(109, 23);
             this.ClearNeedsDefense.TabIndex = 14;
@@ -282,7 +284,16 @@ namespace StarportExcel
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Form1
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(590, 408);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(590, 434);
             this.Controls.Add(this.toolStrip1);
@@ -300,10 +311,12 @@ namespace StarportExcel
             this.Controls.Add(this.CheckGrow);
             this.Controls.Add(this.FindGrowing);
             this.Controls.Add(this.CreateQuote);
-            this.Name = "Form1";
+            this.Controls.Add(this.pictureBox1);
+            this.Name = "MainForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,6 +350,7 @@ namespace StarportExcel
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton HelpMeNiggaDamnToolStripButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

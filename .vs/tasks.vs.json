@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-CustomMessageBox",
+      "appliesTo": "Starport/CustomMessageBox.cs",
+      "type": "launch"
+    }
+  ]
+}
