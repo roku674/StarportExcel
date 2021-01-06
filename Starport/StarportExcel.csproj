@@ -71,12 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomMessageBox.cs">
+    <Compile Include="GetPlanetByTypeForm.cs">
       <Generator>Compile</Generator>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomMessageBox.Designer.cs">
-      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    <Compile Include="GetPlanetByTypeForm.Designer.cs">
+      <DependentUpon>GetPlanetByTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Excel.cs" />
     <Compile Include="MainForm.cs">
@@ -87,8 +87,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CustomMessageBox.resx">
-      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    <EmbeddedResource Include="GetPlanetByTypeForm.resx">
+      <DependentUpon>GetPlanetByTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

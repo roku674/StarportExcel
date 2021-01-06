@@ -54,7 +54,7 @@ namespace StarportExcel
         //End of Tool strip stuff
         private void ReturnPlanet_Click(object sender, EventArgs e)
         {
-            CustomMessageBox customMessageBox = new CustomMessageBox();
+            GetPlanetByTypeForm customMessageBox = new GetPlanetByTypeForm();
             customMessageBox.SetExcelPath(excelPath);
             customMessageBox.ShowDialog();           
         }
@@ -341,25 +341,25 @@ namespace StarportExcel
             double totals = excel.ReadCellDouble(12, 2);
 
             Console.WriteLine("Arctics " + arcticsZ + "/" + arctics +
-                "|~{yellow}~Deserts " + desertsZ + "/" + deserts +
-                "|~{green}~Earths " + earthsZ + "/" + earths +
-                "|~{orange}~Greenhouses " + greenhousesZ + "/" + greenhouses +
-                "|~{brown}~Mountains " + mountainsZ + "/" + mountains +
-                "|~{blue}~Oceanics " + oceansZ + "/" + oceans +
+                "|~{yellow}~Deserts" + desertsZ + "/" + deserts +
+                "|~{green}~Earths" + earthsZ + "/" + earths +
+                "|~{orange}~Greenhouses" + greenhousesZ + "/" + greenhouses +
+                "|~{brown}~Mountains" + mountainsZ + "/" + mountains +
+                "|~{blue}~Oceanics" + oceansZ + "/" + oceans +
                 "|~{pink}~Paradises ~{link}1:" + paradises + "~" +
-                "|~{gray}~Rockies " + rockiesZ + "/" + rockies +
-                "|~{red}~Volcanics " + volcanicsZ + "/" + volcanics +
+                "|~{gray}~Rockies" + rockiesZ + "/" + rockies +
+                "|~{red}~Volcanics" + volcanicsZ + "/" + volcanics +
                 "|~{cyan}~ Sum: " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~");
 
-            itsMyWindow.Text = "Arctics " + arcticsZ + "/" + arctics +
-                "|~{yellow}~Deserts " + desertsZ + "/" + deserts +
-                "|~{green}~Earths " + earthsZ + "/" + earths +
-                "|~{orange}~Greenhouses " + greenhousesZ + "/" + greenhouses +
-                "|~{brown}~Mountains " + mountainsZ + "/" + mountains +
-                "|~{blue}~Oceanics " + oceansZ + "/" + oceans +
+            itsMyWindow.Text = "Arctic " + arcticsZ + "/" + arctics +
+                "|~{yellow}~Desert " + desertsZ + "/" + deserts +
+                "|~{green}~Earth " + earthsZ + "/" + earths +
+                "|~{orange}~Green " + greenhousesZ + "/" + greenhouses +
+                "|~{brown}~Mount " + mountainsZ + "/" + mountains +
+                "|~{blue}~Ocean " + oceansZ + "/" + oceans +
                 "|~{pink}~Paradises ~{link}1:" + paradises + "~" +
-                "|~{gray}~Rockies " + rockiesZ + "/" + rockies +
-                "|~{red}~Volcanics " + volcanicsZ + "/" + volcanics +
+                "|~{gray}~Rock " + rockiesZ + "/" + rockies +
+                "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
                 "|~{cyan}~ Sum: " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
         }
         private void CheckGrow_Click(object sender, EventArgs e)
@@ -537,7 +537,7 @@ namespace StarportExcel
                 excel.WriteToCell(2, 8, 0.ToString());//clear zounds num
 
                 int temp = 0;
-                for (int j = 1; j <= planet + 5; j++) // goes through the planet list
+                for (int j = 1; j <= planet + 15; j++) // goes through the planet list
                 {
                     if (excel.ReadCellString(j, 2) != "") //if there's something there
                     {                       

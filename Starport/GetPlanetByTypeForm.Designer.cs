@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace StarportExcel
 {
-    partial class CustomMessageBox
+    partial class GetPlanetByTypeForm
     {
         private Button Arctics;
         private Button Deserts;
@@ -35,6 +35,7 @@ namespace StarportExcel
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetPlanetByTypeForm));
             this.Arctics = new System.Windows.Forms.Button();
             this.Deserts = new System.Windows.Forms.Button();
             this.Earths = new System.Windows.Forms.Button();
@@ -158,7 +159,11 @@ namespace StarportExcel
             this.Controls.Add(this.Earths);
             this.Controls.Add(this.Deserts);
             this.Controls.Add(this.Arctics);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "CustomMessageBox";
+            this.Load += new System.EventHandler(this.CustomMessageBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

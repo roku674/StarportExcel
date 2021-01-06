@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Excel;
 
 namespace StarportExcel
 {
-
 	class Excel
 	{
 		readonly string path = "";
-		readonly _Application excel = new Microsoft.Office.Interop.Excel.Application();
+		_Application excel = new Microsoft.Office.Interop.Excel.Application();
 
 		readonly Workbook wb;
 		readonly Worksheet ws;
@@ -75,8 +76,23 @@ namespace StarportExcel
 		public void Close()
 		{
 			Save();
-			wb.Close();
 			GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+			GC.WaitForPendingFinalizers();
+			excel.Quit();
+			Marshal.FinalReleaseComObject(ws);
+			Marshal.FinalReleaseComObject(wb);
+			Marshal.FinalReleaseComObject(excel);
+			GC.Collect();
+			GC.WaitForPendingFinalizers();
+
+		}
+		public void Kill()
+        {
+			Process[] processes = Process.GetProcessesByName("EXCEL");
+			foreach (Process p in processes)
+			{
+				p.Kill();
+			}
 		}
 		//public static int ReleaseComObject(object o);       
 	}

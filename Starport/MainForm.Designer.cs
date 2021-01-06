@@ -312,7 +312,10 @@ namespace StarportExcel
             this.Controls.Add(this.FindGrowing);
             this.Controls.Add(this.CreateQuote);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
