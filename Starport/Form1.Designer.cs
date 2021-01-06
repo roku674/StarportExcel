@@ -30,6 +30,7 @@ namespace StarportExcel
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.CreateQuote = new System.Windows.Forms.Button();
             this.FindGrowing = new System.Windows.Forms.Button();
             this.CheckGrow = new System.Windows.Forms.Button();
@@ -42,6 +43,19 @@ namespace StarportExcel
             this.PlanetSorter = new System.Windows.Forms.Button();
             this.ClearZounds = new System.Windows.Forms.Button();
             this.ReplacePlanet = new System.Windows.Forms.Button();
+            this.ReturnPlanet = new System.Windows.Forms.Button();
+            this.ClearNeedsDefense = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.NewFileToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.OpenToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.SaveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.PrintToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.HelpMeNiggaDamnToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CreateQuote
@@ -56,7 +70,7 @@ namespace StarportExcel
             // 
             // FindGrowing
             // 
-            this.FindGrowing.Location = new System.Drawing.Point(31, 71);
+            this.FindGrowing.Location = new System.Drawing.Point(31, 42);
             this.FindGrowing.Name = "FindGrowing";
             this.FindGrowing.Size = new System.Drawing.Size(109, 23);
             this.FindGrowing.TabIndex = 1;
@@ -66,9 +80,9 @@ namespace StarportExcel
             // 
             // CheckGrow
             // 
-            this.CheckGrow.Location = new System.Drawing.Point(31, 42);
+            this.CheckGrow.Location = new System.Drawing.Point(146, 41);
             this.CheckGrow.Name = "CheckGrow";
-            this.CheckGrow.Size = new System.Drawing.Size(109, 23);
+            this.CheckGrow.Size = new System.Drawing.Size(110, 23);
             this.CheckGrow.TabIndex = 2;
             this.CheckGrow.Text = "Check Grow";
             this.CheckGrow.UseVisualStyleBackColor = true;
@@ -76,9 +90,9 @@ namespace StarportExcel
             // 
             // FindZounds
             // 
-            this.FindZounds.Location = new System.Drawing.Point(332, 265);
+            this.FindZounds.Location = new System.Drawing.Point(32, 100);
             this.FindZounds.Name = "FindZounds";
-            this.FindZounds.Size = new System.Drawing.Size(109, 23);
+            this.FindZounds.Size = new System.Drawing.Size(108, 23);
             this.FindZounds.TabIndex = 3;
             this.FindZounds.Text = "Find Zounds";
             this.FindZounds.UseVisualStyleBackColor = true;
@@ -88,7 +102,7 @@ namespace StarportExcel
             // 
             this.FindTotals.Location = new System.Drawing.Point(332, 42);
             this.FindTotals.Name = "FindTotals";
-            this.FindTotals.Size = new System.Drawing.Size(173, 81);
+            this.FindTotals.Size = new System.Drawing.Size(246, 105);
             this.FindTotals.TabIndex = 4;
             this.FindTotals.Text = "Find Totals";
             this.FindTotals.UseVisualStyleBackColor = true;
@@ -96,7 +110,7 @@ namespace StarportExcel
             // 
             // FindNeedsDefense
             // 
-            this.FindNeedsDefense.Location = new System.Drawing.Point(31, 100);
+            this.FindNeedsDefense.Location = new System.Drawing.Point(32, 70);
             this.FindNeedsDefense.Name = "FindNeedsDefense";
             this.FindNeedsDefense.Size = new System.Drawing.Size(109, 23);
             this.FindNeedsDefense.TabIndex = 6;
@@ -126,7 +140,7 @@ namespace StarportExcel
             // 
             this.itsMyWindow.Location = new System.Drawing.Point(332, 333);
             this.itsMyWindow.Name = "itsMyWindow";
-            this.itsMyWindow.Size = new System.Drawing.Size(235, 20);
+            this.itsMyWindow.Size = new System.Drawing.Size(246, 20);
             this.itsMyWindow.TabIndex = 9;
             // 
             // PlanetSorter
@@ -141,9 +155,9 @@ namespace StarportExcel
             // 
             // ClearZounds
             // 
-            this.ClearZounds.Location = new System.Drawing.Point(469, 237);
+            this.ClearZounds.Location = new System.Drawing.Point(146, 100);
             this.ClearZounds.Name = "ClearZounds";
-            this.ClearZounds.Size = new System.Drawing.Size(109, 23);
+            this.ClearZounds.Size = new System.Drawing.Size(110, 23);
             this.ClearZounds.TabIndex = 11;
             this.ClearZounds.Text = "Clear Zounds";
             this.ClearZounds.UseVisualStyleBackColor = true;
@@ -155,13 +169,125 @@ namespace StarportExcel
             this.ReplacePlanet.Name = "ReplacePlanet";
             this.ReplacePlanet.Size = new System.Drawing.Size(109, 23);
             this.ReplacePlanet.TabIndex = 12;
-            this.ReplacePlanet.Text = "Replace";
+            this.ReplacePlanet.Text = "Replace Planet";
             this.ReplacePlanet.UseVisualStyleBackColor = true;
             this.ReplacePlanet.Click += new System.EventHandler(this.ReplacePlanet_Click);
+            // 
+            // ReturnPlanet
+            // 
+            this.ReturnPlanet.Location = new System.Drawing.Point(332, 257);
+            this.ReturnPlanet.Name = "ReturnPlanet";
+            this.ReturnPlanet.Size = new System.Drawing.Size(109, 23);
+            this.ReturnPlanet.TabIndex = 13;
+            this.ReturnPlanet.Text = "Return Planet";
+            this.ReturnPlanet.UseVisualStyleBackColor = true;
+            this.ReturnPlanet.Click += new System.EventHandler(this.ReturnPlanet_Click);
+            // 
+            // ClearNeedsDefense
+            // 
+            this.ClearNeedsDefense.Location = new System.Drawing.Point(147, 70);
+            this.ClearNeedsDefense.Name = "ClearNeedsDefense";
+            this.ClearNeedsDefense.Size = new System.Drawing.Size(109, 23);
+            this.ClearNeedsDefense.TabIndex = 14;
+            this.ClearNeedsDefense.Text = "Clear ND";
+            this.ClearNeedsDefense.UseVisualStyleBackColor = true;
+            this.ClearNeedsDefense.Click += new System.EventHandler(this.ClearNeedsDefense_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NewFileToolStripButton,
+            this.OpenToolStripButton,
+            this.SaveToolStripButton,
+            this.PrintToolStripButton,
+            this.toolStripSeparator,
+            this.copyToolStripButton,
+            this.toolStripSeparator1,
+            this.HelpMeNiggaDamnToolStripButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(590, 25);
+            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // NewFileToolStripButton
+            // 
+            this.NewFileToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.NewFileToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("NewFileToolStripButton.Image")));
+            this.NewFileToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.NewFileToolStripButton.Name = "NewFileToolStripButton";
+            this.NewFileToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.NewFileToolStripButton.Text = "&New";
+            this.NewFileToolStripButton.Click += new System.EventHandler(this.NewFileToolStripButton_Click);
+            // 
+            // OpenToolStripButton
+            // 
+            this.OpenToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.OpenToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("OpenToolStripButton.Image")));
+            this.OpenToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.OpenToolStripButton.Name = "OpenToolStripButton";
+            this.OpenToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.OpenToolStripButton.Text = "&Open";
+            this.OpenToolStripButton.Click += new System.EventHandler(this.OpenToolStripButton_Click);
+            // 
+            // SaveToolStripButton
+            // 
+            this.SaveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SaveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveToolStripButton.Image")));
+            this.SaveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SaveToolStripButton.Name = "SaveToolStripButton";
+            this.SaveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.SaveToolStripButton.Text = "&Save";
+            // 
+            // PrintToolStripButton
+            // 
+            this.PrintToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.PrintToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("PrintToolStripButton.Image")));
+            this.PrintToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.PrintToolStripButton.Name = "PrintToolStripButton";
+            this.PrintToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.PrintToolStripButton.Text = "&Print";
+            this.PrintToolStripButton.Click += new System.EventHandler(this.PrintToolStripButton_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // copyToolStripButton
+            // 
+            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copyToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton.Image")));
+            this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copyToolStripButton.Name = "copyToolStripButton";
+            this.copyToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.copyToolStripButton.Text = "&Copy";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // HelpMeNiggaDamnToolStripButton
+            // 
+            this.HelpMeNiggaDamnToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.HelpMeNiggaDamnToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("HelpMeNiggaDamnToolStripButton.Image")));
+            this.HelpMeNiggaDamnToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.HelpMeNiggaDamnToolStripButton.Name = "HelpMeNiggaDamnToolStripButton";
+            this.HelpMeNiggaDamnToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.HelpMeNiggaDamnToolStripButton.Text = "He&lp";
+            this.HelpMeNiggaDamnToolStripButton.Click += new System.EventHandler(this.HelpMeNiggaDamnToolStripButton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(590, 434);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.ClearNeedsDefense);
+            this.Controls.Add(this.ReturnPlanet);
             this.Controls.Add(this.ReplacePlanet);
             this.Controls.Add(this.ClearZounds);
             this.Controls.Add(this.PlanetSorter);
@@ -176,6 +302,8 @@ namespace StarportExcel
             this.Controls.Add(this.CreateQuote);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,6 +325,18 @@ namespace StarportExcel
         private System.Windows.Forms.Button PlanetSorter;
         private System.Windows.Forms.Button ClearZounds;
         private System.Windows.Forms.Button ReplacePlanet;
+        private System.Windows.Forms.Button ReturnPlanet;
+        private System.Windows.Forms.Button ClearNeedsDefense;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton NewFileToolStripButton;
+        private System.Windows.Forms.ToolStripButton OpenToolStripButton;
+        private System.Windows.Forms.ToolStripButton SaveToolStripButton;
+        private System.Windows.Forms.ToolStripButton PrintToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripButton copyToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton HelpMeNiggaDamnToolStripButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

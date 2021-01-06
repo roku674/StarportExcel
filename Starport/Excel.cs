@@ -8,11 +8,11 @@ namespace StarportExcel
 
 	class Excel
 	{
-		string path = "";
-		_Application excel = new Microsoft.Office.Interop.Excel.Application();
+		readonly string path = "";
+		readonly _Application excel = new Microsoft.Office.Interop.Excel.Application();
 
-		Workbook wb;
-		Worksheet ws;
+		readonly Workbook wb;
+		readonly Worksheet ws;
 
 		public Excel(string path, int Sheet)
 		{
