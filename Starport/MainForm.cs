@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace StarportExcel
 {    
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         string excelPath = @"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx";
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();           
         }
