@@ -20,8 +20,9 @@ namespace StarportExcel
                 int planetNumber = Int32.Parse(numberBox.Text);
                 Excel excel = OpenFileAt(2);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
-                numberBox.Text = planet;
                 excel.Close();//dellocate
+                numberBox.Text = planet;
+
             }           
         }
 
@@ -32,8 +33,9 @@ namespace StarportExcel
                 int planetNumber = Int32.Parse(numberBox.Text);
                 Excel excel = OpenFileAt(3);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
-                numberBox.Text = planet;
                 excel.Close();//dellocate
+                numberBox.Text = planet;
+
             }
         }
 
@@ -44,8 +46,9 @@ namespace StarportExcel
                 int planetNumber = Int32.Parse(numberBox.Text);
                 Excel excel = OpenFileAt(4);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
-                numberBox.Text = planet;
                 excel.Close();//dellocate
+                numberBox.Text = planet;
+
             }
         }
 
@@ -56,8 +59,9 @@ namespace StarportExcel
                 int planetNumber = Int32.Parse(numberBox.Text);
                 Excel excel = OpenFileAt(5);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
-                numberBox.Text = planet;
                 excel.Close();//dellocate
+                numberBox.Text = planet;
+
             }
         }
 
@@ -68,8 +72,9 @@ namespace StarportExcel
                 int planetNumber = Int32.Parse(numberBox.Text);
                 Excel excel = OpenFileAt(6);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
-                numberBox.Text = planet;
                 excel.Close();//dellocate
+                numberBox.Text = planet;
+
             }
         }
 
@@ -80,8 +85,9 @@ namespace StarportExcel
                 int planetNumber = Int32.Parse(numberBox.Text);
                 Excel excel = OpenFileAt(7);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
-                numberBox.Text = planet;
                 excel.Close();//dellocate
+                numberBox.Text = planet;
+
             }
         }
 
@@ -92,8 +98,9 @@ namespace StarportExcel
                 int planetNumber = Int32.Parse(numberBox.Text);
                 Excel excel = OpenFileAt(8);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
-                numberBox.Text = planet;
                 excel.Close();//dellocate
+                numberBox.Text = planet;
+
             }
         }
 
@@ -104,8 +111,9 @@ namespace StarportExcel
                 int planetNumber = Int32.Parse(numberBox.Text);
                 Excel excel = OpenFileAt(9);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
-                numberBox.Text = planet;
                 excel.Close();//dellocate
+                numberBox.Text = planet;
+
             }
         }
 
@@ -116,8 +124,9 @@ namespace StarportExcel
                 int planetNumber = Int32.Parse(numberBox.Text);
                 Excel excel = OpenFileAt(10);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
-                numberBox.Text = planet;
                 excel.Close();//dellocate
+                numberBox.Text = planet;
+
             }
         }
         private Excel OpenFileAt(int num)

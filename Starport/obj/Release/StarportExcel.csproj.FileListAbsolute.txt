@@ -8,3 +8,4 @@ C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.cs
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.csproj.CoreCompileInputs.cache
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.exe
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.pdb
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.CustomMessageBox.resources

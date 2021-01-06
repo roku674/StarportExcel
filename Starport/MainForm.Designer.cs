@@ -72,7 +72,7 @@ namespace StarportExcel
             // 
             // FindGrowing
             // 
-            this.FindGrowing.Location = new System.Drawing.Point(13, 198);
+            this.FindGrowing.Location = new System.Drawing.Point(12, 173);
             this.FindGrowing.Name = "FindGrowing";
             this.FindGrowing.Size = new System.Drawing.Size(109, 23);
             this.FindGrowing.TabIndex = 1;
@@ -82,7 +82,7 @@ namespace StarportExcel
             // 
             // CheckGrow
             // 
-            this.CheckGrow.Location = new System.Drawing.Point(129, 198);
+            this.CheckGrow.Location = new System.Drawing.Point(128, 173);
             this.CheckGrow.Name = "CheckGrow";
             this.CheckGrow.Size = new System.Drawing.Size(110, 23);
             this.CheckGrow.TabIndex = 2;
@@ -92,7 +92,7 @@ namespace StarportExcel
             // 
             // FindZounds
             // 
-            this.FindZounds.Location = new System.Drawing.Point(14, 257);
+            this.FindZounds.Location = new System.Drawing.Point(11, 311);
             this.FindZounds.Name = "FindZounds";
             this.FindZounds.Size = new System.Drawing.Size(108, 23);
             this.FindZounds.TabIndex = 3;
@@ -102,7 +102,7 @@ namespace StarportExcel
             // 
             // FindTotals
             // 
-            this.FindTotals.Location = new System.Drawing.Point(332, 42);
+            this.FindTotals.Location = new System.Drawing.Point(332, 49);
             this.FindTotals.Name = "FindTotals";
             this.FindTotals.Size = new System.Drawing.Size(246, 105);
             this.FindTotals.TabIndex = 4;
@@ -112,7 +112,7 @@ namespace StarportExcel
             // 
             // FindNeedsDefense
             // 
-            this.FindNeedsDefense.Location = new System.Drawing.Point(13, 228);
+            this.FindNeedsDefense.Location = new System.Drawing.Point(10, 243);
             this.FindNeedsDefense.Name = "FindNeedsDefense";
             this.FindNeedsDefense.Size = new System.Drawing.Size(109, 23);
             this.FindNeedsDefense.TabIndex = 6;
@@ -157,7 +157,7 @@ namespace StarportExcel
             // 
             // ClearZounds
             // 
-            this.ClearZounds.Location = new System.Drawing.Point(128, 257);
+            this.ClearZounds.Location = new System.Drawing.Point(128, 311);
             this.ClearZounds.Name = "ClearZounds";
             this.ClearZounds.Size = new System.Drawing.Size(110, 23);
             this.ClearZounds.TabIndex = 11;
@@ -187,7 +187,7 @@ namespace StarportExcel
             // 
             // ClearNeedsDefense
             // 
-            this.ClearNeedsDefense.Location = new System.Drawing.Point(129, 227);
+            this.ClearNeedsDefense.Location = new System.Drawing.Point(129, 243);
             this.ClearNeedsDefense.Name = "ClearNeedsDefense";
             this.ClearNeedsDefense.Size = new System.Drawing.Size(109, 23);
             this.ClearNeedsDefense.TabIndex = 14;
