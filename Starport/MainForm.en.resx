@@ -118,23 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="FindGrowing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 131</value>
+  </data>
   <data name="CheckGrow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 202</value>
+    <value>129, 160</value>
   </data>
   <data name="FindZounds.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 311</value>
+    <value>12, 330</value>
   </data>
   <data name="FindZounds.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
   <data name="FindNeedsDefense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 243</value>
+    <value>11, 228</value>
   </data>
   <data name="ClearZounds.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 311</value>
+    <value>129, 330</value>
   </data>
   <data name="ClearNeedsDefense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 243</value>
+    <value>129, 228</value>
   </data>
   <data name="NewFileToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4065,6 +4068,9 @@
   <data name="ClearGrow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="ClearGrow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 131</value>
+  </data>
   <data name="ClearGrow.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
   </data>
@@ -4073,6 +4079,9 @@
   </data>
   <data name="CheckND.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="CheckND.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 257</value>
   </data>
   <data name="CheckND.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
