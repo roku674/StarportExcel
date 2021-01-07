@@ -56,6 +56,8 @@ namespace StarportExcel
             this.HelpMeNiggaDamnToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ClearGrow = new System.Windows.Forms.Button();
+            this.CheckND = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -230,9 +232,25 @@ namespace StarportExcel
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
+            // ClearGrow
+            // 
+            resources.ApplyResources(this.ClearGrow, "ClearGrow");
+            this.ClearGrow.Name = "ClearGrow";
+            this.ClearGrow.UseVisualStyleBackColor = true;
+            this.ClearGrow.Click += new System.EventHandler(this.ClearGrow_Click);
+            // 
+            // CheckND
+            // 
+            resources.ApplyResources(this.CheckND, "CheckND");
+            this.CheckND.Name = "CheckND";
+            this.CheckND.UseVisualStyleBackColor = true;
+            this.CheckND.Click += new System.EventHandler(this.CheckND_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.CheckND);
+            this.Controls.Add(this.ClearGrow);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ClearNeedsDefense);
             this.Controls.Add(this.ReturnPlanet);
@@ -253,8 +271,8 @@ namespace StarportExcel
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(MainForm_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -292,6 +310,8 @@ namespace StarportExcel
         private System.Windows.Forms.ToolStripButton HelpMeNiggaDamnToolStripButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button ClearGrow;
+        private System.Windows.Forms.Button CheckND;
     }
 }
 

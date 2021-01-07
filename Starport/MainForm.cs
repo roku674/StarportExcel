@@ -19,14 +19,14 @@ namespace StarportExcel
         
         public MainForm()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             //this.FormClosed += new FormClosedEventHandler(MainForm_FormClosed);
-            MessageBox.Show("Make Sure the excel sheet is closed before pressing anything!", "Warning");
+            //MessageBox.Show("Make Sure the excel sheet is closed before pressing anything!", "Warning");
+            Excel.Kill();
         }
 
         // Tool strip stuff from here down
@@ -53,7 +53,7 @@ namespace StarportExcel
         }
         private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Literally will make a more elaborate help than this later \n sidenote checkout https://github.com/roku674/StarportExcel");
+            MessageBox.Show("Literally will make a more elaborate help than this later \n sidenote checkout https://github.com/roku674/StarportExcel", "Message");
         }
         private void PrintToolStripButton_Click(object sender, EventArgs e)
         {
@@ -401,7 +401,7 @@ namespace StarportExcel
                             else
                             {
                                 //Console.WriteLine("Removed" + box);
-                                MessageBox.Show("Removed: " + box);
+                                MessageBox.Show("Removed: " + box, "Message");
                                 excel.WriteToCell(i, 11, ""); //yeet
 
                                 for (int k = i; k < max; k++)
@@ -421,6 +421,12 @@ namespace StarportExcel
             }//for i
             excel.Close();
             MessageBox.Show("Check Grow Done", "Completed");
+        }
+        private void ClearGrow_Click(object sender, EventArgs e)
+        {
+            Excel excel = new Excel(excelPath, 1);
+            ClearGrowList(excel);
+            excel.Close();
         }
         private void CheckParenthesis_Click(object sender, EventArgs e)
         {
@@ -467,9 +473,55 @@ namespace StarportExcel
                 excel.Close();
 
             }// end of J loop
-            MessageBox.Show("converted all brackets into Parenthesis");
+            MessageBox.Show("converted all brackets into Parenthesis", "Completed");
         }
+        private void CheckND_Click(object sender, EventArgs e)
+        {
+            int max = 300;
+            Excel excel = OpenFileAt(1);
+            for (int i = 2; i <= max; i++)
+            {
+                string box = excel.ReadCellString(i, 14);
+                if (box != "")
+                {
+                    if (excel.ReadCellDouble(i, 13).ToString() != "")
+                    {
+                        int num = i - 1;
+                        excel.WriteToCell(i, 13, num.ToString()); //writes to the cell to the left and just puts a number in it
+                        //Console.WriteLine(i + " added");
+                    }
+                    //Console.WriteLine(box);
+                    for (int j = 0; j < box.Length; j++) //itterate through the string character by character
+                    {
+                        if (box[j].Equals('.'))
+                        {
+                            if (j + 5 < box.Length && box[j + 5].Equals('N')) { }
+                            else if (j + 6 < box.Length && box[j + 6].Equals('N')) { }    
+                            else if (j + 7 < box.Length && box[j + 7].Equals('N')) { }
+                            else
+                            {
+                                //Console.WriteLine("Removed" + box);
+                                MessageBox.Show("Removed: " + box, "Message");
+                                excel.WriteToCell(i, 14, ""); //yeet
 
+                                for (int k = i; k < max; k++)
+                                {
+                                    string next = excel.ReadCellString(k + 1, 14);
+                                    if (next != "")
+                                    {
+                                        excel.WriteToCell(k, 14, next);
+                                        Console.WriteLine("Moved " + next + " up 1");
+                                    }
+                                }//for k                               
+                            }
+                            break; //should break as soon as it finds the first period
+                        } //if .
+                    }//for j
+                }//if
+            }//for i
+            excel.Close();
+            MessageBox.Show("Check Needs Defense Done", "Completed");
+        }
         private void FindGrowing_Click(object sender, EventArgs e)
         {
 
@@ -904,5 +956,6 @@ namespace StarportExcel
             Excel.Kill();
             //Console.WriteLine("Kill Excel called");
         }
+
     } //form1
 }//namespace
