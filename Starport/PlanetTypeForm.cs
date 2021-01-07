@@ -349,6 +349,8 @@ namespace StarportExcel
             File.WriteAllText(outputPath, "");
             OpenOutput();
             output.Flush();
+
+            MessageBox.Show(outputPath + " has been cleared", "Message");
         }
 
         private void LineBreak_Click(object sender, EventArgs e)
