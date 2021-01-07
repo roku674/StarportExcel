@@ -42,7 +42,7 @@ namespace StarportExcel
             {
                 Excel excel = OpenFileAt(2);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
-
+                output.WriteLine("Arctics: ");
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
@@ -70,6 +70,7 @@ namespace StarportExcel
                 Excel excel = OpenFileAt(3);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
+                output.WriteLine("Deserts: ");
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
@@ -98,6 +99,7 @@ namespace StarportExcel
                 Excel excel = OpenFileAt(4);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
+                output.WriteLine("Earthlikes: ");
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
@@ -127,6 +129,7 @@ namespace StarportExcel
                 Excel excel = OpenFileAt(5);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
+                output.WriteLine("Greenhouses: ");
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
@@ -155,6 +158,7 @@ namespace StarportExcel
                 Excel excel = OpenFileAt(6);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
+                output.WriteLine("Mountains: ");
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
@@ -183,6 +187,7 @@ namespace StarportExcel
                 Excel excel = OpenFileAt(7);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
+                output.WriteLine("Oceanics: ");
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
@@ -211,6 +216,7 @@ namespace StarportExcel
                 Excel excel = OpenFileAt(8);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
+                output.WriteLine("Paradises: ");
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
@@ -239,6 +245,7 @@ namespace StarportExcel
                 Excel excel = OpenFileAt(9);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
+                output.WriteLine("Rockies: ");
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
@@ -267,6 +274,7 @@ namespace StarportExcel
                 Excel excel = OpenFileAt(10);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
+                output.WriteLine("Volcanics: ");
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
@@ -274,13 +282,14 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Deserts added to output.txt", "Completed");
+                MessageBox.Show("Volcanics added to output.txt", "Completed");
             }
         }
         private void NeedsDefenses_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
 
+            output.WriteLine("Needs Defense List: ");
             for (int i = 2; i < 200; i++)
             {
 
@@ -296,6 +305,8 @@ namespace StarportExcel
         private void Growing_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
+
+            output.WriteLine("Growing List: ");
             for (int i = 2; i < 200; i++)
             {
                 output.WriteLine(excel.ReadCellString(i, 11)); //needs defense column
