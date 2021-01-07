@@ -71,12 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetPlanetByTypeForm.cs">
+    <Compile Include="PlanetTypeForm.cs">
       <Generator>Compile</Generator>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GetPlanetByTypeForm.Designer.cs">
-      <DependentUpon>GetPlanetByTypeForm.cs</DependentUpon>
+    <Compile Include="PlanetTypeForm.Designer.cs">
+      <DependentUpon>PlanetTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Excel.cs" />
     <Compile Include="MainForm.cs">
@@ -87,8 +87,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GetPlanetByTypeForm.resx">
-      <DependentUpon>GetPlanetByTypeForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.en.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanetTypeForm.en.resx">
+      <DependentUpon>PlanetTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanetTypeForm.resx">
+      <DependentUpon>PlanetTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

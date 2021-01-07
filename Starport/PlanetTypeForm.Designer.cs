@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace StarportExcel
 {
-    partial class GetPlanetByTypeForm
+    partial class PlanetTypeForm
     {
         private Button Arctics;
         private Button Deserts;
@@ -35,7 +35,7 @@ namespace StarportExcel
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetPlanetByTypeForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanetTypeForm));
             this.Arctics = new System.Windows.Forms.Button();
             this.Deserts = new System.Windows.Forms.Button();
             this.Earths = new System.Windows.Forms.Button();
@@ -46,109 +46,116 @@ namespace StarportExcel
             this.Rockies = new System.Windows.Forms.Button();
             this.Volcanics = new System.Windows.Forms.Button();
             this.numberBox = new System.Windows.Forms.TextBox();
+            this.NeedsDefenses = new System.Windows.Forms.Button();
+            this.Growing = new System.Windows.Forms.Button();
+            this.ClearOutput = new System.Windows.Forms.Button();
+            this.LineBreak = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Arctics
             // 
-            this.Arctics.Location = new System.Drawing.Point(12, 41);
+            resources.ApplyResources(this.Arctics, "Arctics");
             this.Arctics.Name = "Arctics";
-            this.Arctics.Size = new System.Drawing.Size(109, 24);
-            this.Arctics.TabIndex = 0;
-            this.Arctics.Text = "Arctics";
             this.Arctics.UseVisualStyleBackColor = true;
             this.Arctics.Click += new System.EventHandler(this.Arctics_Click);
             // 
             // Deserts
             // 
-            this.Deserts.Location = new System.Drawing.Point(127, 41);
+            resources.ApplyResources(this.Deserts, "Deserts");
             this.Deserts.Name = "Deserts";
-            this.Deserts.Size = new System.Drawing.Size(109, 24);
-            this.Deserts.TabIndex = 1;
-            this.Deserts.Text = "Deserts";
             this.Deserts.UseVisualStyleBackColor = true;
             this.Deserts.Click += new System.EventHandler(this.Deserts_Click);
             // 
             // Earths
             // 
-            this.Earths.Location = new System.Drawing.Point(242, 41);
+            resources.ApplyResources(this.Earths, "Earths");
             this.Earths.Name = "Earths";
-            this.Earths.Size = new System.Drawing.Size(109, 24);
-            this.Earths.TabIndex = 2;
-            this.Earths.Text = "Earths";
             this.Earths.UseVisualStyleBackColor = true;
             this.Earths.Click += new System.EventHandler(this.Earths_Click);
             // 
             // Greenhouses
             // 
-            this.Greenhouses.Location = new System.Drawing.Point(357, 41);
+            resources.ApplyResources(this.Greenhouses, "Greenhouses");
             this.Greenhouses.Name = "Greenhouses";
-            this.Greenhouses.Size = new System.Drawing.Size(109, 24);
-            this.Greenhouses.TabIndex = 3;
-            this.Greenhouses.Text = "Greenhouses";
             this.Greenhouses.UseVisualStyleBackColor = true;
             this.Greenhouses.Click += new System.EventHandler(this.Greenhouses_Click);
             // 
             // Mountains
             // 
-            this.Mountains.Location = new System.Drawing.Point(12, 71);
+            resources.ApplyResources(this.Mountains, "Mountains");
             this.Mountains.Name = "Mountains";
-            this.Mountains.Size = new System.Drawing.Size(109, 24);
-            this.Mountains.TabIndex = 4;
-            this.Mountains.Text = "Mountains";
             this.Mountains.UseVisualStyleBackColor = true;
             this.Mountains.Click += new System.EventHandler(this.Mountains_Click);
             // 
             // Oceanics
             // 
-            this.Oceanics.Location = new System.Drawing.Point(127, 71);
+            resources.ApplyResources(this.Oceanics, "Oceanics");
             this.Oceanics.Name = "Oceanics";
-            this.Oceanics.Size = new System.Drawing.Size(109, 24);
-            this.Oceanics.TabIndex = 5;
-            this.Oceanics.Text = "Oceanics";
             this.Oceanics.UseVisualStyleBackColor = true;
             this.Oceanics.Click += new System.EventHandler(this.Oceanics_Click);
             // 
             // Paradises
             // 
-            this.Paradises.Location = new System.Drawing.Point(12, 101);
+            resources.ApplyResources(this.Paradises, "Paradises");
             this.Paradises.Name = "Paradises";
-            this.Paradises.Size = new System.Drawing.Size(454, 51);
-            this.Paradises.TabIndex = 6;
-            this.Paradises.Text = "Paradises";
             this.Paradises.UseVisualStyleBackColor = true;
             this.Paradises.Click += new System.EventHandler(this.Paradises_Click);
             // 
             // Rockies
             // 
-            this.Rockies.Location = new System.Drawing.Point(242, 71);
+            resources.ApplyResources(this.Rockies, "Rockies");
             this.Rockies.Name = "Rockies";
-            this.Rockies.Size = new System.Drawing.Size(109, 24);
-            this.Rockies.TabIndex = 7;
-            this.Rockies.Text = "Rockies";
             this.Rockies.UseVisualStyleBackColor = true;
             this.Rockies.Click += new System.EventHandler(this.Rockies_Click);
             // 
             // Volcanics
             // 
-            this.Volcanics.Location = new System.Drawing.Point(357, 71);
+            resources.ApplyResources(this.Volcanics, "Volcanics");
             this.Volcanics.Name = "Volcanics";
-            this.Volcanics.Size = new System.Drawing.Size(109, 24);
-            this.Volcanics.TabIndex = 8;
-            this.Volcanics.Text = "Volcanics";
             this.Volcanics.UseVisualStyleBackColor = true;
             this.Volcanics.Click += new System.EventHandler(this.Volcanics_Click);
             // 
             // numberBox
             // 
-            this.numberBox.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.numberBox, "numberBox");
             this.numberBox.Name = "numberBox";
-            this.numberBox.Size = new System.Drawing.Size(454, 20);
-            this.numberBox.TabIndex = 9;
-            this.numberBox.Text = "Insert Planet Number here then press the planet type Button.";
             // 
-            // CustomMessageBox
+            // NeedsDefenses
             // 
-            this.ClientSize = new System.Drawing.Size(487, 164);
+            resources.ApplyResources(this.NeedsDefenses, "NeedsDefenses");
+            this.NeedsDefenses.Name = "NeedsDefenses";
+            this.NeedsDefenses.UseVisualStyleBackColor = true;
+            this.NeedsDefenses.Click += new System.EventHandler(this.NeedsDefenses_Click);
+            // 
+            // Growing
+            // 
+            resources.ApplyResources(this.Growing, "Growing");
+            this.Growing.Name = "Growing";
+            this.Growing.UseVisualStyleBackColor = true;
+            this.Growing.Click += new System.EventHandler(this.Growing_Click);
+            // 
+            // ClearOutput
+            // 
+            resources.ApplyResources(this.ClearOutput, "ClearOutput");
+            this.ClearOutput.Name = "ClearOutput";
+            this.ClearOutput.UseVisualStyleBackColor = true;
+            this.ClearOutput.Click += new System.EventHandler(this.ClearOutput_Click);
+            // 
+            // LineBreak
+            // 
+            resources.ApplyResources(this.LineBreak, "LineBreak");
+            this.LineBreak.Name = "LineBreak";
+            this.LineBreak.UseVisualStyleBackColor = true;
+            this.LineBreak.Click += new System.EventHandler(this.LineBreak_Click);
+            // 
+            // PlanetTypeForm
+            // 
+            resources.ApplyResources(this, "$this");
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Controls.Add(this.LineBreak);
+            this.Controls.Add(this.ClearOutput);
+            this.Controls.Add(this.Growing);
+            this.Controls.Add(this.NeedsDefenses);
             this.Controls.Add(this.numberBox);
             this.Controls.Add(this.Volcanics);
             this.Controls.Add(this.Rockies);
@@ -160,15 +167,19 @@ namespace StarportExcel
             this.Controls.Add(this.Deserts);
             this.Controls.Add(this.Arctics);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "CustomMessageBox";
-            this.Load += new System.EventHandler(this.CustomMessageBox_Load);
+            this.Name = "PlanetTypeForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlanetTypeForm_FormClosing);
+            this.Load += new System.EventHandler(this.PlanetTypeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         } //init
 
         private System.Windows.Forms.TextBox numberBox;
+        private Button NeedsDefenses;
+        private Button Growing;
+        private Button ClearOutput;
+        private Button LineBreak;
     }//class
 }//namespace

@@ -62,141 +62,101 @@ namespace StarportExcel
             // 
             // CreateQuote
             // 
-            this.CreateQuote.Location = new System.Drawing.Point(332, 359);
+            resources.ApplyResources(this.CreateQuote, "CreateQuote");
             this.CreateQuote.Name = "CreateQuote";
-            this.CreateQuote.Size = new System.Drawing.Size(109, 23);
-            this.CreateQuote.TabIndex = 0;
-            this.CreateQuote.Text = "Create Quote";
             this.CreateQuote.UseVisualStyleBackColor = true;
             this.CreateQuote.Click += new System.EventHandler(this.CreateQuote_Click);
             // 
             // FindGrowing
             // 
-            this.FindGrowing.Location = new System.Drawing.Point(12, 173);
+            resources.ApplyResources(this.FindGrowing, "FindGrowing");
             this.FindGrowing.Name = "FindGrowing";
-            this.FindGrowing.Size = new System.Drawing.Size(109, 23);
-            this.FindGrowing.TabIndex = 1;
-            this.FindGrowing.Text = "Find Growing";
             this.FindGrowing.UseVisualStyleBackColor = true;
             this.FindGrowing.Click += new System.EventHandler(this.FindGrowing_Click);
             // 
             // CheckGrow
             // 
-            this.CheckGrow.Location = new System.Drawing.Point(128, 173);
+            resources.ApplyResources(this.CheckGrow, "CheckGrow");
             this.CheckGrow.Name = "CheckGrow";
-            this.CheckGrow.Size = new System.Drawing.Size(110, 23);
-            this.CheckGrow.TabIndex = 2;
-            this.CheckGrow.Text = "Check Grow";
             this.CheckGrow.UseVisualStyleBackColor = true;
             this.CheckGrow.Click += new System.EventHandler(this.CheckGrow_Click);
             // 
             // FindZounds
             // 
-            this.FindZounds.Location = new System.Drawing.Point(11, 311);
+            resources.ApplyResources(this.FindZounds, "FindZounds");
             this.FindZounds.Name = "FindZounds";
-            this.FindZounds.Size = new System.Drawing.Size(108, 23);
-            this.FindZounds.TabIndex = 3;
-            this.FindZounds.Text = "Find Zounds";
             this.FindZounds.UseVisualStyleBackColor = true;
             this.FindZounds.Click += new System.EventHandler(this.FindZounds_Click);
             // 
             // FindTotals
             // 
-            this.FindTotals.Location = new System.Drawing.Point(332, 49);
+            resources.ApplyResources(this.FindTotals, "FindTotals");
             this.FindTotals.Name = "FindTotals";
-            this.FindTotals.Size = new System.Drawing.Size(246, 105);
-            this.FindTotals.TabIndex = 4;
-            this.FindTotals.Text = "Find Totals";
             this.FindTotals.UseVisualStyleBackColor = true;
             this.FindTotals.Click += new System.EventHandler(this.FindTotals_Click);
             // 
             // FindNeedsDefense
             // 
-            this.FindNeedsDefense.Location = new System.Drawing.Point(10, 243);
+            resources.ApplyResources(this.FindNeedsDefense, "FindNeedsDefense");
             this.FindNeedsDefense.Name = "FindNeedsDefense";
-            this.FindNeedsDefense.Size = new System.Drawing.Size(109, 23);
-            this.FindNeedsDefense.TabIndex = 6;
-            this.FindNeedsDefense.Text = "Find Needs Def";
             this.FindNeedsDefense.UseVisualStyleBackColor = true;
             this.FindNeedsDefense.Click += new System.EventHandler(this.FindNeedsDefense_Click);
             // 
             // CheckParenthesis
             // 
-            this.CheckParenthesis.Location = new System.Drawing.Point(469, 199);
+            resources.ApplyResources(this.CheckParenthesis, "CheckParenthesis");
             this.CheckParenthesis.Name = "CheckParenthesis";
-            this.CheckParenthesis.Size = new System.Drawing.Size(109, 23);
-            this.CheckParenthesis.TabIndex = 7;
-            this.CheckParenthesis.Text = "Check Parenthesis";
             this.CheckParenthesis.UseVisualStyleBackColor = true;
             this.CheckParenthesis.Click += new System.EventHandler(this.CheckParenthesis_Click);
             // 
             // PlanetOrganizer
             // 
-            this.PlanetOrganizer.Location = new System.Drawing.Point(332, 173);
+            resources.ApplyResources(this.PlanetOrganizer, "PlanetOrganizer");
             this.PlanetOrganizer.Name = "PlanetOrganizer";
-            this.PlanetOrganizer.Size = new System.Drawing.Size(246, 20);
-            this.PlanetOrganizer.TabIndex = 8;
-            this.PlanetOrganizer.Text = "Insert Planet Name";
             // 
             // itsMyWindow
             // 
-            this.itsMyWindow.Location = new System.Drawing.Point(332, 333);
+            resources.ApplyResources(this.itsMyWindow, "itsMyWindow");
             this.itsMyWindow.Name = "itsMyWindow";
-            this.itsMyWindow.Size = new System.Drawing.Size(246, 20);
-            this.itsMyWindow.TabIndex = 9;
             // 
             // PlanetSorter
             // 
-            this.PlanetSorter.Location = new System.Drawing.Point(332, 199);
+            resources.ApplyResources(this.PlanetSorter, "PlanetSorter");
             this.PlanetSorter.Name = "PlanetSorter";
-            this.PlanetSorter.Size = new System.Drawing.Size(109, 23);
-            this.PlanetSorter.TabIndex = 10;
-            this.PlanetSorter.Text = "Sort Planet";
             this.PlanetSorter.UseVisualStyleBackColor = true;
             this.PlanetSorter.Click += new System.EventHandler(this.PlanetSorter_Click);
             // 
             // ClearZounds
             // 
-            this.ClearZounds.Location = new System.Drawing.Point(128, 311);
+            resources.ApplyResources(this.ClearZounds, "ClearZounds");
             this.ClearZounds.Name = "ClearZounds";
-            this.ClearZounds.Size = new System.Drawing.Size(110, 23);
-            this.ClearZounds.TabIndex = 11;
-            this.ClearZounds.Text = "Clear Zounds";
             this.ClearZounds.UseVisualStyleBackColor = true;
             this.ClearZounds.Click += new System.EventHandler(this.ClearZounds_Click);
             // 
             // ReplacePlanet
             // 
-            this.ReplacePlanet.Location = new System.Drawing.Point(332, 228);
+            resources.ApplyResources(this.ReplacePlanet, "ReplacePlanet");
             this.ReplacePlanet.Name = "ReplacePlanet";
-            this.ReplacePlanet.Size = new System.Drawing.Size(109, 23);
-            this.ReplacePlanet.TabIndex = 12;
-            this.ReplacePlanet.Text = "Replace Planet";
             this.ReplacePlanet.UseVisualStyleBackColor = true;
             this.ReplacePlanet.Click += new System.EventHandler(this.ReplacePlanet_Click);
             // 
             // ReturnPlanet
             // 
-            this.ReturnPlanet.Location = new System.Drawing.Point(332, 257);
+            resources.ApplyResources(this.ReturnPlanet, "ReturnPlanet");
             this.ReturnPlanet.Name = "ReturnPlanet";
-            this.ReturnPlanet.Size = new System.Drawing.Size(109, 23);
-            this.ReturnPlanet.TabIndex = 13;
-            this.ReturnPlanet.Text = "Return Planet";
             this.ReturnPlanet.UseVisualStyleBackColor = true;
             this.ReturnPlanet.Click += new System.EventHandler(this.ReturnPlanet_Click);
             // 
             // ClearNeedsDefense
             // 
-            this.ClearNeedsDefense.Location = new System.Drawing.Point(129, 243);
+            resources.ApplyResources(this.ClearNeedsDefense, "ClearNeedsDefense");
             this.ClearNeedsDefense.Name = "ClearNeedsDefense";
-            this.ClearNeedsDefense.Size = new System.Drawing.Size(109, 23);
-            this.ClearNeedsDefense.TabIndex = 14;
-            this.ClearNeedsDefense.Text = "Clear ND";
             this.ClearNeedsDefense.UseVisualStyleBackColor = true;
             this.ClearNeedsDefense.Click += new System.EventHandler(this.ClearNeedsDefense_Click);
             // 
             // toolStrip1
             // 
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewFileToolStripButton,
             this.OpenToolStripButton,
@@ -206,96 +166,73 @@ namespace StarportExcel
             this.copyToolStripButton,
             this.toolStripSeparator1,
             this.HelpMeNiggaDamnToolStripButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(590, 25);
-            this.toolStrip1.TabIndex = 15;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // NewFileToolStripButton
             // 
+            resources.ApplyResources(this.NewFileToolStripButton, "NewFileToolStripButton");
             this.NewFileToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.NewFileToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("NewFileToolStripButton.Image")));
-            this.NewFileToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewFileToolStripButton.Name = "NewFileToolStripButton";
-            this.NewFileToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.NewFileToolStripButton.Text = "&New";
             this.NewFileToolStripButton.Click += new System.EventHandler(this.NewFileToolStripButton_Click);
             // 
             // OpenToolStripButton
             // 
+            resources.ApplyResources(this.OpenToolStripButton, "OpenToolStripButton");
             this.OpenToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OpenToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("OpenToolStripButton.Image")));
-            this.OpenToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OpenToolStripButton.Name = "OpenToolStripButton";
-            this.OpenToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.OpenToolStripButton.Text = "&Open";
             this.OpenToolStripButton.Click += new System.EventHandler(this.OpenToolStripButton_Click);
             // 
             // SaveToolStripButton
             // 
+            resources.ApplyResources(this.SaveToolStripButton, "SaveToolStripButton");
             this.SaveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.SaveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveToolStripButton.Image")));
-            this.SaveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveToolStripButton.Name = "SaveToolStripButton";
-            this.SaveToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.SaveToolStripButton.Text = "&Save";
+            this.SaveToolStripButton.Click += new System.EventHandler(this.SaveToolStripButton_Click);
             // 
             // PrintToolStripButton
             // 
+            resources.ApplyResources(this.PrintToolStripButton, "PrintToolStripButton");
             this.PrintToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.PrintToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("PrintToolStripButton.Image")));
-            this.PrintToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PrintToolStripButton.Name = "PrintToolStripButton";
-            this.PrintToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.PrintToolStripButton.Text = "&Print";
             this.PrintToolStripButton.Click += new System.EventHandler(this.PrintToolStripButton_Click);
             // 
             // toolStripSeparator
             // 
+            resources.ApplyResources(this.toolStripSeparator, "toolStripSeparator");
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
             // copyToolStripButton
             // 
+            resources.ApplyResources(this.copyToolStripButton, "copyToolStripButton");
             this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copyToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton.Image")));
-            this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripButton.Name = "copyToolStripButton";
-            this.copyToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.copyToolStripButton.Text = "&Copy";
             // 
             // toolStripSeparator1
             // 
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // HelpMeNiggaDamnToolStripButton
             // 
+            resources.ApplyResources(this.HelpMeNiggaDamnToolStripButton, "HelpMeNiggaDamnToolStripButton");
             this.HelpMeNiggaDamnToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.HelpMeNiggaDamnToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("HelpMeNiggaDamnToolStripButton.Image")));
-            this.HelpMeNiggaDamnToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.HelpMeNiggaDamnToolStripButton.Name = "HelpMeNiggaDamnToolStripButton";
-            this.HelpMeNiggaDamnToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.HelpMeNiggaDamnToolStripButton.Text = "He&lp";
             this.HelpMeNiggaDamnToolStripButton.Click += new System.EventHandler(this.HelpMeNiggaDamnToolStripButton_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 28);
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(590, 408);
-            this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(590, 434);
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ClearNeedsDefense);
             this.Controls.Add(this.ReturnPlanet);
@@ -312,11 +249,12 @@ namespace StarportExcel
             this.Controls.Add(this.FindGrowing);
             this.Controls.Add(this.CreateQuote);
             this.Controls.Add(this.pictureBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(MainForm_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -9,20 +9,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace StarportExcel
 {    
     public partial class MainForm : Form
     {
-        static string excelPath = @"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx";
+        public static string excelPath = @"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx";
+        
         public MainForm()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Make Sure the excel sheet is closed before pressing anything!", "Message");
+            //this.FormClosed += new FormClosedEventHandler(MainForm_FormClosed);
+            MessageBox.Show("Make Sure the excel sheet is closed before pressing anything!", "Warning");
         }
 
         // Tool strip stuff from here down
@@ -40,8 +44,12 @@ namespace StarportExcel
             //Check to see if a filename was given
             if (openFileDialog1.FileName != "" && openFileDialog1.FileName != null)
             {
-                excelPath = System.IO.File.ReadAllText(openFileDialog1.FileName);
+                SetExcelPath(File.ReadAllText(openFileDialog1.FileName));
             }
+        }
+        private void SaveToolStripButton_Click(object sender, EventArgs e)
+        {
+
         }
         private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
         {
@@ -54,7 +62,7 @@ namespace StarportExcel
         //End of Tool strip stuff
         private void ReturnPlanet_Click(object sender, EventArgs e)
         {
-            GetPlanetByTypeForm customMessageBox = new GetPlanetByTypeForm();
+            PlanetTypeForm customMessageBox = new PlanetTypeForm();
             customMessageBox.SetExcelPath(excelPath);
             customMessageBox.ShowDialog();           
         }
@@ -885,6 +893,16 @@ namespace StarportExcel
         public string GetExcelPath()
         {
             return excelPath;
+        }
+        public void SetExcelPath(string path)
+        {
+            excelPath = path;
+        }
+
+        private void MainForm_FormClosing(object sender, CancelEventArgs e)
+        {
+            Excel.Kill();
+            //Console.WriteLine("Kill Excel called");
         }
     } //form1
 }//namespace

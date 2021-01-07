@@ -12,8 +12,8 @@ namespace StarportExcel
 		readonly string path = "";
 		_Application excel = new Microsoft.Office.Interop.Excel.Application();
 
-		readonly Workbook wb;
-		readonly Worksheet ws;
+		Workbook wb;
+		Worksheet ws;
 
 		public Excel(string path, int Sheet)
 		{
@@ -86,7 +86,7 @@ namespace StarportExcel
 			GC.WaitForPendingFinalizers();
 
 		}
-		public void Kill()
+		public static void Kill()
         {
 			Process[] processes = Process.GetProcessesByName("EXCEL");
 			foreach (Process p in processes)

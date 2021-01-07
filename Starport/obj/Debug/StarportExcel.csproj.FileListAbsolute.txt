@@ -6,6 +6,6 @@ C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\StarportExcel.exe.
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\StarportExcel.exe
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\StarportExcel.pdb
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.csprojAssemblyReference.cache
-C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.CustomMessageBox.resources
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.exe
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.pdb
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.PlanetTypeForm.resources
