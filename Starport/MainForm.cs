@@ -675,17 +675,17 @@ namespace StarportExcel
                         {
                             if (box[k].Equals('.'))
                             {
-                                if (k + 6 < box.Length && box[k + 5].Equals('N') && box[k + 6].Equals('D'))
+                                if (k + 5 < box.Length && box[k + 5].Equals('N'))
                                 {
                                     AddToND(box, totals);
                                     break;
                                 }
-                                else if (k + 7 < box.Length && box[k + 6].Equals('N') && box[k + 7].Equals('D'))
+                                else if (k + 6 < box.Length && box[k + 6].Equals('N') )
                                 {
                                     AddToND(box, totals);
                                     break;
                                 }
-                                else if (k + 8 < box.Length && box[k + 7].Equals('N') && box[k + 8].Equals('D'))
+                                else if (k + 7 < box.Length && box[k + 7].Equals('N'))
                                 {
                                     AddToND(box, totals);
                                     break;
@@ -743,7 +743,7 @@ namespace StarportExcel
                     excel.WriteToCell(i, 11, colony);
                     int temp = i - 1;
                     excel.WriteToCell(i, 10, temp.ToString()); // put number in the box to the left
-                    Console.WriteLine(colony + " added to Knee Grow");
+                    Console.WriteLine(colony + " added to Knee Grow", "Completed");
                     break;
                 }
             }
@@ -759,7 +759,7 @@ namespace StarportExcel
                     excel.WriteToCell(i, 14, colony); //put the colony in the slot
                     int temp = i - 1;
                     excel.WriteToCell(i, 13, temp.ToString()); // put number in the box to the left
-                    Console.WriteLine(colony + " added to Needs Defense");
+                    Console.WriteLine(colony + " added to Needs Defense", "Completed");
                     break;
                 }
             }
@@ -776,7 +776,7 @@ namespace StarportExcel
 
             excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
 
-            MessageBox.Show(planetName + " added to row " + temp +  " sheet " + sheet);
+            MessageBox.Show(planetName + " added to row " + temp +  " sheet " + sheet, "Completed");
             PlanetOrganizer.Text = "Insert Planet Name";
 
             excel.Close();
@@ -788,7 +788,7 @@ namespace StarportExcel
             excel.WriteToCell(row, 2, newPlanetName); //put the planet in the box
             //excel.WriteToCell(row, 1, row.ToString()); //updates the number next to the cell
 
-            MessageBox.Show(newPlanetName + " replaced" + " slot" + row + " on" + " sheet" + sheet);
+            MessageBox.Show(newPlanetName + " replaced" + " slot" + row + " on" + " sheet" + sheet, "Completed");
 
 
             PlanetOrganizer.Text = "Insert Planet Name";
