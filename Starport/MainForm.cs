@@ -354,7 +354,7 @@ namespace StarportExcel
                 "|~{yellow}~Deserts" + desertsZ + "/" + deserts +
                 "|~{green}~Earths" + earthsZ + "/" + earths +
                 "|~{orange}~Greenhouses" + greenhousesZ + "/" + greenhouses +
-                "|~{purple}~Mountains" + mountainsZ + "/" + mountains +
+                "|~{brown}~Mountains" + mountainsZ + "/" + mountains +
                 "|~{blue}~Oceanics" + oceansZ + "/" + oceans +
                 "|~{pink}~Paradises ~{link}1:" + paradises + "~" +
                 "|~{gray}~Rockies" + rockiesZ + "/" + rockies +
@@ -365,7 +365,7 @@ namespace StarportExcel
                 "|~{yellow}~Desert " + desertsZ + "/" + deserts +
                 "|~{green}~Earth " + earthsZ + "/" + earths +
                 "|~{orange}~Green " + greenhousesZ + "/" + greenhouses +
-                "|~{purple}~Mount " + mountainsZ + "/" + mountains +
+                "|~{brown}~Mount " + mountainsZ + "/" + mountains +
                 "|~{blue}~Ocean " + oceansZ + "/" + oceans +
                 "|~{pink}~Paradises ~{link}1:" + paradises + "~" +
                 "|~{gray}~Rock " + rockiesZ + "/" + rockies +
