@@ -9,7 +9,3 @@ C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.cspr
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.exe
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.pdb
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.PlanetTypeForm.resources
-C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\en\StarportExcel.resources.dll
-C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.MainForm.en.resources
-C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.PlanetTypeForm.en.resources
-C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\en\StarportExcel.resources.dll
