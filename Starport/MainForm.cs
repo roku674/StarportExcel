@@ -348,6 +348,8 @@ namespace StarportExcel
             double totalsZ = excel.ReadCellDouble(12, 3);
             double totals = excel.ReadCellDouble(12, 2);
 
+            double invasions = excel.ReadCellDouble(15, 2);
+
             Console.WriteLine("Arctics " + arcticsZ + "/" + arctics +
                 "|~{yellow}~Deserts" + desertsZ + "/" + deserts +
                 "|~{green}~Earths" + earthsZ + "/" + earths +
@@ -368,6 +370,7 @@ namespace StarportExcel
                 "|~{pink}~Paradises ~{link}1:" + paradises + "~" +
                 "|~{gray}~Rock " + rockiesZ + "/" + rockies +
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
+                "|~{link}25:Captured:~ " + invasions + 
                 "|~{cyan}~ Sum: " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
         }
         private void CheckGrow_Click(object sender, EventArgs e)
