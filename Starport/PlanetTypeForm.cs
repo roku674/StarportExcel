@@ -22,6 +22,7 @@ namespace StarportExcel
         }
         private void PlanetTypeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            output.Flush();
             CloseOutput();
         }
 

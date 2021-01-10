@@ -886,7 +886,6 @@ namespace StarportExcel
         /// <param name="formula">This will be the formula to be inserted</param>
         private void CheckTotals(Excel totalsSheet, Excel planetSheet, string planetName, string formula)
         {
-
             //Console.WriteLine(" \n Check Totals info: " + planetName + " || " + formula);
             for (int i = 0; i < planetName.Length; i++) //continue from the First planet letter
             {
