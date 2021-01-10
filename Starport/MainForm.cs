@@ -778,11 +778,10 @@ namespace StarportExcel
             int zoundsCount = (int)excel.ReadCellDouble(2, 8);
             zoundsCount++; //if it's 0 don't put it in the 0 slot
 
+            excel.WriteToCell(zoundsCount, 4, zoundsCount.ToString()); // this is the 1 2 3 4
             excel.WriteToCell(zoundsCount, 5, colony); //put colony in here //
             int temp = zoundsCount + 1;
             Console.WriteLine(colony + " added to Zounds to cell [F," + temp + "]");
-
-            excel.WriteToCell(zoundsCount, 4, zoundsCount.ToString()); // this is the 1 2 3 4
 
             excel.WriteToCell(2, 8, zoundsCount.ToString());// changes the total zounds 
 
@@ -826,8 +825,9 @@ namespace StarportExcel
             int planet = (int)excel.ReadCellDouble(1, 8); //read p Tally
             int temp = planet+1; //get it ot the next row
 
-            excel.WriteToCell(temp, 2, planetName); //put the planet in the box
             excel.WriteToCell(temp, 1, temp.ToString()); //updates the number next to the cell
+            excel.WriteToCell(temp, 2, planetName); //put the planet in the box
+           
 
             excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
 
