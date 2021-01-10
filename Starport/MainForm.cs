@@ -588,7 +588,7 @@ namespace StarportExcel
 
             ClearNDList(totals);
             ClearGrowList(totals);
-
+            
             Console.WriteLine("Beginning Totals...\n");
 
             for (int k = 2; k <= 10; k++) // goes through each sheet
@@ -862,9 +862,9 @@ namespace StarportExcel
         }
         private void ClearZoundsList(Excel excel, int planets)
         {
-            for(int i = 1; i <= planets; i++)
-            {
-                excel.WriteToCell(2, 8, 0.ToString());
+            excel.WriteToCell(2, 8, 0.ToString());
+            for (int i = 1; i <= planets; i++)
+            {                
                 excel.WriteToCell(i, 5, "");
             }
             //Console.WriteLine("Zounds List Cleared");
