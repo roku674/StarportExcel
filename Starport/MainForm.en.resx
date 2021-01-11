@@ -136,6 +136,15 @@
   <data name="ClearZounds.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 330</value>
   </data>
+  <data name="ReplacePlanet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 199</value>
+  </data>
+  <data name="ReplacePlanet.Text" xml:space="preserve">
+    <value>Add/Replace Planet</value>
+  </data>
+  <data name="ReturnPlanet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 228</value>
+  </data>
   <data name="ClearNeedsDefense.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 228</value>
   </data>

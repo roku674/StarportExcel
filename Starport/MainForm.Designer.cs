@@ -40,7 +40,6 @@ namespace StarportExcel
             this.CheckParenthesis = new System.Windows.Forms.Button();
             this.PlanetOrganizer = new System.Windows.Forms.TextBox();
             this.itsMyWindow = new System.Windows.Forms.TextBox();
-            this.PlanetSorter = new System.Windows.Forms.Button();
             this.ClearZounds = new System.Windows.Forms.Button();
             this.ReplacePlanet = new System.Windows.Forms.Button();
             this.ReturnPlanet = new System.Windows.Forms.Button();
@@ -120,13 +119,6 @@ namespace StarportExcel
             // 
             resources.ApplyResources(this.itsMyWindow, "itsMyWindow");
             this.itsMyWindow.Name = "itsMyWindow";
-            // 
-            // PlanetSorter
-            // 
-            resources.ApplyResources(this.PlanetSorter, "PlanetSorter");
-            this.PlanetSorter.Name = "PlanetSorter";
-            this.PlanetSorter.UseVisualStyleBackColor = true;
-            this.PlanetSorter.Click += new System.EventHandler(this.PlanetSorter_Click);
             // 
             // ClearZounds
             // 
@@ -256,7 +248,6 @@ namespace StarportExcel
             this.Controls.Add(this.ReturnPlanet);
             this.Controls.Add(this.ReplacePlanet);
             this.Controls.Add(this.ClearZounds);
-            this.Controls.Add(this.PlanetSorter);
             this.Controls.Add(this.itsMyWindow);
             this.Controls.Add(this.PlanetOrganizer);
             this.Controls.Add(this.CheckParenthesis);
@@ -294,7 +285,6 @@ namespace StarportExcel
         private System.Windows.Forms.Button CheckParenthesis;
         private System.Windows.Forms.TextBox PlanetOrganizer;
         private System.Windows.Forms.TextBox itsMyWindow;
-        private System.Windows.Forms.Button PlanetSorter;
         private System.Windows.Forms.Button ClearZounds;
         private System.Windows.Forms.Button ReplacePlanet;
         private System.Windows.Forms.Button ReturnPlanet;
