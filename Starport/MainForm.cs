@@ -840,11 +840,29 @@ namespace StarportExcel
         {
             Excel excel = OpenFileAt(sheet);
 
-            excel.WriteToCell(row, 2, newPlanetName); //put the planet in the box
-            //excel.WriteToCell(row, 1, row.ToString()); //updates the number next to the cell
+            if (excel.ReadCellString(row, 2) == "") // if the box was empty
+            {
+                excel.WriteToCell(row, 2, newPlanetName); //planet in box
+                excel.WriteToCell(row, 1, row.ToString()); // update number next to it 
 
-            MessageBox.Show(newPlanetName + " replaced" + " slot" + row + " on" + " sheet" + sheet, "Completed");
+                if(row > excel.ReadCellDouble(1, 8)) //if the new numbeer is greater than the total 
+                {
+                    excel.WriteToCell(1, 8, row.ToString()); //update number
+                    MessageBox.Show(newPlanetName + " added to" + " slot " + row + " on" + " sheet " + sheet + " Totals updated to " + row, "Completed");
+                }
+                else
+                {
+                    MessageBox.Show(newPlanetName + " added to" + " slot" + row + " on" + " sheet" + sheet, "Completed");
+                }
+                
+            }
+            else
+            {
+                excel.WriteToCell(row, 2, newPlanetName); //put the planet in the box
+                                                          //excel.WriteToCell(row, 1, row.ToString()); //updates the number next to the cell
 
+                MessageBox.Show(newPlanetName + " replaced" + " slot" + row + " on" + " sheet" + sheet, "Completed");
+            }
 
             PlanetOrganizer.Text = "Insert Planet Name";
 
