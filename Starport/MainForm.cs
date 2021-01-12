@@ -787,19 +787,20 @@ namespace StarportExcel
             //Console.WriteLine(temp);
             string[] planets = new string[temp];
 
-            for (int i = 2; i < planets.Length; i++)
+            for (int i = 2; i < planets.Length + 2; i++)
             {
-                //Console.WriteLine(i);s
-                if (totalsSheet.ReadCellString(i, 11) != "") //if empty
+                //Console.WriteLine(i);
+                if (totalsSheet.ReadCellString(i, 11) != "") //if not empty
                 {
-                    planets[i] = (totalsSheet.ReadCellString(i, 11)); //add to list
+                    planets[i - 2] = totalsSheet.ReadCellString(i, 11); //add to list
                     //Console.WriteLine(totalsSheet.ReadCellString(i, 14) + " added to list at index " + i);
                 }
             }
             Array.Sort(planets);
+
             /*
-            for (int i = 2; i < planets.Length; i++) {
-                Console.WriteLine(planets[i]);
+            for (int i = 0; i < planets.Length; i++) {
+                Console.WriteLine(planets[i] + " at index " + i);
             }
             */
 
@@ -831,19 +832,20 @@ namespace StarportExcel
             //Console.WriteLine(temp);
             string[] planets = new string[temp];
 
-            for (int i = 2; i < planets.Length; i++)
+            for (int i = 2; i < planets.Length+2; i++)
             {
                 //Console.WriteLine(i);
-                if(totalsSheet.ReadCellString(i, 14) != "") //if empty
+                if(totalsSheet.ReadCellString(i, 14) != "") //if not empty
                 {
-                    planets[i] = (totalsSheet.ReadCellString(i, 14)); //add to list
+                    planets[i-2] = totalsSheet.ReadCellString(i, 14); //add to list
                     //Console.WriteLine(totalsSheet.ReadCellString(i, 14) + " added to list at index " + i);
                 }
             }
             Array.Sort(planets);
+
             /*
-            for (int i = 2; i < planets.Length; i++) {
-                Console.WriteLine(planets[i]);
+            for (int i = 0; i < planets.Length; i++) {
+                Console.WriteLine(planets[i] + " at index " + i);
             }
             */
 
@@ -1067,7 +1069,7 @@ namespace StarportExcel
         public string GetFormula(string planetName)
         {
             string returnString = planetName;
-            Console.WriteLine(planetName + " given to GetFormula()");
+            //Console.WriteLine(planetName + " given to GetFormula()");
 
             for (int i = 0; i < planetName.Length; i++)
             {
