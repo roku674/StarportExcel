@@ -436,7 +436,7 @@ namespace StarportExcel
 
             for (int j = 2; j <= 12; j++) // goes through each sheet
             {
-                Console.WriteLine("Not scanning the Invasion list until i figure out what's going wrong");
+                //Console.WriteLine("Not scanning the Invasion list until i figure out what's going wrong");
                 Excel excel = OpenFileAt(j);
                 //Console.WriteLine("Sheet " + j + " opened");
                 int planet = (int)excel.ReadCellDouble(1, 8);
@@ -447,7 +447,7 @@ namespace StarportExcel
                 if (j == 12)
                 {
                     planet = (int)excel.ReadCellDouble(2, 10);
-                    //Console.WriteLine(planet);
+                    Console.WriteLine(planet);
                 }
                 //Console.WriteLine("Planet Total: " + planet);
                 for (int i = planet+1; i >= 1; i--) // goes through the planet list
@@ -686,6 +686,7 @@ namespace StarportExcel
                         {
                             if (k + 5 < box.Length && box[k + 5].Equals('Z'))
                             {
+                                Console.WriteLine(planet + " added to Zounds");
                                 AddToZounds(box, excel);
                                 break;
                             }
@@ -771,6 +772,94 @@ namespace StarportExcel
                 excel.Close();
             }
             MessageBox.Show("Zounds lists Cleared!",  "Completed");
+        }
+        private void SortGrowingBySystem_Click(object sender, EventArgs e)
+        {
+            Excel totalsSheet = OpenFileAt(1);
+            int temp = 0;
+            for (int i = 2; i < 1000; i++)
+            {
+                if (totalsSheet.ReadCellString(i, 11) != "")
+                {
+                    temp++;
+                }
+            }
+            //Console.WriteLine(temp);
+            string[] planets = new string[temp];
+
+            for (int i = 2; i < planets.Length; i++)
+            {
+                //Console.WriteLine(i);s
+                if (totalsSheet.ReadCellString(i, 11) != "") //if empty
+                {
+                    planets[i] = (totalsSheet.ReadCellString(i, 11)); //add to list
+                    //Console.WriteLine(totalsSheet.ReadCellString(i, 14) + " added to list at index " + i);
+                }
+            }
+            Array.Sort(planets);
+            /*
+            for (int i = 2; i < planets.Length; i++) {
+                Console.WriteLine(planets[i]);
+            }
+            */
+
+            for (int i = 0; i < planets.Length; i++)
+            {
+                if (planets[i] != "" && planets[i] != null)
+                {
+                    int temp2 = i + 2;
+                    //Console.WriteLine(temp2);
+                    totalsSheet.WriteToCell(temp2, 11, planets[i].ToString()); //write the contents of the array into the box
+                }
+            }
+
+            totalsSheet.Close();
+
+            MessageBox.Show("Growing List Sorted by System", "Completed");
+        }
+        private void SortDefensesBySystem_Click(object sender, EventArgs e)
+        {
+            Excel totalsSheet = OpenFileAt(1);
+            int temp = 0;
+            for (int i= 2; i < 1000; i++)
+            {
+                if (totalsSheet.ReadCellString(i, 14) != "")
+                {
+                    temp++;
+                }
+            }
+            //Console.WriteLine(temp);
+            string[] planets = new string[temp];
+
+            for (int i = 2; i < planets.Length; i++)
+            {
+                //Console.WriteLine(i);
+                if(totalsSheet.ReadCellString(i, 14) != "") //if empty
+                {
+                    planets[i] = (totalsSheet.ReadCellString(i, 14)); //add to list
+                    //Console.WriteLine(totalsSheet.ReadCellString(i, 14) + " added to list at index " + i);
+                }
+            }
+            Array.Sort(planets);
+            /*
+            for (int i = 2; i < planets.Length; i++) {
+                Console.WriteLine(planets[i]);
+            }
+            */
+
+            for (int i = 0; i < planets.Length; i++)
+            {
+                if(planets[i] != "" && planets[i] != null)
+                {
+                    int temp2 = i+2;
+                    //Console.WriteLine(temp2);
+                    totalsSheet.WriteToCell(temp2, 14, planets[i].ToString()); //write the contents of the array into the box
+                }                
+            }
+
+            totalsSheet.Close();
+
+            MessageBox.Show("Needs Defenses List Sorted by System", "Completed");
         }
 
         private void AddToZounds(string colony, Excel excel)

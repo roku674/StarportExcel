@@ -57,6 +57,8 @@ namespace StarportExcel
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ClearGrow = new System.Windows.Forms.Button();
             this.CheckND = new System.Windows.Forms.Button();
+            this.SortDefensesBySystem = new System.Windows.Forms.Button();
+            this.SortGrowingBySystem = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -238,9 +240,25 @@ namespace StarportExcel
             this.CheckND.UseVisualStyleBackColor = true;
             this.CheckND.Click += new System.EventHandler(this.CheckND_Click);
             // 
+            // SortDefensesBySystem
+            // 
+            resources.ApplyResources(this.SortDefensesBySystem, "SortDefensesBySystem");
+            this.SortDefensesBySystem.Name = "SortDefensesBySystem";
+            this.SortDefensesBySystem.UseVisualStyleBackColor = true;
+            this.SortDefensesBySystem.Click += new System.EventHandler(this.SortDefensesBySystem_Click);
+            // 
+            // SortGrowingBySystem
+            // 
+            resources.ApplyResources(this.SortGrowingBySystem, "SortGrowingBySystem");
+            this.SortGrowingBySystem.Name = "SortGrowingBySystem";
+            this.SortGrowingBySystem.UseVisualStyleBackColor = true;
+            this.SortGrowingBySystem.Click += new System.EventHandler(this.SortGrowingBySystem_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.SortGrowingBySystem);
+            this.Controls.Add(this.SortDefensesBySystem);
             this.Controls.Add(this.CheckND);
             this.Controls.Add(this.ClearGrow);
             this.Controls.Add(this.toolStrip1);
@@ -302,6 +320,8 @@ namespace StarportExcel
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button ClearGrow;
         private System.Windows.Forms.Button CheckND;
+        private System.Windows.Forms.Button SortDefensesBySystem;
+        private System.Windows.Forms.Button SortGrowingBySystem;
     }
 }
 
