@@ -72,19 +72,19 @@ namespace StarportExcel
 
             for (int i = 0; i < planetName.Length; i++)
             {
-                if (planetName[i].Equals('A') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('c') && i + 2 < planetName.Length)
+                if (i + 2 < planetName.Length && planetName[i].Equals('A') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('c') )
                 {
                     AddPlanet(2, planetName);
                     break;
                 }
-                else if (planetName[i].Equals('D') && planetName[i + 1].Equals('e') && planetName[i + 2].Equals('s') && i + 2 < planetName.Length) { AddPlanet(3, planetName); break; }
-                else if (planetName[i].Equals('E') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r') && i + 2 < planetName.Length) { AddPlanet(4, planetName); break; }
-                else if (planetName[i].Equals('G') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('e') && i + 2 < planetName.Length) { AddPlanet(5, planetName); break; }
-                else if (planetName[i].Equals('M') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('u') && i + 2 < planetName.Length) { AddPlanet(6, planetName); break; }
-                else if (planetName[i].Equals('O') && planetName[i + 1].Equals('c') && planetName[i + 2].Equals('e') && i + 2 < planetName.Length) { AddPlanet(7, planetName); break; }
-                else if (planetName[i].Equals('P') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r') && i + 2 < planetName.Length) { AddPlanet(8, planetName); break; }
-                else if (planetName[i].Equals('R') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('c') && i + 2 < planetName.Length) { AddPlanet(9, planetName); break; }
-                else if (planetName[i].Equals('V') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('l') && i + 2 < planetName.Length) { AddPlanet(10, planetName); break; }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('D') && planetName[i + 1].Equals('e') && planetName[i + 2].Equals('s')) { AddPlanet(3, planetName); break; }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('E') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r')) { AddPlanet(4, planetName); break; }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('G') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('e')) { AddPlanet(5, planetName); break; }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('M') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('u')) { AddPlanet(6, planetName); break; }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('O') && planetName[i + 1].Equals('c') && planetName[i + 2].Equals('e')) { AddPlanet(7, planetName); break; }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('P') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r')) { AddPlanet(8, planetName); break; }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('R') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('c')) { AddPlanet(9, planetName); break; }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('V') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('l')) { AddPlanet(10, planetName); break; }
                 else { } //MessageBox.Show(planetName + " not found!");                             
 
             }//end i
@@ -95,7 +95,7 @@ namespace StarportExcel
 
             for (int i = 0; i < newPlanetName.Length; i++)
             {
-                if (newPlanetName[i].Equals('A') && newPlanetName[i + 1].Equals('r') && newPlanetName[i + 2].Equals('c') && i + 2 < newPlanetName.Length)
+                if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('A') && newPlanetName[i + 1].Equals('r') && newPlanetName[i + 2].Equals('c'))
                 {
                     //i+3 and i+4 are the numbers if its triple digit 3 4 5
                     if (newPlanetName[i + 5] == '.')
@@ -119,7 +119,7 @@ namespace StarportExcel
                     }
 
                 }
-                else if (newPlanetName[i].Equals('D') && newPlanetName[i + 1].Equals('e') && newPlanetName[i + 2].Equals('s') && i + 2 < newPlanetName.Length)
+                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('D') && newPlanetName[i + 1].Equals('e') && newPlanetName[i + 2].Equals('s'))
                 {
 
                     if (newPlanetName[i + 5] == '.')
@@ -142,7 +142,7 @@ namespace StarportExcel
                         break;
                     }
                 }
-                else if (newPlanetName[i].Equals('E') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r') && i + 2 < newPlanetName.Length)
+                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('E') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r'))
                 {
 
                     if (newPlanetName[i + 5] == '.')
@@ -165,7 +165,7 @@ namespace StarportExcel
                         break;
                     }
                 }
-                else if (newPlanetName[i].Equals('G') && newPlanetName[i + 1].Equals('r') && newPlanetName[i + 2].Equals('e') && i + 2 < newPlanetName.Length)
+                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('G') && newPlanetName[i + 1].Equals('r') && newPlanetName[i + 2].Equals('e'))
                 {
 
                     if (newPlanetName[i + 5] == '.')
@@ -188,7 +188,7 @@ namespace StarportExcel
                         break;
                     }
                 }
-                else if (newPlanetName[i].Equals('M') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('u') && i + 2 < newPlanetName.Length)
+                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('M') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('u'))
                 {
 
                     if (newPlanetName[i + 5] == '.')
@@ -211,7 +211,7 @@ namespace StarportExcel
                         break;
                     }
                 }
-                else if (newPlanetName[i].Equals('O') && newPlanetName[i + 1].Equals('c') && newPlanetName[i + 2].Equals('e') && i + 2 < newPlanetName.Length)
+                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('O') && newPlanetName[i + 1].Equals('c') && newPlanetName[i + 2].Equals('e'))
                 {
 
                     if (newPlanetName[i + 5] == '.')
@@ -234,7 +234,7 @@ namespace StarportExcel
                         break;
                     }
                 }
-                else if (newPlanetName[i].Equals('P') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r') && i + 2 < newPlanetName.Length)
+                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('P') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r'))
                 {
 
                     if (newPlanetName[i + 5] == '.')
@@ -257,7 +257,7 @@ namespace StarportExcel
                         break;
                     }
                 }
-                else if (newPlanetName[i].Equals('R') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('c') && i + 2 < newPlanetName.Length)
+                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('R') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('c'))
                 {
 
                     if (newPlanetName[i + 5] == '.')
@@ -280,7 +280,7 @@ namespace StarportExcel
                         break;
                     }
                 }
-                else if (newPlanetName[i].Equals('V') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('l') && i + 2 < newPlanetName.Length)
+                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('V') && newPlanetName[i + 1].Equals('o') && newPlanetName[i + 2].Equals('l'))
                 {
                     if (newPlanetName[i + 5] == '.')
                     {
@@ -557,12 +557,12 @@ namespace StarportExcel
                             {
                                 if (k + 5 < box.Length && box[k + 5].Equals('G'))
                                 {
-                                    AddToGrow(box, totals);                                   
+                                    AddToGrow(GetFormula(box), totals);                                   
                                     break;
                                 }
                                 else if (k + 6 < box.Length && box[k + 6].Equals('G'))
                                 {
-                                    AddToGrow(box, totals );
+                                    AddToGrow(GetFormula(box), totals );
                                     break;
                                 }
                                 else
@@ -686,8 +686,8 @@ namespace StarportExcel
                         {
                             if (k + 5 < box.Length && box[k + 5].Equals('Z'))
                             {
-                                Console.WriteLine(planet + " added to Zounds");
-                                AddToZounds(box, excel);
+                                //Console.WriteLine(planet + " added to Zounds");
+                                AddToZounds(GetFormula(box), excel);
                                 break;
                             }
 
@@ -733,17 +733,17 @@ namespace StarportExcel
                             {
                                 if (k + 5 < box.Length && box[k + 5].Equals('N'))
                                 {
-                                    AddToND(box, totals);
+                                    AddToND(GetFormula(box), totals);
                                     break;
                                 }
                                 else if (k + 6 < box.Length && box[k + 6].Equals('N') )
                                 {
-                                    AddToND(box, totals);
+                                    AddToND(GetFormula(box), totals);
                                     break;
                                 }
                                 else if (k + 7 < box.Length && box[k + 7].Equals('N'))
                                 {
-                                    AddToND(box, totals);
+                                    AddToND(GetFormula(box), totals);
                                     break;
                                 }
                                 else
@@ -809,7 +809,7 @@ namespace StarportExcel
                 {
                     int temp2 = i + 2;
                     //Console.WriteLine(temp2);
-                    totalsSheet.WriteToCell(temp2, 11, planets[i].ToString()); //write the contents of the array into the box
+                    totalsSheet.WriteToCell(temp2, 11, GetFormula(planets[i])); //write the contents of the array into the box
                 }
             }
 
@@ -853,7 +853,7 @@ namespace StarportExcel
                 {
                     int temp2 = i+2;
                     //Console.WriteLine(temp2);
-                    totalsSheet.WriteToCell(temp2, 14, planets[i].ToString()); //write the contents of the array into the box
+                    totalsSheet.WriteToCell(temp2, 14, GetFormula(planets[i])); //write the contents of the array into the box
                 }                
             }
 
@@ -1059,7 +1059,269 @@ namespace StarportExcel
         {
             excelPath = path;
         }
+        /// <summary>
+        /// Call this method To get the excel formula this reads the name and numbers behind the name type
+        /// </summary>
+        /// <param name="planetName">Must be the name of the planet</param>
+        /// <returns></returns>
+        public string GetFormula(string planetName)
+        {
+            string returnString = planetName;
+            Console.WriteLine(planetName + " given to GetFormula()");
 
+            for (int i = 0; i < planetName.Length; i++)
+            {
+                //Console.WriteLine("char: " + planetName[i] + " at" + i);
+                if (i + 2 < planetName.Length && planetName[i].Equals('A') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('c'))
+                {
+                    //i+3 and i+4 are the numbers if its triple digit 3 4 5
+                    if (planetName[i + 5] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString =  "=Arctics!C" + num;
+                    }
+                    else if (planetName[i + 6] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string str3 = planetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Arctics!C" + num;
+                    }
+
+                }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('D')  && planetName[i + 1].Equals('e') && planetName[i + 2].Equals('s'))
+                {
+
+                    if (planetName[i + 5] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Deserts!C" + num;
+                    }
+                    else if (planetName[i + 6] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string str3 = planetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString =  "=Deserts!C" + num;
+                    }
+                }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('E') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r'))
+                {
+
+                    if (planetName[i + 5] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Earths!C" + num;
+
+                    }
+                    else if (planetName[i + 6] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string str3 = planetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Earths!C" + num;
+                    }
+                }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('G') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('e'))
+                {
+
+                    if (planetName[i + 5] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Greenhouses!C" + num;
+                    }
+                    else if (planetName[i + 6] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string str3 = planetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Greenhouses!C" + num;
+                    }
+                }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('M') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('u'))
+                {
+                    if (planetName[i + 5] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Mountains!C" + num;
+                    }
+                    else if (planetName[i + 6] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string str3 = planetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Mountains!C" + num;
+                    }
+                }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('O') && planetName[i + 1].Equals('c') && planetName[i + 2].Equals('e'))
+                {
+
+                    if (planetName[i + 5] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Oceanics!C" + num;
+                    }
+                    else if (planetName[i + 6] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string str3 = planetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Oceanics!C" + num;
+                    }
+                }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('P') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r'))
+                {
+
+                    if (planetName[i + 5] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Paradises!C" + num;
+                    }
+                    else if (planetName[i + 6] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string str3 = planetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Paradises!C" + num;
+                    }
+                }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('R') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('c'))
+                {
+
+                    if (planetName[i + 5] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Rockies!C" + num;
+                    }
+                    else if (planetName[i + 6] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string str3 = planetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Rockies!C" + num;
+                    }
+                }
+                else if (i + 2 < planetName.Length && planetName[i].Equals('V') && planetName[i + 1].Equals('o') && planetName[i + 2].Equals('l'))
+                {
+                    if (planetName[i + 5] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string s = str1 + str2;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Volcanics!C" + num;
+                    }
+                    else if (planetName[i + 6] == '.')
+                    {
+                        string str1 = planetName[i + 3].ToString();
+                        string str2 = planetName[i + 4].ToString();
+                        string str3 = planetName[i + 5].ToString();
+                        string s = str1 + str2 + str3;
+
+                        int num = int.Parse(s);
+                        num++;
+
+                        returnString = "=Volcanics!C" + num;
+                    }
+                }
+                else {
+                } //MessageBox.Show(planetName + " not found!");                             
+
+            }//end i
+
+            return returnString;
+        }
         private void MainForm_FormClosing(object sender, CancelEventArgs e)
         {
             Excel.Kill();
