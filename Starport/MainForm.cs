@@ -557,12 +557,12 @@ namespace StarportExcel
                         {
                             if (box[k].Equals('.'))
                             {
-                                if (k + 5 < box.Length && box[k + 5].Equals('G'))
+                                if (k + 5 <= box.Length && box[k + 5].Equals('G'))
                                 {
                                     AddToGrow(GetFormula(box), totals);                                   
                                     break;
                                 }
-                                else if (k + 6 < box.Length && box[k + 6].Equals('G'))
+                                else if (k + 6 <= box.Length && box[k + 6].Equals('G'))
                                 {
                                     AddToGrow(GetFormula(box), totals );
                                     break;
@@ -686,7 +686,7 @@ namespace StarportExcel
                     {
                         if (box[k].Equals('.'))
                         {
-                            if (k + 5 < box.Length && box[k + 5].Equals('Z'))
+                            if (k + 5 <= box.Length && box[k + 5].Equals('Z'))
                             {
                                 //Console.WriteLine(planet + " added to Zounds");
                                 AddToZounds(GetFormula(box), excel);
@@ -733,17 +733,17 @@ namespace StarportExcel
                         {
                             if (box[k].Equals('.'))
                             {
-                                if (k + 5 < box.Length && box[k + 5].Equals('N'))
+                                if (k + 5 <= box.Length && box[k + 5].Equals('N'))
                                 {
                                     AddToND(GetFormula(box), totals);
                                     break;
                                 }
-                                else if (k + 6 < box.Length && box[k + 6].Equals('N') )
+                                else if (k + 6 <= box.Length && box[k + 6].Equals('N') )
                                 {
                                     AddToND(GetFormula(box), totals);
                                     break;
                                 }
-                                else if (k + 7 < box.Length && box[k + 7].Equals('N'))
+                                else if (k + 7 <= box.Length && box[k + 7].Equals('N'))
                                 {
                                     AddToND(GetFormula(box), totals);
                                     break;
@@ -954,7 +954,7 @@ namespace StarportExcel
                 excel.WriteToCell(row, 2, newPlanetName); //put the planet in the box
                                                           //excel.WriteToCell(row, 1, row.ToString()); //updates the number next to the cell
 
-                MessageBox.Show(newPlanetName + " replaced" + " slot" + row + " on" + " sheet " + sheet, "Completed");
+                MessageBox.Show(newPlanetName + " replaced" + " slot " + row + " on" + " sheet " + sheet, "Completed");
             }
 
             PlanetOrganizer.Text = "Insert Planet Name";
@@ -1002,31 +1002,31 @@ namespace StarportExcel
             {
                 if (planetName[i].Equals('.'))
                 {
-                    if (i + 5 < planetName.Length && planetName[i + 5].Equals('Z'))
+                    if (i + 5 <= planetName.Length && planetName[i + 5].Equals('Z'))
                     {
                         AddToZounds(formula, planetSheet);
                     }
                     else { }
 
-                    if (i + 5 < planetName.Length && planetName[i + 5].Equals('G'))
+                    if (i + 5 <= planetName.Length && planetName[i + 5].Equals('G'))
                     {
                         AddToGrow(formula, totalsSheet);
                     }
-                    else if (i + 6 < planetName.Length && planetName[i + 6].Equals('G'))
+                    else if (i + 6 <= planetName.Length && planetName[i + 6].Equals('G'))
                     {
                         AddToGrow(formula, totalsSheet);
                     }
                     else { }
 
-                    if (i + 5 < planetName.Length && planetName[i + 5].Equals('N'))
+                    if (i + 5 <= planetName.Length && planetName[i + 5].Equals('N'))
                     {
                         AddToND(formula, totalsSheet);
                     }
-                    else if (i + 6 < planetName.Length && planetName[i + 6].Equals('N'))
+                    else if (i + 6 <= planetName.Length && planetName[i + 6].Equals('N'))
                     {
                         AddToND(formula, totalsSheet);
                     }
-                    else if (i + 7 < planetName.Length && planetName[i + 7].Equals('N'))
+                    else if (i + 7 <= planetName.Length && planetName[i + 7].Equals('N'))
                     {
                         AddToND(formula, totalsSheet);
                     }
