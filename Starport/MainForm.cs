@@ -372,6 +372,8 @@ namespace StarportExcel
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
                 "|~{link}25:Captured:~ " + invasions + 
                 "|~{cyan}~ Sum: " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
+
+            excel.Close();
         }
         private void CheckGrow_Click(object sender, EventArgs e)
         {
@@ -793,7 +795,7 @@ namespace StarportExcel
                 if (totalsSheet.ReadCellString(i, 11) != "") //if not empty
                 {
                     planets[i - 2] = totalsSheet.ReadCellString(i, 11); //add to list
-                    //Console.WriteLine(totalsSheet.ReadCellString(i, 14) + " added to list at index " + i);
+                    //Console.WriteLine(totalsSheet.ReadCellString(i, 11) + " added to list at index " + i);
                 }
             }
             Array.Sort(planets);
@@ -939,11 +941,11 @@ namespace StarportExcel
                 if(row > excel.ReadCellDouble(1, 8)) //if the new numbeer is greater than the total 
                 {
                     excel.WriteToCell(1, 8, row.ToString()); //update number
-                    MessageBox.Show(newPlanetName + " added to" + " slot " + row + " on" + " sheet " + sheet + " Totals updated to " + row, "Completed");
+                    MessageBox.Show(newPlanetName + " added to" + " slot " + row + " on sheet " + sheet + " Totals updated to " + row, "Completed");
                 }
                 else
                 {
-                    MessageBox.Show(newPlanetName + " added to" + " slot" + row + " on" + " sheet" + sheet, "Completed");
+                    MessageBox.Show(newPlanetName + " added to" + " slot " + row + " on sheet " + sheet, "Completed");
                 }
                 
             }
@@ -952,7 +954,7 @@ namespace StarportExcel
                 excel.WriteToCell(row, 2, newPlanetName); //put the planet in the box
                                                           //excel.WriteToCell(row, 1, row.ToString()); //updates the number next to the cell
 
-                MessageBox.Show(newPlanetName + " replaced" + " slot" + row + " on" + " sheet" + sheet, "Completed");
+                MessageBox.Show(newPlanetName + " replaced" + " slot" + row + " on" + " sheet " + sheet, "Completed");
             }
 
             PlanetOrganizer.Text = "Insert Planet Name";
@@ -1016,15 +1018,15 @@ namespace StarportExcel
                     }
                     else { }
 
-                    if (i + 6 < planetName.Length && planetName[i + 5].Equals('N') && planetName[i + 6].Equals('D'))
+                    if (i + 5 < planetName.Length && planetName[i + 5].Equals('N'))
                     {
                         AddToND(formula, totalsSheet);
                     }
-                    else if (i + 7 < planetName.Length && planetName[i + 6].Equals('N') && planetName[i + 7].Equals('D'))
+                    else if (i + 6 < planetName.Length && planetName[i + 6].Equals('N'))
                     {
                         AddToND(formula, totalsSheet);
                     }
-                    else if (i + 8 < planetName.Length && planetName[i + 7].Equals('N') && planetName[i + 8].Equals('D'))
+                    else if (i + 7 < planetName.Length && planetName[i + 7].Equals('N'))
                     {
                         AddToND(formula, totalsSheet);
                     }
