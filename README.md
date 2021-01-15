@@ -1,5 +1,5 @@
 # StarportExcel
-Package for automating things Starport GE (Space Video Game I play)
+Program for automating and organizing planets in Starport GE (Space Video Game I play)
 
 Literally wrote this to better organize my planets in a video game...
 
