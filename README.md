@@ -13,21 +13,23 @@ Its important to note you can have 000 to 999 planets maximum of that type I hav
 so 010 is acceptable and 10 is acceptable
 
 Table for stuff
-Arc = Arctics
-Des = Deserts (not desmond)
-Ear = Earthlikes
-Gre = Greenhouses
-Mou = Mountains
-Oce = Oceanics
-Par = Paradises
-Roc = Rockies
-Vol = Volcanics
+Arc == Arctics
+Des == Deserts (not desmond)
+Ear == Earthlikes
+Gre == Greenhouses
+Mou == Mountains
+Oce == Oceanics
+Par == Paradises
+Roc == Rockies
+Vol == Volcanics
 
-D = Double Dome
-G = Growing
-N = Needs Defense
-R = Research
-Z = Zounds
+D == Double Dome
+G == Growing
+N == Needs Defense
+R == Research
+Z == Zounds
+
+If you find any errors or bugs please tell me and how you reached it
 
 Code created by Alexander Fields https://github.com/roku674 || https://www.linkedin.com/in/alexander-fields-aa57a997/
 
