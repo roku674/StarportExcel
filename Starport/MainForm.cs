@@ -30,26 +30,37 @@ namespace StarportExcel
         }
 
         // Tool strip stuff from here down
-
-        private void NewFileToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
         private void OpenToolStripButton_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
+            Console.WriteLine("before: " + excelPath);
+
+            var openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.Filter = "Excel Files|*.xlsx|All Files|*.*";
+            openFileDialog1.FilterIndex = 2;
             openFileDialog1.Title = "Open the Excel Sheet";
             openFileDialog1.ShowDialog();
 
             //Check to see if a filename was given
-            if (openFileDialog1.FileName != "" && openFileDialog1.FileName != null)
+            if (openFileDialog1.FileName != "")
             {
-                SetExcelPath(File.ReadAllText(openFileDialog1.FileName));
+                SetExcelPath(@openFileDialog1.FileName);
             }
+            Console.WriteLine("after: " + excelPath);
         }
         private void SaveToolStripButton_Click(object sender, EventArgs e)
         {
+            var saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel files|*.xlsx";
+            saveFileDialog1.Title = "Save an Image File";
+            saveFileDialog1.ShowDialog();
 
+            if (saveFileDialog1.FileName != "")
+            {
+                Excel excel = OpenFileAt(1);
+                excel.SaveAs(@saveFileDialog1.FileName);
+                excel.Close();
+            }
         }
         private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
         {
@@ -360,7 +371,7 @@ namespace StarportExcel
                 "|~{gray}~Roc " + rockiesZ + "/" + rockies +
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
                 "|~{link}25:Captured:~ " + invasions + 
-                "|~{cyan}~ Sum: " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
+                "|~{cyan}~ " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
 
             Console.WriteLine(itsMyWindow.Text);
 
