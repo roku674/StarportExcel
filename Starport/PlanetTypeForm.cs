@@ -22,6 +22,50 @@ namespace StarportExcel
             CloseOutput();
         }
 
+        // Tool strip stuff from here down
+
+        private void OpenToolStripButton_Click(object sender, EventArgs e)
+        {
+            var openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.Title = "Open the Excel Sheet";
+            openFileDialog1.ShowDialog();
+
+            //Check to see if a filename was given
+            if (openFileDialog1.FileName != "")
+            {
+                SetOutputPath(@openFileDialog1.FileName);                
+            }
+        }
+
+        private void SaveToolStripButton_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
+            saveFileDialog1.Title = "Save an Image File";
+            saveFileDialog1.ShowDialog();
+
+            if (saveFileDialog1.FileName != "")
+            {
+                File.WriteAllText(@saveFileDialog1.FileName, "");
+            }
+        }
+
+        private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This box is for essentially displaying the data to a text file, I may make it display to the box in future iterations.", "Message");
+        }
+
+        private void copyToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //buttons
+
         private void Arctics_Click(object sender, EventArgs e)
         {
             int.TryParse(numberBox.Text, out int temp);
@@ -46,7 +90,7 @@ namespace StarportExcel
                 }
                 output.Flush();
                 excel.Close();
-                MessageBox.Show("Arctics added to output.txt", "Completed");
+                MessageBox.Show("Arctics added to " + outputPath, "Completed");
             }
         }
 
@@ -75,7 +119,7 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Deserts added to output.txt", "Completed");
+                MessageBox.Show("Deserts added to " + outputPath, "Completed");
             }
         }
 
@@ -104,7 +148,7 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Earthlikes added to output.txt", "Completed");
+                MessageBox.Show("Earthlikes added to " + outputPath, "Completed");
             }
 
         }
@@ -134,7 +178,7 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Greenhouses added to output.txt", "Completed");
+                MessageBox.Show("Greenhouses added to " + outputPath, "Completed");
             }
         }
 
@@ -163,7 +207,7 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Mountains added to output.txt", "Completed");
+                MessageBox.Show("Mountains added to " + outputPath, "Completed");
             }
         }
 
@@ -192,7 +236,7 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Oceanics added to output.txt", "Completed");
+                MessageBox.Show("Oceanics added to " + outputPath, "Completed");
             }
         }
 
@@ -221,7 +265,7 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Paradises added to output.txt", "Completed");
+                MessageBox.Show("Paradises added to " + outputPath, "Completed");
             }
         }
 
@@ -250,7 +294,7 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Rockies added to output.txt", "Completed");
+                MessageBox.Show("Rockies added to " + outputPath, "Completed");
             }
         }
 
@@ -279,7 +323,7 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Volcanics added to output.txt", "Completed");
+                MessageBox.Show("Volcanics added to " + outputPath, "Completed");
             }
         }
         private void NeedsDefenses_Click(object sender, EventArgs e)
@@ -332,7 +376,8 @@ namespace StarportExcel
         }
         public void SetOutputPath(string path)
         {
-            output = new StreamWriter(path);
+            outputPath = path;
+            output = new StreamWriter(outputPath);
         }
 
         public void OpenOutput()
@@ -368,53 +413,6 @@ namespace StarportExcel
             output.WriteLine("");
         }
 
-        private void copyToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NewFileToolStripButton_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
-            openFileDialog1.Title = "Create the new text file";
-            openFileDialog1.ShowDialog();
-
-            if (openFileDialog1.FileName != "" && openFileDialog1.FileName != null)
-            {
-                File.WriteAllText("@" + openFileDialog1, "");
-            }
-        }
-
-        private void OpenToolStripButton_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
-            openFileDialog1.Title = "Open the Excel Sheet";
-            openFileDialog1.ShowDialog();
-
-            //Check to see if a filename was given
-            if (openFileDialog1.FileName != "" && openFileDialog1.FileName != null)
-            {
-                output = new StreamWriter("@" + openFileDialog1);
-            }
-        }
-
-        private void SaveToolStripButton_Click(object sender, EventArgs e)
-        {
-            var saveFileDialog1 = new SaveFileDialog();
-
-            saveFileDialog1.Filter = "Excel files|*.xlsx";
-            saveFileDialog1.Title = "Save an Image File";
-            saveFileDialog1.ShowDialog();
-
-            if (saveFileDialog1.FileName != "" && saveFileDialog1 != null)
-            {
-                output.Flush();
-            }
-        }
-
-        private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This box is for essentially displaying the data to a text file, I may make it display to the box in future iterations.", "Message");
-        }
+        
     }//PlanetTypeForm
 }//namespace

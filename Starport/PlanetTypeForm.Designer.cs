@@ -51,7 +51,6 @@ namespace StarportExcel
             this.ClearOutput = new System.Windows.Forms.Button();
             this.LineBreak = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.NewFileToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.OpenToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.SaveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -161,7 +160,6 @@ namespace StarportExcel
             // 
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.NewFileToolStripButton,
             this.OpenToolStripButton,
             this.SaveToolStripButton,
             this.toolStripSeparator,
@@ -169,13 +167,6 @@ namespace StarportExcel
             this.toolStripSeparator1,
             this.HelpMeNiggaDamnToolStripButton});
             this.toolStrip1.Name = "toolStrip1";
-            // 
-            // NewFileToolStripButton
-            // 
-            resources.ApplyResources(this.NewFileToolStripButton, "NewFileToolStripButton");
-            this.NewFileToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.NewFileToolStripButton.Name = "NewFileToolStripButton";
-            this.NewFileToolStripButton.Click += new System.EventHandler(this.NewFileToolStripButton_Click);
             // 
             // OpenToolStripButton
             // 
@@ -251,13 +242,11 @@ namespace StarportExcel
         private Button ClearOutput;
         private Button LineBreak;
         private ToolStrip toolStrip1;
-        private ToolStripButton NewFileToolStripButton;
         private ToolStripButton OpenToolStripButton;
         private ToolStripButton SaveToolStripButton;
         private ToolStripSeparator toolStripSeparator;
         private ToolStripButton copyToolStripButton;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton HelpMeNiggaDamnToolStripButton;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }//class
 }//namespace

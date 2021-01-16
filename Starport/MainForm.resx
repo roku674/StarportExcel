@@ -148,6 +148,12 @@
   <data name="HelpMeNiggaDamnToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
+  <data name="CheckParenthesis.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="FindTotals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 105</value>
+  </data>
   <data name="&gt;&gt;CheckND.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
@@ -4053,8 +4059,8 @@
   <data name="&gt;&gt;CheckParenthesis.Name" xml:space="preserve">
     <value>CheckParenthesis</value>
   </data>
-  <data name="SaveToolStripButton.Text" xml:space="preserve">
-    <value>&amp;Save</value>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 28</value>
   </data>
   <data name="&gt;&gt;ReplacePlanet.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -4079,9 +4085,6 @@
         UcE17KkWFgHNN/uQzgBkGKLJPBZiecyGchjzrmFwPIF++xJUbDbUQzEacIArLpopSRSP4CUN1Obf1Abz
         uqob5KjiXwWH/GVl5HPt5zZh37GL2H1EiF1VZ7GDI6CNW5r/TSzWbwHYL0mKJ5czAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="&gt;&gt;FindNeedsDefense.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
     <value>pictureBox1</value>
@@ -5224,9 +5227,6 @@
   <data name="PlanetOrganizer.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 20</value>
   </data>
-  <data name="CheckGrow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 23</value>
-  </data>
   <data name="OpenToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
@@ -5245,9 +5245,6 @@
   <data name="ClearNeedsDefense.Text" xml:space="preserve">
     <value>Clear ND</value>
   </data>
-  <data name="&gt;&gt;CheckParenthesis.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
@@ -5259,6 +5256,9 @@
   </data>
   <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="PlanetSorter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 199</value>
   </data>
   <data name="NewFileToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5331,23 +5331,14 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
-  <data name="itsMyWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 20</value>
-  </data>
   <data name="ClearZounds.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
   </data>
   <data name="&gt;&gt;CreateQuote.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;CheckGrow.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
   <data name="&gt;&gt;ClearGrow.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;CheckParenthesis.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;copyToolStripButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5429,8 +5420,14 @@
   <data name="&gt;&gt;FindZounds.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <data name="PrintToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
   <data name="NewFileToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
+  </data>
+  <data name="CheckND.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 272</value>
   </data>
   <data name="&gt;&gt;FindZounds.Parent" xml:space="preserve">
     <value>$this</value>
@@ -5480,17 +5477,20 @@
   <data name="FindGrowing.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
-  <data name="ClearZounds.Text" xml:space="preserve">
-    <value>Clear Zounds</value>
-  </data>
   <data name="CreateQuote.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
   <data name="copyToolStripButton.Text" xml:space="preserve">
     <value>&amp;Copy</value>
   </data>
+  <data name="&gt;&gt;PlanetSorter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="FindNeedsDefense.Text" xml:space="preserve">
     <value>Find Needs Def</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="CheckParenthesis.Text" xml:space="preserve">
     <value>Check Parenthesis</value>
@@ -5528,8 +5528,8 @@
   <data name="FindTotals.Location" type="System.Drawing.Point, System.Drawing">
     <value>332, 49</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;CheckParenthesis.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="ReturnPlanet.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -5573,14 +5573,11 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="ClearZounds.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;PrintToolStripButton.Name" xml:space="preserve">
-    <value>PrintToolStripButton</value>
+  <data name="&gt;&gt;CheckGrow.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="&gt;&gt;FindZounds.Name" xml:space="preserve">
     <value>FindZounds</value>
@@ -5597,8 +5594,8 @@
   <data name="&gt;&gt;FindGrowing.Name" xml:space="preserve">
     <value>FindGrowing</value>
   </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 28</value>
+  <data name="&gt;&gt;CheckParenthesis.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5615,8 +5612,8 @@
   <data name="&gt;&gt;CheckGrow.Name" xml:space="preserve">
     <value>CheckGrow</value>
   </data>
-  <data name="CheckND.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 272</value>
+  <data name="&gt;&gt;PrintToolStripButton.Name" xml:space="preserve">
+    <value>PrintToolStripButton</value>
   </data>
   <data name="&gt;&gt;ReturnPlanet.Parent" xml:space="preserve">
     <value>$this</value>
@@ -5624,8 +5621,8 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>590, 434</value>
   </data>
-  <data name="FindTotals.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 105</value>
+  <data name="CheckGrow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
   </data>
   <data name="&gt;&gt;SortDefensesBySystem.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5692,11 +5689,14 @@
   <data name="itsMyWindow.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
+  <data name="HelpMeNiggaDamnToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
   <data name="&gt;&gt;SortDefensesBySystem.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="PlanetSorter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 199</value>
+  <data name="itsMyWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 20</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
@@ -5704,8 +5704,8 @@
   <data name="CheckND.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="PrintToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
+  <data name="&gt;&gt;FindNeedsDefense.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ReturnPlanet.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -5722,11 +5722,11 @@
   <data name="SaveToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="HelpMeNiggaDamnToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="ClearZounds.Text" xml:space="preserve">
+    <value>Clear Zounds</value>
   </data>
-  <data name="&gt;&gt;PlanetSorter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ClearZounds.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="SortDefensesBySystem.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -5734,13 +5734,13 @@
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="CheckParenthesis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 23</value>
+  <data name="SaveToolStripButton.Text" xml:space="preserve">
+    <value>&amp;Save</value>
   </data>
   <data name="PrintToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <metadata name="CheckParenthesis.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="FindGrowing.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="itsMyWindow.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -5752,12 +5752,6 @@
   <metadata name="CheckGrow.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ClearZounds.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FindGrowing.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="ClearNeedsDefense.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -5767,26 +5761,29 @@
   <metadata name="CreateQuote.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="SortGrowingBySystem.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en</value>
+  </metadata>
+  <metadata name="CheckND.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ReturnPlanet.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="toolStrip1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="SortDefensesBySystem.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="CheckND.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ClearZounds.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en</value>
-  </metadata>
-  <metadata name="ReturnPlanet.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
   </metadata>
   <metadata name="ClearGrow.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -5794,7 +5791,10 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="SortGrowingBySystem.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="CheckParenthesis.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="FindTotals.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

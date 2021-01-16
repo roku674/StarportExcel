@@ -30,34 +30,23 @@ namespace StarportExcel
         }
 
         // Tool strip stuff from here down
-
-        private void NewFileToolStripButton_Click(object sender, EventArgs e)
-        {
-            //generate a new excel file from scratch
-            openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
-            openFileDialog1.Title = "Create the new Excel Sheet";
-            openFileDialog1.ShowDialog();
-
-            if (openFileDialog1.FileName != "" && openFileDialog1.FileName != null)
-            {
-                var app = new Microsoft.Office.Interop.Excel.Application();
-                var wb = app.Workbooks.Add();
-                wb.SaveAs("@" + openFileDialog1 + ".xlsx");
-                wb.Close();
-            }
-
-        }
         private void OpenToolStripButton_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
+            Console.WriteLine("before: " + excelPath);
+
+            var openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.Filter = "Excel Files|*.xlsx|All Files|*.*";
+            openFileDialog1.FilterIndex = 2;
             openFileDialog1.Title = "Open the Excel Sheet";
             openFileDialog1.ShowDialog();
 
             //Check to see if a filename was given
-            if (openFileDialog1.FileName != "" && openFileDialog1.FileName != null)
+            if (openFileDialog1.FileName != "")
             {
-                SetExcelPath(File.ReadAllText("@"+openFileDialog1.FileName));
+                SetExcelPath(@openFileDialog1.FileName);
             }
+            Console.WriteLine("after: " + excelPath);
         }
         private void SaveToolStripButton_Click(object sender, EventArgs e)
         {
@@ -66,7 +55,7 @@ namespace StarportExcel
             saveFileDialog1.Title = "Save an Image File";
             saveFileDialog1.ShowDialog();
 
-            if (saveFileDialog1.FileName != "" && saveFileDialog1 != null)
+            if (saveFileDialog1.FileName != "")
             {
                 Excel excel = OpenFileAt(1);
                 excel.SaveAs(@saveFileDialog1.FileName);

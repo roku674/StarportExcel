@@ -45,7 +45,6 @@ namespace StarportExcel
             this.ReturnPlanet = new System.Windows.Forms.Button();
             this.ClearNeedsDefense = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.NewFileToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.OpenToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.SaveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.PrintToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -53,7 +52,6 @@ namespace StarportExcel
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.HelpMeNiggaDamnToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ClearGrow = new System.Windows.Forms.Button();
             this.CheckND = new System.Windows.Forms.Button();
@@ -154,7 +152,6 @@ namespace StarportExcel
             // 
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.NewFileToolStripButton,
             this.OpenToolStripButton,
             this.SaveToolStripButton,
             this.PrintToolStripButton,
@@ -163,13 +160,6 @@ namespace StarportExcel
             this.toolStripSeparator1,
             this.HelpMeNiggaDamnToolStripButton});
             this.toolStrip1.Name = "toolStrip1";
-            // 
-            // NewFileToolStripButton
-            // 
-            resources.ApplyResources(this.NewFileToolStripButton, "NewFileToolStripButton");
-            this.NewFileToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.NewFileToolStripButton.Name = "NewFileToolStripButton";
-            this.NewFileToolStripButton.Click += new System.EventHandler(this.NewFileToolStripButton_Click);
             // 
             // OpenToolStripButton
             // 
@@ -214,11 +204,6 @@ namespace StarportExcel
             this.HelpMeNiggaDamnToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.HelpMeNiggaDamnToolStripButton.Name = "HelpMeNiggaDamnToolStripButton";
             this.HelpMeNiggaDamnToolStripButton.Click += new System.EventHandler(this.HelpMeNiggaDamnToolStripButton_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // pictureBox1
             // 
@@ -308,7 +293,6 @@ namespace StarportExcel
         private System.Windows.Forms.Button ReturnPlanet;
         private System.Windows.Forms.Button ClearNeedsDefense;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton NewFileToolStripButton;
         private System.Windows.Forms.ToolStripButton OpenToolStripButton;
         private System.Windows.Forms.ToolStripButton SaveToolStripButton;
         private System.Windows.Forms.ToolStripButton PrintToolStripButton;
@@ -316,7 +300,6 @@ namespace StarportExcel
         private System.Windows.Forms.ToolStripButton copyToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton HelpMeNiggaDamnToolStripButton;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button ClearGrow;
         private System.Windows.Forms.Button CheckND;
