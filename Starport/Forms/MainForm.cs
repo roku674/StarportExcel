@@ -34,11 +34,12 @@ namespace StarportExcel
         {
             Console.WriteLine("before: " + excelPath);
 
-            var openFileDialog1 = new OpenFileDialog();
-
-            openFileDialog1.Filter = "Excel Files|*.xlsx|All Files|*.*";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.Title = "Open the Excel Sheet";
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                Filter = "Excel Files|*.xlsx|All Files|*.*",
+                FilterIndex = 2,
+                Title = "Open the Excel Sheet"
+            };
             openFileDialog1.ShowDialog();
 
             //Check to see if a filename was given
@@ -50,9 +51,11 @@ namespace StarportExcel
         }
         private void SaveToolStripButton_Click(object sender, EventArgs e)
         {
-            var saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "Excel files|*.xlsx";
-            saveFileDialog1.Title = "Save an Image File";
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog
+            {
+                Filter = "Excel files|*.xlsx",
+                Title = "Save an Image File"
+            };
             saveFileDialog1.ShowDialog();
 
             if (saveFileDialog1.FileName != "")

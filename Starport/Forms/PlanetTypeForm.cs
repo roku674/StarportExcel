@@ -26,11 +26,12 @@ namespace StarportExcel
 
         private void OpenToolStripButton_Click(object sender, EventArgs e)
         {
-            var openFileDialog1 = new OpenFileDialog();
-
-            openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.Title = "Open the Excel Sheet";
+            var openFileDialog1 = new OpenFileDialog
+            {
+                Filter = "Text Files|*.txt|All Files|*.*",
+                FilterIndex = 2,
+                Title = "Open the Excel Sheet"
+            };
             openFileDialog1.ShowDialog();
 
             //Check to see if a filename was given
@@ -42,10 +43,11 @@ namespace StarportExcel
 
         private void SaveToolStripButton_Click(object sender, EventArgs e)
         {
-            var saveFileDialog1 = new SaveFileDialog();
-
-            saveFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
-            saveFileDialog1.Title = "Save an Image File";
+            var saveFileDialog1 = new SaveFileDialog
+            {
+                Filter = "Text Files|*.txt|All Files|*.*",
+                Title = "Save an Image File"
+            };
             saveFileDialog1.ShowDialog();
 
             if (saveFileDialog1.FileName != "")
@@ -59,7 +61,7 @@ namespace StarportExcel
             MessageBox.Show("This box is for essentially displaying the data to a text file, I may make it display to the box in future iterations.", "Message");
         }
 
-        private void copyToolStripButton_Click(object sender, EventArgs e)
+        private void CopyToolStripButton_Click(object sender, EventArgs e)
         {
 
         }
