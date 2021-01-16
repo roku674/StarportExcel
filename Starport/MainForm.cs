@@ -64,7 +64,7 @@ namespace StarportExcel
         }
         private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Literally will make a more elaborate help than this later \n sidenote checkout https://github.com/roku674/StarportExcel", "Message");
+            MessageBox.Show("It's gotten to big now you're going to have to check out the readme \n sidenote checkout https://github.com/roku674/StarportExcel", "Message");
         }
         private void PrintToolStripButton_Click(object sender, EventArgs e)
         {
