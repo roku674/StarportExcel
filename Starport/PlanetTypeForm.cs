@@ -9,16 +9,12 @@ namespace StarportExcel
 	public partial class PlanetTypeForm : Form
     {
         string excelPath = "";
-        readonly string outputPath = @"G:\My Drive\Personal Stuff\Starport\Output.txt";
+        string outputPath = @"G:\My Drive\Personal Stuff\Starport\Output.txt";
         private StreamWriter output = new StreamWriter(@"G:\My Drive\Personal Stuff\Starport\Output.txt");
 
         public PlanetTypeForm()
 		{
 			InitializeComponent();
-        }
-        private void PlanetTypeForm_Load(object sender, EventArgs e)
-        {
-
         }
         private void PlanetTypeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -370,6 +366,55 @@ namespace StarportExcel
             output.WriteLine("");
             output.WriteLine("_____________________________________________");
             output.WriteLine("");
+        }
+
+        private void copyToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewFileToolStripButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
+            openFileDialog1.Title = "Create the new text file";
+            openFileDialog1.ShowDialog();
+
+            if (openFileDialog1.FileName != "" && openFileDialog1.FileName != null)
+            {
+                File.WriteAllText("@" + openFileDialog1, "");
+            }
+        }
+
+        private void OpenToolStripButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
+            openFileDialog1.Title = "Open the Excel Sheet";
+            openFileDialog1.ShowDialog();
+
+            //Check to see if a filename was given
+            if (openFileDialog1.FileName != "" && openFileDialog1.FileName != null)
+            {
+                output = new StreamWriter("@" + openFileDialog1);
+            }
+        }
+
+        private void SaveToolStripButton_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "Excel files|*.xlsx";
+            saveFileDialog1.Title = "Save an Image File";
+            saveFileDialog1.ShowDialog();
+
+            if (saveFileDialog1.FileName != "" && saveFileDialog1 != null)
+            {
+                output.Flush();
+            }
+        }
+
+        private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This box is for essentially displaying the data to a text file, I may make it display to the box in future iterations.", "Message");
         }
     }//PlanetTypeForm
 }//namespace

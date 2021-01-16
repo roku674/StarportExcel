@@ -50,6 +50,15 @@ namespace StarportExcel
             this.Growing = new System.Windows.Forms.Button();
             this.ClearOutput = new System.Windows.Forms.Button();
             this.LineBreak = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.NewFileToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.OpenToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.SaveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.HelpMeNiggaDamnToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Arctics
@@ -148,10 +157,69 @@ namespace StarportExcel
             this.LineBreak.UseVisualStyleBackColor = true;
             this.LineBreak.Click += new System.EventHandler(this.LineBreak_Click);
             // 
+            // toolStrip1
+            // 
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NewFileToolStripButton,
+            this.OpenToolStripButton,
+            this.SaveToolStripButton,
+            this.toolStripSeparator,
+            this.copyToolStripButton,
+            this.toolStripSeparator1,
+            this.HelpMeNiggaDamnToolStripButton});
+            this.toolStrip1.Name = "toolStrip1";
+            // 
+            // NewFileToolStripButton
+            // 
+            resources.ApplyResources(this.NewFileToolStripButton, "NewFileToolStripButton");
+            this.NewFileToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.NewFileToolStripButton.Name = "NewFileToolStripButton";
+            this.NewFileToolStripButton.Click += new System.EventHandler(this.NewFileToolStripButton_Click);
+            // 
+            // OpenToolStripButton
+            // 
+            resources.ApplyResources(this.OpenToolStripButton, "OpenToolStripButton");
+            this.OpenToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.OpenToolStripButton.Name = "OpenToolStripButton";
+            this.OpenToolStripButton.Click += new System.EventHandler(this.OpenToolStripButton_Click);
+            // 
+            // SaveToolStripButton
+            // 
+            resources.ApplyResources(this.SaveToolStripButton, "SaveToolStripButton");
+            this.SaveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SaveToolStripButton.Name = "SaveToolStripButton";
+            this.SaveToolStripButton.Click += new System.EventHandler(this.SaveToolStripButton_Click);
+            // 
+            // toolStripSeparator
+            // 
+            resources.ApplyResources(this.toolStripSeparator, "toolStripSeparator");
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            // 
+            // copyToolStripButton
+            // 
+            resources.ApplyResources(this.copyToolStripButton, "copyToolStripButton");
+            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copyToolStripButton.Name = "copyToolStripButton";
+            this.copyToolStripButton.Click += new System.EventHandler(this.copyToolStripButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            // 
+            // HelpMeNiggaDamnToolStripButton
+            // 
+            resources.ApplyResources(this.HelpMeNiggaDamnToolStripButton, "HelpMeNiggaDamnToolStripButton");
+            this.HelpMeNiggaDamnToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.HelpMeNiggaDamnToolStripButton.Name = "HelpMeNiggaDamnToolStripButton";
+            this.HelpMeNiggaDamnToolStripButton.Click += new System.EventHandler(this.HelpMeNiggaDamnToolStripButton_Click);
+            // 
             // PlanetTypeForm
             // 
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.LineBreak);
             this.Controls.Add(this.ClearOutput);
             this.Controls.Add(this.Growing);
@@ -170,7 +238,8 @@ namespace StarportExcel
             this.MaximizeBox = false;
             this.Name = "PlanetTypeForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlanetTypeForm_FormClosing);
-            this.Load += new System.EventHandler(this.PlanetTypeForm_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +250,14 @@ namespace StarportExcel
         private Button Growing;
         private Button ClearOutput;
         private Button LineBreak;
+        private ToolStrip toolStrip1;
+        private ToolStripButton NewFileToolStripButton;
+        private ToolStripButton OpenToolStripButton;
+        private ToolStripButton SaveToolStripButton;
+        private ToolStripSeparator toolStripSeparator;
+        private ToolStripButton copyToolStripButton;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton HelpMeNiggaDamnToolStripButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }//class
 }//namespace

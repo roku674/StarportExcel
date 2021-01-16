@@ -33,6 +33,18 @@ namespace StarportExcel
 
         private void NewFileToolStripButton_Click(object sender, EventArgs e)
         {
+            //generate a new excel file from scratch
+            openFileDialog1.Filter = "Text Files|*.txt|All Files|*.*";
+            openFileDialog1.Title = "Create the new Excel Sheet";
+            openFileDialog1.ShowDialog();
+
+            if (openFileDialog1.FileName != "" && openFileDialog1.FileName != null)
+            {
+                var app = new Microsoft.Office.Interop.Excel.Application();
+                var wb = app.Workbooks.Add();
+                wb.SaveAs("@" + openFileDialog1 + ".xlsx");
+                wb.Close();
+            }
 
         }
         private void OpenToolStripButton_Click(object sender, EventArgs e)
@@ -44,12 +56,22 @@ namespace StarportExcel
             //Check to see if a filename was given
             if (openFileDialog1.FileName != "" && openFileDialog1.FileName != null)
             {
-                SetExcelPath(File.ReadAllText(openFileDialog1.FileName));
+                SetExcelPath(File.ReadAllText("@"+openFileDialog1.FileName));
             }
         }
         private void SaveToolStripButton_Click(object sender, EventArgs e)
         {
+            var saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel files|*.xlsx";
+            saveFileDialog1.Title = "Save an Image File";
+            saveFileDialog1.ShowDialog();
 
+            if (saveFileDialog1.FileName != "" && saveFileDialog1 != null)
+            {
+                Excel excel = OpenFileAt(1);
+                excel.SaveAs(@saveFileDialog1.FileName);
+                excel.Close();
+            }
         }
         private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
         {
@@ -360,7 +382,7 @@ namespace StarportExcel
                 "|~{gray}~Roc " + rockiesZ + "/" + rockies +
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
                 "|~{link}25:Captured:~ " + invasions + 
-                "|~{cyan}~ Sum: " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
+                "|~{cyan}~ " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
 
             Console.WriteLine(itsMyWindow.Text);
 
