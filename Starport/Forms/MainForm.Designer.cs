@@ -31,280 +31,306 @@ namespace StarportExcel
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.CreateQuote = new System.Windows.Forms.Button();
-            this.FindGrowing = new System.Windows.Forms.Button();
-            this.CheckGrow = new System.Windows.Forms.Button();
-            this.FindZounds = new System.Windows.Forms.Button();
-            this.FindTotals = new System.Windows.Forms.Button();
-            this.FindNeedsDefense = new System.Windows.Forms.Button();
-            this.CheckParenthesis = new System.Windows.Forms.Button();
-            this.PlanetOrganizer = new System.Windows.Forms.TextBox();
-            this.itsMyWindow = new System.Windows.Forms.TextBox();
-            this.ClearZounds = new System.Windows.Forms.Button();
-            this.ReplacePlanet = new System.Windows.Forms.Button();
-            this.ReturnPlanet = new System.Windows.Forms.Button();
-            this.ClearNeedsDefense = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.OpenToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.SaveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.PrintToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.CreateQuoteButton = new System.Windows.Forms.Button();
+            this.FindGrowingButton = new System.Windows.Forms.Button();
+            this.CheckGrowButton = new System.Windows.Forms.Button();
+            this.FindZoundsButton = new System.Windows.Forms.Button();
+            this.FindTotalsButton = new System.Windows.Forms.Button();
+            this.FindNeedsDefenseButton = new System.Windows.Forms.Button();
+            this.CheckParenthesisButton = new System.Windows.Forms.Button();
+            this.PlanetOrganizerTextBox = new System.Windows.Forms.TextBox();
+            this.itsMyWindowTextBox = new System.Windows.Forms.TextBox();
+            this.ClearZoundsButton = new System.Windows.Forms.Button();
+            this.ReplacePlanetButton = new System.Windows.Forms.Button();
+            this.ReturnPlanetButton = new System.Windows.Forms.Button();
+            this.ClearNeedsDefenseButton = new System.Windows.Forms.Button();
+            this.toolStripMain = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.HelpMeNiggaDamnToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ClearGrow = new System.Windows.Forms.Button();
-            this.CheckND = new System.Windows.Forms.Button();
-            this.SortDefensesBySystem = new System.Windows.Forms.Button();
-            this.SortGrowingBySystem = new System.Windows.Forms.Button();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.toolStripSeparatorMain = new System.Windows.Forms.ToolStripSeparator();
+            this.ClearGrowButton = new System.Windows.Forms.Button();
+            this.CheckNDButton = new System.Windows.Forms.Button();
+            this.SortDefensesBySystemButton = new System.Windows.Forms.Button();
+            this.SortGrowingBySystemButton = new System.Windows.Forms.Button();
+            this.FindBuildsButton = new System.Windows.Forms.Button();
+            this.FindDeconstructButton = new System.Windows.Forms.Button();
+            this.FindColonialInfoButton = new System.Windows.Forms.Button();
+            this.OpenToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
+            this.SaveToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
+            this.PrintToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
+            this.CopyToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
+            this.HelpMeNiggaDamnToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
+            this.pictureBoxMain = new System.Windows.Forms.PictureBox();
+            this.toolStripMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
             // 
-            // CreateQuote
+            // CreateQuoteButton
             // 
-            resources.ApplyResources(this.CreateQuote, "CreateQuote");
-            this.CreateQuote.Name = "CreateQuote";
-            this.CreateQuote.UseVisualStyleBackColor = true;
-            this.CreateQuote.Click += new System.EventHandler(this.CreateQuote_Click);
+            resources.ApplyResources(this.CreateQuoteButton, "CreateQuoteButton");
+            this.CreateQuoteButton.Name = "CreateQuoteButton";
+            this.CreateQuoteButton.UseVisualStyleBackColor = true;
+            this.CreateQuoteButton.Click += new System.EventHandler(this.CreateQuote_Click);
             // 
-            // FindGrowing
+            // FindGrowingButton
             // 
-            resources.ApplyResources(this.FindGrowing, "FindGrowing");
-            this.FindGrowing.Name = "FindGrowing";
-            this.FindGrowing.UseVisualStyleBackColor = true;
-            this.FindGrowing.Click += new System.EventHandler(this.FindGrowing_Click);
+            resources.ApplyResources(this.FindGrowingButton, "FindGrowingButton");
+            this.FindGrowingButton.Name = "FindGrowingButton";
+            this.FindGrowingButton.UseVisualStyleBackColor = true;
+            this.FindGrowingButton.Click += new System.EventHandler(this.FindGrowing_Click);
             // 
-            // CheckGrow
+            // CheckGrowButton
             // 
-            resources.ApplyResources(this.CheckGrow, "CheckGrow");
-            this.CheckGrow.Name = "CheckGrow";
-            this.CheckGrow.UseVisualStyleBackColor = true;
-            this.CheckGrow.Click += new System.EventHandler(this.CheckGrow_Click);
+            resources.ApplyResources(this.CheckGrowButton, "CheckGrowButton");
+            this.CheckGrowButton.Name = "CheckGrowButton";
+            this.CheckGrowButton.UseVisualStyleBackColor = true;
+            this.CheckGrowButton.Click += new System.EventHandler(this.CheckGrow_Click);
             // 
-            // FindZounds
+            // FindZoundsButton
             // 
-            resources.ApplyResources(this.FindZounds, "FindZounds");
-            this.FindZounds.Name = "FindZounds";
-            this.FindZounds.UseVisualStyleBackColor = true;
-            this.FindZounds.Click += new System.EventHandler(this.FindZounds_Click);
+            resources.ApplyResources(this.FindZoundsButton, "FindZoundsButton");
+            this.FindZoundsButton.Name = "FindZoundsButton";
+            this.FindZoundsButton.UseVisualStyleBackColor = true;
+            this.FindZoundsButton.Click += new System.EventHandler(this.FindZounds_Click);
             // 
-            // FindTotals
+            // FindTotalsButton
             // 
-            resources.ApplyResources(this.FindTotals, "FindTotals");
-            this.FindTotals.Name = "FindTotals";
-            this.FindTotals.UseVisualStyleBackColor = true;
-            this.FindTotals.Click += new System.EventHandler(this.FindTotals_Click);
+            resources.ApplyResources(this.FindTotalsButton, "FindTotalsButton");
+            this.FindTotalsButton.Name = "FindTotalsButton";
+            this.FindTotalsButton.UseVisualStyleBackColor = true;
+            this.FindTotalsButton.Click += new System.EventHandler(this.FindTotals_Click);
             // 
-            // FindNeedsDefense
+            // FindNeedsDefenseButton
             // 
-            resources.ApplyResources(this.FindNeedsDefense, "FindNeedsDefense");
-            this.FindNeedsDefense.Name = "FindNeedsDefense";
-            this.FindNeedsDefense.UseVisualStyleBackColor = true;
-            this.FindNeedsDefense.Click += new System.EventHandler(this.FindNeedsDefense_Click);
+            resources.ApplyResources(this.FindNeedsDefenseButton, "FindNeedsDefenseButton");
+            this.FindNeedsDefenseButton.Name = "FindNeedsDefenseButton";
+            this.FindNeedsDefenseButton.UseVisualStyleBackColor = true;
+            this.FindNeedsDefenseButton.Click += new System.EventHandler(this.FindNeedsDefense_Click);
             // 
-            // CheckParenthesis
+            // CheckParenthesisButton
             // 
-            resources.ApplyResources(this.CheckParenthesis, "CheckParenthesis");
-            this.CheckParenthesis.Name = "CheckParenthesis";
-            this.CheckParenthesis.UseVisualStyleBackColor = true;
-            this.CheckParenthesis.Click += new System.EventHandler(this.CheckParenthesis_Click);
+            resources.ApplyResources(this.CheckParenthesisButton, "CheckParenthesisButton");
+            this.CheckParenthesisButton.Name = "CheckParenthesisButton";
+            this.CheckParenthesisButton.UseVisualStyleBackColor = true;
+            this.CheckParenthesisButton.Click += new System.EventHandler(this.CheckParenthesis_Click);
             // 
-            // PlanetOrganizer
+            // PlanetOrganizerTextBox
             // 
-            resources.ApplyResources(this.PlanetOrganizer, "PlanetOrganizer");
-            this.PlanetOrganizer.Name = "PlanetOrganizer";
+            resources.ApplyResources(this.PlanetOrganizerTextBox, "PlanetOrganizerTextBox");
+            this.PlanetOrganizerTextBox.Name = "PlanetOrganizerTextBox";
             // 
-            // itsMyWindow
+            // itsMyWindowTextBox
             // 
-            resources.ApplyResources(this.itsMyWindow, "itsMyWindow");
-            this.itsMyWindow.Name = "itsMyWindow";
+            resources.ApplyResources(this.itsMyWindowTextBox, "itsMyWindowTextBox");
+            this.itsMyWindowTextBox.Name = "itsMyWindowTextBox";
             // 
-            // ClearZounds
+            // ClearZoundsButton
             // 
-            resources.ApplyResources(this.ClearZounds, "ClearZounds");
-            this.ClearZounds.Name = "ClearZounds";
-            this.ClearZounds.UseVisualStyleBackColor = true;
-            this.ClearZounds.Click += new System.EventHandler(this.ClearZounds_Click);
+            resources.ApplyResources(this.ClearZoundsButton, "ClearZoundsButton");
+            this.ClearZoundsButton.Name = "ClearZoundsButton";
+            this.ClearZoundsButton.UseVisualStyleBackColor = true;
+            this.ClearZoundsButton.Click += new System.EventHandler(this.ClearZounds_Click);
             // 
-            // ReplacePlanet
+            // ReplacePlanetButton
             // 
-            resources.ApplyResources(this.ReplacePlanet, "ReplacePlanet");
-            this.ReplacePlanet.Name = "ReplacePlanet";
-            this.ReplacePlanet.UseVisualStyleBackColor = true;
-            this.ReplacePlanet.Click += new System.EventHandler(this.ReplacePlanet_Click);
+            resources.ApplyResources(this.ReplacePlanetButton, "ReplacePlanetButton");
+            this.ReplacePlanetButton.Name = "ReplacePlanetButton";
+            this.ReplacePlanetButton.UseVisualStyleBackColor = true;
+            this.ReplacePlanetButton.Click += new System.EventHandler(this.ReplacePlanet_Click);
             // 
-            // ReturnPlanet
+            // ReturnPlanetButton
             // 
-            resources.ApplyResources(this.ReturnPlanet, "ReturnPlanet");
-            this.ReturnPlanet.Name = "ReturnPlanet";
-            this.ReturnPlanet.UseVisualStyleBackColor = true;
-            this.ReturnPlanet.Click += new System.EventHandler(this.ReturnPlanet_Click);
+            resources.ApplyResources(this.ReturnPlanetButton, "ReturnPlanetButton");
+            this.ReturnPlanetButton.Name = "ReturnPlanetButton";
+            this.ReturnPlanetButton.UseVisualStyleBackColor = true;
+            this.ReturnPlanetButton.Click += new System.EventHandler(this.ReturnPlanet_Click);
             // 
-            // ClearNeedsDefense
+            // ClearNeedsDefenseButton
             // 
-            resources.ApplyResources(this.ClearNeedsDefense, "ClearNeedsDefense");
-            this.ClearNeedsDefense.Name = "ClearNeedsDefense";
-            this.ClearNeedsDefense.UseVisualStyleBackColor = true;
-            this.ClearNeedsDefense.Click += new System.EventHandler(this.ClearNeedsDefense_Click);
+            resources.ApplyResources(this.ClearNeedsDefenseButton, "ClearNeedsDefenseButton");
+            this.ClearNeedsDefenseButton.Name = "ClearNeedsDefenseButton";
+            this.ClearNeedsDefenseButton.UseVisualStyleBackColor = true;
+            this.ClearNeedsDefenseButton.Click += new System.EventHandler(this.ClearNeedsDefense_Click);
             // 
-            // toolStrip1
+            // toolStripMain
             // 
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OpenToolStripButton,
-            this.SaveToolStripButton,
-            this.PrintToolStripButton,
+            resources.ApplyResources(this.toolStripMain, "toolStripMain");
+            this.toolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenToolStripButtonMain,
+            this.SaveToolStripButtonMain,
+            this.PrintToolStripButtonMain,
             this.toolStripSeparator,
-            this.copyToolStripButton,
-            this.toolStripSeparator1,
-            this.HelpMeNiggaDamnToolStripButton});
-            this.toolStrip1.Name = "toolStrip1";
-            // 
-            // OpenToolStripButton
-            // 
-            resources.ApplyResources(this.OpenToolStripButton, "OpenToolStripButton");
-            this.OpenToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OpenToolStripButton.Name = "OpenToolStripButton";
-            this.OpenToolStripButton.Click += new System.EventHandler(this.OpenToolStripButton_Click);
-            // 
-            // SaveToolStripButton
-            // 
-            resources.ApplyResources(this.SaveToolStripButton, "SaveToolStripButton");
-            this.SaveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.SaveToolStripButton.Name = "SaveToolStripButton";
-            this.SaveToolStripButton.Click += new System.EventHandler(this.SaveToolStripButton_Click);
-            // 
-            // PrintToolStripButton
-            // 
-            resources.ApplyResources(this.PrintToolStripButton, "PrintToolStripButton");
-            this.PrintToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.PrintToolStripButton.Name = "PrintToolStripButton";
-            this.PrintToolStripButton.Click += new System.EventHandler(this.PrintToolStripButton_Click);
+            this.CopyToolStripButtonMain,
+            this.toolStripSeparatorMain,
+            this.HelpMeNiggaDamnToolStripButtonMain});
+            this.toolStripMain.Name = "toolStripMain";
             // 
             // toolStripSeparator
             // 
             resources.ApplyResources(this.toolStripSeparator, "toolStripSeparator");
             this.toolStripSeparator.Name = "toolStripSeparator";
             // 
-            // copyToolStripButton
+            // toolStripSeparatorMain
             // 
-            resources.ApplyResources(this.copyToolStripButton, "copyToolStripButton");
-            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copyToolStripButton.Name = "copyToolStripButton";
+            resources.ApplyResources(this.toolStripSeparatorMain, "toolStripSeparatorMain");
+            this.toolStripSeparatorMain.Name = "toolStripSeparatorMain";
             // 
-            // toolStripSeparator1
+            // ClearGrowButton
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.ClearGrowButton, "ClearGrowButton");
+            this.ClearGrowButton.Name = "ClearGrowButton";
+            this.ClearGrowButton.UseVisualStyleBackColor = true;
+            this.ClearGrowButton.Click += new System.EventHandler(this.ClearGrow_Click);
             // 
-            // HelpMeNiggaDamnToolStripButton
+            // CheckNDButton
             // 
-            resources.ApplyResources(this.HelpMeNiggaDamnToolStripButton, "HelpMeNiggaDamnToolStripButton");
-            this.HelpMeNiggaDamnToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.HelpMeNiggaDamnToolStripButton.Name = "HelpMeNiggaDamnToolStripButton";
-            this.HelpMeNiggaDamnToolStripButton.Click += new System.EventHandler(this.HelpMeNiggaDamnToolStripButton_Click);
+            resources.ApplyResources(this.CheckNDButton, "CheckNDButton");
+            this.CheckNDButton.Name = "CheckNDButton";
+            this.CheckNDButton.UseVisualStyleBackColor = true;
+            this.CheckNDButton.Click += new System.EventHandler(this.CheckND_Click);
             // 
-            // pictureBox1
+            // SortDefensesBySystemButton
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            resources.ApplyResources(this.SortDefensesBySystemButton, "SortDefensesBySystemButton");
+            this.SortDefensesBySystemButton.Name = "SortDefensesBySystemButton";
+            this.SortDefensesBySystemButton.UseVisualStyleBackColor = true;
+            this.SortDefensesBySystemButton.Click += new System.EventHandler(this.SortDefensesBySystem_Click);
             // 
-            // ClearGrow
+            // SortGrowingBySystemButton
             // 
-            resources.ApplyResources(this.ClearGrow, "ClearGrow");
-            this.ClearGrow.Name = "ClearGrow";
-            this.ClearGrow.UseVisualStyleBackColor = true;
-            this.ClearGrow.Click += new System.EventHandler(this.ClearGrow_Click);
+            resources.ApplyResources(this.SortGrowingBySystemButton, "SortGrowingBySystemButton");
+            this.SortGrowingBySystemButton.Name = "SortGrowingBySystemButton";
+            this.SortGrowingBySystemButton.UseVisualStyleBackColor = true;
+            this.SortGrowingBySystemButton.Click += new System.EventHandler(this.SortGrowingBySystem_Click);
             // 
-            // CheckND
+            // FindBuildsButton
             // 
-            resources.ApplyResources(this.CheckND, "CheckND");
-            this.CheckND.Name = "CheckND";
-            this.CheckND.UseVisualStyleBackColor = true;
-            this.CheckND.Click += new System.EventHandler(this.CheckND_Click);
+            resources.ApplyResources(this.FindBuildsButton, "FindBuildsButton");
+            this.FindBuildsButton.Name = "FindBuildsButton";
+            this.FindBuildsButton.UseVisualStyleBackColor = true;
             // 
-            // SortDefensesBySystem
+            // FindDeconstructButton
             // 
-            resources.ApplyResources(this.SortDefensesBySystem, "SortDefensesBySystem");
-            this.SortDefensesBySystem.Name = "SortDefensesBySystem";
-            this.SortDefensesBySystem.UseVisualStyleBackColor = true;
-            this.SortDefensesBySystem.Click += new System.EventHandler(this.SortDefensesBySystem_Click);
+            resources.ApplyResources(this.FindDeconstructButton, "FindDeconstructButton");
+            this.FindDeconstructButton.Name = "FindDeconstructButton";
+            this.FindDeconstructButton.UseVisualStyleBackColor = true;
             // 
-            // SortGrowingBySystem
+            // FindColonialInfoButton
             // 
-            resources.ApplyResources(this.SortGrowingBySystem, "SortGrowingBySystem");
-            this.SortGrowingBySystem.Name = "SortGrowingBySystem";
-            this.SortGrowingBySystem.UseVisualStyleBackColor = true;
-            this.SortGrowingBySystem.Click += new System.EventHandler(this.SortGrowingBySystem_Click);
+            resources.ApplyResources(this.FindColonialInfoButton, "FindColonialInfoButton");
+            this.FindColonialInfoButton.Name = "FindColonialInfoButton";
+            this.FindColonialInfoButton.UseVisualStyleBackColor = true;
+            // 
+            // OpenToolStripButtonMain
+            // 
+            resources.ApplyResources(this.OpenToolStripButtonMain, "OpenToolStripButtonMain");
+            this.OpenToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.OpenToolStripButtonMain.Name = "OpenToolStripButtonMain";
+            this.OpenToolStripButtonMain.Click += new System.EventHandler(this.OpenToolStripButtonMain_Click);
+            // 
+            // SaveToolStripButtonMain
+            // 
+            resources.ApplyResources(this.SaveToolStripButtonMain, "SaveToolStripButtonMain");
+            this.SaveToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SaveToolStripButtonMain.Name = "SaveToolStripButtonMain";
+            this.SaveToolStripButtonMain.Click += new System.EventHandler(this.SaveToolStripButtonMain_Click);
+            // 
+            // PrintToolStripButtonMain
+            // 
+            resources.ApplyResources(this.PrintToolStripButtonMain, "PrintToolStripButtonMain");
+            this.PrintToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.PrintToolStripButtonMain.Name = "PrintToolStripButtonMain";
+            this.PrintToolStripButtonMain.Click += new System.EventHandler(this.PrintToolStripButtonMain_Click);
+            // 
+            // CopyToolStripButtonMain
+            // 
+            resources.ApplyResources(this.CopyToolStripButtonMain, "CopyToolStripButtonMain");
+            this.CopyToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CopyToolStripButtonMain.Name = "CopyToolStripButtonMain";
+            // 
+            // HelpMeNiggaDamnToolStripButtonMain
+            // 
+            resources.ApplyResources(this.HelpMeNiggaDamnToolStripButtonMain, "HelpMeNiggaDamnToolStripButtonMain");
+            this.HelpMeNiggaDamnToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.HelpMeNiggaDamnToolStripButtonMain.Name = "HelpMeNiggaDamnToolStripButtonMain";
+            this.HelpMeNiggaDamnToolStripButtonMain.Click += new System.EventHandler(this.HelpMeNiggaDamnToolStripButtonMain_Click);
+            // 
+            // pictureBoxMain
+            // 
+            resources.ApplyResources(this.pictureBoxMain, "pictureBoxMain");
+            this.pictureBoxMain.Image = global::StarportExcel.Properties.Resources.StarDockMatte;
+            this.pictureBoxMain.Name = "pictureBoxMain";
+            this.pictureBoxMain.TabStop = false;
             // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.SortGrowingBySystem);
-            this.Controls.Add(this.SortDefensesBySystem);
-            this.Controls.Add(this.CheckND);
-            this.Controls.Add(this.ClearGrow);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.ClearNeedsDefense);
-            this.Controls.Add(this.ReturnPlanet);
-            this.Controls.Add(this.ReplacePlanet);
-            this.Controls.Add(this.ClearZounds);
-            this.Controls.Add(this.itsMyWindow);
-            this.Controls.Add(this.PlanetOrganizer);
-            this.Controls.Add(this.CheckParenthesis);
-            this.Controls.Add(this.FindNeedsDefense);
-            this.Controls.Add(this.FindTotals);
-            this.Controls.Add(this.FindZounds);
-            this.Controls.Add(this.CheckGrow);
-            this.Controls.Add(this.FindGrowing);
-            this.Controls.Add(this.CreateQuote);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.FindColonialInfoButton);
+            this.Controls.Add(this.FindDeconstructButton);
+            this.Controls.Add(this.FindBuildsButton);
+            this.Controls.Add(this.SortGrowingBySystemButton);
+            this.Controls.Add(this.SortDefensesBySystemButton);
+            this.Controls.Add(this.CheckNDButton);
+            this.Controls.Add(this.ClearGrowButton);
+            this.Controls.Add(this.toolStripMain);
+            this.Controls.Add(this.ClearNeedsDefenseButton);
+            this.Controls.Add(this.ReturnPlanetButton);
+            this.Controls.Add(this.ReplacePlanetButton);
+            this.Controls.Add(this.ClearZoundsButton);
+            this.Controls.Add(this.itsMyWindowTextBox);
+            this.Controls.Add(this.PlanetOrganizerTextBox);
+            this.Controls.Add(this.CheckParenthesisButton);
+            this.Controls.Add(this.FindNeedsDefenseButton);
+            this.Controls.Add(this.FindTotalsButton);
+            this.Controls.Add(this.FindZoundsButton);
+            this.Controls.Add(this.CheckGrowButton);
+            this.Controls.Add(this.FindGrowingButton);
+            this.Controls.Add(this.CreateQuoteButton);
+            this.Controls.Add(this.pictureBoxMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.toolStripMain.ResumeLayout(false);
+            this.toolStripMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-
-
         #endregion
 
-        private System.Windows.Forms.Button CreateQuote;
-        private System.Windows.Forms.Button FindGrowing;
-        private System.Windows.Forms.Button CheckGrow;
-        private System.Windows.Forms.Button FindZounds;
-        private System.Windows.Forms.Button FindTotals;
-        private System.Windows.Forms.Button FindNeedsDefense;
-        private System.Windows.Forms.Button CheckParenthesis;
-        private System.Windows.Forms.TextBox PlanetOrganizer;
-        private System.Windows.Forms.TextBox itsMyWindow;
-        private System.Windows.Forms.Button ClearZounds;
-        private System.Windows.Forms.Button ReplacePlanet;
-        private System.Windows.Forms.Button ReturnPlanet;
-        private System.Windows.Forms.Button ClearNeedsDefense;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton OpenToolStripButton;
-        private System.Windows.Forms.ToolStripButton SaveToolStripButton;
-        private System.Windows.Forms.ToolStripButton PrintToolStripButton;
+        private System.Windows.Forms.Button CreateQuoteButton;
+        private System.Windows.Forms.Button FindGrowingButton;
+        private System.Windows.Forms.Button CheckGrowButton;
+        private System.Windows.Forms.Button FindZoundsButton;
+        private System.Windows.Forms.Button FindTotalsButton;
+        private System.Windows.Forms.Button FindNeedsDefenseButton;
+        private System.Windows.Forms.Button CheckParenthesisButton;
+        private System.Windows.Forms.TextBox PlanetOrganizerTextBox;
+        private System.Windows.Forms.TextBox itsMyWindowTextBox;
+        private System.Windows.Forms.Button ClearZoundsButton;
+        private System.Windows.Forms.Button ReplacePlanetButton;
+        private System.Windows.Forms.Button ReturnPlanetButton;
+        private System.Windows.Forms.Button ClearNeedsDefenseButton;
+        private System.Windows.Forms.ToolStrip toolStripMain;
+        private System.Windows.Forms.ToolStripButton OpenToolStripButtonMain;
+        private System.Windows.Forms.ToolStripButton SaveToolStripButtonMain;
+        private System.Windows.Forms.ToolStripButton PrintToolStripButtonMain;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripButton copyToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton HelpMeNiggaDamnToolStripButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button ClearGrow;
-        private System.Windows.Forms.Button CheckND;
-        private System.Windows.Forms.Button SortDefensesBySystem;
-        private System.Windows.Forms.Button SortGrowingBySystem;
+        private System.Windows.Forms.ToolStripButton CopyToolStripButtonMain;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparatorMain;
+        private System.Windows.Forms.ToolStripButton HelpMeNiggaDamnToolStripButtonMain;
+        private System.Windows.Forms.Button ClearGrowButton;
+        private System.Windows.Forms.Button CheckNDButton;
+        private System.Windows.Forms.Button SortDefensesBySystemButton;
+        private System.Windows.Forms.Button SortGrowingBySystemButton;
+        private System.Windows.Forms.Button FindBuildsButton;
+        private System.Windows.Forms.Button FindDeconstructButton;
+        private System.Windows.Forms.Button FindColonialInfoButton;
+        private System.Windows.Forms.PictureBox pictureBoxMain;
     }
 }
 

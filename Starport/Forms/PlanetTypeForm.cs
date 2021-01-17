@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace StarportExcel
 {
-	public partial class PlanetTypeForm : Form
+    public partial class PlanetTypeForm : Form
     {
         string excelPath = "";
         string outputPath = @"G:\My Drive\Personal Stuff\Starport\Output.txt";
@@ -70,16 +68,16 @@ namespace StarportExcel
 
         private void Arctics_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
             //Console.WriteLine("Temp is : " + temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(2);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -98,15 +96,15 @@ namespace StarportExcel
 
         private void Deserts_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(3);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -127,15 +125,15 @@ namespace StarportExcel
 
         private void Earths_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(4);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -157,15 +155,15 @@ namespace StarportExcel
 
         private void Greenhouses_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(5);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -186,15 +184,15 @@ namespace StarportExcel
 
         private void Mountains_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp); 
+            int.TryParse(numberTextBox.Text, out int temp); 
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(6);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -215,15 +213,15 @@ namespace StarportExcel
 
         private void Oceanics_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp); 
+            int.TryParse(numberTextBox.Text, out int temp); 
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(7);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -244,15 +242,15 @@ namespace StarportExcel
 
         private void Paradises_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp); 
+            int.TryParse(numberTextBox.Text, out int temp); 
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(8);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -273,15 +271,15 @@ namespace StarportExcel
 
         private void Rockies_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(9);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -302,15 +300,15 @@ namespace StarportExcel
 
         private void Volcanics_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(10);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -415,6 +413,9 @@ namespace StarportExcel
             output.WriteLine("");
         }
 
-        
+        private void CMinesList_Click(object sender, EventArgs e)
+        {
+
+        }
     }//PlanetTypeForm
 }//namespace
