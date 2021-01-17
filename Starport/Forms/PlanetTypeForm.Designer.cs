@@ -5,15 +5,15 @@ namespace StarportExcel
 {
     partial class PlanetTypeForm
     {
-        private Button Arctics;
-        private Button Deserts;
-        private Button Earths;
-        private Button Greenhouses;
-        private Button Mountains;
-        private Button Oceanics;
-        private Button Paradises;
-        private Button Rockies;
-        private Button Volcanics;
+        private Button ArcticsButton;
+        private Button DesertsButton;
+        private Button EarthsButton;
+        private Button GreenhousesButton;
+        private Button MountainsButton;
+        private Button OceanicsButton;
+        private Button ParadisesButton;
+        private Button RockiesButton;
+        private Button VolcanicsButton;
 
         /// <summary>
         /// Required designer variable.
@@ -36,217 +36,317 @@ namespace StarportExcel
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanetTypeForm));
-            this.Arctics = new System.Windows.Forms.Button();
-            this.Deserts = new System.Windows.Forms.Button();
-            this.Earths = new System.Windows.Forms.Button();
-            this.Greenhouses = new System.Windows.Forms.Button();
-            this.Mountains = new System.Windows.Forms.Button();
-            this.Oceanics = new System.Windows.Forms.Button();
-            this.Paradises = new System.Windows.Forms.Button();
-            this.Rockies = new System.Windows.Forms.Button();
-            this.Volcanics = new System.Windows.Forms.Button();
-            this.numberBox = new System.Windows.Forms.TextBox();
-            this.NeedsDefenses = new System.Windows.Forms.Button();
-            this.Growing = new System.Windows.Forms.Button();
-            this.ClearOutput = new System.Windows.Forms.Button();
-            this.LineBreak = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.OpenToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.SaveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ArcticsButton = new System.Windows.Forms.Button();
+            this.DesertsButton = new System.Windows.Forms.Button();
+            this.EarthsButton = new System.Windows.Forms.Button();
+            this.GreenhousesButton = new System.Windows.Forms.Button();
+            this.MountainsButton = new System.Windows.Forms.Button();
+            this.OceanicsButton = new System.Windows.Forms.Button();
+            this.ParadisesButton = new System.Windows.Forms.Button();
+            this.RockiesButton = new System.Windows.Forms.Button();
+            this.VolcanicsButton = new System.Windows.Forms.Button();
+            this.numberTextBox = new System.Windows.Forms.TextBox();
+            this.NeedsDefensesButton = new System.Windows.Forms.Button();
+            this.GrowingButton = new System.Windows.Forms.Button();
+            this.ClearOutputButton = new System.Windows.Forms.Button();
+            this.LineBreakButton = new System.Windows.Forms.Button();
+            this.toolStripPT = new System.Windows.Forms.ToolStrip();
+            this.OpenToolStripButtonPT = new System.Windows.Forms.ToolStripButton();
+            this.SaveToolStripButtonPT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.CopyToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.CopyToolStripButtonPT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.HelpMeNiggaDamnToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1.SuspendLayout();
+            this.HelpMeNiggaDamnToolStripButtonPT = new System.Windows.Forms.ToolStripButton();
+            this.DirectorshipListButton = new System.Windows.Forms.Button();
+            this.PrisonListButton = new System.Windows.Forms.Button();
+            this.SocialismListButton = new System.Windows.Forms.Button();
+            this.DemocracyListButton = new System.Windows.Forms.Button();
+            this.NukesListButton = new System.Windows.Forms.Button();
+            this.CMinesListButton = new System.Windows.Forms.Button();
+            this.SolarsListButton = new System.Windows.Forms.Button();
+            this.LasersListButton = new System.Windows.Forms.Button();
+            this.BuildListButton = new System.Windows.Forms.Button();
+            this.DeconstructListButton = new System.Windows.Forms.Button();
+            this.FindMoraleButton = new System.Windows.Forms.Button();
+            this.toolStripPT.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Arctics
+            // ArcticsButton
             // 
-            resources.ApplyResources(this.Arctics, "Arctics");
-            this.Arctics.Name = "Arctics";
-            this.Arctics.UseVisualStyleBackColor = true;
-            this.Arctics.Click += new System.EventHandler(this.Arctics_Click);
+            resources.ApplyResources(this.ArcticsButton, "ArcticsButton");
+            this.ArcticsButton.Name = "ArcticsButton";
+            this.ArcticsButton.UseVisualStyleBackColor = true;
+            this.ArcticsButton.Click += new System.EventHandler(this.Arctics_Click);
             // 
-            // Deserts
+            // DesertsButton
             // 
-            resources.ApplyResources(this.Deserts, "Deserts");
-            this.Deserts.Name = "Deserts";
-            this.Deserts.UseVisualStyleBackColor = true;
-            this.Deserts.Click += new System.EventHandler(this.Deserts_Click);
+            resources.ApplyResources(this.DesertsButton, "DesertsButton");
+            this.DesertsButton.Name = "DesertsButton";
+            this.DesertsButton.UseVisualStyleBackColor = true;
+            this.DesertsButton.Click += new System.EventHandler(this.Deserts_Click);
             // 
-            // Earths
+            // EarthsButton
             // 
-            resources.ApplyResources(this.Earths, "Earths");
-            this.Earths.Name = "Earths";
-            this.Earths.UseVisualStyleBackColor = true;
-            this.Earths.Click += new System.EventHandler(this.Earths_Click);
+            resources.ApplyResources(this.EarthsButton, "EarthsButton");
+            this.EarthsButton.Name = "EarthsButton";
+            this.EarthsButton.UseVisualStyleBackColor = true;
+            this.EarthsButton.Click += new System.EventHandler(this.Earths_Click);
             // 
-            // Greenhouses
+            // GreenhousesButton
             // 
-            resources.ApplyResources(this.Greenhouses, "Greenhouses");
-            this.Greenhouses.Name = "Greenhouses";
-            this.Greenhouses.UseVisualStyleBackColor = true;
-            this.Greenhouses.Click += new System.EventHandler(this.Greenhouses_Click);
+            resources.ApplyResources(this.GreenhousesButton, "GreenhousesButton");
+            this.GreenhousesButton.Name = "GreenhousesButton";
+            this.GreenhousesButton.UseVisualStyleBackColor = true;
+            this.GreenhousesButton.Click += new System.EventHandler(this.Greenhouses_Click);
             // 
-            // Mountains
+            // MountainsButton
             // 
-            resources.ApplyResources(this.Mountains, "Mountains");
-            this.Mountains.Name = "Mountains";
-            this.Mountains.UseVisualStyleBackColor = true;
-            this.Mountains.Click += new System.EventHandler(this.Mountains_Click);
+            resources.ApplyResources(this.MountainsButton, "MountainsButton");
+            this.MountainsButton.Name = "MountainsButton";
+            this.MountainsButton.UseVisualStyleBackColor = true;
+            this.MountainsButton.Click += new System.EventHandler(this.Mountains_Click);
             // 
-            // Oceanics
+            // OceanicsButton
             // 
-            resources.ApplyResources(this.Oceanics, "Oceanics");
-            this.Oceanics.Name = "Oceanics";
-            this.Oceanics.UseVisualStyleBackColor = true;
-            this.Oceanics.Click += new System.EventHandler(this.Oceanics_Click);
+            resources.ApplyResources(this.OceanicsButton, "OceanicsButton");
+            this.OceanicsButton.Name = "OceanicsButton";
+            this.OceanicsButton.UseVisualStyleBackColor = true;
+            this.OceanicsButton.Click += new System.EventHandler(this.Oceanics_Click);
             // 
-            // Paradises
+            // ParadisesButton
             // 
-            resources.ApplyResources(this.Paradises, "Paradises");
-            this.Paradises.Name = "Paradises";
-            this.Paradises.UseVisualStyleBackColor = true;
-            this.Paradises.Click += new System.EventHandler(this.Paradises_Click);
+            resources.ApplyResources(this.ParadisesButton, "ParadisesButton");
+            this.ParadisesButton.Name = "ParadisesButton";
+            this.ParadisesButton.UseVisualStyleBackColor = true;
+            this.ParadisesButton.Click += new System.EventHandler(this.Paradises_Click);
             // 
-            // Rockies
+            // RockiesButton
             // 
-            resources.ApplyResources(this.Rockies, "Rockies");
-            this.Rockies.Name = "Rockies";
-            this.Rockies.UseVisualStyleBackColor = true;
-            this.Rockies.Click += new System.EventHandler(this.Rockies_Click);
+            resources.ApplyResources(this.RockiesButton, "RockiesButton");
+            this.RockiesButton.Name = "RockiesButton";
+            this.RockiesButton.UseVisualStyleBackColor = true;
+            this.RockiesButton.Click += new System.EventHandler(this.Rockies_Click);
             // 
-            // Volcanics
+            // VolcanicsButton
             // 
-            resources.ApplyResources(this.Volcanics, "Volcanics");
-            this.Volcanics.Name = "Volcanics";
-            this.Volcanics.UseVisualStyleBackColor = true;
-            this.Volcanics.Click += new System.EventHandler(this.Volcanics_Click);
+            resources.ApplyResources(this.VolcanicsButton, "VolcanicsButton");
+            this.VolcanicsButton.Name = "VolcanicsButton";
+            this.VolcanicsButton.UseVisualStyleBackColor = true;
+            this.VolcanicsButton.Click += new System.EventHandler(this.Volcanics_Click);
             // 
-            // numberBox
+            // numberTextBox
             // 
-            resources.ApplyResources(this.numberBox, "numberBox");
-            this.numberBox.Name = "numberBox";
+            resources.ApplyResources(this.numberTextBox, "numberTextBox");
+            this.numberTextBox.Name = "numberTextBox";
             // 
-            // NeedsDefenses
+            // NeedsDefensesButton
             // 
-            resources.ApplyResources(this.NeedsDefenses, "NeedsDefenses");
-            this.NeedsDefenses.Name = "NeedsDefenses";
-            this.NeedsDefenses.UseVisualStyleBackColor = true;
-            this.NeedsDefenses.Click += new System.EventHandler(this.NeedsDefenses_Click);
+            resources.ApplyResources(this.NeedsDefensesButton, "NeedsDefensesButton");
+            this.NeedsDefensesButton.Name = "NeedsDefensesButton";
+            this.NeedsDefensesButton.UseVisualStyleBackColor = true;
+            this.NeedsDefensesButton.Click += new System.EventHandler(this.NeedsDefenses_Click);
             // 
-            // Growing
+            // GrowingButton
             // 
-            resources.ApplyResources(this.Growing, "Growing");
-            this.Growing.Name = "Growing";
-            this.Growing.UseVisualStyleBackColor = true;
-            this.Growing.Click += new System.EventHandler(this.Growing_Click);
+            resources.ApplyResources(this.GrowingButton, "GrowingButton");
+            this.GrowingButton.Name = "GrowingButton";
+            this.GrowingButton.UseVisualStyleBackColor = true;
+            this.GrowingButton.Click += new System.EventHandler(this.Growing_Click);
             // 
-            // ClearOutput
+            // ClearOutputButton
             // 
-            resources.ApplyResources(this.ClearOutput, "ClearOutput");
-            this.ClearOutput.Name = "ClearOutput";
-            this.ClearOutput.UseVisualStyleBackColor = true;
-            this.ClearOutput.Click += new System.EventHandler(this.ClearOutput_Click);
+            resources.ApplyResources(this.ClearOutputButton, "ClearOutputButton");
+            this.ClearOutputButton.Name = "ClearOutputButton";
+            this.ClearOutputButton.UseVisualStyleBackColor = true;
+            this.ClearOutputButton.Click += new System.EventHandler(this.ClearOutput_Click);
             // 
-            // LineBreak
+            // LineBreakButton
             // 
-            resources.ApplyResources(this.LineBreak, "LineBreak");
-            this.LineBreak.Name = "LineBreak";
-            this.LineBreak.UseVisualStyleBackColor = true;
-            this.LineBreak.Click += new System.EventHandler(this.LineBreak_Click);
+            resources.ApplyResources(this.LineBreakButton, "LineBreakButton");
+            this.LineBreakButton.Name = "LineBreakButton";
+            this.LineBreakButton.UseVisualStyleBackColor = true;
+            this.LineBreakButton.Click += new System.EventHandler(this.LineBreak_Click);
             // 
-            // toolStrip1
+            // toolStripPT
             // 
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OpenToolStripButton,
-            this.SaveToolStripButton,
+            resources.ApplyResources(this.toolStripPT, "toolStripPT");
+            this.toolStripPT.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenToolStripButtonPT,
+            this.SaveToolStripButtonPT,
             this.toolStripSeparator,
-            this.CopyToolStripButton,
+            this.CopyToolStripButtonPT,
             this.toolStripSeparator1,
-            this.HelpMeNiggaDamnToolStripButton});
-            this.toolStrip1.Name = "toolStrip1";
+            this.HelpMeNiggaDamnToolStripButtonPT});
+            this.toolStripPT.Name = "toolStripPT";
             // 
-            // OpenToolStripButton
+            // OpenToolStripButtonPT
             // 
-            resources.ApplyResources(this.OpenToolStripButton, "OpenToolStripButton");
-            this.OpenToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OpenToolStripButton.Name = "OpenToolStripButton";
-            this.OpenToolStripButton.Click += new System.EventHandler(this.OpenToolStripButton_Click);
+            resources.ApplyResources(this.OpenToolStripButtonPT, "OpenToolStripButtonPT");
+            this.OpenToolStripButtonPT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.OpenToolStripButtonPT.Name = "OpenToolStripButtonPT";
+            this.OpenToolStripButtonPT.Click += new System.EventHandler(this.OpenToolStripButton_Click);
             // 
-            // SaveToolStripButton
+            // SaveToolStripButtonPT
             // 
-            resources.ApplyResources(this.SaveToolStripButton, "SaveToolStripButton");
-            this.SaveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.SaveToolStripButton.Name = "SaveToolStripButton";
-            this.SaveToolStripButton.Click += new System.EventHandler(this.SaveToolStripButton_Click);
+            resources.ApplyResources(this.SaveToolStripButtonPT, "SaveToolStripButtonPT");
+            this.SaveToolStripButtonPT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SaveToolStripButtonPT.Name = "SaveToolStripButtonPT";
+            this.SaveToolStripButtonPT.Click += new System.EventHandler(this.SaveToolStripButton_Click);
             // 
             // toolStripSeparator
             // 
             resources.ApplyResources(this.toolStripSeparator, "toolStripSeparator");
             this.toolStripSeparator.Name = "toolStripSeparator";
             // 
-            // CopyToolStripButton
+            // CopyToolStripButtonPT
             // 
-            resources.ApplyResources(this.CopyToolStripButton, "CopyToolStripButton");
-            this.CopyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.CopyToolStripButton.Name = "CopyToolStripButton";
-            this.CopyToolStripButton.Click += new System.EventHandler(this.CopyToolStripButton_Click);
+            resources.ApplyResources(this.CopyToolStripButtonPT, "CopyToolStripButtonPT");
+            this.CopyToolStripButtonPT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CopyToolStripButtonPT.Name = "CopyToolStripButtonPT";
+            this.CopyToolStripButtonPT.Click += new System.EventHandler(this.CopyToolStripButton_Click);
             // 
             // toolStripSeparator1
             // 
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             // 
-            // HelpMeNiggaDamnToolStripButton
+            // HelpMeNiggaDamnToolStripButtonPT
             // 
-            resources.ApplyResources(this.HelpMeNiggaDamnToolStripButton, "HelpMeNiggaDamnToolStripButton");
-            this.HelpMeNiggaDamnToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.HelpMeNiggaDamnToolStripButton.Name = "HelpMeNiggaDamnToolStripButton";
-            this.HelpMeNiggaDamnToolStripButton.Click += new System.EventHandler(this.HelpMeNiggaDamnToolStripButton_Click);
+            resources.ApplyResources(this.HelpMeNiggaDamnToolStripButtonPT, "HelpMeNiggaDamnToolStripButtonPT");
+            this.HelpMeNiggaDamnToolStripButtonPT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.HelpMeNiggaDamnToolStripButtonPT.Name = "HelpMeNiggaDamnToolStripButtonPT";
+            this.HelpMeNiggaDamnToolStripButtonPT.Click += new System.EventHandler(this.HelpMeNiggaDamnToolStripButton_Click);
+            // 
+            // DirectorshipListButton
+            // 
+            resources.ApplyResources(this.DirectorshipListButton, "DirectorshipListButton");
+            this.DirectorshipListButton.Name = "DirectorshipListButton";
+            this.DirectorshipListButton.UseVisualStyleBackColor = true;
+            // 
+            // PrisonListButton
+            // 
+            resources.ApplyResources(this.PrisonListButton, "PrisonListButton");
+            this.PrisonListButton.Name = "PrisonListButton";
+            this.PrisonListButton.UseVisualStyleBackColor = true;
+            // 
+            // SocialismListButton
+            // 
+            resources.ApplyResources(this.SocialismListButton, "SocialismListButton");
+            this.SocialismListButton.Name = "SocialismListButton";
+            this.SocialismListButton.UseVisualStyleBackColor = true;
+            // 
+            // DemocracyListButton
+            // 
+            resources.ApplyResources(this.DemocracyListButton, "DemocracyListButton");
+            this.DemocracyListButton.Name = "DemocracyListButton";
+            this.DemocracyListButton.UseVisualStyleBackColor = true;
+            // 
+            // NukesListButton
+            // 
+            resources.ApplyResources(this.NukesListButton, "NukesListButton");
+            this.NukesListButton.Name = "NukesListButton";
+            this.NukesListButton.UseVisualStyleBackColor = true;
+            // 
+            // CMinesListButton
+            // 
+            resources.ApplyResources(this.CMinesListButton, "CMinesListButton");
+            this.CMinesListButton.Name = "CMinesListButton";
+            this.CMinesListButton.UseVisualStyleBackColor = true;
+            this.CMinesListButton.Click += new System.EventHandler(this.CMinesList_Click);
+            // 
+            // SolarsListButton
+            // 
+            resources.ApplyResources(this.SolarsListButton, "SolarsListButton");
+            this.SolarsListButton.Name = "SolarsListButton";
+            this.SolarsListButton.UseVisualStyleBackColor = true;
+            // 
+            // LasersListButton
+            // 
+            resources.ApplyResources(this.LasersListButton, "LasersListButton");
+            this.LasersListButton.Name = "LasersListButton";
+            this.LasersListButton.UseVisualStyleBackColor = true;
+            // 
+            // BuildListButton
+            // 
+            resources.ApplyResources(this.BuildListButton, "BuildListButton");
+            this.BuildListButton.Name = "BuildListButton";
+            this.BuildListButton.UseVisualStyleBackColor = true;
+            // 
+            // DeconstructListButton
+            // 
+            resources.ApplyResources(this.DeconstructListButton, "DeconstructListButton");
+            this.DeconstructListButton.Name = "DeconstructListButton";
+            this.DeconstructListButton.UseVisualStyleBackColor = true;
+            // 
+            // FindMoraleButton
+            // 
+            resources.ApplyResources(this.FindMoraleButton, "FindMoraleButton");
+            this.FindMoraleButton.Name = "FindMoraleButton";
+            this.FindMoraleButton.UseVisualStyleBackColor = true;
             // 
             // PlanetTypeForm
             // 
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.LineBreak);
-            this.Controls.Add(this.ClearOutput);
-            this.Controls.Add(this.Growing);
-            this.Controls.Add(this.NeedsDefenses);
-            this.Controls.Add(this.numberBox);
-            this.Controls.Add(this.Volcanics);
-            this.Controls.Add(this.Rockies);
-            this.Controls.Add(this.Paradises);
-            this.Controls.Add(this.Oceanics);
-            this.Controls.Add(this.Mountains);
-            this.Controls.Add(this.Greenhouses);
-            this.Controls.Add(this.Earths);
-            this.Controls.Add(this.Deserts);
-            this.Controls.Add(this.Arctics);
+            this.Controls.Add(this.FindMoraleButton);
+            this.Controls.Add(this.DeconstructListButton);
+            this.Controls.Add(this.BuildListButton);
+            this.Controls.Add(this.SolarsListButton);
+            this.Controls.Add(this.LasersListButton);
+            this.Controls.Add(this.CMinesListButton);
+            this.Controls.Add(this.NukesListButton);
+            this.Controls.Add(this.SocialismListButton);
+            this.Controls.Add(this.DemocracyListButton);
+            this.Controls.Add(this.PrisonListButton);
+            this.Controls.Add(this.DirectorshipListButton);
+            this.Controls.Add(this.toolStripPT);
+            this.Controls.Add(this.LineBreakButton);
+            this.Controls.Add(this.ClearOutputButton);
+            this.Controls.Add(this.GrowingButton);
+            this.Controls.Add(this.NeedsDefensesButton);
+            this.Controls.Add(this.numberTextBox);
+            this.Controls.Add(this.VolcanicsButton);
+            this.Controls.Add(this.RockiesButton);
+            this.Controls.Add(this.ParadisesButton);
+            this.Controls.Add(this.OceanicsButton);
+            this.Controls.Add(this.MountainsButton);
+            this.Controls.Add(this.GreenhousesButton);
+            this.Controls.Add(this.EarthsButton);
+            this.Controls.Add(this.DesertsButton);
+            this.Controls.Add(this.ArcticsButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "PlanetTypeForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlanetTypeForm_FormClosing);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStripPT.ResumeLayout(false);
+            this.toolStripPT.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         } //init
 
-        private System.Windows.Forms.TextBox numberBox;
-        private Button NeedsDefenses;
-        private Button Growing;
-        private Button ClearOutput;
-        private Button LineBreak;
-        private ToolStrip toolStrip1;
-        private ToolStripButton OpenToolStripButton;
-        private ToolStripButton SaveToolStripButton;
+        private System.Windows.Forms.TextBox numberTextBox;
+        private Button NeedsDefensesButton;
+        private Button GrowingButton;
+        private Button ClearOutputButton;
+        private Button LineBreakButton;
+        private ToolStrip toolStripPT;
+        private ToolStripButton OpenToolStripButtonPT;
+        private ToolStripButton SaveToolStripButtonPT;
         private ToolStripSeparator toolStripSeparator;
-        private ToolStripButton CopyToolStripButton;
+        private ToolStripButton CopyToolStripButtonPT;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton HelpMeNiggaDamnToolStripButton;
+        private ToolStripButton HelpMeNiggaDamnToolStripButtonPT;
+        private Button DirectorshipListButton;
+        private Button PrisonListButton;
+        private Button SocialismListButton;
+        private Button DemocracyListButton;
+        private Button NukesListButton;
+        private Button CMinesListButton;
+        private Button SolarsListButton;
+        private Button LasersListButton;
+        private Button BuildListButton;
+        private Button DeconstructListButton;
+        private Button FindMoraleButton;
     }//class
 }//namespace

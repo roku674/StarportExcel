@@ -118,62 +118,95 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Arctics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
+  <data name="ArcticsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
   </data>
-  <data name="Deserts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 72</value>
+  <data name="ArcticsButton.Text" xml:space="preserve">
+    <value>Arctics</value>
   </data>
-  <data name="Earths.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 72</value>
+  <data name="DesertsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
   </data>
-  <data name="Greenhouses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>358, 72</value>
+  <data name="DesertsButton.Text" xml:space="preserve">
+    <value>Deserts</value>
   </data>
-  <data name="Mountains.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 102</value>
+  <data name="EarthsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
   </data>
-  <data name="Oceanics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 102</value>
+  <data name="EarthsButton.Text" xml:space="preserve">
+    <value>Earths</value>
   </data>
-  <data name="Paradises.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 132</value>
+  <data name="GreenhousesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
   </data>
-  <data name="Rockies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 102</value>
+  <data name="GreenhousesButton.Text" xml:space="preserve">
+    <value>Greenhouses</value>
   </data>
-  <data name="Volcanics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>358, 102</value>
+  <data name="MountainsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
   </data>
-  <data name="numberBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 43</value>
+  <data name="MountainsButton.Text" xml:space="preserve">
+    <value>Mountains</value>
   </data>
-  <data name="NeedsDefenses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 190</value>
+  <data name="OceanicsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
   </data>
-  <data name="Growing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 189</value>
+  <data name="OceanicsButton.Text" xml:space="preserve">
+    <value>Oceanics</value>
   </data>
-  <data name="ClearOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 219</value>
+  <data name="ParadisesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 51</value>
   </data>
-  <data name="ClearOutput.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ParadisesButton.Text" xml:space="preserve">
+    <value>Paradises</value>
+  </data>
+  <data name="RockiesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
+  </data>
+  <data name="RockiesButton.Text" xml:space="preserve">
+    <value>Rockies</value>
+  </data>
+  <data name="VolcanicsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
+  </data>
+  <data name="VolcanicsButton.Text" xml:space="preserve">
+    <value>Volcanics</value>
+  </data>
+  <data name="numberTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 20</value>
+  </data>
+  <data name="numberTextBox.Text" xml:space="preserve">
+    <value>Insert Planet Number in the form of the integer otherwise it'll spit them all out to the Output.Txt</value>
+  </data>
+  <data name="NeedsDefensesButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 23</value>
+  </data>
+  <data name="NeedsDefensesButton.Text" xml:space="preserve">
+    <value>Needs Defenses List</value>
+  </data>
+  <data name="GrowingButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="GrowingButton.Text" xml:space="preserve">
+    <value>Growing List</value>
+  </data>
+  <data name="ClearOutputButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 23</value>
+  </data>
+  <data name="ClearOutputButton.Text" xml:space="preserve">
+    <value>Clear Output.txt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LineBreak.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LineBreakButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LineBreak.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 218</value>
-  </data>
-  <data name="LineBreak.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LineBreakButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 23</value>
   </data>
-  <data name="LineBreak.Text" xml:space="preserve">
+  <data name="LineBreakButton.Text" xml:space="preserve">
     <value>Line Break</value>
   </data>
-  <data name="OpenToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="OpenToolStripButtonPT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJHSURBVDhPxZBdSNNhFMb/F110ZZEVhVBgeeHNICiiuggp
@@ -189,13 +222,13 @@
         g6eHO+A/lyD8ARfG3mk9fv1YAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="OpenToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="OpenToolStripButtonPT.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="OpenToolStripButton.Text" xml:space="preserve">
+  <data name="OpenToolStripButtonPT.Text" xml:space="preserve">
     <value>&amp;Open</value>
   </data>
-  <data name="SaveToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="SaveToolStripButtonPT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVDhPrZLfS5NRGMfff6H7boIuuq2pMZyL1eAt11CW
@@ -211,13 +244,13 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="SaveToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="SaveToolStripButtonPT.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="SaveToolStripButton.Text" xml:space="preserve">
+  <data name="SaveToolStripButtonPT.Text" xml:space="preserve">
     <value>&amp;Save</value>
   </data>
-  <data name="CopyToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CopyToolStripButtonPT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHkSURBVDhPvZHfS1NhHIf3p5QypLr2D4goMwoMCi/qIugH
@@ -231,13 +264,13 @@
         FF7bIVJVZ0N/soPK421UHGstlFvYd/hWecF/Qqf7CR0A5wwgSQA2AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="CopyToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="CopyToolStripButtonPT.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="CopyToolStripButton.Text" xml:space="preserve">
+  <data name="CopyToolStripButtonPT.Text" xml:space="preserve">
     <value>&amp;Copy</value>
   </data>
-  <data name="HelpMeNiggaDamnToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="HelpMeNiggaDamnToolStripButtonPT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIVSURBVDhPtVJNaxNRFM1PyE+Yn1AUXLjK0uWgDWQZwUUX
@@ -252,20 +285,119 @@
         E9ew//AVxE8OItv/9O/Cf0ck8gud2vKswuxNZgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="HelpMeNiggaDamnToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="HelpMeNiggaDamnToolStripButtonPT.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="HelpMeNiggaDamnToolStripButton.Text" xml:space="preserve">
+  <data name="HelpMeNiggaDamnToolStripButtonPT.Text" xml:space="preserve">
     <value>He&amp;lp</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>487, 25</value>
+    <value>477, 25</value>
   </data>
   <data name="toolStrip1.Text" xml:space="preserve">
     <value>toolStrip1</value>
   </data>
+  <data name="DirectorshipListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DirectorshipListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="DirectorshipListButton.Text" xml:space="preserve">
+    <value>Directorship List</value>
+  </data>
+  <data name="PrisonListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PrisonListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="PrisonListButton.Text" xml:space="preserve">
+    <value>Prison List</value>
+  </data>
+  <data name="SocialismListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SocialismListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="SocialismListButton.Text" xml:space="preserve">
+    <value>Socialism List</value>
+  </data>
+  <data name="DemocracyListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DemocracyListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="DemocracyListButton.Text" xml:space="preserve">
+    <value>Democracy List</value>
+  </data>
+  <data name="NukesListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NukesListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="NukesListButton.Text" xml:space="preserve">
+    <value>Nukes List</value>
+  </data>
+  <data name="CMinesListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CMinesListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="CMinesListButton.Text" xml:space="preserve">
+    <value>Compund Mines List</value>
+  </data>
+  <data name="SolarsListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SolarsListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="SolarsListButton.Text" xml:space="preserve">
+    <value>Solars List</value>
+  </data>
+  <data name="LasersListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LasersListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="LasersListButton.Text" xml:space="preserve">
+    <value>Lasers List</value>
+  </data>
+  <data name="BuildListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BuildListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="BuildListButton.Text" xml:space="preserve">
+    <value>Build List</value>
+  </data>
+  <data name="DeconstructListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DeconstructListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="DeconstructListButton.Text" xml:space="preserve">
+    <value>Deconstruct List</value>
+  </data>
+  <data name="FindMoraleButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="FindMoraleButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="FindMoraleButton.Text" xml:space="preserve">
+    <value>Morale List</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>487, 263</value>
+    <value>477, 426</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
