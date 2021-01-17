@@ -54,7 +54,7 @@ namespace StarportExcel
             this.OpenToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.SaveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.CopyToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.HelpMeNiggaDamnToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
@@ -163,7 +163,7 @@ namespace StarportExcel
             this.OpenToolStripButton,
             this.SaveToolStripButton,
             this.toolStripSeparator,
-            this.copyToolStripButton,
+            this.CopyToolStripButton,
             this.toolStripSeparator1,
             this.HelpMeNiggaDamnToolStripButton});
             this.toolStrip1.Name = "toolStrip1";
@@ -187,12 +187,12 @@ namespace StarportExcel
             resources.ApplyResources(this.toolStripSeparator, "toolStripSeparator");
             this.toolStripSeparator.Name = "toolStripSeparator";
             // 
-            // copyToolStripButton
+            // CopyToolStripButton
             // 
-            resources.ApplyResources(this.copyToolStripButton, "copyToolStripButton");
-            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copyToolStripButton.Name = "copyToolStripButton";
-            this.copyToolStripButton.Click += new System.EventHandler(this.copyToolStripButton_Click);
+            resources.ApplyResources(this.CopyToolStripButton, "CopyToolStripButton");
+            this.CopyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CopyToolStripButton.Name = "CopyToolStripButton";
+            this.CopyToolStripButton.Click += new System.EventHandler(this.CopyToolStripButton_Click);
             // 
             // toolStripSeparator1
             // 
@@ -245,7 +245,7 @@ namespace StarportExcel
         private ToolStripButton OpenToolStripButton;
         private ToolStripButton SaveToolStripButton;
         private ToolStripSeparator toolStripSeparator;
-        private ToolStripButton copyToolStripButton;
+        private ToolStripButton CopyToolStripButton;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton HelpMeNiggaDamnToolStripButton;
     }//class

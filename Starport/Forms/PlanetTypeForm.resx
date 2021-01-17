@@ -142,6 +142,9 @@
   <data name="Rockies.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 24</value>
   </data>
+  <data name="&gt;&gt;CopyToolStripButton.Name" xml:space="preserve">
+    <value>CopyToolStripButton</value>
+  </data>
   <data name="&gt;&gt;Volcanics.Name" xml:space="preserve">
     <value>Volcanics</value>
   </data>
@@ -157,8 +160,8 @@
   <data name="&gt;&gt;LineBreak.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="Paradises.Text" xml:space="preserve">
-    <value>Paradises</value>
+  <data name="&gt;&gt;CopyToolStripButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
     <value>toolStrip1</value>
@@ -1389,11 +1392,11 @@
   <data name="&gt;&gt;Mountains.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="Rockies.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="&gt;&gt;SaveToolStripButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;numberBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="CopyToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="Oceanics.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 24</value>
@@ -1409,9 +1412,6 @@
   </data>
   <data name="Paradises.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
-  </data>
-  <data name="&gt;&gt;SaveToolStripButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PlanetTypeForm</value>
@@ -1611,6 +1611,9 @@
   <data name="Mountains.Text" xml:space="preserve">
     <value>Mountains</value>
   </data>
+  <data name="Paradises.Text" xml:space="preserve">
+    <value>Paradises</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
   </data>
@@ -1659,8 +1662,14 @@
   <data name="&gt;&gt;NeedsDefenses.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Rockies.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
   <data name="copyToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
+  </data>
+  <data name="&gt;&gt;numberBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Arctics.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 24</value>
