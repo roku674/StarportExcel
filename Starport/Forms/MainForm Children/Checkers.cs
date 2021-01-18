@@ -11,15 +11,15 @@ namespace StarportExcel
         {
             int max = 300;
             Excel excel = OpenFileAt(1);
-            for (int i = 2; i <= max; i++)
+            for (int l = 2; l <= max; l++)
             {
-                string box = excel.ReadCellString(i, 11);
+                string box = excel.ReadCellString(l, 11);
                 if (box != "")
                 {
-                    if (excel.ReadCellDouble(i, 10).ToString() != "")
+                    if (excel.ReadCellDouble(l, 10).ToString() != "")
                     {
-                        int num = i - 1;
-                        excel.WriteToCell(i, 10, num.ToString()); //writes to the cell to the left and just puts a number in it
+                        int num = l - 1;
+                        excel.WriteToCell(l, 10, num.ToString()); //writes to the cell to the left and just puts a number in it
                         //Console.WriteLine(i + " added");
                     }
                     //Console.WriteLine(box);
@@ -39,11 +39,264 @@ namespace StarportExcel
                             {
                                 //Console.WriteLine("Removed" + box);
                                 MessageBox.Show("Removed: " + box, "Message");
-                                excel.WriteToCell(i, 11, ""); //yeet
+                                excel.WriteToCell(l, 11, ""); //yeet
 
-                                for (int k = i; k < max; k++)
+                                for (int k = l; k < max; k++)
                                 {
                                     string next = excel.ReadCellString(k + 1, 11);
+
+                                    for (int i = 0; i < next.Length; i++)
+                                    {
+                                        //Console.WriteLine("char: " + next[i] + " at" + i);
+                                        if (i + 2 < next.Length && next[i].Equals('A') && next[i + 1].Equals('r') && next[i + 2].Equals('c'))
+                                        {
+                                            //i+3 and i+4 are the numbers if its triple digit 3 4 5
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Arctics!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Arctics!C" + num;
+                                            }
+
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('D') && next[i + 1].Equals('e') && next[i + 2].Equals('s'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Deserts!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Deserts!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('E') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Earths!C" + num;
+
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Earths!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('G') && next[i + 1].Equals('r') && next[i + 2].Equals('e'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Greenhouses!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Greenhouses!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('M') && next[i + 1].Equals('o') && next[i + 2].Equals('u'))
+                                        {
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Mountains!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Mountains!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('O') && next[i + 1].Equals('c') && next[i + 2].Equals('e'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Oceanics!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Oceanics!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('P') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Paradises!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Paradises!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('R') && next[i + 1].Equals('o') && next[i + 2].Equals('c'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Rockies!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Rockies!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('V') && next[i + 1].Equals('o') && next[i + 2].Equals('l'))
+                                        {
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Volcanics!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Volcanics!C" + num;
+                                            }
+                                        }
+                                        else
+                                        {
+                                        } //MessageBox.Show(next + " not found!");                             
+
+                                    }//end i
+
                                     if (next != "")
                                     {
                                         excel.WriteToCell(k, 11, next);
@@ -158,15 +411,15 @@ namespace StarportExcel
         {
             int max = 300;
             Excel excel = OpenFileAt(1);
-            for (int i = 2; i <= max; i++)
+            for (int l = 2; l <= max; l++)
             {
-                string box = excel.ReadCellString(i, 14);
+                string box = excel.ReadCellString(l, 14);
                 if (box != "")
                 {
-                    if (excel.ReadCellDouble(i, 13).ToString() != "")
+                    if (excel.ReadCellDouble(l, 13).ToString() != "")
                     {
-                        int num = i - 1;
-                        excel.WriteToCell(i, 13, num.ToString()); //writes to the cell to the left and just puts a number in it
+                        int num = l - 1;
+                        excel.WriteToCell(l, 13, num.ToString()); //writes to the cell to the left and just puts a number in it
                         //Console.WriteLine(i + " added");
                     }
                     //Console.WriteLine(box);
@@ -181,11 +434,264 @@ namespace StarportExcel
                             {
                                 //Console.WriteLine("Removed" + box);
                                 MessageBox.Show("Removed: " + box, "Message");
-                                excel.WriteToCell(i, 14, ""); //yeet
+                                excel.WriteToCell(l, 14, ""); //yeet
 
-                                for (int k = i; k < max; k++)
+                                for (int k = l; k < max; k++)
                                 {
                                     string next = excel.ReadCellString(k + 1, 14);
+
+                                    for (int i = 0; i < next.Length; i++)
+                                    {
+                                        //Console.WriteLine("char: " + next[i] + " at" + i);
+                                        if (i + 2 < next.Length && next[i].Equals('A') && next[i + 1].Equals('r') && next[i + 2].Equals('c'))
+                                        {
+                                            //i+3 and i+4 are the numbers if its triple digit 3 4 5
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Arctics!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Arctics!C" + num;
+                                            }
+
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('D') && next[i + 1].Equals('e') && next[i + 2].Equals('s'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Deserts!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Deserts!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('E') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Earths!C" + num;
+
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Earths!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('G') && next[i + 1].Equals('r') && next[i + 2].Equals('e'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Greenhouses!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Greenhouses!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('M') && next[i + 1].Equals('o') && next[i + 2].Equals('u'))
+                                        {
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Mountains!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Mountains!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('O') && next[i + 1].Equals('c') && next[i + 2].Equals('e'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Oceanics!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Oceanics!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('P') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Paradises!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Paradises!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('R') && next[i + 1].Equals('o') && next[i + 2].Equals('c'))
+                                        {
+
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Rockies!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Rockies!C" + num;
+                                            }
+                                        }
+                                        else if (i + 2 < next.Length && next[i].Equals('V') && next[i + 1].Equals('o') && next[i + 2].Equals('l'))
+                                        {
+                                            if (next[i + 5] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string s = str1 + str2;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Volcanics!C" + num;
+                                            }
+                                            else if (next[i + 6] == '.')
+                                            {
+                                                string str1 = next[i + 3].ToString();
+                                                string str2 = next[i + 4].ToString();
+                                                string str3 = next[i + 5].ToString();
+                                                string s = str1 + str2 + str3;
+
+                                                int num = int.Parse(s);
+                                                num++;
+
+                                                next = "=Volcanics!C" + num;
+                                            }
+                                        }
+                                        else
+                                        {
+                                        } //MessageBox.Show(next + " not found!");                             
+
+                                    }//end i
+
                                     if (next != "")
                                     {
                                         excel.WriteToCell(k, 14, next);
