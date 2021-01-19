@@ -253,10 +253,10 @@ namespace StarportExcel
             }
             else
             {
+                string oldPlanetName = excel.ReadCellString(row, 2);
                 excel.WriteToCell(row, 2, newPlanetName); //put the planet in the box
-                                                          //excel.WriteToCell(row, 1, row.ToString()); //updates the number next to the cell
-
-                MessageBox.Show(newPlanetName + " replaced" + " slot " + row + " on" + " sheet " + sheet, "Completed");
+                                                          
+                MessageBox.Show(newPlanetName + " replaced " + oldPlanetName +  " in slot " + row + " on" + " sheet " + sheet, "Completed");
             }
 
             PlanetOrganizer.Text = "Insert Planet Name";
