@@ -302,6 +302,12 @@ namespace StarportExcel
                                         excel.WriteToCell(k, 11, next);
                                         Console.WriteLine("Moved " + next + " up 1");
                                     }
+                                    else
+                                    {
+                                        excel.WriteToCell(k, 11, next);
+                                        excel.WriteToCell(k + 1, 11, "");
+                                        Console.WriteLine("Moved " + next + " up 1, don't duplicate");
+                                    }
                                 }//for k                               
                             }
                             break; //should break as soon as it finds the first period
@@ -322,8 +328,21 @@ namespace StarportExcel
         public static void CheckTotals(Excel totalsSheet, Excel planetSheet, string planetName, string formula)
         {
             //Console.WriteLine(" \n Check Totals info: " + planetName + " || " + formula);
-            for (int i = 0; i < planetName.Length; i++) //continue from the First planet letter
+            for (int i = 0; i < planetName.Length; i++) //go through string planetName 
             {
+                if (planetName[i].Equals('['))
+                {
+                    planetName = StringReplacer(i, '(', planetName);
+                    planetSheet.WriteToCell(i, 2, planetName);
+                    Console.WriteLine(planetName + " changed!");
+                }
+                else if (planetName[i].Equals(']'))
+                {
+                    planetName = StringReplacer(i, ')', planetName);
+                    planetSheet.WriteToCell(i, 2, planetName);
+                    Console.WriteLine(planetName + " changed!");
+                }
+
                 if (planetName[i].Equals('.'))
                 {
                     if (i + 5 < planetName.Length && planetName[i + 5].Equals('Z'))
@@ -696,6 +715,12 @@ namespace StarportExcel
                                     {
                                         excel.WriteToCell(k, 14, next);
                                         Console.WriteLine("Moved " + next + " up 1");
+                                    }
+                                    else
+                                    {
+                                        excel.WriteToCell(k, 14, next);
+                                        excel.WriteToCell(k + 1, 14, "");
+                                        Console.WriteLine("Moved " + next + " up 1, don't duplicate");
                                     }
                                 }//for k                               
                             }
