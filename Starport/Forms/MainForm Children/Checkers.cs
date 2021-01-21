@@ -306,6 +306,12 @@ namespace StarportExcel
                                             excel.WriteToCell(k + 2, 11, "");
                                         }*/
                                     }
+                                    else
+                                    {
+                                        excel.WriteToCell(k, 11, next);
+                                        excel.WriteToCell(k + 1, 11, "");
+                                        Console.WriteLine("Moved " + next + " up 1, don't duplicate");
+                                    }
                                 }//for k                               
                             }
                             break; //should break as soon as it finds the first period
@@ -713,6 +719,12 @@ namespace StarportExcel
                                     {
                                         excel.WriteToCell(k, 14, next);
                                         Console.WriteLine("Moved " + next + " up 1");
+                                    }
+                                    else
+                                    {
+                                        excel.WriteToCell(k, 14, next);
+                                        excel.WriteToCell(k + 1, 14, "");
+                                        Console.WriteLine("Moved " + next + " up 1, don't duplicate");
                                     }
                                 }//for k                               
                             }
