@@ -301,10 +301,6 @@ namespace StarportExcel
                                     {
                                         excel.WriteToCell(k, 11, next);
                                         Console.WriteLine("Moved " + next + " up 1");
-                                        /*if (excel.ReadCellString(k+2,11) == "")
-                                        {
-                                            excel.WriteToCell(k + 2, 11, "");
-                                        }*/
                                     }
                                     else
                                     {
