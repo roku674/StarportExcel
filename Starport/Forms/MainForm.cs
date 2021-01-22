@@ -126,7 +126,8 @@ namespace StarportExcel
                 "|~{gray}~Roc " + rockiesZ + "/" + rockies +
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
                 "|~{link}25:Captured:~ " + invasions + 
-                "|~{cyan}~ " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
+                "|~{cyan}~ " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~" +
+                "|~{white}~ The real Panther";
 
             Console.WriteLine(itsMyWindowTextBox.Text);
 
