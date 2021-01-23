@@ -27,11 +27,14 @@ Par == Paradises
 Roc == Rockies
 Vol == Volcanics
 
-D == Double Dome
-G == Growing
-N == Needs Defense
-R == Research
-Z == Zounds
+
+Z == Zounds | Z Must be First
+D == Double Dome | Must be After Z
+G == Growing | R occupies the same space so cant be both
+R == Research | G occupies the same space so can't be both
+N == Needs Defense | Must be After G/R
+I == Invaded | Must be Last
+
 
 If you find any errors or bugs please tell me and how you reached it
 
