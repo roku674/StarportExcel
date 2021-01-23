@@ -8,7 +8,7 @@ namespace StarportExcel
 {
     class Algorithms
     {
-        private static bool[,] galaxyMap = new bool[1000, 1000];
+        private static bool[,] galaxyMap = new bool[999, 999];
         public static bool[,] GalaxyMap { get => galaxyMap; set => galaxyMap = value; }
 
         /// <summary>
@@ -35,12 +35,43 @@ namespace StarportExcel
             Array.Sort(planets);
             return planets;
         }
-        public static string[] SortPlanetsByXAndY(string[] planets)
+        /// <summary>
+        /// Pass in the array of strings and amount of points you want ot return, will return them in order 
+        /// </summary>
+        /// <param name="planets">list of planets</param>
+        /// <param name="amount">how many closest points you want to return</param>
+        /// <returns></returns>
+        public static string[] SortPlanetsByXAndY(string[] planets, int amount)
         {
-            planets = SortPlanetsByX(planets);
-            for(int i = 0; i < planets.Length; i++)
-            {
+            int n = planets.Length;
 
+            int[] distance = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                int x = GetCoordinates(planets[i]).x,
+                    y = GetCoordinates(planets[i]).y;
+                distance[i] = (x * x) +
+                              (y * y);
+            }
+
+            Array.Sort(distance);
+
+            // Find the k-th distance
+            int distk = distance[amount - 1];
+
+            // Print all distances which are 
+            // smaller than k-th distance
+            for (int i = 0; i < n; i++)
+            {
+                int x = GetCoordinates(planets[i]).x,
+                    y = GetCoordinates(planets[i]).y;
+                int dist = (x * x) +
+                           (y * y);
+
+                if (dist <= distk)
+                    Console.WriteLine("[" + x +
+                                      ", " + y + "]");
             }
             return planets;
         }
@@ -58,10 +89,10 @@ namespace StarportExcel
         }
 
         /// <summary>
-        /// Get the coordinates of the planet by name of the planet
+        /// Get the coordinates of the planet by name of the planet adn returns a struct 
         /// </summary>
         /// <param name="colonyName"></param>
-        /// <returns></returns>
+        /// <returns>struct Coordinates contains x and y</returns>
         public static Coordinates GetCoordinates(string colonyName)
         {
             Coordinates colonyLoc = new Coordinates();

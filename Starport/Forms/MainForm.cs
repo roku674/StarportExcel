@@ -66,19 +66,19 @@ namespace StarportExcel
 
         }
         //End of Tool strip stuff
-        private void ReturnPlanet_Click(object sender, EventArgs e)
+        private void ReturnPlanetButton_Click(object sender, EventArgs e)
         {
             PlanetTypeForm customMessageBox = new PlanetTypeForm();
             customMessageBox.SetExcelPath(excelPath);
             customMessageBox.ShowDialog();           
         }
-        private void ReplacePlanet_Click(object sender, EventArgs e)
+        private void ReplacePlanetButton_Click(object sender, EventArgs e)
         {
             string newPlanetName = PlanetOrganizerTextBox.Text;
 
             Replacer.ReplacePlanetClick(newPlanetName, PlanetOrganizerTextBox);           
         }
-        private void CreateQuote_Click(object sender, EventArgs e)
+        private void CreateQuoteButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
 
@@ -132,19 +132,19 @@ namespace StarportExcel
 
             excel.Close();
         }
-        private void CheckGrow_Click(object sender, EventArgs e)
+        private void CheckGrowButton_Click(object sender, EventArgs e)
         {
             Checkers.CheckGrow();
         }
-        private void CheckParenthesis_Click(object sender, EventArgs e)
+        private void CheckParenthesisButton_Click(object sender, EventArgs e)
         {
             Checkers.CheckParenthesis();        
         }
-        private void CheckND_Click(object sender, EventArgs e)
+        private void CheckNDButton_Click(object sender, EventArgs e)
         {
             Checkers.CheckNeedsDefense();
         }
-        private void FindGrowing_Click(object sender, EventArgs e)
+        private void FindGrowingButton_Click(object sender, EventArgs e)
         {
 
             //all planets start at 2C
@@ -205,7 +205,7 @@ namespace StarportExcel
             totals.Close();
             MessageBox.Show("Find Grow Done", "Completed");
         }
-        private void FindTotals_Click(object sender, EventArgs e)
+        private void FindTotalsButton_Click(object sender, EventArgs e)
         {
             //open them up and clear them
             Excel totals = OpenFileAt(1);
@@ -294,7 +294,7 @@ namespace StarportExcel
             Console.Write("Done");
             MessageBox.Show("Find Totals Done", "Completed");
         }   
-        private void FindZounds_Click(object sender, EventArgs e)
+        private void FindZoundsButton_Click(object sender, EventArgs e)
         {
             for (int j = 2; j <= 10; j++) // goes through each sheet
             {
@@ -334,7 +334,7 @@ namespace StarportExcel
             }// end of J loop
             MessageBox.Show("Find Zounds Done", "Completed");
         }
-        private void FindNeedsDefense_Click(object sender, EventArgs e)
+        private void FindNeedsDefenseButton_Click(object sender, EventArgs e)
         {
             Excel totals = OpenFileAt(1);
             Clearer.ClearNDList(totals);
@@ -391,7 +391,7 @@ namespace StarportExcel
             totals.Close();
             MessageBox.Show("Find Needs Defense Done", "Completed");
         }
-        private void SortGrowingBySystem_Click(object sender, EventArgs e)
+        private void SortGrowingByXButton_Click(object sender, EventArgs e)
         {
             Excel totalsSheet = OpenFileAt(1);
             int temp = 0;
@@ -433,7 +433,7 @@ namespace StarportExcel
 
             MessageBox.Show("Growing List Sorted by System", "Completed");
         }
-        private void SortDefensesBySystem_Click(object sender, EventArgs e)
+        private void SortDefensesByXButton_Click(object sender, EventArgs e)
         {
             Excel totalsSheet = OpenFileAt(1);
             int temp = 0;
@@ -478,19 +478,19 @@ namespace StarportExcel
 
             MessageBox.Show("Needs Defenses List Sorted by System", "Completed");
         }
-        private void ClearGrow_Click(object sender, EventArgs e)
+        private void ClearGrowButton_Click(object sender, EventArgs e)
         {
             Excel excel = new Excel(excelPath, 1);
             Clearer.ClearGrowList(excel);
             excel.Close();
         }
-        private void ClearNeedsDefense_Click(object sender, EventArgs e)
+        private void ClearNeedsDefenseButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
             Clearer.ClearNDList(excel);
             excel.Close();
         }
-        private void ClearZounds_Click(object sender, EventArgs e)
+        private void ClearZoundsButton_Click(object sender, EventArgs e)
         {
             for (int j = 2; j <= 10; j++) // goes through each sheet
             {
@@ -550,6 +550,10 @@ namespace StarportExcel
             }// end of J loop
             totals.Close();
             MessageBox.Show("Found all Double Domes", "Completed");
+        }
+        private void SortDefensesBySystemButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         public static string StringReplacer(int num , char replacement, string str)
@@ -841,6 +845,6 @@ namespace StarportExcel
             //Console.WriteLine("Kill Excel called");
         }
 
-        
+       
     } //form1
 }//namespace

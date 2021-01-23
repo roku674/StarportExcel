@@ -124,6 +124,9 @@
   <data name="&gt;&gt;CheckND.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="&gt;&gt;SortDefensesByXButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;GeneratePlanetButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -137,7 +140,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ClearNeedsDefenseButton.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="NewFileToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -156,9 +159,6 @@
   </data>
   <data name="&gt;&gt;NewFileToolStripButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CopyToolStripButton.Name" xml:space="preserve">
-    <value>CopyToolStripButton</value>
   </data>
   <data name="&gt;&gt;ReturnPlanet.Parent" xml:space="preserve">
     <value>$this</value>
@@ -246,7 +246,7 @@
     <value>CheckNDButton</value>
   </data>
   <data name="&gt;&gt;FindGrowingButton.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -266,17 +266,17 @@
   <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="PlanetOrganizer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 20</value>
+  <data name="&gt;&gt;SortDefensesByXButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;FindDDButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ClearZoundsButton.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="CheckNDButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 286</value>
@@ -315,10 +315,16 @@
     <value>toolStripSeparator1</value>
   </data>
   <data name="&gt;&gt;itsMyWindowTextBox.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="FindDeconstructButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>130, 49</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="ReplacePlanet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
   </data>
   <data name="CreateQuote.Location" type="System.Drawing.Point, System.Drawing">
     <value>332, 359</value>
@@ -351,7 +357,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CreateQuoteButton.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="&gt;&gt;PlanetSorter.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -359,8 +365,8 @@
   <data name="&gt;&gt;PlanetOrganizer.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;FindBuildsButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;SortGrowingByXButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CheckGrow.Parent" xml:space="preserve">
     <value>$this</value>
@@ -378,13 +384,19 @@
     <value>23, 22</value>
   </data>
   <data name="&gt;&gt;FindDeconstructButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;FindBuildsButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator.Name" xml:space="preserve">
     <value>toolStripSeparator</value>
   </data>
   <data name="&gt;&gt;SaveToolStripButtonMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CopyToolStripButtonMain.Text" xml:space="preserve">
+    <value>&amp;Copy</value>
   </data>
   <data name="FindNeedsDefenseButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 257</value>
@@ -393,7 +405,7 @@
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;FindTotalsButton.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="SaveToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -424,7 +436,7 @@
     <value>0, 28</value>
   </data>
   <data name="&gt;&gt;ReplacePlanetButton.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="ReplacePlanet.Text" xml:space="preserve">
     <value>Replace Planet</value>
@@ -445,7 +457,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ReturnPlanetButton.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;FindTotals.Parent" xml:space="preserve">
     <value>$this</value>
@@ -475,7 +487,7 @@
     <value>FindZoundsButton</value>
   </data>
   <data name="&gt;&gt;CheckParenthesisButton.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="PlanetSorter.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -505,13 +517,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckGrowButton.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="pictureBoxMain.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="&gt;&gt;ReplacePlanet.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="SortGrowingByXButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 218</value>
   </data>
   <data name="CheckND.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -618,11 +633,11 @@
   <data name="OpenToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="SaveToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
   <data name="&gt;&gt;FindBuildsButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
   <data name="&gt;&gt;PrintToolStripButtonMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -636,11 +651,17 @@
   <data name="&gt;&gt;FindTotals.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <data name="&gt;&gt;SortDefensesBySystemButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="PlanetOrganizer.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="PrintToolStripButton.Text" xml:space="preserve">
     <value>&amp;Print</value>
+  </data>
+  <data name="CheckParenthesis.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
   </data>
   <data name="&gt;&gt;FindZounds.Parent" xml:space="preserve">
     <value>$this</value>
@@ -669,9 +690,6 @@
   <data name="&gt;&gt;ClearGrow.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SortDefensesBySystem.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
   <data name="itsMyWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 20</value>
   </data>
@@ -679,7 +697,7 @@
     <value>Create Quote</value>
   </data>
   <data name="&gt;&gt;toolStripMain.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="PrintToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -689,6 +707,9 @@
   </data>
   <data name="ClearNeedsDefense.Text" xml:space="preserve">
     <value>Clear ND</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="FindZounds.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -736,7 +757,7 @@
     <value>20</value>
   </data>
   <data name="&gt;&gt;SortDefensesBySystemButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;CheckNDButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -750,8 +771,8 @@
   <data name="&gt;&gt;CheckGrow.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>21</value>
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
   </data>
   <data name="toolStripMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -762,14 +783,17 @@
   <data name="&gt;&gt;pictureBoxMain.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SortDefensesBySystemButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="SortDefensesBySystem.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
   <data name="&gt;&gt;FindZounds.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SaveToolStripButtonMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
+  </data>
+  <data name="SortGrowingByXButton.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1906,6 +1930,9 @@
   <data name="&gt;&gt;SortDefensesBySystemButton.Name" xml:space="preserve">
     <value>SortDefensesBySystemButton</value>
   </data>
+  <data name="&gt;&gt;SortDefensesByXButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="&gt;&gt;CreateQuote.Name" xml:space="preserve">
     <value>CreateQuote</value>
   </data>
@@ -1960,6 +1987,9 @@
   <data name="toolStripMain.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
+  <data name="&gt;&gt;SortDefensesByXButton.Name" xml:space="preserve">
+    <value>SortDefensesByXButton</value>
+  </data>
   <data name="FindZounds.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 311</value>
   </data>
@@ -1987,6 +2017,9 @@
   <data name="FindColonialInfoButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 90</value>
   </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="CheckGrow.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -2008,8 +2041,8 @@
   <data name="NewFileToolStripButton.Text" xml:space="preserve">
     <value>&amp;New</value>
   </data>
-  <data name="ReplacePlanet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 23</value>
+  <data name="&gt;&gt;SortGrowingByXButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="CreateQuoteButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>332, 359</value>
@@ -2072,7 +2105,7 @@
     <value>128, 315</value>
   </data>
   <data name="&gt;&gt;ClearGrowButton.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;GeneratePlanetButton.Name" xml:space="preserve">
     <value>GeneratePlanetButton</value>
@@ -2085,6 +2118,9 @@
   </data>
   <data name="&gt;&gt;CopyToolStripButtonMain.Name" xml:space="preserve">
     <value>CopyToolStripButtonMain</value>
+  </data>
+  <data name="FindTotals.Text" xml:space="preserve">
+    <value>Find Totals</value>
   </data>
   <data name="&gt;&gt;ReturnPlanetButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2132,7 +2168,7 @@
     <value>332, 199</value>
   </data>
   <data name="&gt;&gt;FindColonialInfoButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="NewFileToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2155,7 +2191,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PlanetOrganizerTextBox.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="ReplacePlanetButton.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -2190,6 +2226,9 @@
   <data name="&gt;&gt;HelpMeNiggaDamnToolStripButton.Name" xml:space="preserve">
     <value>HelpMeNiggaDamnToolStripButton</value>
   </data>
+  <data name="&gt;&gt;FindGrowingButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="HelpMeNiggaDamnToolStripButton.Text" xml:space="preserve">
     <value>He&amp;lp</value>
   </data>
@@ -2223,11 +2262,14 @@
   <data name="&gt;&gt;ClearZounds.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="CheckParenthesis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 23</value>
+  <data name="&gt;&gt;CopyToolStripButton.Name" xml:space="preserve">
+    <value>CopyToolStripButton</value>
   </data>
-  <data name="HelpMeNiggaDamnToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 315</value>
+  </data>
+  <data name="SortDefensesByXButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
   <data name="ClearNeedsDefense.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -2257,7 +2299,7 @@
     <value>toolStripMain</value>
   </data>
   <data name="&gt;&gt;pictureBoxMain.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="&gt;&gt;OpenToolStripButton.Name" xml:space="preserve">
     <value>OpenToolStripButton</value>
@@ -2274,23 +2316,29 @@
   <data name="CopyToolStripButtonMain.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;FindGrowingButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;SortGrowingByXButton.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="itsMyWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>332, 333</value>
   </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparatorMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
-    <value>toolStrip1</value>
+  <data name="SaveToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="GeneratePlanetButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>332, 257</value>
   </data>
   <data name="&gt;&gt;FindZoundsButton.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
+  </data>
+  <data name="HelpMeNiggaDamnToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>590, 434</value>
@@ -2298,8 +2346,8 @@
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>590, 408</value>
   </data>
-  <data name="FindTotals.Text" xml:space="preserve">
-    <value>Find Totals</value>
+  <data name="&gt;&gt;SortGrowingByXButton.Name" xml:space="preserve">
+    <value>SortGrowingByXButton</value>
   </data>
   <data name="&gt;&gt;PlanetOrganizerTextBox.Name" xml:space="preserve">
     <value>PlanetOrganizerTextBox</value>
@@ -2312,6 +2360,9 @@
   </data>
   <data name="&gt;&gt;ClearGrowButton.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="SortDefensesByXButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 315</value>
   </data>
   <data name="&gt;&gt;SortGrowingBySystemButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2330,6 +2381,9 @@
   </data>
   <data name="ClearZounds.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 311</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>21</value>
   </data>
   <data name="FindZoundsButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 359</value>
@@ -6185,7 +6239,7 @@
 </value>
   </data>
   <data name="&gt;&gt;FindNeedsDefenseButton.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;ClearNeedsDefense.Name" xml:space="preserve">
     <value>ClearNeedsDefense</value>
@@ -6193,8 +6247,8 @@
   <data name="ClearNeedsDefense.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="CopyToolStripButtonMain.Text" xml:space="preserve">
-    <value>&amp;Copy</value>
+  <data name="PlanetOrganizer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 20</value>
   </data>
   <data name="GeneratePlanetButton.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -6215,7 +6269,7 @@
     <value>13</value>
   </data>
   <data name="&gt;&gt;CheckNDButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="SortDefensesBySystem.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 286</value>
