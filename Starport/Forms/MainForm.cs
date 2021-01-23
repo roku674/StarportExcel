@@ -212,7 +212,8 @@ namespace StarportExcel
 
             Clearer.ClearNDList(totals);
             Clearer.ClearGrowList(totals);
-            
+            Clearer.ClearDDList(totals);
+
             Console.WriteLine("Beginning Totals...\n");
 
             for (int k = 2; k <= 10; k++) // goes through each sheet
@@ -222,6 +223,7 @@ namespace StarportExcel
                 int planet = (int)excel.ReadCellDouble(1, 8);
 
                 excel.WriteToCell(2, 8, 0.ToString());//clear zounds num
+                Clearer.ClearZoundsList(excel, planet);
 
                 int temp = 0;
                 for (int j = 1; j <= planet + 15; j++) // goes through the planet list
@@ -500,13 +502,15 @@ namespace StarportExcel
             MessageBox.Show("Zounds lists Cleared!", "Completed");
         }
         private void FindDDButton_Click(object sender, EventArgs e)
-        {
+        {            
+            Excel totals = OpenFileAt(1);
+            Clearer.ClearDDList(totals);
+
             for (int j = 2; j <= 10; j++) // goes through each sheet
             {
                 Excel excel = OpenFileAt(j);
 
                 int planet = (int)excel.ReadCellDouble(1, 8);
-                //Console.WriteLine("Planet Total: " + planet);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
                     if (excel.ReadCellString(i, 2) != "")
@@ -524,12 +528,12 @@ namespace StarportExcel
                             {
                                 if (k + 5 < box.Length && box[k + 5].Equals('D'))
                                 {
-
+                                    Adder.AddToDD(GetFormula(box), totals);
                                     break;
                                 }
                                 else if (k + 6 < box.Length && box[k + 6].Equals('D'))
                                 {
-
+                                    Adder.AddToDD(GetFormula(box), totals);
                                     break;
                                 }
                                 else
@@ -544,6 +548,8 @@ namespace StarportExcel
                 excel.Close();
 
             }// end of J loop
+            totals.Close();
+            MessageBox.Show("Found all Double Domes", "Completed");
         }
 
         public static string StringReplacer(int num , char replacement, string str)

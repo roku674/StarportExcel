@@ -72,7 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms.cs" />
-    <Compile Include="Clearer.cs" />
+    <Compile Include="Forms\MainForm Children\Clearer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Excel.cs" />
     <Compile Include="Forms\MainForm Children\Adder.cs">
       <SubType>Form</SubType>

@@ -42,7 +42,7 @@ namespace StarportExcel
         public static void AddToGrow(string colony, Excel excel)
         {
             //column 11 is growing on totals
-            for (int i = 2; i < 500; i++)
+            for (int i = 2; i < Program.GetMax(); i++)
             {
                 string box = excel.ReadCellString(i, 11); // column L
                 if (box == "")
@@ -58,7 +58,7 @@ namespace StarportExcel
         public static void AddToND(string colony, Excel excel)
         {
             //column 14 is Needs Defense on totals
-            for (int i = 2; i < 500; i++)
+            for (int i = 2; i < Program.GetMax(); i++)
             {
                 string box = excel.ReadCellString(i, 14);
                 if (box == "")
@@ -70,7 +70,23 @@ namespace StarportExcel
                     break;
                 }
             }
-        }      
+        } 
+        
+        public static void AddToDD(string colony, Excel excel)
+        {        
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                string box = excel.ReadCellString(i, 19);
+                if (box == "")
+                {
+                    excel.WriteToCell(i, 19, colony); //put the colony in the slot
+                    int temp = i - 1;
+                    excel.WriteToCell(i, 17, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Double Domes", "Completed");
+                    break;
+                }
+            }
+        }
 
         private static Excel OpenFileAt(int num)
         {
