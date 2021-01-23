@@ -45,8 +45,13 @@ namespace StarportExcel
             this.ReturnPlanetButton = new System.Windows.Forms.Button();
             this.ClearNeedsDefenseButton = new System.Windows.Forms.Button();
             this.toolStripMain = new System.Windows.Forms.ToolStrip();
+            this.OpenToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
+            this.SaveToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
+            this.PrintToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.CopyToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparatorMain = new System.Windows.Forms.ToolStripSeparator();
+            this.HelpMeNiggaDamnToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
             this.ClearGrowButton = new System.Windows.Forms.Button();
             this.CheckNDButton = new System.Windows.Forms.Button();
             this.SortDefensesBySystemButton = new System.Windows.Forms.Button();
@@ -54,11 +59,6 @@ namespace StarportExcel
             this.FindBuildsButton = new System.Windows.Forms.Button();
             this.FindDeconstructButton = new System.Windows.Forms.Button();
             this.FindColonialInfoButton = new System.Windows.Forms.Button();
-            this.OpenToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
-            this.SaveToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
-            this.PrintToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
-            this.CopyToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
-            this.HelpMeNiggaDamnToolStripButtonMain = new System.Windows.Forms.ToolStripButton();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
@@ -164,15 +164,49 @@ namespace StarportExcel
             this.HelpMeNiggaDamnToolStripButtonMain});
             this.toolStripMain.Name = "toolStripMain";
             // 
+            // OpenToolStripButtonMain
+            // 
+            resources.ApplyResources(this.OpenToolStripButtonMain, "OpenToolStripButtonMain");
+            this.OpenToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.OpenToolStripButtonMain.Name = "OpenToolStripButtonMain";
+            this.OpenToolStripButtonMain.Click += new System.EventHandler(this.OpenToolStripButtonMain_Click);
+            // 
+            // SaveToolStripButtonMain
+            // 
+            resources.ApplyResources(this.SaveToolStripButtonMain, "SaveToolStripButtonMain");
+            this.SaveToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SaveToolStripButtonMain.Name = "SaveToolStripButtonMain";
+            this.SaveToolStripButtonMain.Click += new System.EventHandler(this.SaveToolStripButtonMain_Click);
+            // 
+            // PrintToolStripButtonMain
+            // 
+            resources.ApplyResources(this.PrintToolStripButtonMain, "PrintToolStripButtonMain");
+            this.PrintToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.PrintToolStripButtonMain.Name = "PrintToolStripButtonMain";
+            this.PrintToolStripButtonMain.Click += new System.EventHandler(this.PrintToolStripButtonMain_Click);
+            // 
             // toolStripSeparator
             // 
             resources.ApplyResources(this.toolStripSeparator, "toolStripSeparator");
             this.toolStripSeparator.Name = "toolStripSeparator";
             // 
+            // CopyToolStripButtonMain
+            // 
+            resources.ApplyResources(this.CopyToolStripButtonMain, "CopyToolStripButtonMain");
+            this.CopyToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CopyToolStripButtonMain.Name = "CopyToolStripButtonMain";
+            // 
             // toolStripSeparatorMain
             // 
             resources.ApplyResources(this.toolStripSeparatorMain, "toolStripSeparatorMain");
             this.toolStripSeparatorMain.Name = "toolStripSeparatorMain";
+            // 
+            // HelpMeNiggaDamnToolStripButtonMain
+            // 
+            resources.ApplyResources(this.HelpMeNiggaDamnToolStripButtonMain, "HelpMeNiggaDamnToolStripButtonMain");
+            this.HelpMeNiggaDamnToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.HelpMeNiggaDamnToolStripButtonMain.Name = "HelpMeNiggaDamnToolStripButtonMain";
+            this.HelpMeNiggaDamnToolStripButtonMain.Click += new System.EventHandler(this.HelpMeNiggaDamnToolStripButtonMain_Click);
             // 
             // ClearGrowButton
             // 
@@ -219,40 +253,6 @@ namespace StarportExcel
             resources.ApplyResources(this.FindColonialInfoButton, "FindColonialInfoButton");
             this.FindColonialInfoButton.Name = "FindColonialInfoButton";
             this.FindColonialInfoButton.UseVisualStyleBackColor = true;
-            // 
-            // OpenToolStripButtonMain
-            // 
-            resources.ApplyResources(this.OpenToolStripButtonMain, "OpenToolStripButtonMain");
-            this.OpenToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OpenToolStripButtonMain.Name = "OpenToolStripButtonMain";
-            this.OpenToolStripButtonMain.Click += new System.EventHandler(this.OpenToolStripButtonMain_Click);
-            // 
-            // SaveToolStripButtonMain
-            // 
-            resources.ApplyResources(this.SaveToolStripButtonMain, "SaveToolStripButtonMain");
-            this.SaveToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.SaveToolStripButtonMain.Name = "SaveToolStripButtonMain";
-            this.SaveToolStripButtonMain.Click += new System.EventHandler(this.SaveToolStripButtonMain_Click);
-            // 
-            // PrintToolStripButtonMain
-            // 
-            resources.ApplyResources(this.PrintToolStripButtonMain, "PrintToolStripButtonMain");
-            this.PrintToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.PrintToolStripButtonMain.Name = "PrintToolStripButtonMain";
-            this.PrintToolStripButtonMain.Click += new System.EventHandler(this.PrintToolStripButtonMain_Click);
-            // 
-            // CopyToolStripButtonMain
-            // 
-            resources.ApplyResources(this.CopyToolStripButtonMain, "CopyToolStripButtonMain");
-            this.CopyToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.CopyToolStripButtonMain.Name = "CopyToolStripButtonMain";
-            // 
-            // HelpMeNiggaDamnToolStripButtonMain
-            // 
-            resources.ApplyResources(this.HelpMeNiggaDamnToolStripButtonMain, "HelpMeNiggaDamnToolStripButtonMain");
-            this.HelpMeNiggaDamnToolStripButtonMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.HelpMeNiggaDamnToolStripButtonMain.Name = "HelpMeNiggaDamnToolStripButtonMain";
-            this.HelpMeNiggaDamnToolStripButtonMain.Click += new System.EventHandler(this.HelpMeNiggaDamnToolStripButtonMain_Click);
             // 
             // pictureBoxMain
             // 

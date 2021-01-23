@@ -124,8 +124,8 @@
   <data name="&gt;&gt;CheckND.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;ReturnPlanet.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;GeneratePlanetButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CheckParenthesis.ZOrder" xml:space="preserve">
     <value>14</value>
@@ -160,8 +160,8 @@
   <data name="&gt;&gt;CopyToolStripButton.Name" xml:space="preserve">
     <value>CopyToolStripButton</value>
   </data>
-  <data name="&gt;&gt;CheckParenthesisButton.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="&gt;&gt;ReturnPlanet.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;ReplacePlanet.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -203,6 +203,9 @@
   <data name="&gt;&gt;CheckGrow.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="&gt;&gt;GeneratePlanetButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ClearGrowButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 160</value>
   </data>
@@ -232,6 +235,9 @@
   </data>
   <data name="&gt;&gt;SortGrowingBySystem.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;CheckNDButton.Name" xml:space="preserve">
+    <value>CheckNDButton</value>
   </data>
   <data name="&gt;&gt;FindGrowingButton.ZOrder" xml:space="preserve">
     <value>19</value>
@@ -399,6 +405,9 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="&gt;&gt;CheckND.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="CheckGrow.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
   </data>
@@ -458,6 +467,9 @@
   </data>
   <data name="&gt;&gt;FindZoundsButton.Name" xml:space="preserve">
     <value>FindZoundsButton</value>
+  </data>
+  <data name="&gt;&gt;CheckParenthesisButton.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="PlanetSorter.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -662,9 +674,6 @@
   </data>
   <data name="itsMyWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 20</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxMain.ZOrder" xml:space="preserve">
-    <value>21</value>
   </data>
   <data name="&gt;&gt;toolStripMain.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -2053,6 +2062,9 @@
   <data name="&gt;&gt;ClearGrowButton.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="&gt;&gt;GeneratePlanetButton.Name" xml:space="preserve">
+    <value>GeneratePlanetButton</value>
+  </data>
   <data name="&gt;&gt;ClearZounds.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
@@ -2226,8 +2238,8 @@
   <data name="&gt;&gt;toolStripMain.Name" xml:space="preserve">
     <value>toolStripMain</value>
   </data>
-  <data name="&gt;&gt;CheckND.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pictureBoxMain.ZOrder" xml:space="preserve">
+    <value>21</value>
   </data>
   <data name="&gt;&gt;OpenToolStripButton.Name" xml:space="preserve">
     <value>OpenToolStripButton</value>
@@ -2237,6 +2249,9 @@
   </data>
   <data name="&gt;&gt;ReturnPlanet.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="&gt;&gt;GeneratePlanetButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="CopyToolStripButtonMain.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2253,8 +2268,8 @@
   <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
     <value>toolStrip1</value>
   </data>
-  <data name="&gt;&gt;CheckNDButton.Name" xml:space="preserve">
-    <value>CheckNDButton</value>
+  <data name="GeneratePlanetButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 257</value>
   </data>
   <data name="&gt;&gt;FindZoundsButton.ZOrder" xml:space="preserve">
     <value>17</value>
@@ -6163,6 +6178,9 @@
   <data name="CopyToolStripButtonMain.Text" xml:space="preserve">
     <value>&amp;Copy</value>
   </data>
+  <data name="GeneratePlanetButton.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
   <data name="&gt;&gt;CheckND.Name" xml:space="preserve">
     <value>CheckND</value>
   </data>
@@ -6208,17 +6226,8 @@
   <data name="&gt;&gt;SaveToolStripButton.Name" xml:space="preserve">
     <value>SaveToolStripButton</value>
   </data>
-  <metadata name="FindTotalsButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FindZoundsButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FindGrowingButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FindBuildsButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="toolStripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>en</value>
@@ -6226,70 +6235,10 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="toolStripMain.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>157, 17</value>
-  </metadata>
-  <metadata name="FindDeconstructButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CheckNDButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ReturnPlanetButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CheckGrowButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FindColonialInfoButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ReplacePlanetButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ClearNeedsDefenseButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="pictureBoxMain.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="toolStripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="itsMyWindowTextBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ClearZoundsButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PlanetOrganizerTextBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SortGrowingBySystemButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CreateQuoteButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FindNeedsDefenseButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ClearGrowButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SortDefensesBySystemButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CheckParenthesisButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>157, 17</value>
   </metadata>
 </root>

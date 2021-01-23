@@ -349,7 +349,6 @@ namespace StarportExcel
                     {
                         Adder.AddToZounds(formula, planetSheet);
                     }
-                    else { }
 
                     if (i + 5 < planetName.Length && planetName[i + 5].Equals('G'))
                     {
@@ -374,6 +373,8 @@ namespace StarportExcel
                         Adder.AddToND(formula, totalsSheet);
                     }
                     else { }
+
+                    break;
                 }
             }
 

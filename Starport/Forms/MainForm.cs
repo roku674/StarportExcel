@@ -11,7 +11,7 @@ namespace StarportExcel
         
         public MainForm()
         {
-            InitializeComponent();            
+            InitializeComponent();  
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -221,13 +221,17 @@ namespace StarportExcel
                 int temp = 0;
                 for (int j = 1; j <= planet + 15; j++) // goes through the planet list
                 {
+                    
                     if (excel.ReadCellString(j, 2) != "") //if there's something there
                     {                       
                         excel.WriteToCell(j, 1, j.ToString()); //writes to the cell to the left and just puts a number in it
                         temp = j;
 
                         string planetName = excel.ReadCellString(j, 2); //read the name of the planet
+
+                        //Console.WriteLine(Algorithms.GetCoordinates(planetName).x + "," + Algorithms.GetCoordinates(planetName).y ); // just testing if GetCoordinatees works
                         //Console.WriteLine(planetName + " found");
+
                         int num = j + 1;
                         //if statement by planet type
                             if (k == 2)
@@ -403,13 +407,10 @@ namespace StarportExcel
                     //Console.WriteLine(totalsSheet.ReadCellString(i, 11) + " added to list at index " + i);
                 }
             }
-            Array.Sort(planets);
 
-            /*
-            for (int i = 0; i < planets.Length; i++) {
-                Console.WriteLine(planets[i] + " at index " + i);
-            }
-            */
+            Algorithms.SortPlanetsByX(planets);
+
+            
 
             for (int i = 0; i < planets.Length; i++)
             {
