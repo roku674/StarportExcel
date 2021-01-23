@@ -184,6 +184,11 @@ namespace StarportExcel
                                     Adder.AddToGrow(GetFormula(box), totals );
                                     break;
                                 }
+                                else if (k + 7 < box.Length && box[k + 7].Equals('G'))
+                                {
+                                    Adder.AddToGrow(GetFormula(box), totals);
+                                    break;
+                                }
                                 else
                                 {
                                     //do nothing
@@ -494,7 +499,53 @@ namespace StarportExcel
             }
             MessageBox.Show("Zounds lists Cleared!", "Completed");
         }
-             
+        private void FindDDButton_Click(object sender, EventArgs e)
+        {
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                //Console.WriteLine("Planet Total: " + planet);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    if (excel.ReadCellString(i, 2) != "")
+                    {
+                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        {
+                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
+                        }
+
+                        string box = excel.ReadCellString(i, 2);
+
+                        for (int k = 0; k < box.Length; k++) //itterate through the string character by character
+                        {
+                            if (box[k].Equals('.'))
+                            {
+                                if (k + 5 < box.Length && box[k + 5].Equals('D'))
+                                {
+
+                                    break;
+                                }
+                                else if (k + 6 < box.Length && box[k + 6].Equals('D'))
+                                {
+
+                                    break;
+                                }
+                                else
+                                {
+                                    //do nothing
+                                }
+                            }//end if
+                        }// for k
+                    } //end if                            
+                }//end of i loop
+
+                excel.Close();
+
+            }// end of J loop
+        }
+
         public static string StringReplacer(int num , char replacement, string str)
         {
             StringBuilder sb = new StringBuilder(str);
@@ -783,5 +834,7 @@ namespace StarportExcel
             Excel.Kill();
             //Console.WriteLine("Kill Excel called");
         }
+
+        
     } //form1
 }//namespace

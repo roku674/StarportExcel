@@ -23102,6 +23102,15 @@
   <data name="pictureBoxMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>590, 413</value>
   </data>
+  <data name="FindDDButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="FindDDButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="FindDDButton.Text" xml:space="preserve">
+    <value>Find Double Domes</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgH8AAAEAIAAYBgEAFgAAACgAAACAAAAA/gAAAAEAIAAAAAAAAP4AAAAAAAAAAAAAAAAAAAAA

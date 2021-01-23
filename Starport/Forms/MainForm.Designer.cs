@@ -60,6 +60,7 @@ namespace StarportExcel
             this.FindDeconstructButton = new System.Windows.Forms.Button();
             this.FindColonialInfoButton = new System.Windows.Forms.Button();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
+            this.FindDDButton = new System.Windows.Forms.Button();
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -261,9 +262,17 @@ namespace StarportExcel
             this.pictureBoxMain.Name = "pictureBoxMain";
             this.pictureBoxMain.TabStop = false;
             // 
+            // FindDDButton
+            // 
+            resources.ApplyResources(this.FindDDButton, "FindDDButton");
+            this.FindDDButton.Name = "FindDDButton";
+            this.FindDDButton.UseVisualStyleBackColor = true;
+            this.FindDDButton.Click += new System.EventHandler(this.FindDDButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.FindDDButton);
             this.Controls.Add(this.FindColonialInfoButton);
             this.Controls.Add(this.FindDeconstructButton);
             this.Controls.Add(this.FindBuildsButton);
@@ -331,6 +340,7 @@ namespace StarportExcel
         private System.Windows.Forms.Button FindDeconstructButton;
         private System.Windows.Forms.Button FindColonialInfoButton;
         private System.Windows.Forms.PictureBox pictureBoxMain;
+        private System.Windows.Forms.Button FindDDButton;
     }
 }
 

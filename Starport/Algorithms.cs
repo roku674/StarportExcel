@@ -35,6 +35,15 @@ namespace StarportExcel
             Array.Sort(planets);
             return planets;
         }
+        public static string[] SortPlanetsByXAndY(string[] planets)
+        {
+            planets = SortPlanetsByX(planets);
+            for(int i = 0; i < planets.Length; i++)
+            {
+
+            }
+            return planets;
+        }
 
         /// <summary>
         /// 

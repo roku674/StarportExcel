@@ -27,11 +27,15 @@ namespace StarportExcel
                     {
                         if (box[j].Equals('.'))
                         {
-                            if (j + 5 < box.Length && box[j + 5].Equals('G'))
+                            if (j + 5 < box.Length && box[j + 5].Equals('G') || box[j + 5].Equals('R'))
                             {
                                 //stay
                             }
-                            else if (j + 6 < box.Length && box[j + 6].Equals('G'))
+                            else if (j + 6 < box.Length && box[j + 6].Equals('G') || box[j + 6].Equals('R'))
+                            {
+                                //stay
+                            }
+                            else if (j + 7 < box.Length && box[j + 7].Equals('G') || box[j + 7].Equals('R'))
                             {
                                 //stay
                             }
@@ -39,7 +43,7 @@ namespace StarportExcel
                             {
                                 //Console.WriteLine("Removed" + box);
                                 MessageBox.Show("Removed: " + box, "Message");
-                                excel.WriteToCell(l, 11, ""); //yeet
+                                excel.WriteToCell(l, 11, ""); //you aint belong here son
 
                                 for (int k = l; k < max; k++)
                                 {
@@ -349,12 +353,16 @@ namespace StarportExcel
                     {
                         Adder.AddToZounds(formula, planetSheet);
                     }
-
-                    if (i + 5 < planetName.Length && planetName[i + 5].Equals('G'))
+                    //check D
+                    if (i + 5 < planetName.Length && planetName[i + 5].Equals('G') || planetName[i + 5].Equals('R'))
                     {
                         Adder.AddToGrow(formula, totalsSheet);
                     }
-                    else if (i + 6 < planetName.Length && planetName[i + 6].Equals('G'))
+                    else if (i + 6 < planetName.Length && planetName[i + 6].Equals('G') || planetName[i + 6].Equals('R'))
+                    {
+                        Adder.AddToGrow(formula, totalsSheet);
+                    }
+                    else if (i + 7 < planetName.Length && planetName[i + 7].Equals('G') || planetName[i + 7].Equals('R'))
                     {
                         Adder.AddToGrow(formula, totalsSheet);
                     }
