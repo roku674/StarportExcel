@@ -204,7 +204,7 @@ namespace StarportExcel
             }// end of J loop
 
             totals.Close();
-            MessageBox.Show("Find Grow Done", "Completed");
+            MessageBox.Show("Find Grow/Research Done", "Completed");
         }
         private void FindTotalsButton_Click(object sender, EventArgs e)
         {
@@ -432,7 +432,48 @@ namespace StarportExcel
 
             totalsSheet.Close();
 
-            MessageBox.Show("Growing List Sorted by X Coordinates", "Completed");
+            MessageBox.Show("Growing & Research List Sorted by X Coordinates", "Completed");
+        }
+        private void SortGrowingBySystemButton_Click(object sender, EventArgs e)
+        {
+            Excel totals = OpenFileAt(1);
+            int temp = 0;
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (totals.ReadCellString(i, 11) != "")
+                {
+                    temp++;
+                }
+            }
+
+            string[] planets = new string[temp];
+
+            for (int i = 0; i < planets.Length; i++) //establish teh array
+            {
+                planets[i] = totals.ReadCellString((i + 2), 11);
+            }
+
+            string originString = PlanetOrganizerTextBox.Text; //get text from text box
+            Coordinates origin;
+
+            if (originString != "")
+            {
+                origin = Algorithms.GetCoordinates(originString); //if there's something there take it
+            }
+            else
+            {
+                origin = Algorithms.GetCoordinates(planets[0]); //else go with the first one in the list
+            }
+            ColonyInfo[] colInfo = Algorithms.SortPlanetsByXAndY(planets, origin, Algorithms.GetCoordinates(planets[temp - 1])); //get the sorted array
+
+            Clearer.ClearGrowList(totals); //clear list
+            for (int i = 0; i < colInfo.Length; i++)
+            {
+                Adder.AddToGrow(GetFormula(colInfo[i].colonyName), totals);
+            }
+
+            totals.Close();
+            MessageBox.Show("Growign & Research List Sorted by System", "Completed");
         }
         private void SortDefensesByXButton_Click(object sender, EventArgs e)
         {
@@ -478,6 +519,47 @@ namespace StarportExcel
             totalsSheet.Close();
 
             MessageBox.Show("Needs Defenses List Sorted by X coordinates", "Completed");
+        }
+        private void SortDefensesBySystemButton_Click(object sender, EventArgs e)
+        {
+            Excel totals = OpenFileAt(1);
+            int temp = 0;
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (totals.ReadCellString(i, 14) != "")
+                {
+                    temp++;
+                }
+            }
+
+            string[] planets = new string[temp];
+
+            for (int i = 0; i < planets.Length; i++) //establish teh array
+            {
+                planets[i] = totals.ReadCellString((i + 2), 14);
+            }
+
+            string originString = PlanetOrganizerTextBox.Text; //get text from text box
+            Coordinates origin;
+
+            if (originString != "")
+            {
+                origin = Algorithms.GetCoordinates(originString); //if there's something there take it
+            }
+            else
+            {
+                origin = Algorithms.GetCoordinates(planets[0]); //else go with the first one in the list
+            }
+            ColonyInfo[] colInfo = Algorithms.SortPlanetsByXAndY(planets, origin, Algorithms.GetCoordinates(planets[temp - 1])); //get the sorted array
+
+            Clearer.ClearNDList(totals); //clear list
+            for (int i = 0; i < colInfo.Length; i++)
+            {
+                Adder.AddToND(GetFormula(colInfo[i].colonyName), totals);
+            }
+
+            totals.Close();
+            MessageBox.Show("Needs Defenses List Sorted by System", "Completed");
         }
         private void ClearGrowButton_Click(object sender, EventArgs e)
         {
@@ -552,44 +634,7 @@ namespace StarportExcel
             totals.Close();
             MessageBox.Show("Found all Double Domes", "Completed");
         }
-        private void SortDefensesBySystemButton_Click(object sender, EventArgs e)
-        {
-            Excel totals = OpenFileAt(1);
-            int temp = 0;
-            for (int i = 2; i < Program.GetMax(); i++)
-            {
-                if (totals.ReadCellString(i, 14) != "")
-                {
-                    temp++;
-                }
-            }
-            //Console.WriteLine(temp);
-            string[] planets = new string[temp];
-
-            for (int i = 0; i < planets.Length; i++) //establish teh array
-            {
-                planets[i] = totals.ReadCellString((i + 2), 14);
-                Console.WriteLine(planets[i] + " stored in array");
-            }
-
-            string originString = PlanetOrganizerTextBox.Text; //get text from text box
-            Coordinates coords;
-
-            if (originString != "") 
-            {
-                coords = Algorithms.GetCoordinates(originString); //if there's something there take it
-            }
-            else
-            {
-                coords = Algorithms.GetCoordinates(planets[0]); //else go with the first one in the list
-            }
-            ColonyInfo[] colInfo = Algorithms.SortPlanetsByXAndY(planets, coords);
-            
-            //Adder.AddToND(planets, totals);
-
-            totals.Close();
-            MessageBox.Show("Needs Defenses List Sorted by System", "Completed");
-        }
+        
         private void AddToRenameListButton_Click(object sender, EventArgs e)
         {
 

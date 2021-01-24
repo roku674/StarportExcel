@@ -131,6 +131,9 @@
   <data name="FindGrowingButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="FindGrowingButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 141</value>
+  </data>
   <data name="FindGrowingButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
@@ -140,6 +143,9 @@
   <data name="CheckGrowButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="CheckGrowButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 170</value>
+  </data>
   <data name="CheckGrowButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
   </data>
@@ -148,6 +154,9 @@
   </data>
   <data name="FindZoundsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="FindZoundsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 371</value>
   </data>
   <data name="FindZoundsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -194,6 +203,9 @@
   <data name="ClearZoundsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="ClearZoundsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 371</value>
+  </data>
   <data name="ClearZoundsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
   </data>
@@ -229,9 +241,6 @@
   </data>
   <data name="ClearNeedsDefenseButton.Text" xml:space="preserve">
     <value>Clear ND</value>
-  </data>
-  <data name="toolStripMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>590, 25</value>
   </data>
   <data name="OpenToolStripButtonMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -333,8 +342,14 @@
   <data name="HelpMeNiggaDamnToolStripButtonMain.Text" xml:space="preserve">
     <value>He&amp;lp</value>
   </data>
+  <data name="toolStripMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>590, 25</value>
+  </data>
   <data name="ClearGrowButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="ClearGrowButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 141</value>
   </data>
   <data name="ClearGrowButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -362,6 +377,9 @@
   </data>
   <data name="SortGrowingByXButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="SortGrowingByXButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 199</value>
   </data>
   <data name="SortGrowingByXButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -23147,6 +23165,21 @@
   </data>
   <data name="ClearRenameButton.Text" xml:space="preserve">
     <value>Clear Rename</value>
+  </data>
+  <data name="SortGrowingBySystemButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SortGrowingBySystemButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 199</value>
+  </data>
+  <data name="SortGrowingBySystemButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="SortGrowingBySystemButton.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="SortGrowingBySystemButton.Text" xml:space="preserve">
+    <value>Sort by System</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

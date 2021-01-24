@@ -64,6 +64,7 @@ namespace StarportExcel
             this.SortDefensesBySystemButton = new System.Windows.Forms.Button();
             this.AddToRenameListButton = new System.Windows.Forms.Button();
             this.ClearRenameButton = new System.Windows.Forms.Button();
+            this.SortGrowingBySystemButton = new System.Windows.Forms.Button();
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -293,9 +294,17 @@ namespace StarportExcel
             this.ClearRenameButton.UseVisualStyleBackColor = true;
             this.ClearRenameButton.Click += new System.EventHandler(this.ClearRenameButton_Click);
             // 
+            // SortGrowingBySystemButton
+            // 
+            resources.ApplyResources(this.SortGrowingBySystemButton, "SortGrowingBySystemButton");
+            this.SortGrowingBySystemButton.Name = "SortGrowingBySystemButton";
+            this.SortGrowingBySystemButton.UseVisualStyleBackColor = true;
+            this.SortGrowingBySystemButton.Click += new System.EventHandler(this.SortGrowingBySystemButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.SortGrowingBySystemButton);
             this.Controls.Add(this.ClearRenameButton);
             this.Controls.Add(this.AddToRenameListButton);
             this.Controls.Add(this.SortDefensesBySystemButton);
@@ -371,6 +380,7 @@ namespace StarportExcel
         private System.Windows.Forms.Button SortDefensesBySystemButton;
         private System.Windows.Forms.Button AddToRenameListButton;
         private System.Windows.Forms.Button ClearRenameButton;
+        private System.Windows.Forms.Button SortGrowingBySystemButton;
     }
 }
 

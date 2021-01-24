@@ -406,8 +406,9 @@ namespace StarportExcel
                     Console.WriteLine(planet);
                 }
                 //Console.WriteLine("Planet Total: " + planet);
-                for (int i = planet + 1; i >= 1; i--) // goes through the planet list
+                for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
+                    Console.WriteLine(excel.ReadCellString(i, 2));
                     if (excel.ReadCellString(i, 2) != "")
                     {
                         string box = excel.ReadCellString(i, 2);

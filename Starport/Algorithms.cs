@@ -36,7 +36,7 @@ namespace StarportExcel
         /// <param name="origin">starting location if null will use first planet</param>
         /// <param name="amount">how many closest points you want to return</param>
         /// <returns></returns>
-        public static ColonyInfo[] SortPlanetsByXAndY(string[] planets, Coordinates origin)
+        public static ColonyInfo[] SortPlanetsByXAndY(string[] planets, Coordinates origin, Coordinates destination)
         {
             ColonyInfo[] colInfo = new ColonyInfo[planets.Length];
 
@@ -44,8 +44,10 @@ namespace StarportExcel
             {
                 colInfo[i].colonyName = planets[i];
                 colInfo[i].coords = GetCoordinates(planets[i]);
-                colInfo[i].distance = Distance(GetCoordinates(planets[i]), origin);
+                colInfo[i].distance = Distance(colInfo[i].coords, origin);
             }
+
+            QuickSort(colInfo, 0, planets.Length-1);
 
             return colInfo;
         }
@@ -117,6 +119,44 @@ namespace StarportExcel
             }
 
             return colonyLoc;
+        }
+
+        //standard quicksort algorithm bellow
+        static int Partition(ColonyInfo[] arr, int low,
+                                   int high)
+        {
+            int pivot = arr[high].distance;
+
+            int i = (low - 1);
+            for (int j = low; j < high; j++)
+            {
+                if (arr[j].distance < pivot)
+                {
+                    i++;
+
+                    ColonyInfo temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+
+            ColonyInfo temp1 = arr[i + 1];
+            arr[i + 1] = arr[high];
+            arr[high] = temp1;
+
+            return i + 1;
+        }
+
+        static void QuickSort(ColonyInfo[] arr, int low, int high)
+        {
+            if (low < high)
+            {
+
+                int par = Partition(arr, low, high);
+
+                QuickSort(arr, low, par - 1);
+                QuickSort(arr, par + 1, high);
+            }
         }
     }
 }
