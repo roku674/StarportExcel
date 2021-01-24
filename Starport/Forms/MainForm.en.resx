@@ -195,7 +195,7 @@
     <value>246, 20</value>
   </data>
   <data name="PlanetOrganizerTextBox.Text" xml:space="preserve">
-    <value>Insert Planet Name</value>
+    <value>Insert Planet Name or Coordinates</value>
   </data>
   <data name="itsMyWindowTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 20</value>

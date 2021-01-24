@@ -77,7 +77,9 @@ namespace StarportExcel
         {
             string newPlanetName = PlanetOrganizerTextBox.Text;
 
-            Replacer.ReplacePlanetClick(newPlanetName, PlanetOrganizerTextBox);           
+            Replacer.ReplacePlanetClick(newPlanetName, PlanetOrganizerTextBox);
+
+            PlanetOrganizerTextBox.Text = "Insert Planet Name or Start Coordinates";
         }
         private void CreateQuoteButton_Click(object sender, EventArgs e)
         {
@@ -473,6 +475,7 @@ namespace StarportExcel
             }
 
             totals.Close();
+            PlanetOrganizerTextBox.Text = "Insert Planet Name or Start Coordinates";
             MessageBox.Show("Growign & Research List Sorted by System", "Completed");
         }
         private void SortDefensesByXButton_Click(object sender, EventArgs e)
@@ -559,6 +562,7 @@ namespace StarportExcel
             }
 
             totals.Close();
+            PlanetOrganizerTextBox.Text = "Insert Planet Name or Start Coordinates";
             MessageBox.Show("Needs Defenses List Sorted by System", "Completed");
         }
         private void ClearGrowButton_Click(object sender, EventArgs e)
@@ -637,7 +641,7 @@ namespace StarportExcel
         
         private void AddToRenameListButton_Click(object sender, EventArgs e)
         {
-
+            //open up a box askign where the coordinates are, old name, new name
         }
 
         private void ClearRenameButton_Click(object sender, EventArgs e)
@@ -933,7 +937,5 @@ namespace StarportExcel
             Excel.Kill();
             //Console.WriteLine("Kill Excel called");
         }
-
-        
     } //form1
 }//namespace
