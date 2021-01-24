@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Forms;
+using static StarportExcel.Structs;
 
 namespace StarportExcel
 {
@@ -431,13 +432,13 @@ namespace StarportExcel
 
             totalsSheet.Close();
 
-            MessageBox.Show("Growing List Sorted by System", "Completed");
+            MessageBox.Show("Growing List Sorted by X Coordinates", "Completed");
         }
         private void SortDefensesByXButton_Click(object sender, EventArgs e)
         {
             Excel totalsSheet = OpenFileAt(1);
             int temp = 0;
-            for (int i= 2; i < 1000; i++)
+            for (int i= 2; i < Program.GetMax(); i++)
             {
                 if (totalsSheet.ReadCellString(i, 14) != "")
                 {
@@ -476,7 +477,7 @@ namespace StarportExcel
 
             totalsSheet.Close();
 
-            MessageBox.Show("Needs Defenses List Sorted by System", "Completed");
+            MessageBox.Show("Needs Defenses List Sorted by X coordinates", "Completed");
         }
         private void ClearGrowButton_Click(object sender, EventArgs e)
         {
@@ -552,6 +553,49 @@ namespace StarportExcel
             MessageBox.Show("Found all Double Domes", "Completed");
         }
         private void SortDefensesBySystemButton_Click(object sender, EventArgs e)
+        {
+            Excel totals = OpenFileAt(1);
+            int temp = 0;
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (totals.ReadCellString(i, 14) != "")
+                {
+                    temp++;
+                }
+            }
+            //Console.WriteLine(temp);
+            string[] planets = new string[temp];
+
+            for (int i = 0; i < planets.Length; i++) //establish teh array
+            {
+                planets[i] = totals.ReadCellString((i + 2), 14);
+                Console.WriteLine(planets[i] + " stored in array");
+            }
+
+            string originString = PlanetOrganizerTextBox.Text; //get text from text box
+            Coordinates coords;
+
+            if (originString != "") 
+            {
+                coords = Algorithms.GetCoordinates(originString); //if there's something there take it
+            }
+            else
+            {
+                coords = Algorithms.GetCoordinates(planets[0]); //else go with the first one in the list
+            }
+            ColonyInfo[] colInfo = Algorithms.SortPlanetsByXAndY(planets, coords);
+            
+            //Adder.AddToND(planets, totals);
+
+            totals.Close();
+            MessageBox.Show("Needs Defenses List Sorted by System", "Completed");
+        }
+        private void AddToRenameListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClearRenameButton_Click(object sender, EventArgs e)
         {
 
         }
@@ -845,6 +889,6 @@ namespace StarportExcel
             //Console.WriteLine("Kill Excel called");
         }
 
-       
+        
     } //form1
 }//namespace

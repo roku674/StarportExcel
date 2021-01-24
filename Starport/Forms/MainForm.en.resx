@@ -212,6 +212,9 @@
   <data name="ReturnPlanetButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="ReturnPlanetButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 257</value>
+  </data>
   <data name="ReturnPlanetButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
@@ -23126,6 +23129,24 @@
   </data>
   <data name="SortDefensesBySystemButton.Text" xml:space="preserve">
     <value>Sort by System</value>
+  </data>
+  <data name="AddToRenameListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddToRenameListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="AddToRenameListButton.Text" xml:space="preserve">
+    <value>Add to Rename</value>
+  </data>
+  <data name="ClearRenameButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ClearRenameButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="ClearRenameButton.Text" xml:space="preserve">
+    <value>Clear Rename</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -62,6 +62,8 @@ namespace StarportExcel
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.FindDDButton = new System.Windows.Forms.Button();
             this.SortDefensesBySystemButton = new System.Windows.Forms.Button();
+            this.AddToRenameListButton = new System.Windows.Forms.Button();
+            this.ClearRenameButton = new System.Windows.Forms.Button();
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -277,9 +279,25 @@ namespace StarportExcel
             this.SortDefensesBySystemButton.UseVisualStyleBackColor = true;
             this.SortDefensesBySystemButton.Click += new System.EventHandler(this.SortDefensesBySystemButton_Click);
             // 
+            // AddToRenameListButton
+            // 
+            resources.ApplyResources(this.AddToRenameListButton, "AddToRenameListButton");
+            this.AddToRenameListButton.Name = "AddToRenameListButton";
+            this.AddToRenameListButton.UseVisualStyleBackColor = true;
+            this.AddToRenameListButton.Click += new System.EventHandler(this.AddToRenameListButton_Click);
+            // 
+            // ClearRenameButton
+            // 
+            resources.ApplyResources(this.ClearRenameButton, "ClearRenameButton");
+            this.ClearRenameButton.Name = "ClearRenameButton";
+            this.ClearRenameButton.UseVisualStyleBackColor = true;
+            this.ClearRenameButton.Click += new System.EventHandler(this.ClearRenameButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.ClearRenameButton);
+            this.Controls.Add(this.AddToRenameListButton);
             this.Controls.Add(this.SortDefensesBySystemButton);
             this.Controls.Add(this.FindDDButton);
             this.Controls.Add(this.FindColonialInfoButton);
@@ -351,6 +369,8 @@ namespace StarportExcel
         private System.Windows.Forms.PictureBox pictureBoxMain;
         private System.Windows.Forms.Button FindDDButton;
         private System.Windows.Forms.Button SortDefensesBySystemButton;
+        private System.Windows.Forms.Button AddToRenameListButton;
+        private System.Windows.Forms.Button ClearRenameButton;
     }
 }
 

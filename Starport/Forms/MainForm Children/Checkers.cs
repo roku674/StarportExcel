@@ -9,9 +9,8 @@ namespace StarportExcel
     {
         public static void CheckGrow()
         {
-            int max = 300;
             Excel excel = OpenFileAt(1);
-            for (int l = 2; l <= max; l++)
+            for (int l = 2; l <= Program.GetMax(); l++)
             {
                 string box = excel.ReadCellString(l, 11);
                 if (box != "")
@@ -27,15 +26,15 @@ namespace StarportExcel
                     {
                         if (box[j].Equals('.'))
                         {
-                            if (j + 5 < box.Length && box[j + 5].Equals('G') || box[j + 5].Equals('R'))
+                            if (j + 5 < box.Length && (box[j + 5].Equals('G') || box[j + 5].Equals('R')))
                             {
                                 //stay
                             }
-                            else if (j + 6 < box.Length && box[j + 6].Equals('G') || box[j + 6].Equals('R'))
+                            else if (j + 6 < box.Length && (box[j + 6].Equals('G') || box[j + 6].Equals('R')))
                             {
                                 //stay
                             }
-                            else if (j + 7 < box.Length && box[j + 7].Equals('G') || box[j + 7].Equals('R'))
+                            else if (j + 7 < box.Length && (box[j + 7].Equals('G') || box[j + 7].Equals('R')))
                             {
                                 //stay
                             }
@@ -45,7 +44,7 @@ namespace StarportExcel
                                 MessageBox.Show("Removed: " + box, "Message");
                                 excel.WriteToCell(l, 11, ""); //you aint belong here son
 
-                                for (int k = l; k < max; k++)
+                                for (int k = l; k < Program.GetMax(); k++)
                                 {
                                     string next = excel.ReadCellString(k + 1, 11);
 
@@ -354,15 +353,16 @@ namespace StarportExcel
                         Adder.AddToZounds(formula, planetSheet);
                     }
                     //check D
-                    if (i + 5 < planetName.Length && planetName[i + 5].Equals('G') || planetName[i + 5].Equals('R'))
+                    if (i + 5 < planetName.Length && (planetName[i + 5].Equals('G') || planetName[i + 5].Equals('R')))
                     {
                         Adder.AddToGrow(formula, totalsSheet);
                     }
-                    else if (i + 6 < planetName.Length && planetName[i + 6].Equals('G') || planetName[i + 6].Equals('R'))
+                    else if (i + 6 < planetName.Length && (planetName[i + 6].Equals('G') || planetName[i + 6].Equals('R')))
+
                     {
                         Adder.AddToGrow(formula, totalsSheet);
                     }
-                    else if (i + 7 < planetName.Length && planetName[i + 7].Equals('G') || planetName[i + 7].Equals('R'))
+                    else if (i + 7 < planetName.Length && (planetName[i + 7].Equals('G') || planetName[i + 7].Equals('R')))
                     {
                         Adder.AddToGrow(formula, totalsSheet);
                     }
@@ -437,9 +437,8 @@ namespace StarportExcel
 
         public static void CheckNeedsDefense()
         {
-            int max = 300;
             Excel excel = OpenFileAt(1);
-            for (int l = 2; l <= max; l++)
+            for (int l = 2; l <= Program.GetMax(); l++)
             {
                 string box = excel.ReadCellString(l, 14);
                 if (box != "")
@@ -464,7 +463,7 @@ namespace StarportExcel
                                 MessageBox.Show("Removed: " + box, "Message");
                                 excel.WriteToCell(l, 14, ""); //yeet
 
-                                for (int k = l; k < max; k++)
+                                for (int k = l; k < Program.GetMax(); k++)
                                 {
                                     string next = excel.ReadCellString(k + 1, 14);
 

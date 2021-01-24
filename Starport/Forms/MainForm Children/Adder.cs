@@ -39,49 +39,83 @@ namespace StarportExcel
             excel.WriteToCell(2, 8, zoundsCount.ToString());// changes the total zounds 
 
         }
-        public static void AddToGrow(string colony, Excel excel)
+        /// <summary>
+        /// add a singular planet to the grow list
+        /// </summary>
+        /// <param name="colony"></param>
+        /// <param name="totalsSheet"></param>
+        public static void AddToGrow(string colony, Excel totalsSheet)
         {
             //column 11 is growing on totals
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                string box = excel.ReadCellString(i, 11); // column L
+                string box = totalsSheet.ReadCellString(i, 11); // column L
                 if (box == "")
                 {
-                    excel.WriteToCell(i, 11, colony);
+                    totalsSheet.WriteToCell(i, 11, colony);
                     int temp = i - 1;
-                    excel.WriteToCell(i, 10, temp.ToString()); // put number in the box to the left
+                    totalsSheet.WriteToCell(i, 10, temp.ToString()); // put number in the box to the left
                     Console.WriteLine(colony + " added to Knee Grow", "Completed");
                     break;
                 }
             }
         }
-        public static void AddToND(string colony, Excel excel)
+        /// <summary>
+        /// add all of the planets to the grow list at once
+        /// </summary>
+        /// <param name="colonies"></param>
+        /// <param name="totalsSheet"></param>
+        public static void AddToGrow(string[] colonies, Excel totalsSheet)
+        {
+            for (int i = 2; i < colonies.Length; i++)
+            {
+                totalsSheet.WriteToCell(i, 11, colonies[i - 2]);
+            }
+        }
+        /// <summary>
+        /// add a singular planet to the needs defense list
+        /// </summary>
+        /// <param name="colony"></param>
+        /// <param name="totalsSheet"></param>
+        public static void AddToND(string colony, Excel totalsSheet)
         {
             //column 14 is Needs Defense on totals
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                string box = excel.ReadCellString(i, 14);
+                string box = totalsSheet.ReadCellString(i, 14);
                 if (box == "")
                 {
-                    excel.WriteToCell(i, 14, colony); //put the colony in the slot
+                    totalsSheet.WriteToCell(i, 14, colony); //put the colony in the slot
                     int temp = i - 1;
-                    excel.WriteToCell(i, 13, temp.ToString()); // put number in the box to the left
+                    totalsSheet.WriteToCell(i, 13, temp.ToString()); // put number in the box to the left
                     Console.WriteLine(colony + " added to Needs Defense", "Completed");
                     break;
                 }
             }
-        } 
+        }
+        /// <summary>
+        /// Add all the colonies at once if you have an array of strings
+        /// </summary>
+        /// <param name="colonies"></param>
+        /// <param name="totalsSheet"></param>
+        public static void AddToND(string[] colonies, Excel totalsSheet)
+        {
+            for(int i = 2; i < colonies.Length; i++)
+            {
+                totalsSheet.WriteToCell(i, 14, colonies[i - 2]);
+            }
+        }
         
-        public static void AddToDD(string colony, Excel excel)
+        public static void AddToDD(string colony, Excel totalsSheet)
         {        
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                string box = excel.ReadCellString(i, 19);
+                string box = totalsSheet.ReadCellString(i, 19);
                 if (box == "")
                 {
-                    excel.WriteToCell(i, 19, colony); //put the colony in the slot
+                    totalsSheet.WriteToCell(i, 19, colony); //put the colony in the slot
                     int temp = i - 1;
-                    excel.WriteToCell(i, 17, temp.ToString()); // put number in the box to the left
+                    totalsSheet.WriteToCell(i, 17, temp.ToString()); // put number in the box to the left
                     Console.WriteLine(colony + " added to Double Domes", "Completed");
                     break;
                 }

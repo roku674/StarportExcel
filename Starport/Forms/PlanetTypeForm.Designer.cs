@@ -68,6 +68,8 @@ namespace StarportExcel
             this.BuildListButton = new System.Windows.Forms.Button();
             this.DeconstructListButton = new System.Windows.Forms.Button();
             this.FindMoraleButton = new System.Windows.Forms.Button();
+            this.RenameListsButton = new System.Windows.Forms.Button();
+            this.DoubleDomeListButton = new System.Windows.Forms.Button();
             this.toolStripPT.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,63 +78,63 @@ namespace StarportExcel
             resources.ApplyResources(this.ArcticsButton, "ArcticsButton");
             this.ArcticsButton.Name = "ArcticsButton";
             this.ArcticsButton.UseVisualStyleBackColor = true;
-            this.ArcticsButton.Click += new System.EventHandler(this.Arctics_Click);
+            this.ArcticsButton.Click += new System.EventHandler(this.ArcticsButton_Click);
             // 
             // DesertsButton
             // 
             resources.ApplyResources(this.DesertsButton, "DesertsButton");
             this.DesertsButton.Name = "DesertsButton";
             this.DesertsButton.UseVisualStyleBackColor = true;
-            this.DesertsButton.Click += new System.EventHandler(this.Deserts_Click);
+            this.DesertsButton.Click += new System.EventHandler(this.DesertsButton_Click);
             // 
             // EarthsButton
             // 
             resources.ApplyResources(this.EarthsButton, "EarthsButton");
             this.EarthsButton.Name = "EarthsButton";
             this.EarthsButton.UseVisualStyleBackColor = true;
-            this.EarthsButton.Click += new System.EventHandler(this.Earths_Click);
+            this.EarthsButton.Click += new System.EventHandler(this.EarthsButton_Click);
             // 
             // GreenhousesButton
             // 
             resources.ApplyResources(this.GreenhousesButton, "GreenhousesButton");
             this.GreenhousesButton.Name = "GreenhousesButton";
             this.GreenhousesButton.UseVisualStyleBackColor = true;
-            this.GreenhousesButton.Click += new System.EventHandler(this.Greenhouses_Click);
+            this.GreenhousesButton.Click += new System.EventHandler(this.GreenhousesButton_Click);
             // 
             // MountainsButton
             // 
             resources.ApplyResources(this.MountainsButton, "MountainsButton");
             this.MountainsButton.Name = "MountainsButton";
             this.MountainsButton.UseVisualStyleBackColor = true;
-            this.MountainsButton.Click += new System.EventHandler(this.Mountains_Click);
+            this.MountainsButton.Click += new System.EventHandler(this.MountainsButton_Click);
             // 
             // OceanicsButton
             // 
             resources.ApplyResources(this.OceanicsButton, "OceanicsButton");
             this.OceanicsButton.Name = "OceanicsButton";
             this.OceanicsButton.UseVisualStyleBackColor = true;
-            this.OceanicsButton.Click += new System.EventHandler(this.Oceanics_Click);
+            this.OceanicsButton.Click += new System.EventHandler(this.OceanicsButton_Click);
             // 
             // ParadisesButton
             // 
             resources.ApplyResources(this.ParadisesButton, "ParadisesButton");
             this.ParadisesButton.Name = "ParadisesButton";
             this.ParadisesButton.UseVisualStyleBackColor = true;
-            this.ParadisesButton.Click += new System.EventHandler(this.Paradises_Click);
+            this.ParadisesButton.Click += new System.EventHandler(this.ParadisesButton_Click);
             // 
             // RockiesButton
             // 
             resources.ApplyResources(this.RockiesButton, "RockiesButton");
             this.RockiesButton.Name = "RockiesButton";
             this.RockiesButton.UseVisualStyleBackColor = true;
-            this.RockiesButton.Click += new System.EventHandler(this.Rockies_Click);
+            this.RockiesButton.Click += new System.EventHandler(this.RockiesButton_Click);
             // 
             // VolcanicsButton
             // 
             resources.ApplyResources(this.VolcanicsButton, "VolcanicsButton");
             this.VolcanicsButton.Name = "VolcanicsButton";
             this.VolcanicsButton.UseVisualStyleBackColor = true;
-            this.VolcanicsButton.Click += new System.EventHandler(this.Volcanics_Click);
+            this.VolcanicsButton.Click += new System.EventHandler(this.VolcanicsButton_Click);
             // 
             // numberTextBox
             // 
@@ -144,28 +146,28 @@ namespace StarportExcel
             resources.ApplyResources(this.NeedsDefensesButton, "NeedsDefensesButton");
             this.NeedsDefensesButton.Name = "NeedsDefensesButton";
             this.NeedsDefensesButton.UseVisualStyleBackColor = true;
-            this.NeedsDefensesButton.Click += new System.EventHandler(this.NeedsDefenses_Click);
+            this.NeedsDefensesButton.Click += new System.EventHandler(this.NeedsDefensesButton_Click);
             // 
             // GrowingButton
             // 
             resources.ApplyResources(this.GrowingButton, "GrowingButton");
             this.GrowingButton.Name = "GrowingButton";
             this.GrowingButton.UseVisualStyleBackColor = true;
-            this.GrowingButton.Click += new System.EventHandler(this.Growing_Click);
+            this.GrowingButton.Click += new System.EventHandler(this.GrowingButton_Click);
             // 
             // ClearOutputButton
             // 
             resources.ApplyResources(this.ClearOutputButton, "ClearOutputButton");
             this.ClearOutputButton.Name = "ClearOutputButton";
             this.ClearOutputButton.UseVisualStyleBackColor = true;
-            this.ClearOutputButton.Click += new System.EventHandler(this.ClearOutput_Click);
+            this.ClearOutputButton.Click += new System.EventHandler(this.ClearOutputButton_Click);
             // 
             // LineBreakButton
             // 
             resources.ApplyResources(this.LineBreakButton, "LineBreakButton");
             this.LineBreakButton.Name = "LineBreakButton";
             this.LineBreakButton.UseVisualStyleBackColor = true;
-            this.LineBreakButton.Click += new System.EventHandler(this.LineBreak_Click);
+            this.LineBreakButton.Click += new System.EventHandler(this.LineBreakButton_Click);
             // 
             // toolStripPT
             // 
@@ -252,7 +254,7 @@ namespace StarportExcel
             resources.ApplyResources(this.CMinesListButton, "CMinesListButton");
             this.CMinesListButton.Name = "CMinesListButton";
             this.CMinesListButton.UseVisualStyleBackColor = true;
-            this.CMinesListButton.Click += new System.EventHandler(this.CMinesList_Click);
+            this.CMinesListButton.Click += new System.EventHandler(this.CMinesListButton_Click);
             // 
             // SolarsListButton
             // 
@@ -284,10 +286,26 @@ namespace StarportExcel
             this.FindMoraleButton.Name = "FindMoraleButton";
             this.FindMoraleButton.UseVisualStyleBackColor = true;
             // 
+            // RenameListsButton
+            // 
+            resources.ApplyResources(this.RenameListsButton, "RenameListsButton");
+            this.RenameListsButton.Name = "RenameListsButton";
+            this.RenameListsButton.UseVisualStyleBackColor = true;
+            this.RenameListsButton.Click += new System.EventHandler(this.RenameListsButton_Click);
+            // 
+            // DoubleDomeListButton
+            // 
+            resources.ApplyResources(this.DoubleDomeListButton, "DoubleDomeListButton");
+            this.DoubleDomeListButton.Name = "DoubleDomeListButton";
+            this.DoubleDomeListButton.UseVisualStyleBackColor = true;
+            this.DoubleDomeListButton.Click += new System.EventHandler(this.DoubleDomeListButton_Click);
+            // 
             // PlanetTypeForm
             // 
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Controls.Add(this.DoubleDomeListButton);
+            this.Controls.Add(this.RenameListsButton);
             this.Controls.Add(this.FindMoraleButton);
             this.Controls.Add(this.DeconstructListButton);
             this.Controls.Add(this.BuildListButton);
@@ -348,5 +366,7 @@ namespace StarportExcel
         private Button BuildListButton;
         private Button DeconstructListButton;
         private Button FindMoraleButton;
+        private Button RenameListsButton;
+        private Button DoubleDomeListButton;
     }//class
 }//namespace

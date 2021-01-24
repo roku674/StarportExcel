@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static StarportExcel.Structs;
 
 namespace StarportExcel
 {
+    
+
     class Algorithms
     {
         private static bool[,] galaxyMap = new bool[999, 999];
@@ -14,16 +17,7 @@ namespace StarportExcel
         /// <summary>
         /// structure for the x,y coordinates of a system (123, 123)
         /// </summary>
-        public struct Coordinates
-        {
-            public int x, y;
-
-            public Coordinates(int x, int y)
-            {
-                this.x = x;
-                this.y = y;
-            }
-        };
+        
 
         /// <summary>
         /// Sorts the planets only by the X coordinates 1 dimension
@@ -39,41 +33,32 @@ namespace StarportExcel
         /// Pass in the array of strings and amount of points you want ot return, will return them in order 
         /// </summary>
         /// <param name="planets">list of planets</param>
+        /// <param name="origin">starting location if null will use first planet</param>
         /// <param name="amount">how many closest points you want to return</param>
         /// <returns></returns>
-        public static string[] SortPlanetsByXAndY(string[] planets, int amount)
+        public static ColonyInfo[] SortPlanetsByXAndY(string[] planets, Coordinates origin)
         {
-            int n = planets.Length;
+            ColonyInfo[] colInfo = new ColonyInfo[planets.Length];
 
-            int[] distance = new int[n];
-
-            for (int i = 0; i < n; i++)
+            for(int i = 0; i < planets.Length; i++)
             {
-                int x = GetCoordinates(planets[i]).x,
-                    y = GetCoordinates(planets[i]).y;
-                distance[i] = (x * x) +
-                              (y * y);
+                colInfo[i].colonyName = planets[i];
+                colInfo[i].coords = GetCoordinates(planets[i]);
+                colInfo[i].distance = Distance(GetCoordinates(planets[i]), origin);
             }
 
-            Array.Sort(distance);
+            return colInfo;
+        }
 
-            // Find the k-th distance
-            int distk = distance[amount - 1];
-
-            // Print all distances which are 
-            // smaller than k-th distance
-            for (int i = 0; i < n; i++)
-            {
-                int x = GetCoordinates(planets[i]).x,
-                    y = GetCoordinates(planets[i]).y;
-                int dist = (x * x) +
-                           (y * y);
-
-                if (dist <= distk)
-                    Console.WriteLine("[" + x +
-                                      ", " + y + "]");
-            }
-            return planets;
+        /// <summary>
+        /// Find the distance
+        /// </summary>
+        /// <param name="coords">destination</param>
+        /// <param name="origin">point of origin</param>
+        /// <returns></returns>
+        public static int Distance(Coordinates coords, Coordinates origin)
+        {
+            return (int) Math.Sqrt((coords.x - origin.x) * (coords.x - origin.x) + (coords.y - origin.y) * (coords.y - origin.y));
         }
 
         /// <summary>
