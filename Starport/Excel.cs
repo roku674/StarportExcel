@@ -10,7 +10,7 @@ namespace StarportExcel
 	class Excel
 	{
 		readonly string path = "";
-		_Application excel = new Microsoft.Office.Interop.Excel.Application();
+        _Application excel = new Microsoft.Office.Interop.Excel.Application();
 
 		Workbook wb;
 		Worksheet ws;

@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Starport",
-    "\\Starport\\Properties"
+    "\\Starport"
   ],
-  "SelectedNode": "\\Starport\\CustomMessageBox.Designer.cs",
+  "SelectedNode": "\\Starport\\README.md",
   "PreviewInSolutionExplorer": true
 }

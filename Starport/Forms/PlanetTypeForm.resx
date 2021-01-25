@@ -117,241 +117,628 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;Volcanics.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Rockies.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="LasersListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Oceanics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 71</value>
+  <data name="VolcanicsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;Volcanics.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Deserts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 24</value>
-  </data>
-  <data name="ClearOutput.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;Volcanics.Name" xml:space="preserve">
-    <value>Volcanics</value>
-  </data>
-  <data name="Earths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 24</value>
-  </data>
-  <data name="Rockies.Text" xml:space="preserve">
-    <value>Rockies</value>
-  </data>
-  <data name="&gt;&gt;Greenhouses.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CMinesListButton.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="Paradises.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 51</value>
-  </data>
-  <data name="Mountains.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 71</value>
-  </data>
-  <data name="&gt;&gt;ClearOutput.Name" xml:space="preserve">
-    <value>ClearOutput</value>
-  </data>
-  <data name="&gt;&gt;LineBreak.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>PlanetTypeForm</value>
-  </data>
-  <data name="&gt;&gt;Rockies.Name" xml:space="preserve">
-    <value>Rockies</value>
-  </data>
-  <data name="&gt;&gt;Oceanics.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Arctics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 41</value>
-  </data>
-  <data name="Deserts.Text" xml:space="preserve">
-    <value>Deserts</value>
-  </data>
-  <data name="&gt;&gt;ClearOutput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Oceanics.Text" xml:space="preserve">
-    <value>Oceanics</value>
-  </data>
-  <data name="&gt;&gt;Deserts.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;Oceanics.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LineBreak.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Deserts.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Mountains.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="Arctics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 24</value>
-  </data>
-  <data name="&gt;&gt;Paradises.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Arctics.Name" xml:space="preserve">
-    <value>Arctics</value>
-  </data>
-  <data name="&gt;&gt;Growing.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="LineBreak.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;Growing.Name" xml:space="preserve">
-    <value>Growing</value>
-  </data>
-  <data name="&gt;&gt;Greenhouses.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Arctics.Text" xml:space="preserve">
-    <value>Arctics</value>
-  </data>
-  <data name="Earths.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 41</value>
-  </data>
-  <data name="Greenhouses.Text" xml:space="preserve">
-    <value>Greenhouses</value>
-  </data>
-  <data name="Arctics.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Deserts.Name" xml:space="preserve">
-    <value>Deserts</value>
-  </data>
-  <data name="&gt;&gt;Paradises.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numberBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Arctics.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="Rockies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 24</value>
-  </data>
-  <data name="Earths.Text" xml:space="preserve">
-    <value>Earths</value>
-  </data>
-  <data name="Growing.Text" xml:space="preserve">
-    <value>Growing List</value>
-  </data>
-  <data name="&gt;&gt;Paradises.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;numberBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Growing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Earths.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;numberBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PrintToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
-  <data name="&gt;&gt;Greenhouses.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DeconstructList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NukesList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Greenhouses.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Volcanics.Name" xml:space="preserve">
+    <value>Volcanics</value>
+  </data>
+  <data name="GreenhousesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Arctics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GrowingButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CopyToolStripButtonPT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numberBox.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="Arctics.Text" xml:space="preserve">
+    <value>Arctics</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;CMinesList.Name" xml:space="preserve">
+    <value>CMinesList</value>
+  </data>
+  <data name="DeconstructList.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;ArcticsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ParadisesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 132</value>
+  </data>
+  <data name="&gt;&gt;Deserts.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="numberTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;Growing.Name" xml:space="preserve">
+    <value>Growing</value>
+  </data>
+  <data name="&gt;&gt;NewFileToolStripButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GreenhousesButton.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="CMinesListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 276</value>
+  </data>
+  <data name="GrowingButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;SaveToolStripButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EarthsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 72</value>
+  </data>
+  <data name="&gt;&gt;LasersListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripPT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PrisonListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="Oceanics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 71</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 305</value>
+  </data>
+  <data name="&gt;&gt;CMinesListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RockiesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DemocracyList.Name" xml:space="preserve">
+    <value>DemocracyList</value>
+  </data>
+  <data name="&gt;&gt;DeconstructListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GrowingButton.Name" xml:space="preserve">
+    <value>GrowingButton</value>
+  </data>
+  <data name="DemocracyListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;DirectorshipListButton.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;toolStripPT.Name" xml:space="preserve">
+    <value>toolStripPT</value>
+  </data>
+  <data name="NeedsDefensesButton.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;ClearOutput.Parent" xml:space="preserve">
+  <data name="&gt;&gt;NukesListButton.Name" xml:space="preserve">
+    <value>NukesListButton</value>
+  </data>
+  <data name="&gt;&gt;SaveToolStripButtonPT.Name" xml:space="preserve">
+    <value>SaveToolStripButtonPT</value>
+  </data>
+  <data name="Deserts.Text" xml:space="preserve">
+    <value>Deserts</value>
+  </data>
+  <data name="&gt;&gt;RenameListsButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VolcanicsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BuildListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 334</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SolarsListButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DirectorshipListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MountainsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 102</value>
+  </data>
+  <data name="&gt;&gt;Arctics.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;FindMoraleButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Mountains.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 71</value>
+  </data>
+  <data name="CopyToolStripButtonPT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="ClearOutputButton.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;DesertsButton.Name" xml:space="preserve">
+    <value>DesertsButton</value>
+  </data>
+  <data name="&gt;&gt;BuildListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NukesList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeconstructListButton.Name" xml:space="preserve">
+    <value>DeconstructListButton</value>
+  </data>
+  <data name="&gt;&gt;PrisonListButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Earths.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="NeedsDefenses.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;NewFileToolStripButton.Name" xml:space="preserve">
+    <value>NewFileToolStripButton</value>
+  </data>
+  <data name="&gt;&gt;MountainsButton.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="Deserts.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="Volcanics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 71</value>
+  </data>
+  <data name="&gt;&gt;Growing.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="CMinesList.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="RenameListsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 392</value>
+  </data>
+  <data name="&gt;&gt;OceanicsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="&gt;&gt;SolarsList.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;DoubleDomeListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ClearOutput.Text" xml:space="preserve">
+    <value>Clear Output.txt</value>
+  </data>
+  <data name="&gt;&gt;CMinesListButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ClearOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LasersList.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="DirectorshipListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 218</value>
+  </data>
+  <data name="&gt;&gt;PrisonList.Name" xml:space="preserve">
+    <value>PrisonList</value>
+  </data>
+  <data name="NewFileToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="&gt;&gt;SocialismList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GreenhousesButton.Name" xml:space="preserve">
+    <value>GreenhousesButton</value>
+  </data>
+  <data name="Oceanics.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator.Name" xml:space="preserve">
+    <value>toolStripSeparator</value>
+  </data>
+  <data name="&gt;&gt;OpenToolStripButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ClearOutput.Name" xml:space="preserve">
+    <value>ClearOutput</value>
+  </data>
+  <data name="HelpMeNiggaDamnToolStripButtonPT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="&gt;&gt;FindMoraleButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Rockies.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;NukesList.Name" xml:space="preserve">
+    <value>NukesList</value>
+  </data>
+  <data name="&gt;&gt;toolStripPT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SolarsList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Volcanics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Mountains.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DemocracyListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 247</value>
+  </data>
+  <data name="&gt;&gt;LineBreakButton.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="Oceanics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
+  </data>
+  <data name="&gt;&gt;ArcticsButton.Name" xml:space="preserve">
+    <value>ArcticsButton</value>
+  </data>
+  <data name="&gt;&gt;Earths.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;OceanicsButton.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;PrintToolStripButton.Name" xml:space="preserve">
+    <value>PrintToolStripButton</value>
+  </data>
+  <data name="ClearOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 23</value>
+  </data>
+  <data name="DesertsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CMinesListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;DemocracyListButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MountainsButton.Name" xml:space="preserve">
+    <value>MountainsButton</value>
+  </data>
+  <data name="Arctics.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;toolStripPT.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Greenhouses.Name" xml:space="preserve">
+    <value>Greenhouses</value>
+  </data>
+  <data name="&gt;&gt;HelpMeNiggaDamnToolStripButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SocialismListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;DemocracyListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Earths.Name" xml:space="preserve">
+    <value>Earths</value>
+  </data>
+  <data name="SolarsList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 305</value>
+  </data>
+  <data name="NukesListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 276</value>
+  </data>
+  <data name="OpenToolStripButtonPT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="&gt;&gt;LasersList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NeedsDefensesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ClearOutputButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 393</value>
+  </data>
+  <data name="SolarsListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;BuildListButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PrisonList.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Rockies.Text" xml:space="preserve">
+    <value>Rockies</value>
+  </data>
+  <data name="EarthsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="DeconstructListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 334</value>
+  </data>
+  <data name="&gt;&gt;RockiesButton.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;DoubleDomeListButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Earths.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Volcanics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 71</value>
+  <data name="NeedsDefenses.Text" xml:space="preserve">
+    <value>Needs Defenses List</value>
   </data>
-  <data name="Mountains.Text" xml:space="preserve">
-    <value>Mountains</value>
+  <data name="&gt;&gt;SolarsList.Name" xml:space="preserve">
+    <value>SolarsList</value>
   </data>
-  <data name="Oceanics.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="numberBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
   </data>
-  <data name="Greenhouses.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;numberTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Earths.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="Paradises.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 51</value>
   </data>
-  <data name="&gt;&gt;Volcanics.Parent" xml:space="preserve">
+  <data name="LineBreak.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;EarthsButton.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;DeconstructList.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DirectorshipList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 218</value>
+  </data>
+  <data name="SocialismListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 247</value>
+  </data>
+  <data name="DeconstructList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 334</value>
+  </data>
+  <data name="&gt;&gt;numberTextBox.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="OpenToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="NukesList.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="Deserts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="ClearOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 188</value>
+  </data>
+  <data name="&gt;&gt;HelpMeNiggaDamnToolStripButtonPT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DesertsButton.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;Deserts.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="NeedsDefenses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 159</value>
+  <data name="Deserts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 41</value>
   </data>
-  <data name="&gt;&gt;LineBreak.Parent" xml:space="preserve">
+  <data name="&gt;&gt;NeedsDefensesButton.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;DirectorshipList.Name" xml:space="preserve">
+    <value>DirectorshipList</value>
+  </data>
+  <data name="NukesList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 276</value>
+  </data>
+  <data name="&gt;&gt;NeedsDefensesButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="Mountains.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;HelpMeNiggaDamnToolStripButtonPT.Name" xml:space="preserve">
+    <value>HelpMeNiggaDamnToolStripButtonPT</value>
   </data>
-  <data name="NeedsDefenses.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;Mountains.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GreenhousesButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="Mountains.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 24</value>
   </data>
-  <data name="&gt;&gt;Greenhouses.Name" xml:space="preserve">
-    <value>Greenhouses</value>
+  <data name="&gt;&gt;SolarsListButton.Name" xml:space="preserve">
+    <value>SolarsListButton</value>
   </data>
-  <data name="&gt;&gt;Growing.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="VolcanicsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>358, 102</value>
   </data>
-  <data name="&gt;&gt;Rockies.Type" xml:space="preserve">
+  <data name="Rockies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 71</value>
+  </data>
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="RockiesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;SocialismListButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Deserts.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;Arctics.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;LineBreak.Name" xml:space="preserve">
-    <value>LineBreak</value>
+  <data name="&gt;&gt;Paradises.Name" xml:space="preserve">
+    <value>Paradises</value>
+  </data>
+  <data name="Rockies.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="FindMoraleButton.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
   <data name="&gt;&gt;NeedsDefenses.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>14</value>
   </data>
-  <data name="Volcanics.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="&gt;&gt;ArcticsButton.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="CMinesList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 276</value>
+  </data>
+  <data name="DoubleDomeListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 392</value>
+  </data>
+  <data name="numberTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 43</value>
+  </data>
+  <data name="&gt;&gt;DirectorshipList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RenameListsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="SaveToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Growing.Text" xml:space="preserve">
+    <value>Growing List</value>
+  </data>
+  <data name="&gt;&gt;RenameListsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PrisonListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 218</value>
+  </data>
+  <data name="&gt;&gt;EarthsButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LineBreak.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 187</value>
+  </data>
+  <data name="DeconstructListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="numberBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 20</value>
+  </data>
+  <data name="Rockies.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 24</value>
   </data>
-  <data name="ClearOutput.Text" xml:space="preserve">
-    <value>Clear Output.txt</value>
+  <data name="NeedsDefensesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 189</value>
   </data>
-  <data name="Oceanics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 24</value>
+  <data name="&gt;&gt;RenameListsButton.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="ClearOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 188</value>
+  <data name="&gt;&gt;ParadisesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Volcanics.Text" xml:space="preserve">
-    <value>Volcanics</value>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;Earths.Name" xml:space="preserve">
-    <value>Earths</value>
+  <data name="numberBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="&gt;&gt;Mountains.Name" xml:space="preserve">
-    <value>Mountains</value>
+  <data name="NeedsDefenses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 159</value>
   </data>
-  <data name="Growing.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="&gt;&gt;Mountains.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LasersListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 305</value>
+  </data>
+  <data name="&gt;&gt;DesertsButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="SaveToolStripButtonPT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="LasersList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 305</value>
+  </data>
+  <data name="&gt;&gt;NeedsDefenses.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Earths.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 41</value>
+  </data>
+  <data name="PrisonList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 217</value>
+  </data>
+  <data name="&gt;&gt;Greenhouses.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Growing.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="Oceanics.Text" xml:space="preserve">
+    <value>Oceanics</value>
+  </data>
+  <data name="DemocracyList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 247</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1476,115 +1863,553 @@
         //////////////////////////////////////////////////8=
 </value>
   </data>
-  <data name="Greenhouses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 41</value>
+  <data name="&gt;&gt;LasersList.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="Rockies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 71</value>
-  </data>
-  <data name="Paradises.Text" xml:space="preserve">
-    <value>Paradises</value>
-  </data>
-  <data name="&gt;&gt;Rockies.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="LineBreak.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 187</value>
-  </data>
-  <data name="&gt;&gt;NeedsDefenses.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LineBreak.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="numberBox.Text" xml:space="preserve">
-    <value>Insert Planet Number in the form of the integer otherwise it'll spit them all out to the Output.Txt</value>
+  <data name="LineBreakButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 363</value>
   </data>
-  <data name="&gt;&gt;Arctics.Type" xml:space="preserve">
+  <data name="&gt;&gt;LineBreakButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="numberBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 20</value>
+  <data name="PrisonList.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
-  <data name="&gt;&gt;Earths.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PrisonList.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;Paradises.Name" xml:space="preserve">
-    <value>Paradises</value>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 305</value>
   </data>
-  <data name="&gt;&gt;NeedsDefenses.Name" xml:space="preserve">
-    <value>NeedsDefenses</value>
+  <data name="SocialismList.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;Oceanics.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="ArcticsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 72</value>
+  </data>
+  <data name="&gt;&gt;OpenToolStripButtonPT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numberBox.Name" xml:space="preserve">
     <value>numberBox</value>
   </data>
-  <data name="numberBox.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="&gt;&gt;SocialismListButton.Name" xml:space="preserve">
+    <value>SocialismListButton</value>
   </data>
-  <data name="&gt;&gt;Rockies.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;Greenhouses.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;Greenhouses.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="Greenhouses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 24</value>
+  <data name="toolStripPT.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
   </data>
-  <data name="NeedsDefenses.Text" xml:space="preserve">
-    <value>Needs Defenses List</value>
+  <data name="&gt;&gt;DemocracyListButton.Name" xml:space="preserve">
+    <value>DemocracyListButton</value>
   </data>
-  <data name="&gt;&gt;Mountains.Type" xml:space="preserve">
+  <data name="&gt;&gt;NukesListButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LineBreakButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;ArcticsButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RenameListsButton.Name" xml:space="preserve">
+    <value>RenameListsButton</value>
+  </data>
+  <data name="&gt;&gt;DesertsButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Paradises.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;toolStripPT.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="ClearOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 23</value>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
   </data>
   <data name="Volcanics.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="Mountains.Text" xml:space="preserve">
+    <value>Mountains</value>
+  </data>
+  <data name="&gt;&gt;DemocracyList.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Growing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="FindMoraleButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 363</value>
+  </data>
+  <data name="&gt;&gt;Paradises.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DesertsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 72</value>
+  </data>
+  <data name="Earths.Text" xml:space="preserve">
+    <value>Earths</value>
+  </data>
+  <data name="&gt;&gt;FindMoraleButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;DirectorshipListButton.Name" xml:space="preserve">
+    <value>DirectorshipListButton</value>
+  </data>
+  <data name="&gt;&gt;LasersListButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="NeedsDefenses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 23</value>
+  </data>
+  <data name="&gt;&gt;ParadisesButton.Name" xml:space="preserve">
+    <value>ParadisesButton</value>
+  </data>
+  <data name="&gt;&gt;LasersListButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="BuildListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;numberBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VolcanicsButton.Name" xml:space="preserve">
+    <value>VolcanicsButton</value>
+  </data>
+  <data name="Greenhouses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
+  </data>
+  <data name="&gt;&gt;LineBreakButton.Name" xml:space="preserve">
+    <value>LineBreakButton</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OceanicsButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="MountainsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="Greenhouses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 41</value>
+  </data>
+  <data name="&gt;&gt;PrisonListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DirectorshipList.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;Oceanics.Name" xml:space="preserve">
+    <value>Oceanics</value>
+  </data>
+  <data name="&gt;&gt;Mountains.Name" xml:space="preserve">
+    <value>Mountains</value>
+  </data>
+  <data name="DirectorshipList.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;SocialismList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CopyToolStripButtonPT.Name" xml:space="preserve">
+    <value>CopyToolStripButtonPT</value>
+  </data>
+  <data name="&gt;&gt;DemocracyList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;OceanicsButton.Name" xml:space="preserve">
+    <value>OceanicsButton</value>
+  </data>
+  <data name="&gt;&gt;Rockies.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NukesListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Oceanics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DoubleDomeListButton.Name" xml:space="preserve">
+    <value>DoubleDomeListButton</value>
+  </data>
+  <data name="GreenhousesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>358, 72</value>
+  </data>
+  <data name="&gt;&gt;Mountains.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;BuildListButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Growing.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
   <data name="&gt;&gt;Deserts.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NeedsDefenses.Type" xml:space="preserve">
+  <data name="&gt;&gt;DeconstructListButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Growing.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ClearOutput.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;LineBreak.Name" xml:space="preserve">
+    <value>LineBreak</value>
   </data>
-  <data name="&gt;&gt;Arctics.Parent" xml:space="preserve">
+  <data name="ArcticsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DemocracyList.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="toolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="&gt;&gt;DemocracyListButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;NeedsDefenses.Name" xml:space="preserve">
+    <value>NeedsDefenses</value>
+  </data>
+  <data name="&gt;&gt;PrintToolStripButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Arctics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
+  </data>
+  <data name="&gt;&gt;ClearOutput.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>PlanetTypeForm</value>
+  </data>
+  <data name="&gt;&gt;ClearOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeedsDefenses.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Arctics.Name" xml:space="preserve">
+    <value>Arctics</value>
+  </data>
+  <data name="&gt;&gt;NukesList.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;CMinesList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Mountains.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GrowingButton.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;Oceanics.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NukesListButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Paradises.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;DirectorshipList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PrisonListButton.Name" xml:space="preserve">
+    <value>PrisonListButton</value>
+  </data>
+  <data name="DirectorshipListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="numberBox.Text" xml:space="preserve">
+    <value>Insert Planet Number in the form of the integer otherwise it'll spit them all out to the Output.Txt</value>
+  </data>
+  <data name="&gt;&gt;Deserts.Name" xml:space="preserve">
+    <value>Deserts</value>
+  </data>
+  <data name="OceanicsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 102</value>
+  </data>
+  <data name="&gt;&gt;numberBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SocialismList.Name" xml:space="preserve">
+    <value>SocialismList</value>
+  </data>
+  <data name="&gt;&gt;DeconstructList.Name" xml:space="preserve">
+    <value>DeconstructList</value>
+  </data>
+  <data name="&gt;&gt;SaveToolStripButtonPT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RockiesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 102</value>
+  </data>
+  <data name="&gt;&gt;OpenToolStripButtonPT.Name" xml:space="preserve">
+    <value>OpenToolStripButtonPT</value>
+  </data>
+  <data name="&gt;&gt;Paradises.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;ParadisesButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="HelpMeNiggaDamnToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="SolarsListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 305</value>
+  </data>
+  <data name="&gt;&gt;HelpMeNiggaDamnToolStripButton.Name" xml:space="preserve">
+    <value>HelpMeNiggaDamnToolStripButton</value>
+  </data>
+  <data name="&gt;&gt;Rockies.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CMinesList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DoubleDomeListButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="OceanicsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="Earths.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
+  </data>
+  <data name="&gt;&gt;OpenToolStripButton.Name" xml:space="preserve">
+    <value>OpenToolStripButton</value>
+  </data>
+  <data name="&gt;&gt;ClearOutputButton.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="GrowingButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 189</value>
+  </data>
+  <data name="&gt;&gt;SolarsList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RockiesButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VolcanicsButton.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;SocialismListButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;VolcanicsButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RockiesButton.Name" xml:space="preserve">
+    <value>RockiesButton</value>
+  </data>
+  <data name="&gt;&gt;DeconstructListButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;numberTextBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>487, 216</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Growing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 158</value>
   </data>
-  <data name="&gt;&gt;Oceanics.Name" xml:space="preserve">
-    <value>Oceanics</value>
+  <data name="&gt;&gt;MountainsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Oceanics.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="Volcanics.Text" xml:space="preserve">
+    <value>Volcanics</value>
   </data>
-  <data name="NeedsDefenses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 23</value>
+  <data name="&gt;&gt;DirectorshipListButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DeconstructList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ClearOutput.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CMinesList.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="Paradises.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 101</value>
   </data>
-  <data name="Growing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 158</value>
+  <data name="&gt;&gt;DemocracyList.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="Growing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 23</value>
+  <data name="&gt;&gt;NeedsDefensesButton.Name" xml:space="preserve">
+    <value>NeedsDefensesButton</value>
   </data>
-  <data name="numberBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+  <data name="&gt;&gt;MountainsButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="Deserts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 41</value>
+  <data name="ParadisesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;GrowingButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PrisonList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LasersListButton.Name" xml:space="preserve">
+    <value>LasersListButton</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numberTextBox.Name" xml:space="preserve">
+    <value>numberTextBox</value>
+  </data>
+  <data name="&gt;&gt;LineBreakButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;FindMoraleButton.Name" xml:space="preserve">
+    <value>FindMoraleButton</value>
+  </data>
+  <data name="&gt;&gt;EarthsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ClearOutputButton.Name" xml:space="preserve">
+    <value>ClearOutputButton</value>
+  </data>
+  <data name="Greenhouses.Text" xml:space="preserve">
+    <value>Greenhouses</value>
+  </data>
+  <data name="&gt;&gt;CMinesListButton.Name" xml:space="preserve">
+    <value>CMinesListButton</value>
+  </data>
+  <data name="NukesListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="Arctics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 41</value>
+  </data>
+  <data name="&gt;&gt;SolarsListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SocialismList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 246</value>
+  </data>
+  <data name="Volcanics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
+  </data>
+  <data name="&gt;&gt;LineBreak.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;SolarsListButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;Rockies.Name" xml:space="preserve">
+    <value>Rockies</value>
+  </data>
+  <data name="&gt;&gt;EarthsButton.Name" xml:space="preserve">
+    <value>EarthsButton</value>
+  </data>
+  <data name="&gt;&gt;PrisonListButton.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;LasersList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DoubleDomeListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;ClearOutputButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Volcanics.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LasersList.Name" xml:space="preserve">
+    <value>LasersList</value>
+  </data>
+  <data name="&gt;&gt;ClearOutputButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SocialismList.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BuildListButton.Name" xml:space="preserve">
+    <value>BuildListButton</value>
+  </data>
+  <data name="&gt;&gt;GreenhousesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Paradises.Text" xml:space="preserve">
+    <value>Paradises</value>
+  </data>
+  <data name="&gt;&gt;Paradises.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LineBreak.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Volcanics.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;SocialismListButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ParadisesButton.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="SolarsList.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;SaveToolStripButton.Name" xml:space="preserve">
+    <value>SaveToolStripButton</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="toolStripPT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>en</value>
+  </metadata>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>

@@ -1,24 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace StarportExcel
 {
-	public partial class PlanetTypeForm : Form
+    public partial class PlanetTypeForm : Form
     {
         string excelPath = "";
-        readonly string outputPath = @"G:\My Drive\Personal Stuff\Starport\Output.txt";
+        string outputPath = @"G:\My Drive\Personal Stuff\Starport\Output.txt";
         private StreamWriter output = new StreamWriter(@"G:\My Drive\Personal Stuff\Starport\Output.txt");
 
         public PlanetTypeForm()
 		{
 			InitializeComponent();
-        }
-        private void PlanetTypeForm_Load(object sender, EventArgs e)
-        {
-
         }
         private void PlanetTypeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -26,18 +20,64 @@ namespace StarportExcel
             CloseOutput();
         }
 
-        private void Arctics_Click(object sender, EventArgs e)
+        // Tool strip stuff from here down
+
+        private void OpenToolStripButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            var openFileDialog1 = new OpenFileDialog
+            {
+                Filter = "Text Files|*.txt|All Files|*.*",
+                FilterIndex = 2,
+                Title = "Open the Excel Sheet"
+            };
+            openFileDialog1.ShowDialog();
+
+            //Check to see if a filename was given
+            if (openFileDialog1.FileName != "")
+            {
+                SetOutputPath(@openFileDialog1.FileName);                
+            }
+        }
+
+        private void SaveToolStripButton_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog1 = new SaveFileDialog
+            {
+                Filter = "Text Files|*.txt|All Files|*.*",
+                Title = "Save an Image File"
+            };
+            saveFileDialog1.ShowDialog();
+
+            if (saveFileDialog1.FileName != "")
+            {
+                File.WriteAllText(@saveFileDialog1.FileName, "");
+            }
+        }
+
+        private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This box is for essentially displaying the data to a text file, I may make it display to the box in future iterations.", "Message");
+        }
+
+        private void CopyToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //buttons
+
+        private void ArcticsButton_Click(object sender, EventArgs e)
+        {
+            int.TryParse(numberTextBox.Text, out int temp);
             //Console.WriteLine("Temp is : " + temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(2);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -50,21 +90,21 @@ namespace StarportExcel
                 }
                 output.Flush();
                 excel.Close();
-                MessageBox.Show("Arctics added to output.txt", "Completed");
+                MessageBox.Show("Arctics added to " + outputPath, "Completed");
             }
         }
 
-        private void Deserts_Click(object sender, EventArgs e)
+        private void DesertsButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(3);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -79,21 +119,21 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Deserts added to output.txt", "Completed");
+                MessageBox.Show("Deserts added to " + outputPath, "Completed");
             }
         }
 
-        private void Earths_Click(object sender, EventArgs e)
+        private void EarthsButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(4);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -108,22 +148,22 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Earthlikes added to output.txt", "Completed");
+                MessageBox.Show("Earthlikes added to " + outputPath, "Completed");
             }
 
         }
 
-        private void Greenhouses_Click(object sender, EventArgs e)
+        private void GreenhousesButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(5);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -138,21 +178,21 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Greenhouses added to output.txt", "Completed");
+                MessageBox.Show("Greenhouses added to " + outputPath, "Completed");
             }
         }
 
-        private void Mountains_Click(object sender, EventArgs e)
+        private void MountainsButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp); 
+            int.TryParse(numberTextBox.Text, out int temp); 
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(6);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -167,21 +207,21 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Mountains added to output.txt", "Completed");
+                MessageBox.Show("Mountains added to " + outputPath, "Completed");
             }
         }
 
-        private void Oceanics_Click(object sender, EventArgs e)
+        private void OceanicsButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp); 
+            int.TryParse(numberTextBox.Text, out int temp); 
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(7);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -196,21 +236,21 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Oceanics added to output.txt", "Completed");
+                MessageBox.Show("Oceanics added to " + outputPath, "Completed");
             }
         }
 
-        private void Paradises_Click(object sender, EventArgs e)
+        private void ParadisesButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp); 
+            int.TryParse(numberTextBox.Text, out int temp); 
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(8);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -225,21 +265,21 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Paradises added to output.txt", "Completed");
+                MessageBox.Show("Paradises added to " + outputPath, "Completed");
             }
         }
 
-        private void Rockies_Click(object sender, EventArgs e)
+        private void RockiesButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(9);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -254,21 +294,21 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Rockies added to output.txt", "Completed");
+                MessageBox.Show("Rockies added to " + outputPath, "Completed");
             }
         }
 
-        private void Volcanics_Click(object sender, EventArgs e)
+        private void VolcanicsButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberBox.Text, out int temp);
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
-                int planetNumber = Int32.Parse(numberBox.Text);
+                int planetNumber = Int32.Parse(numberTextBox.Text);
                 Excel excel = OpenFileAt(10);
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
-                numberBox.Text = planet;
+                numberTextBox.Text = planet;
             }
             else
             {
@@ -283,15 +323,15 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
 
-                MessageBox.Show("Volcanics added to output.txt", "Completed");
+                MessageBox.Show("Volcanics added to " + outputPath, "Completed");
             }
         }
-        private void NeedsDefenses_Click(object sender, EventArgs e)
+        private void NeedsDefensesButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
 
             output.WriteLine("Needs Defense List: ");
-            for (int i = 2; i < 200; i++)
+            for (int i = 2; i < Program.GetMax(); i++)
             {
 
                 output.WriteLine(excel.ReadCellString(i, 14)); //needs defense column
@@ -303,12 +343,12 @@ namespace StarportExcel
             MessageBox.Show("Needs Defense List added to Output.txt", "Completed");
 
         }
-        private void Growing_Click(object sender, EventArgs e)
+        private void GrowingButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
 
             output.WriteLine("Growing List: ");
-            for (int i = 2; i < 200; i++)
+            for (int i = 2; i < Program.GetMax(); i++)
             {
                 output.WriteLine(excel.ReadCellString(i, 11)); //needs defense column
 
@@ -317,6 +357,62 @@ namespace StarportExcel
             excel.Close();
 
             MessageBox.Show("Growing List added to Output.txt", "Completed");
+        }
+        private void RenameListsButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
+
+            output.WriteLine("Rename Lists : Coordinates | Current Name | Rename ");
+
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (excel.ReadCellString(i, 6) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 6) + " | "); //location
+                }
+                if (excel.ReadCellString(i, 7) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 7) + " | ");//before
+                }
+                if (excel.ReadCellString(i, 8) != "")
+                {
+                    output.Write("/namecolony " + excel.ReadCellString(i, 8));//after 
+                }
+                if(excel.ReadCellString(i, 6) != "" || excel.ReadCellString(i, 7) != "" || excel.ReadCellString(i, 8) != "")
+                {
+                    output.WriteLine("");
+                }
+            }
+            output.Flush();
+            excel.Close();
+
+            MessageBox.Show("Rename lists added to Output.txt", "Completed");
+        }
+        private void DoubleDomeListButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
+
+            output.WriteLine("Double Domes Lists: Candidates | Double Domes: ");
+
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (excel.ReadCellString(i, 18) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 18) + " | "); //Candidates
+                }
+                if (excel.ReadCellString(i, 19) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 19) + " | ");//double doems
+                }
+                if (excel.ReadCellString(i, 18) != "" || excel.ReadCellString(i, 19) != "")
+                {
+                    output.WriteLine("");
+                }               
+            }
+            output.Flush();
+            excel.Close();
+
+            MessageBox.Show("Double Domes list added to Output.txt", "Completed");
         }
 
         private Excel OpenFileAt(int num)
@@ -336,7 +432,8 @@ namespace StarportExcel
         }
         public void SetOutputPath(string path)
         {
-            output = new StreamWriter(path);
+            outputPath = path;
+            output = new StreamWriter(outputPath);
         }
 
         public void OpenOutput()
@@ -355,7 +452,7 @@ namespace StarportExcel
 
         }
 
-        private void ClearOutput_Click(object sender, EventArgs e)
+        private void ClearOutputButton_Click(object sender, EventArgs e)
         {
             CloseOutput();
             File.WriteAllText(outputPath, "");
@@ -365,11 +462,18 @@ namespace StarportExcel
             MessageBox.Show(outputPath + " has been cleared", "Message");
         }
 
-        private void LineBreak_Click(object sender, EventArgs e)
+        private void LineBreakButton_Click(object sender, EventArgs e)
         {
             output.WriteLine("");
             output.WriteLine("_____________________________________________");
             output.WriteLine("");
         }
+
+        private void CMinesListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }//PlanetTypeForm
 }//namespace
