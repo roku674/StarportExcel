@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Forms;
+using static StarportExcel.Structs;
 
 namespace StarportExcel
 {
@@ -11,7 +12,7 @@ namespace StarportExcel
         
         public MainForm()
         {
-            InitializeComponent();            
+            InitializeComponent();  
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -66,19 +67,21 @@ namespace StarportExcel
 
         }
         //End of Tool strip stuff
-        private void ReturnPlanet_Click(object sender, EventArgs e)
+        private void ReturnPlanetButton_Click(object sender, EventArgs e)
         {
             PlanetTypeForm customMessageBox = new PlanetTypeForm();
             customMessageBox.SetExcelPath(excelPath);
             customMessageBox.ShowDialog();           
         }
-        private void ReplacePlanet_Click(object sender, EventArgs e)
+        private void ReplacePlanetButton_Click(object sender, EventArgs e)
         {
             string newPlanetName = PlanetOrganizerTextBox.Text;
 
-            Replacer.ReplacePlanetClick(newPlanetName, PlanetOrganizerTextBox);           
+            Replacer.ReplacePlanetClick(newPlanetName, PlanetOrganizerTextBox);
+
+            PlanetOrganizerTextBox.Text = "Insert Planet Name or Start Coordinates";
         }
-        private void CreateQuote_Click(object sender, EventArgs e)
+        private void CreateQuoteButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
 
@@ -114,7 +117,7 @@ namespace StarportExcel
             double totalsZ = excel.ReadCellDouble(12, 3);
             double totals = excel.ReadCellDouble(12, 2);
 
-            double invasions = excel.ReadCellDouble(15, 2);         
+            double invasions = excel.ReadCellDouble(15, 2);
 
             itsMyWindowTextBox.Text = "Arc " + arcticsZ + "/" + arctics +
                 "|~{yellow}~Des " + desertsZ + "/" + deserts +
@@ -125,26 +128,26 @@ namespace StarportExcel
                 "|~{pink}~Paradises ~{link}1:" + paradises + "~" +
                 "|~{gray}~Roc " + rockiesZ + "/" + rockies +
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
-                "|~{link}25:Captured:~ " + invasions + 
+                "|~{link}25:Captured:~ " + invasions +
                 "|~{cyan}~ " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
 
             Console.WriteLine(itsMyWindowTextBox.Text);
 
             excel.Close();
         }
-        private void CheckGrow_Click(object sender, EventArgs e)
+        private void CheckGrowButton_Click(object sender, EventArgs e)
         {
             Checkers.CheckGrow();
         }
-        private void CheckParenthesis_Click(object sender, EventArgs e)
+        private void CheckParenthesisButton_Click(object sender, EventArgs e)
         {
             Checkers.CheckParenthesis();        
         }
-        private void CheckND_Click(object sender, EventArgs e)
+        private void CheckNDButton_Click(object sender, EventArgs e)
         {
             Checkers.CheckNeedsDefense();
         }
-        private void FindGrowing_Click(object sender, EventArgs e)
+        private void FindGrowingButton_Click(object sender, EventArgs e)
         {
 
             //all planets start at 2C
@@ -184,6 +187,11 @@ namespace StarportExcel
                                     Adder.AddToGrow(GetFormula(box), totals );
                                     break;
                                 }
+                                else if (k + 7 < box.Length && box[k + 7].Equals('G'))
+                                {
+                                    Adder.AddToGrow(GetFormula(box), totals);
+                                    break;
+                                }
                                 else
                                 {
                                     //do nothing
@@ -198,16 +206,17 @@ namespace StarportExcel
             }// end of J loop
 
             totals.Close();
-            MessageBox.Show("Find Grow Done", "Completed");
+            MessageBox.Show("Find Grow/Research Done", "Completed");
         }
-        private void FindTotals_Click(object sender, EventArgs e)
+        private void FindTotalsButton_Click(object sender, EventArgs e)
         {
             //open them up and clear them
             Excel totals = OpenFileAt(1);
 
             Clearer.ClearNDList(totals);
             Clearer.ClearGrowList(totals);
-            
+            Clearer.ClearDDList(totals);
+
             Console.WriteLine("Beginning Totals...\n");
 
             for (int k = 2; k <= 10; k++) // goes through each sheet
@@ -217,17 +226,22 @@ namespace StarportExcel
                 int planet = (int)excel.ReadCellDouble(1, 8);
 
                 excel.WriteToCell(2, 8, 0.ToString());//clear zounds num
+                Clearer.ClearZoundsList(excel, planet);
 
                 int temp = 0;
                 for (int j = 1; j <= planet + 15; j++) // goes through the planet list
                 {
+                    
                     if (excel.ReadCellString(j, 2) != "") //if there's something there
                     {                       
                         excel.WriteToCell(j, 1, j.ToString()); //writes to the cell to the left and just puts a number in it
                         temp = j;
 
                         string planetName = excel.ReadCellString(j, 2); //read the name of the planet
+
+                        //Console.WriteLine(Algorithms.GetCoordinates(planetName).x + "," + Algorithms.GetCoordinates(planetName).y ); // just testing if GetCoordinatees works
                         //Console.WriteLine(planetName + " found");
+
                         int num = j + 1;
                         //if statement by planet type
                             if (k == 2)
@@ -283,7 +297,7 @@ namespace StarportExcel
             Console.Write("Done");
             MessageBox.Show("Find Totals Done", "Completed");
         }   
-        private void FindZounds_Click(object sender, EventArgs e)
+        private void FindZoundsButton_Click(object sender, EventArgs e)
         {
             for (int j = 2; j <= 10; j++) // goes through each sheet
             {
@@ -323,7 +337,7 @@ namespace StarportExcel
             }// end of J loop
             MessageBox.Show("Find Zounds Done", "Completed");
         }
-        private void FindNeedsDefense_Click(object sender, EventArgs e)
+        private void FindNeedsDefenseButton_Click(object sender, EventArgs e)
         {
             Excel totals = OpenFileAt(1);
             Clearer.ClearNDList(totals);
@@ -380,7 +394,7 @@ namespace StarportExcel
             totals.Close();
             MessageBox.Show("Find Needs Defense Done", "Completed");
         }
-        private void SortGrowingBySystem_Click(object sender, EventArgs e)
+        private void SortGrowingByXButton_Click(object sender, EventArgs e)
         {
             Excel totalsSheet = OpenFileAt(1);
             int temp = 0;
@@ -403,13 +417,10 @@ namespace StarportExcel
                     //Console.WriteLine(totalsSheet.ReadCellString(i, 11) + " added to list at index " + i);
                 }
             }
-            Array.Sort(planets);
 
-            /*
-            for (int i = 0; i < planets.Length; i++) {
-                Console.WriteLine(planets[i] + " at index " + i);
-            }
-            */
+            Algorithms.SortPlanetsByX(planets);
+
+            
 
             for (int i = 0; i < planets.Length; i++)
             {
@@ -423,13 +434,55 @@ namespace StarportExcel
 
             totalsSheet.Close();
 
-            MessageBox.Show("Growing List Sorted by System", "Completed");
+            MessageBox.Show("Growing & Research List Sorted by X Coordinates", "Completed");
         }
-        private void SortDefensesBySystem_Click(object sender, EventArgs e)
+        private void SortGrowingBySystemButton_Click(object sender, EventArgs e)
+        {
+            Excel totals = OpenFileAt(1);
+            int temp = 0;
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (totals.ReadCellString(i, 11) != "")
+                {
+                    temp++;
+                }
+            }
+
+            string[] planets = new string[temp];
+
+            for (int i = 0; i < planets.Length; i++) //establish teh array
+            {
+                planets[i] = totals.ReadCellString((i + 2), 11);
+            }
+
+            string originString = PlanetOrganizerTextBox.Text; //get text from text box
+            Coordinates origin;
+
+            if (originString != "")
+            {
+                origin = Algorithms.GetCoordinates(originString); //if there's something there take it
+            }
+            else
+            {
+                origin = Algorithms.GetCoordinates(planets[0]); //else go with the first one in the list
+            }
+            ColonyInfo[] colInfo = Algorithms.SortPlanetsByXAndY(planets, origin, Algorithms.GetCoordinates(planets[temp - 1])); //get the sorted array
+
+            Clearer.ClearGrowList(totals); //clear list
+            for (int i = 0; i < colInfo.Length; i++)
+            {
+                Adder.AddToGrow(GetFormula(colInfo[i].colonyName), totals);
+            }
+
+            totals.Close();
+            PlanetOrganizerTextBox.Text = "Insert Planet Name or Start Coordinates";
+            MessageBox.Show("Growign & Research List Sorted by System", "Completed");
+        }
+        private void SortDefensesByXButton_Click(object sender, EventArgs e)
         {
             Excel totalsSheet = OpenFileAt(1);
             int temp = 0;
-            for (int i= 2; i < 1000; i++)
+            for (int i= 2; i < Program.GetMax(); i++)
             {
                 if (totalsSheet.ReadCellString(i, 14) != "")
                 {
@@ -468,21 +521,63 @@ namespace StarportExcel
 
             totalsSheet.Close();
 
+            MessageBox.Show("Needs Defenses List Sorted by X coordinates", "Completed");
+        }
+        private void SortDefensesBySystemButton_Click(object sender, EventArgs e)
+        {
+            Excel totals = OpenFileAt(1);
+            int temp = 0;
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (totals.ReadCellString(i, 14) != "")
+                {
+                    temp++;
+                }
+            }
+
+            string[] planets = new string[temp];
+
+            for (int i = 0; i < planets.Length; i++) //establish teh array
+            {
+                planets[i] = totals.ReadCellString((i + 2), 14);
+            }
+
+            string originString = PlanetOrganizerTextBox.Text; //get text from text box
+            Coordinates origin;
+
+            if (originString != "")
+            {
+                origin = Algorithms.GetCoordinates(originString); //if there's something there take it
+            }
+            else
+            {
+                origin = Algorithms.GetCoordinates(planets[0]); //else go with the first one in the list
+            }
+            ColonyInfo[] colInfo = Algorithms.SortPlanetsByXAndY(planets, origin, Algorithms.GetCoordinates(planets[temp - 1])); //get the sorted array
+
+            Clearer.ClearNDList(totals); //clear list
+            for (int i = 0; i < colInfo.Length; i++)
+            {
+                Adder.AddToND(GetFormula(colInfo[i].colonyName), totals);
+            }
+
+            totals.Close();
+            PlanetOrganizerTextBox.Text = "Insert Planet Name or Start Coordinates";
             MessageBox.Show("Needs Defenses List Sorted by System", "Completed");
         }
-        private void ClearGrow_Click(object sender, EventArgs e)
+        private void ClearGrowButton_Click(object sender, EventArgs e)
         {
             Excel excel = new Excel(excelPath, 1);
             Clearer.ClearGrowList(excel);
             excel.Close();
         }
-        private void ClearNeedsDefense_Click(object sender, EventArgs e)
+        private void ClearNeedsDefenseButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
             Clearer.ClearNDList(excel);
             excel.Close();
         }
-        private void ClearZounds_Click(object sender, EventArgs e)
+        private void ClearZoundsButton_Click(object sender, EventArgs e)
         {
             for (int j = 2; j <= 10; j++) // goes through each sheet
             {
@@ -493,7 +588,67 @@ namespace StarportExcel
             }
             MessageBox.Show("Zounds lists Cleared!", "Completed");
         }
-             
+        private void FindDDButton_Click(object sender, EventArgs e)
+        {            
+            Excel totals = OpenFileAt(1);
+            Clearer.ClearDDList(totals);
+
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    if (excel.ReadCellString(i, 2) != "")
+                    {
+                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        {
+                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
+                        }
+
+                        string box = excel.ReadCellString(i, 2);
+
+                        for (int k = 0; k < box.Length; k++) //itterate through the string character by character
+                        {
+                            if (box[k].Equals('.'))
+                            {
+                                if (k + 5 < box.Length && box[k + 5].Equals('D'))
+                                {
+                                    Adder.AddToDD(GetFormula(box), totals);
+                                    break;
+                                }
+                                else if (k + 6 < box.Length && box[k + 6].Equals('D'))
+                                {
+                                    Adder.AddToDD(GetFormula(box), totals);
+                                    break;
+                                }
+                                else
+                                {
+                                    //do nothing
+                                }
+                            }//end if
+                        }// for k
+                    } //end if                            
+                }//end of i loop
+
+                excel.Close();
+
+            }// end of J loop
+            totals.Close();
+            MessageBox.Show("Found all Double Domes", "Completed");
+        }
+        
+        private void AddToRenameListButton_Click(object sender, EventArgs e)
+        {
+            //open up a box askign where the coordinates are, old name, new name
+        }
+
+        private void ClearRenameButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public static string StringReplacer(int num , char replacement, string str)
         {
             StringBuilder sb = new StringBuilder(str);

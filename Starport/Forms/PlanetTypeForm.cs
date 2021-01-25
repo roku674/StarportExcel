@@ -66,7 +66,7 @@ namespace StarportExcel
 
         //buttons
 
-        private void Arctics_Click(object sender, EventArgs e)
+        private void ArcticsButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
             //Console.WriteLine("Temp is : " + temp);
@@ -94,7 +94,7 @@ namespace StarportExcel
             }
         }
 
-        private void Deserts_Click(object sender, EventArgs e)
+        private void DesertsButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
 
@@ -123,7 +123,7 @@ namespace StarportExcel
             }
         }
 
-        private void Earths_Click(object sender, EventArgs e)
+        private void EarthsButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
 
@@ -153,7 +153,7 @@ namespace StarportExcel
 
         }
 
-        private void Greenhouses_Click(object sender, EventArgs e)
+        private void GreenhousesButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
 
@@ -182,7 +182,7 @@ namespace StarportExcel
             }
         }
 
-        private void Mountains_Click(object sender, EventArgs e)
+        private void MountainsButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp); 
 
@@ -211,7 +211,7 @@ namespace StarportExcel
             }
         }
 
-        private void Oceanics_Click(object sender, EventArgs e)
+        private void OceanicsButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp); 
 
@@ -240,7 +240,7 @@ namespace StarportExcel
             }
         }
 
-        private void Paradises_Click(object sender, EventArgs e)
+        private void ParadisesButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp); 
 
@@ -269,7 +269,7 @@ namespace StarportExcel
             }
         }
 
-        private void Rockies_Click(object sender, EventArgs e)
+        private void RockiesButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
 
@@ -298,7 +298,7 @@ namespace StarportExcel
             }
         }
 
-        private void Volcanics_Click(object sender, EventArgs e)
+        private void VolcanicsButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
 
@@ -326,12 +326,12 @@ namespace StarportExcel
                 MessageBox.Show("Volcanics added to " + outputPath, "Completed");
             }
         }
-        private void NeedsDefenses_Click(object sender, EventArgs e)
+        private void NeedsDefensesButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
 
             output.WriteLine("Needs Defense List: ");
-            for (int i = 2; i < 200; i++)
+            for (int i = 2; i < Program.GetMax(); i++)
             {
 
                 output.WriteLine(excel.ReadCellString(i, 14)); //needs defense column
@@ -343,12 +343,12 @@ namespace StarportExcel
             MessageBox.Show("Needs Defense List added to Output.txt", "Completed");
 
         }
-        private void Growing_Click(object sender, EventArgs e)
+        private void GrowingButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
 
             output.WriteLine("Growing List: ");
-            for (int i = 2; i < 200; i++)
+            for (int i = 2; i < Program.GetMax(); i++)
             {
                 output.WriteLine(excel.ReadCellString(i, 11)); //needs defense column
 
@@ -357,6 +357,62 @@ namespace StarportExcel
             excel.Close();
 
             MessageBox.Show("Growing List added to Output.txt", "Completed");
+        }
+        private void RenameListsButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
+
+            output.WriteLine("Rename Lists : Coordinates | Current Name | Rename ");
+
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (excel.ReadCellString(i, 6) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 6) + " | "); //location
+                }
+                if (excel.ReadCellString(i, 7) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 7) + " | ");//before
+                }
+                if (excel.ReadCellString(i, 8) != "")
+                {
+                    output.Write("/namecolony " + excel.ReadCellString(i, 8));//after 
+                }
+                if(excel.ReadCellString(i, 6) != "" || excel.ReadCellString(i, 7) != "" || excel.ReadCellString(i, 8) != "")
+                {
+                    output.WriteLine("");
+                }
+            }
+            output.Flush();
+            excel.Close();
+
+            MessageBox.Show("Rename lists added to Output.txt", "Completed");
+        }
+        private void DoubleDomeListButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
+
+            output.WriteLine("Double Domes Lists: Candidates | Double Domes: ");
+
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (excel.ReadCellString(i, 18) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 18) + " | "); //Candidates
+                }
+                if (excel.ReadCellString(i, 19) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 19) + " | ");//double doems
+                }
+                if (excel.ReadCellString(i, 18) != "" || excel.ReadCellString(i, 19) != "")
+                {
+                    output.WriteLine("");
+                }               
+            }
+            output.Flush();
+            excel.Close();
+
+            MessageBox.Show("Double Domes list added to Output.txt", "Completed");
         }
 
         private Excel OpenFileAt(int num)
@@ -396,7 +452,7 @@ namespace StarportExcel
 
         }
 
-        private void ClearOutput_Click(object sender, EventArgs e)
+        private void ClearOutputButton_Click(object sender, EventArgs e)
         {
             CloseOutput();
             File.WriteAllText(outputPath, "");
@@ -406,16 +462,18 @@ namespace StarportExcel
             MessageBox.Show(outputPath + " has been cleared", "Message");
         }
 
-        private void LineBreak_Click(object sender, EventArgs e)
+        private void LineBreakButton_Click(object sender, EventArgs e)
         {
             output.WriteLine("");
             output.WriteLine("_____________________________________________");
             output.WriteLine("");
         }
 
-        private void CMinesList_Click(object sender, EventArgs e)
+        private void CMinesListButton_Click(object sender, EventArgs e)
         {
 
         }
+
+
     }//PlanetTypeForm
 }//namespace

@@ -8,6 +8,8 @@ namespace StarportExcel
 {
     static class Program
     {
+        const int max = 999;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,6 +19,11 @@ namespace StarportExcel
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+        }
+
+        public static int GetMax()
+        {
+            return max;
         }
     }
 }

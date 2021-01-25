@@ -131,6 +131,9 @@
   <data name="FindGrowingButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="FindGrowingButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 141</value>
+  </data>
   <data name="FindGrowingButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
@@ -140,6 +143,9 @@
   <data name="CheckGrowButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="CheckGrowButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 170</value>
+  </data>
   <data name="CheckGrowButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
   </data>
@@ -148,6 +154,9 @@
   </data>
   <data name="FindZoundsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="FindZoundsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 371</value>
   </data>
   <data name="FindZoundsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -186,13 +195,16 @@
     <value>246, 20</value>
   </data>
   <data name="PlanetOrganizerTextBox.Text" xml:space="preserve">
-    <value>Insert Planet Name</value>
+    <value>Insert Planet Name or Coordinates</value>
   </data>
   <data name="itsMyWindowTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 20</value>
   </data>
   <data name="ClearZoundsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="ClearZoundsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 371</value>
   </data>
   <data name="ClearZoundsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -211,6 +223,9 @@
   </data>
   <data name="ReturnPlanetButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="ReturnPlanetButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 257</value>
   </data>
   <data name="ReturnPlanetButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -333,6 +348,9 @@
   <data name="ClearGrowButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="ClearGrowButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 141</value>
+  </data>
   <data name="ClearGrowButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
   </data>
@@ -348,23 +366,26 @@
   <data name="CheckNDButton.Text" xml:space="preserve">
     <value>Check ND</value>
   </data>
-  <data name="SortDefensesBySystemButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="SortDefensesByXButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="SortDefensesBySystemButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SortDefensesByXButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
-  <data name="SortDefensesBySystemButton.Text" xml:space="preserve">
-    <value>Sort by System</value>
+  <data name="SortDefensesByXButton.Text" xml:space="preserve">
+    <value>Sort by X Only</value>
   </data>
-  <data name="SortGrowingBySystemButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="SortGrowingByXButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="SortGrowingBySystemButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SortGrowingByXButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 199</value>
+  </data>
+  <data name="SortGrowingByXButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
-  <data name="SortGrowingBySystemButton.Text" xml:space="preserve">
-    <value>Sort by System</value>
+  <data name="SortGrowingByXButton.Text" xml:space="preserve">
+    <value>Sort by X Only</value>
   </data>
   <data name="FindBuildsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -23101,6 +23122,64 @@
   </data>
   <data name="pictureBoxMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>590, 413</value>
+  </data>
+  <data name="FindDDButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="FindDDButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="FindDDButton.Text" xml:space="preserve">
+    <value>Find Double Domes</value>
+  </data>
+  <data name="SortDefensesBySystemButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SortDefensesBySystemButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 315</value>
+  </data>
+  <data name="SortDefensesBySystemButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SortDefensesBySystemButton.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="SortDefensesBySystemButton.Text" xml:space="preserve">
+    <value>Sort by System</value>
+  </data>
+  <data name="AddToRenameListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddToRenameListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="AddToRenameListButton.Text" xml:space="preserve">
+    <value>Add to Rename</value>
+  </data>
+  <data name="ClearRenameButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ClearRenameButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="ClearRenameButton.Text" xml:space="preserve">
+    <value>Clear Rename</value>
+  </data>
+  <data name="SortGrowingBySystemButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SortGrowingBySystemButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 199</value>
+  </data>
+  <data name="SortGrowingBySystemButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="SortGrowingBySystemButton.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="SortGrowingBySystemButton.Text" xml:space="preserve">
+    <value>Sort by System</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

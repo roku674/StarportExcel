@@ -6,17 +6,11 @@ using System.Threading.Tasks;
 
 namespace StarportExcel
 {
-    class Clearer
+    /// <summary>
+    /// Call these methods to clear the lists
+    /// </summary>
+    class Clearer : MainForm
     {
-        public static void ClearGrowList(Excel excel)
-        {
-            for (int i = 2; i < 1000; i++)
-            {
-                excel.WriteToCell(i, 10, "");
-                excel.WriteToCell(i, 11, "");
-            }
-            // Console.WriteLine("Grow List Cleared");
-        }
         public static void ClearZoundsList(Excel excel, int planets)
         {
             excel.WriteToCell(2, 8, 0.ToString());
@@ -26,14 +20,31 @@ namespace StarportExcel
             }
             //Console.WriteLine("Zounds List Cleared");
         }
+        public static void ClearGrowList(Excel excel)
+        {
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                excel.WriteToCell(i, 10, "");
+                excel.WriteToCell(i, 11, "");
+            }
+            // Console.WriteLine("Grow List Cleared");
+        }
         public static void ClearNDList(Excel excel)
         {
-            for (int i = 2; i < 1000; i++)
+            for (int i = 2; i < Program.GetMax(); i++)
             {
                 excel.WriteToCell(i, 13, "");
                 excel.WriteToCell(i, 14, "");
             }
             // Console.WriteLine("Grow List Cleared");
+        }
+        public static void ClearDDList(Excel excel)
+        {
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                excel.WriteToCell(i, 19, "");
+                //excel.WriteToCell(i, 17, "");
+            }
         }
 
     }

@@ -9,12 +9,10 @@ namespace StarportExcel
     class Replacer : MainForm
     {
         /// <summary>
-        /// Replaces a character in astring
+        /// Replaces planet in the list or if it doesn't exist adds it
         /// </summary>
-        /// <param name="num">Integer in the string aray</param>
-        /// <param name="replacement">character you're replacing it with</param>
-        /// <param name="str">original string</param>
-        /// <returns></returns>
+        /// <param name="newPlanetName">The planet you want to add</param>
+        /// <param name="PlanetOrganizer">What's in the textbox from teh user</param>
         public static void ReplacePlanetClick(string newPlanetName, TextBox PlanetOrganizer)
         {
             for (int i = 0; i < newPlanetName.Length; i++)
@@ -258,8 +256,6 @@ namespace StarportExcel
                                                           
                 MessageBox.Show(newPlanetName + " replaced " + oldPlanetName +  " in slot " + row + " on" + " sheet " + sheet, "Completed");
             }
-
-            PlanetOrganizer.Text = "Insert Planet Name";
 
             excel.Close();
         }
