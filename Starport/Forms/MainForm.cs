@@ -545,7 +545,7 @@ namespace StarportExcel
             string originString = PlanetOrganizerTextBox.Text; //get text from text box
             Coordinates origin;
 
-            if (originString != "")
+            if (originString != "" && originString != "Insert Planet Name or Start Coordinates")
             {
                 origin = Algorithms.GetCoordinates(originString); //if there's something there take it
             }
