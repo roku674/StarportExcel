@@ -16,7 +16,7 @@ namespace StarportExcel
         }
         private void PlanetTypeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            output.Flush();
+            //output.Flush();
             CloseOutput();
         }
 
@@ -117,22 +117,13 @@ namespace StarportExcel
                     {
                         if (box[j].Equals('.'))
                         {
-                            try
-                            {
-                                box[j + 4].Equals('.');
-                            }
-                            catch (IndexOutOfRangeException array)
+                            if (j + 5 < box.Length && !box[j + 5].Equals('Z'))
                             {
                                 output.WriteLine(excel.ReadCellString(i, 2)); //column C
                             }
-                            catch (Exception e2) { }
-
-                            finally
+                            else if (j + 3 == box.Length-1 && !box[j-4].Equals('.'))
                             {
-                                if (j + 5 < box.Length && !box[j + 5].Equals('Z'))
-                                {
-                                    output.WriteLine(excel.ReadCellString(i, 2)); //column C
-                                }
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
                             }
                         }
                     }                   
