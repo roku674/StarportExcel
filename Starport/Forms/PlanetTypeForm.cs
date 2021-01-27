@@ -83,7 +83,9 @@ namespace StarportExcel
             {
                 Excel excel = OpenFileAt(2);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
+
                 output.WriteLine("Arctics: ");
+
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
@@ -96,7 +98,9 @@ namespace StarportExcel
             {
                 Excel excel = OpenFileAt(2);
                 int planet = (int)excel.ReadCellDouble(2, 8); //amount of zounds
+
                 output.WriteLine("Arctic Zounds: ");
+
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 5)); //column F
@@ -109,6 +113,8 @@ namespace StarportExcel
             {
                 Excel excel = OpenFileAt(2);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
+
+                output.WriteLine("Arctic Non-Zounds: ");
 
                 for (int i = 1; i <= planet; i++)
                 {
@@ -150,24 +156,72 @@ namespace StarportExcel
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
             }
-            else
+            else if (DesertZoundsCheckBox.Checked && DesertsCheckBox.Checked) //both
             {
                 Excel excel = OpenFileAt(3);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
                 output.WriteLine("Deserts: ");
+
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
                 }
                 output.Flush();
                 excel.Close();
-
                 MessageBox.Show("Deserts added to " + outputPath, "Completed");
+            }
+            else if (DesertZoundsCheckBox.Checked && !DesertsCheckBox.Checked) //Desert Zounds only
+            {
+                Excel excel = OpenFileAt(3);
+                int planet = (int)excel.ReadCellDouble(2, 8); //amount of zounds
+
+                output.WriteLine("Desert Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    output.WriteLine(excel.ReadCellString(i, 5)); //column F
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Deserts Zounds added to " + outputPath, "Completed");
+            }
+            else if (!DesertZoundsCheckBox.Checked && DesertsCheckBox.Checked) //normies only
+            {
+                Excel excel = OpenFileAt(3);
+                int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
+
+                output.WriteLine("Desert Non-Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    string box = excel.ReadCellString(i, 2);
+                    for (int j = 0; j < box.Length; j++)//go through string
+                    {
+                        if (box[j].Equals('.'))
+                        {
+                            if (j + 5 < box.Length && !box[j + 5].Equals('Z'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                            else if (j + 3 == box.Length - 1 && !box[j - 4].Equals('.'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                        }
+                    }
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Deserts without Zounds added to " + outputPath, "Completed");
+            }
+            else
+            {
+                MessageBox.Show("Nothing was selected");
             }
         }
 
-        private void EarthsButton_Click(object sender, EventArgs e)
+        private void EarthlikesButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
 
@@ -179,20 +233,68 @@ namespace StarportExcel
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
             }
-            else
+            else if (EarthlikeZoundsCheckBox.Checked && EarthlikesCheckBox.Checked) //both
             {
                 Excel excel = OpenFileAt(4);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
                 output.WriteLine("Earthlikes: ");
+
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
                 }
                 output.Flush();
                 excel.Close();
-
                 MessageBox.Show("Earthlikes added to " + outputPath, "Completed");
+            }
+            else if (EarthlikeZoundsCheckBox.Checked && !EarthlikesCheckBox.Checked) //Earthlike Zounds only
+            {
+                Excel excel = OpenFileAt(4);
+                int planet = (int)excel.ReadCellDouble(2, 8); //amount of zounds
+
+                output.WriteLine("Earthlike Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    output.WriteLine(excel.ReadCellString(i, 5)); //column F
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Earthlikes Zounds added to " + outputPath, "Completed");
+            }
+            else if (!EarthlikeZoundsCheckBox.Checked && EarthlikesCheckBox.Checked) //normies only
+            {
+                Excel excel = OpenFileAt(4);
+                int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
+
+                output.WriteLine("Earthlike Non-Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    string box = excel.ReadCellString(i, 2);
+                    for (int j = 0; j < box.Length; j++)//go through string
+                    {
+                        if (box[j].Equals('.'))
+                        {
+                            if (j + 5 < box.Length && !box[j + 5].Equals('Z'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                            else if (j + 3 == box.Length - 1 && !box[j - 4].Equals('.'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                        }
+                    }
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Earthlikes without Zounds added to " + outputPath, "Completed");
+            }
+            else
+            {
+                MessageBox.Show("Nothing was selected");
             }
 
         }
@@ -209,26 +311,74 @@ namespace StarportExcel
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
             }
-            else
+            else if (GreenhouseZoundsCheckBox.Checked && GreenhousesCheckBox.Checked) //both
             {
                 Excel excel = OpenFileAt(5);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
                 output.WriteLine("Greenhouses: ");
+
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
                 }
                 output.Flush();
                 excel.Close();
-
                 MessageBox.Show("Greenhouses added to " + outputPath, "Completed");
+            }
+            else if (GreenhouseZoundsCheckBox.Checked && !GreenhousesCheckBox.Checked) //Greenhouse Zounds only
+            {
+                Excel excel = OpenFileAt(5);
+                int planet = (int)excel.ReadCellDouble(2, 8); //amount of zounds
+
+                output.WriteLine("Greenhouse Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    output.WriteLine(excel.ReadCellString(i, 5)); //column F
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Greenhouses Zounds added to " + outputPath, "Completed");
+            }
+            else if (!GreenhouseZoundsCheckBox.Checked && GreenhousesCheckBox.Checked) //normies only
+            {
+                Excel excel = OpenFileAt(5);
+                int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
+
+                output.WriteLine("Greenhouse Non-Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    string box = excel.ReadCellString(i, 2);
+                    for (int j = 0; j < box.Length; j++)//go through string
+                    {
+                        if (box[j].Equals('.'))
+                        {
+                            if (j + 5 < box.Length && !box[j + 5].Equals('Z'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                            else if (j + 3 == box.Length - 1 && !box[j - 4].Equals('.'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                        }
+                    }
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Greenhouses without Zounds added to " + outputPath, "Completed");
+            }
+            else
+            {
+                MessageBox.Show("Nothing was selected");
             }
         }
 
         private void MountainsButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberTextBox.Text, out int temp); 
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
@@ -238,26 +388,74 @@ namespace StarportExcel
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
             }
-            else
+            else if (MountainZoundsCheckBox.Checked && MountainsCheckBox.Checked) //both
             {
                 Excel excel = OpenFileAt(6);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
                 output.WriteLine("Mountains: ");
+
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
                 }
                 output.Flush();
                 excel.Close();
-
                 MessageBox.Show("Mountains added to " + outputPath, "Completed");
+            }
+            else if (MountainZoundsCheckBox.Checked && !MountainsCheckBox.Checked) //Mountain Zounds only
+            {
+                Excel excel = OpenFileAt(6);
+                int planet = (int)excel.ReadCellDouble(2, 8); //amount of zounds
+
+                output.WriteLine("Mountain Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    output.WriteLine(excel.ReadCellString(i, 5)); //column F
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Mountains Zounds added to " + outputPath, "Completed");
+            }
+            else if (!MountainZoundsCheckBox.Checked && MountainsCheckBox.Checked) //normies only
+            {
+                Excel excel = OpenFileAt(6);
+                int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
+
+                output.WriteLine("Mountain Non-Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    string box = excel.ReadCellString(i, 2);
+                    for (int j = 0; j < box.Length; j++)//go through string
+                    {
+                        if (box[j].Equals('.'))
+                        {
+                            if (j + 5 < box.Length && !box[j + 5].Equals('Z'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                            else if (j + 3 == box.Length - 1 && !box[j - 4].Equals('.'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                        }
+                    }
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Mountains without Zounds added to " + outputPath, "Completed");
+            }
+            else
+            {
+                MessageBox.Show("Nothing was selected");
             }
         }
 
         private void OceanicsButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberTextBox.Text, out int temp); 
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
@@ -267,20 +465,68 @@ namespace StarportExcel
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
             }
-            else
+            else if (OceanicZoundsCheckBox.Checked && OceanicsCheckBox.Checked) //both
             {
                 Excel excel = OpenFileAt(7);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
                 output.WriteLine("Oceanics: ");
+
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
                 }
                 output.Flush();
                 excel.Close();
-
                 MessageBox.Show("Oceanics added to " + outputPath, "Completed");
+            }
+            else if (OceanicZoundsCheckBox.Checked && !OceanicsCheckBox.Checked) //Oceanic Zounds only
+            {
+                Excel excel = OpenFileAt(7);
+                int planet = (int)excel.ReadCellDouble(2, 8); //amount of zounds
+
+                output.WriteLine("Oceanic Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    output.WriteLine(excel.ReadCellString(i, 5)); //column F
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Oceanics Zounds added to " + outputPath, "Completed");
+            }
+            else if (!OceanicZoundsCheckBox.Checked && OceanicsCheckBox.Checked) //normies only
+            {
+                Excel excel = OpenFileAt(7);
+                int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
+
+                output.WriteLine("Oceanic Non-Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    string box = excel.ReadCellString(i, 2);
+                    for (int j = 0; j < box.Length; j++)//go through string
+                    {
+                        if (box[j].Equals('.'))
+                        {
+                            if (j + 5 < box.Length && !box[j + 5].Equals('Z'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                            else if (j + 3 == box.Length - 1 && !box[j - 4].Equals('.'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                        }
+                    }
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Oceanics without Zounds added to " + outputPath, "Completed");
+            }
+            else
+            {
+                MessageBox.Show("Nothing was selected");
             }
         }
 
@@ -325,20 +571,68 @@ namespace StarportExcel
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
             }
-            else
+            else if (RockyZoundsCheckBox.Checked && RockiesCheckBox.Checked) //both
             {
                 Excel excel = OpenFileAt(9);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
                 output.WriteLine("Rockies: ");
+
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
                 }
                 output.Flush();
                 excel.Close();
-
                 MessageBox.Show("Rockies added to " + outputPath, "Completed");
+            }
+            else if (RockyZoundsCheckBox.Checked && !RockiesCheckBox.Checked) //Rockie Zounds only
+            {
+                Excel excel = OpenFileAt(9);
+                int planet = (int)excel.ReadCellDouble(2, 8); //amount of zounds
+
+                output.WriteLine("Rocky Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    output.WriteLine(excel.ReadCellString(i, 5)); //column F
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Rocky Zounds added to " + outputPath, "Completed");
+            }
+            else if (!RockyZoundsCheckBox.Checked && RockiesCheckBox.Checked) //normies only
+            {
+                Excel excel = OpenFileAt(9);
+                int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
+
+                output.WriteLine("Rocky Non-Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    string box = excel.ReadCellString(i, 2);
+                    for (int j = 0; j < box.Length; j++)//go through string
+                    {
+                        if (box[j].Equals('.'))
+                        {
+                            if (j + 5 < box.Length && !box[j + 5].Equals('Z'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                            else if (j + 3 == box.Length - 1 && !box[j - 4].Equals('.'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                        }
+                    }
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Rockies without Zounds added to " + outputPath, "Completed");
+            }
+            else
+            {
+                MessageBox.Show("Nothing was selected");
             }
         }
 
@@ -354,20 +648,68 @@ namespace StarportExcel
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
             }
-            else
+            else if (VolcanicZoundsCheckBox.Checked && VolcanicsCheckBox.Checked) //both
             {
                 Excel excel = OpenFileAt(10);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
                 output.WriteLine("Volcanics: ");
+
                 for (int i = 1; i <= planet; i++)
                 {
                     output.WriteLine(excel.ReadCellString(i, 2)); //column C
                 }
                 output.Flush();
                 excel.Close();
-
                 MessageBox.Show("Volcanics added to " + outputPath, "Completed");
+            }
+            else if (VolcanicZoundsCheckBox.Checked && !VolcanicsCheckBox.Checked) //Volcanic Zounds only
+            {
+                Excel excel = OpenFileAt(10);
+                int planet = (int)excel.ReadCellDouble(2, 8); //amount of zounds
+
+                output.WriteLine("Volcanic Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    output.WriteLine(excel.ReadCellString(i, 5)); //column F
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Volcanics Zounds added to " + outputPath, "Completed");
+            }
+            else if (!VolcanicZoundsCheckBox.Checked && VolcanicsCheckBox.Checked) //normies only
+            {
+                Excel excel = OpenFileAt(10);
+                int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
+
+                output.WriteLine("Volcanic Non-Zounds: ");
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    string box = excel.ReadCellString(i, 2);
+                    for (int j = 0; j < box.Length; j++)//go through string
+                    {
+                        if (box[j].Equals('.'))
+                        {
+                            if (j + 5 < box.Length && !box[j + 5].Equals('Z'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                            else if (j + 3 == box.Length - 1 && !box[j - 4].Equals('.'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                        }
+                    }
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Volcanics without Zounds added to " + outputPath, "Completed");
+            }
+            else
+            {
+                MessageBox.Show("Nothing was selected");
             }
         }
         private void NeedsDefensesButton_Click(object sender, EventArgs e)
@@ -518,11 +860,6 @@ namespace StarportExcel
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FindMoraleButton_Click(object sender, EventArgs e)
         {
 
@@ -573,14 +910,5 @@ namespace StarportExcel
 
         }
 
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }//PlanetTypeForm
 }//namespace

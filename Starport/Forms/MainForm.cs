@@ -942,6 +942,5 @@ namespace StarportExcel
             //Console.WriteLine("Kill Excel called");
         }
 
-        
     } //form1
 }//namespace
