@@ -83,6 +83,16 @@ namespace StarportExcel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap StarDockMatte1 {
+            get {
+                object obj = ResourceManager.GetObject("StarDockMatte1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap StarPortMain {
             get {
                 object obj = ResourceManager.GetObject("StarPortMain", resourceCulture);
