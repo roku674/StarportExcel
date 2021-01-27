@@ -239,9 +239,6 @@
   <data name="LineBreakButton.Text" xml:space="preserve">
     <value>Line Break</value>
   </data>
-  <data name="toolStripPT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 25</value>
-  </data>
   <data name="OpenToolStripButtonPT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -326,6 +323,9 @@
   </data>
   <data name="HelpMeNiggaDamnToolStripButtonPT.Text" xml:space="preserve">
     <value>He&amp;lp</value>
+  </data>
+  <data name="toolStripPT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>571, 25</value>
   </data>
   <data name="DirectorshipListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -538,16 +538,16 @@
   <data name="DesertZoundsCheckBox.Text" xml:space="preserve">
     <value>Zounds</value>
   </data>
-  <data name="GrennhousesCheckBox.AutoSize" type="System.Boolean, mscorlib">
+  <data name="GreenhousesCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="GrennhousesCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="GreenhousesCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="GrennhousesCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GreenhousesCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 17</value>
   </data>
-  <data name="GrennhousesCheckBox.Text" xml:space="preserve">
+  <data name="GreenhousesCheckBox.Text" xml:space="preserve">
     <value>Normal</value>
   </data>
   <data name="GreenhouseZoundsCheckBox.AutoSize" type="System.Boolean, mscorlib">
@@ -586,100 +586,100 @@
   <data name="EarthlikeZoundsCheckBox.Text" xml:space="preserve">
     <value>Zounds</value>
   </data>
-  <data name="checkBox7.AutoSize" type="System.Boolean, mscorlib">
+  <data name="VolcanicsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="VolcanicsCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox7.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="VolcanicsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 17</value>
   </data>
-  <data name="checkBox7.Text" xml:space="preserve">
+  <data name="VolcanicsCheckBox.Text" xml:space="preserve">
     <value>Normal</value>
   </data>
-  <data name="checkBox8.AutoSize" type="System.Boolean, mscorlib">
+  <data name="VolcanicZoundsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="VolcanicZoundsCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox8.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="VolcanicZoundsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 17</value>
   </data>
-  <data name="checkBox8.Text" xml:space="preserve">
+  <data name="VolcanicZoundsCheckBox.Text" xml:space="preserve">
     <value>Zounds</value>
   </data>
-  <data name="checkBox9.AutoSize" type="System.Boolean, mscorlib">
+  <data name="RockiesCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="RockiesCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox9.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RockiesCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 17</value>
   </data>
-  <data name="checkBox9.Text" xml:space="preserve">
+  <data name="RockiesCheckBox.Text" xml:space="preserve">
     <value>Normal</value>
   </data>
-  <data name="checkBox10.AutoSize" type="System.Boolean, mscorlib">
+  <data name="RockyZoundsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="RockyZoundsCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox10.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RockyZoundsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 17</value>
   </data>
-  <data name="checkBox10.Text" xml:space="preserve">
+  <data name="RockyZoundsCheckBox.Text" xml:space="preserve">
     <value>Zounds</value>
   </data>
-  <data name="checkBox11.AutoSize" type="System.Boolean, mscorlib">
+  <data name="OceanicsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="OceanicsCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox11.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="OceanicsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 17</value>
   </data>
-  <data name="checkBox11.Text" xml:space="preserve">
+  <data name="OceanicsCheckBox.Text" xml:space="preserve">
     <value>Normal</value>
   </data>
-  <data name="checkBox12.AutoSize" type="System.Boolean, mscorlib">
+  <data name="OceanicZoundsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="OceanicZoundsCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox12.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="OceanicZoundsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 17</value>
   </data>
-  <data name="checkBox12.Text" xml:space="preserve">
+  <data name="OceanicZoundsCheckBox.Text" xml:space="preserve">
     <value>Zounds</value>
   </data>
-  <data name="checkBox13.AutoSize" type="System.Boolean, mscorlib">
+  <data name="MountainsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="MountainsCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox13.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MountainsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 17</value>
   </data>
-  <data name="checkBox13.Text" xml:space="preserve">
+  <data name="MountainsCheckBox.Text" xml:space="preserve">
     <value>Normal</value>
   </data>
-  <data name="checkBox14.AutoSize" type="System.Boolean, mscorlib">
+  <data name="MountainZoundsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="MountainZoundsCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox14.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MountainZoundsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 17</value>
   </data>
-  <data name="checkBox14.Text" xml:space="preserve">
+  <data name="MountainZoundsCheckBox.Text" xml:space="preserve">
     <value>Zounds</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">

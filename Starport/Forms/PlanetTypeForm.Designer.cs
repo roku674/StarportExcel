@@ -99,18 +99,18 @@ namespace StarportExcel
             this.ArcticsCheckBox = new System.Windows.Forms.CheckBox();
             this.DesertsCheckBox = new System.Windows.Forms.CheckBox();
             this.DesertZoundsCheckBox = new System.Windows.Forms.CheckBox();
-            this.GrennhousesCheckBox = new System.Windows.Forms.CheckBox();
+            this.GreenhousesCheckBox = new System.Windows.Forms.CheckBox();
             this.GreenhouseZoundsCheckBox = new System.Windows.Forms.CheckBox();
             this.EarthlikesCheckBox = new System.Windows.Forms.CheckBox();
             this.EarthlikeZoundsCheckBox = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.VolcanicsCheckBox = new System.Windows.Forms.CheckBox();
+            this.VolcanicZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.RockiesCheckBox = new System.Windows.Forms.CheckBox();
+            this.RockyZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.OceanicsCheckBox = new System.Windows.Forms.CheckBox();
+            this.OceanicZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.MountainsCheckBox = new System.Windows.Forms.CheckBox();
+            this.MountainZoundsCheckBox = new System.Windows.Forms.CheckBox();
             this.toolStripPT.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,7 +133,7 @@ namespace StarportExcel
             resources.ApplyResources(this.EarthlikesButton, "EarthlikesButton");
             this.EarthlikesButton.Name = "EarthlikesButton";
             this.EarthlikesButton.UseVisualStyleBackColor = true;
-            this.EarthlikesButton.Click += new System.EventHandler(this.EarthsButton_Click);
+            this.EarthlikesButton.Click += new System.EventHandler(this.EarthlikesButton_Click);
             // 
             // GreenhousesButton
             // 
@@ -376,11 +376,11 @@ namespace StarportExcel
             this.DesertZoundsCheckBox.Name = "DesertZoundsCheckBox";
             this.DesertZoundsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // GrennhousesCheckBox
+            // GreenhousesCheckBox
             // 
-            resources.ApplyResources(this.GrennhousesCheckBox, "GrennhousesCheckBox");
-            this.GrennhousesCheckBox.Name = "GrennhousesCheckBox";
-            this.GrennhousesCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.GreenhousesCheckBox, "GreenhousesCheckBox");
+            this.GreenhousesCheckBox.Name = "GreenhousesCheckBox";
+            this.GreenhousesCheckBox.UseVisualStyleBackColor = true;
             // 
             // GreenhouseZoundsCheckBox
             // 
@@ -400,67 +400,67 @@ namespace StarportExcel
             this.EarthlikeZoundsCheckBox.Name = "EarthlikeZoundsCheckBox";
             this.EarthlikeZoundsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // VolcanicsCheckBox
             // 
-            resources.ApplyResources(this.checkBox7, "checkBox7");
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.VolcanicsCheckBox, "VolcanicsCheckBox");
+            this.VolcanicsCheckBox.Name = "VolcanicsCheckBox";
+            this.VolcanicsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // VolcanicZoundsCheckBox
             // 
-            resources.ApplyResources(this.checkBox8, "checkBox8");
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.VolcanicZoundsCheckBox, "VolcanicZoundsCheckBox");
+            this.VolcanicZoundsCheckBox.Name = "VolcanicZoundsCheckBox";
+            this.VolcanicZoundsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // RockiesCheckBox
             // 
-            resources.ApplyResources(this.checkBox9, "checkBox9");
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.RockiesCheckBox, "RockiesCheckBox");
+            this.RockiesCheckBox.Name = "RockiesCheckBox";
+            this.RockiesCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox10
+            // RockyZoundsCheckBox
             // 
-            resources.ApplyResources(this.checkBox10, "checkBox10");
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.RockyZoundsCheckBox, "RockyZoundsCheckBox");
+            this.RockyZoundsCheckBox.Name = "RockyZoundsCheckBox";
+            this.RockyZoundsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox11
+            // OceanicsCheckBox
             // 
-            resources.ApplyResources(this.checkBox11, "checkBox11");
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.OceanicsCheckBox, "OceanicsCheckBox");
+            this.OceanicsCheckBox.Name = "OceanicsCheckBox";
+            this.OceanicsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox12
+            // OceanicZoundsCheckBox
             // 
-            resources.ApplyResources(this.checkBox12, "checkBox12");
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.OceanicZoundsCheckBox, "OceanicZoundsCheckBox");
+            this.OceanicZoundsCheckBox.Name = "OceanicZoundsCheckBox";
+            this.OceanicZoundsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox13
+            // MountainsCheckBox
             // 
-            resources.ApplyResources(this.checkBox13, "checkBox13");
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.MountainsCheckBox, "MountainsCheckBox");
+            this.MountainsCheckBox.Name = "MountainsCheckBox";
+            this.MountainsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox14
+            // MountainZoundsCheckBox
             // 
-            resources.ApplyResources(this.checkBox14, "checkBox14");
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.MountainZoundsCheckBox, "MountainZoundsCheckBox");
+            this.MountainZoundsCheckBox.Name = "MountainZoundsCheckBox";
+            this.MountainZoundsCheckBox.UseVisualStyleBackColor = true;
             // 
             // PlanetTypeForm
             // 
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Controls.Add(this.checkBox7);
-            this.Controls.Add(this.checkBox8);
-            this.Controls.Add(this.checkBox9);
-            this.Controls.Add(this.checkBox10);
-            this.Controls.Add(this.checkBox11);
-            this.Controls.Add(this.checkBox12);
-            this.Controls.Add(this.checkBox13);
-            this.Controls.Add(this.checkBox14);
-            this.Controls.Add(this.GrennhousesCheckBox);
+            this.Controls.Add(this.VolcanicsCheckBox);
+            this.Controls.Add(this.VolcanicZoundsCheckBox);
+            this.Controls.Add(this.RockiesCheckBox);
+            this.Controls.Add(this.RockyZoundsCheckBox);
+            this.Controls.Add(this.OceanicsCheckBox);
+            this.Controls.Add(this.OceanicZoundsCheckBox);
+            this.Controls.Add(this.MountainsCheckBox);
+            this.Controls.Add(this.MountainZoundsCheckBox);
+            this.Controls.Add(this.GreenhousesCheckBox);
             this.Controls.Add(this.GreenhouseZoundsCheckBox);
             this.Controls.Add(this.EarthlikesCheckBox);
             this.Controls.Add(this.EarthlikeZoundsCheckBox);
@@ -511,17 +511,17 @@ namespace StarportExcel
         private CheckBox ArcticsCheckBox;
         private CheckBox DesertsCheckBox;
         private CheckBox DesertZoundsCheckBox;
-        private CheckBox GrennhousesCheckBox;
+        private CheckBox GreenhousesCheckBox;
         private CheckBox GreenhouseZoundsCheckBox;
         private CheckBox EarthlikesCheckBox;
         private CheckBox EarthlikeZoundsCheckBox;
-        private CheckBox checkBox7;
-        private CheckBox checkBox8;
-        private CheckBox checkBox9;
-        private CheckBox checkBox10;
-        private CheckBox checkBox11;
-        private CheckBox checkBox12;
-        private CheckBox checkBox13;
-        private CheckBox checkBox14;
+        private CheckBox VolcanicsCheckBox;
+        private CheckBox VolcanicZoundsCheckBox;
+        private CheckBox RockiesCheckBox;
+        private CheckBox RockyZoundsCheckBox;
+        private CheckBox OceanicsCheckBox;
+        private CheckBox OceanicZoundsCheckBox;
+        private CheckBox MountainsCheckBox;
+        private CheckBox MountainZoundsCheckBox;
     }//class
 }//namespace
