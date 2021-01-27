@@ -860,11 +860,6 @@ namespace StarportExcel
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FindMoraleButton_Click(object sender, EventArgs e)
         {
 
