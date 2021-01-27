@@ -545,7 +545,7 @@ namespace StarportExcel
             string originString = PlanetOrganizerTextBox.Text; //get text from text box
             Coordinates origin;
 
-            if (originString != "")
+            if (originString != "" && originString != "Insert Planet Name or Start Coordinates")
             {
                 origin = Algorithms.GetCoordinates(originString); //if there's something there take it
             }
@@ -645,6 +645,10 @@ namespace StarportExcel
         }
 
         private void ClearRenameButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void FindDeconstructButton_Click(object sender, EventArgs e)
         {
 
         }
@@ -937,5 +941,7 @@ namespace StarportExcel
             Excel.Kill();
             //Console.WriteLine("Kill Excel called");
         }
+
+        
     } //form1
 }//namespace

@@ -16,7 +16,7 @@ namespace StarportExcel
         }
         private void PlanetTypeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            output.Flush();
+            //output.Flush();
             CloseOutput();
         }
 
@@ -79,7 +79,7 @@ namespace StarportExcel
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
             }
-            else
+            else if (ArcticZoundsCheckBox.Checked && ArcticsCheckBox.Checked) //both
             {
                 Excel excel = OpenFileAt(2);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
@@ -91,6 +91,50 @@ namespace StarportExcel
                 output.Flush();
                 excel.Close();
                 MessageBox.Show("Arctics added to " + outputPath, "Completed");
+            }
+            else if (ArcticZoundsCheckBox.Checked && !ArcticsCheckBox.Checked) //Arctic Zounds only
+            {
+                Excel excel = OpenFileAt(2);
+                int planet = (int)excel.ReadCellDouble(2, 8); //amount of zounds
+                output.WriteLine("Arctic Zounds: ");
+                for (int i = 1; i <= planet; i++)
+                {
+                    output.WriteLine(excel.ReadCellString(i, 5)); //column F
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Arctics Zounds added to " + outputPath, "Completed");
+            }
+            else if (!ArcticZoundsCheckBox.Checked && ArcticsCheckBox.Checked) //normies only
+            {
+                Excel excel = OpenFileAt(2);
+                int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
+
+                for (int i = 1; i <= planet; i++)
+                {
+                    string box = excel.ReadCellString(i, 2);
+                    for (int j = 0; j < box.Length; j++)//go through string
+                    {
+                        if (box[j].Equals('.'))
+                        {
+                            if (j + 5 < box.Length && !box[j + 5].Equals('Z'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                            else if (j + 3 == box.Length-1 && !box[j-4].Equals('.'))
+                            {
+                                output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                            }
+                        }
+                    }                   
+                }
+                output.Flush();
+                excel.Close();
+                MessageBox.Show("Arctics without Zounds added to " + outputPath, "Completed");
+            }
+            else
+            {
+                MessageBox.Show("Nothing was selected");
             }
         }
 
@@ -474,6 +518,69 @@ namespace StarportExcel
 
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void FindMoraleButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeconstructListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuildListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SolarsListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LasersListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NukesListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SocialismListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DemocracyListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PrisonListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DirectorshipListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }//PlanetTypeForm
 }//namespace

@@ -402,9 +402,6 @@
   <data name="FindDeconstructButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="FindDeconstructButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 49</value>
-  </data>
   <data name="FindDeconstructButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
@@ -23125,6 +23122,9 @@
   </data>
   <data name="FindDDButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="FindDDButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 90</value>
   </data>
   <data name="FindDDButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>

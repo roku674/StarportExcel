@@ -86,6 +86,15 @@ namespace StarportExcel
 
             for (int i = 0; i < colonyName.Length; i++)//go through the string
             {
+                if (colonyName[i].Equals('['))
+                {
+                    colonyName = Replacer.StringReplacer(i, '(', colonyName);
+                }
+                else if (colonyName[i].Equals(']'))
+                {
+                    colonyName = Replacer.StringReplacer(i, ')', colonyName);
+                }
+
                 //Panther(500,596)Gre009.050.N
                 if (colonyName[i].Equals('(')) //x
                 {
