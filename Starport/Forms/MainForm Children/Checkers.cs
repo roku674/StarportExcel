@@ -357,6 +357,16 @@ namespace StarportExcel
                     {
                         Adder.AddToGrow(formula, totalsSheet);
                     }
+
+                    else if (i + 5 < planetName.Length && planetName[i + 5].Equals('D'))
+                    {
+                        Adder.AddToDD(formula, totalsSheet);
+                    }
+                    else if (i + 6 < planetName.Length && planetName[i + 6].Equals('D'))
+                    {
+                        Adder.AddToDD(formula, totalsSheet);
+                    }
+
                     else if (i + 6 < planetName.Length && (planetName[i + 6].Equals('G') || planetName[i + 6].Equals('R')))
 
                     {
