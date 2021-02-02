@@ -38,7 +38,7 @@ namespace StarportExcel
 			else return "";
 		}
 		/// <summary>
-		/// Read cell if double
+		/// Read cell if double will return 0 if nothing is in the cell
 		/// </summary>
 		/// <param name="i">row</param>
 		/// <param name="j">column</param>
@@ -50,6 +50,26 @@ namespace StarportExcel
 			if (ws.Cells[i, j].Value2 != null) return ws.Cells[i, j].Value2;
 
 			else return 0;
+		}
+		public bool ReadCellBool(int i, int j)
+        {
+			i++;
+			j++;
+			if (ws.Cells[i, j].Value2 == null)
+			{
+				return false;
+			}
+
+			if (ws.Cells[i, j].Value2 == true)
+			{
+				return true;
+			}
+			else
+			{ 
+				return false; 
+			}
+			
+
 		}
 		/// <summary>
 		/// Write to cell

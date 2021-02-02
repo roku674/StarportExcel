@@ -408,7 +408,7 @@ namespace StarportExcel
                 int planet = (int)excel.ReadCellDouble(1, 8);
                 if (j == 11)
                 {
-                    planet = (int)excel.ReadCellDouble(1, 10);
+                    planet = (int)excel.ReadCellDouble(1, 15);
                 }
                 if (j == 12)
                 {

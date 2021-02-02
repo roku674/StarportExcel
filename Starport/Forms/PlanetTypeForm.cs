@@ -889,20 +889,20 @@ namespace StarportExcel
                 output.Write(excel.ReadCellString(i, 4));//Planet Name
                 output.Write(" | ");
 
-                output.Write("Zoundsable? ");
-                output.Write(excel.ReadCellString(i, 5));//Zoundsable
+                output.Write("Zoundsable: ");
+                output.Write(excel.ReadCellBool(i, 5));//Zoundsable
                 output.Write(" | ");
 
-                output.Write("Medium Quality? ");
-                output.Write(excel.ReadCellString(i, 6));//Medium
+                output.Write("Medium Quality: ");
+                output.Write(excel.ReadCellBool(i, 6));//Medium
                 output.Write(" | ");
 
-                output.Write("Questionable? ");
-                output.Write(excel.ReadCellString(i, 7));//Questionable
+                output.Write("Questionable: ");
+                output.Write(excel.ReadCellBool(i, 7));//Questionable
                 output.Write(" | ");
 
-                output.Write("Decconstruct? ");
-                output.Write(excel.ReadCellString(i, 8));//Deconstruct
+                output.Write("Decconstruct: ");
+                output.Write(excel.ReadCellBool(i, 8));//Deconstruct
                 output.Write(" | ");
 
                 output.Write("Research x/10: ");
