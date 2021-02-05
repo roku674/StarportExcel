@@ -357,6 +357,16 @@ namespace StarportExcel
                     {
                         Adder.AddToGrow(formula, totalsSheet);
                     }
+
+                    else if (i + 5 < planetName.Length && planetName[i + 5].Equals('D'))
+                    {
+                        Adder.AddToDD(formula, totalsSheet);
+                    }
+                    else if (i + 6 < planetName.Length && planetName[i + 6].Equals('D'))
+                    {
+                        Adder.AddToDD(formula, totalsSheet);
+                    }
+
                     else if (i + 6 < planetName.Length && (planetName[i + 6].Equals('G') || planetName[i + 6].Equals('R')))
 
                     {
@@ -398,7 +408,7 @@ namespace StarportExcel
                 int planet = (int)excel.ReadCellDouble(1, 8);
                 if (j == 11)
                 {
-                    planet = (int)excel.ReadCellDouble(1, 10);
+                    planet = (int)excel.ReadCellDouble(1, 15);
                 }
                 if (j == 12)
                 {

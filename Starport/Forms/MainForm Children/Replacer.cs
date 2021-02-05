@@ -257,6 +257,10 @@ namespace StarportExcel
                 }
 
             }
+            else if (excel.ReadCellString(row, 2).Equals(newPlanetName))
+            {
+                MessageBox.Show("Identitcal planet found! Nothing has been added", "Error!");
+            }
             else
             {
                 string oldPlanetName = excel.ReadCellString(row, 2);

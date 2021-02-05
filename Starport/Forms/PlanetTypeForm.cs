@@ -872,7 +872,47 @@ namespace StarportExcel
 
         private void BuildListButton_Click(object sender, EventArgs e)
         {
+            Excel excel = OpenFileAt(11);
+            int planetsToBuild = (int) excel.ReadCellDouble(1, 15);
 
+            for (int i = 1; i <= planetsToBuild; i++) //planet tally is in P column
+            {
+                output.Write("Coordinates: ");
+                output.Write(excel.ReadCellString(i, 2)); //coordinates
+                output.Write(" | ");
+
+                output.Write("Planet Name: ");
+                output.Write(excel.ReadCellString(i, 3)); //colony name
+                output.Write(" | ");
+
+                output.Write("Colony Name: ");
+                output.Write(excel.ReadCellString(i, 4));//Planet Name
+                output.Write(" | ");
+
+                output.Write("Zoundsable: ");
+                output.Write(excel.ReadCellBool(i, 5));//Zoundsable
+                output.Write(" | ");
+
+                output.Write("Medium Quality: ");
+                output.Write(excel.ReadCellBool(i, 6));//Medium
+                output.Write(" | ");
+
+                output.Write("Questionable: ");
+                output.Write(excel.ReadCellBool(i, 7));//Questionable
+                output.Write(" | ");
+
+                output.Write("Decconstruct: ");
+                output.Write(excel.ReadCellBool(i, 8));//Deconstruct
+                output.Write(" | ");
+
+                output.Write("Research x/10: ");
+                output.Write((int) excel.ReadCellDouble(i, 9)); //Research
+                output.Write(" | ");
+                output.WriteLine("");
+
+            }
+            output.Flush();
+            MessageBox.Show("Build List added to output", "Message");
         }
 
         private void SolarsListButton_Click(object sender, EventArgs e)
