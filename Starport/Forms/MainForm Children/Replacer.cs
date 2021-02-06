@@ -165,7 +165,7 @@ namespace StarportExcel
                         break;
                     }
                 }
-                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('P') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r'))
+                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('I') && newPlanetName[i + 1].Equals('G') && newPlanetName[i + 2].Equals('P'))
                 {
 
                     if (newPlanetName[i + 5] == '.')

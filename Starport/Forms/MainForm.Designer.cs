@@ -35,7 +35,7 @@ namespace StarportExcel
         private System.Windows.Forms.PictureBox pictureBoxMain;
         private System.Windows.Forms.Button FindDDButton;
         private System.Windows.Forms.Button SortDefensesBySystemButton;
-        private System.Windows.Forms.Button AddToRenameListButton;
+        private System.Windows.Forms.Button EditRenameListButton;
         private System.Windows.Forms.Button ClearRenameButton;
         private System.Windows.Forms.Button SortGrowingBySystemButton;
 
@@ -79,9 +79,10 @@ namespace StarportExcel
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.FindDDButton = new System.Windows.Forms.Button();
             this.SortDefensesBySystemButton = new System.Windows.Forms.Button();
-            this.AddToRenameListButton = new System.Windows.Forms.Button();
+            this.EditRenameListButton = new System.Windows.Forms.Button();
             this.ClearRenameButton = new System.Windows.Forms.Button();
             this.SortGrowingBySystemButton = new System.Windows.Forms.Button();
+            this.EditInvasionListButton = new System.Windows.Forms.Button();
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -299,12 +300,12 @@ namespace StarportExcel
             this.SortDefensesBySystemButton.UseVisualStyleBackColor = true;
             this.SortDefensesBySystemButton.Click += new System.EventHandler(this.SortDefensesBySystemButton_Click);
             // 
-            // AddToRenameListButton
+            // EditRenameListButton
             // 
-            resources.ApplyResources(this.AddToRenameListButton, "AddToRenameListButton");
-            this.AddToRenameListButton.Name = "AddToRenameListButton";
-            this.AddToRenameListButton.UseVisualStyleBackColor = true;
-            this.AddToRenameListButton.Click += new System.EventHandler(this.AddToRenameListButton_Click);
+            resources.ApplyResources(this.EditRenameListButton, "EditRenameListButton");
+            this.EditRenameListButton.Name = "EditRenameListButton";
+            this.EditRenameListButton.UseVisualStyleBackColor = true;
+            this.EditRenameListButton.Click += new System.EventHandler(this.EditRenameListButton_Click);
             // 
             // ClearRenameButton
             // 
@@ -320,12 +321,20 @@ namespace StarportExcel
             this.SortGrowingBySystemButton.UseVisualStyleBackColor = true;
             this.SortGrowingBySystemButton.Click += new System.EventHandler(this.SortGrowingBySystemButton_Click);
             // 
+            // EditInvasionListButton
+            // 
+            resources.ApplyResources(this.EditInvasionListButton, "EditInvasionListButton");
+            this.EditInvasionListButton.Name = "EditInvasionListButton";
+            this.EditInvasionListButton.UseVisualStyleBackColor = true;
+            this.EditInvasionListButton.Click += new System.EventHandler(this.EditInvasionListButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.EditInvasionListButton);
             this.Controls.Add(this.SortGrowingBySystemButton);
             this.Controls.Add(this.ClearRenameButton);
-            this.Controls.Add(this.AddToRenameListButton);
+            this.Controls.Add(this.EditRenameListButton);
             this.Controls.Add(this.SortDefensesBySystemButton);
             this.Controls.Add(this.FindDDButton);
             this.Controls.Add(this.FindColonialInfoButton);
@@ -383,9 +392,7 @@ namespace StarportExcel
             base.Dispose(disposing);
         }
 
-        
-
-        
+        private System.Windows.Forms.Button EditInvasionListButton;
     }
 }
 
