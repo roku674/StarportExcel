@@ -648,6 +648,12 @@ namespace StarportExcel
         {
             //open up a new box
         }
+        private void EditPlanetInfoButton_Click(object sender, EventArgs e)
+        {
+            PlanetInfoForm customMessageBox = new PlanetInfoForm();
+            customMessageBox.SetExcelPath(excelPath);
+            customMessageBox.ShowDialog();
+        }
 
         private void ClearRenameButton_Click(object sender, EventArgs e)
         {
@@ -947,6 +953,5 @@ namespace StarportExcel
             //Console.WriteLine("Kill Excel called");
         }
 
-        
     } //form1
 }//namespace

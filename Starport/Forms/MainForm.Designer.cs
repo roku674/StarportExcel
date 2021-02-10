@@ -83,6 +83,7 @@ namespace StarportExcel
             this.ClearRenameButton = new System.Windows.Forms.Button();
             this.SortGrowingBySystemButton = new System.Windows.Forms.Button();
             this.EditInvasionListButton = new System.Windows.Forms.Button();
+            this.EditPlanetInfoButton = new System.Windows.Forms.Button();
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -328,9 +329,17 @@ namespace StarportExcel
             this.EditInvasionListButton.UseVisualStyleBackColor = true;
             this.EditInvasionListButton.Click += new System.EventHandler(this.EditInvasionListButton_Click);
             // 
+            // EditPlanetInfoButton
+            // 
+            resources.ApplyResources(this.EditPlanetInfoButton, "EditPlanetInfoButton");
+            this.EditPlanetInfoButton.Name = "EditPlanetInfoButton";
+            this.EditPlanetInfoButton.UseVisualStyleBackColor = true;
+            this.EditPlanetInfoButton.Click += new System.EventHandler(this.EditPlanetInfoButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.EditPlanetInfoButton);
             this.Controls.Add(this.EditInvasionListButton);
             this.Controls.Add(this.SortGrowingBySystemButton);
             this.Controls.Add(this.ClearRenameButton);
@@ -393,6 +402,7 @@ namespace StarportExcel
         }
 
         private System.Windows.Forms.Button EditInvasionListButton;
+        private System.Windows.Forms.Button EditPlanetInfoButton;
     }
 }
 
