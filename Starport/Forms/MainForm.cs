@@ -639,9 +639,20 @@ namespace StarportExcel
             MessageBox.Show("Found all Double Domes", "Completed");
         }
         
-        private void AddToRenameListButton_Click(object sender, EventArgs e)
+        private void EditRenameListButton_Click(object sender, EventArgs e)
         {
             //open up a box askign where the coordinates are, old name, new name
+        }
+
+        private void EditInvasionListButton_Click(object sender, EventArgs e)
+        {
+            //open up a new box
+        }
+        private void EditPlanetInfoButton_Click(object sender, EventArgs e)
+        {
+            PlanetInfoForm customMessageBox = new PlanetInfoForm();
+            customMessageBox.SetExcelPath(excelPath);
+            customMessageBox.ShowDialog();
         }
 
         private void ClearRenameButton_Click(object sender, EventArgs e)
@@ -849,7 +860,7 @@ namespace StarportExcel
                         returnString = "=Oceanics!C" + num;
                     }
                 }
-                else if (i + 2 < planetName.Length && planetName[i].Equals('P') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r'))
+                else if (i + 2 < planetName.Length && planetName[i].Equals('I') && planetName[i + 1].Equals('G') && planetName[i + 2].Equals('P'))
                 {
 
                     if (planetName[i + 5] == '.')

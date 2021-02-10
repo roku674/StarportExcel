@@ -214,7 +214,7 @@ namespace StarportExcel
                                                 next = "=Oceanics!C" + num;
                                             }
                                         }
-                                        else if (i + 2 < next.Length && next[i].Equals('P') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
+                                        else if (i + 2 < next.Length && next[i].Equals('I') && next[i + 1].Equals('G') && next[i + 2].Equals('P'))
                                         {
 
                                             if (next[i + 5] == '.')
@@ -644,7 +644,7 @@ namespace StarportExcel
                                                 next = "=Oceanics!C" + num;
                                             }
                                         }
-                                        else if (i + 2 < next.Length && next[i].Equals('P') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
+                                        else if (i + 2 < next.Length && next[i].Equals('I') && next[i + 1].Equals('G') && next[i + 2].Equals('P'))
                                         {
 
                                             if (next[i + 5] == '.')

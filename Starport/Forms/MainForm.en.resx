@@ -219,13 +219,13 @@
     <value>109, 23</value>
   </data>
   <data name="ReplacePlanetButton.Text" xml:space="preserve">
-    <value>Add/Replace Planet</value>
+    <value>Add Planet Name</value>
   </data>
   <data name="ReturnPlanetButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ReturnPlanetButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 257</value>
+    <value>469, 286</value>
   </data>
   <data name="ReturnPlanetButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -23148,14 +23148,17 @@
   <data name="SortDefensesBySystemButton.Text" xml:space="preserve">
     <value>Sort by System</value>
   </data>
-  <data name="AddToRenameListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditRenameListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="AddToRenameListButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditRenameListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 257</value>
+  </data>
+  <data name="EditRenameListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
-  <data name="AddToRenameListButton.Text" xml:space="preserve">
-    <value>Add to Rename</value>
+  <data name="EditRenameListButton.Text" xml:space="preserve">
+    <value>Edit Rename List</value>
   </data>
   <data name="ClearRenameButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -23180,6 +23183,33 @@
   </data>
   <data name="SortGrowingBySystemButton.Text" xml:space="preserve">
     <value>Sort by System</value>
+  </data>
+  <data name="EditInvasionListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditInvasionListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 286</value>
+  </data>
+  <data name="EditInvasionListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="EditInvasionListButton.Text" xml:space="preserve">
+    <value>Edit Invasion List</value>
+  </data>
+  <data name="EditPlanetInfoButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditPlanetInfoButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 228</value>
+  </data>
+  <data name="EditPlanetInfoButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="EditPlanetInfoButton.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="EditPlanetInfoButton.Text" xml:space="preserve">
+    <value>Edit Planet Info</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
