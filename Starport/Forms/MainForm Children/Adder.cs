@@ -66,14 +66,21 @@ namespace StarportExcel
             {
                 if ((line = reader.ReadLine()) != null)
                 {
-                    if ( i == 4)
+                    if ( i == 3)
                     {
                         planetName = reader.ReadLine();
+                        Console.WriteLine(planetName);
                     }
-                    else if (i == 8)
+                    else if (i == 7)
                     {
-                        pop = int.Parse(Regex.Replace(line, "[A-Za-z ]", ""));
-                        
+                        //pop = int.Parse(Regex.Replace(line, "[A-Za-z ]", ""));
+                        Regex.Replace(line, "[(]", "");
+                        Regex.Replace(line, "[)]", "");
+                        Regex.Replace(line, "[:]", "");
+                        Regex.Replace(line, "[A-Za-z ]", "");
+
+                        Console.WriteLine(line);
+
                     }
                 }
 
