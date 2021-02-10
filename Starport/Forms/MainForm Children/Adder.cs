@@ -38,106 +38,137 @@ namespace StarportExcel
             string gov = "Null"; //N government
             int treasury = -1; //O
             int pollution = -1; //P
-            int construction = -1; //Q
-            int research= -1; //R
-            int military = -1; //S
-            int harvesting = -1; //T
-            string building = ""; //U
-            int Metal = -1; // V
-            int Anae= -1; // W
-            int Meds= -1; // X
-            int Org= -1; // Y
-            int Oil= -1; // Z
-            int Uri = -1; // AA
-            int Equi = -1; // AB
-            int Spice = -1; // AC
-            int Nukes = -1; // AD
-            int Cmines= -1; // AE
-            int Lasers= -1; // AF
-            int Solar= -1; // AG
-            string researches = "";
+            double pollutionRate = 0; //Q
+            int construction = -1; //R
+            int research= -1; //S
+            int military = -1; //T
+            int harvesting = -1; //U
+            string building = ""; //V
+            int Metal = -1; // W
+            int Anae= -1; // X
+            int Meds= -1; // Y
+            int Org= -1; // Z
+            int Oil= -1; // AA
+            int Uri = -1; // AB
+            int Equi = -1; // AC
+            int Spice = -1; // AD
+            int Nukes = -1; // AE
+            int Cmines= -1; // AF
+            int Lasers= -1; // AG
+            int Solar= -1; // AH
+            string researches = ""; //AI
 
             //StringBuilder stringBuilder = new StringBuilder();
             //stringBuilder.AppendLine("");
             StringReader reader = new StringReader(info);
-            string line = "";
+            string line;
 
             for (int i = 0; i < info.Length; i++)
             { 
-
                 if ((line = reader.ReadLine()) != null)
                 {
-                    string temp = line;
-
-                    if ( i == 3)
+                    if ( i == 4)
                     {
-                        planetName = reader.ReadLine();
-                        for(int j = 0; j < planetName.Length; j++)
+                        for(int j = 0; j < line.Length; j++)
                         {
-                            if (planetName[j].Equals(':'))
+                            if (line[j].Equals(':'))
                             {
-                               planetName =  planetName.Substring(j+7); //takes everything after the colon
+                               line =  line.Substring(j+7); //takes everything after the colon
                             }
-                            else if (planetName[j].Equals('('))
+                            else if (line[j].Equals('('))
                             {
-                                planetName = planetName.Substring(0, j); //removes everytrhing after the parentehsis
+                                line = line.Substring(0, j); //removes everything after the parenthesis
                             }                            
                         }
-
+                        planetName = line;
                         Console.WriteLine(planetName);
                     }
-                    else if (i == 7)
-                    {                        
-                        temp = RemoveParenthesisColonComma(temp);
-                        temp = RemoveLetters(temp);
-                        Console.WriteLine(temp);
-
-                        pop = int.Parse(temp);
-
-                    }
                     else if (i == 8)
-                    {
-                        for (int j = 0; j < temp.Length; j++)
-                        {
-                            if (temp[j].Equals('('))
-                            {
-                                temp = temp.Substring(0, j);
-                            }                           
-                        }
-                        temp = RemoveParenthesisColonComma(temp);
-                        temp = RemoveLetters(temp);
-                        Console.WriteLine(temp);
-                        morale = int.Parse(temp);
+                    {                        
+                        line = RemoveParenthesisColonComma(line);
+                        line = RemoveLetters(line);
+                        Console.WriteLine(line);
+
+                        pop = int.Parse(line);
+
                     }
                     else if (i == 9)
                     {
-                        for (int j = 0; j < temp.Length; j++)
+                        for (int j = 0; j < line.Length; j++)
                         {
-                            if (temp[j].Equals(':'))
+                            if (line[j].Equals('('))
                             {
-                                temp = temp.Substring(j + 4); //takes everything after the colon
-                            }
-                            
+                                line = line.Substring(0, j);
+                            }                           
+                        }
+                        line = RemoveParenthesisColonComma(line);
+                        line = RemoveLetters(line);
+                        Console.WriteLine(line);
+                        morale = int.Parse(line);
+                    }
+                    else if (i == 10)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 5); //takes everything after the colon
+                            }                           
                         }                        
-                        gov = RemoveSpaces(temp);
+                        gov = RemoveSpaces(line);
                         Console.WriteLine(gov);
                     }
-                    else if( i == 10)
+                    else if( i == 11)
                     {
-                        for (int j = 0; j < temp.Length; j++)
+                        for (int j = 0; j < line.Length; j++)
                         {
-                            if (temp[j].Equals(':'))
+                            if (line[j].Equals(':'))
                             {
-                                temp = temp.Substring(j + 7); //takes everything after the colon
+                                line = line.Substring(j + 7); //takes everything after the colon
                             }
-                            else if (temp[j].Equals('('))
+                            if (line[j].Equals('('))
                             {
-                                temp = temp.Substring(0, j); //removes everytrhing after the parentehsis
+                                line = line.Substring(0, j); //removes everything after the parenthesis
                             }
                         }
-                        temp = RemoveParenthesisColonComma(temp);
-                        Console.WriteLine(temp);
-                        treasury = int.Parse(temp);
+                        line = RemoveParenthesisColonComma(line);
+                        Console.WriteLine(line);
+                        treasury = int.Parse(line);
+                    }
+                    else if (i == 12)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 6); //takes everything after the colon
+                            }
+                            else if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }
+                        }
+                        //line = RemoveParenthesisColonComma(line);
+                        Console.WriteLine(line);
+                        //pollution = int.Parse(line);
+                    }
+                    else if (i == 15)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 3); //takes everything after the colon
+                            }
+                            else if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }
+                        }
+                        //line = RemoveParenthesisColonComma(line);
+                        //line = RemoveLetters(line);
+                        Console.WriteLine(line);
+                        //construction = int.Parse(line);
                     }
                 }
             }
