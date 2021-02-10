@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Text;
 using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace StarportExcel
@@ -56,13 +57,28 @@ namespace StarportExcel
             int Solar= -1; // AG
             string researches = "";
 
-            StreamReader streamReader = new StreamReader(info);
+            //StringBuilder stringBuilder = new StringBuilder();
+            //stringBuilder.AppendLine("");
+            StringReader reader = new StringReader(info);
+            string line = "";
 
             for (int i = 0; i < info.Length; i++)
             {
+                if ((line = reader.ReadLine()) != null)
+                {
+                    if ( i == 4)
+                    {
+                        planetName = reader.ReadLine();
+                    }
+                    else if (i == 8)
+                    {
+                        pop = int.Parse(Regex.Replace(line, "[A-Za-z ]", ""));
+                        
+                    }
+                }
 
             }
-            
+
             //do stuff
 
             excel.Close();
