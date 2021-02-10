@@ -63,31 +63,85 @@ namespace StarportExcel
             string line = "";
 
             for (int i = 0; i < info.Length; i++)
-            {
+            { 
+
                 if ((line = reader.ReadLine()) != null)
                 {
+                    string temp = line;
+
                     if ( i == 3)
                     {
                         planetName = reader.ReadLine();
+                        for(int j = 0; j < planetName.Length; j++)
+                        {
+                            if (planetName[j].Equals(':'))
+                            {
+                               planetName =  planetName.Substring(j+7); //takes everything after the colon
+                            }
+                            else if (planetName[j].Equals('('))
+                            {
+                                planetName = planetName.Substring(0, j); //removes everytrhing after the parentehsis
+                            }                            
+                        }
+
                         Console.WriteLine(planetName);
                     }
                     else if (i == 7)
-                    {
-                        //pop = int.Parse(Regex.Replace(line, "[A-Za-z ]", ""));
-                        Regex.Replace(line, "[(]", "");
-                        Regex.Replace(line, "[)]", "");
-                        Regex.Replace(line, "[:]", "");
-                        Regex.Replace(line, "[A-Za-z ]", "");
+                    {                        
+                        temp = RemoveParenthesisColonComma(temp);
+                        temp = RemoveLetters(temp);
+                        Console.WriteLine(temp);
 
-                        Console.WriteLine(line);
+                        pop = int.Parse(temp);
 
                     }
+                    else if (i == 8)
+                    {
+                        for (int j = 0; j < temp.Length; j++)
+                        {
+                            if (temp[j].Equals('('))
+                            {
+                                temp = temp.Substring(0, j);
+                            }                           
+                        }
+                        temp = RemoveParenthesisColonComma(temp);
+                        temp = RemoveLetters(temp);
+                        Console.WriteLine(temp);
+                        morale = int.Parse(temp);
+                    }
+                    else if (i == 9)
+                    {
+                        for (int j = 0; j < temp.Length; j++)
+                        {
+                            if (temp[j].Equals(':'))
+                            {
+                                temp = temp.Substring(j + 4); //takes everything after the colon
+                            }
+                            
+                        }                        
+                        gov = RemoveSpaces(temp);
+                        Console.WriteLine(gov);
+                    }
+                    else if( i == 10)
+                    {
+                        for (int j = 0; j < temp.Length; j++)
+                        {
+                            if (temp[j].Equals(':'))
+                            {
+                                temp = temp.Substring(j + 7); //takes everything after the colon
+                            }
+                            else if (temp[j].Equals('('))
+                            {
+                                temp = temp.Substring(0, j); //removes everytrhing after the parentehsis
+                            }
+                        }
+                        temp = RemoveParenthesisColonComma(temp);
+                        Console.WriteLine(temp);
+                        treasury = int.Parse(temp);
+                    }
                 }
-
             }
-
             //do stuff
-
             excel.Close();
         }
 

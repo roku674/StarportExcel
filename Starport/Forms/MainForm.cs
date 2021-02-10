@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static StarportExcel.Structs;
 
@@ -951,6 +952,26 @@ namespace StarportExcel
         {
             Excel.Kill();
             //Console.WriteLine("Kill Excel called");
+        }
+
+        public static string RemoveLetters(string append)
+        {
+            append = Regex.Replace(append, "[A-Za-z ]", "");
+            return append;
+        }
+        public static string RemoveParenthesisColonComma(string append)
+        {
+            append = Regex.Replace(append, "[(]", "");
+            append = Regex.Replace(append, "[)]", "");
+            append = Regex.Replace(append, "[:]", "");
+            append = Regex.Replace(append, "[:]", "");
+            append = Regex.Replace(append, "[,]", "");
+            return append;
+        }
+        public static string RemoveSpaces(string append)
+        {
+            append = Regex.Replace(append, " ", "");
+            return append;
         }
 
     } //form1
