@@ -39,24 +39,25 @@ namespace StarportExcel
             int treasury = -1; //O
             string pollution = null; //P
             string pollutionRate = null; //Q
-            int construction = -1; //R
-            int research= -1; //S
-            int military = -1; //T
-            int harvesting = -1; //U
+            string construction = null; //R
+            string research= null; //S
+            string military = null; //T
+            string harvesting = null; //U
             string building = null; //V
-            int Metal = -1; // W
-            int Anae= -1; // X
-            int Meds= -1; // Y
-            int Org= -1; // Z
-            int Oil= -1; // AA
-            int Uri = -1; // AB
-            int Equi = -1; // AC
-            int Spice = -1; // AD
-            int Nukes = -1; // AE
-            int Cmines= -1; // AF
-            int Lasers= -1; // AG
-            int Solar= -1; // AH
-            string researches = null; //AI
+            int metal = -1; // W
+            int anae= -1; // X
+            int meds= -1; // Y
+            int org= -1; // Z
+            int oil= -1; // AA
+            int uri = -1; // AB
+            int equi = -1; // AC
+            int spice = -1; // AD
+            int nukes = -1; // AE
+            int cMines= -1; // AF
+            int lasers= -1; // AG
+            int solarShots= -1; // AH
+            int solarRate = -1; //AI
+            string researches = null; //AJ
 
             //StringBuilder stringBuilder = new StringBuilder();
             //stringBuilder.AppendLine("");
@@ -118,7 +119,7 @@ namespace StarportExcel
                         gov = RemoveSpaces(line);
                         Console.WriteLine(gov);
                     }
-                    else if( i == 11)
+                    else if (i == 11)
                     {
                         for (int j = 0; j < line.Length; j++)
                         {
@@ -153,11 +154,9 @@ namespace StarportExcel
                                 pollution = tmp[0];
 
                                 pollutionRate = tmp[1];
-                                //temp = line.Substring(j, line.Length - 2);
-                                //line = line.Substring(0, j); //removes everything after the parenthesis
+
                             }
-                        }
-                        //line = RemoveParenthesisColonComma(line);                        
+                        }                      
                         pollutionRate = RemoveLetters(pollutionRate);
                         pollutionRate = RemoveParenthesisColonComma(pollutionRate);
                         pollutionRate = RemoveSlashes(pollutionRate);
@@ -171,7 +170,7 @@ namespace StarportExcel
                         {
                             if (line[j].Equals(':'))
                             {
-                                line = line.Substring(j + 6); //takes everything after the colon
+                                line = line.Substring(j + 3); //takes everything after the colon
                             }
                         }
                         for (int j = 0; j < line.Length; j++)
@@ -181,10 +180,101 @@ namespace StarportExcel
                                 line = line.Substring(0, j); //removes everything after the parenthesis
                             }
                         }
-                        //line = RemoveParenthesisColonComma(line);
-                        //line = RemoveLetters(line);
                         Console.WriteLine(line);
-                        //construction = int.Parse(line);
+                        construction = line;
+                    }
+                    else if (i == 16)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 7); //takes everything after the colon
+                            }
+                        }
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }
+                        }
+                        Console.WriteLine(line);
+                        research = line;
+                    }
+                    else if (i == 17)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 7); //takes everything after the colon
+                            }
+                        }
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }
+                        }
+                        Console.WriteLine(line);
+                        military = line;
+                    }
+                    else if (i == 18)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 5); //takes everything after the colon
+                            }
+                        }
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }
+                        }
+                        Console.WriteLine(line);
+                        harvesting = line;
+                    }
+                    else if (i == 30)
+                    {
+                        //metal and anae on thsir ow
+                    }
+                    else if (i == 31)
+                    {
+                        //meds & orgs
+                    }
+                    else if (i == 32)
+                    {
+                        //oil and uri
+                    }
+                    else if (i == 33)
+                    {
+                        //equi and spice
+                    }
+                    else if (i == 36)
+                    {
+                        //nukes
+                    }
+                    else if (i == 339)
+                    {
+                        //cmines
+                    }
+                    else if (i == 41)
+                    {
+                        //lasers
+                    }
+                    else if (i == 47)
+                    {
+                        //solar
+                    }
+                    else if (i >= 48 && i <= 58)
+                    {
+                        //nukes
                     }
                 }
             }
