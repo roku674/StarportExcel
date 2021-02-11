@@ -32,18 +32,18 @@ namespace StarportExcel
         {
             Excel excel = OpenFileAt(sheet);
 
-            string planetName = ""; //K
+            string planetName = null; //K
             int pop = -1; //L Population
             int morale = 9999;// M
-            string gov = "Null"; //N government
+            string gov = null; //N government
             int treasury = -1; //O
-            int pollution = -1; //P
-            double pollutionRate = 0; //Q
+            string pollution = null; //P
+            string pollutionRate = null; //Q
             int construction = -1; //R
             int research= -1; //S
             int military = -1; //T
             int harvesting = -1; //U
-            string building = ""; //V
+            string building = null; //V
             int Metal = -1; // W
             int Anae= -1; // X
             int Meds= -1; // Y
@@ -56,7 +56,7 @@ namespace StarportExcel
             int Cmines= -1; // AF
             int Lasers= -1; // AG
             int Solar= -1; // AH
-            string researches = ""; //AI
+            string researches = null; //AI
 
             //StringBuilder stringBuilder = new StringBuilder();
             //stringBuilder.AppendLine("");
@@ -137,20 +137,33 @@ namespace StarportExcel
                     }
                     else if (i == 12)
                     {
+                        string temp = null;
                         for (int j = 0; j < line.Length; j++)
                         {
                             if (line[j].Equals(':'))
                             {
                                 line = line.Substring(j + 6); //takes everything after the colon
-                            }
-                            else if (line[j].Equals('('))
+                            }                          
+                        }
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals('('))
                             {
-                                line = line.Substring(0, j); //removes everything after the parenthesis
+                                string[] tmp = line.Split('(');
+                                pollution = tmp[0];
+
+                                pollutionRate = tmp[1];
+                                //temp = line.Substring(j, line.Length - 2);
+                                //line = line.Substring(0, j); //removes everything after the parenthesis
                             }
                         }
-                        //line = RemoveParenthesisColonComma(line);
-                        Console.WriteLine(line);
-                        //pollution = int.Parse(line);
+                        //line = RemoveParenthesisColonComma(line);                        
+                        pollutionRate = RemoveLetters(pollutionRate);
+                        pollutionRate = RemoveParenthesisColonComma(pollutionRate);
+                        pollutionRate = RemoveSlashes(pollutionRate);
+
+                        Console.WriteLine(pollution);
+                        Console.WriteLine(pollutionRate);
                     }
                     else if (i == 15)
                     {
@@ -158,9 +171,12 @@ namespace StarportExcel
                         {
                             if (line[j].Equals(':'))
                             {
-                                line = line.Substring(j + 3); //takes everything after the colon
+                                line = line.Substring(j + 6); //takes everything after the colon
                             }
-                            else if (line[j].Equals('('))
+                        }
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals('('))
                             {
                                 line = line.Substring(0, j); //removes everything after the parenthesis
                             }

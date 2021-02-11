@@ -968,6 +968,12 @@ namespace StarportExcel
             append = Regex.Replace(append, "[,]", "");
             return append;
         }
+        public static string RemoveSlashes(string append)
+        {
+            append = Regex.Replace(append, "[/]", "");
+            append = Regex.Replace(append, "['\']", "");
+            return append;
+        }
         public static string RemoveSpaces(string append)
         {
             //append.TrimStart();
