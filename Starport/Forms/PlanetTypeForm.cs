@@ -88,7 +88,7 @@ namespace StarportExcel
 
                 for (int i = 1; i <= planet; i++)
                 {
-                    output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                    WriteAllPlanetInfo(i, excel);
                 }
                 output.Flush();
                 excel.Close();
@@ -165,7 +165,7 @@ namespace StarportExcel
 
                 for (int i = 1; i <= planet; i++)
                 {
-                    output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                    WriteAllPlanetInfo(i, excel);
                 }
                 output.Flush();
                 excel.Close();
@@ -242,7 +242,7 @@ namespace StarportExcel
 
                 for (int i = 1; i <= planet; i++)
                 {
-                    output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                    WriteAllPlanetInfo(i, excel);
                 }
                 output.Flush();
                 excel.Close();
@@ -320,7 +320,7 @@ namespace StarportExcel
 
                 for (int i = 1; i <= planet; i++)
                 {
-                    output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                    WriteAllPlanetInfo(i, excel);
                 }
                 output.Flush();
                 excel.Close();
@@ -397,7 +397,7 @@ namespace StarportExcel
 
                 for (int i = 1; i <= planet; i++)
                 {
-                    output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                    WriteAllPlanetInfo(i, excel);
                 }
                 output.Flush();
                 excel.Close();
@@ -474,7 +474,7 @@ namespace StarportExcel
 
                 for (int i = 1; i <= planet; i++)
                 {
-                    output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                    WriteAllPlanetInfo(i, excel);
                 }
                 output.Flush();
                 excel.Close();
@@ -550,7 +550,7 @@ namespace StarportExcel
                 output.WriteLine("Paradises: ");
                 for (int i = 1; i <= planet; i++)
                 {
-                    output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                    WriteAllPlanetInfo(i, excel);
                 }
                 output.Flush();
                 excel.Close();
@@ -580,7 +580,7 @@ namespace StarportExcel
 
                 for (int i = 1; i <= planet; i++)
                 {
-                    output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                    WriteAllPlanetInfo(i, excel);
                 }
                 output.Flush();
                 excel.Close();
@@ -657,7 +657,7 @@ namespace StarportExcel
 
                 for (int i = 1; i <= planet; i++)
                 {
-                    output.WriteLine(excel.ReadCellString(i, 2)); //column C
+                    WriteAllPlanetInfo(i, excel);
                 }
                 output.Flush();
                 excel.Close();
@@ -711,6 +711,29 @@ namespace StarportExcel
             {
                 MessageBox.Show("Nothing was selected");
             }
+        }
+
+        private void WriteAllPlanetInfo(int planetNum, Excel excel)
+        {
+            output.Write(excel.ReadCellString(planetNum, 2) + " | "); //column C
+            //Console.WriteLine(excel.ReadCellString(planetNum, 2));
+            for(int i = 10; i <= 35; i++)
+            {
+                //Console.WriteLine(i);
+                if (i == 11 || i == 12 || (i >= 14 && i <= 16) || (i >= 22 && i <=34))
+                {
+                    output.Write(excel.ReadCellDouble(planetNum, i) + " | ");
+                }
+                else if (i == 35)
+                {
+                    output.Write(excel.ReadCellString(planetNum, i));
+                }
+                else
+                {
+                    output.Write(excel.ReadCellString(planetNum, i) + " | ");
+                }                                
+            }
+            output.WriteLine("");
         }
         private void NeedsDefensesButton_Click(object sender, EventArgs e)
         {

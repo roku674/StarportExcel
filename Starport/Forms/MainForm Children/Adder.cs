@@ -142,7 +142,6 @@ namespace StarportExcel
                     }
                     else if (i == 12)
                     {
-                        string temp = null;
                         for (int j = 0; j < line.Length; j++)
                         {
                             if (line[j].Equals(':'))
@@ -151,10 +150,10 @@ namespace StarportExcel
                             }                          
                         }
 
-                        string[] tmp = line.Split('(');
-                        pollution = tmp[0];
+                        string[] temp = line.Split('(');
+                        pollution = temp[0];
 
-                        pollutionRate = tmp[1];
+                        pollutionRate = temp[1];
 
                
                         pollutionRate = RemoveLetters(pollutionRate);
@@ -295,21 +294,27 @@ namespace StarportExcel
                     {
                         if(line.Equals("No weapons factory present."))
                         {
-                            for (int j = i; j < info.Length; j++)
-                            if (j >= 40 && j <= 50)
+                            for (int j = i; j < info.Length; j++) 
                             {
-                                //researches
-                                researches = researches + '\n' + line;
+                                line = reader.ReadLine();
+                                if (j >= 39 && j <= 50)
+                                {
+                                    //researches
+                                    researches = researches + '\n' + line;
+                                } 
                             }
                             Console.WriteLine("No Weapons Factory");
                             break;
                         }
-                        //nukes 
-                        string[] temp = line.Split(':');
-                        temp[1] = RemoveSpaces(temp[1]);
-                        temp[1].Trim();
-                        nukes = int.Parse(temp[1]);
-                        Console.WriteLine(temp[1]);
+                        else
+                        {
+                            //nukes 
+                            string[] temp = line.Split(':');
+                            temp[1] = RemoveSpaces(temp[1]);
+                            temp[1].Trim();
+                            nukes = int.Parse(temp[1]);
+                            Console.WriteLine(temp[1]);
+                        }                       
                     }
                     else if (i == 39)
                     {
@@ -343,14 +348,14 @@ namespace StarportExcel
                         solarRate = int.Parse(temp[1]);
                         Console.WriteLine(temp[0] + '\n' + temp[1] );
                     }
-                    else if (i >= 48 && i <= 58)
+                    else if (i >= 48 && i <= 59)
                     {
                         researches = researches + '\n' + line;
                         //Console.WriteLine(line);
                     }                    
                 }                
             }
-            Console.WriteLine(researches);
+            Console.Write(researches);
 
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
