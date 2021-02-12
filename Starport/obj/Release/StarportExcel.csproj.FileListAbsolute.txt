@@ -13,3 +13,4 @@ C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Release\en\StarportExcel
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.MainForm.en.resources
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\en\StarportExcel.resources.dll
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.PlanetTypeForm.en.resources
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.PlanetInfoForm.resources

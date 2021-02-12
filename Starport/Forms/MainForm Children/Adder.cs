@@ -32,54 +32,357 @@ namespace StarportExcel
         {
             Excel excel = OpenFileAt(sheet);
 
-            string planetName = ""; //K
+            string planetName = null; //K
             int pop = -1; //L Population
             int morale = 9999;// M
-            string gov = "Null"; //N government
+            string gov = null; //N government
             int treasury = -1; //O
-            int pollution = -1; //P
-            int construction = -1; //Q
-            int research= -1; //R
-            int military = -1; //S
-            int harvesting = -1; //T
-            string building = ""; //U
-            int Metal = -1; // V
-            int Anae= -1; // W
-            int Meds= -1; // X
-            int Org= -1; // Y
-            int Oil= -1; // Z
-            int Uri = -1; // AA
-            int Equi = -1; // AB
-            int Spice = -1; // AC
-            int Nukes = -1; // AD
-            int Cmines= -1; // AE
-            int Lasers= -1; // AF
-            int Solar= -1; // AG
-            string researches = "";
+            string pollution = null; //P
+            string pollutionRate = null; //Q
+            string construction = null; //R
+            string research= null; //S
+            string military = null; //T
+            string harvesting = null; //U
+            string building = null; //V
+            int metal = -1; // W
+            int anae= -1; // X
+            int meds= -1; // Y
+            int orgs= -1; // Z
+            int oil= -1; // AA
+            int uri = -1; // AB
+            int equi = -1; // AC
+            int spice = -1; // AD
+            int nukes = -1; // AE
+            int cMines= -1; // AF
+            int lasers= -1; // AG
+            int solarShots= -1; // AH
+            int solarRate = -1; //AI
+            string researches = null; //AJ
 
             //StringBuilder stringBuilder = new StringBuilder();
             //stringBuilder.AppendLine("");
             StringReader reader = new StringReader(info);
-            string line = "";
+            string line;
 
             for (int i = 0; i < info.Length; i++)
-            {
+            { 
                 if ((line = reader.ReadLine()) != null)
                 {
+                    if (i == 0)
+                    {
+                        Console.WriteLine(line);
+                    }
                     if ( i == 4)
                     {
-                        planetName = reader.ReadLine();
+                        for(int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                               line =  line.Substring(j+7); //takes everything after the colon
+                            }
+                            else if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }                            
+                        }
+                        planetName = line;
+                        Console.WriteLine(planetName);
                     }
                     else if (i == 8)
-                    {
-                        pop = int.Parse(Regex.Replace(line, "[A-Za-z ]", ""));
-                        
+                    {                        
+                        line = RemoveParenthesisColonComma(line);
+                        line = RemoveLetters(line);
+                        Console.WriteLine(line);
+
+                        pop = int.Parse(line);
+
                     }
-                }
+                    else if (i == 9)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j);
+                            }                           
+                        }
+                        line = RemoveParenthesisColonComma(line);
+                        line = RemoveLetters(line);
+                        Console.WriteLine(line);
+                        morale = int.Parse(line);
+                    }
+                    else if (i == 10)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 5); //takes everything after the colon
+                            }                           
+                        }                        
+                        gov = RemoveSpaces(line);
+                        Console.WriteLine(gov);
+                    }
+                    else if (i == 11)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 7); //takes everything after the colon
+                            }
+                            if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }
+                        }
+                        line = RemoveParenthesisColonComma(line);
+                        Console.WriteLine(line);
+                        treasury = int.Parse(line);
+                    }
+                    else if (i == 12)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 6); //takes everything after the colon
+                            }                          
+                        }
 
+                        string[] temp = line.Split('(');
+                        pollution = temp[0];
+
+                        pollutionRate = temp[1];
+
+               
+                        pollutionRate = RemoveLetters(pollutionRate);
+                        pollutionRate = RemoveParenthesisColonComma(pollutionRate);
+                        pollutionRate = RemoveSlashes(pollutionRate);
+
+                        Console.WriteLine(pollution);
+                        Console.WriteLine(pollutionRate);
+                    }
+                    else if (i == 15)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 3); //takes everything after the colon
+                            }
+                        }
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }
+                        }
+                        Console.WriteLine(line);
+                        line = RemoveSpaces(line);
+                        construction = line;
+                    }
+                    else if (i == 16)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 7); //takes everything after the colon
+                            }
+                        }
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }
+                        }
+                        Console.WriteLine(line);
+                        line = RemoveSpaces(line);
+                        research = line;
+                    }
+                    else if (i == 17)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 7); //takes everything after the colon
+                            }
+                        }
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }
+                        }
+                        Console.WriteLine(line);
+                        line = RemoveSpaces(line);
+                        military = line;
+                    }
+                    else if (i == 18)
+                    {
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 5); //takes everything after the colon
+                            }
+                        }
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals('('))
+                            {
+                                line = line.Substring(0, j); //removes everything after the parenthesis
+                            }
+                        }
+                        Console.WriteLine(line);
+                        line = RemoveSpaces(line);
+                        harvesting = line;
+                    }
+                    else if (i == 20)
+                    {
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveSpaces(temp[1]);
+                        building = temp[1];
+                        Console.WriteLine(temp[1]);
+                    }
+                    else if (i == 30)
+                    {
+                        //metal and anae on thsir ow
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveLetters(temp[1]);
+                        temp[2] = RemoveSpaces(temp[2]);
+                        metal = int.Parse(temp[1]);
+                        anae = int.Parse(temp[2]);
+                        Console.WriteLine(temp[1] + '\n' + temp[2]);
+                    }
+                    else if (i == 31)
+                    {
+                        //meds & orgs
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveLetters(temp[1]);
+                        temp[2] = RemoveSpaces(temp[2]);
+                        meds = int.Parse(temp[1]);
+                        orgs = int.Parse(temp[2]);
+                        Console.WriteLine(temp[1] + '\n' + temp[2]);
+                    }
+                    else if (i == 32)
+                    {
+                        //oil and uri
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveLetters(temp[1]);
+                        temp[2] = RemoveSpaces(temp[2]);
+                        oil = int.Parse(temp[1]);
+                        uri = int.Parse(temp[2]);
+                        Console.WriteLine(temp[1] + '\n' + temp[2]);
+                    }
+                    else if (i == 33)
+                    {
+                        //equi and spice
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveLetters(temp[1]);
+                        temp[2] = RemoveSpaces(temp[2]);
+                        equi = int.Parse(temp[1]);
+                        spice = int.Parse(temp[2]);
+                        Console.WriteLine(temp[1] + '\n' + temp[2]);
+                    }
+                    else if (i == 36)
+                    {
+                        if(line.Equals("No weapons factory present."))
+                        {
+                            for (int j = i; j < info.Length; j++) 
+                            {
+                                line = reader.ReadLine();
+                                if (j >= 39 && j <= 50)
+                                {
+                                    //researches
+                                    researches = researches + '\n' + line;
+                                } 
+                            }
+                            Console.WriteLine("No Weapons Factory");
+                            break;
+                        }
+                        else
+                        {
+                            //nukes 
+                            string[] temp = line.Split(':');
+                            temp[1] = RemoveSpaces(temp[1]);
+                            temp[1].Trim();
+                            nukes = int.Parse(temp[1]);
+                            Console.WriteLine(temp[1]);
+                        }                       
+                    }
+                    else if (i == 39)
+                    {
+                        //cmines
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveSpaces(temp[1]);
+
+                        cMines = int.Parse(temp[1]);
+                        Console.WriteLine(temp[1]);
+                    }
+                    else if (i == 41)
+                    {
+                        //lasers
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveSpaces(temp[1]);
+
+                        lasers = int.Parse(temp[1]);
+                        Console.WriteLine(temp[1]);
+                    }
+                    else if (i == 46)
+                    {
+                        //solar
+                        string[] temp = line.Split('(');
+                        temp[0] = RemoveLetters(temp[0]);
+                        temp[0] = RemoveParenthesisColonComma(temp[0]);
+
+                        temp[1] = RemoveLetters(temp[1]);
+                        temp[1] = RemoveParenthesisColonComma(temp[1]);
+
+                        solarShots = int.Parse(temp[0]);
+                        solarRate = int.Parse(temp[1]);
+                        Console.WriteLine(temp[0] + '\n' + temp[1] );
+                    }
+                    else if (i >= 48 && i <= 59)
+                    {
+                        researches = researches + '\n' + line;
+                        //Console.WriteLine(line);
+                    }                    
+                }                
             }
+            Console.Write(researches);
 
-            //do stuff
+            excel.WriteToCell(planetNum, 10, planetName);
+            excel.WriteToCell(planetNum, 11, pop.ToString());
+            excel.WriteToCell(planetNum, 12, morale.ToString());
+            excel.WriteToCell(planetNum, 13, gov);
+            excel.WriteToCell(planetNum, 14, treasury.ToString());
+            excel.WriteToCell(planetNum, 15, pollution);
+            excel.WriteToCell(planetNum, 16, pollutionRate);
+            excel.WriteToCell(planetNum, 17, construction);
+            excel.WriteToCell(planetNum, 18, research);
+            excel.WriteToCell(planetNum, 19, military);
+            excel.WriteToCell(planetNum, 20, harvesting);
+            excel.WriteToCell(planetNum, 21, building);
+            excel.WriteToCell(planetNum, 22, metal.ToString());
+            excel.WriteToCell(planetNum, 23, anae.ToString());
+            excel.WriteToCell(planetNum, 24, meds.ToString());
+            excel.WriteToCell(planetNum, 25, orgs.ToString());
+            excel.WriteToCell(planetNum, 26, oil.ToString());
+            excel.WriteToCell(planetNum, 27, uri.ToString());
+            excel.WriteToCell(planetNum, 28, equi.ToString());
+            excel.WriteToCell(planetNum, 29, spice.ToString());
+            excel.WriteToCell(planetNum, 30, nukes.ToString());
+            excel.WriteToCell(planetNum, 31, cMines.ToString());
+            excel.WriteToCell(planetNum, 32, lasers.ToString());
+            excel.WriteToCell(planetNum, 33, solarShots.ToString());
+            excel.WriteToCell(planetNum, 34, solarRate.ToString());
+            excel.WriteToCell(planetNum, 35, researches);
 
             excel.Close();
         }
