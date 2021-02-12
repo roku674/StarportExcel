@@ -239,6 +239,7 @@ namespace StarportExcel
             }
 
             MessageBox.Show("Planet Information Added", "Completed");
+            InfoBox.Text = "";
         }
         public void SetExcelPath(string path)
         {

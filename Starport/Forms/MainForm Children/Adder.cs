@@ -137,6 +137,7 @@ namespace StarportExcel
                             }
                         }
                         line = RemoveParenthesisColonComma(line);
+                        line = RemoveLetters(line);
                         Console.WriteLine(line);
                         treasury = int.Parse(line);
                     }
