@@ -47,7 +47,7 @@ namespace StarportExcel
             int metal = -1; // W
             int anae= -1; // X
             int meds= -1; // Y
-            int org= -1; // Z
+            int orgs= -1; // Z
             int oil= -1; // AA
             int uri = -1; // AB
             int equi = -1; // AC
@@ -146,17 +146,13 @@ namespace StarportExcel
                                 line = line.Substring(j + 6); //takes everything after the colon
                             }                          
                         }
-                        for (int j = 0; j < line.Length; j++)
-                        {
-                            if (line[j].Equals('('))
-                            {
-                                string[] tmp = line.Split('(');
-                                pollution = tmp[0];
 
-                                pollutionRate = tmp[1];
+                        string[] tmp = line.Split('(');
+                        pollution = tmp[0];
 
-                            }
-                        }                      
+                        pollutionRate = tmp[1];
+
+               
                         pollutionRate = RemoveLetters(pollutionRate);
                         pollutionRate = RemoveParenthesisColonComma(pollutionRate);
                         pollutionRate = RemoveSlashes(pollutionRate);
@@ -243,34 +239,75 @@ namespace StarportExcel
                     else if (i == 30)
                     {
                         //metal and anae on thsir ow
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveLetters(temp[1]);
+                        temp[2] = RemoveSpaces(temp[2]);
+                        metal = int.Parse(temp[1]);
+                        anae = int.Parse(temp[2]);
+                        Console.WriteLine(temp[1] + '\n' + temp[2]);
                     }
                     else if (i == 31)
                     {
                         //meds & orgs
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveLetters(temp[1]);
+                        temp[2] = RemoveSpaces(temp[2]);
+                        meds = int.Parse(temp[1]);
+                        orgs = int.Parse(temp[2]);
+                        Console.WriteLine(temp[1] + '\n' + temp[2]);
                     }
                     else if (i == 32)
                     {
                         //oil and uri
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveLetters(temp[1]);
+                        temp[2] = RemoveSpaces(temp[2]);
+                        oil = int.Parse(temp[1]);
+                        uri = int.Parse(temp[2]);
+                        Console.WriteLine(temp[1] + '\n' + temp[2]);
                     }
                     else if (i == 33)
                     {
                         //equi and spice
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveLetters(temp[1]);
+                        temp[2] = RemoveSpaces(temp[2]);
+                        equi = int.Parse(temp[1]);
+                        spice = int.Parse(temp[2]);
+                        Console.WriteLine(temp[1] + '\n' + temp[2]);
                     }
                     else if (i == 36)
                     {
-                        //nukes
+                        //nukes 
+                        string[] temp = line.Split(':');
+                        temp[0] = RemoveSpaces(temp[0]);
+                        temp[0].Trim();
+                        nukes = int.Parse(temp[0]);
+                        Console.WriteLine(temp[1]);
                     }
-                    else if (i == 339)
+                    else if (i == 39)
                     {
                         //cmines
+                        string[] temp = line.Split(':');
+                        temp[0] = RemoveSpaces(temp[0]);
+
+                        cMines = int.Parse(temp[0]);
+                        Console.WriteLine(temp[1]);
                     }
                     else if (i == 41)
                     {
                         //lasers
+                        string[] temp = line.Split(':');
+                        temp[0] = RemoveSpaces(temp[0]);
+
+                        lasers = int.Parse(temp[0]);
+                        Console.WriteLine(temp[1]);
                     }
                     else if (i == 47)
                     {
                         //solar
+                        string[] temp = line.Split('(');
+                        Console.WriteLine(temp[0] + '\n' + temp[1]);
                     }
                     else if (i >= 48 && i <= 58)
                     {
