@@ -68,6 +68,10 @@ namespace StarportExcel
             { 
                 if ((line = reader.ReadLine()) != null)
                 {
+                    if (i == 0)
+                    {
+                        Console.WriteLine(line);
+                    }
                     if ( i == 4)
                     {
                         for(int j = 0; j < line.Length; j++)
@@ -177,6 +181,7 @@ namespace StarportExcel
                             }
                         }
                         Console.WriteLine(line);
+                        line = RemoveSpaces(line);
                         construction = line;
                     }
                     else if (i == 16)
@@ -196,6 +201,7 @@ namespace StarportExcel
                             }
                         }
                         Console.WriteLine(line);
+                        line = RemoveSpaces(line);
                         research = line;
                     }
                     else if (i == 17)
@@ -215,6 +221,7 @@ namespace StarportExcel
                             }
                         }
                         Console.WriteLine(line);
+                        line = RemoveSpaces(line);
                         military = line;
                     }
                     else if (i == 18)
@@ -234,7 +241,15 @@ namespace StarportExcel
                             }
                         }
                         Console.WriteLine(line);
+                        line = RemoveSpaces(line);
                         harvesting = line;
+                    }
+                    else if (i == 20)
+                    {
+                        string[] temp = line.Split(':');
+                        temp[1] = RemoveSpaces(temp[1]);
+                        building = temp[1];
+                        Console.WriteLine(temp[1]);
                     }
                     else if (i == 30)
                     {
@@ -278,44 +293,92 @@ namespace StarportExcel
                     }
                     else if (i == 36)
                     {
+                        if(line.Equals("No weapons factory present."))
+                        {
+                            for (int j = i; j < info.Length; j++)
+                            if (j >= 40 && j <= 50)
+                            {
+                                //researches
+                                researches = researches + '\n' + line;
+                            }
+                            Console.WriteLine("No Weapons Factory");
+                            break;
+                        }
                         //nukes 
                         string[] temp = line.Split(':');
-                        temp[0] = RemoveSpaces(temp[0]);
-                        temp[0].Trim();
-                        nukes = int.Parse(temp[0]);
+                        temp[1] = RemoveSpaces(temp[1]);
+                        temp[1].Trim();
+                        nukes = int.Parse(temp[1]);
                         Console.WriteLine(temp[1]);
                     }
                     else if (i == 39)
                     {
                         //cmines
                         string[] temp = line.Split(':');
-                        temp[0] = RemoveSpaces(temp[0]);
+                        temp[1] = RemoveSpaces(temp[1]);
 
-                        cMines = int.Parse(temp[0]);
+                        cMines = int.Parse(temp[1]);
                         Console.WriteLine(temp[1]);
                     }
                     else if (i == 41)
                     {
                         //lasers
                         string[] temp = line.Split(':');
-                        temp[0] = RemoveSpaces(temp[0]);
+                        temp[1] = RemoveSpaces(temp[1]);
 
-                        lasers = int.Parse(temp[0]);
+                        lasers = int.Parse(temp[1]);
                         Console.WriteLine(temp[1]);
                     }
-                    else if (i == 47)
+                    else if (i == 46)
                     {
                         //solar
                         string[] temp = line.Split('(');
-                        Console.WriteLine(temp[0] + '\n' + temp[1]);
+                        temp[0] = RemoveLetters(temp[0]);
+                        temp[0] = RemoveParenthesisColonComma(temp[0]);
+
+                        temp[1] = RemoveLetters(temp[1]);
+                        temp[1] = RemoveParenthesisColonComma(temp[1]);
+
+                        solarShots = int.Parse(temp[0]);
+                        solarRate = int.Parse(temp[1]);
+                        Console.WriteLine(temp[0] + '\n' + temp[1] );
                     }
                     else if (i >= 48 && i <= 58)
                     {
-                        //nukes
-                    }
-                }
+                        researches = researches + '\n' + line;
+                        //Console.WriteLine(line);
+                    }                    
+                }                
             }
-            //do stuff
+            Console.WriteLine(researches);
+
+            excel.WriteToCell(planetNum, 10, planetName);
+            excel.WriteToCell(planetNum, 11, pop.ToString());
+            excel.WriteToCell(planetNum, 12, morale.ToString());
+            excel.WriteToCell(planetNum, 13, gov);
+            excel.WriteToCell(planetNum, 14, treasury.ToString());
+            excel.WriteToCell(planetNum, 15, pollution);
+            excel.WriteToCell(planetNum, 16, pollutionRate);
+            excel.WriteToCell(planetNum, 17, construction);
+            excel.WriteToCell(planetNum, 18, research);
+            excel.WriteToCell(planetNum, 19, military);
+            excel.WriteToCell(planetNum, 20, harvesting);
+            excel.WriteToCell(planetNum, 21, building);
+            excel.WriteToCell(planetNum, 22, metal.ToString());
+            excel.WriteToCell(planetNum, 23, anae.ToString());
+            excel.WriteToCell(planetNum, 24, meds.ToString());
+            excel.WriteToCell(planetNum, 25, orgs.ToString());
+            excel.WriteToCell(planetNum, 26, oil.ToString());
+            excel.WriteToCell(planetNum, 27, uri.ToString());
+            excel.WriteToCell(planetNum, 28, equi.ToString());
+            excel.WriteToCell(planetNum, 29, spice.ToString());
+            excel.WriteToCell(planetNum, 30, nukes.ToString());
+            excel.WriteToCell(planetNum, 31, cMines.ToString());
+            excel.WriteToCell(planetNum, 32, lasers.ToString());
+            excel.WriteToCell(planetNum, 33, solarShots.ToString());
+            excel.WriteToCell(planetNum, 34, solarRate.ToString());
+            excel.WriteToCell(planetNum, 35, researches);
+
             excel.Close();
         }
 
