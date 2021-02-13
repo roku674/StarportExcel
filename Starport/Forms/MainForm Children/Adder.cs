@@ -89,12 +89,14 @@ namespace StarportExcel
                         Console.WriteLine(planetName);
                     }
                     else if (i == 8)
-                    {                        
-                        line = RemoveParenthesisColonComma(line);
-                        line = RemoveLetters(line);
-                        Console.WriteLine(line);
+                    {
+                        string[] temp = line.Split(':');
+                        temp = temp[1].Split('('); //temp[1] is the growth rate
+                        temp[0] = RemoveSpaces(temp[0]);
+                        temp[0] = RemoveParenthesisColonComma(temp[0]);
+                        Console.WriteLine(temp[0]);
 
-                        pop = int.Parse(line);
+                        pop = int.Parse(temp[0]);
 
                     }
                     else if (i == 9)
