@@ -315,8 +315,11 @@ namespace StarportExcel
                                 line = reader.ReadLine();
                                 if (j >= 39 && j <= 50)
                                 {
-                                    //researches
-                                    researches = researches + '\n' + line;
+                                    if (line.Equals("")) { }
+                                    else
+                                    {
+                                        researches = researches + '\n' + line;
+                                    }
                                 } 
                             }
                             Console.WriteLine("No Weapons Factory");
@@ -366,7 +369,11 @@ namespace StarportExcel
                     }
                     else if (i >= 48 && i <= 59)
                     {
-                        researches = researches + '\n' + line;
+                        if (line.Equals("")) { }
+                        else
+                        {
+                            researches = researches + '\n' + line;
+                        }                     
                         //Console.WriteLine(line);
                     }                    
                 }                
