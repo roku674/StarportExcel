@@ -384,7 +384,11 @@ namespace StarportExcel
             Console.Write(researches);
             if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null))
             {
+                excel.WriteToCell(planetNum, 1, planetNum.ToString()); //updates the number next to the cell
                 excel.WriteToCell(planetNum, 2, colonyName);
+
+                excel.WriteToCell(1, 8, planetNum.ToString()); //updates the planet number
+                MessageBox.Show(colonyName + " added to row " + planetNum + " sheet " + sheet, "Completed");
             }
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
