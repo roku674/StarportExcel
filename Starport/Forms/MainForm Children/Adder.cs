@@ -299,6 +299,19 @@ namespace StarportExcel
                         {
                             for (int j = i; j < info.Length; j++) 
                             {
+                                if (j == 38)
+                                {
+                                    string[] temp = line.Split('(');
+                                    temp[0] = RemoveLetters(temp[0]);
+                                    temp[0] = RemoveParenthesisColonComma(temp[0]);
+
+                                    temp[1] = RemoveLetters(temp[1]);
+                                    temp[1] = RemoveParenthesisColonComma(temp[1]);
+
+                                    solarShots = int.Parse(temp[0]);
+                                    solarRate = int.Parse(temp[1]);
+                                    Console.WriteLine(temp[0] + '\n' + temp[1]);
+                                }
                                 line = reader.ReadLine();
                                 if (j >= 39 && j <= 50)
                                 {
