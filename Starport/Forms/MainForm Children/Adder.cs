@@ -32,6 +32,7 @@ namespace StarportExcel
         {
             Excel excel = OpenFileAt(sheet);
 
+            string colonyName = null;
             string planetName = null; //K
             int pop = -1; //L Population
             int morale = 9999;// M
@@ -65,11 +66,14 @@ namespace StarportExcel
             string line;
 
             for (int i = 0; i < info.Length; i++)
-            { 
-                if ((line = reader.ReadLine()) != null)
+            {
+                
+                line = reader.ReadLine();
+                if (line != null)
                 {
                     if (i == 0)
                     {
+                        colonyName = line;
                         Console.WriteLine(line);
                     }
                     if ( i == 4)
@@ -297,30 +301,31 @@ namespace StarportExcel
                     {
                         if(line.Equals("No weapons factory present."))
                         {
-                            for (int j = i; j < info.Length; j++) 
+                            for (int j = i; j < info.Length; j++)
                             {
-                                if (j == 38)
+                                if (line != null)
                                 {
-                                    string[] temp = line.Split('(');
-                                    temp[0] = RemoveLetters(temp[0]);
-                                    temp[0] = RemoveParenthesisColonComma(temp[0]);
-
-                                    temp[1] = RemoveLetters(temp[1]);
-                                    temp[1] = RemoveParenthesisColonComma(temp[1]);
-
-                                    solarShots = int.Parse(temp[0]);
-                                    solarRate = int.Parse(temp[1]);
-                                    Console.WriteLine(temp[0] + '\n' + temp[1]);
-                                }
-                                line = reader.ReadLine();
-                                if (j >= 39 && j <= 50)
-                                {
-                                    if (line.Equals("")) { }
-                                    else
+                                    if (j == 38)
                                     {
-                                        researches = researches + '\n' + line;
+                                        string[] temp = line.Split('(');
+                                        temp[0] = RemoveLetters(temp[0]);
+                                        temp[0] = RemoveParenthesisColonComma(temp[0]);
+
+                                        temp[1] = RemoveLetters(temp[1]);
+                                        temp[1] = RemoveParenthesisColonComma(temp[1]);
+
+                                        solarShots = int.Parse(temp[0]);
+                                        solarRate = int.Parse(temp[1]);
+                                        Console.WriteLine(temp[0] + '\n' + temp[1]);
                                     }
-                                } 
+                                    line = reader.ReadLine();
+                                    if (j >= 39 && j <= 50)
+                                    {
+
+                                        researches = researches + '\n' + line;
+
+                                    }
+                                }
                             }
                             Console.WriteLine("No Weapons Factory");
                             break;
@@ -369,17 +374,18 @@ namespace StarportExcel
                     }
                     else if (i >= 48 && i <= 59)
                     {
-                        if (line.Equals("")) { }
-                        else
-                        {
-                            researches = researches + '\n' + line;
-                        }                     
+
+                        researches = researches + '\n' + line;
+
                         //Console.WriteLine(line);
                     }                    
                 }                
             }
             Console.Write(researches);
-
+            if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null))
+            {
+                excel.WriteToCell(planetNum, 2, colonyName);
+            }
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
             excel.WriteToCell(planetNum, 12, morale.ToString());
