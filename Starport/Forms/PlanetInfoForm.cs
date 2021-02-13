@@ -22,7 +22,10 @@ namespace StarportExcel
         private void AddInfoButton_Click(object sender, EventArgs e)
         {
             string info = InfoBox.Text;
-
+            if (info.Equals("") || info.Equals(null))
+            {
+                MessageBox.Show("No Information Foound!", "Failed");
+            }
             //Console.Write(info);
 
             for(int i = 0; i < info.Length; i++)
@@ -238,7 +241,7 @@ namespace StarportExcel
                 //check for builds
             }
 
-            MessageBox.Show("Planet Information Added", "Completed");
+            MessageBox.Show("Planet Information Added!", "Completed");
             InfoBox.Text = "";
         }
         public void SetExcelPath(string path)
