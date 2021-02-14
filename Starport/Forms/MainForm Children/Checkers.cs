@@ -398,6 +398,56 @@ namespace StarportExcel
 
         }
 
+        public static void BuildZoundsDestroy(string colonyInfo)
+        {
+            StringReader reader = new StringReader(info);
+            string line;
+
+            string coordinates = null; // C
+            string planetname = null; // D
+            string colonyName = null; // E
+            string discoveries = null; // K
+            int research = -1; // J
+            bool zoundsable, medium, questionable, deconstruct;// F , G, H, I 
+
+            for (int i = 0; i < info.Length; i++)
+            {
+                line = reader.ReadLine();
+                if (line != null)
+                {
+                    if (i == 0)
+                    {
+                        colonyName = line;
+                        Console.WriteLine(line);
+                    }
+                    else if (i == 4)
+                    {
+                        string[] temp = line.Split(':');
+                        temp = temp[1].Split('(');
+                        planetname = temp[0];
+                        coordinates = temp[1];
+                    }
+                    else if (i == 40)
+                    {
+                        string[] temp = line.Split('/');
+                        temp[0] = RemoveLetters(temp[0]);
+                        temp[0] = RemoveParenthesisColonComma(temp[0]);
+                        research = temp[0];
+                    }
+                    else if (i >= 41)
+                    {
+                        discoveries = discoveries + '\n' + line;
+                    }
+                }
+            }
+
+            Excel excel = OpenFileAt(11); // build list
+            int totalBuilds = excel.ReadCellDouble(1, 15);
+            excel.Close();
+        }
+
+
+
         public static void CheckParenthesis()
         {
             for (int j = 2; j <= 12; j++) // goes through each sheet

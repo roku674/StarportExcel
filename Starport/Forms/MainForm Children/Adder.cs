@@ -58,7 +58,7 @@ namespace StarportExcel
             int lasers= -1; // AG
             int solarShots= -1; // AH
             int solarRate = -1; //AI
-            string researches = null; //AJ
+            string discovered = null; //AJ
 
             //StringBuilder stringBuilder = new StringBuilder();
             //stringBuilder.AppendLine("");
@@ -322,7 +322,7 @@ namespace StarportExcel
                                     if (j >= 39 && j <= 50)
                                     {
 
-                                        researches = researches + '\n' + line;
+                                        discovered = discovered + '\n' + line;
 
                                     }
                                 }
@@ -375,13 +375,13 @@ namespace StarportExcel
                     else if (i >= 48 && i <= 59)
                     {
 
-                        researches = researches + '\n' + line;
+                        discovered = discovered + '\n' + line;
 
                         //Console.WriteLine(line);
                     }                    
                 }                
             }
-            Console.Write(researches);
+            Console.Write(discovered);
             if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null))
             {
                 excel.WriteToCell(planetNum, 1, planetNum.ToString()); //updates the number next to the cell
@@ -390,6 +390,20 @@ namespace StarportExcel
                 excel.WriteToCell(1, 8, planetNum.ToString()); //updates the planet number
                 MessageBox.Show(colonyName + " added to row " + planetNum + " sheet " + sheet, "Completed");
             }
+            else if(excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Arc") ||
+                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Des") |
+                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Ear") ||
+                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Gre") ||
+                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Mou") ||
+                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Oce") ||
+                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.IGP") ||
+                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Roc") ||
+                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Vol"))
+            {
+                Checkers.BuildZoundsDestroy(info);
+            }
+            
+
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
             excel.WriteToCell(planetNum, 12, morale.ToString());
@@ -415,7 +429,7 @@ namespace StarportExcel
             excel.WriteToCell(planetNum, 32, lasers.ToString());
             excel.WriteToCell(planetNum, 33, solarShots.ToString());
             excel.WriteToCell(planetNum, 34, solarRate.ToString());
-            excel.WriteToCell(planetNum, 35, researches);
+            excel.WriteToCell(planetNum, 35, discovered);
 
             excel.Close();
         }
@@ -521,6 +535,8 @@ namespace StarportExcel
             Excel excel = new Excel(excelPath, num);
             return excel;
         }
+
+
 
     }
 }
