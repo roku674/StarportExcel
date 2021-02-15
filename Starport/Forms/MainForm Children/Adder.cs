@@ -425,6 +425,7 @@ namespace StarportExcel
         }
         public static void BuildZoundsDestroy(string colonyInfo)
         {
+            Excel excel = OpenFileAt(11); // build list
             StringReader reader = new StringReader(colonyInfo);
             string line;
 
@@ -450,6 +451,7 @@ namespace StarportExcel
             for (int i = 0; i < colonyInfo.Length; i++)
             {
                 line = reader.ReadLine();
+
                 if (line != null)
                 {
                     if (i == 0)
@@ -485,7 +487,17 @@ namespace StarportExcel
                 }
             }
 
-            if (research == 10)
+            bool noDuplicate = true;
+
+            for(int i = 1; i <= (int) excel.ReadCellDouble(1,15); i++)
+            {
+                if (planetName.Equals(excel.ReadCellString(i, 3)))
+                {
+                    noDuplicate = false;
+                }
+            }
+
+            if (research == 10 && noDuplicate)
             {
                 buildableHolder = Checkers.Buildable(discoveries, planetType);
                 zoundsable = buildableHolder[0];
@@ -493,7 +505,7 @@ namespace StarportExcel
                 questionable = buildableHolder[2];
                 deconstruct = buildableHolder[3];
 
-                Excel excel = OpenFileAt(11); // build list
+                
                 int totalBuilds = (int)excel.ReadCellDouble(1, 15);
                 totalBuilds += 1;
                 excel.WriteToCell(1, 15, totalBuilds.ToString());
@@ -507,14 +519,14 @@ namespace StarportExcel
                 excel.WriteToCell(totalBuilds, 7, questionable.ToString());
                 excel.WriteToCell(totalBuilds, 8, deconstruct.ToString());
                 excel.WriteToCell(totalBuilds, 9, research.ToString());
-
-                excel.Close();
+                
             }
             else
             {
                 Console.WriteLine(colonyName + " is Not Finished Researching.");
                 //MessageBox.Show(colonyName + " is Not Finished Researching.", "Message");
-            }           
+            }
+            excel.Close();
         }
 
         public static void AddToBuilds(Excel excel, string coordinates, string planetName, string colonyName, string zoundsable, string medium, string questionable, string deconstruct, string research)
