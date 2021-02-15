@@ -513,7 +513,7 @@ namespace StarportExcel
             else
             {
                 Console.WriteLine(colonyName + " is Not Finished Researching.");
-                MessageBox.Show(colonyName + " is Not Finished Researching.", "Message");
+                //MessageBox.Show(colonyName + " is Not Finished Researching.", "Message");
             }           
         }
 

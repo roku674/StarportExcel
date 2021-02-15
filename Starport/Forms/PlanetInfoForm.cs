@@ -261,7 +261,7 @@ namespace StarportExcel
                     }                   
                     //check for builds
                 }
-                MessageBox.Show(firstLine + " Information Added!", "Completed");
+                //MessageBox.Show(firstLine + " Information Added!", "Completed");
                 InfoBox.Text = "";
             }           
         }
@@ -337,6 +337,37 @@ namespace StarportExcel
             Excel excel = OpenFileAt(11);
             Clearer.ClearBuildList(excel);
             MessageBox.Show("Build List Cleared!", "Message");
+        }
+
+        private void RemoveDuplicatesButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(11);
+            int buildList = (int)excel.ReadCellDouble(1, 15);
+            for(int i = 1; i <= buildList; i++)
+            {
+                for (int j = 1; j <= buildList; j++)
+                {
+                    Console.WriteLine(i + " " + j);
+                   if (excel.ReadCellString(i, 3).Equals(excel.ReadCellString(j, 3)))
+                    {
+                        excel.WriteToCell(i, 2, excel.ReadCellString(i + 1, 2));
+                        excel.WriteToCell(i, 3, excel.ReadCellString(i + 1, 3));
+                        excel.WriteToCell(i, 4, excel.ReadCellString(i + 1, 4));
+
+                        excel.WriteToCell(i, 5, excel.ReadCellBool(i + 1, 5).ToString());
+                        excel.WriteToCell(i, 6, excel.ReadCellBool(i + 1, 6).ToString());
+                        excel.WriteToCell(i, 7, excel.ReadCellBool(i + 1, 7).ToString());
+                        excel.WriteToCell(i, 8, excel.ReadCellBool(i + 1, 8).ToString());
+                        excel.WriteToCell(i, 9, excel.ReadCellDouble(i + 1, 9).ToString());
+
+                        int temp = buildList - 1;
+                        excel.WriteToCell(1, 15, temp.ToString());
+                    }
+                }
+            }
+            excel.Close();
+
+            MessageBox.Show("Duplicates removed from build List!", "Message");
         }
     }
 }

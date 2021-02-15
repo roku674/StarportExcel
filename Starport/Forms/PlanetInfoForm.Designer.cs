@@ -33,6 +33,7 @@ namespace StarportExcel
             this.AddInfoButton = new System.Windows.Forms.Button();
             this.SortBuildsButton = new System.Windows.Forms.Button();
             this.ClearBuildsButton = new System.Windows.Forms.Button();
+            this.RemoveDuplicatesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // InfoBox
@@ -67,7 +68,7 @@ namespace StarportExcel
             // ClearBuildsButton
             // 
             this.ClearBuildsButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ClearBuildsButton.Location = new System.Drawing.Point(748, 97);
+            this.ClearBuildsButton.Location = new System.Drawing.Point(748, 155);
             this.ClearBuildsButton.Name = "ClearBuildsButton";
             this.ClearBuildsButton.Size = new System.Drawing.Size(109, 23);
             this.ClearBuildsButton.TabIndex = 14;
@@ -75,12 +76,24 @@ namespace StarportExcel
             this.ClearBuildsButton.UseVisualStyleBackColor = true;
             this.ClearBuildsButton.Click += new System.EventHandler(this.ClearBuildsButton_Click);
             // 
+            // RemoveDuplicatesButton
+            // 
+            this.RemoveDuplicatesButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.RemoveDuplicatesButton.Location = new System.Drawing.Point(748, 126);
+            this.RemoveDuplicatesButton.Name = "RemoveDuplicatesButton";
+            this.RemoveDuplicatesButton.Size = new System.Drawing.Size(109, 23);
+            this.RemoveDuplicatesButton.TabIndex = 15;
+            this.RemoveDuplicatesButton.Text = "Remove Duplicates";
+            this.RemoveDuplicatesButton.UseVisualStyleBackColor = true;
+            this.RemoveDuplicatesButton.Click += new System.EventHandler(this.RemoveDuplicatesButton_Click);
+            // 
             // PlanetInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(865, 511);
+            this.Controls.Add(this.RemoveDuplicatesButton);
             this.Controls.Add(this.ClearBuildsButton);
             this.Controls.Add(this.SortBuildsButton);
             this.Controls.Add(this.AddInfoButton);
@@ -97,5 +110,6 @@ namespace StarportExcel
         private System.Windows.Forms.Button AddInfoButton;
         private System.Windows.Forms.Button SortBuildsButton;
         private System.Windows.Forms.Button ClearBuildsButton;
+        private System.Windows.Forms.Button RemoveDuplicatesButton;
     }
 }

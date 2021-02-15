@@ -530,7 +530,7 @@ namespace StarportExcel
                     discoveries[i + 1].Equals('r') &&
                     discoveries[i + 2].Equals('i') &&
                     discoveries[i + 3].Equals('l') &&
-                    (discoveries[i + 133].Equals('3') || discoveries[i + 13].Equals('4') || discoveries[i + 13].Equals('5') ) &&
+                    (discoveries[i + 13].Equals('3') || discoveries[i + 13].Equals('4') || discoveries[i + 13].Equals('5') ) &&
                     planetType.Equals("volcanic")
                     )
                 {
