@@ -496,7 +496,7 @@ namespace StarportExcel
                     discoveries[i + 1].Equals('e') &&
                     discoveries[i + 2].Equals('a') &&
                     discoveries[i + 3].Equals('t') &&
-                    (discoveries[i + 23].Equals('1') || discoveries[i + 23].Equals('2') || discoveries[i + 23].Equals('4'))
+                    (discoveries[i + 23].Equals('1') || discoveries[i + 23].Equals('4') || discoveries[i + 23].Equals('5'))
                     )
                 {
                     Console.WriteLine("Weather Woman");
@@ -526,6 +526,31 @@ namespace StarportExcel
                     shouldBuild[2] = true;
                     shouldBuild[3] = false;
                 }
+                else if (discoveries[i].Equals('D') &&
+                    discoveries[i + 1].Equals('r') &&
+                    discoveries[i + 2].Equals('i') &&
+                    discoveries[i + 3].Equals('l') &&
+                    (discoveries[i + 133].Equals('3') || discoveries[i + 13].Equals('4') || discoveries[i + 13].Equals('5') ) &&
+                    planetType.Equals("volcanic")
+                    )
+                {
+                    Console.WriteLine("Drilling Volc");
+                    shouldBuild[2] = true;
+                    shouldBuild[3] = false;
+                }
+                else if (discoveries[i].Equals('N') &&
+                    discoveries[i + 1].Equals('a') &&
+                    discoveries[i + 2].Equals('t') &&
+                    discoveries[i + 3].Equals('i') &&
+                    (discoveries[i + 18].Equals('4') || discoveries[i + 18].Equals('5')) &&
+                    planetType.Equals("volcanic")
+                    )
+                {
+                    Console.WriteLine("Medicine Volc");
+                    shouldBuild[2] = true;
+                    shouldBuild[3] = false;
+                }
+
             }
 
             return shouldBuild;

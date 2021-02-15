@@ -51,6 +51,20 @@ namespace StarportExcel
 
             return colInfo;
         }
+        public static ColonyInfo[] SortPlanetsByXAndY(string[,] planets, Coordinates origin, Coordinates destination)
+        {
+            ColonyInfo[] colInfo = new ColonyInfo[planets.GetLength(0)];
+
+            for (int i = 0; i < planets.GetLength(0); i++)
+            {
+                colInfo[i].coords = GetCoordinates(planets[i,0]);
+                colInfo[i].distance = Distance(colInfo[i].coords, origin);
+            }
+
+            QuickSort(colInfo, 0, planets.GetLength(0) - 1);
+
+            return colInfo;
+        }
 
         /// <summary>
         /// Find the distance

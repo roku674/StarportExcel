@@ -514,8 +514,25 @@ namespace StarportExcel
             {
                 Console.WriteLine(colonyName + " is Not Finished Researching.");
                 MessageBox.Show(colonyName + " is Not Finished Researching.", "Message");
-            }
-            
+            }           
+        }
+
+        public static void AddToBuilds(Excel excel, string coordinates, string planetName, string colonyName, string zoundsable, string medium, string questionable, string deconstruct, string research)
+        {
+            int totalBuilds = (int)excel.ReadCellDouble(1, 15);
+            totalBuilds += 1;
+
+            excel.WriteToCell(1, 15, totalBuilds.ToString());
+            excel.WriteToCell(totalBuilds, 1, totalBuilds.ToString());
+
+            excel.WriteToCell(totalBuilds, 2, coordinates);
+            excel.WriteToCell(totalBuilds, 3, planetName);
+            excel.WriteToCell(totalBuilds, 4, colonyName);
+            excel.WriteToCell(totalBuilds, 5, zoundsable);
+            excel.WriteToCell(totalBuilds, 6, medium);
+            excel.WriteToCell(totalBuilds, 7, questionable);
+            excel.WriteToCell(totalBuilds, 8, deconstruct);
+            excel.WriteToCell(totalBuilds, 9, research);
         }
 
         public static void AddToZounds(string colony, Excel excel)
@@ -529,7 +546,6 @@ namespace StarportExcel
             Console.WriteLine(colony + " added to Zounds to cell [F," + temp + "]");
 
             excel.WriteToCell(2, 8, zoundsCount.ToString());// changes the total zounds 
-
         }
         /// <summary>
         /// add a singular planet to the grow list

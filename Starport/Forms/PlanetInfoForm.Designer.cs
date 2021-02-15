@@ -31,6 +31,8 @@ namespace StarportExcel
         {
             this.InfoBox = new System.Windows.Forms.RichTextBox();
             this.AddInfoButton = new System.Windows.Forms.Button();
+            this.SortBuildsButton = new System.Windows.Forms.Button();
+            this.ClearBuildsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // InfoBox
@@ -51,12 +53,36 @@ namespace StarportExcel
             this.AddInfoButton.UseVisualStyleBackColor = true;
             this.AddInfoButton.Click += new System.EventHandler(this.AddColonyInfoButton_Click);
             // 
+            // SortBuildsButton
+            // 
+            this.SortBuildsButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SortBuildsButton.Location = new System.Drawing.Point(748, 49);
+            this.SortBuildsButton.Name = "SortBuildsButton";
+            this.SortBuildsButton.Size = new System.Drawing.Size(109, 23);
+            this.SortBuildsButton.TabIndex = 13;
+            this.SortBuildsButton.Text = "Sort Builds System";
+            this.SortBuildsButton.UseVisualStyleBackColor = true;
+            this.SortBuildsButton.Click += new System.EventHandler(this.SortBuildsButton_Click);
+            // 
+            // ClearBuildsButton
+            // 
+            this.ClearBuildsButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ClearBuildsButton.Location = new System.Drawing.Point(748, 97);
+            this.ClearBuildsButton.Name = "ClearBuildsButton";
+            this.ClearBuildsButton.Size = new System.Drawing.Size(109, 23);
+            this.ClearBuildsButton.TabIndex = 14;
+            this.ClearBuildsButton.Text = "Clear Builds";
+            this.ClearBuildsButton.UseVisualStyleBackColor = true;
+            this.ClearBuildsButton.Click += new System.EventHandler(this.ClearBuildsButton_Click);
+            // 
             // PlanetInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 511);
+            this.ClientSize = new System.Drawing.Size(865, 511);
+            this.Controls.Add(this.ClearBuildsButton);
+            this.Controls.Add(this.SortBuildsButton);
             this.Controls.Add(this.AddInfoButton);
             this.Controls.Add(this.InfoBox);
             this.Name = "PlanetInfoForm";
@@ -69,5 +95,7 @@ namespace StarportExcel
 
         private System.Windows.Forms.RichTextBox InfoBox;
         private System.Windows.Forms.Button AddInfoButton;
+        private System.Windows.Forms.Button SortBuildsButton;
+        private System.Windows.Forms.Button ClearBuildsButton;
     }
 }

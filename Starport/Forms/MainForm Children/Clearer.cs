@@ -46,6 +46,25 @@ namespace StarportExcel
                 //excel.WriteToCell(i, 17, "");
             }
         }
+        public static void ClearBuildList(Excel excel)
+        {
+            int planets = (int) excel.ReadCellDouble(1, 15);
+
+            excel.WriteToCell(1, 15, "");
+            for (int i = 1;i <= planets; i++)
+            {
+                excel.WriteToCell(i, 1, "");
+                excel.WriteToCell(i, 2, "");
+                excel.WriteToCell(i, 3, "");
+                excel.WriteToCell(i, 4, "");
+                excel.WriteToCell(i, 5, "");
+                excel.WriteToCell(i, 6, "");
+                excel.WriteToCell(i, 7, "");
+                excel.WriteToCell(i, 8, "");
+                excel.WriteToCell(i, 9, "");
+            }
+            Console.WriteLine("Build List Cleared");
+        }
 
     }
 }
