@@ -28,7 +28,7 @@ namespace StarportExcel
             excel.Close();
         }
 
-        public static void AddInfo(int sheet, string info, int planetNum )
+        public static void AddColonyInfo(int sheet, string info, int planetNum )
         {
             Excel excel = OpenFileAt(sheet);
 
@@ -64,6 +64,17 @@ namespace StarportExcel
             //stringBuilder.AppendLine("");
             StringReader reader = new StringReader(info);
             string line;
+            //string firstLine = reader.ReadLine();
+            
+
+            if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null))
+            {
+                excel.WriteToCell(planetNum, 1, planetNum.ToString()); //updates the number next to the cell
+                excel.WriteToCell(planetNum, 2, colonyName);
+
+                excel.WriteToCell(1, 8, planetNum.ToString()); //updates the planet number
+                MessageBox.Show(colonyName + " added to row " + planetNum + " sheet " + sheet, "Completed");
+            }           
 
             for (int i = 0; i < info.Length; i++)
             {
@@ -382,28 +393,7 @@ namespace StarportExcel
                 }                
             }
             Console.Write(discovered);
-            if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null))
-            {
-                excel.WriteToCell(planetNum, 1, planetNum.ToString()); //updates the number next to the cell
-                excel.WriteToCell(planetNum, 2, colonyName);
-
-                excel.WriteToCell(1, 8, planetNum.ToString()); //updates the planet number
-                MessageBox.Show(colonyName + " added to row " + planetNum + " sheet " + sheet, "Completed");
-            }
-            else if(excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Arc") ||
-                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Des") |
-                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Ear") ||
-                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Gre") ||
-                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Mou") ||
-                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Oce") ||
-                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.IGP") ||
-                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Roc") ||
-                excel.ReadCellString(planetNum, 2).Equals("Panther.Research.Vol"))
-            {
-                Checkers.BuildZoundsDestroy(info);
-            }
-            
-
+           
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
             excel.WriteToCell(planetNum, 12, morale.ToString());
@@ -432,6 +422,100 @@ namespace StarportExcel
             excel.WriteToCell(planetNum, 35, discovered);
 
             excel.Close();
+        }
+        public static void BuildZoundsDestroy(string colonyInfo)
+        {
+            StringReader reader = new StringReader(colonyInfo);
+            string line;
+
+            string planetType = null;
+            string coordinates = null; // C
+            string planetName = null; // D
+            string colonyName = null; // E
+            string discoveries = null; // K
+            int research = -1; // J
+
+            bool[] buildableHolder = new bool[4];
+
+            bool zoundsable = false;
+            bool medium = false;
+            bool questionable = false; 
+            bool deconstruct = false;// F , G, H, I 
+
+            buildableHolder[0] = zoundsable; 
+            buildableHolder[1] = medium; 
+            buildableHolder[2] = questionable;
+            buildableHolder[3] = deconstruct;
+
+            for (int i = 0; i < colonyInfo.Length; i++)
+            {
+                line = reader.ReadLine();
+                if (line != null)
+                {
+                    if (i == 0)
+                    {
+                        colonyName = line;
+                        Console.WriteLine(line);
+                    }
+                    else if (i == 3)
+                    {
+                        string[] temp = line.Split(':');
+                        planetType = temp[1];
+                        planetType = RemoveSpaces(planetType);
+                    }
+                    else if (i == 4)
+                    {
+                        string[] temp = line.Split(':');
+                        temp = temp[1].Split('(');
+                        planetName = temp[0];
+                        coordinates = temp[1];
+                        coordinates = "(" + coordinates;
+                    }
+                    else if (i == 40)
+                    {
+                        string[] temp = line.Split('/');
+                        temp[0] = RemoveLetters(temp[0]);
+                        temp[0] = RemoveParenthesisColonComma(temp[0]);
+                        research = int.Parse(temp[0]);
+                    }
+                    else if (i >= 41)
+                    {
+                        discoveries = discoveries + '\n' + line;
+                    }
+                }
+            }
+
+            if (research == 10)
+            {
+                buildableHolder = Checkers.Buildable(discoveries, planetType);
+                zoundsable = buildableHolder[0];
+                medium = buildableHolder[1];
+                questionable = buildableHolder[2];
+                deconstruct = buildableHolder[3];
+
+                Excel excel = OpenFileAt(11); // build list
+                int totalBuilds = (int)excel.ReadCellDouble(1, 15);
+                totalBuilds += 1;
+                excel.WriteToCell(1, 15, totalBuilds.ToString());
+
+                excel.WriteToCell(totalBuilds, 1, totalBuilds.ToString());
+                excel.WriteToCell(totalBuilds, 2, coordinates);
+                excel.WriteToCell(totalBuilds, 3, planetName);
+                excel.WriteToCell(totalBuilds, 4, colonyName);
+                excel.WriteToCell(totalBuilds, 5, zoundsable.ToString());
+                excel.WriteToCell(totalBuilds, 6, medium.ToString());
+                excel.WriteToCell(totalBuilds, 7, questionable.ToString());
+                excel.WriteToCell(totalBuilds, 8, deconstruct.ToString());
+                excel.WriteToCell(totalBuilds, 9, research.ToString());
+
+                excel.Close();
+            }
+            else
+            {
+                Console.WriteLine(colonyName + " is Not Finished Researching.");
+                MessageBox.Show(colonyName + " is Not Finished Researching.", "Message");
+            }
+            
         }
 
         public static void AddToZounds(string colony, Excel excel)

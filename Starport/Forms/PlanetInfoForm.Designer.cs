@@ -49,7 +49,7 @@ namespace StarportExcel
             this.AddInfoButton.TabIndex = 2;
             this.AddInfoButton.Text = "Add Info To Excel";
             this.AddInfoButton.UseVisualStyleBackColor = true;
-            this.AddInfoButton.Click += new System.EventHandler(this.AddInfoButton_Click);
+            this.AddInfoButton.Click += new System.EventHandler(this.AddColonyInfoButton_Click);
             // 
             // PlanetInfoForm
             // 
