@@ -982,5 +982,9 @@ namespace StarportExcel
             return append;
         }
 
+        private void NamePlanetButton_Click(object sender, EventArgs e)
+        {
+
+        }
     } //form1
 }//namespace

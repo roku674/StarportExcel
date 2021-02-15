@@ -23199,17 +23199,20 @@
   <data name="EditPlanetInfoButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditPlanetInfoButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 228</value>
-  </data>
   <data name="EditPlanetInfoButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
-  <data name="EditPlanetInfoButton.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
   <data name="EditPlanetInfoButton.Text" xml:space="preserve">
     <value>Edit Planet Info</value>
+  </data>
+  <data name="NamePlanetButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NamePlanetButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="NamePlanetButton.Text" xml:space="preserve">
+    <value>Name New Planet</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

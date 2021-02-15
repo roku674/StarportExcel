@@ -735,6 +735,61 @@ namespace StarportExcel
             }
             output.WriteLine("");
         }
+        /// <summary>
+        /// Finds and outputs the planet info if the string matches
+        /// </summary>
+        /// <param name="find"></param>
+        /// <param name="column"></param>
+       private void WriteAllPlanetInfoIf(string find, int column)
+        {
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    if (excel.ReadCellString(planet, column).Equals(find))
+                    {
+                        WriteAllPlanetInfo(planet, excel);
+                    }
+                }
+
+                excel.Close();
+            }
+        }
+        /// <summary>
+        /// Finds and compares the number and outprints all the planet info if true
+        /// </summary>
+        /// <param name="find"></param>
+        /// <param name="column"></param>
+        private void WriteAllPlanetInfoIf(int compare, int column, bool greaterThan, bool lessThan, bool equalTo)
+        {
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    if ((excel.ReadCellDouble(planet, column) < compare) && lessThan)
+                    {
+                        WriteAllPlanetInfo(planet, excel);
+                    }
+                    else if ((excel.ReadCellDouble(planet, column) > compare) && greaterThan)
+                    {
+                        WriteAllPlanetInfo(planet, excel);
+                    }
+                    else if ((excel.ReadCellDouble(planet, column) == compare) && equalTo)
+                    {
+                        WriteAllPlanetInfo(planet, excel);
+                    }
+                }
+
+                excel.Close();
+            }
+        }
+
         private void NeedsDefensesButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(1);
@@ -834,7 +889,6 @@ namespace StarportExcel
             excelPath = path;
         }
 
-
         public StreamWriter GetOutput()
         {
             return output;
@@ -878,10 +932,7 @@ namespace StarportExcel
             output.WriteLine("");
         }
 
-        private void CMinesListButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void FindMoraleButton_Click(object sender, EventArgs e)
         {
@@ -940,38 +991,52 @@ namespace StarportExcel
 
         private void SolarsListButton_Click(object sender, EventArgs e)
         {
-
+            WriteAllPlanetInfoIf(15, 33, false, true, true);
+            WriteAllPlanetInfoIf(100, 34, false, true, true);
+            MessageBox.Show("Weak Solar Colonies to Output", "Completed!");
         }
 
         private void LasersListButton_Click(object sender, EventArgs e)
         {
-
+            WriteAllPlanetInfoIf(150, 32, true, false, true);
+            MessageBox.Show("Laser Colonies to Output", "Completed!");
         }
-
+        private void CMinesListButton_Click(object sender, EventArgs e)
+        {
+            WriteAllPlanetInfoIf(100, 31, true, false, true);
+            MessageBox.Show("Compound Mine Colonies to Output", "Completed!");
+        }
         private void NukesListButton_Click(object sender, EventArgs e)
         {
-
+            WriteAllPlanetInfoIf(250, 30, true, false, true);
+            MessageBox.Show("Nukes Colonies to Output", "Completed!");
         }
 
         private void SocialismListButton_Click(object sender, EventArgs e)
         {
-
+            WriteAllPlanetInfoIf("Socialism", 13);
+            MessageBox.Show("Socialism Colonies to Output", "Completed!");
         }
 
         private void DemocracyListButton_Click(object sender, EventArgs e)
         {
-
+            WriteAllPlanetInfoIf("Democracy", 13);
+            MessageBox.Show("Democracy Colonies to Output", "Completed!");
         }
 
         private void PrisonListButton_Click(object sender, EventArgs e)
         {
-
+            WriteAllPlanetInfoIf("Prison", 13);
+            MessageBox.Show("Prison Colonies to Output", "Completed!");
         }
 
         private void DirectorshipListButton_Click(object sender, EventArgs e)
         {
-
+            WriteAllPlanetInfoIf("Directorship", 13);
+            MessageBox.Show("Directorship Colonies to Output", "Completed!");
         }
+
+        
 
     }//PlanetTypeForm
 }//namespace
