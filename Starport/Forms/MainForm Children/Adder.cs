@@ -493,6 +493,7 @@ namespace StarportExcel
             {
                 if (planetName.Equals(excel.ReadCellString(i, 3)))
                 {
+                    Console.WriteLine("Duplicate Found");
                     noDuplicate = false;
                 }
             }

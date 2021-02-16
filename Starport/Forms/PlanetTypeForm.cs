@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using static StarportExcel.Structs;
 
 namespace StarportExcel
 {
@@ -719,18 +720,19 @@ namespace StarportExcel
             //Console.WriteLine(excel.ReadCellString(planetNum, 2));
             for(int i = 10; i <= 35; i++)
             {
+                double temp = excel.ReadCellDouble(planetNum, i);
                 //Console.WriteLine(i);
                 if (i == 11 || i == 12 || (i >= 14 && i <= 16) || (i >= 22 && i <=34))
                 {
-                    output.Write(excel.ReadCellDouble(planetNum, i) + " | ");
+                    output.Write(temp + " | ");
                 }
                 else if (i == 35)
                 {
-                    output.Write(excel.ReadCellString(planetNum, i));
+                    output.Write(temp);
                 }
                 else
                 {
-                    output.Write(excel.ReadCellString(planetNum, i) + " | ");
+                    output.Write(temp + " | ");
                 }                                
             }
             output.WriteLine("");
@@ -772,15 +774,16 @@ namespace StarportExcel
                 int planet = (int)excel.ReadCellDouble(1, 8);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
-                    if ((excel.ReadCellDouble(planet, column) < compare) && lessThan)
+                    double temp = excel.ReadCellDouble(planet, column);
+                    if (temp < compare && lessThan)
                     {
                         WriteAllPlanetInfo(planet, excel);
                     }
-                    else if ((excel.ReadCellDouble(planet, column) > compare) && greaterThan)
+                    else if (temp > compare && greaterThan)
                     {
                         WriteAllPlanetInfo(planet, excel);
                     }
-                    else if ((excel.ReadCellDouble(planet, column) == compare) && equalTo)
+                    else if (temp == compare && equalTo)
                     {
                         WriteAllPlanetInfo(planet, excel);
                     }
@@ -939,8 +942,29 @@ namespace StarportExcel
 
         }
 
-        private void DeconstructListButton_Click(object sender, EventArgs e)
+        private void SameSystemListButton_Click(object sender, EventArgs e)
         {
+            Coordinates system = Algorithms.GetCoordinates(numberTextBox.Text);
+
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    string planetName = excel.ReadCellString(i, 2);
+                    Coordinates planetCoords = Algorithms.GetCoordinates(planetName);
+                    if(system.x == planetCoords.x && system.y == planetCoords.y)
+                    {
+                        output.WriteLine(planetName);
+                    }
+                }
+                excel.Close();
+            }
+
+            output.Flush();
+            MessageBox.Show("Colonies in the Same System to output", "Message");
 
         }
 
@@ -951,27 +975,27 @@ namespace StarportExcel
 
             for (int i = 1; i <= planetsToBuild; i++) //planet tally is in P column
             {
-                output.Write("Coordinates: ");
+                //output.Write("Coordinates: ");
                 output.Write(excel.ReadCellString(i, 2)); //coordinates
                 output.Write(" | ");
 
-                output.Write("Planet Name: ");
+                //output.Write("Planet Name: ");
                 output.Write(excel.ReadCellString(i, 3)); //colony name
                 output.Write(" | ");
 
-                output.Write("Colony Name: ");
+                //output.Write("Colony Name: ");
                 output.Write(excel.ReadCellString(i, 4));//Planet Name
                 output.Write(" | ");
 
-                output.Write("Zoundsable: ");
+                output.Write("Zounds: ");
                 output.Write(excel.ReadCellBool(i, 5));//Zoundsable
                 output.Write(" | ");
 
-                output.Write("Medium Quality: ");
+                output.Write("Medium: ");
                 output.Write(excel.ReadCellBool(i, 6));//Medium
                 output.Write(" | ");
 
-                output.Write("Questionable: ");
+                output.Write("?: ");
                 output.Write(excel.ReadCellBool(i, 7));//Questionable
                 output.Write(" | ");
 
@@ -979,7 +1003,7 @@ namespace StarportExcel
                 output.Write(excel.ReadCellBool(i, 8));//Deconstruct
                 output.Write(" | ");
 
-                output.Write("Research x/10: ");
+                //output.Write("Research x/10: ");
                 output.Write((int) excel.ReadCellDouble(i, 9)); //Research
                 output.Write(" | ");
                 output.WriteLine("");

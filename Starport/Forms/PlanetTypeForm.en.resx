@@ -435,17 +435,14 @@
   <data name="BuildListButton.Text" xml:space="preserve">
     <value>Build List</value>
   </data>
-  <data name="DeconstructListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="SameSystemListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="DeconstructListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 380</value>
-  </data>
-  <data name="DeconstructListButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SameSystemListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 23</value>
   </data>
-  <data name="DeconstructListButton.Text" xml:space="preserve">
-    <value>Deconstruct List</value>
+  <data name="SameSystemListButton.Text" xml:space="preserve">
+    <value>Same System List</value>
   </data>
   <data name="FindMoraleButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

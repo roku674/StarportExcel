@@ -38,15 +38,15 @@ namespace StarportExcel
                 firstLine = MainForm.RemoveSpaces(firstLine);
                 for (int i = 0; i < info.Length; i++)
                 {
-                    if (firstLine.Equals("Panther.Research.Arc") ||
-                           firstLine.Equals("Panther.Research.Des") |
-                           firstLine.Equals("Panther.Research.Ear") ||
-                           firstLine.Equals("Panther.Research.Gre") ||
-                           firstLine.Equals("Panther.Research.Mou") ||
-                           firstLine.Equals("Panther.Research.Oce") ||
-                           firstLine.Equals("Panther.Research.IGP") ||
-                           firstLine.Equals("Panther.Research.Roc") ||
-                           firstLine.Equals("Panther.Research.Vol"))
+                    if (firstLine.Equals("Panther.Research.Arc") || firstLine.Equals("Panther.Build.Arc") ||
+                           firstLine.Equals("Panther.Research.Des") || firstLine.Equals("Panther.Build.Des") ||
+                           firstLine.Equals("Panther.Research.Ear") || firstLine.Equals("Panther.Build.Ear") ||
+                           firstLine.Equals("Panther.Research.Gre") || firstLine.Equals("Panther.Build.Gre") ||
+                           firstLine.Equals("Panther.Research.Mou") || firstLine.Equals("Panther.Build.Mou") ||
+                           firstLine.Equals("Panther.Research.Oce") || firstLine.Equals("Panther.Build.Oce") ||
+                           firstLine.Equals("Panther.Research.IGP") || firstLine.Equals("Panther.Build.IGP") ||
+                           firstLine.Equals("Panther.Research.Roc") || firstLine.Equals("Panther.Build.Roc") ||
+                           firstLine.Equals("Panther.Research.Vol") || firstLine.Equals("Panther.Build.Vol"))
                     {
                         //console.WriteLine(firstLine);
                         Adder.BuildZoundsDestroy(info);
@@ -337,6 +337,7 @@ namespace StarportExcel
             Excel excel = OpenFileAt(11);
             Clearer.ClearBuildList(excel);
             MessageBox.Show("Build List Cleared!", "Message");
+            excel.Close();
         }
 
         private void RemoveDuplicatesButton_Click(object sender, EventArgs e)
