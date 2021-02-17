@@ -240,9 +240,6 @@ namespace StarportExcel
 
                         string planetName = excel.ReadCellString(j, 2); //read the name of the planet
 
-                        //Console.WriteLine(Algorithms.GetCoordinates(planetName).x + "," + Algorithms.GetCoordinates(planetName).y ); // just testing if GetCoordinatees works
-                        //Console.WriteLine(planetName + " found");
-
                         int num = j + 1;
                         //if statement by planet type
                             if (k == 2)
@@ -283,7 +280,7 @@ namespace StarportExcel
                                 string formula = "=Volcanics!C" + num;
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                             }
-                            else { } //MessageBox.Show(planetName + " not found!");                             
+                            else { }                            
                     }
             
                 }//end of j loop
@@ -406,6 +403,13 @@ namespace StarportExcel
                     temp++;
                 }
             }
+
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets are growing, thus can't be sorted", "Error");
+                return;
+            }
+
             //Console.WriteLine(temp);
             string[] planets = new string[temp];
 
@@ -448,7 +452,11 @@ namespace StarportExcel
                     temp++;
                 }
             }
-
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets are growing, thus can't be sorted", "Error");
+                return;
+            }
             string[] planets = new string[temp];
 
             for (int i = 0; i < planets.Length; i++) //establish teh array
@@ -489,6 +497,11 @@ namespace StarportExcel
                 {
                     temp++;
                 }
+            }
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets need defenses, thus can't be sorted", "Error");
+                return;
             }
             //Console.WriteLine(temp);
             string[] planets = new string[temp];
@@ -535,7 +548,11 @@ namespace StarportExcel
                     temp++;
                 }
             }
-
+            if(temp == 0)
+            {
+                MessageBox.Show("No Planets need defenses, thus can't be sorted", "Error");
+                return;
+            }
             string[] planets = new string[temp];
 
             for (int i = 0; i < planets.Length; i++) //establish teh array
@@ -977,7 +994,7 @@ namespace StarportExcel
         public static string RemoveSpaces(string append)
         {
             //append.TrimStart();
-            //append.Trim();
+            append.Trim();
             append = Regex.Replace(append, " ", "");
             return append;
         }

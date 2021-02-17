@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static StarportExcel.Structs;
 
 namespace StarportExcel
 {
@@ -37,15 +38,15 @@ namespace StarportExcel
                 firstLine = MainForm.RemoveSpaces(firstLine);
                 for (int i = 0; i < info.Length; i++)
                 {
-                    if (firstLine.Equals("Panther.Research.Arc") ||
-                           firstLine.Equals("Panther.Research.Des") |
-                           firstLine.Equals("Panther.Research.Ear") ||
-                           firstLine.Equals("Panther.Research.Gre") ||
-                           firstLine.Equals("Panther.Research.Mou") ||
-                           firstLine.Equals("Panther.Research.Oce") ||
-                           firstLine.Equals("Panther.Research.IGP") ||
-                           firstLine.Equals("Panther.Research.Roc") ||
-                           firstLine.Equals("Panther.Research.Vol"))
+                    if (firstLine.Equals("Panther.Research.Arc") || firstLine.Equals("Panther.Build.Arc") ||
+                           firstLine.Equals("Panther.Research.Des") || firstLine.Equals("Panther.Build.Des") ||
+                           firstLine.Equals("Panther.Research.Ear") || firstLine.Equals("Panther.Build.Ear") ||
+                           firstLine.Equals("Panther.Research.Gre") || firstLine.Equals("Panther.Build.Gre") ||
+                           firstLine.Equals("Panther.Research.Mou") || firstLine.Equals("Panther.Build.Mou") ||
+                           firstLine.Equals("Panther.Research.Oce") || firstLine.Equals("Panther.Build.Oce") ||
+                           firstLine.Equals("Panther.Research.IGP") || firstLine.Equals("Panther.Build.IGP") ||
+                           firstLine.Equals("Panther.Research.Roc") || firstLine.Equals("Panther.Build.Roc") ||
+                           firstLine.Equals("Panther.Research.Vol") || firstLine.Equals("Panther.Build.Vol"))
                     {
                         //console.WriteLine(firstLine);
                         Adder.BuildZoundsDestroy(info);
@@ -260,13 +261,114 @@ namespace StarportExcel
                     }                   
                     //check for builds
                 }
-                MessageBox.Show(firstLine + " Information Added!", "Completed");
+                //MessageBox.Show(firstLine + " Information Added!", "Completed");
                 InfoBox.Text = "";
             }           
         }
+        private void SortBuildsButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(11);
+            int totalBuilds = (int) excel.ReadCellDouble(1, 15); //amount of builds num
+            string[,] planets = new string[totalBuilds, 8];
+            Console.WriteLine(planets.GetLength(0) + " " + planets.GetLength(1));
+
+            for (int i = 1; i <= planets.GetLength(0); i++) //establish the array
+            {
+                bool tempBools = false;
+                //Console.WriteLine(i);
+                planets[i-1,0] = excel.ReadCellString(i, 2);
+                planets[i-1,1] = excel.ReadCellString(i, 3);
+                planets[i-1,2] = excel.ReadCellString(i, 4);
+
+                tempBools = excel.ReadCellBool(i, 5);
+                planets[i-1,3] = tempBools.ToString();
+
+                tempBools = excel.ReadCellBool(i, 6);
+                planets[i-1,4] = tempBools.ToString();
+
+                tempBools = excel.ReadCellBool(i, 7);
+                planets[i-1,5] =tempBools.ToString();
+
+                tempBools = excel.ReadCellBool(i, 8);
+                planets[i-1,6] = tempBools.ToString();
+
+                int tempInt = (int)excel.ReadCellDouble(i, 9);
+                planets[i-1,7] = tempInt.ToString();
+            }
+
+            Coordinates origin;
+            origin = Algorithms.GetCoordinates("(0,0)");
+
+            ColonyInfo[] colInfo = Algorithms.SortPlanetsByXAndY(planets, origin, Algorithms.GetCoordinates(planets[totalBuilds - 1, 0])); //get the sorted array
+
+            Clearer.ClearBuildList(excel);
+
+            for (int i = 0; i < planets.GetLength(0); i++)
+            {                
+                for (int j = 0; j < planets.GetLength(0); j++)
+                {
+                    Coordinates oldList = Algorithms.GetCoordinates(planets[j, 0]);
+                    if ((colInfo[i].coords.x == oldList.x) && (colInfo[i].coords.y == oldList.y))
+                    {
+                        Console.WriteLine(planets[j, 0] + " ");
+                        Adder.AddToBuilds(excel, planets[j, 0], planets[j, 1], planets[j, 2], planets[j, 3], planets[j, 4], planets[j, 5], planets[j, 6], planets[j, 7]);
+                    }
+                }               
+            }
+
+            excel.Close();
+            MessageBox.Show("Build List Sorted by System", "Completed");
+
+        }
+
+        private static Excel OpenFileAt(int num)
+        {
+            Excel excel = new Excel(MainForm.excelPath, num);
+            return excel;
+        }
+
         public void SetExcelPath(string path)
         {
             excelPath = path;
+        }
+
+        private void ClearBuildsButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(11);
+            Clearer.ClearBuildList(excel);
+            MessageBox.Show("Build List Cleared!", "Message");
+            excel.Close();
+        }
+
+        private void RemoveDuplicatesButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(11);
+            int buildList = (int)excel.ReadCellDouble(1, 15);
+            for(int i = 1; i <= buildList; i++)
+            {
+                for (int j = 1; j <= buildList; j++)
+                {
+                    Console.WriteLine(i + " " + j);
+                   if (excel.ReadCellString(i, 3).Equals(excel.ReadCellString(j, 3)))
+                    {
+                        excel.WriteToCell(i, 2, excel.ReadCellString(i + 1, 2));
+                        excel.WriteToCell(i, 3, excel.ReadCellString(i + 1, 3));
+                        excel.WriteToCell(i, 4, excel.ReadCellString(i + 1, 4));
+
+                        excel.WriteToCell(i, 5, excel.ReadCellBool(i + 1, 5).ToString());
+                        excel.WriteToCell(i, 6, excel.ReadCellBool(i + 1, 6).ToString());
+                        excel.WriteToCell(i, 7, excel.ReadCellBool(i + 1, 7).ToString());
+                        excel.WriteToCell(i, 8, excel.ReadCellBool(i + 1, 8).ToString());
+                        excel.WriteToCell(i, 9, excel.ReadCellDouble(i + 1, 9).ToString());
+
+                        int temp = buildList - 1;
+                        excel.WriteToCell(1, 15, temp.ToString());
+                    }
+                }
+            }
+            excel.Close();
+
+            MessageBox.Show("Duplicates removed from build List!", "Message");
         }
     }
 }

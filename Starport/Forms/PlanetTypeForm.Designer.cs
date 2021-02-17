@@ -35,7 +35,7 @@ namespace StarportExcel
         private Button SolarsListButton;
         private Button LasersListButton;
         private Button BuildListButton;
-        private Button DeconstructListButton;
+        private Button SameSystemListButton;
         private Button FindMoraleButton;
         private Button RenameListsButton;
         private Button DoubleDomeListButton;
@@ -91,7 +91,7 @@ namespace StarportExcel
             this.SolarsListButton = new System.Windows.Forms.Button();
             this.LasersListButton = new System.Windows.Forms.Button();
             this.BuildListButton = new System.Windows.Forms.Button();
-            this.DeconstructListButton = new System.Windows.Forms.Button();
+            this.SameSystemListButton = new System.Windows.Forms.Button();
             this.FindMoraleButton = new System.Windows.Forms.Button();
             this.RenameListsButton = new System.Windows.Forms.Button();
             this.DoubleDomeListButton = new System.Windows.Forms.Button();
@@ -324,12 +324,12 @@ namespace StarportExcel
             this.BuildListButton.UseVisualStyleBackColor = true;
             this.BuildListButton.Click += new System.EventHandler(this.BuildListButton_Click);
             // 
-            // DeconstructListButton
+            // SameSystemListButton
             // 
-            resources.ApplyResources(this.DeconstructListButton, "DeconstructListButton");
-            this.DeconstructListButton.Name = "DeconstructListButton";
-            this.DeconstructListButton.UseVisualStyleBackColor = true;
-            this.DeconstructListButton.Click += new System.EventHandler(this.DeconstructListButton_Click);
+            resources.ApplyResources(this.SameSystemListButton, "SameSystemListButton");
+            this.SameSystemListButton.Name = "SameSystemListButton";
+            this.SameSystemListButton.UseVisualStyleBackColor = true;
+            this.SameSystemListButton.Click += new System.EventHandler(this.SameSystemListButton_Click);
             // 
             // FindMoraleButton
             // 
@@ -471,7 +471,7 @@ namespace StarportExcel
             this.Controls.Add(this.DoubleDomeListButton);
             this.Controls.Add(this.RenameListsButton);
             this.Controls.Add(this.FindMoraleButton);
-            this.Controls.Add(this.DeconstructListButton);
+            this.Controls.Add(this.SameSystemListButton);
             this.Controls.Add(this.BuildListButton);
             this.Controls.Add(this.SolarsListButton);
             this.Controls.Add(this.LasersListButton);

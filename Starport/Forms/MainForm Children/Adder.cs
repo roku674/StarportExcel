@@ -39,26 +39,27 @@ namespace StarportExcel
             string gov = null; //N government
             int treasury = -1; //O
             string pollution = null; //P
-            string pollutionRate = null; //Q
-            string construction = null; //R
-            string research= null; //S
-            string military = null; //T
-            string harvesting = null; //U
-            string building = null; //V
-            int metal = -1; // W
-            int anae= -1; // X
-            int meds= -1; // Y
-            int orgs= -1; // Z
-            int oil= -1; // AA
-            int uri = -1; // AB
-            int equi = -1; // AC
-            int spice = -1; // AD
-            int nukes = -1; // AE
-            int cMines= -1; // AF
-            int lasers= -1; // AG
-            int solarShots= -1; // AH
-            int solarRate = -1; //AI
-            string discovered = null; //AJ
+            int disastas = 0; // Q
+            string pollutionRate = null; //R
+            string construction = null; //S
+            string research= null; //T
+            string military = null; //U
+            string harvesting = null; //V
+            string building = null; //W
+            int metal = -1; // X
+            int anae= -1; // Y
+            int meds= -1; // Z
+            int orgs= -1; // AA
+            int oil= -1; // AB
+            int uri = -1; // AC
+            int equi = -1; // AD
+            int spice = -1; // AE
+            int nukes = -1; // AF
+            int cMines= -1; // AG
+            int lasers= -1; // AH
+            int solarShots= -1; // AI
+            int solarRate = -1; //AJ
+            string discovered = null; //AK
 
             //StringBuilder stringBuilder = new StringBuilder();
             //stringBuilder.AppendLine("");
@@ -87,18 +88,18 @@ namespace StarportExcel
                         colonyName = line;
                         Console.WriteLine(line);
                     }
-                    if ( i == 4)
+                    if (i == 4)
                     {
-                        for(int j = 0; j < line.Length; j++)
+                        for (int j = 0; j < line.Length; j++)
                         {
                             if (line[j].Equals(':'))
                             {
-                               line =  line.Substring(j+7); //takes everything after the colon
+                                line = line.Substring(j + 7); //takes everything after the colon
                             }
                             else if (line[j].Equals('('))
                             {
                                 line = line.Substring(0, j); //removes everything after the parenthesis
-                            }                            
+                            }
                         }
                         planetName = line;
                         Console.WriteLine(planetName);
@@ -121,7 +122,7 @@ namespace StarportExcel
                             if (line[j].Equals('('))
                             {
                                 line = line.Substring(0, j);
-                            }                           
+                            }
                         }
                         line = RemoveParenthesisColonComma(line);
                         line = RemoveLetters(line);
@@ -135,8 +136,8 @@ namespace StarportExcel
                             if (line[j].Equals(':'))
                             {
                                 line = line.Substring(j + 5); //takes everything after the colon
-                            }                           
-                        }                        
+                            }
+                        }
                         gov = RemoveSpaces(line);
                         Console.WriteLine(gov);
                     }
@@ -165,20 +166,26 @@ namespace StarportExcel
                             if (line[j].Equals(':'))
                             {
                                 line = line.Substring(j + 6); //takes everything after the colon
-                            }                          
+                            }
                         }
 
                         string[] temp = line.Split('(');
                         pollution = temp[0];
 
-                        pollutionRate = temp[1];
-
-               
+                        if (temp.Length > 2)
+                        {
+                            string trim = RemoveParenthesisColonComma(temp[1]);
+                            disastas = int.Parse(trim);
+                            pollutionRate = temp[2];
+                        }
+                        else { 
+                            pollutionRate = temp[1];
+                        }
                         pollutionRate = RemoveLetters(pollutionRate);
                         pollutionRate = RemoveParenthesisColonComma(pollutionRate);
                         pollutionRate = RemoveSlashes(pollutionRate);
 
-                        Console.WriteLine(pollution);
+                        Console.WriteLine(pollution+ " " + disastas); 
                         Console.WriteLine(pollutionRate);
                     }
                     else if (i == 15)
@@ -263,10 +270,16 @@ namespace StarportExcel
                     }
                     else if (i == 20)
                     {
-                        string[] temp = line.Split(':');
-                        temp[1] = RemoveSpaces(temp[1]);
-                        building = temp[1];
-                        Console.WriteLine(temp[1]);
+
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 7); //takes everything after the colon
+                            }
+                        }
+                        building = line;
+                        Console.WriteLine(building);
                     }
                     else if (i == 30)
                     {
@@ -324,6 +337,10 @@ namespace StarportExcel
 
                                         temp[1] = RemoveLetters(temp[1]);
                                         temp[1] = RemoveParenthesisColonComma(temp[1]);
+                                        if (temp[1] == null || temp[1].Equals(""))
+                                        {
+                                            temp[1] = "0";
+                                        }
 
                                         solarShots = int.Parse(temp[0]);
                                         solarRate = int.Parse(temp[1]);
@@ -400,31 +417,33 @@ namespace StarportExcel
             excel.WriteToCell(planetNum, 13, gov);
             excel.WriteToCell(planetNum, 14, treasury.ToString());
             excel.WriteToCell(planetNum, 15, pollution);
-            excel.WriteToCell(planetNum, 16, pollutionRate);
-            excel.WriteToCell(planetNum, 17, construction);
-            excel.WriteToCell(planetNum, 18, research);
-            excel.WriteToCell(planetNum, 19, military);
-            excel.WriteToCell(planetNum, 20, harvesting);
-            excel.WriteToCell(planetNum, 21, building);
-            excel.WriteToCell(planetNum, 22, metal.ToString());
-            excel.WriteToCell(planetNum, 23, anae.ToString());
-            excel.WriteToCell(planetNum, 24, meds.ToString());
-            excel.WriteToCell(planetNum, 25, orgs.ToString());
-            excel.WriteToCell(planetNum, 26, oil.ToString());
-            excel.WriteToCell(planetNum, 27, uri.ToString());
-            excel.WriteToCell(planetNum, 28, equi.ToString());
-            excel.WriteToCell(planetNum, 29, spice.ToString());
-            excel.WriteToCell(planetNum, 30, nukes.ToString());
-            excel.WriteToCell(planetNum, 31, cMines.ToString());
-            excel.WriteToCell(planetNum, 32, lasers.ToString());
-            excel.WriteToCell(planetNum, 33, solarShots.ToString());
-            excel.WriteToCell(planetNum, 34, solarRate.ToString());
-            excel.WriteToCell(planetNum, 35, discovered);
+            excel.WriteToCell(planetNum, 16, disastas.ToString());
+            excel.WriteToCell(planetNum, 17, pollutionRate);
+            excel.WriteToCell(planetNum, 18, construction);
+            excel.WriteToCell(planetNum, 19, research);
+            excel.WriteToCell(planetNum, 20, military);
+            excel.WriteToCell(planetNum, 21, harvesting);
+            excel.WriteToCell(planetNum, 22, building);
+            excel.WriteToCell(planetNum, 23, metal.ToString());
+            excel.WriteToCell(planetNum, 24, anae.ToString());
+            excel.WriteToCell(planetNum, 25, meds.ToString());
+            excel.WriteToCell(planetNum, 26, orgs.ToString());
+            excel.WriteToCell(planetNum, 27, oil.ToString());
+            excel.WriteToCell(planetNum, 28, uri.ToString());
+            excel.WriteToCell(planetNum, 29, equi.ToString());
+            excel.WriteToCell(planetNum, 30, spice.ToString());
+            excel.WriteToCell(planetNum, 31, nukes.ToString());
+            excel.WriteToCell(planetNum, 32, cMines.ToString());
+            excel.WriteToCell(planetNum, 33, lasers.ToString());
+            excel.WriteToCell(planetNum, 34, solarShots.ToString());
+            excel.WriteToCell(planetNum, 35, solarRate.ToString());
+            excel.WriteToCell(planetNum, 36, discovered);
 
             excel.Close();
         }
         public static void BuildZoundsDestroy(string colonyInfo)
         {
+            Excel excel = OpenFileAt(11); // build list
             StringReader reader = new StringReader(colonyInfo);
             string line;
 
@@ -450,6 +469,7 @@ namespace StarportExcel
             for (int i = 0; i < colonyInfo.Length; i++)
             {
                 line = reader.ReadLine();
+
                 if (line != null)
                 {
                     if (i == 0)
@@ -485,7 +505,18 @@ namespace StarportExcel
                 }
             }
 
-            if (research == 10)
+            bool noDuplicate = true;
+
+            for(int i = 1; i <= (int) excel.ReadCellDouble(1,15); i++)
+            {
+                if (planetName.Equals(excel.ReadCellString(i, 3)))
+                {
+                    Console.WriteLine("Duplicate Found");
+                    noDuplicate = false;
+                }
+            }
+
+            if (research == 10 && noDuplicate)
             {
                 buildableHolder = Checkers.Buildable(discoveries, planetType);
                 zoundsable = buildableHolder[0];
@@ -493,7 +524,7 @@ namespace StarportExcel
                 questionable = buildableHolder[2];
                 deconstruct = buildableHolder[3];
 
-                Excel excel = OpenFileAt(11); // build list
+                
                 int totalBuilds = (int)excel.ReadCellDouble(1, 15);
                 totalBuilds += 1;
                 excel.WriteToCell(1, 15, totalBuilds.ToString());
@@ -507,15 +538,32 @@ namespace StarportExcel
                 excel.WriteToCell(totalBuilds, 7, questionable.ToString());
                 excel.WriteToCell(totalBuilds, 8, deconstruct.ToString());
                 excel.WriteToCell(totalBuilds, 9, research.ToString());
-
-                excel.Close();
+                
             }
             else
             {
                 Console.WriteLine(colonyName + " is Not Finished Researching.");
-                MessageBox.Show(colonyName + " is Not Finished Researching.", "Message");
+                //MessageBox.Show(colonyName + " is Not Finished Researching.", "Message");
             }
-            
+            excel.Close();
+        }
+
+        public static void AddToBuilds(Excel excel, string coordinates, string planetName, string colonyName, string zoundsable, string medium, string questionable, string deconstruct, string research)
+        {
+            int totalBuilds = (int)excel.ReadCellDouble(1, 15);
+            totalBuilds += 1;
+
+            excel.WriteToCell(1, 15, totalBuilds.ToString());
+            excel.WriteToCell(totalBuilds, 1, totalBuilds.ToString());
+
+            excel.WriteToCell(totalBuilds, 2, coordinates);
+            excel.WriteToCell(totalBuilds, 3, planetName);
+            excel.WriteToCell(totalBuilds, 4, colonyName);
+            excel.WriteToCell(totalBuilds, 5, zoundsable);
+            excel.WriteToCell(totalBuilds, 6, medium);
+            excel.WriteToCell(totalBuilds, 7, questionable);
+            excel.WriteToCell(totalBuilds, 8, deconstruct);
+            excel.WriteToCell(totalBuilds, 9, research);
         }
 
         public static void AddToZounds(string colony, Excel excel)
@@ -529,7 +577,6 @@ namespace StarportExcel
             Console.WriteLine(colony + " added to Zounds to cell [F," + temp + "]");
 
             excel.WriteToCell(2, 8, zoundsCount.ToString());// changes the total zounds 
-
         }
         /// <summary>
         /// add a singular planet to the grow list

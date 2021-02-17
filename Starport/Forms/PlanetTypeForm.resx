@@ -124,7 +124,7 @@
   <data name="VolcanicsButton.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="DeconstructListButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="SameSystemListButton.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
   <data name="&gt;&gt;FindMoraleButton.Parent" xml:space="preserve">
@@ -140,7 +140,7 @@
     <value>46</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="DeconstructListButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SameSystemListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <data name="GreenhousesCheckBox.TabIndex" type="System.Int32, mscorlib">
@@ -148,6 +148,9 @@
   </data>
   <data name="&gt;&gt;VolcanicZoundsCheckBox.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EarthlikeZoundsCheckBox.Name" xml:space="preserve">
+    <value>EarthlikeZoundsCheckBox</value>
   </data>
   <data name="checkBox14.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
@@ -172,6 +175,9 @@
   </data>
   <data name="DesertCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>217, 102</value>
+  </data>
+  <data name="MountainZoundsCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 155</value>
   </data>
   <data name="MountainZoundsCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
@@ -245,7 +251,7 @@
   <data name="&gt;&gt;ArcticZoundsCheckBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;DeconstructListButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;SameSystemListButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;DesertCheckBox.ZOrder" xml:space="preserve">
@@ -332,8 +338,8 @@
   <data name="&gt;&gt;toolStripPT.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DeconstructListButton.Name" xml:space="preserve">
-    <value>DeconstructListButton</value>
+  <data name="&gt;&gt;SameSystemListButton.Name" xml:space="preserve">
+    <value>SameSystemListButton</value>
   </data>
   <data name="&gt;&gt;PrisonListButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -358,6 +364,9 @@
   </data>
   <data name="&gt;&gt;MountainsButton.ZOrder" xml:space="preserve">
     <value>39</value>
+  </data>
+  <data name="&gt;&gt;SameSystemListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
@@ -551,6 +560,9 @@
   <data name="&gt;&gt;EarthlikesButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="SameSystemListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
   <data name="ClearOutputButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 393</value>
   </data>
@@ -563,8 +575,8 @@
   <data name="&gt;&gt;BuildListButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;EarthlikeZoundsCheckBox.Name" xml:space="preserve">
-    <value>EarthlikeZoundsCheckBox</value>
+  <data name="&gt;&gt;DesertCheckBox.Name" xml:space="preserve">
+    <value>DesertCheckBox</value>
   </data>
   <data name="&gt;&gt;checkBox10.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -584,7 +596,7 @@
   <data name="EarthsButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="DeconstructListButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SameSystemListButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>243, 334</value>
   </data>
   <data name="&gt;&gt;checkBox9.ZOrder" xml:space="preserve">
@@ -644,8 +656,8 @@
   <data name="SocialismListButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>243, 247</value>
   </data>
-  <data name="MountainZoundsCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 155</value>
+  <data name="&gt;&gt;numberTextBox.ZOrder" xml:space="preserve">
+    <value>34</value>
   </data>
   <data name="DemocracyListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -659,8 +671,8 @@
   <data name="&gt;&gt;DesertsButton.ZOrder" xml:space="preserve">
     <value>42</value>
   </data>
-  <data name="EarthlikeZoundsCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+  <data name="&gt;&gt;SameSystemListButton.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="&gt;&gt;NeedsDefensesButton.ZOrder" xml:space="preserve">
     <value>33</value>
@@ -671,8 +683,8 @@
   <data name="&gt;&gt;ArcticsCheckBox.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="&gt;&gt;numberTextBox.ZOrder" xml:space="preserve">
-    <value>34</value>
+  <data name="&gt;&gt;GreenhousesCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;RockiesCheckBox.Name" xml:space="preserve">
     <value>RockiesCheckBox</value>
@@ -820,6 +832,9 @@
   </data>
   <data name="GreenhousesCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>508, 102</value>
+  </data>
+  <data name="&gt;&gt;SameSystemListButton.Name" xml:space="preserve">
+    <value>SameSystemListButton</value>
   </data>
   <data name="&gt;&gt;NonArcticZoundsCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1974,6 +1989,9 @@
   <data name="&gt;&gt;checkBox7.Name" xml:space="preserve">
     <value>checkBox7</value>
   </data>
+  <data name="EarthlikeZoundsCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
   <data name="ArcticsButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 72</value>
   </data>
@@ -2033,9 +2051,6 @@
   </data>
   <data name="&gt;&gt;checkBox12.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;DesertCheckBox.Name" xml:space="preserve">
-    <value>DesertCheckBox</value>
   </data>
   <data name="checkBox13.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 155</value>
@@ -2178,7 +2193,7 @@
   <data name="&gt;&gt;EarthlikesButton.Name" xml:space="preserve">
     <value>EarthlikesButton</value>
   </data>
-  <data name="&gt;&gt;DeconstructListButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SameSystemListButton.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
   <data name="VolcanicsCheckBox.TabIndex" type="System.Int32, mscorlib">
@@ -2196,7 +2211,7 @@
   <data name="&gt;&gt;toolStripSeparator.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DeconstructListButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SameSystemListButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox4.Parent" xml:space="preserve">
@@ -2207,6 +2222,9 @@
   </data>
   <data name="&gt;&gt;DemocracyListButton.ZOrder" xml:space="preserve">
     <value>26</value>
+  </data>
+  <data name="&gt;&gt;SameSystemListButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;MountainZoundsCheckBox.Name" xml:space="preserve">
     <value>MountainZoundsCheckBox</value>
@@ -2264,9 +2282,6 @@
   </data>
   <data name="&gt;&gt;RockyZoundsCheckBox.Name" xml:space="preserve">
     <value>RockyZoundsCheckBox</value>
-  </data>
-  <data name="&gt;&gt;GreenhousesCheckBox.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="&gt;&gt;DesertsCheckBox.Name" xml:space="preserve">
     <value>DesertsCheckBox</value>
@@ -2408,6 +2423,9 @@
   </data>
   <data name="ParadisesButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
+  </data>
+  <data name="SameSystemListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 380</value>
   </data>
   <data name="&gt;&gt;GrowingButton.Parent" xml:space="preserve">
     <value>$this</value>
