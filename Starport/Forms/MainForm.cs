@@ -403,6 +403,13 @@ namespace StarportExcel
                     temp++;
                 }
             }
+
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets are growing, thus can't be sorted", "Error");
+                return;
+            }
+
             //Console.WriteLine(temp);
             string[] planets = new string[temp];
 
@@ -445,7 +452,11 @@ namespace StarportExcel
                     temp++;
                 }
             }
-
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets are growing, thus can't be sorted", "Error");
+                return;
+            }
             string[] planets = new string[temp];
 
             for (int i = 0; i < planets.Length; i++) //establish teh array
@@ -486,6 +497,11 @@ namespace StarportExcel
                 {
                     temp++;
                 }
+            }
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets need defenses, thus can't be sorted", "Error");
+                return;
             }
             //Console.WriteLine(temp);
             string[] planets = new string[temp];
@@ -532,7 +548,11 @@ namespace StarportExcel
                     temp++;
                 }
             }
-
+            if(temp == 0)
+            {
+                MessageBox.Show("No Planets need defenses, thus can't be sorted", "Error");
+                return;
+            }
             string[] planets = new string[temp];
 
             for (int i = 0; i < planets.Length; i++) //establish teh array
