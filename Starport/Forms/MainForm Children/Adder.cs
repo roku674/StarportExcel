@@ -270,10 +270,16 @@ namespace StarportExcel
                     }
                     else if (i == 20)
                     {
-                        string[] temp = line.Split(':');
-                        //temp[1] = RemoveSpaces(temp[1]);
-                        building = temp[1];
-                        Console.WriteLine(temp[1]);
+
+                        for (int j = 0; j < line.Length; j++)
+                        {
+                            if (line[j].Equals(':'))
+                            {
+                                line = line.Substring(j + 7); //takes everything after the colon
+                            }
+                        }
+                        building = line;
+                        Console.WriteLine(building);
                     }
                     else if (i == 30)
                     {
