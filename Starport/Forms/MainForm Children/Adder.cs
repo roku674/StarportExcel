@@ -172,13 +172,11 @@ namespace StarportExcel
                         string[] temp = line.Split('(');
                         pollution = temp[0];
 
-                        if (temp.Length > 1)
+                        if (temp.Length > 2)
                         {
                             string trim = RemoveParenthesisColonComma(temp[1]);
                             disastas = int.Parse(trim);
                             pollutionRate = temp[2];
-
-
                         }
                         else { 
                             pollutionRate = temp[1];

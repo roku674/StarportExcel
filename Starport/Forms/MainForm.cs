@@ -994,7 +994,7 @@ namespace StarportExcel
         public static string RemoveSpaces(string append)
         {
             //append.TrimStart();
-            //append.Trim();
+            append.Trim();
             append = Regex.Replace(append, " ", "");
             return append;
         }
