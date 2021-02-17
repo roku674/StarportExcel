@@ -27,11 +27,15 @@ Par == Paradises
 Roc == Rockies
 Vol == Volcanics
 
+Return Planet button. In here you can put a number in the box or put coordinates in the box (it accepts brackets because it converts it parenthesis) Hitting the same system lsit is going to output all of it to output.txt or whatever you assigend it to .
+
+Edit Planet Info is where you can copy the info from holdings into and put it in there. It finds builds for you and tells you if they're build worthy and generally is just for filling out all teh colony information.
+
 
 Z == Zounds | Z Must be First
 D == Double Dome | Must be After Z
-G == Growing | R occupies the same space so cant be both
-R == Research | G occupies the same space so can't be both
+G == Growing | R occupies the same space so cant be both Must be after Z
+R == Research | G occupies the same space so can't be both Must be After Z
 N == Needs Defense | Must be After G/R
 I == Invaded | Must be Last
 
