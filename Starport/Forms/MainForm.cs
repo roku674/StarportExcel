@@ -95,7 +95,7 @@ namespace StarportExcel
             double deserts = excel.ReadCellDouble(4, 2);
 
             double earthsZ = excel.ReadCellDouble(5, 3);
-            double earths = excel.ReadCellDouble(5, 2);
+            double earthlikes = excel.ReadCellDouble(5, 2);
 
             double greenhousesZ = excel.ReadCellDouble(6, 3);
             double greenhouses = excel.ReadCellDouble(6, 2);
@@ -122,7 +122,7 @@ namespace StarportExcel
 
             itsMyWindowTextBox.Text = "Arc " + arcticsZ + "/" + arctics +
                 "|~{yellow}~Des " + desertsZ + "/" + deserts +
-                "|~{green}~Earth " + earthsZ + "/" + earths +
+                "|~{green}~Earth " + earthsZ + "/" + earthlikes +
                 "|~{orange}~Green " + greenhousesZ + "/" + greenhouses +
                 "|~{purple}~Mount " + mountainsZ + "/" + mountains +
                 "|~{blue}~Oce " + oceansZ + "/" + oceans +
@@ -254,7 +254,7 @@ namespace StarportExcel
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                             }
                             else if (k == 4) {
-                                string formula = "=Earths!C" + num;
+                                string formula = "=Earthlikes!C" + num;
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                             }
                             else if (k == 5) {
@@ -783,7 +783,7 @@ namespace StarportExcel
                         int num = int.Parse(s);
                         num++;
 
-                        returnString = "=Earths!C" + num;
+                        returnString = "=Earthlikes!C" + num;
 
                     }
                     else if (planetName[i + 6] == '.')
@@ -796,7 +796,7 @@ namespace StarportExcel
                         int num = int.Parse(s);
                         num++;
 
-                        returnString = "=Earths!C" + num;
+                        returnString = "=Earthlikes!C" + num;
                     }
                 }
                 else if (i + 2 < planetName.Length && planetName[i].Equals('G') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('e'))

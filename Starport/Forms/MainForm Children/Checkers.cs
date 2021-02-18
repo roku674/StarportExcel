@@ -118,7 +118,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Earths!C" + num;
+                                                next = "=Earthlikes!C" + num;
 
                                             }
                                             else if (next[i + 6] == '.')
@@ -131,7 +131,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Earths!C" + num;
+                                                next = "=Earthlikes!C" + num;
                                             }
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('G') && next[i + 1].Equals('r') && next[i + 2].Equals('e'))
@@ -706,7 +706,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Earths!C" + num;
+                                                next = "=Earthlikes!C" + num;
 
                                             }
                                             else if (next[i + 6] == '.')
@@ -719,7 +719,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Earths!C" + num;
+                                                next = "=Earthlikes!C" + num;
                                             }
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('G') && next[i + 1].Equals('r') && next[i + 2].Equals('e'))
