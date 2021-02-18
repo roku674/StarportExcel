@@ -33,7 +33,7 @@ namespace StarportExcel
 		{
 			i++;
 			j++;
-			if (ws.Cells[i, j].Value2 != null) return ws.Cells[i, j].Value2;
+			if (ws.Cells[i, j].Value != null) return ws.Cells[i, j].Value;
 
 			else return "";
 		}
@@ -47,7 +47,7 @@ namespace StarportExcel
 		{
 			i++;
 			j++;
-			if (ws.Cells[i, j].Value2 != null) return ws.Cells[i, j].Value2;
+			if (ws.Cells[i, j].Value != null) return ws.Cells[i, j].Value;
 
 			else return 0;
 		}
@@ -55,12 +55,12 @@ namespace StarportExcel
         {
 			i++;
 			j++;
-			if (ws.Cells[i, j].Value2 == null)
+			if (ws.Cells[i, j].Value == null)
 			{
 				return false;
 			}
 
-			if (ws.Cells[i, j].Value2 == true)
+			if (ws.Cells[i, j].Value == true)
 			{
 				return true;
 			}
@@ -81,7 +81,7 @@ namespace StarportExcel
 		{
 			i++;
 			j++;
-			ws.Cells[i, j].Value2 = s;
+			ws.Cells[i, j].Value = s;
 		}
 
 		public void Save()

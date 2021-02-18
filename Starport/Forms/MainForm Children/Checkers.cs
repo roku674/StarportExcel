@@ -172,7 +172,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Mountains!C" + num;
+                                                next = "=Mountainous!C" + num;
                                             }
                                             else if (next[i + 6] == '.')
                                             {
@@ -184,7 +184,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Mountains!C" + num;
+                                                next = "=Mountainous!C" + num;
                                             }
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('O') && next[i + 1].Equals('c') && next[i + 2].Equals('e'))
@@ -531,7 +531,7 @@ namespace StarportExcel
                     discoveries[i + 2].Equals('i') &&
                     discoveries[i + 3].Equals('l') &&
                     (discoveries[i + 13].Equals('3') || discoveries[i + 13].Equals('4') || discoveries[i + 13].Equals('5')) &&
-                    (planetType.Equals("volcanic") || planetType.Equals("rocky") || planetType.Equals("mountainous"))
+                    (planetType.Equals("arctic") || planetType.Equals("greenhouse") || planetType.Equals("mountainous") || planetType.Equals("rocky") || planetType.Equals("volcanic"))
                     )
                 {
                     Console.WriteLine("Drilling Volc/Rocky/Mountain");
@@ -543,7 +543,7 @@ namespace StarportExcel
                     discoveries[i + 2].Equals('t') &&
                     discoveries[i + 3].Equals('i') &&
                     (discoveries[i + 18].Equals('4') || discoveries[i + 18].Equals('5')) &&
-                    (planetType.Equals("volcanic") || planetType.Equals("rocky") || planetType.Equals("mountainous"))
+                    (planetType.Equals("arctic") || planetType.Equals("greenhouse") || planetType.Equals("mountainous") || planetType.Equals("rocky") || planetType.Equals("volcanic"))
                     )
                 {
                     Console.WriteLine("Medicine Volc/Rocky/Mountain");
@@ -760,7 +760,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Mountains!C" + num;
+                                                next = "=Mountainous!C" + num;
                                             }
                                             else if (next[i + 6] == '.')
                                             {
@@ -772,7 +772,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Mountains!C" + num;
+                                                next = "=Mountainous!C" + num;
                                             }
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('O') && next[i + 1].Equals('c') && next[i + 2].Equals('e'))

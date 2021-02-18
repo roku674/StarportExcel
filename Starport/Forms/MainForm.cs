@@ -239,11 +239,12 @@ namespace StarportExcel
                         temp = j;
 
                         string planetName = excel.ReadCellString(j, 2); //read the name of the planet
+                        //Console.WriteLine(planetName);
 
                         int num = j + 1;
                         //if statement by planet type
                             if (k == 2)
-                            {                               
+                            { 
                                 string formula = "=Arctics!C" + num;
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                                 //Console.WriteLine(planetName + " found");                                        
@@ -261,7 +262,7 @@ namespace StarportExcel
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                             }
                             else if (k == 6) {
-                                string formula = "=Mountains!C" + num;
+                                string formula = "=Mountainous!C" + num;
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                             }
                             else if (k == 7) {
@@ -836,7 +837,7 @@ namespace StarportExcel
                         int num = int.Parse(s);
                         num++;
 
-                        returnString = "=Mountains!C" + num;
+                        returnString = "=Mountainous!C" + num;
                     }
                     else if (planetName[i + 6] == '.')
                     {
@@ -848,7 +849,7 @@ namespace StarportExcel
                         int num = int.Parse(s);
                         num++;
 
-                        returnString = "=Mountains!C" + num;
+                        returnString = "=Mountainous!C" + num;
                     }
                 }
                 else if (i + 2 < planetName.Length && planetName[i].Equals('O') && planetName[i + 1].Equals('c') && planetName[i + 2].Equals('e'))

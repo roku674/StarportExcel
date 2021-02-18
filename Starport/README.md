@@ -21,7 +21,7 @@ Arc == Arctics
 Des == Deserts (not desmond)
 Ear == Earthlikes
 Gre == Greenhouses
-Mou == Mountains
+Mou == Mountainous
 Oce == Oceanics
 Par == Paradises
 Roc == Rockies

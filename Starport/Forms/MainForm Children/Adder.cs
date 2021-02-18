@@ -65,17 +65,7 @@ namespace StarportExcel
             //stringBuilder.AppendLine("");
             StringReader reader = new StringReader(info);
             string line;
-            //string firstLine = reader.ReadLine();
-            
-
-            if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null))
-            {
-                excel.WriteToCell(planetNum, 1, planetNum.ToString()); //updates the number next to the cell
-                excel.WriteToCell(planetNum, 2, colonyName);
-
-                excel.WriteToCell(1, 8, planetNum.ToString()); //updates the planet number
-                MessageBox.Show(colonyName + " added to row " + planetNum + " sheet " + sheet, "Completed");
-            }           
+            //string firstLine = reader.ReadLine();                        
 
             for (int i = 0; i < info.Length; i++)
             {
@@ -410,7 +400,14 @@ namespace StarportExcel
                 }                
             }
             Console.Write(discovered);
-           
+            if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null))
+            {
+                excel.WriteToCell(planetNum, 1, planetNum.ToString()); //updates the number next to the cell
+                excel.WriteToCell(planetNum, 2, colonyName);
+
+                excel.WriteToCell(1, 8, planetNum.ToString()); //updates the planet number
+                MessageBox.Show(colonyName + " added to row " + planetNum + " sheet " + sheet, "Completed");
+            }
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
             excel.WriteToCell(planetNum, 12, morale.ToString());
@@ -587,8 +584,8 @@ namespace StarportExcel
         {
             //column 11 is growing on totals
             for (int i = 2; i < Program.GetMax(); i++)
-            {
-                string box = totalsSheet.ReadCellString(i, 11); // column L
+            {               
+                var box = totalsSheet.ReadCellString(i, 11); // column L
                 if (box == "")
                 {
                     totalsSheet.WriteToCell(i, 11, colony);
