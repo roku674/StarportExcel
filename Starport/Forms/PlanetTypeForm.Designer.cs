@@ -9,7 +9,7 @@ namespace StarportExcel
         private Button DesertsButton;
         private Button EarthlikesButton;
         private Button GreenhousesButton;
-        private Button MountainsButton;
+        private Button MountainousButton;
         private Button OceanicsButton;
         private Button ParadisesButton;
         private Button RockiesButton;
@@ -65,7 +65,7 @@ namespace StarportExcel
             this.DesertsButton = new System.Windows.Forms.Button();
             this.EarthlikesButton = new System.Windows.Forms.Button();
             this.GreenhousesButton = new System.Windows.Forms.Button();
-            this.MountainsButton = new System.Windows.Forms.Button();
+            this.MountainousButton = new System.Windows.Forms.Button();
             this.OceanicsButton = new System.Windows.Forms.Button();
             this.ParadisesButton = new System.Windows.Forms.Button();
             this.RockiesButton = new System.Windows.Forms.Button();
@@ -109,7 +109,7 @@ namespace StarportExcel
             this.RockyZoundsCheckBox = new System.Windows.Forms.CheckBox();
             this.OceanicsCheckBox = new System.Windows.Forms.CheckBox();
             this.OceanicZoundsCheckBox = new System.Windows.Forms.CheckBox();
-            this.MountainsCheckBox = new System.Windows.Forms.CheckBox();
+            this.MountainousCheckBox = new System.Windows.Forms.CheckBox();
             this.MountainZoundsCheckBox = new System.Windows.Forms.CheckBox();
             this.toolStripPT.SuspendLayout();
             this.SuspendLayout();
@@ -142,12 +142,12 @@ namespace StarportExcel
             this.GreenhousesButton.UseVisualStyleBackColor = true;
             this.GreenhousesButton.Click += new System.EventHandler(this.GreenhousesButton_Click);
             // 
-            // MountainsButton
+            // MountainousButton
             // 
-            resources.ApplyResources(this.MountainsButton, "MountainsButton");
-            this.MountainsButton.Name = "MountainsButton";
-            this.MountainsButton.UseVisualStyleBackColor = true;
-            this.MountainsButton.Click += new System.EventHandler(this.MountainsButton_Click);
+            resources.ApplyResources(this.MountainousButton, "MountainousButton");
+            this.MountainousButton.Name = "MountainousButton";
+            this.MountainousButton.UseVisualStyleBackColor = true;
+            this.MountainousButton.Click += new System.EventHandler(this.MountainousButton_Click);
             // 
             // OceanicsButton
             // 
@@ -436,11 +436,11 @@ namespace StarportExcel
             this.OceanicZoundsCheckBox.Name = "OceanicZoundsCheckBox";
             this.OceanicZoundsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // MountainsCheckBox
+            // MountainousCheckBox
             // 
-            resources.ApplyResources(this.MountainsCheckBox, "MountainsCheckBox");
-            this.MountainsCheckBox.Name = "MountainsCheckBox";
-            this.MountainsCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.MountainousCheckBox, "MountainousCheckBox");
+            this.MountainousCheckBox.Name = "MountainousCheckBox";
+            this.MountainousCheckBox.UseVisualStyleBackColor = true;
             // 
             // MountainZoundsCheckBox
             // 
@@ -458,7 +458,7 @@ namespace StarportExcel
             this.Controls.Add(this.RockyZoundsCheckBox);
             this.Controls.Add(this.OceanicsCheckBox);
             this.Controls.Add(this.OceanicZoundsCheckBox);
-            this.Controls.Add(this.MountainsCheckBox);
+            this.Controls.Add(this.MountainousCheckBox);
             this.Controls.Add(this.MountainZoundsCheckBox);
             this.Controls.Add(this.GreenhousesCheckBox);
             this.Controls.Add(this.GreenhouseZoundsCheckBox);
@@ -491,7 +491,7 @@ namespace StarportExcel
             this.Controls.Add(this.RockiesButton);
             this.Controls.Add(this.ParadisesButton);
             this.Controls.Add(this.OceanicsButton);
-            this.Controls.Add(this.MountainsButton);
+            this.Controls.Add(this.MountainousButton);
             this.Controls.Add(this.GreenhousesButton);
             this.Controls.Add(this.EarthlikesButton);
             this.Controls.Add(this.DesertsButton);
@@ -521,7 +521,7 @@ namespace StarportExcel
         private CheckBox RockyZoundsCheckBox;
         private CheckBox OceanicsCheckBox;
         private CheckBox OceanicZoundsCheckBox;
-        private CheckBox MountainsCheckBox;
+        private CheckBox MountainousCheckBox;
         private CheckBox MountainZoundsCheckBox;
     }//class
 }//namespace

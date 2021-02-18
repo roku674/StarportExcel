@@ -377,7 +377,7 @@ namespace StarportExcel
             }
         }
 
-        private void MountainsButton_Click(object sender, EventArgs e)
+        private void MountainousButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
 
@@ -389,12 +389,12 @@ namespace StarportExcel
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
             }
-            else if (MountainZoundsCheckBox.Checked && MountainsCheckBox.Checked) //both
+            else if (MountainZoundsCheckBox.Checked && MountainousCheckBox.Checked) //both
             {
                 Excel excel = OpenFileAt(6);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
 
-                output.WriteLine("Mountains: ");
+                output.WriteLine("Mountainous: ");
 
                 for (int i = 1; i <= planet; i++)
                 {
@@ -402,9 +402,9 @@ namespace StarportExcel
                 }
                 output.Flush();
                 excel.Close();
-                MessageBox.Show("Mountains added to " + outputPath, "Completed");
+                MessageBox.Show("Mountainous added to " + outputPath, "Completed");
             }
-            else if (MountainZoundsCheckBox.Checked && !MountainsCheckBox.Checked) //Mountain Zounds only
+            else if (MountainZoundsCheckBox.Checked && !MountainousCheckBox.Checked) //Mountain Zounds only
             {
                 Excel excel = OpenFileAt(6);
                 int planet = (int)excel.ReadCellDouble(2, 8); //amount of zounds
@@ -417,9 +417,9 @@ namespace StarportExcel
                 }
                 output.Flush();
                 excel.Close();
-                MessageBox.Show("Mountains Zounds added to " + outputPath, "Completed");
+                MessageBox.Show("Mountainous Zounds added to " + outputPath, "Completed");
             }
-            else if (!MountainZoundsCheckBox.Checked && MountainsCheckBox.Checked) //normies only
+            else if (!MountainZoundsCheckBox.Checked && MountainousCheckBox.Checked) //normies only
             {
                 Excel excel = OpenFileAt(6);
                 int planet = (int)excel.ReadCellDouble(1, 8); //amount of planets
@@ -446,7 +446,7 @@ namespace StarportExcel
                 }
                 output.Flush();
                 excel.Close();
-                MessageBox.Show("Mountains without Zounds added to " + outputPath, "Completed");
+                MessageBox.Show("Mountainous without Zounds added to " + outputPath, "Completed");
             }
             else
             {
@@ -718,20 +718,22 @@ namespace StarportExcel
         {
             output.Write(excel.ReadCellString(planetNum, 2) + " | "); //column C
             //Console.WriteLine(excel.ReadCellString(planetNum, 2));
-            for(int i = 10; i <= 35; i++)
-            {
-                double temp = excel.ReadCellDouble(planetNum, i);
+            for(int i = 10; i <= 36; i++)
+            {              
                 //Console.WriteLine(i);
-                if (i == 11 || i == 12 || (i >= 14 && i <= 16) || (i >= 22 && i <=34))
+                if (i == 11 || i == 12 || (i >= 14 && i <= 17) || (i >= 23 && i <=35))
                 {
+                    var temp = excel.ReadCellDouble(planetNum, i);
                     output.Write(temp + " | ");
                 }
-                else if (i == 35)
+                else if (i == 36)
                 {
+                    string temp = excel.ReadCellString(planetNum, i);
                     output.Write(temp);
                 }
                 else
                 {
+                    string temp = excel.ReadCellString(planetNum, i);
                     output.Write(temp + " | ");
                 }                                
             }
@@ -752,6 +754,30 @@ namespace StarportExcel
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
                     if (excel.ReadCellString(planet, column).Equals(find))
+                    {
+                        WriteAllPlanetInfo(planet, excel);
+                    }
+                }
+
+                excel.Close();
+            }
+        }
+        /// <summary>
+        /// Finds and outputs the planet info if the integer matches
+        /// </summary>
+        /// <param name="find"></param>
+        /// <param name="column"></param>
+        private void WriteAllPlanetInfoIf(int find, int column)
+        {
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    int temp = (int)excel.ReadCellDouble(planet, column); 
+                    if (temp.Equals(find))
                     {
                         WriteAllPlanetInfo(planet, excel);
                     }

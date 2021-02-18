@@ -148,14 +148,14 @@
   <data name="GreenhousesButton.Text" xml:space="preserve">
     <value>Greenhouses</value>
   </data>
-  <data name="MountainsButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="MountainousButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 125</value>
   </data>
-  <data name="MountainsButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MountainousButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 24</value>
   </data>
-  <data name="MountainsButton.Text" xml:space="preserve">
-    <value>Mountains</value>
+  <data name="MountainousButton.Text" xml:space="preserve">
+    <value>Mountainous</value>
   </data>
   <data name="OceanicsButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 125</value>
@@ -655,16 +655,16 @@
   <data name="OceanicZoundsCheckBox.Text" xml:space="preserve">
     <value>Zounds</value>
   </data>
-  <data name="MountainsCheckBox.AutoSize" type="System.Boolean, mscorlib">
+  <data name="MountainousCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="MountainsCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="MountainousCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="MountainsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MountainousCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 17</value>
   </data>
-  <data name="MountainsCheckBox.Text" xml:space="preserve">
+  <data name="MountainousCheckBox.Text" xml:space="preserve">
     <value>Normal</value>
   </data>
   <data name="MountainZoundsCheckBox.AutoSize" type="System.Boolean, mscorlib">
