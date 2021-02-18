@@ -4,23 +4,40 @@ namespace StarportExcel
 {
     partial class MainForm 
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        private System.Windows.Forms.Button CreateQuoteButton;
+        private System.Windows.Forms.Button FindGrowingButton;
+        private System.Windows.Forms.Button CheckGrowButton;
+        private System.Windows.Forms.Button FindZoundsButton;
+        private System.Windows.Forms.Button FindTotalsButton;
+        private System.Windows.Forms.Button FindNeedsDefenseButton;
+        private System.Windows.Forms.Button CheckParenthesisButton;
+        private System.Windows.Forms.TextBox PlanetOrganizerTextBox;
+        private System.Windows.Forms.TextBox itsMyWindowTextBox;
+        private System.Windows.Forms.Button ClearZoundsButton;
+        private System.Windows.Forms.Button ReplacePlanetButton;
+        private System.Windows.Forms.Button ReturnPlanetButton;
+        private System.Windows.Forms.Button ClearNeedsDefenseButton;
+        private System.Windows.Forms.ToolStrip toolStripMain;
+        private System.Windows.Forms.ToolStripButton OpenToolStripButtonMain;
+        private System.Windows.Forms.ToolStripButton SaveToolStripButtonMain;
+        private System.Windows.Forms.ToolStripButton PrintToolStripButtonMain;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripButton CopyToolStripButtonMain;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparatorMain;
+        private System.Windows.Forms.ToolStripButton HelpMeNiggaDamnToolStripButtonMain;
+        private System.Windows.Forms.Button ClearGrowButton;
+        private System.Windows.Forms.Button CheckNDButton;
+        private System.Windows.Forms.Button SortDefensesByXButton;
+        private System.Windows.Forms.Button SortGrowingByXButton;
+        private System.Windows.Forms.Button FindBuildsButton;
+        private System.Windows.Forms.Button FindDeconstructButton;
+        private System.Windows.Forms.Button FindColonialInfoButton;
+        private System.Windows.Forms.PictureBox pictureBoxMain;
+        private System.Windows.Forms.Button FindDDButton;
+        private System.Windows.Forms.Button SortDefensesBySystemButton;
+        private System.Windows.Forms.Button EditRenameListButton;
+        private System.Windows.Forms.Button ClearRenameButton;
+        private System.Windows.Forms.Button SortGrowingBySystemButton;
 
         #region Windows Form Designer generated code
 
@@ -62,9 +79,12 @@ namespace StarportExcel
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.FindDDButton = new System.Windows.Forms.Button();
             this.SortDefensesBySystemButton = new System.Windows.Forms.Button();
-            this.AddToRenameListButton = new System.Windows.Forms.Button();
+            this.EditRenameListButton = new System.Windows.Forms.Button();
             this.ClearRenameButton = new System.Windows.Forms.Button();
             this.SortGrowingBySystemButton = new System.Windows.Forms.Button();
+            this.EditInvasionListButton = new System.Windows.Forms.Button();
+            this.EditPlanetInfoButton = new System.Windows.Forms.Button();
+            this.NamePlanetButton = new System.Windows.Forms.Button();
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -121,6 +141,7 @@ namespace StarportExcel
             // PlanetOrganizerTextBox
             // 
             resources.ApplyResources(this.PlanetOrganizerTextBox, "PlanetOrganizerTextBox");
+            this.PlanetOrganizerTextBox.AllowDrop = true;
             this.PlanetOrganizerTextBox.Name = "PlanetOrganizerTextBox";
             // 
             // itsMyWindowTextBox
@@ -252,6 +273,7 @@ namespace StarportExcel
             resources.ApplyResources(this.FindDeconstructButton, "FindDeconstructButton");
             this.FindDeconstructButton.Name = "FindDeconstructButton";
             this.FindDeconstructButton.UseVisualStyleBackColor = true;
+            this.FindDeconstructButton.Click += new System.EventHandler(this.FindDeconstructButton_Click);
             // 
             // FindColonialInfoButton
             // 
@@ -280,12 +302,12 @@ namespace StarportExcel
             this.SortDefensesBySystemButton.UseVisualStyleBackColor = true;
             this.SortDefensesBySystemButton.Click += new System.EventHandler(this.SortDefensesBySystemButton_Click);
             // 
-            // AddToRenameListButton
+            // EditRenameListButton
             // 
-            resources.ApplyResources(this.AddToRenameListButton, "AddToRenameListButton");
-            this.AddToRenameListButton.Name = "AddToRenameListButton";
-            this.AddToRenameListButton.UseVisualStyleBackColor = true;
-            this.AddToRenameListButton.Click += new System.EventHandler(this.AddToRenameListButton_Click);
+            resources.ApplyResources(this.EditRenameListButton, "EditRenameListButton");
+            this.EditRenameListButton.Name = "EditRenameListButton";
+            this.EditRenameListButton.UseVisualStyleBackColor = true;
+            this.EditRenameListButton.Click += new System.EventHandler(this.EditRenameListButton_Click);
             // 
             // ClearRenameButton
             // 
@@ -301,12 +323,36 @@ namespace StarportExcel
             this.SortGrowingBySystemButton.UseVisualStyleBackColor = true;
             this.SortGrowingBySystemButton.Click += new System.EventHandler(this.SortGrowingBySystemButton_Click);
             // 
+            // EditInvasionListButton
+            // 
+            resources.ApplyResources(this.EditInvasionListButton, "EditInvasionListButton");
+            this.EditInvasionListButton.Name = "EditInvasionListButton";
+            this.EditInvasionListButton.UseVisualStyleBackColor = true;
+            this.EditInvasionListButton.Click += new System.EventHandler(this.EditInvasionListButton_Click);
+            // 
+            // EditPlanetInfoButton
+            // 
+            resources.ApplyResources(this.EditPlanetInfoButton, "EditPlanetInfoButton");
+            this.EditPlanetInfoButton.Name = "EditPlanetInfoButton";
+            this.EditPlanetInfoButton.UseVisualStyleBackColor = true;
+            this.EditPlanetInfoButton.Click += new System.EventHandler(this.EditPlanetInfoButton_Click);
+            // 
+            // NamePlanetButton
+            // 
+            resources.ApplyResources(this.NamePlanetButton, "NamePlanetButton");
+            this.NamePlanetButton.Name = "NamePlanetButton";
+            this.NamePlanetButton.UseVisualStyleBackColor = true;
+            this.NamePlanetButton.Click += new System.EventHandler(this.NamePlanetButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.NamePlanetButton);
+            this.Controls.Add(this.EditPlanetInfoButton);
+            this.Controls.Add(this.EditInvasionListButton);
             this.Controls.Add(this.SortGrowingBySystemButton);
             this.Controls.Add(this.ClearRenameButton);
-            this.Controls.Add(this.AddToRenameListButton);
+            this.Controls.Add(this.EditRenameListButton);
             this.Controls.Add(this.SortDefensesBySystemButton);
             this.Controls.Add(this.FindDDButton);
             this.Controls.Add(this.FindColonialInfoButton);
@@ -346,41 +392,27 @@ namespace StarportExcel
         }
 
         #endregion
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-        private System.Windows.Forms.Button CreateQuoteButton;
-        private System.Windows.Forms.Button FindGrowingButton;
-        private System.Windows.Forms.Button CheckGrowButton;
-        private System.Windows.Forms.Button FindZoundsButton;
-        private System.Windows.Forms.Button FindTotalsButton;
-        private System.Windows.Forms.Button FindNeedsDefenseButton;
-        private System.Windows.Forms.Button CheckParenthesisButton;
-        private System.Windows.Forms.TextBox PlanetOrganizerTextBox;
-        private System.Windows.Forms.TextBox itsMyWindowTextBox;
-        private System.Windows.Forms.Button ClearZoundsButton;
-        private System.Windows.Forms.Button ReplacePlanetButton;
-        private System.Windows.Forms.Button ReturnPlanetButton;
-        private System.Windows.Forms.Button ClearNeedsDefenseButton;
-        private System.Windows.Forms.ToolStrip toolStripMain;
-        private System.Windows.Forms.ToolStripButton OpenToolStripButtonMain;
-        private System.Windows.Forms.ToolStripButton SaveToolStripButtonMain;
-        private System.Windows.Forms.ToolStripButton PrintToolStripButtonMain;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripButton CopyToolStripButtonMain;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparatorMain;
-        private System.Windows.Forms.ToolStripButton HelpMeNiggaDamnToolStripButtonMain;
-        private System.Windows.Forms.Button ClearGrowButton;
-        private System.Windows.Forms.Button CheckNDButton;
-        private System.Windows.Forms.Button SortDefensesByXButton;
-        private System.Windows.Forms.Button SortGrowingByXButton;
-        private System.Windows.Forms.Button FindBuildsButton;
-        private System.Windows.Forms.Button FindDeconstructButton;
-        private System.Windows.Forms.Button FindColonialInfoButton;
-        private System.Windows.Forms.PictureBox pictureBoxMain;
-        private System.Windows.Forms.Button FindDDButton;
-        private System.Windows.Forms.Button SortDefensesBySystemButton;
-        private System.Windows.Forms.Button AddToRenameListButton;
-        private System.Windows.Forms.Button ClearRenameButton;
-        private System.Windows.Forms.Button SortGrowingBySystemButton;
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private System.Windows.Forms.Button EditInvasionListButton;
+        private System.Windows.Forms.Button EditPlanetInfoButton;
+        private System.Windows.Forms.Button NamePlanetButton;
     }
 }
 

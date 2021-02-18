@@ -7,13 +7,38 @@ namespace StarportExcel
     {
         private Button ArcticsButton;
         private Button DesertsButton;
-        private Button EarthsButton;
+        private Button EarthlikesButton;
         private Button GreenhousesButton;
-        private Button MountainsButton;
+        private Button MountainousButton;
         private Button OceanicsButton;
         private Button ParadisesButton;
         private Button RockiesButton;
         private Button VolcanicsButton;
+        private System.Windows.Forms.TextBox numberTextBox;
+        private Button NeedsDefensesButton;
+        private Button GrowingButton;
+        private Button ClearOutputButton;
+        private Button LineBreakButton;
+        private ToolStrip toolStripPT;
+        private ToolStripButton OpenToolStripButtonPT;
+        private ToolStripButton SaveToolStripButtonPT;
+        private ToolStripSeparator toolStripSeparator;
+        private ToolStripButton CopyToolStripButtonPT;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton HelpMeNiggaDamnToolStripButtonPT;
+        private Button DirectorshipListButton;
+        private Button PrisonListButton;
+        private Button SocialismListButton;
+        private Button DemocracyListButton;
+        private Button NukesListButton;
+        private Button CMinesListButton;
+        private Button SolarsListButton;
+        private Button LasersListButton;
+        private Button BuildListButton;
+        private Button SameSystemListButton;
+        private Button FindMoraleButton;
+        private Button RenameListsButton;
+        private Button DoubleDomeListButton;
 
         /// <summary>
         /// Required designer variable.
@@ -38,9 +63,9 @@ namespace StarportExcel
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanetTypeForm));
             this.ArcticsButton = new System.Windows.Forms.Button();
             this.DesertsButton = new System.Windows.Forms.Button();
-            this.EarthsButton = new System.Windows.Forms.Button();
+            this.EarthlikesButton = new System.Windows.Forms.Button();
             this.GreenhousesButton = new System.Windows.Forms.Button();
-            this.MountainsButton = new System.Windows.Forms.Button();
+            this.MountainousButton = new System.Windows.Forms.Button();
             this.OceanicsButton = new System.Windows.Forms.Button();
             this.ParadisesButton = new System.Windows.Forms.Button();
             this.RockiesButton = new System.Windows.Forms.Button();
@@ -66,10 +91,26 @@ namespace StarportExcel
             this.SolarsListButton = new System.Windows.Forms.Button();
             this.LasersListButton = new System.Windows.Forms.Button();
             this.BuildListButton = new System.Windows.Forms.Button();
-            this.DeconstructListButton = new System.Windows.Forms.Button();
+            this.SameSystemListButton = new System.Windows.Forms.Button();
             this.FindMoraleButton = new System.Windows.Forms.Button();
             this.RenameListsButton = new System.Windows.Forms.Button();
             this.DoubleDomeListButton = new System.Windows.Forms.Button();
+            this.ArcticZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.ArcticsCheckBox = new System.Windows.Forms.CheckBox();
+            this.DesertsCheckBox = new System.Windows.Forms.CheckBox();
+            this.DesertZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.GreenhousesCheckBox = new System.Windows.Forms.CheckBox();
+            this.GreenhouseZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.EarthlikesCheckBox = new System.Windows.Forms.CheckBox();
+            this.EarthlikeZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.VolcanicsCheckBox = new System.Windows.Forms.CheckBox();
+            this.VolcanicZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.RockiesCheckBox = new System.Windows.Forms.CheckBox();
+            this.RockyZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.OceanicsCheckBox = new System.Windows.Forms.CheckBox();
+            this.OceanicZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.MountainousCheckBox = new System.Windows.Forms.CheckBox();
+            this.MountainZoundsCheckBox = new System.Windows.Forms.CheckBox();
             this.toolStripPT.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,12 +128,12 @@ namespace StarportExcel
             this.DesertsButton.UseVisualStyleBackColor = true;
             this.DesertsButton.Click += new System.EventHandler(this.DesertsButton_Click);
             // 
-            // EarthsButton
+            // EarthlikesButton
             // 
-            resources.ApplyResources(this.EarthsButton, "EarthsButton");
-            this.EarthsButton.Name = "EarthsButton";
-            this.EarthsButton.UseVisualStyleBackColor = true;
-            this.EarthsButton.Click += new System.EventHandler(this.EarthsButton_Click);
+            resources.ApplyResources(this.EarthlikesButton, "EarthlikesButton");
+            this.EarthlikesButton.Name = "EarthlikesButton";
+            this.EarthlikesButton.UseVisualStyleBackColor = true;
+            this.EarthlikesButton.Click += new System.EventHandler(this.EarthlikesButton_Click);
             // 
             // GreenhousesButton
             // 
@@ -101,12 +142,12 @@ namespace StarportExcel
             this.GreenhousesButton.UseVisualStyleBackColor = true;
             this.GreenhousesButton.Click += new System.EventHandler(this.GreenhousesButton_Click);
             // 
-            // MountainsButton
+            // MountainousButton
             // 
-            resources.ApplyResources(this.MountainsButton, "MountainsButton");
-            this.MountainsButton.Name = "MountainsButton";
-            this.MountainsButton.UseVisualStyleBackColor = true;
-            this.MountainsButton.Click += new System.EventHandler(this.MountainsButton_Click);
+            resources.ApplyResources(this.MountainousButton, "MountainousButton");
+            this.MountainousButton.Name = "MountainousButton";
+            this.MountainousButton.UseVisualStyleBackColor = true;
+            this.MountainousButton.Click += new System.EventHandler(this.MountainousButton_Click);
             // 
             // OceanicsButton
             // 
@@ -139,6 +180,7 @@ namespace StarportExcel
             // numberTextBox
             // 
             resources.ApplyResources(this.numberTextBox, "numberTextBox");
+            this.numberTextBox.AllowDrop = true;
             this.numberTextBox.Name = "numberTextBox";
             // 
             // NeedsDefensesButton
@@ -224,30 +266,35 @@ namespace StarportExcel
             resources.ApplyResources(this.DirectorshipListButton, "DirectorshipListButton");
             this.DirectorshipListButton.Name = "DirectorshipListButton";
             this.DirectorshipListButton.UseVisualStyleBackColor = true;
+            this.DirectorshipListButton.Click += new System.EventHandler(this.DirectorshipListButton_Click);
             // 
             // PrisonListButton
             // 
             resources.ApplyResources(this.PrisonListButton, "PrisonListButton");
             this.PrisonListButton.Name = "PrisonListButton";
             this.PrisonListButton.UseVisualStyleBackColor = true;
+            this.PrisonListButton.Click += new System.EventHandler(this.PrisonListButton_Click);
             // 
             // SocialismListButton
             // 
             resources.ApplyResources(this.SocialismListButton, "SocialismListButton");
             this.SocialismListButton.Name = "SocialismListButton";
             this.SocialismListButton.UseVisualStyleBackColor = true;
+            this.SocialismListButton.Click += new System.EventHandler(this.SocialismListButton_Click);
             // 
             // DemocracyListButton
             // 
             resources.ApplyResources(this.DemocracyListButton, "DemocracyListButton");
             this.DemocracyListButton.Name = "DemocracyListButton";
             this.DemocracyListButton.UseVisualStyleBackColor = true;
+            this.DemocracyListButton.Click += new System.EventHandler(this.DemocracyListButton_Click);
             // 
             // NukesListButton
             // 
             resources.ApplyResources(this.NukesListButton, "NukesListButton");
             this.NukesListButton.Name = "NukesListButton";
             this.NukesListButton.UseVisualStyleBackColor = true;
+            this.NukesListButton.Click += new System.EventHandler(this.NukesListButton_Click);
             // 
             // CMinesListButton
             // 
@@ -261,30 +308,35 @@ namespace StarportExcel
             resources.ApplyResources(this.SolarsListButton, "SolarsListButton");
             this.SolarsListButton.Name = "SolarsListButton";
             this.SolarsListButton.UseVisualStyleBackColor = true;
+            this.SolarsListButton.Click += new System.EventHandler(this.SolarsListButton_Click);
             // 
             // LasersListButton
             // 
             resources.ApplyResources(this.LasersListButton, "LasersListButton");
             this.LasersListButton.Name = "LasersListButton";
             this.LasersListButton.UseVisualStyleBackColor = true;
+            this.LasersListButton.Click += new System.EventHandler(this.LasersListButton_Click);
             // 
             // BuildListButton
             // 
             resources.ApplyResources(this.BuildListButton, "BuildListButton");
             this.BuildListButton.Name = "BuildListButton";
             this.BuildListButton.UseVisualStyleBackColor = true;
+            this.BuildListButton.Click += new System.EventHandler(this.BuildListButton_Click);
             // 
-            // DeconstructListButton
+            // SameSystemListButton
             // 
-            resources.ApplyResources(this.DeconstructListButton, "DeconstructListButton");
-            this.DeconstructListButton.Name = "DeconstructListButton";
-            this.DeconstructListButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.SameSystemListButton, "SameSystemListButton");
+            this.SameSystemListButton.Name = "SameSystemListButton";
+            this.SameSystemListButton.UseVisualStyleBackColor = true;
+            this.SameSystemListButton.Click += new System.EventHandler(this.SameSystemListButton_Click);
             // 
             // FindMoraleButton
             // 
             resources.ApplyResources(this.FindMoraleButton, "FindMoraleButton");
             this.FindMoraleButton.Name = "FindMoraleButton";
             this.FindMoraleButton.UseVisualStyleBackColor = true;
+            this.FindMoraleButton.Click += new System.EventHandler(this.FindMoraleButton_Click);
             // 
             // RenameListsButton
             // 
@@ -300,14 +352,126 @@ namespace StarportExcel
             this.DoubleDomeListButton.UseVisualStyleBackColor = true;
             this.DoubleDomeListButton.Click += new System.EventHandler(this.DoubleDomeListButton_Click);
             // 
+            // ArcticZoundsCheckBox
+            // 
+            resources.ApplyResources(this.ArcticZoundsCheckBox, "ArcticZoundsCheckBox");
+            this.ArcticZoundsCheckBox.Name = "ArcticZoundsCheckBox";
+            this.ArcticZoundsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // ArcticsCheckBox
+            // 
+            resources.ApplyResources(this.ArcticsCheckBox, "ArcticsCheckBox");
+            this.ArcticsCheckBox.Name = "ArcticsCheckBox";
+            this.ArcticsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // DesertsCheckBox
+            // 
+            resources.ApplyResources(this.DesertsCheckBox, "DesertsCheckBox");
+            this.DesertsCheckBox.Name = "DesertsCheckBox";
+            this.DesertsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // DesertZoundsCheckBox
+            // 
+            resources.ApplyResources(this.DesertZoundsCheckBox, "DesertZoundsCheckBox");
+            this.DesertZoundsCheckBox.Name = "DesertZoundsCheckBox";
+            this.DesertZoundsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // GreenhousesCheckBox
+            // 
+            resources.ApplyResources(this.GreenhousesCheckBox, "GreenhousesCheckBox");
+            this.GreenhousesCheckBox.Name = "GreenhousesCheckBox";
+            this.GreenhousesCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // GreenhouseZoundsCheckBox
+            // 
+            resources.ApplyResources(this.GreenhouseZoundsCheckBox, "GreenhouseZoundsCheckBox");
+            this.GreenhouseZoundsCheckBox.Name = "GreenhouseZoundsCheckBox";
+            this.GreenhouseZoundsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // EarthlikesCheckBox
+            // 
+            resources.ApplyResources(this.EarthlikesCheckBox, "EarthlikesCheckBox");
+            this.EarthlikesCheckBox.Name = "EarthlikesCheckBox";
+            this.EarthlikesCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // EarthlikeZoundsCheckBox
+            // 
+            resources.ApplyResources(this.EarthlikeZoundsCheckBox, "EarthlikeZoundsCheckBox");
+            this.EarthlikeZoundsCheckBox.Name = "EarthlikeZoundsCheckBox";
+            this.EarthlikeZoundsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // VolcanicsCheckBox
+            // 
+            resources.ApplyResources(this.VolcanicsCheckBox, "VolcanicsCheckBox");
+            this.VolcanicsCheckBox.Name = "VolcanicsCheckBox";
+            this.VolcanicsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // VolcanicZoundsCheckBox
+            // 
+            resources.ApplyResources(this.VolcanicZoundsCheckBox, "VolcanicZoundsCheckBox");
+            this.VolcanicZoundsCheckBox.Name = "VolcanicZoundsCheckBox";
+            this.VolcanicZoundsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // RockiesCheckBox
+            // 
+            resources.ApplyResources(this.RockiesCheckBox, "RockiesCheckBox");
+            this.RockiesCheckBox.Name = "RockiesCheckBox";
+            this.RockiesCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // RockyZoundsCheckBox
+            // 
+            resources.ApplyResources(this.RockyZoundsCheckBox, "RockyZoundsCheckBox");
+            this.RockyZoundsCheckBox.Name = "RockyZoundsCheckBox";
+            this.RockyZoundsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // OceanicsCheckBox
+            // 
+            resources.ApplyResources(this.OceanicsCheckBox, "OceanicsCheckBox");
+            this.OceanicsCheckBox.Name = "OceanicsCheckBox";
+            this.OceanicsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // OceanicZoundsCheckBox
+            // 
+            resources.ApplyResources(this.OceanicZoundsCheckBox, "OceanicZoundsCheckBox");
+            this.OceanicZoundsCheckBox.Name = "OceanicZoundsCheckBox";
+            this.OceanicZoundsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // MountainousCheckBox
+            // 
+            resources.ApplyResources(this.MountainousCheckBox, "MountainousCheckBox");
+            this.MountainousCheckBox.Name = "MountainousCheckBox";
+            this.MountainousCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // MountainZoundsCheckBox
+            // 
+            resources.ApplyResources(this.MountainZoundsCheckBox, "MountainZoundsCheckBox");
+            this.MountainZoundsCheckBox.Name = "MountainZoundsCheckBox";
+            this.MountainZoundsCheckBox.UseVisualStyleBackColor = true;
+            // 
             // PlanetTypeForm
             // 
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Controls.Add(this.VolcanicsCheckBox);
+            this.Controls.Add(this.VolcanicZoundsCheckBox);
+            this.Controls.Add(this.RockiesCheckBox);
+            this.Controls.Add(this.RockyZoundsCheckBox);
+            this.Controls.Add(this.OceanicsCheckBox);
+            this.Controls.Add(this.OceanicZoundsCheckBox);
+            this.Controls.Add(this.MountainousCheckBox);
+            this.Controls.Add(this.MountainZoundsCheckBox);
+            this.Controls.Add(this.GreenhousesCheckBox);
+            this.Controls.Add(this.GreenhouseZoundsCheckBox);
+            this.Controls.Add(this.EarthlikesCheckBox);
+            this.Controls.Add(this.EarthlikeZoundsCheckBox);
+            this.Controls.Add(this.DesertsCheckBox);
+            this.Controls.Add(this.DesertZoundsCheckBox);
+            this.Controls.Add(this.ArcticsCheckBox);
+            this.Controls.Add(this.ArcticZoundsCheckBox);
             this.Controls.Add(this.DoubleDomeListButton);
             this.Controls.Add(this.RenameListsButton);
             this.Controls.Add(this.FindMoraleButton);
-            this.Controls.Add(this.DeconstructListButton);
+            this.Controls.Add(this.SameSystemListButton);
             this.Controls.Add(this.BuildListButton);
             this.Controls.Add(this.SolarsListButton);
             this.Controls.Add(this.LasersListButton);
@@ -327,9 +491,9 @@ namespace StarportExcel
             this.Controls.Add(this.RockiesButton);
             this.Controls.Add(this.ParadisesButton);
             this.Controls.Add(this.OceanicsButton);
-            this.Controls.Add(this.MountainsButton);
+            this.Controls.Add(this.MountainousButton);
             this.Controls.Add(this.GreenhousesButton);
-            this.Controls.Add(this.EarthsButton);
+            this.Controls.Add(this.EarthlikesButton);
             this.Controls.Add(this.DesertsButton);
             this.Controls.Add(this.ArcticsButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -343,30 +507,21 @@ namespace StarportExcel
 
         } //init
 
-        private System.Windows.Forms.TextBox numberTextBox;
-        private Button NeedsDefensesButton;
-        private Button GrowingButton;
-        private Button ClearOutputButton;
-        private Button LineBreakButton;
-        private ToolStrip toolStripPT;
-        private ToolStripButton OpenToolStripButtonPT;
-        private ToolStripButton SaveToolStripButtonPT;
-        private ToolStripSeparator toolStripSeparator;
-        private ToolStripButton CopyToolStripButtonPT;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton HelpMeNiggaDamnToolStripButtonPT;
-        private Button DirectorshipListButton;
-        private Button PrisonListButton;
-        private Button SocialismListButton;
-        private Button DemocracyListButton;
-        private Button NukesListButton;
-        private Button CMinesListButton;
-        private Button SolarsListButton;
-        private Button LasersListButton;
-        private Button BuildListButton;
-        private Button DeconstructListButton;
-        private Button FindMoraleButton;
-        private Button RenameListsButton;
-        private Button DoubleDomeListButton;
+        private CheckBox ArcticZoundsCheckBox;
+        private CheckBox ArcticsCheckBox;
+        private CheckBox DesertsCheckBox;
+        private CheckBox DesertZoundsCheckBox;
+        private CheckBox GreenhousesCheckBox;
+        private CheckBox GreenhouseZoundsCheckBox;
+        private CheckBox EarthlikesCheckBox;
+        private CheckBox EarthlikeZoundsCheckBox;
+        private CheckBox VolcanicsCheckBox;
+        private CheckBox VolcanicZoundsCheckBox;
+        private CheckBox RockiesCheckBox;
+        private CheckBox RockyZoundsCheckBox;
+        private CheckBox OceanicsCheckBox;
+        private CheckBox OceanicZoundsCheckBox;
+        private CheckBox MountainousCheckBox;
+        private CheckBox MountainZoundsCheckBox;
     }//class
 }//namespace

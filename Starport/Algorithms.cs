@@ -51,6 +51,20 @@ namespace StarportExcel
 
             return colInfo;
         }
+        public static ColonyInfo[] SortPlanetsByXAndY(string[,] planets, Coordinates origin, Coordinates destination)
+        {
+            ColonyInfo[] colInfo = new ColonyInfo[planets.GetLength(0)];
+
+            for (int i = 0; i < planets.GetLength(0); i++)
+            {
+                colInfo[i].coords = GetCoordinates(planets[i,0]);
+                colInfo[i].distance = Distance(colInfo[i].coords, origin);
+            }
+
+            QuickSort(colInfo, 0, planets.GetLength(0) - 1);
+
+            return colInfo;
+        }
 
         /// <summary>
         /// Find the distance
@@ -86,6 +100,15 @@ namespace StarportExcel
 
             for (int i = 0; i < colonyName.Length; i++)//go through the string
             {
+                if (colonyName[i].Equals('['))
+                {
+                    colonyName = Replacer.StringReplacer(i, '(', colonyName);
+                }
+                else if (colonyName[i].Equals(']'))
+                {
+                    colonyName = Replacer.StringReplacer(i, ')', colonyName);
+                }
+
                 //Panther(500,596)Gre009.050.N
                 if (colonyName[i].Equals('(')) //x
                 {

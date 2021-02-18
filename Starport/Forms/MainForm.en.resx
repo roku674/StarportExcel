@@ -219,13 +219,13 @@
     <value>109, 23</value>
   </data>
   <data name="ReplacePlanetButton.Text" xml:space="preserve">
-    <value>Add/Replace Planet</value>
+    <value>Add Planet Name</value>
   </data>
   <data name="ReturnPlanetButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ReturnPlanetButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 257</value>
+    <value>469, 286</value>
   </data>
   <data name="ReturnPlanetButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -401,9 +401,6 @@
   </data>
   <data name="FindDeconstructButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="FindDeconstructButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 49</value>
   </data>
   <data name="FindDeconstructButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -23126,6 +23123,9 @@
   <data name="FindDDButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="FindDDButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 90</value>
+  </data>
   <data name="FindDDButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
@@ -23148,14 +23148,17 @@
   <data name="SortDefensesBySystemButton.Text" xml:space="preserve">
     <value>Sort by System</value>
   </data>
-  <data name="AddToRenameListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditRenameListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="AddToRenameListButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditRenameListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 257</value>
+  </data>
+  <data name="EditRenameListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
-  <data name="AddToRenameListButton.Text" xml:space="preserve">
-    <value>Add to Rename</value>
+  <data name="EditRenameListButton.Text" xml:space="preserve">
+    <value>Edit Rename List</value>
   </data>
   <data name="ClearRenameButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -23180,6 +23183,36 @@
   </data>
   <data name="SortGrowingBySystemButton.Text" xml:space="preserve">
     <value>Sort by System</value>
+  </data>
+  <data name="EditInvasionListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditInvasionListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 286</value>
+  </data>
+  <data name="EditInvasionListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="EditInvasionListButton.Text" xml:space="preserve">
+    <value>Edit Invasion List</value>
+  </data>
+  <data name="EditPlanetInfoButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditPlanetInfoButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="EditPlanetInfoButton.Text" xml:space="preserve">
+    <value>Edit Planet Info</value>
+  </data>
+  <data name="NamePlanetButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NamePlanetButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="NamePlanetButton.Text" xml:space="preserve">
+    <value>Name New Planet</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -24303,6 +24336,9 @@
         ////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////8=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

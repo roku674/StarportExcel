@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static StarportExcel.Structs;
 
@@ -94,7 +95,7 @@ namespace StarportExcel
             double deserts = excel.ReadCellDouble(4, 2);
 
             double earthsZ = excel.ReadCellDouble(5, 3);
-            double earths = excel.ReadCellDouble(5, 2);
+            double earthlikes = excel.ReadCellDouble(5, 2);
 
             double greenhousesZ = excel.ReadCellDouble(6, 3);
             double greenhouses = excel.ReadCellDouble(6, 2);
@@ -121,7 +122,7 @@ namespace StarportExcel
 
             itsMyWindowTextBox.Text = "Arc " + arcticsZ + "/" + arctics +
                 "|~{yellow}~Des " + desertsZ + "/" + deserts +
-                "|~{green}~Earth " + earthsZ + "/" + earths +
+                "|~{green}~Earth " + earthsZ + "/" + earthlikes +
                 "|~{orange}~Green " + greenhousesZ + "/" + greenhouses +
                 "|~{purple}~Mount " + mountainsZ + "/" + mountains +
                 "|~{blue}~Oce " + oceansZ + "/" + oceans +
@@ -238,14 +239,12 @@ namespace StarportExcel
                         temp = j;
 
                         string planetName = excel.ReadCellString(j, 2); //read the name of the planet
-
-                        //Console.WriteLine(Algorithms.GetCoordinates(planetName).x + "," + Algorithms.GetCoordinates(planetName).y ); // just testing if GetCoordinatees works
-                        //Console.WriteLine(planetName + " found");
+                        //Console.WriteLine(planetName);
 
                         int num = j + 1;
                         //if statement by planet type
                             if (k == 2)
-                            {                               
+                            { 
                                 string formula = "=Arctics!C" + num;
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                                 //Console.WriteLine(planetName + " found");                                        
@@ -255,7 +254,7 @@ namespace StarportExcel
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                             }
                             else if (k == 4) {
-                                string formula = "=Earths!C" + num;
+                                string formula = "=Earthlikes!C" + num;
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                             }
                             else if (k == 5) {
@@ -263,7 +262,7 @@ namespace StarportExcel
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                             }
                             else if (k == 6) {
-                                string formula = "=Mountains!C" + num;
+                                string formula = "=Mountainous!C" + num;
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                             }
                             else if (k == 7) {
@@ -282,7 +281,7 @@ namespace StarportExcel
                                 string formula = "=Volcanics!C" + num;
                                 Checkers.CheckTotals(totals, excel, planetName, formula);
                             }
-                            else { } //MessageBox.Show(planetName + " not found!");                             
+                            else { }                            
                     }
             
                 }//end of j loop
@@ -405,6 +404,13 @@ namespace StarportExcel
                     temp++;
                 }
             }
+
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets are growing, thus can't be sorted", "Error");
+                return;
+            }
+
             //Console.WriteLine(temp);
             string[] planets = new string[temp];
 
@@ -447,7 +453,11 @@ namespace StarportExcel
                     temp++;
                 }
             }
-
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets are growing, thus can't be sorted", "Error");
+                return;
+            }
             string[] planets = new string[temp];
 
             for (int i = 0; i < planets.Length; i++) //establish teh array
@@ -488,6 +498,11 @@ namespace StarportExcel
                 {
                     temp++;
                 }
+            }
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets need defenses, thus can't be sorted", "Error");
+                return;
             }
             //Console.WriteLine(temp);
             string[] planets = new string[temp];
@@ -534,7 +549,11 @@ namespace StarportExcel
                     temp++;
                 }
             }
-
+            if(temp == 0)
+            {
+                MessageBox.Show("No Planets need defenses, thus can't be sorted", "Error");
+                return;
+            }
             string[] planets = new string[temp];
 
             for (int i = 0; i < planets.Length; i++) //establish teh array
@@ -545,7 +564,7 @@ namespace StarportExcel
             string originString = PlanetOrganizerTextBox.Text; //get text from text box
             Coordinates origin;
 
-            if (originString != "")
+            if (originString != "" && originString != "Insert Planet Name or Start Coordinates")
             {
                 origin = Algorithms.GetCoordinates(originString); //if there's something there take it
             }
@@ -639,12 +658,27 @@ namespace StarportExcel
             MessageBox.Show("Found all Double Domes", "Completed");
         }
         
-        private void AddToRenameListButton_Click(object sender, EventArgs e)
+        private void EditRenameListButton_Click(object sender, EventArgs e)
         {
             //open up a box askign where the coordinates are, old name, new name
         }
 
+        private void EditInvasionListButton_Click(object sender, EventArgs e)
+        {
+            //open up a new box
+        }
+        private void EditPlanetInfoButton_Click(object sender, EventArgs e)
+        {
+            PlanetInfoForm customMessageBox = new PlanetInfoForm();
+            customMessageBox.SetExcelPath(excelPath);
+            customMessageBox.ShowDialog();
+        }
+
         private void ClearRenameButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void FindDeconstructButton_Click(object sender, EventArgs e)
         {
 
         }
@@ -749,7 +783,7 @@ namespace StarportExcel
                         int num = int.Parse(s);
                         num++;
 
-                        returnString = "=Earths!C" + num;
+                        returnString = "=Earthlikes!C" + num;
 
                     }
                     else if (planetName[i + 6] == '.')
@@ -762,7 +796,7 @@ namespace StarportExcel
                         int num = int.Parse(s);
                         num++;
 
-                        returnString = "=Earths!C" + num;
+                        returnString = "=Earthlikes!C" + num;
                     }
                 }
                 else if (i + 2 < planetName.Length && planetName[i].Equals('G') && planetName[i + 1].Equals('r') && planetName[i + 2].Equals('e'))
@@ -803,7 +837,7 @@ namespace StarportExcel
                         int num = int.Parse(s);
                         num++;
 
-                        returnString = "=Mountains!C" + num;
+                        returnString = "=Mountainous!C" + num;
                     }
                     else if (planetName[i + 6] == '.')
                     {
@@ -815,7 +849,7 @@ namespace StarportExcel
                         int num = int.Parse(s);
                         num++;
 
-                        returnString = "=Mountains!C" + num;
+                        returnString = "=Mountainous!C" + num;
                     }
                 }
                 else if (i + 2 < planetName.Length && planetName[i].Equals('O') && planetName[i + 1].Equals('c') && planetName[i + 2].Equals('e'))
@@ -845,7 +879,7 @@ namespace StarportExcel
                         returnString = "=Oceanics!C" + num;
                     }
                 }
-                else if (i + 2 < planetName.Length && planetName[i].Equals('P') && planetName[i + 1].Equals('a') && planetName[i + 2].Equals('r'))
+                else if (i + 2 < planetName.Length && planetName[i].Equals('I') && planetName[i + 1].Equals('G') && planetName[i + 2].Equals('P'))
                 {
 
                     if (planetName[i + 5] == '.')
@@ -936,6 +970,39 @@ namespace StarportExcel
         {
             Excel.Kill();
             //Console.WriteLine("Kill Excel called");
+        }
+
+        public static string RemoveLetters(string append)
+        {
+            append = Regex.Replace(append, "[A-Za-z ]", "");
+            return append;
+        }
+        public static string RemoveParenthesisColonComma(string append)
+        {
+            append = Regex.Replace(append, "[(]", "");
+            append = Regex.Replace(append, "[)]", "");
+            append = Regex.Replace(append, "[:]", "");
+            append = Regex.Replace(append, "[:]", "");
+            append = Regex.Replace(append, "[,]", "");
+            return append;
+        }
+        public static string RemoveSlashes(string append)
+        {
+            append = Regex.Replace(append, "[/]", "");
+            append = Regex.Replace(append, "['\']", "");
+            return append;
+        }
+        public static string RemoveSpaces(string append)
+        {
+            //append.TrimStart();
+            append.Trim();
+            append = Regex.Replace(append, " ", "");
+            return append;
+        }
+
+        private void NamePlanetButton_Click(object sender, EventArgs e)
+        {
+
         }
     } //form1
 }//namespace

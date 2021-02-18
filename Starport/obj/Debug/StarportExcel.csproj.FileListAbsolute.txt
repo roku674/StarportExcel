@@ -13,3 +13,4 @@ C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\en\StarportExcel.r
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\en\StarportExcel.resources.dll
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.exe
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.pdb
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.PlanetInfoForm.resources

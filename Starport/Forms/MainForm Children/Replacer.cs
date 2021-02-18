@@ -17,6 +17,15 @@ namespace StarportExcel
         {
             for (int i = 0; i < newPlanetName.Length; i++)
             {
+                if (newPlanetName[i].Equals('['))
+                {
+                    newPlanetName = StringReplacer(i, '(', newPlanetName);                                 
+                }
+                else if (newPlanetName[i].Equals(']'))
+                {
+                    newPlanetName = StringReplacer(i, ')', newPlanetName);              
+                }
+
                 if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('A') && newPlanetName[i + 1].Equals('r') && newPlanetName[i + 2].Equals('c'))
                 {
                     //i+3 and i+4 are the numbers if its triple digit 3 4 5
@@ -156,7 +165,7 @@ namespace StarportExcel
                         break;
                     }
                 }
-                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('P') && newPlanetName[i + 1].Equals('a') && newPlanetName[i + 2].Equals('r'))
+                else if (i + 2 < newPlanetName.Length && newPlanetName[i].Equals('I') && newPlanetName[i + 1].Equals('G') && newPlanetName[i + 2].Equals('P'))
                 {
 
                     if (newPlanetName[i + 5] == '.')
@@ -224,8 +233,7 @@ namespace StarportExcel
                         break;
                     }
                 }
-                else { } //MessageBox.Show(newPlanetName + " not found!");                             
-
+                else { } //MessageBox.Show(newPlanetName + " not found!");
             }//end i
         }
 
@@ -248,6 +256,10 @@ namespace StarportExcel
                     MessageBox.Show(newPlanetName + " added to" + " slot " + row + " on sheet " + sheet, "Completed");
                 }
 
+            }
+            else if (excel.ReadCellString(row, 2).Equals(newPlanetName))
+            {
+                MessageBox.Show("Identitcal planet found! Nothing has been added", "Error!");
             }
             else
             {

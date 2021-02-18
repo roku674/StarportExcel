@@ -118,7 +118,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Earths!C" + num;
+                                                next = "=Earthlikes!C" + num;
 
                                             }
                                             else if (next[i + 6] == '.')
@@ -131,7 +131,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Earths!C" + num;
+                                                next = "=Earthlikes!C" + num;
                                             }
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('G') && next[i + 1].Equals('r') && next[i + 2].Equals('e'))
@@ -172,7 +172,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Mountains!C" + num;
+                                                next = "=Mountainous!C" + num;
                                             }
                                             else if (next[i + 6] == '.')
                                             {
@@ -184,7 +184,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Mountains!C" + num;
+                                                next = "=Mountainous!C" + num;
                                             }
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('O') && next[i + 1].Equals('c') && next[i + 2].Equals('e'))
@@ -214,7 +214,7 @@ namespace StarportExcel
                                                 next = "=Oceanics!C" + num;
                                             }
                                         }
-                                        else if (i + 2 < next.Length && next[i].Equals('P') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
+                                        else if (i + 2 < next.Length && next[i].Equals('I') && next[i + 1].Equals('G') && next[i + 2].Equals('P'))
                                         {
 
                                             if (next[i + 5] == '.')
@@ -357,6 +357,16 @@ namespace StarportExcel
                     {
                         Adder.AddToGrow(formula, totalsSheet);
                     }
+
+                    else if (i + 5 < planetName.Length && planetName[i + 5].Equals('D'))
+                    {
+                        Adder.AddToDD(formula, totalsSheet);
+                    }
+                    else if (i + 6 < planetName.Length && planetName[i + 6].Equals('D'))
+                    {
+                        Adder.AddToDD(formula, totalsSheet);
+                    }
+
                     else if (i + 6 < planetName.Length && (planetName[i + 6].Equals('G') || planetName[i + 6].Equals('R')))
 
                     {
@@ -385,7 +395,165 @@ namespace StarportExcel
                     break;
                 }
             }
+        }       
+        public static bool[] Buildable(string discoveries, string planetType)
+        {
+            bool[] shouldBuild = new bool[4]; //Zoundsable, Medium, Questionable, Deconstruct
+            //Console.WriteLine(planetType);
+            shouldBuild[3] = true;
 
+            for (int i = 0; i < discoveries.Length; i++)
+            {
+                //zoundsable
+                if(discoveries[i].Equals('A') && 
+                    discoveries[i+1].Equals('r') && 
+                    discoveries[i+2].Equals('c') && 
+                    discoveries[i+3].Equals('h') && 
+                    (discoveries[i+17].Equals('1') || discoveries[i + 17].Equals('2') || discoveries[i + 17].Equals('3') || discoveries[i + 17].Equals('4') || discoveries[i + 17].Equals('5') ) && 
+                    planetType.Equals("arctic")
+                    )
+                {
+                    Console.WriteLine("Zoundsable Arctic");
+                    shouldBuild[0] = true;
+                    shouldBuild[3] = false;
+                }
+                else if(discoveries[i].Equals('A') && 
+                    discoveries[i + 1].Equals('r') && 
+                    discoveries[i + 2].Equals('c') && 
+                    discoveries[i + 3].Equals('h') && 
+                    discoveries[i + 17].Equals('5') && 
+                    (planetType.Equals("desert") || planetType.Equals("mountainous") )
+                    )
+                {
+                    Console.WriteLine("By God's Grace a zoundsable Desert/Mountain. Lucky asf");
+                    shouldBuild[0] = true;
+                    shouldBuild[3] = false;
+                }
+                else if(discoveries[i].Equals('A') && 
+                    discoveries[i + 1].Equals('r') && 
+                    discoveries[i + 2].Equals('c') && 
+                    discoveries[i + 3].Equals('h') &&
+                    (discoveries[i + 17].Equals('3') || discoveries[i + 17].Equals('4') || discoveries[i + 17].Equals('5') ) &&
+                    !(planetType.Equals("desert") || planetType.Equals("mountainous") )
+                    )
+                {
+                    Console.WriteLine("Zoundsable");
+                    shouldBuild[0] = true;
+                    shouldBuild[3] = false;
+                }
+
+                //mediums
+                if (discoveries[i].Equals('S') && 
+                    discoveries[i + 1].Equals('t') && 
+                    discoveries[i + 2].Equals('r') && 
+                    discoveries[i + 3].Equals('i') && 
+                    discoveries[i + 4].Equals('p') && 
+                    (discoveries[i+17].Equals('3') || discoveries[i + 17].Equals('4') || discoveries[i + 17].Equals('5') )
+                    )
+                {
+                    Console.WriteLine("Thicc Strippers");
+                    shouldBuild[1] = true;
+                    shouldBuild[3] = false;
+                }
+                else if (discoveries[i].Equals('W') &&
+                    discoveries[i+1].Equals('e') &&
+                    discoveries[i + 2].Equals('a') &&
+                    discoveries[i + 3].Equals('t') &&
+                    (discoveries[i + 23].Equals('2') || discoveries[i + 23].Equals('3'))
+                    )
+                {
+                    Console.WriteLine("Weather Man");
+                    shouldBuild[1] = true;
+                    shouldBuild[3] = false;
+                }
+
+                else if (discoveries[i].Equals('M') &&
+                    discoveries[i + 1].Equals('i') &&
+                    discoveries[i + 2].Equals('l') &&
+                    discoveries[i + 3].Equals('i') &&
+                    (discoveries[i + 23].Equals('3') || discoveries[i + 23].Equals('4') || discoveries[i + 23].Equals('5'))
+                    )
+                {
+                    Console.WriteLine("Hoo Rah");
+                    shouldBuild[1] = true;
+                    shouldBuild[3] = false;
+                }
+
+                //Questionable
+                if (discoveries[i].Equals('S') &&
+                    discoveries[i + 1].Equals('t') &&
+                    discoveries[i + 2].Equals('r') &&
+                    discoveries[i + 3].Equals('i') &&
+                    discoveries[i + 4].Equals('p') &&
+                    (discoveries[i + 17].Equals('1') || discoveries[i + 17].Equals('2'))
+                    )
+                {
+                    Console.WriteLine("Strippers");
+                    shouldBuild[2] = true;
+                    shouldBuild[3] = false;
+                }
+                else if (discoveries[i].Equals('W') &&
+                    discoveries[i + 1].Equals('e') &&
+                    discoveries[i + 2].Equals('a') &&
+                    discoveries[i + 3].Equals('t') &&
+                    (discoveries[i + 23].Equals('1') || discoveries[i + 23].Equals('4') || discoveries[i + 23].Equals('5'))
+                    )
+                {
+                    Console.WriteLine("Weather Woman");
+                    shouldBuild[2] = true;
+                    shouldBuild[3] = false;
+                }
+
+                else if (discoveries[i].Equals('M') &&
+                    discoveries[i + 1].Equals('i') &&
+                    discoveries[i + 2].Equals('l') &&
+                    discoveries[i + 3].Equals('i') &&
+                    (discoveries[i + 23].Equals('1') || discoveries[i + 23].Equals('2'))
+                    )
+                {
+                    Console.WriteLine("Mil trad 1/2");
+                    shouldBuild[2] = true;
+                    shouldBuild[3] = false;
+                }
+                else if (discoveries[i].Equals('C') &&
+                    discoveries[i + 1].Equals('h') &&
+                    discoveries[i + 2].Equals('a') &&
+                    discoveries[i + 3].Equals('n') &&
+                    (discoveries[i + 25].Equals('3') || discoveries[i + 25].Equals('4') || discoveries[i + 25].Equals('5'))
+                    )
+                {
+                    Console.WriteLine("Channel Desc");
+                    shouldBuild[2] = true;
+                    shouldBuild[3] = false;
+                }
+                else if (discoveries[i].Equals('D') &&
+                    discoveries[i + 1].Equals('r') &&
+                    discoveries[i + 2].Equals('i') &&
+                    discoveries[i + 3].Equals('l') &&
+                    (discoveries[i + 13].Equals('3') || discoveries[i + 13].Equals('4') || discoveries[i + 13].Equals('5')) &&
+                    (planetType.Equals("arctic") || planetType.Equals("greenhouse") || planetType.Equals("mountainous") || planetType.Equals("rocky") || planetType.Equals("volcanic"))
+                    )
+                {
+                    Console.WriteLine("Drilling Volc/Rocky/Mountain");
+                    shouldBuild[2] = true;
+                    shouldBuild[3] = false;
+                }
+                else if (discoveries[i].Equals('N') &&
+                    discoveries[i + 1].Equals('a') &&
+                    discoveries[i + 2].Equals('t') &&
+                    discoveries[i + 3].Equals('i') &&
+                    (discoveries[i + 18].Equals('4') || discoveries[i + 18].Equals('5')) &&
+                    (planetType.Equals("arctic") || planetType.Equals("greenhouse") || planetType.Equals("mountainous") || planetType.Equals("rocky") || planetType.Equals("volcanic"))
+                    )
+                {
+                    Console.WriteLine("Medicine Volc/Rocky/Mountain");
+                    shouldBuild[2] = true;
+                    shouldBuild[3] = false;
+                }
+
+            }
+
+            return shouldBuild;
         }
 
         public static void CheckParenthesis()
@@ -398,7 +566,7 @@ namespace StarportExcel
                 int planet = (int)excel.ReadCellDouble(1, 8);
                 if (j == 11)
                 {
-                    planet = (int)excel.ReadCellDouble(1, 10);
+                    planet = (int)excel.ReadCellDouble(1, 15);
                 }
                 if (j == 12)
                 {
@@ -538,7 +706,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Earths!C" + num;
+                                                next = "=Earthlikes!C" + num;
 
                                             }
                                             else if (next[i + 6] == '.')
@@ -551,7 +719,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Earths!C" + num;
+                                                next = "=Earthlikes!C" + num;
                                             }
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('G') && next[i + 1].Equals('r') && next[i + 2].Equals('e'))
@@ -592,7 +760,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Mountains!C" + num;
+                                                next = "=Mountainous!C" + num;
                                             }
                                             else if (next[i + 6] == '.')
                                             {
@@ -604,7 +772,7 @@ namespace StarportExcel
                                                 int num = int.Parse(s);
                                                 num++;
 
-                                                next = "=Mountains!C" + num;
+                                                next = "=Mountainous!C" + num;
                                             }
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('O') && next[i + 1].Equals('c') && next[i + 2].Equals('e'))
@@ -634,7 +802,7 @@ namespace StarportExcel
                                                 next = "=Oceanics!C" + num;
                                             }
                                         }
-                                        else if (i + 2 < next.Length && next[i].Equals('P') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
+                                        else if (i + 2 < next.Length && next[i].Equals('I') && next[i + 1].Equals('G') && next[i + 2].Equals('P'))
                                         {
 
                                             if (next[i + 5] == '.')
