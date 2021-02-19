@@ -161,7 +161,7 @@ namespace StarportExcel
             {
                 Excel excel = OpenFileAt(j);
 
-                int planet = (int)excel.ReadCellDouble(1, 8);
+                int planet = excel.ReadCellInt(1, 8);
                 //Console.WriteLine("Planet Total: " + planet);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
@@ -224,7 +224,7 @@ namespace StarportExcel
             {
                 Excel excel = OpenFileAt(k);
 
-                int planet = (int)excel.ReadCellDouble(1, 8);
+                int planet = excel.ReadCellInt(1, 8);
 
                 excel.WriteToCell(2, 8, 0.ToString());//clear zounds num
                 Clearer.ClearZoundsList(excel, planet);
@@ -302,7 +302,7 @@ namespace StarportExcel
             {
                 Excel excel = OpenFileAt(j);
 
-                int planet = (int)excel.ReadCellDouble(1, 8);            
+                int planet = excel.ReadCellInt(1, 8);            
                 excel.WriteToCell(2, 8, 0.ToString());//clear zounds num
 
                 //ClearZoundsList(excel, planet);
@@ -345,7 +345,7 @@ namespace StarportExcel
             {
                 Excel excel = OpenFileAt(j);
 
-                int planet = (int)excel.ReadCellDouble(1, 8);
+                int planet = excel.ReadCellInt(1, 8);
                 //Console.WriteLine("Planet Total: " + planet);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
@@ -601,7 +601,7 @@ namespace StarportExcel
             for (int j = 2; j <= 10; j++) // goes through each sheet
             {
                 Excel excel = OpenFileAt(j);
-                int planet = (int)excel.ReadCellDouble(1, 8);
+                int planet = excel.ReadCellInt(1, 8);
                 Clearer.ClearZoundsList(excel, planet);
                 excel.Close();
             }
@@ -616,7 +616,7 @@ namespace StarportExcel
             {
                 Excel excel = OpenFileAt(j);
 
-                int planet = (int)excel.ReadCellDouble(1, 8);
+                int planet = excel.ReadCellInt(1, 8);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
                     if (excel.ReadCellString(i, 2) != "")
@@ -1004,5 +1004,30 @@ namespace StarportExcel
         {
 
         }
+
+        private void FindWeakSolarsButton_Click(object sender, EventArgs e)
+        {
+            Excel totals = OpenFileAt(1);
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = excel.ReadCellInt(1, 8);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    if (( excel.ReadCellInt(i, 34) > 0  && excel.ReadCellInt(i, 34) <= 15) || excel.ReadCellInt(i, 35) > 0 && excel.ReadCellInt(i, 35) <= 87 )
+                    {
+                        Console.WriteLine("Solar is " + excel.ReadCellInt(i, 34));
+                        Console.WriteLine("Solar rate is " + excel.ReadCellInt(i, 35));
+                        Adder.AddToWeakSolars(excel.ReadCellString(i, 2), totals);
+                    }
+                }
+
+                excel.Close();
+            }
+            totals.Close();
+            MessageBox.Show("Weak Solars added to totals", "Message");
+        }
+
     } //form1
 }//namespace

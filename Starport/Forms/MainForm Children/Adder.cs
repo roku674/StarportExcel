@@ -13,7 +13,7 @@ namespace StarportExcel
         {
             Excel excel = OpenFileAt(sheet);
 
-            int planet = (int)excel.ReadCellDouble(1, 8); //read p Tally
+            int planet = excel.ReadCellInt(1, 8); //read p Tally
             int temp = planet + 1; //get it ot the next row
 
             excel.WriteToCell(temp, 1, temp.ToString()); //updates the number next to the cell
@@ -504,7 +504,7 @@ namespace StarportExcel
 
             bool noDuplicate = true;
 
-            for(int i = 1; i <= (int) excel.ReadCellDouble(1,15); i++)
+            for(int i = 1; i <= excel.ReadCellInt(1,15); i++)
             {
                 if (planetName.Equals(excel.ReadCellString(i, 3)))
                 {
@@ -522,7 +522,7 @@ namespace StarportExcel
                 deconstruct = buildableHolder[3];
 
                 
-                int totalBuilds = (int)excel.ReadCellDouble(1, 15);
+                int totalBuilds = excel.ReadCellInt(1, 15);
                 totalBuilds += 1;
                 excel.WriteToCell(1, 15, totalBuilds.ToString());
 
@@ -544,11 +544,25 @@ namespace StarportExcel
             }
             excel.Close();
         }
-
+        public static void AddToWeakSolars(string colony, Excel totalsSheet)
+        {
+            for (int i = 2; i < Program.GetMax(); i++)
+            {               
+                var box = totalsSheet.ReadCellString(i, 22); // column L
+                if (box == "")
+                {
+                    totalsSheet.WriteToCell(i, 22, colony);
+                    int temp = i - 1;
+                    totalsSheet.WriteToCell(i, 21, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Weak Solars");
+                    break;
+                }
+            }
+        }
         public static void AddToBuilds(Excel excel, string coordinates, string planetName, string colonyName, string zoundsable, string medium, string questionable, string deconstruct, string research)
 
         {
-            int totalBuilds = (int)excel.ReadCellDouble(1, 15);
+            int totalBuilds = excel.ReadCellInt(1, 15);
             totalBuilds += 1;
 
             excel.WriteToCell(1, 15, totalBuilds.ToString());
@@ -566,7 +580,7 @@ namespace StarportExcel
 
         public static void AddToZounds(string colony, Excel excel)
         {
-            int zoundsCount = (int)excel.ReadCellDouble(2, 8);
+            int zoundsCount = excel.ReadCellInt(2, 8);
             zoundsCount++; //if it's 0 don't put it in the 0 slot
 
             excel.WriteToCell(zoundsCount, 4, zoundsCount.ToString()); // this is the 1 2 3 4

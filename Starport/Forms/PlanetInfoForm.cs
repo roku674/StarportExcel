@@ -269,7 +269,7 @@ namespace StarportExcel
         {
             
             Excel excel = OpenFileAt(11);
-            int totalBuilds = (int) excel.ReadCellDouble(1, 15); //amount of builds num
+            int totalBuilds = excel.ReadCellInt(1, 15); //amount of builds num
             string[,] planets = new string[totalBuilds, 8];
             Console.WriteLine(planets.GetLength(0) + " " + planets.GetLength(1));
 
@@ -293,7 +293,7 @@ namespace StarportExcel
                 tempBools = excel.ReadCellBool(i, 8);
                 planets[i-1,6] = tempBools.ToString();
 
-                int tempInt = (int)excel.ReadCellDouble(i, 9);
+                int tempInt = excel.ReadCellInt(i, 9);
                 planets[i-1,7] = tempInt.ToString();
             }
             //Clearer.ClearBuildList(excel);
@@ -346,7 +346,7 @@ namespace StarportExcel
         private void RemoveDuplicatesButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(11);
-            int buildList = (int)excel.ReadCellDouble(1, 15);
+            int buildList = excel.ReadCellInt(1, 15);
             for(int i = 1; i <= buildList; i++)
             {
                 for (int j = 1; j <= buildList; j++)

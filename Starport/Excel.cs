@@ -51,6 +51,14 @@ namespace StarportExcel
 
 			else return 0;
 		}
+		public int ReadCellInt(int i, int j)
+        {
+			i++;
+			j++;
+			if (ws.Cells[i, j].Value != null) return (int) ws.Cells[i, j].Value;
+
+			else return 0;
+		}
 		public bool ReadCellBool(int i, int j)
         {
 			i++;
@@ -68,8 +76,6 @@ namespace StarportExcel
 			{ 
 				return false; 
 			}
-			
-
 		}
 		/// <summary>
 		/// Write to cell

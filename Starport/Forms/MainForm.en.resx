@@ -23214,6 +23214,21 @@
   <data name="NamePlanetButton.Text" xml:space="preserve">
     <value>Name New Planet</value>
   </data>
+  <data name="FindWeakSolarsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="FindWeakSolarsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 400</value>
+  </data>
+  <data name="FindWeakSolarsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="FindWeakSolarsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="FindWeakSolarsButton.Text" xml:space="preserve">
+    <value>Find Weak Solars</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgH8AAAEAIAAYBgEAFgAAACgAAACAAAAA/gAAAAEAIAAAAAAAAP4AAAAAAAAAAAAAAAAAAAAA
@@ -24336,9 +24351,6 @@
         ////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////8=
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

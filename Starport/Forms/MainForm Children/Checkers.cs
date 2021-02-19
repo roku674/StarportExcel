@@ -563,14 +563,14 @@ namespace StarportExcel
                 //Console.WriteLine("Not scanning the Invasion list until i figure out what's going wrong");
                 Excel excel = OpenFileAt(j);
                 //Console.WriteLine("Sheet " + j + " opened");
-                int planet = (int)excel.ReadCellDouble(1, 8);
+                int planet = excel.ReadCellInt(1, 8);
                 if (j == 11)
                 {
-                    planet = (int)excel.ReadCellDouble(1, 15);
+                    planet = excel.ReadCellInt(1, 15);
                 }
                 if (j == 12)
                 {
-                    planet = (int)excel.ReadCellDouble(2, 10);
+                    planet = excel.ReadCellInt(2, 10);
                     Console.WriteLine(planet);
                 }
                 //Console.WriteLine("Planet Total: " + planet);
