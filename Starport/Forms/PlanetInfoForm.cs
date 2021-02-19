@@ -267,6 +267,7 @@ namespace StarportExcel
         }
         private void SortBuildsButton_Click(object sender, EventArgs e)
         {
+            
             Excel excel = OpenFileAt(11);
             int totalBuilds = (int) excel.ReadCellDouble(1, 15); //amount of builds num
             string[,] planets = new string[totalBuilds, 8];
@@ -295,6 +296,7 @@ namespace StarportExcel
                 int tempInt = (int)excel.ReadCellDouble(i, 9);
                 planets[i-1,7] = tempInt.ToString();
             }
+            //Clearer.ClearBuildList(excel);
 
             Coordinates origin;
             origin = Algorithms.GetCoordinates("(0,0)");
@@ -303,6 +305,7 @@ namespace StarportExcel
 
             Clearer.ClearBuildList(excel);
 
+            Console.WriteLine("This algorithm is bad its making tons of duplicates"); /*
             for (int i = 0; i < planets.GetLength(0); i++)
             {                
                 for (int j = 0; j < planets.GetLength(0); j++)
@@ -310,12 +313,12 @@ namespace StarportExcel
                     Coordinates oldList = Algorithms.GetCoordinates(planets[j, 0]);
                     if ((colInfo[i].coords.x == oldList.x) && (colInfo[i].coords.y == oldList.y))
                     {
-                        Console.WriteLine(planets[j, 0] + " ");
+                        //Console.WriteLine(planets[i, 0] + " ");
                         Adder.AddToBuilds(excel, planets[j, 0], planets[j, 1], planets[j, 2], planets[j, 3], planets[j, 4], planets[j, 5], planets[j, 6], planets[j, 7]);
                     }
                 }               
             }
-
+            */
             excel.Close();
             MessageBox.Show("Build List Sorted by System", "Completed");
 
