@@ -1007,7 +1007,9 @@ namespace StarportExcel
 
         private void FindWeakSolarsButton_Click(object sender, EventArgs e)
         {
+            
             Excel totals = OpenFileAt(1);
+            Clearer.ClearWeakSolarList(totals);
             for (int j = 2; j <= 10; j++) // goes through each sheet
             {
                 Excel excel = OpenFileAt(j);

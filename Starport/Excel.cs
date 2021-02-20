@@ -10,7 +10,7 @@ namespace StarportExcel
 	class Excel
 	{
 		readonly string path = "";
-        _Application excel = new Microsoft.Office.Interop.Excel.Application();
+        static _Application excelApp = new Microsoft.Office.Interop.Excel.Application();
 
 		Workbook wb;
 		Worksheet ws;
@@ -18,8 +18,8 @@ namespace StarportExcel
 		public Excel(string path, int Sheet)
 		{
 			this.path = path;
-			excel.DisplayAlerts = false;
-			wb = excel.Workbooks.Open(path);
+			excelApp.DisplayAlerts = false;
+			wb = excelApp.Workbooks.Open(path);
 			ws = wb.Worksheets[Sheet];
 		}
 
@@ -104,10 +104,10 @@ namespace StarportExcel
 			Save();
 			GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
 			GC.WaitForPendingFinalizers();
-			excel.Quit();
+			excelApp.Quit();
 			Marshal.FinalReleaseComObject(ws);
 			Marshal.FinalReleaseComObject(wb);
-			Marshal.FinalReleaseComObject(excel);
+			Marshal.FinalReleaseComObject(excelApp);
 			GC.Collect();
 			GC.WaitForPendingFinalizers();
 
@@ -120,6 +120,11 @@ namespace StarportExcel
 				p.Kill();
 			}
 		}
+
+		public static _Application GetExcelApp()
+        {
+			return excelApp;
+        }
 		//public static int ReleaseComObject(object o);       
 	}
 

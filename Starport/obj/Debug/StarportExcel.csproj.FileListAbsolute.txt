@@ -14,3 +14,14 @@ C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\en\StarportExcel.r
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.exe
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.pdb
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.PlanetInfoForm.resources
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.csproj.CopyComplete
