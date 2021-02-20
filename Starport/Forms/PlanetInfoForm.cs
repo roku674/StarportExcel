@@ -14,7 +14,9 @@ namespace StarportExcel
 {
     public partial class PlanetInfoForm : Form
     {
+#pragma warning disable IDE0052 // Remove unread private members
         private string excelPath;
+#pragma warning restore IDE0052 // Remove unread private members
 
         public PlanetInfoForm()
         {
@@ -275,7 +277,7 @@ namespace StarportExcel
 
             for (int i = 1; i <= planets.GetLength(0); i++) //establish the array
             {
-                bool tempBools = false;
+                bool tempBools;
                 //Console.WriteLine(i);
                 planets[i-1,0] = excel.ReadCellString(i, 2);
                 planets[i-1,1] = excel.ReadCellString(i, 3);
@@ -301,7 +303,9 @@ namespace StarportExcel
             Coordinates origin;
             origin = Algorithms.GetCoordinates("(0,0)");
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             ColonyInfo[] colInfo = Algorithms.SortPlanetsByXAndY(planets, origin, Algorithms.GetCoordinates(planets[totalBuilds - 1, 0])); //get the sorted array
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
 
             Clearer.ClearBuildList(excel);
 
