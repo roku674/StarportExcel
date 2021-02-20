@@ -20,6 +20,15 @@ namespace StarportExcel
             }
             //Console.WriteLine("Zounds List Cleared");
         }
+        public static void ClearWeakSolarList(Excel excel)
+        {
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                excel.WriteToCell(i, 22, "");
+                excel.WriteToCell(i, 21, "");
+            }
+        }
+
         public static void ClearGrowList(Excel excel)
         {
             for (int i = 2; i < Program.GetMax(); i++)
