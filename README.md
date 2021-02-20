@@ -5,7 +5,7 @@ Literally wrote this to better organize my planets in a video game...
 
 uses .Net and Microsoft Office
 ".NETFramework,Version=v4.7.2"
-Microsoft.Office.Interop.Excel;
+Microsoft.Office.Interop.Excel 15.0.4795.1000;
 
 To properly use this your planetary naming system must be (coordinates)CapitalFirstLetter-PlanetType in 3 letters Then planet number. (period) xxx (must be 3 things inbetween I'm using numbers on a unit circle but you can make this anything but i plan to use its location on a unit circle to have a bot fly to it in the future . (Then another period IF AND ONLY IF, its Zounds, Growing, Researching ,Needs Defense or is a Double dome, if its none of that forego this period)
 
