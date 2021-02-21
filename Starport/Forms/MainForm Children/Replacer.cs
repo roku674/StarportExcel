@@ -291,7 +291,7 @@ namespace StarportExcel
             }
             else if (excel.ReadCellString(row, 2).Equals(newPlanetName))
             {
-                MessageBox.Show(newPlanetName + " information updated " + "Message!");
+                MessageBox.Show(newPlanetName + " information updated ", "Message!");
             }
             else
             {
