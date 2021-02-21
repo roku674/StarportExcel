@@ -241,7 +241,7 @@ namespace StarportExcel
         {
             Excel excel = OpenFileAt(sheet);
 
-            if (excel.ReadCellString(row, 2) == "") // if the box was empty
+            if (excel.ReadCellString(row, 2).Equals("") || excel.ReadCellString(row,2).Equals(null)) // if the box was empty
             {
                 excel.WriteToCell(row, 2, newPlanetName); //planet in box
                 excel.WriteToCell(row, 1, row.ToString()); // update number next to it 
@@ -270,6 +270,36 @@ namespace StarportExcel
             }
 
             excel.Close();
+        }
+        public static void ReplacePlanetMethod(Excel excel,int sheet, int row, string newPlanetName)
+        {
+            if (excel.ReadCellString(row, 2).Equals("") || excel.ReadCellString(row, 2).Equals(null)) // if the box was empty
+            {
+                excel.WriteToCell(row, 2, newPlanetName); //planet in box
+                excel.WriteToCell(row, 1, row.ToString()); // update number next to it 
+
+                if (row > excel.ReadCellDouble(1, 8)) //if the new numbeer is greater than the total 
+                {
+                    excel.WriteToCell(1, 8, row.ToString()); //update number
+                    MessageBox.Show(newPlanetName + " added to" + " slot " + row + " on sheet " + sheet  + " Totals updated to " + row, "Completed");
+                }
+                else
+                {
+                    MessageBox.Show(newPlanetName + " added to" + " slot " + row + " on sheet " + sheet, "Completed");
+                }
+
+            }
+            else if (excel.ReadCellString(row, 2).Equals(newPlanetName))
+            {
+                MessageBox.Show(newPlanetName + " information updated " + "Message!");
+            }
+            else
+            {
+                string oldPlanetName = excel.ReadCellString(row, 2);
+                excel.WriteToCell(row, 2, newPlanetName); //put the planet in the box
+
+                MessageBox.Show(newPlanetName + " replaced " + oldPlanetName + " in slot " + row + " on" + " sheet " + sheet, "Completed");
+            }
         }
 
         private static Excel OpenFileAt(int num)

@@ -74,8 +74,7 @@ namespace StarportExcel
             //string firstLine = reader.ReadLine();                        
 
             for (int i = 0; i < info.Length; i++)
-            {
-                
+            {               
                 line = reader.ReadLine();
                 if (line != null)
                 {
@@ -406,21 +405,8 @@ namespace StarportExcel
                 }                
             }
             Console.Write(discovered);
-            if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null)) //if nothing add planet name
-            {
-                Replacer.ReplacePlanetMethod(sheet, planetNum, colonyName);
-            }
-            else if (excel.ReadCellString(planetNum, 2).Equals(colonyName))
-            {
-                //planet name is the samee
-            }
-            else
-            {
-                Replacer.ReplacePlanetMethod(sheet, planetNum, colonyName);
-                //string temp = excel.ReadCellString(planetNum, 2);
-                //excel.WriteToCell(planetNum, 2, colonyName); //decided to add the colony name no matter what
-            }
-            
+
+            Replacer.ReplacePlanetMethod(excel, sheet, planetNum, colonyName);            
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
             excel.WriteToCell(planetNum, 12, morale.ToString());
