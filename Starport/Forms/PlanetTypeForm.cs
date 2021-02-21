@@ -843,7 +843,7 @@ namespace StarportExcel
             output.WriteLine("Growing List: ");
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                output.WriteLine(excel.ReadCellString(i, 11)); //needs defense column
+                output.WriteLine(excel.ReadCellString(i, 11)); //growing column
 
             }
             output.Flush();

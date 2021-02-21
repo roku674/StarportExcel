@@ -512,7 +512,7 @@ namespace StarportExcel
                 }
             }
 
-            if (research == 10 && noDuplicate)
+            if (research >= 8 && noDuplicate)
             {
                 buildableHolder = Checkers.Buildable(discoveries, planetType);
                 zoundsable = buildableHolder[0];
@@ -523,7 +523,8 @@ namespace StarportExcel
                 
                 int totalBuilds = excel.ReadCellInt(1, 15);
                 totalBuilds += 1;
-                excel.WriteToCell(1, 15, totalBuilds.ToString());
+                Console.WriteLine(totalBuilds);
+                //excel.WriteToCell(1, 15, totalBuilds.ToString());
 
                 excel.WriteToCell(totalBuilds, 1, totalBuilds.ToString());
                 excel.WriteToCell(totalBuilds, 2, coordinates);
