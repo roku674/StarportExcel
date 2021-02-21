@@ -38,15 +38,15 @@ namespace StarportExcel
                 firstLine = MainForm.RemoveSpaces(firstLine);
                 for (int i = 0; i < info.Length; i++)
                 {
-                    if (firstLine.Equals("Panther.Research.Arc") || firstLine.Equals("Panther.Build.Arc") || firstLine.Equals("Panther.Build.Arc.Z") ||
-                           firstLine.Equals("Panther.Research.Des") || firstLine.Equals("Panther.Build.Des") || firstLine.Equals("Panther.Build.Des.Z") ||
-                           firstLine.Equals("Panther.Research.Ear") || firstLine.Equals("Panther.Build.Ear") || firstLine.Equals("Panther.Build.Ear.Z") ||
-                           firstLine.Equals("Panther.Research.Gre") || firstLine.Equals("Panther.Build.Gre") || firstLine.Equals("Panther.Build.Gre.Z") ||
-                           firstLine.Equals("Panther.Research.Mou") || firstLine.Equals("Panther.Build.Gre") || firstLine.Equals("Panther.Build.Gre.Z") ||
-                           firstLine.Equals("Panther.Research.Oce") || firstLine.Equals("Panther.Build.Oce") || firstLine.Equals("Panther.Build.Oce.Z") ||
-                           firstLine.Equals("Panther.Research.IGP") || firstLine.Equals("Panther.Build.IGP") || firstLine.Equals("Panther.Build.IGP.Z") ||
-                           firstLine.Equals("Panther.Research.Roc") || firstLine.Equals("Panther.Build.Roc") || firstLine.Equals("Panther.Build.Roc.Z") ||
-                           firstLine.Equals("Panther.Research.Vol") || firstLine.Equals("Panther.Build.Vol") || firstLine.Equals("Panther.Build.Vol.Z"))
+                    if (firstLine.Equals("Research.Arc") || firstLine.Equals("Build.Arc") || firstLine.Equals("Build.Arc.Z") ||
+                           firstLine.Equals("Research.Des") || firstLine.Equals("Build.Des") || firstLine.Equals("Build.Des.Z") ||
+                           firstLine.Equals("Research.Ear") || firstLine.Equals("Build.Ear") || firstLine.Equals("Build.Ear.Z") ||
+                           firstLine.Equals("Research.Gre") || firstLine.Equals("Build.Gre") || firstLine.Equals("Build.Gre.Z") ||
+                           firstLine.Equals("Research.Mou") || firstLine.Equals("Build.Gre") || firstLine.Equals("Build.Gre.Z") ||
+                           firstLine.Equals("Research.Oce") || firstLine.Equals("Build.Oce") || firstLine.Equals("Build.Oce.Z") ||
+                           firstLine.Equals("Research.IGP") || firstLine.Equals("Build.IGP") || firstLine.Equals("Build.IGP.Z") ||
+                           firstLine.Equals("Research.Roc") || firstLine.Equals("Build.Roc") || firstLine.Equals("Build.Roc.Z") ||
+                           firstLine.Equals("Research.Vol") || firstLine.Equals("Build.Vol") || firstLine.Equals("Build.Vol.Z"))
                     {
                         //console.WriteLine(firstLine);
                         Adder.BuildZoundsDestroy(info);
