@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -11,7 +12,7 @@ namespace StarportExcel
 	{
 		readonly string path = "";
         _Application excel = new Microsoft.Office.Interop.Excel.Application();
-
+		static Dictionary<string, Worksheet> dict = new Dictionary<string, Worksheet>();
 		Workbook wb;
 		Worksheet ws;
 
@@ -51,6 +52,14 @@ namespace StarportExcel
 
 			else return 0;
 		}
+		public int ReadCellInt(int i, int j)
+        {
+			i++;
+			j++;
+			if (ws.Cells[i, j].Value != null) return (int) ws.Cells[i, j].Value;
+
+			else return 0;
+		}
 		public bool ReadCellBool(int i, int j)
         {
 			i++;
@@ -68,8 +77,6 @@ namespace StarportExcel
 			{ 
 				return false; 
 			}
-			
-
 		}
 		/// <summary>
 		/// Write to cell
@@ -83,7 +90,10 @@ namespace StarportExcel
 			j++;
 			ws.Cells[i, j].Value = s;
 		}
-
+		public static Dictionary<string, Worksheet> GetDictionairy()
+        {
+			return dict;
+        }
 		public void Save()
 		{
 			wb.Save();

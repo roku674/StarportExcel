@@ -85,6 +85,7 @@ namespace StarportExcel
             this.EditInvasionListButton = new System.Windows.Forms.Button();
             this.EditPlanetInfoButton = new System.Windows.Forms.Button();
             this.NamePlanetButton = new System.Windows.Forms.Button();
+            this.FindWeakSolarsButton = new System.Windows.Forms.Button();
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -344,9 +345,17 @@ namespace StarportExcel
             this.NamePlanetButton.UseVisualStyleBackColor = true;
             this.NamePlanetButton.Click += new System.EventHandler(this.NamePlanetButton_Click);
             // 
+            // FindWeakSolarsButton
+            // 
+            resources.ApplyResources(this.FindWeakSolarsButton, "FindWeakSolarsButton");
+            this.FindWeakSolarsButton.Name = "FindWeakSolarsButton";
+            this.FindWeakSolarsButton.UseVisualStyleBackColor = true;
+            this.FindWeakSolarsButton.Click += new System.EventHandler(this.FindWeakSolarsButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.FindWeakSolarsButton);
             this.Controls.Add(this.NamePlanetButton);
             this.Controls.Add(this.EditPlanetInfoButton);
             this.Controls.Add(this.EditInvasionListButton);
@@ -413,6 +422,7 @@ namespace StarportExcel
         private System.Windows.Forms.Button EditInvasionListButton;
         private System.Windows.Forms.Button EditPlanetInfoButton;
         private System.Windows.Forms.Button NamePlanetButton;
+        private System.Windows.Forms.Button FindWeakSolarsButton;
     }
 }
 

@@ -9,21 +9,27 @@ namespace StarportExcel
 {
     class Adder : MainForm
     {
-        public static void AddPlanet(int sheet, string planetName, TextBox PlanetOrganizer)
+        /// <summary>
+        /// OBSOLETE USE REPLACER.REPLACEPLANET
+        /// </summary>
+        /// <param name="sheet"></param>
+        /// <param name="planetName"></param>
+        public static void AddPlanet(int sheet, string planetName)
         {
             Excel excel = OpenFileAt(sheet);
 
-            int planet = (int)excel.ReadCellDouble(1, 8); //read p Tally
+            int planet = excel.ReadCellInt(1, 8); //read p Tally
             int temp = planet + 1; //get it ot the next row
 
             excel.WriteToCell(temp, 1, temp.ToString()); //updates the number next to the cell
             excel.WriteToCell(temp, 2, planetName); //put the planet in the box
 
-
-            excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
-
+            if(excel.ReadCellInt(1,8) < temp)
+            {
+                excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
+            }
+            
             MessageBox.Show(planetName + " added to row " + temp + " sheet " + sheet, "Completed");
-            PlanetOrganizer.Text = "Insert Planet Name";
 
             excel.Close();
         }
@@ -68,8 +74,7 @@ namespace StarportExcel
             //string firstLine = reader.ReadLine();                        
 
             for (int i = 0; i < info.Length; i++)
-            {
-                
+            {               
                 line = reader.ReadLine();
                 if (line != null)
                 {
@@ -400,14 +405,8 @@ namespace StarportExcel
                 }                
             }
             Console.Write(discovered);
-            if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null))
-            {
-                excel.WriteToCell(planetNum, 1, planetNum.ToString()); //updates the number next to the cell
-                excel.WriteToCell(planetNum, 2, colonyName);
 
-                excel.WriteToCell(1, 8, planetNum.ToString()); //updates the planet number
-                MessageBox.Show(colonyName + " added to row " + planetNum + " sheet " + sheet, "Completed");
-            }
+            Replacer.ReplacePlanetMethod(excel, sheet, planetNum, colonyName);            
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
             excel.WriteToCell(planetNum, 12, morale.ToString());
@@ -504,7 +503,7 @@ namespace StarportExcel
 
             bool noDuplicate = true;
 
-            for(int i = 1; i <= (int) excel.ReadCellDouble(1,15); i++)
+            for(int i = 1; i <= excel.ReadCellInt(1,15); i++)
             {
                 if (planetName.Equals(excel.ReadCellString(i, 3)))
                 {
@@ -513,7 +512,7 @@ namespace StarportExcel
                 }
             }
 
-            if (research == 10 && noDuplicate)
+            if (research >= 8 && noDuplicate)
             {
                 buildableHolder = Checkers.Buildable(discoveries, planetType);
                 zoundsable = buildableHolder[0];
@@ -522,9 +521,10 @@ namespace StarportExcel
                 deconstruct = buildableHolder[3];
 
                 
-                int totalBuilds = (int)excel.ReadCellDouble(1, 15);
+                int totalBuilds = excel.ReadCellInt(1, 15);
                 totalBuilds += 1;
-                excel.WriteToCell(1, 15, totalBuilds.ToString());
+                Console.WriteLine(totalBuilds);
+                //excel.WriteToCell(1, 15, totalBuilds.ToString());
 
                 excel.WriteToCell(totalBuilds, 1, totalBuilds.ToString());
                 excel.WriteToCell(totalBuilds, 2, coordinates);
@@ -544,10 +544,25 @@ namespace StarportExcel
             }
             excel.Close();
         }
-
-        public static void AddToBuilds(Excel excel, string coordinates, string planetName, string colonyName, string zoundsable, string medium, string questionable, string deconstruct, string research)
+        public static void AddToWeakSolars(string colony, Excel totalsSheet)
         {
-            int totalBuilds = (int)excel.ReadCellDouble(1, 15);
+            for (int i = 2; i < Program.GetMax(); i++)
+            {               
+                var box = totalsSheet.ReadCellString(i, 22); // column L
+                if (box == "")
+                {
+                    totalsSheet.WriteToCell(i, 22, colony);
+                    int temp = i - 1;
+                    totalsSheet.WriteToCell(i, 21, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Weak Solars");
+                    break;
+                }
+            }
+        }
+        public static void AddToBuilds(Excel excel, string coordinates, string planetName, string colonyName, string zoundsable, string medium, string questionable, string deconstruct, string research)
+
+        {
+            int totalBuilds = excel.ReadCellInt(1, 15);
             totalBuilds += 1;
 
             excel.WriteToCell(1, 15, totalBuilds.ToString());
@@ -565,7 +580,7 @@ namespace StarportExcel
 
         public static void AddToZounds(string colony, Excel excel)
         {
-            int zoundsCount = (int)excel.ReadCellDouble(2, 8);
+            int zoundsCount = excel.ReadCellInt(2, 8);
             zoundsCount++; //if it's 0 don't put it in the 0 slot
 
             excel.WriteToCell(zoundsCount, 4, zoundsCount.ToString()); // this is the 1 2 3 4

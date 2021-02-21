@@ -563,14 +563,14 @@ namespace StarportExcel
                 //Console.WriteLine("Not scanning the Invasion list until i figure out what's going wrong");
                 Excel excel = OpenFileAt(j);
                 //Console.WriteLine("Sheet " + j + " opened");
-                int planet = (int)excel.ReadCellDouble(1, 8);
+                int planet = excel.ReadCellInt(1, 8);
                 if (j == 11)
                 {
-                    planet = (int)excel.ReadCellDouble(1, 15);
+                    planet = excel.ReadCellInt(1, 15);
                 }
                 if (j == 12)
                 {
-                    planet = (int)excel.ReadCellDouble(2, 10);
+                    planet = excel.ReadCellInt(2, 10);
                     Console.WriteLine(planet);
                 }
                 //Console.WriteLine("Planet Total: " + planet);
@@ -601,7 +601,36 @@ namespace StarportExcel
                 excel.Close();
 
             }// end of J loop
+
             MessageBox.Show("converted all brackets into Parenthesis", "Completed");
+            //check the parenthesis on the main page
+            for (int i = 0; i < 100; i++) 
+            {
+                Excel excel = OpenFileAt(1);
+
+                Console.WriteLine(excel.ReadCellString(i, 2));
+
+                if (excel.ReadCellString(i, 2) != "")
+                {
+                    string box = excel.ReadCellString(i, 6);
+                    for (int k = 0; k < box.Length; k++)
+                    {
+                        if (box[k].Equals('['))
+                        {
+                            box = StringReplacer(k, '(', box);
+                            excel.WriteToCell(i, 2, box);
+                            Console.WriteLine(box + " changed!");
+                        }
+                        else if (box[k].Equals(']'))
+                        {
+                            box = StringReplacer(k, ')', box);
+                            excel.WriteToCell(i, 2, box);
+                            Console.WriteLine(box + " changed!");
+                        }
+                    }
+                }
+            }
+
         }
 
         public static void CheckNeedsDefense()

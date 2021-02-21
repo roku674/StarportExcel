@@ -38,15 +38,15 @@ namespace StarportExcel
                 firstLine = MainForm.RemoveSpaces(firstLine);
                 for (int i = 0; i < info.Length; i++)
                 {
-                    if (firstLine.Equals("Panther.Research.Arc") || firstLine.Equals("Panther.Build.Arc") ||
-                           firstLine.Equals("Panther.Research.Des") || firstLine.Equals("Panther.Build.Des") ||
-                           firstLine.Equals("Panther.Research.Ear") || firstLine.Equals("Panther.Build.Ear") ||
-                           firstLine.Equals("Panther.Research.Gre") || firstLine.Equals("Panther.Build.Gre") ||
-                           firstLine.Equals("Panther.Research.Mou") || firstLine.Equals("Panther.Build.Mou") ||
-                           firstLine.Equals("Panther.Research.Oce") || firstLine.Equals("Panther.Build.Oce") ||
-                           firstLine.Equals("Panther.Research.IGP") || firstLine.Equals("Panther.Build.IGP") ||
-                           firstLine.Equals("Panther.Research.Roc") || firstLine.Equals("Panther.Build.Roc") ||
-                           firstLine.Equals("Panther.Research.Vol") || firstLine.Equals("Panther.Build.Vol"))
+                    if (firstLine.Equals("Panther.Research.Arc") || firstLine.Equals("Panther.Build.Arc") || firstLine.Equals("Panther.Build.Arc.Z") ||
+                           firstLine.Equals("Panther.Research.Des") || firstLine.Equals("Panther.Build.Des") || firstLine.Equals("Panther.Build.Des.Z") ||
+                           firstLine.Equals("Panther.Research.Ear") || firstLine.Equals("Panther.Build.Ear") || firstLine.Equals("Panther.Build.Ear.Z") ||
+                           firstLine.Equals("Panther.Research.Gre") || firstLine.Equals("Panther.Build.Gre") || firstLine.Equals("Panther.Build.Gre.Z") ||
+                           firstLine.Equals("Panther.Research.Mou") || firstLine.Equals("Panther.Build.Gre") || firstLine.Equals("Panther.Build.Gre.Z") ||
+                           firstLine.Equals("Panther.Research.Oce") || firstLine.Equals("Panther.Build.Oce") || firstLine.Equals("Panther.Build.Oce.Z") ||
+                           firstLine.Equals("Panther.Research.IGP") || firstLine.Equals("Panther.Build.IGP") || firstLine.Equals("Panther.Build.IGP.Z") ||
+                           firstLine.Equals("Panther.Research.Roc") || firstLine.Equals("Panther.Build.Roc") || firstLine.Equals("Panther.Build.Roc.Z") ||
+                           firstLine.Equals("Panther.Research.Vol") || firstLine.Equals("Panther.Build.Vol") || firstLine.Equals("Panther.Build.Vol.Z"))
                     {
                         //console.WriteLine(firstLine);
                         Adder.BuildZoundsDestroy(info);
@@ -267,8 +267,9 @@ namespace StarportExcel
         }
         private void SortBuildsButton_Click(object sender, EventArgs e)
         {
+            
             Excel excel = OpenFileAt(11);
-            int totalBuilds = (int) excel.ReadCellDouble(1, 15); //amount of builds num
+            int totalBuilds = excel.ReadCellInt(1, 15); //amount of builds num
             string[,] planets = new string[totalBuilds, 8];
             Console.WriteLine(planets.GetLength(0) + " " + planets.GetLength(1));
 
@@ -292,9 +293,10 @@ namespace StarportExcel
                 tempBools = excel.ReadCellBool(i, 8);
                 planets[i-1,6] = tempBools.ToString();
 
-                int tempInt = (int)excel.ReadCellDouble(i, 9);
+                int tempInt = excel.ReadCellInt(i, 9);
                 planets[i-1,7] = tempInt.ToString();
             }
+            //Clearer.ClearBuildList(excel);
 
             Coordinates origin;
             origin = Algorithms.GetCoordinates("(0,0)");
@@ -303,6 +305,7 @@ namespace StarportExcel
 
             Clearer.ClearBuildList(excel);
 
+            Console.WriteLine("This algorithm is bad its making tons of duplicates"); /*
             for (int i = 0; i < planets.GetLength(0); i++)
             {                
                 for (int j = 0; j < planets.GetLength(0); j++)
@@ -310,12 +313,12 @@ namespace StarportExcel
                     Coordinates oldList = Algorithms.GetCoordinates(planets[j, 0]);
                     if ((colInfo[i].coords.x == oldList.x) && (colInfo[i].coords.y == oldList.y))
                     {
-                        Console.WriteLine(planets[j, 0] + " ");
+                        //Console.WriteLine(planets[i, 0] + " ");
                         Adder.AddToBuilds(excel, planets[j, 0], planets[j, 1], planets[j, 2], planets[j, 3], planets[j, 4], planets[j, 5], planets[j, 6], planets[j, 7]);
                     }
                 }               
             }
-
+            */
             excel.Close();
             MessageBox.Show("Build List Sorted by System", "Completed");
 
@@ -343,7 +346,7 @@ namespace StarportExcel
         private void RemoveDuplicatesButton_Click(object sender, EventArgs e)
         {
             Excel excel = OpenFileAt(11);
-            int buildList = (int)excel.ReadCellDouble(1, 15);
+            int buildList = excel.ReadCellInt(1, 15);
             for(int i = 1; i <= buildList; i++)
             {
                 for (int j = 1; j <= buildList; j++)
