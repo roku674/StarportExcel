@@ -9,7 +9,12 @@ namespace StarportExcel
 {
     class Adder : MainForm
     {
-        public static void AddPlanet(int sheet, string planetName, TextBox PlanetOrganizer)
+        /// <summary>
+        /// OBSOLETE USE REPLACER.REPLACEPLANET
+        /// </summary>
+        /// <param name="sheet"></param>
+        /// <param name="planetName"></param>
+        public static void AddPlanet(int sheet, string planetName)
         {
             Excel excel = OpenFileAt(sheet);
 
@@ -19,11 +24,12 @@ namespace StarportExcel
             excel.WriteToCell(temp, 1, temp.ToString()); //updates the number next to the cell
             excel.WriteToCell(temp, 2, planetName); //put the planet in the box
 
-
-            excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
-
+            if(excel.ReadCellInt(1,8) < temp)
+            {
+                excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
+            }
+            
             MessageBox.Show(planetName + " added to row " + temp + " sheet " + sheet, "Completed");
-            PlanetOrganizer.Text = "Insert Planet Name";
 
             excel.Close();
         }
@@ -400,13 +406,21 @@ namespace StarportExcel
                 }                
             }
             Console.Write(discovered);
-            if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null))
+            if (excel.ReadCellString(planetNum, 2).Equals("") || excel.ReadCellString(planetNum, 2).Equals(null)) //if nothing add planet name
             {
-                excel.WriteToCell(planetNum, 1, planetNum.ToString()); //updates the number next to the cell
-                excel.WriteToCell(1, 8, planetNum.ToString()); //updates the planet number
-                MessageBox.Show(colonyName + " added to row " + planetNum + " sheet " + sheet, "Completed");
+                Replacer.ReplacePlanetMethod(sheet, planetNum, colonyName);
             }
-            excel.WriteToCell(planetNum, 2, colonyName); //decided to add the colony name no matter what
+            else if (excel.ReadCellString(planetNum, 2).Equals(colonyName))
+            {
+                //planet name is the samee
+            }
+            else
+            {
+                Replacer.ReplacePlanetMethod(sheet, planetNum, colonyName);
+                //string temp = excel.ReadCellString(planetNum, 2);
+                //excel.WriteToCell(planetNum, 2, colonyName); //decided to add the colony name no matter what
+            }
+            
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
             excel.WriteToCell(planetNum, 12, morale.ToString());
