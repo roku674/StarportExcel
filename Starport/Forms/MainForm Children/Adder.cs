@@ -44,28 +44,30 @@ namespace StarportExcel
             int morale = 9999;// M
             string gov = null; //N government
             int treasury = -1; //O
-            string pollution = null; //P
-            int disastas = 0; // Q
-            string pollutionRate = null; //R
-            string construction = null; //S
-            string research= null; //T
-            string military = null; //U
-            string harvesting = null; //V
-            string building = null; //W
-            int metal = -1; // X
-            int anae= -1; // Y
-            int meds= -1; // Z
-            int orgs= -1; // AA
-            int oil= -1; // AB
-            int uri = -1; // AC
-            int equi = -1; // AD
-            int spice = -1; // AE
-            int nukes = -1; // AF
-            int cMines= -1; // AG
-            int lasers= -1; // AH
-            int solarShots= -1; // AI
-            int solarRate = -1; //AJ
-            string discovered = null; //AK
+            int hourlyIncome = 0; //P
+            string taxRate; // Q
+            string pollution = null; //R
+            int disastas = 0; // S
+            string pollutionRate = null; //T
+            string construction = null; //U
+            string research= null; //V
+            string military = null; //W
+            string harvesting = null; //X
+            string building = null; //Y
+            int metal = -1; // Z
+            int anae= -1; // AA
+            int meds= -1; // AB
+            int orgs= -1; // AC
+            int oil= -1; // AD
+            int uri = -1; // AE
+            int equi = -1; // AF
+            int spice = -1; // AG
+            int nukes = -1; // AH
+            int cMines= -1; // AI
+            int lasers= -1; // AJ
+            int solarShots= -1; // AK
+            int solarRate = -1; //AL
+            string discovered = null; //AM
 
             //StringBuilder stringBuilder = new StringBuilder();
             //stringBuilder.AppendLine("");
@@ -144,15 +146,19 @@ namespace StarportExcel
                             {
                                 line = line.Substring(j + 7); //takes everything after the colon
                             }
-                            if (line[j].Equals('('))
-                            {
-                                line = line.Substring(0, j); //removes everything after the parenthesis
-                            }
                         }
-                        line = RemoveParenthesisColonComma(line);
-                        line = RemoveLetters(line);
-                        Console.WriteLine(line);
-                        treasury = int.Parse(line);
+                        string[] temp = line.Split('(');
+
+                        temp[0] = RemoveParenthesisColonComma(temp[0]);
+                        temp[0] = RemoveSpaces(temp[0]);
+                        treasury = int.Parse(temp[0]);
+
+
+                        temp[1] = RemoveParenthesisColonComma(temp[1]);
+                        temp[1] = RemoveLetters(temp[1]);
+                        hourlyIncome = int.Parse(temp[1]);
+                        Console.WriteLine(temp[0] + " " + temp[1] + "/hr");
+                      
                     }
                     else if (i == 12)
                     {
@@ -412,28 +418,30 @@ namespace StarportExcel
             excel.WriteToCell(planetNum, 12, morale.ToString());
             excel.WriteToCell(planetNum, 13, gov);
             excel.WriteToCell(planetNum, 14, treasury.ToString());
-            excel.WriteToCell(planetNum, 15, pollution);
-            excel.WriteToCell(planetNum, 16, disastas.ToString());
-            excel.WriteToCell(planetNum, 17, pollutionRate);
-            excel.WriteToCell(planetNum, 18, construction);
-            excel.WriteToCell(planetNum, 19, research);
-            excel.WriteToCell(planetNum, 20, military);
-            excel.WriteToCell(planetNum, 21, harvesting);
-            excel.WriteToCell(planetNum, 22, building);
-            excel.WriteToCell(planetNum, 23, metal.ToString());
-            excel.WriteToCell(planetNum, 24, anae.ToString());
-            excel.WriteToCell(planetNum, 25, meds.ToString());
-            excel.WriteToCell(planetNum, 26, orgs.ToString());
-            excel.WriteToCell(planetNum, 27, oil.ToString());
-            excel.WriteToCell(planetNum, 28, uri.ToString());
-            excel.WriteToCell(planetNum, 29, equi.ToString());
-            excel.WriteToCell(planetNum, 30, spice.ToString());
-            excel.WriteToCell(planetNum, 31, nukes.ToString());
-            excel.WriteToCell(planetNum, 32, cMines.ToString());
-            excel.WriteToCell(planetNum, 33, lasers.ToString());
-            excel.WriteToCell(planetNum, 34, solarShots.ToString());
-            excel.WriteToCell(planetNum, 35, solarRate.ToString());
-            excel.WriteToCell(planetNum, 36, discovered);
+            excel.WriteToCell(planetNum, 15, hourlyIncome.ToString());
+            //skip 16 this is a calculation
+            excel.WriteToCell(planetNum, 17, pollution);
+            excel.WriteToCell(planetNum, 18, disastas.ToString());
+            excel.WriteToCell(planetNum, 19, pollutionRate);
+            excel.WriteToCell(planetNum, 20, construction);
+            excel.WriteToCell(planetNum, 21, research);
+            excel.WriteToCell(planetNum, 22, military);
+            excel.WriteToCell(planetNum, 23, harvesting);
+            excel.WriteToCell(planetNum, 24, building);
+            excel.WriteToCell(planetNum, 25, metal.ToString());
+            excel.WriteToCell(planetNum, 26, anae.ToString());
+            excel.WriteToCell(planetNum, 27, meds.ToString());
+            excel.WriteToCell(planetNum, 28, orgs.ToString());
+            excel.WriteToCell(planetNum, 29, oil.ToString());
+            excel.WriteToCell(planetNum, 30, uri.ToString());
+            excel.WriteToCell(planetNum, 31, equi.ToString());
+            excel.WriteToCell(planetNum, 32, spice.ToString());
+            excel.WriteToCell(planetNum, 33, nukes.ToString());
+            excel.WriteToCell(planetNum, 34, cMines.ToString());
+            excel.WriteToCell(planetNum, 35, lasers.ToString());
+            excel.WriteToCell(planetNum, 36, solarShots.ToString());
+            excel.WriteToCell(planetNum, 37, solarRate.ToString());
+            excel.WriteToCell(planetNum, 38, discovered);
 
             excel.Close();
         }
