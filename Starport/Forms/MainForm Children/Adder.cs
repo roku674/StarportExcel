@@ -156,7 +156,12 @@ namespace StarportExcel
 
                         temp[1] = RemoveParenthesisColonComma(temp[1]);
                         temp[1] = RemoveLetters(temp[1]);
-                        hourlyIncome = int.Parse(temp[1]);
+                        if (temp[1].Equals(null) || temp[1].Equals("")) { }
+                        else
+                        {
+                            hourlyIncome = int.Parse(temp[1]);
+                        }
+                        
                         Console.WriteLine(temp[0] + " " + temp[1] + "/hr");
                       
                     }
