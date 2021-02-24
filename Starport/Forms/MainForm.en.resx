@@ -132,7 +132,7 @@
     <value>NoControl</value>
   </data>
   <data name="FindGrowingButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 141</value>
+    <value>11, 158</value>
   </data>
   <data name="FindGrowingButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -144,7 +144,7 @@
     <value>NoControl</value>
   </data>
   <data name="CheckGrowButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 170</value>
+    <value>128, 187</value>
   </data>
   <data name="CheckGrowButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -175,6 +175,9 @@
   </data>
   <data name="FindNeedsDefenseButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="FindNeedsDefenseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 263</value>
   </data>
   <data name="FindNeedsDefenseButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -236,11 +239,17 @@
   <data name="ClearNeedsDefenseButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="ClearNeedsDefenseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 263</value>
+  </data>
   <data name="ClearNeedsDefenseButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
   <data name="ClearNeedsDefenseButton.Text" xml:space="preserve">
     <value>Clear ND</value>
+  </data>
+  <data name="toolStripMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>590, 25</value>
   </data>
   <data name="OpenToolStripButtonMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -342,14 +351,11 @@
   <data name="HelpMeNiggaDamnToolStripButtonMain.Text" xml:space="preserve">
     <value>He&amp;lp</value>
   </data>
-  <data name="toolStripMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>590, 25</value>
-  </data>
   <data name="ClearGrowButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ClearGrowButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 141</value>
+    <value>128, 158</value>
   </data>
   <data name="ClearGrowButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -360,6 +366,9 @@
   <data name="CheckNDButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="CheckNDButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 292</value>
+  </data>
   <data name="CheckNDButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
@@ -368,6 +377,9 @@
   </data>
   <data name="SortDefensesByXButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="SortDefensesByXButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 321</value>
   </data>
   <data name="SortDefensesByXButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -379,7 +391,7 @@
     <value>NoControl</value>
   </data>
   <data name="SortGrowingByXButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 199</value>
+    <value>128, 216</value>
   </data>
   <data name="SortGrowingByXButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -387,38 +399,32 @@
   <data name="SortGrowingByXButton.Text" xml:space="preserve">
     <value>Sort by X Only</value>
   </data>
-  <data name="FindBuildsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="FindConstructionButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="FindBuildsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 49</value>
-  </data>
-  <data name="FindBuildsButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="FindConstructionButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
-  <data name="FindBuildsButton.Text" xml:space="preserve">
-    <value>Find Builds</value>
+  <data name="FindConstructionButton.Text" xml:space="preserve">
+    <value>Find Construction</value>
   </data>
-  <data name="FindDeconstructButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ClearConstructionButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="FindDeconstructButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ClearConstructionButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
-  <data name="FindDeconstructButton.Text" xml:space="preserve">
-    <value>Find Deconstruct</value>
+  <data name="ClearConstructionButton.Text" xml:space="preserve">
+    <value>Clear Construction</value>
   </data>
-  <data name="FindColonialInfoButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="SortConstructionBySystemButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="FindColonialInfoButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 90</value>
-  </data>
-  <data name="FindColonialInfoButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SortConstructionBySystemButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
-  <data name="FindColonialInfoButton.Text" xml:space="preserve">
-    <value>Find Info</value>
+  <data name="SortConstructionBySystemButton.Text" xml:space="preserve">
+    <value>Sort by System</value>
   </data>
   <data name="pictureBoxMain.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -23118,13 +23124,13 @@
 </value>
   </data>
   <data name="pictureBoxMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>590, 413</value>
+    <value>590, 417</value>
   </data>
   <data name="FindDDButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="FindDDButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 90</value>
+    <value>469, 399</value>
   </data>
   <data name="FindDDButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -23136,7 +23142,7 @@
     <value>NoControl</value>
   </data>
   <data name="SortDefensesBySystemButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 315</value>
+    <value>11, 321</value>
   </data>
   <data name="SortDefensesBySystemButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -23173,7 +23179,7 @@
     <value>NoControl</value>
   </data>
   <data name="SortGrowingBySystemButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 199</value>
+    <value>13, 216</value>
   </data>
   <data name="SortGrowingBySystemButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -23217,17 +23223,32 @@
   <data name="FindWeakSolarsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="FindWeakSolarsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 400</value>
-  </data>
   <data name="FindWeakSolarsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
   </data>
-  <data name="FindWeakSolarsButton.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
   <data name="FindWeakSolarsButton.Text" xml:space="preserve">
     <value>Find Weak Solars</value>
+  </data>
+  <data name="CheckConstructionButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CheckConstructionButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="CheckConstructionButton.Text" xml:space="preserve">
+    <value>Check Construction</value>
+  </data>
+  <data name="SortConstructionByXButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SortConstructionByXButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="SortConstructionByXButton.Text" xml:space="preserve">
+    <value>Sort By X Only</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>590, 441</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

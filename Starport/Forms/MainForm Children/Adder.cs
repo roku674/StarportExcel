@@ -685,6 +685,27 @@ namespace StarportExcel
                 }
             }
         }
+        /// <summary>
+        /// add a singular planet to the construction list
+        /// </summary>
+        /// <param name="colony"></param>
+        /// <param name="totalsSheet"></param>
+        public static void AddToConstruction(string colony, Excel totalsSheet)
+        {
+            //column 11 is growing on totals
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                var box = totalsSheet.ReadCellString(i, 25); // column L
+                if (box == "")
+                {
+                    totalsSheet.WriteToCell(i, 25, colony);
+                    int temp = i - 1;
+                    totalsSheet.WriteToCell(i, 24, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Construction", "Completed");
+                    break;
+                }
+            }
+        }
 
         private static Excel OpenFileAt(int num)
         {

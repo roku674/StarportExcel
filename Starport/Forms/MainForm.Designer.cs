@@ -29,9 +29,9 @@ namespace StarportExcel
         private System.Windows.Forms.Button CheckNDButton;
         private System.Windows.Forms.Button SortDefensesByXButton;
         private System.Windows.Forms.Button SortGrowingByXButton;
-        private System.Windows.Forms.Button FindBuildsButton;
-        private System.Windows.Forms.Button FindDeconstructButton;
-        private System.Windows.Forms.Button FindColonialInfoButton;
+        private System.Windows.Forms.Button FindConstructionButton;
+        private System.Windows.Forms.Button ClearConstructionButton;
+        private System.Windows.Forms.Button SortConstructionBySystemButton;
         private System.Windows.Forms.PictureBox pictureBoxMain;
         private System.Windows.Forms.Button FindDDButton;
         private System.Windows.Forms.Button SortDefensesBySystemButton;
@@ -73,9 +73,9 @@ namespace StarportExcel
             this.CheckNDButton = new System.Windows.Forms.Button();
             this.SortDefensesByXButton = new System.Windows.Forms.Button();
             this.SortGrowingByXButton = new System.Windows.Forms.Button();
-            this.FindBuildsButton = new System.Windows.Forms.Button();
-            this.FindDeconstructButton = new System.Windows.Forms.Button();
-            this.FindColonialInfoButton = new System.Windows.Forms.Button();
+            this.FindConstructionButton = new System.Windows.Forms.Button();
+            this.ClearConstructionButton = new System.Windows.Forms.Button();
+            this.SortConstructionBySystemButton = new System.Windows.Forms.Button();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.FindDDButton = new System.Windows.Forms.Button();
             this.SortDefensesBySystemButton = new System.Windows.Forms.Button();
@@ -86,6 +86,8 @@ namespace StarportExcel
             this.EditPlanetInfoButton = new System.Windows.Forms.Button();
             this.NamePlanetButton = new System.Windows.Forms.Button();
             this.FindWeakSolarsButton = new System.Windows.Forms.Button();
+            this.CheckConstructionButton = new System.Windows.Forms.Button();
+            this.SortConstructionByXButton = new System.Windows.Forms.Button();
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -263,24 +265,26 @@ namespace StarportExcel
             this.SortGrowingByXButton.UseVisualStyleBackColor = true;
             this.SortGrowingByXButton.Click += new System.EventHandler(this.SortGrowingByXButton_Click);
             // 
-            // FindBuildsButton
+            // FindConstructionButton
             // 
-            resources.ApplyResources(this.FindBuildsButton, "FindBuildsButton");
-            this.FindBuildsButton.Name = "FindBuildsButton";
-            this.FindBuildsButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.FindConstructionButton, "FindConstructionButton");
+            this.FindConstructionButton.Name = "FindConstructionButton";
+            this.FindConstructionButton.UseVisualStyleBackColor = true;
+            this.FindConstructionButton.Click += new System.EventHandler(this.FindConstructionButton_Click);
             // 
-            // FindDeconstructButton
+            // ClearConstructionButton
             // 
-            resources.ApplyResources(this.FindDeconstructButton, "FindDeconstructButton");
-            this.FindDeconstructButton.Name = "FindDeconstructButton";
-            this.FindDeconstructButton.UseVisualStyleBackColor = true;
-            this.FindDeconstructButton.Click += new System.EventHandler(this.FindDeconstructButton_Click);
+            resources.ApplyResources(this.ClearConstructionButton, "ClearConstructionButton");
+            this.ClearConstructionButton.Name = "ClearConstructionButton";
+            this.ClearConstructionButton.UseVisualStyleBackColor = true;
+            this.ClearConstructionButton.Click += new System.EventHandler(this.ClearConstructionButton_Click);
             // 
-            // FindColonialInfoButton
+            // SortConstructionBySystemButton
             // 
-            resources.ApplyResources(this.FindColonialInfoButton, "FindColonialInfoButton");
-            this.FindColonialInfoButton.Name = "FindColonialInfoButton";
-            this.FindColonialInfoButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.SortConstructionBySystemButton, "SortConstructionBySystemButton");
+            this.SortConstructionBySystemButton.Name = "SortConstructionBySystemButton";
+            this.SortConstructionBySystemButton.UseVisualStyleBackColor = true;
+            this.SortConstructionBySystemButton.Click += new System.EventHandler(this.SortConstructionBySystemButton_Click);
             // 
             // pictureBoxMain
             // 
@@ -352,9 +356,25 @@ namespace StarportExcel
             this.FindWeakSolarsButton.UseVisualStyleBackColor = true;
             this.FindWeakSolarsButton.Click += new System.EventHandler(this.FindWeakSolarsButton_Click);
             // 
+            // CheckConstructionButton
+            // 
+            resources.ApplyResources(this.CheckConstructionButton, "CheckConstructionButton");
+            this.CheckConstructionButton.Name = "CheckConstructionButton";
+            this.CheckConstructionButton.UseVisualStyleBackColor = true;
+            this.CheckConstructionButton.Click += new System.EventHandler(this.CheckConstructionButton_Click);
+            // 
+            // SortConstructionByXButton
+            // 
+            resources.ApplyResources(this.SortConstructionByXButton, "SortConstructionByXButton");
+            this.SortConstructionByXButton.Name = "SortConstructionByXButton";
+            this.SortConstructionByXButton.UseVisualStyleBackColor = true;
+            this.SortConstructionByXButton.Click += new System.EventHandler(this.SortConstructionByXButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.SortConstructionByXButton);
+            this.Controls.Add(this.CheckConstructionButton);
             this.Controls.Add(this.FindWeakSolarsButton);
             this.Controls.Add(this.NamePlanetButton);
             this.Controls.Add(this.EditPlanetInfoButton);
@@ -364,9 +384,9 @@ namespace StarportExcel
             this.Controls.Add(this.EditRenameListButton);
             this.Controls.Add(this.SortDefensesBySystemButton);
             this.Controls.Add(this.FindDDButton);
-            this.Controls.Add(this.FindColonialInfoButton);
-            this.Controls.Add(this.FindDeconstructButton);
-            this.Controls.Add(this.FindBuildsButton);
+            this.Controls.Add(this.SortConstructionBySystemButton);
+            this.Controls.Add(this.ClearConstructionButton);
+            this.Controls.Add(this.FindConstructionButton);
             this.Controls.Add(this.SortGrowingByXButton);
             this.Controls.Add(this.SortDefensesByXButton);
             this.Controls.Add(this.CheckNDButton);
@@ -423,6 +443,8 @@ namespace StarportExcel
         private System.Windows.Forms.Button EditPlanetInfoButton;
         private System.Windows.Forms.Button NamePlanetButton;
         private System.Windows.Forms.Button FindWeakSolarsButton;
+        private System.Windows.Forms.Button CheckConstructionButton;
+        private System.Windows.Forms.Button SortConstructionByXButton;
     }
 }
 

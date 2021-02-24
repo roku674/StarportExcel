@@ -397,7 +397,7 @@ namespace StarportExcel
         {
             Excel totalsSheet = OpenFileAt(1);
             int temp = 0;
-            for (int i = 2; i < 1000; i++)
+            for (int i = 2; i < Program.GetMax(); i++)
             {
                 if (totalsSheet.ReadCellString(i, 11) != "")
                 {
@@ -675,10 +675,6 @@ namespace StarportExcel
         }
 
         private void ClearRenameButton_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void FindDeconstructButton_Click(object sender, EventArgs e)
         {
 
         }
@@ -1029,5 +1025,171 @@ namespace StarportExcel
             MessageBox.Show("Weak Solars added to totals", "Message");
         }
 
+        private void FindConstructionButton_Click(object sender, EventArgs e)
+        {
+            Excel totals = OpenFileAt(1);
+            Clearer.ClearNDList(totals);
+
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = excel.ReadCellInt(1, 8);
+                //Console.WriteLine("Planet Total: " + planet);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    if (excel.ReadCellString(i, 2) != "")
+                    {
+                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        {
+                            excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
+                        }
+
+                        string box = excel.ReadCellString(i, 2);
+
+                        for (int k = 0; k < box.Length; k++) //itterate through the string character by character
+                        {
+                            if (box[k].Equals('.'))
+                            {
+                                if (k + 5 < box.Length && box[k + 5].Equals('C'))
+                                {
+                                    Adder.AddToConstruction(GetFormula(box), totals);
+                                    break;
+                                }
+                                else if (k + 6 < box.Length && box[k + 6].Equals('C'))
+                                {
+                                    Adder.AddToConstruction(GetFormula(box), totals);
+                                    break;
+                                }
+                                else if (k + 7 < box.Length && box[k + 7].Equals('C'))
+                                {
+                                    Adder.AddToConstruction(GetFormula(box), totals);
+                                    break;
+                                }
+                                else if (k + 8 < box.Length && box[k + 8].Equals('C'))
+                                {
+                                    Adder.AddToConstruction(GetFormula(box), totals);
+                                    break;
+                                }
+                                else
+                                {
+                                    //do nothing
+                                }
+                            }//end if
+                        }// for k
+                    } //end if                            
+                }//end of i loop
+
+                excel.Close();
+
+            }// end of J loop
+
+            totals.Close();
+            MessageBox.Show("Find Construction Done", "Completed");
+        }
+        private void ClearConstructionButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = new Excel(excelPath, 1);
+            Clearer.ClearConstructionList(excel);
+            excel.Close();
+        }
+        private void CheckConstructionButton_Click(object sender, EventArgs e)
+        {
+            Checkers.CheckConstruction();
+        }
+        private void SortConstructionByXButton_Click(object sender, EventArgs e)
+        {
+            Excel totalsSheet = OpenFileAt(1);
+            int temp = 0;
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (totalsSheet.ReadCellString(i, 25) != "")
+                {
+                    temp++;
+                }
+            }
+
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets are Constructing, thus can't be sorted", "Error");
+                return;
+            }
+
+            //Console.WriteLine(temp);
+            string[] planets = new string[temp];
+
+            for (int i = 2; i < planets.Length + 2; i++)
+            {
+                //Console.WriteLine(i);
+                if (totalsSheet.ReadCellString(i, 25) != "") //if not empty
+                {
+                    planets[i - 2] = totalsSheet.ReadCellString(i, 25); //add to list
+                    //Console.WriteLine(totalsSheet.ReadCellString(i, 25) + " added to list at index " + i);
+                }
+            }
+
+            Algorithms.SortPlanetsByX(planets);
+
+            for (int i = 0; i < planets.Length; i++)
+            {
+                if (planets[i] != "" && planets[i] != null)
+                {
+                    int temp2 = i + 2;
+                    //Console.WriteLine(temp2);
+                    totalsSheet.WriteToCell(temp2, 25, GetFormula(planets[i])); //write the contents of the array into the box
+                }
+            }
+
+            totalsSheet.Close();
+
+            MessageBox.Show("Construction List Sorted by X Coordinates", "Completed");
+        }
+
+        private void SortConstructionBySystemButton_Click(object sender, EventArgs e)
+        {
+            Excel totals = OpenFileAt(1);
+            int temp = 0;
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (totals.ReadCellString(i, 25) != "")
+                {
+                    temp++;
+                }
+            }
+            if (temp == 0)
+            {
+                MessageBox.Show("No Planets are growing, thus can't be sorted", "Error");
+                return;
+            }
+            string[] planets = new string[temp];
+
+            for (int i = 0; i < planets.Length; i++) //establish teh array
+            {
+                planets[i] = totals.ReadCellString((i + 2), 25);
+            }
+
+            string originString = PlanetOrganizerTextBox.Text; //get text from text box
+            Coordinates origin;
+
+            if (originString != "")
+            {
+                origin = Algorithms.GetCoordinates(originString); //if there's something there take it
+            }
+            else
+            {
+                origin = Algorithms.GetCoordinates(planets[0]); //else go with the first one in the list
+            }
+            ColonyInfo[] colInfo = Algorithms.SortPlanetsByXAndY(planets, origin, Algorithms.GetCoordinates(planets[temp - 1])); //get the sorted array
+
+            Clearer.ClearConstructionList(totals); //clear list
+            for (int i = 0; i < colInfo.Length; i++)
+            {
+                Adder.AddToConstruction(GetFormula(colInfo[i].colonyName), totals);
+            }
+
+            totals.Close();
+            PlanetOrganizerTextBox.Text = "Insert Planet Name or Start Coordinates";
+            MessageBox.Show("Construction List Sorted by System", "Completed");
+        }
     } //form1
 }//namespace
