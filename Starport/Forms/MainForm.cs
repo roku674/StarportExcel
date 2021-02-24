@@ -217,7 +217,7 @@ namespace StarportExcel
             Clearer.ClearNDList(totals);
             Clearer.ClearGrowList(totals);
             Clearer.ClearDDList(totals);
-
+            Clearer.ClearConstructionList(totals);
             Console.WriteLine("Beginning Totals...\n");
 
             for (int k = 2; k <= 10; k++) // goes through each sheet
