@@ -1028,7 +1028,7 @@ namespace StarportExcel
         private void FindConstructionButton_Click(object sender, EventArgs e)
         {
             Excel totals = OpenFileAt(1);
-            Clearer.ClearNDList(totals);
+            Clearer.ClearConstructionList(totals);
 
             for (int j = 2; j <= 10; j++) // goes through each sheet
             {
