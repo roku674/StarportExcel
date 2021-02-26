@@ -718,15 +718,15 @@ namespace StarportExcel
         {
             output.Write(excel.ReadCellString(planetNum, 2) + " | "); //column C
             //Console.WriteLine(excel.ReadCellString(planetNum, 2));
-            for(int i = 10; i <= 36; i++)
+            for(int i = 10; i <= 38; i++)
             {              
                 //Console.WriteLine(i);
-                if (i == 11 || i == 12 || (i >= 14 && i <= 17) || (i >= 23 && i <=35))
+                if (i == 11 || i == 12 || (i >= 14 && i <= 19) || (i >= 25 && i <=37))
                 {
                     var temp = excel.ReadCellDouble(planetNum, i);
                     output.Write(temp + " | ");
                 }
-                else if (i == 36)
+                else if (i == 38)
                 {
                     string temp = excel.ReadCellString(planetNum, i);
                     output.Write(temp);
@@ -1058,7 +1058,7 @@ namespace StarportExcel
         }
         private void NukesListButton_Click(object sender, EventArgs e)
         {
-            WriteAllPlanetInfoIf(250, 30, true, false, true);
+            WriteAllPlanetInfoIf(250, 32, true, false, true);
             MessageBox.Show("Nukes Colonies to Output", "Completed!");
         }
 

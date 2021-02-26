@@ -29,6 +29,15 @@ namespace StarportExcel
             }
             // Console.WriteLine("Grow List Cleared");
         }
+        public static void ClearConstructionList(Excel excel)
+        {
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                excel.WriteToCell(i, 24, "");
+                excel.WriteToCell(i, 25, "");
+            }
+            // Console.WriteLine("Con List Cleared");
+        }
         public static void ClearNDList(Excel excel)
         {
             for (int i = 2; i < Program.GetMax(); i++)
