@@ -111,6 +111,7 @@ namespace StarportExcel
             this.OceanicZoundsCheckBox = new System.Windows.Forms.CheckBox();
             this.MountainousCheckBox = new System.Windows.Forms.CheckBox();
             this.MountainZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.ConstructionListButton = new System.Windows.Forms.Button();
             this.toolStripPT.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -448,10 +449,18 @@ namespace StarportExcel
             this.MountainZoundsCheckBox.Name = "MountainZoundsCheckBox";
             this.MountainZoundsCheckBox.UseVisualStyleBackColor = true;
             // 
+            // ConstructionListButton
+            // 
+            resources.ApplyResources(this.ConstructionListButton, "ConstructionListButton");
+            this.ConstructionListButton.Name = "ConstructionListButton";
+            this.ConstructionListButton.UseVisualStyleBackColor = true;
+            this.ConstructionListButton.Click += new System.EventHandler(this.ConstructionListButton_Click);
+            // 
             // PlanetTypeForm
             // 
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Controls.Add(this.ConstructionListButton);
             this.Controls.Add(this.VolcanicsCheckBox);
             this.Controls.Add(this.VolcanicZoundsCheckBox);
             this.Controls.Add(this.RockiesCheckBox);
@@ -523,5 +532,6 @@ namespace StarportExcel
         private CheckBox OceanicZoundsCheckBox;
         private CheckBox MountainousCheckBox;
         private CheckBox MountainZoundsCheckBox;
+        private Button ConstructionListButton;
     }//class
 }//namespace
