@@ -218,10 +218,10 @@
     <value>Growing List</value>
   </data>
   <data name="ClearOutputButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 467</value>
+    <value>15, 498</value>
   </data>
   <data name="ClearOutputButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 23</value>
+    <value>545, 23</value>
   </data>
   <data name="ClearOutputButton.Text" xml:space="preserve">
     <value>Clear Output.txt</value>
@@ -682,20 +682,29 @@
   <data name="ConstructionListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ConstructionListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 466</value>
-  </data>
   <data name="ConstructionListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 23</value>
-  </data>
-  <data name="ConstructionListButton.TabIndex" type="System.Int32, mscorlib">
-    <value>49</value>
   </data>
   <data name="ConstructionListButton.Text" xml:space="preserve">
     <value>Construction List</value>
   </data>
+  <data name="LowMetalButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LowMetalButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>334, 466</value>
+  </data>
+  <data name="LowMetalButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 23</value>
+  </data>
+  <data name="LowMetalButton.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="LowMetalButton.Text" xml:space="preserve">
+    <value>Low Metal List</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>571, 501</value>
+    <value>571, 533</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -126,7 +126,7 @@ namespace StarportExcel
                 "|~{orange}~Green " + greenhousesZ + "/" + greenhouses +
                 "|~{purple}~Mount " + mountainsZ + "/" + mountains +
                 "|~{blue}~Oce " + oceansZ + "/" + oceans +
-                "|~{pink}~Paradises ~{link}1:" + paradises + "~" +
+                "|~{pink}~IGPs ~{link}1:" + paradises + "~" +
                 "|~{gray}~Roc " + rockiesZ + "/" + rockies +
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
                 "|~{link}25:Captured:~ " + invasions +
