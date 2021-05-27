@@ -15,6 +15,7 @@ namespace StarportExcel
     public partial class PlanetInfoForm : Form
     {
         private string excelPath;
+        private string ownerName = "Panther";
 
         public PlanetInfoForm()
         {
@@ -38,20 +39,25 @@ namespace StarportExcel
                 firstLine = MainForm.RemoveSpaces(firstLine);
                 for (int i = 0; i < info.Length; i++)
                 {
-                    if (firstLine.Equals("Panther.Research.Arc") || firstLine.Equals("Panther.Build.Arc") || firstLine.Equals("Panther.Build.Arc.Z") ||
-                           firstLine.Equals("Panther.Research.Des") || firstLine.Equals("Panther.Build.Des") || firstLine.Equals("Panther.Build.Des.Z") ||
-                           firstLine.Equals("Panther.Research.Ear") || firstLine.Equals("Panther.Build.Ear") || firstLine.Equals("Panther.Build.Ear.Z") ||
-                           firstLine.Equals("Panther.Research.Gre") || firstLine.Equals("Panther.Build.Gre") || firstLine.Equals("Panther.Build.Gre.Z") ||
-                           firstLine.Equals("Panther.Research.Mou") || firstLine.Equals("Panther.Build.Gre") || firstLine.Equals("Panther.Build.Gre.Z") ||
-                           firstLine.Equals("Panther.Research.Oce") || firstLine.Equals("Panther.Build.Oce") || firstLine.Equals("Panther.Build.Oce.Z") ||
-                           firstLine.Equals("Panther.Research.IGP") || firstLine.Equals("Panther.Build.IGP") || firstLine.Equals("Panther.Build.IGP.Z") ||
-                           firstLine.Equals("Panther.Research.Roc") || firstLine.Equals("Panther.Build.Roc") || firstLine.Equals("Panther.Build.Roc.Z") ||
-                           firstLine.Equals("Panther.Research.Vol") || firstLine.Equals("Panther.Build.Vol") || firstLine.Equals("Panther.Build.Vol.Z"))
+                    if (firstLine.Equals(ownerName + ".Research.Arc") || firstLine.Equals(ownerName + ".Build.Arc") || firstLine.Equals(ownerName + ".Build.Arc.Z") ||
+                           firstLine.Equals(ownerName + ".Research.Des") || firstLine.Equals(ownerName + ".Build.Des") || firstLine.Equals(ownerName + ".Build.Des.Z") ||
+                           firstLine.Equals(ownerName + ".Research.Ear") || firstLine.Equals(ownerName + ".Build.Ear") || firstLine.Equals(ownerName + ".Build.Ear.Z") ||
+                           firstLine.Equals(ownerName + ".Research.Gre") || firstLine.Equals(ownerName + ".Build.Gre") || firstLine.Equals(ownerName + ".Build.Gre.Z") ||
+                           firstLine.Equals(ownerName + ".Research.Mou") || firstLine.Equals(ownerName + ".Build.Gre") || firstLine.Equals(ownerName + ".Build.Gre.Z") ||
+                           firstLine.Equals(ownerName + ".Research.Oce") || firstLine.Equals(ownerName + ".Build.Oce") || firstLine.Equals(ownerName + ".Build.Oce.Z") ||
+                           firstLine.Equals(ownerName + ".Research.IGP") || firstLine.Equals(ownerName + ".Build.IGP") || firstLine.Equals(ownerName + ".Build.IGP.Z"))
+
                     {
                         //console.WriteLine(firstLine);
-                        Adder.BuildZoundsDestroy(info);
+                        Adder.BuildZoundsDestroy(info, true, DefendedCheckBox.Checked);
                         break;
                     }
+                    else if (firstLine.Equals(ownerName + ".Research.Roc") || firstLine.Equals(ownerName + ".Build.Roc") || firstLine.Equals(ownerName + ".Build.Roc.Z") ||
+                           firstLine.Equals(ownerName + ".Research.Vol") || firstLine.Equals(ownerName + ".Build.Vol") || firstLine.Equals(ownerName + ".Build.Vol.Z")) 
+                     {
+                        Adder.BuildZoundsDestroy(info, false, DefendedCheckBox.Checked);
+                     }
+
                     else if (i + 2 < info.Length && info[i].Equals('A') && info[i + 1].Equals('r') && info[i + 2].Equals('c'))
                     {
                         //i+3 and i+4 are the numbers if its triple digit 3 4 5
@@ -344,7 +350,7 @@ namespace StarportExcel
         }
 
         private void RemoveDuplicatesButton_Click(object sender, EventArgs e)
-        {
+        {/*
             Excel excel = OpenFileAt(11);
             int buildList = excel.ReadCellInt(1, 15);
             for(int i = 1; i <= buildList; i++)
@@ -367,11 +373,19 @@ namespace StarportExcel
                         int temp = buildList - 1;
                         excel.WriteToCell(1, 15, temp.ToString());
                     }
-                }
+                
             }
             excel.Close();
-
+            */
             MessageBox.Show("Duplicates removed from build List!", "Message");
+        }
+
+        private void RenameCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RenameCheckBox.Checked)
+            {
+                ownerName = renameTextBox.Text;
+            }
         }
     }
 }
