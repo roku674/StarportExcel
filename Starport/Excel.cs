@@ -86,6 +86,7 @@ namespace StarportExcel
 		/// <param name="s">what you want to write</param>
 		public void WriteToCell(int i, int j, string s)
 		{
+			Close();
 			i++;
 			j++;
 			ws.Cells[i, j].Value = s;

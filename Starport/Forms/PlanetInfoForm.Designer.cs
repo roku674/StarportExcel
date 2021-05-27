@@ -34,6 +34,9 @@ namespace StarportExcel
             this.SortBuildsButton = new System.Windows.Forms.Button();
             this.ClearBuildsButton = new System.Windows.Forms.Button();
             this.RemoveDuplicatesButton = new System.Windows.Forms.Button();
+            this.DefendedCheckBox = new System.Windows.Forms.CheckBox();
+            this.RenameCheckBox = new System.Windows.Forms.CheckBox();
+            this.renameTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // InfoBox
@@ -87,12 +90,44 @@ namespace StarportExcel
             this.RemoveDuplicatesButton.UseVisualStyleBackColor = true;
             this.RemoveDuplicatesButton.Click += new System.EventHandler(this.RemoveDuplicatesButton_Click);
             // 
+            // DefendedCheckBox
+            // 
+            this.DefendedCheckBox.AutoSize = true;
+            this.DefendedCheckBox.Location = new System.Drawing.Point(748, 222);
+            this.DefendedCheckBox.Name = "DefendedCheckBox";
+            this.DefendedCheckBox.Size = new System.Drawing.Size(73, 17);
+            this.DefendedCheckBox.TabIndex = 17;
+            this.DefendedCheckBox.Text = "Defended";
+            this.DefendedCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // RenameCheckBox
+            // 
+            this.RenameCheckBox.AutoSize = true;
+            this.RenameCheckBox.Location = new System.Drawing.Point(748, 385);
+            this.RenameCheckBox.Name = "RenameCheckBox";
+            this.RenameCheckBox.Size = new System.Drawing.Size(66, 17);
+            this.RenameCheckBox.TabIndex = 18;
+            this.RenameCheckBox.Text = "Rename";
+            this.RenameCheckBox.UseVisualStyleBackColor = true;
+            this.RenameCheckBox.CheckedChanged += new System.EventHandler(this.RenameCheckBox_CheckedChanged);
+            // 
+            // renameTextBox
+            // 
+            this.renameTextBox.Location = new System.Drawing.Point(748, 356);
+            this.renameTextBox.Name = "renameTextBox";
+            this.renameTextBox.Size = new System.Drawing.Size(109, 23);
+            this.renameTextBox.TabIndex = 19;
+            this.renameTextBox.Text = "";
+            // 
             // PlanetInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(865, 511);
+            this.Controls.Add(this.renameTextBox);
+            this.Controls.Add(this.RenameCheckBox);
+            this.Controls.Add(this.DefendedCheckBox);
             this.Controls.Add(this.RemoveDuplicatesButton);
             this.Controls.Add(this.ClearBuildsButton);
             this.Controls.Add(this.SortBuildsButton);
@@ -101,6 +136,7 @@ namespace StarportExcel
             this.Name = "PlanetInfoForm";
             this.Text = "PlanetInfoForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -111,5 +147,8 @@ namespace StarportExcel
         private System.Windows.Forms.Button SortBuildsButton;
         private System.Windows.Forms.Button ClearBuildsButton;
         private System.Windows.Forms.Button RemoveDuplicatesButton;
+        private System.Windows.Forms.CheckBox DefendedCheckBox;
+        private System.Windows.Forms.CheckBox RenameCheckBox;
+        private System.Windows.Forms.RichTextBox renameTextBox;
     }
 }

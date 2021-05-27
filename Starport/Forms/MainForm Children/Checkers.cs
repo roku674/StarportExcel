@@ -637,7 +637,7 @@ namespace StarportExcel
                 }//if
             }//for i
             excel.Close();
-            MessageBox.Show("Check Grow Done", "Completed");
+            MessageBox.Show("Check Construction Done", "Completed");
         }
         public static void CheckNeedsDefense()
         {

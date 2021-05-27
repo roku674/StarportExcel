@@ -71,6 +71,8 @@ namespace StarportExcel
                 excel.WriteToCell(i, 7, "");
                 excel.WriteToCell(i, 8, "");
                 excel.WriteToCell(i, 9, "");
+                excel.WriteToCell(i, 10, "");
+                excel.WriteToCell(i, 11, "");
             }
             Console.WriteLine("Build List Cleared");
         }

@@ -111,6 +111,8 @@ namespace StarportExcel
             this.OceanicZoundsCheckBox = new System.Windows.Forms.CheckBox();
             this.MountainousCheckBox = new System.Windows.Forms.CheckBox();
             this.MountainZoundsCheckBox = new System.Windows.Forms.CheckBox();
+            this.ConstructionListButton = new System.Windows.Forms.Button();
+            this.LowMetalButton = new System.Windows.Forms.Button();
             this.toolStripPT.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -448,10 +450,26 @@ namespace StarportExcel
             this.MountainZoundsCheckBox.Name = "MountainZoundsCheckBox";
             this.MountainZoundsCheckBox.UseVisualStyleBackColor = true;
             // 
+            // ConstructionListButton
+            // 
+            resources.ApplyResources(this.ConstructionListButton, "ConstructionListButton");
+            this.ConstructionListButton.Name = "ConstructionListButton";
+            this.ConstructionListButton.UseVisualStyleBackColor = true;
+            this.ConstructionListButton.Click += new System.EventHandler(this.ConstructionListButton_Click);
+            // 
+            // LowMetalButton
+            // 
+            resources.ApplyResources(this.LowMetalButton, "LowMetalButton");
+            this.LowMetalButton.Name = "LowMetalButton";
+            this.LowMetalButton.UseVisualStyleBackColor = true;
+            this.LowMetalButton.Click += new System.EventHandler(this.LowMetalButton_Click);
+            // 
             // PlanetTypeForm
             // 
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Controls.Add(this.LowMetalButton);
+            this.Controls.Add(this.ConstructionListButton);
             this.Controls.Add(this.VolcanicsCheckBox);
             this.Controls.Add(this.VolcanicZoundsCheckBox);
             this.Controls.Add(this.RockiesCheckBox);
@@ -523,5 +541,7 @@ namespace StarportExcel
         private CheckBox OceanicZoundsCheckBox;
         private CheckBox MountainousCheckBox;
         private CheckBox MountainZoundsCheckBox;
+        private Button ConstructionListButton;
+        private Button LowMetalButton;
     }//class
 }//namespace

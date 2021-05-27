@@ -1086,7 +1086,38 @@ namespace StarportExcel
             MessageBox.Show("Directorship Colonies to Output", "Completed!");
         }
 
-        
+        private void ConstructionListButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
 
+            output.WriteLine("Construction List: ");
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+
+                output.WriteLine(excel.ReadCellString(i, 25)); //needs defense column
+
+            }
+            output.Flush();
+            excel.Close();
+
+            MessageBox.Show("Construction List added to Output.txt", "Completed");
+        }
+
+        private void LowMetalButton_Click(object sender, EventArgs e)
+        {
+
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    if (excel.ReadCellInt(i,26) <= 5000){
+
+                    }
+                }
+            }
+        }
     }//PlanetTypeForm
 }//namespace

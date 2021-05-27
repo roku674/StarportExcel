@@ -34,7 +34,7 @@ namespace StarportExcel
             excel.Close();
         }
 
-        public static void AddColonyInfo(int sheet, string info, int planetNum )
+        public static void AddColonyInfo(int sheet, string info, int planetNum)
         {
             Excel excel = OpenFileAt(sheet);
 
@@ -450,7 +450,7 @@ namespace StarportExcel
 
             excel.Close();
         }
-        public static void BuildZoundsDestroy(string colonyInfo)
+        public static void BuildZoundsDestroy(string colonyInfo, bool resources, bool defended)
         {
             Excel excel = OpenFileAt(11); // build list
             StringReader reader = new StringReader(colonyInfo);
@@ -548,6 +548,8 @@ namespace StarportExcel
                 excel.WriteToCell(totalBuilds, 7, questionable.ToString());
                 excel.WriteToCell(totalBuilds, 8, deconstruct.ToString());
                 excel.WriteToCell(totalBuilds, 9, research.ToString());
+                excel.WriteToCell(totalBuilds, 10, resources.ToString());
+                excel.WriteToCell(totalBuilds, 11, defended.ToString());
                 
             }
             else
