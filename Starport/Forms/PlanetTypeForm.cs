@@ -7,65 +7,59 @@ namespace StarportExcel
 {
     public partial class PlanetTypeForm : Form
     {
-        string excelPath = "";
-        string outputPath = @"G:\My Drive\Personal Stuff\Starport\Output.txt";
-        private StreamWriter output = new StreamWriter(@"G:\My Drive\Personal Stuff\Starport\Output.txt");
+        private string excelPath = "";
+        private StreamWriter output;
+        private string outputPath = "";
 
         public PlanetTypeForm()
-		{
-			InitializeComponent();
-        }
-        private void PlanetTypeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //output.Flush();
-            CloseOutput();
+            InitializeComponent();
         }
 
-        // Tool strip stuff from here down
-
-        private void OpenToolStripButton_Click(object sender, EventArgs e)
+        public void CloseOutput()
         {
-            var openFileDialog1 = new OpenFileDialog
+            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+            GC.WaitForPendingFinalizers();
+            //Marshal.FinalReleaseComObject(output);
+            if (output != null)
             {
-                Filter = "Text Files|*.txt|All Files|*.*",
-                FilterIndex = 2,
-                Title = "Open the Excel Sheet"
-            };
-            openFileDialog1.ShowDialog();
-
-            //Check to see if a filename was given
-            if (openFileDialog1.FileName != "")
-            {
-                SetOutputPath(@openFileDialog1.FileName);                
+                output.Close();
             }
+
+            //GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+            //GC.WaitForPendingFinalizers();
         }
 
-        private void SaveToolStripButton_Click(object sender, EventArgs e)
+        public StreamWriter GetOutput()
         {
-            var saveFileDialog1 = new SaveFileDialog
-            {
-                Filter = "Text Files|*.txt|All Files|*.*",
-                Title = "Save an Image File"
-            };
-            saveFileDialog1.ShowDialog();
+            return output;
+        }
 
-            if (saveFileDialog1.FileName != "")
+        public void OpenOutput()
+        {
+            output = new StreamWriter(outputPath);
+        }
+
+        public void SetExcelPath(string path)
+        {
+            excelPath = path;
+        }
+
+        public void SetOutputPath(string path)
+        {
+            outputPath = path;
+            try
             {
-                File.WriteAllText(@saveFileDialog1.FileName, "");
+                output = new StreamWriter(outputPath);
             }
+            catch (IOException e)
+            {
+                Console.WriteLine(e);
+            }
+
+            MainForm mainform = (MainForm)Application.OpenForms[0];
+            mainform.UpdateOutputLocation(outputPath);
         }
-
-        private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This box is for essentially displaying the data to a text file, I may make it display to the box in future iterations.", "Message");
-        }
-
-        private void CopyToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //buttons
 
         private void ArcticsButton_Click(object sender, EventArgs e)
         {
@@ -128,12 +122,12 @@ namespace StarportExcel
                             {
                                 output.WriteLine(excel.ReadCellString(i, 2)); //column C
                             }
-                            else if (j + 3 == box.Length-1 && !box[j-4].Equals('.'))
+                            else if (j + 3 == box.Length - 1 && !box[j - 4].Equals('.'))
                             {
                                 output.WriteLine(excel.ReadCellString(i, 2)); //column C
                             }
                         }
-                    }                   
+                    }
                 }
                 output.Flush();
                 excel.Close();
@@ -145,6 +139,92 @@ namespace StarportExcel
             }
         }
 
+        private void BuildListButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(11);
+            int planetsToBuild = (int)excel.ReadCellDouble(1, 15);
+
+            for (int i = 1; i <= planetsToBuild; i++) //planet tally is in P column
+            {
+                //output.Write("Coordinates: ");
+                output.Write(excel.ReadCellString(i, 2)); //coordinates
+                output.Write(" | ");
+
+                //output.Write("Planet Name: ");
+                output.Write(excel.ReadCellString(i, 3)); //colony name
+                output.Write(" | ");
+
+                //output.Write("Colony Name: ");
+                output.Write(excel.ReadCellString(i, 4));//Planet Name
+                output.Write(" | ");
+
+                output.Write("Zounds: ");
+                output.Write(excel.ReadCellBool(i, 5));//Zoundsable
+                output.Write(" | ");
+
+                output.Write("Medium: ");
+                output.Write(excel.ReadCellBool(i, 6));//Medium
+                output.Write(" | ");
+
+                output.Write("?: ");
+                output.Write(excel.ReadCellBool(i, 7));//Questionable
+                output.Write(" | ");
+
+                output.Write("Decconstruct: ");
+                output.Write(excel.ReadCellBool(i, 8));//Deconstruct
+                output.Write(" | ");
+
+                //output.Write("Research x/10: ");
+                output.Write((int)excel.ReadCellDouble(i, 9)); //Research
+                output.Write(" | ");
+                output.WriteLine("");
+            }
+            output.Flush();
+            MessageBox.Show("Build List added to output", "Message");
+        }
+
+        private void ClearOutputButton_Click(object sender, EventArgs e)
+        {
+            CloseOutput();
+            File.WriteAllText(outputPath, "");
+            OpenOutput();
+            output.Flush();
+
+            MessageBox.Show(outputPath + " has been cleared", "Message");
+        }
+
+        private void CMinesListButton_Click(object sender, EventArgs e)
+        {
+            WriteAllPlanetInfoIf(100, 31, true, false, true);
+            MessageBox.Show("Compound Mine Colonies to Output", "Completed!");
+        }
+
+        private void ConstructionListButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
+
+            output.WriteLine("Construction List: ");
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                output.WriteLine(excel.ReadCellString(i, 25)); //needs defense column
+            }
+            output.Flush();
+            excel.Close();
+
+            MessageBox.Show("Construction List added to Output.txt", "Completed");
+        }
+
+        private void CopyToolStripButton_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void DemocracyListButton_Click(object sender, EventArgs e)
+        {
+            WriteAllPlanetInfoIf("Democracy", 13);
+            MessageBox.Show("Democracy Colonies to Output", "Completed!");
+        }
+
+        //buttons
         private void DesertsButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
@@ -222,6 +302,39 @@ namespace StarportExcel
             }
         }
 
+        private void DirectorshipListButton_Click(object sender, EventArgs e)
+        {
+            WriteAllPlanetInfoIf("Directorship", 13);
+            MessageBox.Show("Directorship Colonies to Output", "Completed!");
+        }
+
+        private void DoubleDomeListButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
+
+            output.WriteLine("Double Domes Lists: Candidates | Double Domes: ");
+
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (excel.ReadCellString(i, 18) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 18) + " | "); //Candidates
+                }
+                if (excel.ReadCellString(i, 19) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 19) + " | ");//double doems
+                }
+                if (excel.ReadCellString(i, 18) != "" || excel.ReadCellString(i, 19) != "")
+                {
+                    output.WriteLine("");
+                }
+            }
+            output.Flush();
+            excel.Close();
+
+            MessageBox.Show("Double Domes list added to Output.txt", "Completed");
+        }
+
         private void EarthlikesButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
@@ -297,7 +410,10 @@ namespace StarportExcel
             {
                 MessageBox.Show("Nothing was selected");
             }
+        }
 
+        private void FindMoraleButton_Click(object sender, EventArgs e)
+        {
         }
 
         private void GreenhousesButton_Click(object sender, EventArgs e)
@@ -374,6 +490,55 @@ namespace StarportExcel
             else
             {
                 MessageBox.Show("Nothing was selected");
+            }
+        }
+
+        private void GrowingButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
+
+            output.WriteLine("Growing List: ");
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                output.WriteLine(excel.ReadCellString(i, 11)); //growing column
+            }
+            output.Flush();
+            excel.Close();
+
+            MessageBox.Show("Growing List added to Output.txt", "Completed");
+        }
+
+        private void HelpMeNiggaDamnToolStripButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This box is for essentially displaying the data to a text file, I may make it display to the box in future iterations.", "Message");
+        }
+
+        private void LasersListButton_Click(object sender, EventArgs e)
+        {
+            WriteAllPlanetInfoIf(150, 32, true, false, true);
+            MessageBox.Show("Laser Colonies to Output", "Completed!");
+        }
+
+        private void LineBreakButton_Click(object sender, EventArgs e)
+        {
+            output.WriteLine("");
+            output.WriteLine("_____________________________________________");
+            output.WriteLine("");
+        }
+
+        private void LowMetalButton_Click(object sender, EventArgs e)
+        {
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    if (excel.ReadCellInt(i, 26) <= 5000)
+                    {
+                    }
+                }
             }
         }
 
@@ -454,6 +619,27 @@ namespace StarportExcel
             }
         }
 
+        private void NeedsDefensesButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
+
+            output.WriteLine("Needs Defense List: ");
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                output.WriteLine(excel.ReadCellString(i, 14)); //needs defense column
+            }
+            output.Flush();
+            excel.Close();
+
+            MessageBox.Show("Needs Defense List added to Output.txt", "Completed");
+        }
+
+        private void NukesListButton_Click(object sender, EventArgs e)
+        {
+            WriteAllPlanetInfoIf(250, 32, true, false, true);
+            MessageBox.Show("Nukes Colonies to Output", "Completed!");
+        }
+
         private void OceanicsButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
@@ -531,9 +717,32 @@ namespace StarportExcel
             }
         }
 
+        private Excel OpenFileAt(int num)
+        {
+            Excel excel = new Excel(excelPath, num);
+            return excel;
+        }
+
+        private void OpenToolStripButton_Click(object sender, EventArgs e)
+        {
+            var openFileDialog1 = new OpenFileDialog
+            {
+                Filter = "Text Files|*.txt|All Files|*.*",
+                FilterIndex = 2,
+                Title = "Open the Excel Sheet"
+            };
+            openFileDialog1.ShowDialog();
+
+            //Check to see if a filename was given
+            if (openFileDialog1.FileName != "")
+            {
+                SetOutputPath(@openFileDialog1.FileName);
+            }
+        }
+
         private void ParadisesButton_Click(object sender, EventArgs e)
         {
-            int.TryParse(numberTextBox.Text, out int temp); 
+            int.TryParse(numberTextBox.Text, out int temp);
 
             if (temp > 0)
             {
@@ -558,6 +767,49 @@ namespace StarportExcel
 
                 MessageBox.Show("Paradises added to " + outputPath, "Completed");
             }
+        }
+
+        private void PlanetTypeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //output.Flush();
+            CloseOutput();
+        }
+
+        private void PrisonListButton_Click(object sender, EventArgs e)
+        {
+            WriteAllPlanetInfoIf("Prison", 13);
+            MessageBox.Show("Prison Colonies to Output", "Completed!");
+        }
+
+        private void RenameListsButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
+
+            output.WriteLine("Rename Lists : Coordinates | Current Name | Rename ");
+
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                if (excel.ReadCellString(i, 6) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 6) + " | "); //location
+                }
+                if (excel.ReadCellString(i, 7) != "")
+                {
+                    output.Write(excel.ReadCellString(i, 7) + " | ");//before
+                }
+                if (excel.ReadCellString(i, 8) != "")
+                {
+                    output.Write("/namecolony " + excel.ReadCellString(i, 8));//after
+                }
+                if (excel.ReadCellString(i, 6) != "" || excel.ReadCellString(i, 7) != "" || excel.ReadCellString(i, 8) != "")
+                {
+                    output.WriteLine("");
+                }
+            }
+            output.Flush();
+            excel.Close();
+
+            MessageBox.Show("Rename lists added to Output.txt", "Completed");
         }
 
         private void RockiesButton_Click(object sender, EventArgs e)
@@ -635,6 +887,60 @@ namespace StarportExcel
             {
                 MessageBox.Show("Nothing was selected");
             }
+        }
+
+        private void SameSystemListButton_Click(object sender, EventArgs e)
+        {
+            Coordinates system = Algorithms.GetCoordinates(numberTextBox.Text);
+
+            for (int j = 2; j <= 10; j++) // goes through each sheet
+            {
+                Excel excel = OpenFileAt(j);
+
+                int planet = (int)excel.ReadCellDouble(1, 8);
+                for (int i = 1; i <= planet; i++) // goes through the planet list
+                {
+                    string planetName = excel.ReadCellString(i, 2);
+                    Coordinates planetCoords = Algorithms.GetCoordinates(planetName);
+                    if (system.x == planetCoords.x && system.y == planetCoords.y)
+                    {
+                        output.WriteLine(planetName);
+                    }
+                }
+                excel.Close();
+            }
+
+            output.Flush();
+            MessageBox.Show("Colonies in the Same System to output", "Message");
+        }
+
+        // Tool strip stuff from here down
+        private void SaveToolStripButton_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog1 = new SaveFileDialog
+            {
+                Filter = "Text Files|*.txt|All Files|*.*",
+                Title = "Save an Image File"
+            };
+            saveFileDialog1.ShowDialog();
+
+            if (saveFileDialog1.FileName != "")
+            {
+                File.WriteAllText(@saveFileDialog1.FileName, "");
+            }
+        }
+
+        private void SocialismListButton_Click(object sender, EventArgs e)
+        {
+            WriteAllPlanetInfoIf("Socialism", 13);
+            MessageBox.Show("Socialism Colonies to Output", "Completed!");
+        }
+
+        private void SolarsListButton_Click(object sender, EventArgs e)
+        {
+            WriteAllPlanetInfoIf(15, 33, false, true, true);
+            WriteAllPlanetInfoIf(100, 34, false, true, true);
+            MessageBox.Show("Weak Solar Colonies to Output", "Completed!");
         }
 
         private void VolcanicsButton_Click(object sender, EventArgs e)
@@ -718,10 +1024,10 @@ namespace StarportExcel
         {
             output.Write(excel.ReadCellString(planetNum, 2) + " | "); //column C
             //Console.WriteLine(excel.ReadCellString(planetNum, 2));
-            for(int i = 10; i <= 38; i++)
-            {              
+            for (int i = 10; i <= 38; i++)
+            {
                 //Console.WriteLine(i);
-                if (i == 11 || i == 12 || (i >= 14 && i <= 19) || (i >= 25 && i <=37))
+                if (i == 11 || i == 12 || (i >= 14 && i <= 19) || (i >= 25 && i <= 37))
                 {
                     var temp = excel.ReadCellDouble(planetNum, i);
                     output.Write(temp + " | ");
@@ -735,16 +1041,17 @@ namespace StarportExcel
                 {
                     string temp = excel.ReadCellString(planetNum, i);
                     output.Write(temp + " | ");
-                }                                
+                }
             }
             output.WriteLine("");
         }
+
         /// <summary>
         /// Finds and outputs the planet info if the string matches
         /// </summary>
         /// <param name="find"></param>
         /// <param name="column"></param>
-       private void WriteAllPlanetInfoIf(string find, int column)
+        private void WriteAllPlanetInfoIf(string find, int column)
         {
             for (int j = 2; j <= 10; j++) // goes through each sheet
             {
@@ -762,6 +1069,7 @@ namespace StarportExcel
                 excel.Close();
             }
         }
+
         /// <summary>
         /// Finds and outputs the planet info if the integer matches
         /// </summary>
@@ -776,7 +1084,7 @@ namespace StarportExcel
                 int planet = (int)excel.ReadCellDouble(1, 8);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
-                    int temp = (int)excel.ReadCellDouble(planet, column); 
+                    int temp = (int)excel.ReadCellDouble(planet, column);
                     if (temp.Equals(find))
                     {
                         WriteAllPlanetInfo(planet, excel);
@@ -786,6 +1094,7 @@ namespace StarportExcel
                 excel.Close();
             }
         }
+
         /// <summary>
         /// Finds and compares the number and outprints all the planet info if true
         /// </summary>
@@ -816,307 +1125,6 @@ namespace StarportExcel
                 }
 
                 excel.Close();
-            }
-        }
-
-        private void NeedsDefensesButton_Click(object sender, EventArgs e)
-        {
-            Excel excel = OpenFileAt(1);
-
-            output.WriteLine("Needs Defense List: ");
-            for (int i = 2; i < Program.GetMax(); i++)
-            {
-
-                output.WriteLine(excel.ReadCellString(i, 14)); //needs defense column
-
-            }
-            output.Flush();
-            excel.Close();
-
-            MessageBox.Show("Needs Defense List added to Output.txt", "Completed");
-
-        }
-        private void GrowingButton_Click(object sender, EventArgs e)
-        {
-            Excel excel = OpenFileAt(1);
-
-            output.WriteLine("Growing List: ");
-            for (int i = 2; i < Program.GetMax(); i++)
-            {
-                output.WriteLine(excel.ReadCellString(i, 11)); //growing column
-
-            }
-            output.Flush();
-            excel.Close();
-
-            MessageBox.Show("Growing List added to Output.txt", "Completed");
-        }
-        private void RenameListsButton_Click(object sender, EventArgs e)
-        {
-            Excel excel = OpenFileAt(1);
-
-            output.WriteLine("Rename Lists : Coordinates | Current Name | Rename ");
-
-            for (int i = 2; i < Program.GetMax(); i++)
-            {
-                if (excel.ReadCellString(i, 6) != "")
-                {
-                    output.Write(excel.ReadCellString(i, 6) + " | "); //location
-                }
-                if (excel.ReadCellString(i, 7) != "")
-                {
-                    output.Write(excel.ReadCellString(i, 7) + " | ");//before
-                }
-                if (excel.ReadCellString(i, 8) != "")
-                {
-                    output.Write("/namecolony " + excel.ReadCellString(i, 8));//after 
-                }
-                if(excel.ReadCellString(i, 6) != "" || excel.ReadCellString(i, 7) != "" || excel.ReadCellString(i, 8) != "")
-                {
-                    output.WriteLine("");
-                }
-            }
-            output.Flush();
-            excel.Close();
-
-            MessageBox.Show("Rename lists added to Output.txt", "Completed");
-        }
-        private void DoubleDomeListButton_Click(object sender, EventArgs e)
-        {
-            Excel excel = OpenFileAt(1);
-
-            output.WriteLine("Double Domes Lists: Candidates | Double Domes: ");
-
-            for (int i = 2; i < Program.GetMax(); i++)
-            {
-                if (excel.ReadCellString(i, 18) != "")
-                {
-                    output.Write(excel.ReadCellString(i, 18) + " | "); //Candidates
-                }
-                if (excel.ReadCellString(i, 19) != "")
-                {
-                    output.Write(excel.ReadCellString(i, 19) + " | ");//double doems
-                }
-                if (excel.ReadCellString(i, 18) != "" || excel.ReadCellString(i, 19) != "")
-                {
-                    output.WriteLine("");
-                }               
-            }
-            output.Flush();
-            excel.Close();
-
-            MessageBox.Show("Double Domes list added to Output.txt", "Completed");
-        }
-
-        private Excel OpenFileAt(int num)
-        {
-            Excel excel = new Excel(excelPath, num);
-            return excel;
-        }
-        public void SetExcelPath(string path)
-        {
-            excelPath = path;
-        }
-
-        public StreamWriter GetOutput()
-        {
-            return output;
-        }
-        public void SetOutputPath(string path)
-        {
-            outputPath = path;
-            output = new StreamWriter(outputPath);
-        }
-
-        public void OpenOutput()
-        {
-            output = new StreamWriter(outputPath);
-        }
-        public void CloseOutput()
-        {
-            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
-            GC.WaitForPendingFinalizers();
-            //Marshal.FinalReleaseComObject(output);
-            output.Close();
-            
-            //GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
-            //GC.WaitForPendingFinalizers();
-
-        }
-
-        private void ClearOutputButton_Click(object sender, EventArgs e)
-        {
-            CloseOutput();
-            File.WriteAllText(outputPath, "");
-            OpenOutput();
-            output.Flush();
-
-            MessageBox.Show(outputPath + " has been cleared", "Message");
-        }
-
-        private void LineBreakButton_Click(object sender, EventArgs e)
-        {
-            output.WriteLine("");
-            output.WriteLine("_____________________________________________");
-            output.WriteLine("");
-        }
-
-        
-
-        private void FindMoraleButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SameSystemListButton_Click(object sender, EventArgs e)
-        {
-            Coordinates system = Algorithms.GetCoordinates(numberTextBox.Text);
-
-            for (int j = 2; j <= 10; j++) // goes through each sheet
-            {
-                Excel excel = OpenFileAt(j);
-
-                int planet = (int)excel.ReadCellDouble(1, 8);
-                for (int i = 1; i <= planet; i++) // goes through the planet list
-                {
-                    string planetName = excel.ReadCellString(i, 2);
-                    Coordinates planetCoords = Algorithms.GetCoordinates(planetName);
-                    if(system.x == planetCoords.x && system.y == planetCoords.y)
-                    {
-                        output.WriteLine(planetName);
-                    }
-                }
-                excel.Close();
-            }
-
-            output.Flush();
-            MessageBox.Show("Colonies in the Same System to output", "Message");
-
-        }
-
-        private void BuildListButton_Click(object sender, EventArgs e)
-        {
-            Excel excel = OpenFileAt(11);
-            int planetsToBuild = (int) excel.ReadCellDouble(1, 15);
-
-            for (int i = 1; i <= planetsToBuild; i++) //planet tally is in P column
-            {
-                //output.Write("Coordinates: ");
-                output.Write(excel.ReadCellString(i, 2)); //coordinates
-                output.Write(" | ");
-
-                //output.Write("Planet Name: ");
-                output.Write(excel.ReadCellString(i, 3)); //colony name
-                output.Write(" | ");
-
-                //output.Write("Colony Name: ");
-                output.Write(excel.ReadCellString(i, 4));//Planet Name
-                output.Write(" | ");
-
-                output.Write("Zounds: ");
-                output.Write(excel.ReadCellBool(i, 5));//Zoundsable
-                output.Write(" | ");
-
-                output.Write("Medium: ");
-                output.Write(excel.ReadCellBool(i, 6));//Medium
-                output.Write(" | ");
-
-                output.Write("?: ");
-                output.Write(excel.ReadCellBool(i, 7));//Questionable
-                output.Write(" | ");
-
-                output.Write("Decconstruct: ");
-                output.Write(excel.ReadCellBool(i, 8));//Deconstruct
-                output.Write(" | ");
-
-                //output.Write("Research x/10: ");
-                output.Write((int) excel.ReadCellDouble(i, 9)); //Research
-                output.Write(" | ");
-                output.WriteLine("");
-
-            }
-            output.Flush();
-            MessageBox.Show("Build List added to output", "Message");
-        }
-
-        private void SolarsListButton_Click(object sender, EventArgs e)
-        {
-            WriteAllPlanetInfoIf(15, 33, false, true, true);
-            WriteAllPlanetInfoIf(100, 34, false, true, true);
-            MessageBox.Show("Weak Solar Colonies to Output", "Completed!");
-        }
-
-        private void LasersListButton_Click(object sender, EventArgs e)
-        {
-            WriteAllPlanetInfoIf(150, 32, true, false, true);
-            MessageBox.Show("Laser Colonies to Output", "Completed!");
-        }
-        private void CMinesListButton_Click(object sender, EventArgs e)
-        {
-            WriteAllPlanetInfoIf(100, 31, true, false, true);
-            MessageBox.Show("Compound Mine Colonies to Output", "Completed!");
-        }
-        private void NukesListButton_Click(object sender, EventArgs e)
-        {
-            WriteAllPlanetInfoIf(250, 32, true, false, true);
-            MessageBox.Show("Nukes Colonies to Output", "Completed!");
-        }
-
-        private void SocialismListButton_Click(object sender, EventArgs e)
-        {
-            WriteAllPlanetInfoIf("Socialism", 13);
-            MessageBox.Show("Socialism Colonies to Output", "Completed!");
-        }
-
-        private void DemocracyListButton_Click(object sender, EventArgs e)
-        {
-            WriteAllPlanetInfoIf("Democracy", 13);
-            MessageBox.Show("Democracy Colonies to Output", "Completed!");
-        }
-
-        private void PrisonListButton_Click(object sender, EventArgs e)
-        {
-            WriteAllPlanetInfoIf("Prison", 13);
-            MessageBox.Show("Prison Colonies to Output", "Completed!");
-        }
-
-        private void DirectorshipListButton_Click(object sender, EventArgs e)
-        {
-            WriteAllPlanetInfoIf("Directorship", 13);
-            MessageBox.Show("Directorship Colonies to Output", "Completed!");
-        }
-
-        private void ConstructionListButton_Click(object sender, EventArgs e)
-        {
-            Excel excel = OpenFileAt(1);
-
-            output.WriteLine("Construction List: ");
-            for (int i = 2; i < Program.GetMax(); i++)
-            {
-
-                output.WriteLine(excel.ReadCellString(i, 25)); //needs defense column
-
-            }
-            output.Flush();
-            excel.Close();
-
-            MessageBox.Show("Construction List added to Output.txt", "Completed");
-        }
-
-        private void LowMetalButton_Click(object sender, EventArgs e)
-        {
-
-            for (int j = 2; j <= 10; j++) // goes through each sheet
-            {
-                Excel excel = OpenFileAt(j);
-
-                int planet = (int)excel.ReadCellDouble(1, 8);
-                for (int i = 1; i <= planet; i++) // goes through the planet list
-                {
-                    if (excel.ReadCellInt(i,26) <= 5000){
-
-                    }
-                }
             }
         }
     }//PlanetTypeForm

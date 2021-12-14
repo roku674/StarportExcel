@@ -1,4 +1,3 @@
-C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.csprojAssemblyReference.cache
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.MainForm.resources
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.PlanetTypeForm.resources
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.Properties.Resources.resources
@@ -14,3 +13,4 @@ C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\en\StarportExcel.r
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.exe
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.pdb
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.PlanetInfoForm.resources
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.csproj.AssemblyReference.cache

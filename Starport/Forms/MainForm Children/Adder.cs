@@ -7,33 +7,8 @@ using System.Windows.Forms;
 
 namespace StarportExcel
 {
-    class Adder : MainForm
+    internal class Adder : MainForm
     {
-        /// <summary>
-        /// OBSOLETE USE REPLACER.REPLACEPLANET
-        /// </summary>
-        /// <param name="sheet"></param>
-        /// <param name="planetName"></param>
-        public static void AddPlanet(int sheet, string planetName)
-        {
-            Excel excel = OpenFileAt(sheet);
-
-            int planet = excel.ReadCellInt(1, 8); //read p Tally
-            int temp = planet + 1; //get it ot the next row
-
-            excel.WriteToCell(temp, 1, temp.ToString()); //updates the number next to the cell
-            excel.WriteToCell(temp, 2, planetName); //put the planet in the box
-
-            if(excel.ReadCellInt(1,8) < temp)
-            {
-                excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
-            }
-            
-            MessageBox.Show(planetName + " added to row " + temp + " sheet " + sheet, "Completed");
-
-            excel.Close();
-        }
-
         public static void AddColonyInfo(int sheet, string info, int planetNum)
         {
             Excel excel = OpenFileAt(sheet);
@@ -50,22 +25,22 @@ namespace StarportExcel
             int disastas = 0; // S
             string pollutionRate = null; //T
             string construction = null; //U
-            string research= null; //V
+            string research = null; //V
             string military = null; //W
             string harvesting = null; //X
             string building = null; //Y
             int metal = -1; // Z
-            int anae= -1; // AA
-            int meds= -1; // AB
-            int orgs= -1; // AC
-            int oil= -1; // AD
+            int anae = -1; // AA
+            int meds = -1; // AB
+            int orgs = -1; // AC
+            int oil = -1; // AD
             int uri = -1; // AE
             int equi = -1; // AF
             int spice = -1; // AG
             int nukes = -1; // AH
-            int cMines= -1; // AI
-            int lasers= -1; // AJ
-            int solarShots= -1; // AK
+            int cMines = -1; // AI
+            int lasers = -1; // AJ
+            int solarShots = -1; // AK
             int solarRate = -1; //AL
             string discovered = null; //AM
 
@@ -73,10 +48,10 @@ namespace StarportExcel
             //stringBuilder.AppendLine("");
             StringReader reader = new StringReader(info);
             string line;
-            //string firstLine = reader.ReadLine();                        
+            //string firstLine = reader.ReadLine();
 
             for (int i = 0; i < info.Length; i++)
-            {               
+            {
                 line = reader.ReadLine();
                 if (line != null)
                 {
@@ -110,7 +85,6 @@ namespace StarportExcel
                         Console.WriteLine(temp[0]);
 
                         pop = int.Parse(temp[0]);
-
                     }
                     else if (i == 9)
                     {
@@ -153,7 +127,6 @@ namespace StarportExcel
                         temp[0] = RemoveSpaces(temp[0]);
                         treasury = int.Parse(temp[0]);
 
-
                         temp[1] = RemoveParenthesisColonComma(temp[1]);
                         temp[1] = RemoveLetters(temp[1]);
                         if (temp[1].Equals(null) || temp[1].Equals("")) { }
@@ -161,9 +134,8 @@ namespace StarportExcel
                         {
                             hourlyIncome = int.Parse(temp[1]);
                         }
-                        
+
                         Console.WriteLine(temp[0] + " " + temp[1] + "/hr");
-                      
                     }
                     else if (i == 12)
                     {
@@ -184,14 +156,15 @@ namespace StarportExcel
                             disastas = int.Parse(trim);
                             pollutionRate = temp[2];
                         }
-                        else { 
+                        else
+                        {
                             pollutionRate = temp[1];
                         }
                         pollutionRate = RemoveLetters(pollutionRate);
                         pollutionRate = RemoveParenthesisColonComma(pollutionRate);
                         pollutionRate = RemoveSlashes(pollutionRate);
 
-                        Console.WriteLine(pollution+ " " + disastas); 
+                        Console.WriteLine(pollution + " " + disastas);
                         Console.WriteLine(pollutionRate);
                     }
                     else if (i == 15)
@@ -276,7 +249,6 @@ namespace StarportExcel
                     }
                     else if (i == 20)
                     {
-
                         for (int j = 0; j < line.Length; j++)
                         {
                             if (line[j].Equals(':'))
@@ -329,7 +301,7 @@ namespace StarportExcel
                     }
                     else if (i == 36)
                     {
-                        if(line.Equals("No weapons factory present."))
+                        if (line.Equals("No weapons factory present."))
                         {
                             for (int j = i; j < info.Length; j++)
                             {
@@ -355,9 +327,7 @@ namespace StarportExcel
                                     line = reader.ReadLine();
                                     if (j >= 39 && j <= 50)
                                     {
-
                                         discovered = discovered + '\n' + line;
-
                                     }
                                 }
                             }
@@ -366,13 +336,13 @@ namespace StarportExcel
                         }
                         else
                         {
-                            //nukes 
+                            //nukes
                             string[] temp = line.Split(':');
                             temp[1] = RemoveSpaces(temp[1]);
                             temp[1].Trim();
                             nukes = int.Parse(temp[1]);
                             Console.WriteLine(temp[1]);
-                        }                       
+                        }
                     }
                     else if (i == 39)
                     {
@@ -404,20 +374,19 @@ namespace StarportExcel
 
                         solarShots = int.Parse(temp[0]);
                         solarRate = int.Parse(temp[1]);
-                        Console.WriteLine(temp[0] + '\n' + temp[1] );
+                        Console.WriteLine(temp[0] + '\n' + temp[1]);
                     }
                     else if (i >= 48 && i <= 59)
                     {
-
                         discovered = discovered + '\n' + line;
 
                         //Console.WriteLine(line);
-                    }                    
-                }                
+                    }
+                }
             }
             Console.Write(discovered);
 
-            Replacer.ReplacePlanetMethod(excel, sheet, planetNum, colonyName);            
+            Replacer.ReplacePlanetMethod(excel, sheet, planetNum, colonyName);
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
             excel.WriteToCell(planetNum, 12, morale.ToString());
@@ -450,6 +419,188 @@ namespace StarportExcel
 
             excel.Close();
         }
+
+        /// <summary>
+        /// OBSOLETE USE REPLACER.REPLACEPLANET
+        /// </summary>
+        /// <param name="sheet"></param>
+        /// <param name="planetName"></param>
+        public static void AddPlanet(int sheet, string planetName)
+        {
+            Excel excel = OpenFileAt(sheet);
+
+            int planet = excel.ReadCellInt(1, 8); //read p Tally
+            int temp = planet + 1; //get it ot the next row
+
+            excel.WriteToCell(temp, 1, temp.ToString()); //updates the number next to the cell
+            excel.WriteToCell(temp, 2, planetName); //put the planet in the box
+
+            if (excel.ReadCellInt(1, 8) < temp)
+            {
+                excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
+            }
+
+            MessageBox.Show(planetName + " added to row " + temp + " sheet " + sheet, "Completed");
+
+            excel.Close();
+        }
+
+        public static void AddToBuilds(Excel excel, string coordinates, string planetName, string colonyName, string zoundsable, string medium, string questionable, string deconstruct, string research)
+
+        {
+            int totalBuilds = excel.ReadCellInt(1, 15);
+            totalBuilds += 1;
+
+            excel.WriteToCell(1, 15, totalBuilds.ToString());
+            excel.WriteToCell(totalBuilds, 1, totalBuilds.ToString());
+
+            excel.WriteToCell(totalBuilds, 2, coordinates);
+            excel.WriteToCell(totalBuilds, 3, planetName);
+            excel.WriteToCell(totalBuilds, 4, colonyName);
+            excel.WriteToCell(totalBuilds, 5, zoundsable);
+            excel.WriteToCell(totalBuilds, 6, medium);
+            excel.WriteToCell(totalBuilds, 7, questionable);
+            excel.WriteToCell(totalBuilds, 8, deconstruct);
+            excel.WriteToCell(totalBuilds, 9, research);
+        }
+
+        /// <summary>
+        /// add a singular planet to the construction list
+        /// </summary>
+        /// <param name="colony"></param>
+        /// <param name="totalsSheet"></param>
+        public static void AddToConstruction(string colony, Excel totalsSheet)
+        {
+            //column 11 is growing on totals
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                var box = totalsSheet.ReadCellString(i, 25); // column L
+                if (box == "")
+                {
+                    totalsSheet.WriteToCell(i, 25, colony);
+                    int temp = i - 1;
+                    totalsSheet.WriteToCell(i, 24, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Construction", "Completed");
+                    break;
+                }
+            }
+        }
+
+        public static void AddToDD(string colony, Excel totalsSheet)
+        {
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                string box = totalsSheet.ReadCellString(i, 19);
+                if (box == "")
+                {
+                    totalsSheet.WriteToCell(i, 19, colony); //put the colony in the slot
+                    int temp = i - 1;
+                    totalsSheet.WriteToCell(i, 17, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Double Domes", "Completed");
+                    break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// add a singular planet to the grow list
+        /// </summary>
+        /// <param name="colony"></param>
+        /// <param name="totalsSheet"></param>
+        public static void AddToGrow(string colony, Excel totalsSheet)
+        {
+            //column 11 is growing on totals
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                var box = totalsSheet.ReadCellString(i, 11); // column L
+                if (box == "")
+                {
+                    totalsSheet.WriteToCell(i, 11, colony);
+                    int temp = i - 1;
+                    totalsSheet.WriteToCell(i, 10, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Knee Grow", "Completed");
+                    break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// add all of the planets to the grow list at once
+        /// </summary>
+        /// <param name="colonies"></param>
+        /// <param name="totalsSheet"></param>
+        public static void AddToGrow(string[] colonies, Excel totalsSheet)
+        {
+            for (int i = 2; i < colonies.Length; i++)
+            {
+                totalsSheet.WriteToCell(i, 11, colonies[i - 2]);
+            }
+        }
+
+        /// <summary>
+        /// add a singular planet to the needs defense list
+        /// </summary>
+        /// <param name="colony"></param>
+        /// <param name="totalsSheet"></param>
+        public static void AddToND(string colony, Excel totalsSheet)
+        {
+            //column 14 is Needs Defense on totals
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                string box = totalsSheet.ReadCellString(i, 14);
+                if (box == "")
+                {
+                    totalsSheet.WriteToCell(i, 14, colony); //put the colony in the slot
+                    int temp = i - 1;
+                    totalsSheet.WriteToCell(i, 13, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Needs Defense", "Completed");
+                    break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Add all the colonies at once if you have an array of strings
+        /// </summary>
+        /// <param name="colonies"></param>
+        /// <param name="totalsSheet"></param>
+        public static void AddToND(string[] colonies, Excel totalsSheet)
+        {
+            for (int i = 2; i < colonies.Length; i++)
+            {
+                totalsSheet.WriteToCell(i, 14, colonies[i - 2]);
+            }
+        }
+
+        public static void AddToWeakSolars(string colony, Excel totalsSheet)
+        {
+            for (int i = 2; i < Program.GetMax(); i++)
+            {
+                var box = totalsSheet.ReadCellString(i, 22); // column L
+                if (box == "")
+                {
+                    totalsSheet.WriteToCell(i, 22, colony);
+                    int temp = i - 1;
+                    totalsSheet.WriteToCell(i, 21, temp.ToString()); // put number in the box to the left
+                    Console.WriteLine(colony + " added to Weak Solars");
+                    break;
+                }
+            }
+        }
+
+        public static void AddToZounds(string colony, Excel excel)
+        {
+            int zoundsCount = excel.ReadCellInt(2, 8);
+            zoundsCount++; //if it's 0 don't put it in the 0 slot
+
+            excel.WriteToCell(zoundsCount, 4, zoundsCount.ToString()); // this is the 1 2 3 4
+            excel.WriteToCell(zoundsCount, 5, colony); //put colony in here //
+            int temp = zoundsCount + 1;
+            Console.WriteLine(colony + " added to Zounds to cell [F," + temp + "]");
+
+            excel.WriteToCell(2, 8, zoundsCount.ToString());// changes the total zounds
+        }
+
         public static void BuildZoundsDestroy(string colonyInfo, bool resources, bool defended)
         {
             Excel excel = OpenFileAt(11); // build list
@@ -467,11 +618,11 @@ namespace StarportExcel
 
             bool zoundsable = false;
             bool medium = false;
-            bool questionable = false; 
-            bool deconstruct = false;// F , G, H, I 
+            bool questionable = false;
+            bool deconstruct = false;// F , G, H, I
 
-            buildableHolder[0] = zoundsable; 
-            buildableHolder[1] = medium; 
+            buildableHolder[0] = zoundsable;
+            buildableHolder[1] = medium;
             buildableHolder[2] = questionable;
             buildableHolder[3] = deconstruct;
 
@@ -516,7 +667,7 @@ namespace StarportExcel
 
             bool noDuplicate = true;
 
-            for(int i = 1; i <= excel.ReadCellInt(1,15); i++)
+            for (int i = 1; i <= excel.ReadCellInt(1, 15); i++)
             {
                 if (planetName.Equals(excel.ReadCellString(i, 3)))
                 {
@@ -533,7 +684,6 @@ namespace StarportExcel
                 questionable = buildableHolder[2];
                 deconstruct = buildableHolder[3];
 
-                
                 int totalBuilds = excel.ReadCellInt(1, 15);
                 totalBuilds += 1;
                 Console.WriteLine(totalBuilds);
@@ -550,7 +700,6 @@ namespace StarportExcel
                 excel.WriteToCell(totalBuilds, 9, research.ToString());
                 excel.WriteToCell(totalBuilds, 10, resources.ToString());
                 excel.WriteToCell(totalBuilds, 11, defended.ToString());
-                
             }
             else
             {
@@ -559,163 +708,11 @@ namespace StarportExcel
             }
             excel.Close();
         }
-        public static void AddToWeakSolars(string colony, Excel totalsSheet)
-        {
-            for (int i = 2; i < Program.GetMax(); i++)
-            {               
-                var box = totalsSheet.ReadCellString(i, 22); // column L
-                if (box == "")
-                {
-                    totalsSheet.WriteToCell(i, 22, colony);
-                    int temp = i - 1;
-                    totalsSheet.WriteToCell(i, 21, temp.ToString()); // put number in the box to the left
-                    Console.WriteLine(colony + " added to Weak Solars");
-                    break;
-                }
-            }
-        }
-        public static void AddToBuilds(Excel excel, string coordinates, string planetName, string colonyName, string zoundsable, string medium, string questionable, string deconstruct, string research)
-
-        {
-            int totalBuilds = excel.ReadCellInt(1, 15);
-            totalBuilds += 1;
-
-            excel.WriteToCell(1, 15, totalBuilds.ToString());
-            excel.WriteToCell(totalBuilds, 1, totalBuilds.ToString());
-
-            excel.WriteToCell(totalBuilds, 2, coordinates);
-            excel.WriteToCell(totalBuilds, 3, planetName);
-            excel.WriteToCell(totalBuilds, 4, colonyName);
-            excel.WriteToCell(totalBuilds, 5, zoundsable);
-            excel.WriteToCell(totalBuilds, 6, medium);
-            excel.WriteToCell(totalBuilds, 7, questionable);
-            excel.WriteToCell(totalBuilds, 8, deconstruct);
-            excel.WriteToCell(totalBuilds, 9, research);
-        }
-
-        public static void AddToZounds(string colony, Excel excel)
-        {
-            int zoundsCount = excel.ReadCellInt(2, 8);
-            zoundsCount++; //if it's 0 don't put it in the 0 slot
-
-            excel.WriteToCell(zoundsCount, 4, zoundsCount.ToString()); // this is the 1 2 3 4
-            excel.WriteToCell(zoundsCount, 5, colony); //put colony in here //
-            int temp = zoundsCount + 1;
-            Console.WriteLine(colony + " added to Zounds to cell [F," + temp + "]");
-
-            excel.WriteToCell(2, 8, zoundsCount.ToString());// changes the total zounds 
-        }
-        /// <summary>
-        /// add a singular planet to the grow list
-        /// </summary>
-        /// <param name="colony"></param>
-        /// <param name="totalsSheet"></param>
-        public static void AddToGrow(string colony, Excel totalsSheet)
-        {
-            //column 11 is growing on totals
-            for (int i = 2; i < Program.GetMax(); i++)
-            {               
-                var box = totalsSheet.ReadCellString(i, 11); // column L
-                if (box == "")
-                {
-                    totalsSheet.WriteToCell(i, 11, colony);
-                    int temp = i - 1;
-                    totalsSheet.WriteToCell(i, 10, temp.ToString()); // put number in the box to the left
-                    Console.WriteLine(colony + " added to Knee Grow", "Completed");
-                    break;
-                }
-            }
-        }
-        /// <summary>
-        /// add all of the planets to the grow list at once
-        /// </summary>
-        /// <param name="colonies"></param>
-        /// <param name="totalsSheet"></param>
-        public static void AddToGrow(string[] colonies, Excel totalsSheet)
-        {
-            for (int i = 2; i < colonies.Length; i++)
-            {
-                totalsSheet.WriteToCell(i, 11, colonies[i - 2]);
-            }
-        }
-        /// <summary>
-        /// add a singular planet to the needs defense list
-        /// </summary>
-        /// <param name="colony"></param>
-        /// <param name="totalsSheet"></param>
-        public static void AddToND(string colony, Excel totalsSheet)
-        {
-            //column 14 is Needs Defense on totals
-            for (int i = 2; i < Program.GetMax(); i++)
-            {
-                string box = totalsSheet.ReadCellString(i, 14);
-                if (box == "")
-                {
-                    totalsSheet.WriteToCell(i, 14, colony); //put the colony in the slot
-                    int temp = i - 1;
-                    totalsSheet.WriteToCell(i, 13, temp.ToString()); // put number in the box to the left
-                    Console.WriteLine(colony + " added to Needs Defense", "Completed");
-                    break;
-                }
-            }
-        }
-        /// <summary>
-        /// Add all the colonies at once if you have an array of strings
-        /// </summary>
-        /// <param name="colonies"></param>
-        /// <param name="totalsSheet"></param>
-        public static void AddToND(string[] colonies, Excel totalsSheet)
-        {
-            for(int i = 2; i < colonies.Length; i++)
-            {
-                totalsSheet.WriteToCell(i, 14, colonies[i - 2]);
-            }
-        }
-        
-        public static void AddToDD(string colony, Excel totalsSheet)
-        {        
-            for (int i = 2; i < Program.GetMax(); i++)
-            {
-                string box = totalsSheet.ReadCellString(i, 19);
-                if (box == "")
-                {
-                    totalsSheet.WriteToCell(i, 19, colony); //put the colony in the slot
-                    int temp = i - 1;
-                    totalsSheet.WriteToCell(i, 17, temp.ToString()); // put number in the box to the left
-                    Console.WriteLine(colony + " added to Double Domes", "Completed");
-                    break;
-                }
-            }
-        }
-        /// <summary>
-        /// add a singular planet to the construction list
-        /// </summary>
-        /// <param name="colony"></param>
-        /// <param name="totalsSheet"></param>
-        public static void AddToConstruction(string colony, Excel totalsSheet)
-        {
-            //column 11 is growing on totals
-            for (int i = 2; i < Program.GetMax(); i++)
-            {
-                var box = totalsSheet.ReadCellString(i, 25); // column L
-                if (box == "")
-                {
-                    totalsSheet.WriteToCell(i, 25, colony);
-                    int temp = i - 1;
-                    totalsSheet.WriteToCell(i, 24, temp.ToString()); // put number in the box to the left
-                    Console.WriteLine(colony + " added to Construction", "Completed");
-                    break;
-                }
-            }
-        }
 
         private static Excel OpenFileAt(int num)
         {
             Excel excel = new Excel(excelPath, num);
             return excel;
         }
-
-
-
     }
 }
