@@ -10,6 +10,7 @@ namespace StarportExcel
     public partial class MainForm : Form
     {
         public static string excelPath = @"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx";
+        protected static string outputPath = @"G:\My Drive\Personal Stuff\Starport\Output.txt";
 
         public MainForm()
         {
@@ -52,6 +53,11 @@ namespace StarportExcel
             StringBuilder sb = new StringBuilder(str);
             sb[num] = replacement;
             return sb.ToString();
+        }
+
+        public void UpdateOutputLocation(string newOutputPath)
+        {
+            outputPath = newOutputPath;
         }
 
         public string GetExcelPath()
@@ -900,6 +906,7 @@ namespace StarportExcel
         {
             PlanetTypeForm customMessageBox = new PlanetTypeForm();
             customMessageBox.SetExcelPath(excelPath);
+            customMessageBox.SetOutputPath(outputPath);
             customMessageBox.ShowDialog();
         }
 

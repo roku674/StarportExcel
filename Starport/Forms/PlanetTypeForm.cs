@@ -21,7 +21,10 @@ namespace StarportExcel
             GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
             GC.WaitForPendingFinalizers();
             //Marshal.FinalReleaseComObject(output);
-            output.Close();
+            if (output != null)
+            {
+                output.Close();
+            }
 
             //GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
             //GC.WaitForPendingFinalizers();
@@ -45,7 +48,17 @@ namespace StarportExcel
         public void SetOutputPath(string path)
         {
             outputPath = path;
-            output = new StreamWriter(outputPath);
+            try
+            {
+                output = new StreamWriter(outputPath);
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e);
+            }
+
+            MainForm mainform = (MainForm)Application.OpenForms[0];
+            mainform.UpdateOutputLocation(outputPath);
         }
 
         private void ArcticsButton_Click(object sender, EventArgs e)
