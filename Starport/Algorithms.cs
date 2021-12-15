@@ -7,9 +7,7 @@ using static StarportExcel.Structs;
 
 namespace StarportExcel
 {
-    
-
-    class Algorithms
+    internal class Algorithms
     {
         private static bool[,] galaxyMap = new bool[999, 999];
         public static bool[,] GalaxyMap { get => galaxyMap; set => galaxyMap = value; }
@@ -17,7 +15,6 @@ namespace StarportExcel
         /// <summary>
         /// structure for the x,y coordinates of a system (123, 123)
         /// </summary>
-        
 
         /// <summary>
         /// Sorts the planets only by the X coordinates 1 dimension
@@ -29,8 +26,9 @@ namespace StarportExcel
             Array.Sort(planets);
             return planets;
         }
+
         /// <summary>
-        /// Pass in the array of strings and amount of points you want ot return, will return them in order 
+        /// Pass in the array of strings and amount of points you want ot return, will return them in order
         /// </summary>
         /// <param name="planets">list of planets</param>
         /// <param name="origin">starting location if null will use first planet</param>
@@ -40,24 +38,25 @@ namespace StarportExcel
         {
             ColonyInfo[] colInfo = new ColonyInfo[planets.Length];
 
-            for(int i = 0; i < planets.Length; i++)
+            for (int i = 0; i < planets.Length; i++)
             {
                 colInfo[i].colonyName = planets[i];
                 colInfo[i].coords = GetCoordinates(planets[i]);
                 colInfo[i].distance = Distance(colInfo[i].coords, origin);
             }
 
-            QuickSort(colInfo, 0, planets.Length-1);
+            QuickSort(colInfo, 0, planets.Length - 1);
 
             return colInfo;
         }
+
         public static ColonyInfo[] SortPlanetsByXAndY(string[,] planets, Coordinates origin, Coordinates destination)
         {
             ColonyInfo[] colInfo = new ColonyInfo[planets.GetLength(0)];
 
             for (int i = 0; i < planets.GetLength(0); i++)
             {
-                colInfo[i].coords = GetCoordinates(planets[i,0]);
+                colInfo[i].coords = GetCoordinates(planets[i, 0]);
                 colInfo[i].distance = Distance(colInfo[i].coords, origin);
             }
 
@@ -74,11 +73,11 @@ namespace StarportExcel
         /// <returns></returns>
         public static int Distance(Coordinates coords, Coordinates origin)
         {
-            return (int) Math.Sqrt((coords.x - origin.x) * (coords.x - origin.x) + (coords.y - origin.y) * (coords.y - origin.y));
+            return (int)Math.Sqrt((coords.x - origin.x) * (coords.x - origin.x) + (coords.y - origin.y) * (coords.y - origin.y));
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="planets"></param>
         /// <param name=""></param>
@@ -90,7 +89,7 @@ namespace StarportExcel
         }
 
         /// <summary>
-        /// Get the coordinates of the planet by name of the planet adn returns a struct 
+        /// Get the coordinates of the planet by name of the planet adn returns a struct
         /// </summary>
         /// <param name="colonyName"></param>
         /// <returns>struct Coordinates contains x and y</returns>
@@ -109,18 +108,18 @@ namespace StarportExcel
                     colonyName = Replacer.StringReplacer(i, ')', colonyName);
                 }
 
-                //Panther(500,596)Gre009.050.N
                 if (colonyName[i].Equals('(')) //x
                 {
-                    if (colonyName[i + 4].Equals(',')){
-
+                    if (colonyName[i + 4].Equals(','))
+                    {
                         colonyLoc.x = int.Parse(colonyName[i + 1].ToString() + colonyName[i + 2].ToString() + colonyName[i + 3].ToString());
                     }
                     else if (colonyName[i + 3].Equals(','))
                     {
                         colonyLoc.x = int.Parse(colonyName[i + 1].ToString() + colonyName[i + 2].ToString());
                     }
-                    else if (colonyName[i + 2].Equals(',')) {
+                    else if (colonyName[i + 2].Equals(','))
+                    {
                         colonyLoc.x = int.Parse(colonyName[i + 1].ToString());
                     }
                 }
@@ -132,7 +131,7 @@ namespace StarportExcel
                     }
                     else if (colonyName[i - 3].Equals(','))
                     {
-                        colonyLoc.y = int.Parse(colonyName[i + - 2].ToString() + colonyName[i - 1].ToString());
+                        colonyLoc.y = int.Parse(colonyName[i + -2].ToString() + colonyName[i - 1].ToString());
                     }
                     else if (colonyName[i - 2].Equals(','))
                     {
@@ -145,7 +144,7 @@ namespace StarportExcel
         }
 
         //standard quicksort algorithm bellow
-        static int Partition(ColonyInfo[] arr, int low,
+        private static int Partition(ColonyInfo[] arr, int low,
                                    int high)
         {
             int pivot = arr[high].distance;
@@ -170,11 +169,10 @@ namespace StarportExcel
             return i + 1;
         }
 
-        static void QuickSort(ColonyInfo[] arr, int low, int high)
+        private static void QuickSort(ColonyInfo[] arr, int low, int high)
         {
             if (low < high)
             {
-
                 int par = Partition(arr, low, high);
 
                 QuickSort(arr, low, par - 1);

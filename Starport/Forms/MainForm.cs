@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StarportExcel.Forms;
+using System;
 using System.ComponentModel;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -10,6 +11,7 @@ namespace StarportExcel
     public partial class MainForm : Form
     {
         public static string excelPath = @"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx";
+        public static string ownerName = "Autism";
         protected static string outputPath = @"G:\My Drive\Personal Stuff\Starport\Output.txt";
 
         public MainForm()
@@ -865,6 +867,9 @@ namespace StarportExcel
 
         private void NamePlanetButton_Click(object sender, EventArgs e)
         {
+            NamePlanetForm customMessageBox = new NamePlanetForm();
+            customMessageBox.SetExcelPath(excelPath);
+            customMessageBox.ShowDialog();
         }
 
         // Tool strip stuff from here down

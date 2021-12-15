@@ -83,6 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms.cs" />
+    <Compile Include="Forms\NamePlanetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NamePlanetForm.Designer.cs">
+      <DependentUpon>NamePlanetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PlanetInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NamePlanetForm.resx">
+      <DependentUpon>NamePlanetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PlanetInfoForm.resx">
       <DependentUpon>PlanetInfoForm.cs</DependentUpon>
