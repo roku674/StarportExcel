@@ -476,9 +476,9 @@ namespace StarportExcel
                 //Console.WriteLine("Planet Total: " + planet);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
-                    if (excel.ReadCellString(i, 2) != "")
+                    if (!string.IsNullOrEmpty(excel.ReadCellString(i, 2)))
                     {
-                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        if (!string.IsNullOrEmpty(excel.ReadCellDouble(i, 1).ToString()))
                         {
                             excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
                         }
@@ -537,9 +537,9 @@ namespace StarportExcel
                 int planet = excel.ReadCellInt(1, 8);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
-                    if (excel.ReadCellString(i, 2) != "")
+                    if (!string.IsNullOrEmpty(excel.ReadCellString(i, 2)))
                     {
-                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        if (!string.IsNullOrEmpty(excel.ReadCellDouble(i, 1).ToString()))
                         {
                             excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
                         }
@@ -591,9 +591,9 @@ namespace StarportExcel
                 //Console.WriteLine("Planet Total: " + planet);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
-                    if (excel.ReadCellString(i, 2) != "")
+                    if (!string.IsNullOrEmpty(excel.ReadCellString(i, 2)))
                     {
-                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        if (!string.IsNullOrEmpty(excel.ReadCellDouble(i, 1).ToString()))
                         {
                             excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
                         }
@@ -648,9 +648,9 @@ namespace StarportExcel
                 //Console.WriteLine("Planet Total: " + planet);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
-                    if (excel.ReadCellString(i, 2) != "")
+                    if (!string.IsNullOrEmpty(excel.ReadCellString(i, 2)))
                     {
-                        if (excel.ReadCellDouble(i, 1).ToString() != "")
+                        if (!string.IsNullOrEmpty(excel.ReadCellDouble(i, 1).ToString()))
                         {
                             excel.WriteToCell(i, 1, i.ToString()); //writes to the cell to the left and just puts a number in it
                         }
@@ -715,7 +715,7 @@ namespace StarportExcel
                 int temp = 0;
                 for (int j = 1; j <= planet + 15; j++) // goes through the planet list
                 {
-                    if (excel.ReadCellString(j, 2) != "") //if there's something there
+                    if (!string.IsNullOrEmpty(excel.ReadCellString(j, 2))) //if there's something there
                     {
                         excel.WriteToCell(j, 1, j.ToString()); //writes to the cell to the left and just puts a number in it
                         temp = j;
@@ -886,7 +886,7 @@ namespace StarportExcel
             openFileDialog1.ShowDialog();
 
             //Check to see if a filename was given
-            if (openFileDialog1.FileName != "")
+            if (!string.IsNullOrEmpty(openFileDialog1.FileName))
             {
                 SetExcelPath(@openFileDialog1.FileName);
             }
@@ -924,7 +924,7 @@ namespace StarportExcel
             };
             saveFileDialog1.ShowDialog();
 
-            if (saveFileDialog1.FileName != "")
+            if (string.IsNullOrEmpty(saveFileDialog1.FileName))
             {
                 Excel excel = OpenFileAt(1);
                 excel.SaveAs(@saveFileDialog1.FileName);
@@ -938,7 +938,7 @@ namespace StarportExcel
             int temp = 0;
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                if (totals.ReadCellString(i, 25) != "")
+                if (!string.IsNullOrEmpty(totals.ReadCellString(i, 25)))
                 {
                     temp++;
                 }
@@ -958,7 +958,7 @@ namespace StarportExcel
             string originString = PlanetOrganizerTextBox.Text; //get text from text box
             Coordinates origin;
 
-            if (originString != "")
+            if (!string.IsNullOrEmpty(originString))
             {
                 origin = Algorithms.GetCoordinates(originString); //if there's something there take it
             }
@@ -985,7 +985,7 @@ namespace StarportExcel
             int temp = 0;
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                if (totalsSheet.ReadCellString(i, 25) != "")
+                if (!string.IsNullOrEmpty(totalsSheet.ReadCellString(i, 25)))
                 {
                     temp++;
                 }
@@ -1003,7 +1003,7 @@ namespace StarportExcel
             for (int i = 2; i < planets.Length + 2; i++)
             {
                 //Console.WriteLine(i);
-                if (totalsSheet.ReadCellString(i, 25) != "") //if not empty
+                if (!string.IsNullOrEmpty(totalsSheet.ReadCellString(i, 25))) //if not empty
                 {
                     planets[i - 2] = totalsSheet.ReadCellString(i, 25); //add to list
                     //Console.WriteLine(totalsSheet.ReadCellString(i, 25) + " added to list at index " + i);
@@ -1014,7 +1014,7 @@ namespace StarportExcel
 
             for (int i = 0; i < planets.Length; i++)
             {
-                if (planets[i] != "" && planets[i] != null)
+                if (!string.IsNullOrEmpty(planets[i]))
                 {
                     int temp2 = i + 2;
                     //Console.WriteLine(temp2);
@@ -1033,7 +1033,7 @@ namespace StarportExcel
             int temp = 0;
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                if (totals.ReadCellString(i, 14) != "")
+                if (!string.IsNullOrEmpty(totals.ReadCellString(i, 14)))
                 {
                     temp++;
                 }
@@ -1053,7 +1053,7 @@ namespace StarportExcel
             string originString = PlanetOrganizerTextBox.Text; //get text from text box
             Coordinates origin;
 
-            if (originString != "" && originString != "Insert Planet Name or Start Coordinates")
+            if (!string.IsNullOrEmpty(originString) && originString != "Insert Planet Name or Start Coordinates")
             {
                 origin = Algorithms.GetCoordinates(originString); //if there's something there take it
             }
@@ -1080,7 +1080,7 @@ namespace StarportExcel
             int temp = 0;
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                if (totalsSheet.ReadCellString(i, 14) != "")
+                if (!string.IsNullOrEmpty(totalsSheet.ReadCellString(i, 14)))
                 {
                     temp++;
                 }
@@ -1096,7 +1096,7 @@ namespace StarportExcel
             for (int i = 2; i < planets.Length + 2; i++)
             {
                 //Console.WriteLine(i);
-                if (totalsSheet.ReadCellString(i, 14) != "") //if not empty
+                if (!string.IsNullOrEmpty((totalsSheet.ReadCellString(i, 14)))) //if not empty
                 {
                     planets[i - 2] = totalsSheet.ReadCellString(i, 14); //add to list
                     //Console.WriteLine(totalsSheet.ReadCellString(i, 14) + " added to list at index " + i);
@@ -1112,7 +1112,7 @@ namespace StarportExcel
 
             for (int i = 0; i < planets.Length; i++)
             {
-                if (planets[i] != "" && planets[i] != null)
+                if (!string.IsNullOrEmpty(planets[i]))
                 {
                     int temp2 = i + 2;
                     //Console.WriteLine(temp2);
@@ -1131,7 +1131,7 @@ namespace StarportExcel
             int temp = 0;
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                if (totals.ReadCellString(i, 11) != "")
+                if (!string.IsNullOrEmpty(totals.ReadCellString(i, 11)))
                 {
                     temp++;
                 }
@@ -1151,7 +1151,7 @@ namespace StarportExcel
             string originString = PlanetOrganizerTextBox.Text; //get text from text box
             Coordinates origin;
 
-            if (originString != "")
+            if (!string.IsNullOrEmpty(originString))
             {
                 origin = Algorithms.GetCoordinates(originString); //if there's something there take it
             }
@@ -1178,7 +1178,7 @@ namespace StarportExcel
             int temp = 0;
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                if (totalsSheet.ReadCellString(i, 11) != "")
+                if (!string.IsNullOrEmpty(totalsSheet.ReadCellString(i, 11)))
                 {
                     temp++;
                 }
@@ -1196,7 +1196,7 @@ namespace StarportExcel
             for (int i = 2; i < planets.Length + 2; i++)
             {
                 //Console.WriteLine(i);
-                if (totalsSheet.ReadCellString(i, 11) != "") //if not empty
+                if (!string.IsNullOrEmpty(totalsSheet.ReadCellString(i, 11))) //if not empty
                 {
                     planets[i - 2] = totalsSheet.ReadCellString(i, 11); //add to list
                     //Console.WriteLine(totalsSheet.ReadCellString(i, 11) + " added to list at index " + i);
@@ -1207,7 +1207,7 @@ namespace StarportExcel
 
             for (int i = 0; i < planets.Length; i++)
             {
-                if (planets[i] != "" && planets[i] != null)
+                if (!string.IsNullOrEmpty(planets[i]))
                 {
                     int temp2 = i + 2;
                     //Console.WriteLine(temp2);

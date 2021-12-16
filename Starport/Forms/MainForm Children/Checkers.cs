@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace StarportExcel
 {
-    class Checkers : MainForm
+    internal class Checkers : MainForm
     {
         public static void CheckGrow()
         {
@@ -13,9 +13,9 @@ namespace StarportExcel
             for (int l = 2; l <= Program.GetMax(); l++)
             {
                 string box = excel.ReadCellString(l, 11);
-                if (box != "")
+                if (!string.IsNullOrEmpty(box))
                 {
-                    if (excel.ReadCellDouble(l, 10).ToString() != "")
+                    if (!string.IsNullOrEmpty(excel.ReadCellDouble(l, 10).ToString()))
                     {
                         int num = l - 1;
                         excel.WriteToCell(l, 10, num.ToString()); //writes to the cell to the left and just puts a number in it
@@ -77,11 +77,9 @@ namespace StarportExcel
 
                                                 next = "=Arctics!C" + num;
                                             }
-
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('D') && next[i + 1].Equals('e') && next[i + 2].Equals('s'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -108,7 +106,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('E') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -119,7 +116,6 @@ namespace StarportExcel
                                                 num++;
 
                                                 next = "=Earthlikes!C" + num;
-
                                             }
                                             else if (next[i + 6] == '.')
                                             {
@@ -136,7 +132,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('G') && next[i + 1].Equals('r') && next[i + 2].Equals('e'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -189,7 +184,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('O') && next[i + 1].Equals('c') && next[i + 2].Equals('e'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -216,7 +210,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('I') && next[i + 1].Equals('G') && next[i + 2].Equals('P'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -243,7 +236,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('R') && next[i + 1].Equals('o') && next[i + 2].Equals('c'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -296,11 +288,10 @@ namespace StarportExcel
                                         }
                                         else
                                         {
-                                        } //MessageBox.Show(next + " not found!");                             
-
+                                        } //MessageBox.Show(next + " not found!");
                                     }//end i
 
-                                    if (next != "")
+                                    if (!string.IsNullOrEmpty(next))
                                     {
                                         excel.WriteToCell(k, 11, next);
                                         Console.WriteLine("Moved " + next + " up 1");
@@ -311,7 +302,7 @@ namespace StarportExcel
                                         excel.WriteToCell(k + 1, 11, "");
                                         Console.WriteLine("Moved " + next + " up 1, don't duplicate");
                                     }
-                                }//for k                               
+                                }//for k
                             }
                             break; //should break as soon as it finds the first period
                         } //if .
@@ -321,15 +312,16 @@ namespace StarportExcel
             excel.Close();
             MessageBox.Show("Check Grow Done", "Completed");
         }
+
         public static void CheckConstruction()
         {
             Excel excel = OpenFileAt(1);
             for (int l = 2; l <= Program.GetMax(); l++)
             {
                 string box = excel.ReadCellString(l, 25);
-                if (box != "")
+                if (!string.IsNullOrEmpty(box))
                 {
-                    if (excel.ReadCellDouble(l, 24).ToString() != "")
+                    if (!string.IsNullOrEmpty(excel.ReadCellDouble(l, 24).ToString()))
                     {
                         int num = l - 1;
                         excel.WriteToCell(l, 24, num.ToString()); //writes to the cell to the left and just puts a number in it
@@ -340,19 +332,19 @@ namespace StarportExcel
                     {
                         if (box[j].Equals('.'))
                         {
-                            if (j + 5 < box.Length && (box[j + 5].Equals('C')) )
+                            if (j + 5 < box.Length && (box[j + 5].Equals('C')))
                             {
                                 //stay
                             }
-                            else if (j + 6 < box.Length && (box[j + 6].Equals('C')) )
+                            else if (j + 6 < box.Length && (box[j + 6].Equals('C')))
                             {
                                 //stay
                             }
-                            else if (j + 7 < box.Length && (box[j + 7].Equals('C')) )
+                            else if (j + 7 < box.Length && (box[j + 7].Equals('C')))
                             {
                                 //stay
                             }
-                            else if (j + 8 < box.Length && (box[j + 8].Equals('C')) )
+                            else if (j + 8 < box.Length && (box[j + 8].Equals('C')))
                             {
                                 //stay
                             }
@@ -395,11 +387,9 @@ namespace StarportExcel
 
                                                 next = "=Arctics!C" + num;
                                             }
-
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('D') && next[i + 1].Equals('e') && next[i + 2].Equals('s'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -426,7 +416,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('E') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -437,7 +426,6 @@ namespace StarportExcel
                                                 num++;
 
                                                 next = "=Earthlikes!C" + num;
-
                                             }
                                             else if (next[i + 6] == '.')
                                             {
@@ -454,7 +442,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('G') && next[i + 1].Equals('r') && next[i + 2].Equals('e'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -507,7 +494,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('O') && next[i + 1].Equals('c') && next[i + 2].Equals('e'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -534,7 +520,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('I') && next[i + 1].Equals('G') && next[i + 2].Equals('P'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -561,7 +546,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('R') && next[i + 1].Equals('o') && next[i + 2].Equals('c'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -614,11 +598,10 @@ namespace StarportExcel
                                         }
                                         else
                                         {
-                                        } //MessageBox.Show(next + " not found!");                             
-
+                                        } //MessageBox.Show(next + " not found!");
                                     }//end i
 
-                                    if (next != "")
+                                    if (!string.IsNullOrEmpty(next))
                                     {
                                         excel.WriteToCell(k, 11, next);
                                         Console.WriteLine("Moved " + next + " up 1");
@@ -629,7 +612,7 @@ namespace StarportExcel
                                         excel.WriteToCell(k + 1, 11, "");
                                         Console.WriteLine("Moved " + next + " up 1, don't duplicate");
                                     }
-                                }//for k                               
+                                }//for k
                             }
                             break; //should break as soon as it finds the first period
                         } //if .
@@ -639,15 +622,16 @@ namespace StarportExcel
             excel.Close();
             MessageBox.Show("Check Construction Done", "Completed");
         }
+
         public static void CheckNeedsDefense()
         {
             Excel excel = OpenFileAt(1);
             for (int l = 2; l <= Program.GetMax(); l++)
             {
                 string box = excel.ReadCellString(l, 14);
-                if (box != "")
+                if (!string.IsNullOrEmpty(box))
                 {
-                    if (excel.ReadCellDouble(l, 13).ToString() != "")
+                    if (!string.IsNullOrEmpty(excel.ReadCellDouble(l, 13).ToString()))
                     {
                         int num = l - 1;
                         excel.WriteToCell(l, 13, num.ToString()); //writes to the cell to the left and just puts a number in it
@@ -700,11 +684,9 @@ namespace StarportExcel
 
                                                 next = "=Arctics!C" + num;
                                             }
-
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('D') && next[i + 1].Equals('e') && next[i + 2].Equals('s'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -731,7 +713,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('E') && next[i + 1].Equals('a') && next[i + 2].Equals('r'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -742,7 +723,6 @@ namespace StarportExcel
                                                 num++;
 
                                                 next = "=Earthlikes!C" + num;
-
                                             }
                                             else if (next[i + 6] == '.')
                                             {
@@ -759,7 +739,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('G') && next[i + 1].Equals('r') && next[i + 2].Equals('e'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -812,7 +791,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('O') && next[i + 1].Equals('c') && next[i + 2].Equals('e'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -839,7 +817,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('I') && next[i + 1].Equals('G') && next[i + 2].Equals('P'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -866,7 +843,6 @@ namespace StarportExcel
                                         }
                                         else if (i + 2 < next.Length && next[i].Equals('R') && next[i + 1].Equals('o') && next[i + 2].Equals('c'))
                                         {
-
                                             if (next[i + 5] == '.')
                                             {
                                                 string str1 = next[i + 3].ToString();
@@ -919,11 +895,10 @@ namespace StarportExcel
                                         }
                                         else
                                         {
-                                        } //MessageBox.Show(next + " not found!");                             
-
+                                        } //MessageBox.Show(next + " not found!");
                                     }//end i
 
-                                    if (next != "")
+                                    if (!string.IsNullOrEmpty(next))
                                     {
                                         excel.WriteToCell(k, 14, next);
                                         Console.WriteLine("Moved " + next + " up 1");
@@ -934,7 +909,7 @@ namespace StarportExcel
                                         excel.WriteToCell(k + 1, 14, "");
                                         Console.WriteLine("Moved " + next + " up 1, don't duplicate");
                                     }
-                                }//for k                               
+                                }//for k
                             }
                             break; //should break as soon as it finds the first period
                         } //if .
@@ -954,7 +929,7 @@ namespace StarportExcel
         public static void CheckTotals(Excel totalsSheet, Excel planetSheet, string planetName, string formula)
         {
             //Console.WriteLine(" \n Check Totals info: " + planetName + " || " + formula);
-            for (int i = 0; i < planetName.Length; i++) //go through string planetName 
+            for (int i = 0; i < planetName.Length; i++) //go through string planetName
             {
                 if (planetName[i].Equals('['))
                 {
@@ -1036,7 +1011,8 @@ namespace StarportExcel
                     break;
                 }
             }
-        }       
+        }
+
         public static bool[] Buildable(string discoveries, string planetType)
         {
             bool[] shouldBuild = new bool[4]; //Zoundsable, Medium, Questionable, Deconstruct
@@ -1046,11 +1022,11 @@ namespace StarportExcel
             for (int i = 0; i < discoveries.Length; i++)
             {
                 //zoundsable
-                if(discoveries[i].Equals('A') && 
-                    discoveries[i+1].Equals('r') && 
-                    discoveries[i+2].Equals('c') && 
-                    discoveries[i+3].Equals('h') && 
-                    (discoveries[i+17].Equals('1') || discoveries[i + 17].Equals('2') || discoveries[i + 17].Equals('3') || discoveries[i + 17].Equals('4') || discoveries[i + 17].Equals('5') ) && 
+                if (discoveries[i].Equals('A') &&
+                    discoveries[i + 1].Equals('r') &&
+                    discoveries[i + 2].Equals('c') &&
+                    discoveries[i + 3].Equals('h') &&
+                    (discoveries[i + 17].Equals('1') || discoveries[i + 17].Equals('2') || discoveries[i + 17].Equals('3') || discoveries[i + 17].Equals('4') || discoveries[i + 17].Equals('5')) &&
                     planetType.Equals("arctic")
                     )
                 {
@@ -1058,24 +1034,24 @@ namespace StarportExcel
                     shouldBuild[0] = true;
                     shouldBuild[3] = false;
                 }
-                else if(discoveries[i].Equals('A') && 
-                    discoveries[i + 1].Equals('r') && 
-                    discoveries[i + 2].Equals('c') && 
-                    discoveries[i + 3].Equals('h') && 
-                    discoveries[i + 17].Equals('5') && 
-                    (planetType.Equals("desert") || planetType.Equals("mountainous") )
+                else if (discoveries[i].Equals('A') &&
+                    discoveries[i + 1].Equals('r') &&
+                    discoveries[i + 2].Equals('c') &&
+                    discoveries[i + 3].Equals('h') &&
+                    discoveries[i + 17].Equals('5') &&
+                    (planetType.Equals("desert") || planetType.Equals("mountainous"))
                     )
                 {
                     Console.WriteLine("By God's Grace a zoundsable Desert/Mountain. Lucky asf");
                     shouldBuild[0] = true;
                     shouldBuild[3] = false;
                 }
-                else if(discoveries[i].Equals('A') && 
-                    discoveries[i + 1].Equals('r') && 
-                    discoveries[i + 2].Equals('c') && 
+                else if (discoveries[i].Equals('A') &&
+                    discoveries[i + 1].Equals('r') &&
+                    discoveries[i + 2].Equals('c') &&
                     discoveries[i + 3].Equals('h') &&
-                    (discoveries[i + 17].Equals('3') || discoveries[i + 17].Equals('4') || discoveries[i + 17].Equals('5') ) &&
-                    !(planetType.Equals("desert") || planetType.Equals("mountainous") )
+                    (discoveries[i + 17].Equals('3') || discoveries[i + 17].Equals('4') || discoveries[i + 17].Equals('5')) &&
+                    !(planetType.Equals("desert") || planetType.Equals("mountainous"))
                     )
                 {
                     Console.WriteLine("Zoundsable");
@@ -1084,12 +1060,12 @@ namespace StarportExcel
                 }
 
                 //mediums
-                if (discoveries[i].Equals('S') && 
-                    discoveries[i + 1].Equals('t') && 
-                    discoveries[i + 2].Equals('r') && 
-                    discoveries[i + 3].Equals('i') && 
-                    discoveries[i + 4].Equals('p') && 
-                    (discoveries[i+17].Equals('3') || discoveries[i + 17].Equals('4') || discoveries[i + 17].Equals('5') )
+                if (discoveries[i].Equals('S') &&
+                    discoveries[i + 1].Equals('t') &&
+                    discoveries[i + 2].Equals('r') &&
+                    discoveries[i + 3].Equals('i') &&
+                    discoveries[i + 4].Equals('p') &&
+                    (discoveries[i + 17].Equals('3') || discoveries[i + 17].Equals('4') || discoveries[i + 17].Equals('5'))
                     )
                 {
                     Console.WriteLine("Thicc Strippers");
@@ -1097,7 +1073,7 @@ namespace StarportExcel
                     shouldBuild[3] = false;
                 }
                 else if (discoveries[i].Equals('W') &&
-                    discoveries[i+1].Equals('e') &&
+                    discoveries[i + 1].Equals('e') &&
                     discoveries[i + 2].Equals('a') &&
                     discoveries[i + 3].Equals('t') &&
                     (discoveries[i + 23].Equals('2') || discoveries[i + 23].Equals('3'))
@@ -1107,7 +1083,6 @@ namespace StarportExcel
                     shouldBuild[1] = true;
                     shouldBuild[3] = false;
                 }
-
                 else if (discoveries[i].Equals('M') &&
                     discoveries[i + 1].Equals('i') &&
                     discoveries[i + 2].Equals('l') &&
@@ -1144,7 +1119,6 @@ namespace StarportExcel
                     shouldBuild[2] = true;
                     shouldBuild[3] = false;
                 }
-
                 else if (discoveries[i].Equals('M') &&
                     discoveries[i + 1].Equals('i') &&
                     discoveries[i + 2].Equals('l') &&
@@ -1191,7 +1165,6 @@ namespace StarportExcel
                     shouldBuild[2] = true;
                     shouldBuild[3] = false;
                 }
-
             }
 
             return shouldBuild;
@@ -1218,7 +1191,7 @@ namespace StarportExcel
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
                     Console.WriteLine(excel.ReadCellString(i, 2));
-                    if (excel.ReadCellString(i, 2) != "")
+                    if (!string.IsNullOrEmpty(excel.ReadCellString(i, 2)))
                     {
                         string box = excel.ReadCellString(i, 2);
                         for (int k = 0; k < box.Length; k++)
@@ -1236,22 +1209,21 @@ namespace StarportExcel
                                 Console.WriteLine(box + " changed!");
                             }
                         }
-                    } //end if                            
+                    } //end if
                 }//end of i loop
 
                 excel.Close();
-
             }// end of J loop
 
             MessageBox.Show("converted all brackets into Parenthesis", "Completed");
             //check the parenthesis on the main page
-            for (int i = 0; i < 100; i++) 
+            for (int i = 0; i < 100; i++)
             {
                 Excel excel = OpenFileAt(1);
 
                 Console.WriteLine(excel.ReadCellString(i, 2));
 
-                if (excel.ReadCellString(i, 2) != "")
+                if (!string.IsNullOrEmpty(excel.ReadCellString(i, 2)))
                 {
                     string box = excel.ReadCellString(i, 6);
                     for (int k = 0; k < box.Length; k++)
@@ -1271,10 +1243,7 @@ namespace StarportExcel
                     }
                 }
             }
-
         }
-
-        
 
         private static Excel OpenFileAt(int num)
         {

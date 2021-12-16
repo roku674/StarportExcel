@@ -475,7 +475,7 @@ namespace StarportExcel
             for (int i = 2; i < Program.GetMax(); i++)
             {
                 var box = totalsSheet.ReadCellString(i, 25); // column L
-                if (box == "")
+                if (string.IsNullOrEmpty(box))
                 {
                     totalsSheet.WriteToCell(i, 25, colony);
                     int temp = i - 1;
@@ -491,7 +491,7 @@ namespace StarportExcel
             for (int i = 2; i < Program.GetMax(); i++)
             {
                 string box = totalsSheet.ReadCellString(i, 19);
-                if (box == "")
+                if (string.IsNullOrEmpty(box))
                 {
                     totalsSheet.WriteToCell(i, 19, colony); //put the colony in the slot
                     int temp = i - 1;
@@ -513,7 +513,7 @@ namespace StarportExcel
             for (int i = 2; i < Program.GetMax(); i++)
             {
                 var box = totalsSheet.ReadCellString(i, 11); // column L
-                if (box == "")
+                if (string.IsNullOrEmpty(box))
                 {
                     totalsSheet.WriteToCell(i, 11, colony);
                     int temp = i - 1;
@@ -548,7 +548,7 @@ namespace StarportExcel
             for (int i = 2; i < Program.GetMax(); i++)
             {
                 string box = totalsSheet.ReadCellString(i, 14);
-                if (box == "")
+                if (string.IsNullOrEmpty(box))
                 {
                     totalsSheet.WriteToCell(i, 14, colony); //put the colony in the slot
                     int temp = i - 1;
@@ -577,7 +577,7 @@ namespace StarportExcel
             for (int i = 2; i < Program.GetMax(); i++)
             {
                 var box = totalsSheet.ReadCellString(i, 22); // column L
-                if (box == "")
+                if (string.IsNullOrEmpty(box))
                 {
                     totalsSheet.WriteToCell(i, 22, colony);
                     int temp = i - 1;

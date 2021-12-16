@@ -316,15 +316,15 @@ namespace StarportExcel
 
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                if (excel.ReadCellString(i, 18) != "")
+                if (!string.IsNullOrEmpty(excel.ReadCellString(i, 18)))
                 {
                     output.Write(excel.ReadCellString(i, 18) + " | "); //Candidates
                 }
-                if (excel.ReadCellString(i, 19) != "")
+                if (!string.IsNullOrEmpty(excel.ReadCellString(i, 19)))
                 {
                     output.Write(excel.ReadCellString(i, 19) + " | ");//double doems
                 }
-                if (excel.ReadCellString(i, 18) != "" || excel.ReadCellString(i, 19) != "")
+                if (!string.IsNullOrEmpty(excel.ReadCellString(i, 18)) || !string.IsNullOrEmpty(excel.ReadCellString(i, 19)))
                 {
                     output.WriteLine("");
                 }
@@ -734,7 +734,7 @@ namespace StarportExcel
             openFileDialog1.ShowDialog();
 
             //Check to see if a filename was given
-            if (openFileDialog1.FileName != "")
+            if (!string.IsNullOrEmpty(openFileDialog1.FileName))
             {
                 SetOutputPath(@openFileDialog1.FileName);
             }
@@ -789,19 +789,19 @@ namespace StarportExcel
 
             for (int i = 2; i < Program.GetMax(); i++)
             {
-                if (excel.ReadCellString(i, 6) != "")
+                if (!string.IsNullOrEmpty(excel.ReadCellString(i, 6)))
                 {
                     output.Write(excel.ReadCellString(i, 6) + " | "); //location
                 }
-                if (excel.ReadCellString(i, 7) != "")
+                if (!string.IsNullOrEmpty(excel.ReadCellString(i, 7)))
                 {
                     output.Write(excel.ReadCellString(i, 7) + " | ");//before
                 }
-                if (excel.ReadCellString(i, 8) != "")
+                if (!string.IsNullOrEmpty(excel.ReadCellString(i, 8)))
                 {
                     output.Write("/namecolony " + excel.ReadCellString(i, 8));//after
                 }
-                if (excel.ReadCellString(i, 6) != "" || excel.ReadCellString(i, 7) != "" || excel.ReadCellString(i, 8) != "")
+                if (!string.IsNullOrEmpty(excel.ReadCellString(i, 6)) || !string.IsNullOrEmpty(excel.ReadCellString(i, 7)) || !string.IsNullOrEmpty(excel.ReadCellString(i, 8)))
                 {
                     output.WriteLine("");
                 }
@@ -924,7 +924,7 @@ namespace StarportExcel
             };
             saveFileDialog1.ShowDialog();
 
-            if (saveFileDialog1.FileName != "")
+            if (!string.IsNullOrEmpty(saveFileDialog1.FileName))
             {
                 File.WriteAllText(@saveFileDialog1.FileName, "");
             }
