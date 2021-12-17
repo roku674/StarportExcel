@@ -42,6 +42,7 @@ this also acknowledges if you put Build.Roc.Z , Build.Gre.Z (for zounds)
 
 Z == Zounds | Z Must be First
 D == Double Dome | Must be After Z
+C == Constructing | Must be After N
 G == Growing | R occupies the same space so cant be both Must be after Z
 R == Research | G occupies the same space so can't be both Must be After Z
 N == Needs Defense | Must be After G/R
