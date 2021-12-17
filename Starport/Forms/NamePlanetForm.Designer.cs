@@ -55,6 +55,7 @@ namespace StarportExcel.Forms
             this.CoordinatesTextBox = new System.Windows.Forms.TextBox();
             this.ClearAllButton = new System.Windows.Forms.Button();
             this.UnitCircleCoordinatesButton = new System.Windows.Forms.TextBox();
+            this.ConstructingButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // VolcanicsButton
@@ -201,7 +202,7 @@ namespace StarportExcel.Forms
             // InvadedButton
             // 
             this.InvadedButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.InvadedButton.Location = new System.Drawing.Point(45, 234);
+            this.InvadedButton.Location = new System.Drawing.Point(191, 234);
             this.InvadedButton.Name = "InvadedButton";
             this.InvadedButton.Size = new System.Drawing.Size(109, 24);
             this.InvadedButton.TabIndex = 22;
@@ -212,7 +213,7 @@ namespace StarportExcel.Forms
             // DoubleDomeButton
             // 
             this.DoubleDomeButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DoubleDomeButton.Location = new System.Drawing.Point(191, 234);
+            this.DoubleDomeButton.Location = new System.Drawing.Point(333, 234);
             this.DoubleDomeButton.Name = "DoubleDomeButton";
             this.DoubleDomeButton.Size = new System.Drawing.Size(109, 24);
             this.DoubleDomeButton.TabIndex = 23;
@@ -272,11 +273,23 @@ namespace StarportExcel.Forms
             this.UnitCircleCoordinatesButton.Text = "Input Circle Coordinates";
             this.UnitCircleCoordinatesButton.TextChanged += new System.EventHandler(this.UnitCircleCoordinatesButton_TextChanged);
             // 
+            // ConstructingButton
+            // 
+            this.ConstructingButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ConstructingButton.Location = new System.Drawing.Point(45, 234);
+            this.ConstructingButton.Name = "ConstructingButton";
+            this.ConstructingButton.Size = new System.Drawing.Size(109, 24);
+            this.ConstructingButton.TabIndex = 29;
+            this.ConstructingButton.Text = "Constructing";
+            this.ConstructingButton.UseVisualStyleBackColor = true;
+            this.ConstructingButton.Click += new System.EventHandler(this.ConstructingButton_Click);
+            // 
             // NamePlanetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 459);
+            this.Controls.Add(this.ConstructingButton);
             this.Controls.Add(this.UnitCircleCoordinatesButton);
             this.Controls.Add(this.ClearAllButton);
             this.Controls.Add(this.CoordinatesTextBox);
@@ -299,7 +312,6 @@ namespace StarportExcel.Forms
             this.Controls.Add(this.ArcticsButton);
             this.Name = "NamePlanetForm";
             this.Text = "NamePlanetForm";
-            this.Load += new System.EventHandler(this.NamePlanetForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +339,6 @@ namespace StarportExcel.Forms
         private System.Windows.Forms.TextBox CoordinatesTextBox;
         private System.Windows.Forms.Button ClearAllButton;
         private System.Windows.Forms.TextBox UnitCircleCoordinatesButton;
+        private System.Windows.Forms.Button ConstructingButton;
     }
 }

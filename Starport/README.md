@@ -28,6 +28,7 @@ Roc == Rockies
 Vol == Volcanics
 
 D == Double Dome
+C == Constructing
 G == Growing
 N == Needs Defense
 R == Research

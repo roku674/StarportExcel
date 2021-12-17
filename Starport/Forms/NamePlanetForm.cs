@@ -72,6 +72,20 @@ namespace StarportExcel.Forms
         private void CoordinatesTextBox_TextChanged(object sender, EventArgs e)
         {
             coordinates = CoordinatesTextBox.Text;
+
+            for (int k = 0; k < coordinates.Length; k++)
+            {
+                if (coordinates[k].Equals('['))
+                {
+                    coordinates = MainForm.StringReplacer(k, '(', coordinates);
+                    Console.WriteLine(coordinates + " changed!");
+                }
+                else if (coordinates[k].Equals(']'))
+                {
+                    coordinates = MainForm.StringReplacer(k, ')', coordinates);
+                    Console.WriteLine(coordinates + " changed!");
+                }
+            }
         }
 
         private void DesertsButton_Click(object sender, EventArgs e)
@@ -154,8 +168,9 @@ namespace StarportExcel.Forms
             uniqueId0 = "Z";
         }
 
-        private void NamePlanetForm_Load(object sender, EventArgs e)
+        private void ConstructingButton_Click(object sender, EventArgs e)
         {
+            uniqueId4 = "C";
         }
     }
 }
