@@ -105,6 +105,8 @@ namespace StarportExcel.Forms
 
         private void GenerateNameButton_Click(object sender, EventArgs e)
         {
+            coordinates.Trim();
+            unitCircleLoc.Trim();
             PlanetNameOutput.Text = MainForm.ownerName + coordinates + planetType + "." + unitCircleLoc + "." + uniqueId0 + uniqueId1 + uniqueId2 + uniqueId3 + uniqueId4;
         }
 
@@ -130,6 +132,7 @@ namespace StarportExcel.Forms
 
         private void NameTagTextBox_TextChanged(object sender, EventArgs e)
         {
+            NameTagTextBox.Text.Trim();
             MainForm.ownerName = NameTagTextBox.Text;
         }
 
