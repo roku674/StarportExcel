@@ -359,6 +359,7 @@ namespace StarportExcel
             Excel excel = new Excel(excelPath, 1);
             Clearer.ClearConstructionList(excel);
             excel.Close();
+            MessageBox.Show("Construction lists Cleared!", "Completed");
         }
 
         private void ClearGrowButton_Click(object sender, EventArgs e)
@@ -366,6 +367,7 @@ namespace StarportExcel
             Excel excel = new Excel(excelPath, 1);
             Clearer.ClearGrowList(excel);
             excel.Close();
+            MessageBox.Show("Grow lists Cleared!", "Completed");
         }
 
         private void ClearNeedsDefenseButton_Click(object sender, EventArgs e)
@@ -373,6 +375,7 @@ namespace StarportExcel
             Excel excel = OpenFileAt(1);
             Clearer.ClearNDList(excel);
             excel.Close();
+            MessageBox.Show("Needs Defense lists Cleared!", "Completed");
         }
 
         private void ClearRenameButton_Click(object sender, EventArgs e)
@@ -700,6 +703,7 @@ namespace StarportExcel
             Clearer.ClearNDList(totals);
             Clearer.ClearGrowList(totals);
             Clearer.ClearDDList(totals);
+            Clearer.ClearWeakList(totals);
             Clearer.ClearConstructionList(totals);
             Console.WriteLine("Beginning Totals...\n");
 
@@ -1218,6 +1222,14 @@ namespace StarportExcel
             totalsSheet.Close();
 
             MessageBox.Show("Growing & Research List Sorted by X Coordinates", "Completed");
+        }
+
+        private void ClearWeakSolarsButton_Click(object sender, EventArgs e)
+        {
+            Excel excel = OpenFileAt(1);
+            Clearer.ClearWeakList(excel);
+            excel.Close();
+            MessageBox.Show("Weakness Eliminated!", "Completed");
         }
     } //form1
 }//namespace
