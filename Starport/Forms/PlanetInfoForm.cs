@@ -38,21 +38,21 @@ namespace StarportExcel
                 firstLine = MainForm.RemoveSpaces(firstLine);
                 for (int i = 0; i < info.Length; i++)
                 {
-                    if (firstLine.Equals(MainForm.ownerName + ".Research.Arc") || firstLine.Equals(MainForm.ownerName + ".Build.Arc") || firstLine.Equals(MainForm.ownerName + ".Build.Arc.Z") ||
-                           firstLine.Equals(MainForm.ownerName + ".Research.Des") || firstLine.Equals(MainForm.ownerName + ".Build.Des") || firstLine.Equals(MainForm.ownerName + ".Build.Des.Z") ||
-                           firstLine.Equals(MainForm.ownerName + ".Research.Ear") || firstLine.Equals(MainForm.ownerName + ".Build.Ear") || firstLine.Equals(MainForm.ownerName + ".Build.Ear.Z") ||
-                           firstLine.Equals(MainForm.ownerName + ".Research.Gre") || firstLine.Equals(MainForm.ownerName + ".Build.Gre") || firstLine.Equals(MainForm.ownerName + ".Build.Gre.Z") ||
-                           firstLine.Equals(MainForm.ownerName + ".Research.Mou") || firstLine.Equals(MainForm.ownerName + ".Build.Gre") || firstLine.Equals(MainForm.ownerName + ".Build.Gre.Z") ||
-                           firstLine.Equals(MainForm.ownerName + ".Research.Oce") || firstLine.Equals(MainForm.ownerName + ".Build.Oce") || firstLine.Equals(MainForm.ownerName + ".Build.Oce.Z") ||
-                           firstLine.Equals(MainForm.ownerName + ".Research.IGP") || firstLine.Equals(MainForm.ownerName + ".Build.IGP") || firstLine.Equals(MainForm.ownerName + ".Build.IGP.Z"))
+                    if (firstLine.Equals(MainForm.ownerName + ".Research.Arc") || firstLine.Equals(MainForm.ownerName + ".Self.Arc") || firstLine.Equals(MainForm.ownerName + ".Self.Arc.Z") ||
+                           firstLine.Equals(MainForm.ownerName + ".Research.Des") || firstLine.Equals(MainForm.ownerName + ".Self.Des") || firstLine.Equals(MainForm.ownerName + ".Self.Des.Z") ||
+                           firstLine.Equals(MainForm.ownerName + ".Research.Ear") || firstLine.Equals(MainForm.ownerName + ".Self.Ear") || firstLine.Equals(MainForm.ownerName + ".Self.Ear.Z") ||
+                           firstLine.Equals(MainForm.ownerName + ".Research.Gre") || firstLine.Equals(MainForm.ownerName + ".Self.Gre") || firstLine.Equals(MainForm.ownerName + ".Self.Gre.Z") ||
+                           firstLine.Equals(MainForm.ownerName + ".Research.Mou") || firstLine.Equals(MainForm.ownerName + ".Self.Gre") || firstLine.Equals(MainForm.ownerName + ".Self.Gre.Z") ||
+                           firstLine.Equals(MainForm.ownerName + ".Research.Oce") || firstLine.Equals(MainForm.ownerName + ".Self.Oce") || firstLine.Equals(MainForm.ownerName + ".Self.Oce.Z") ||
+                           firstLine.Equals(MainForm.ownerName + ".Research.IGP") || firstLine.Equals(MainForm.ownerName + ".Self.IGP") || firstLine.Equals(MainForm.ownerName + ".Self.IGP.Z"))
 
                     {
                         //console.WriteLine(firstLine);
                         Adder.BuildZoundsDestroy(info, true, DefendedCheckBox.Checked);
                         break;
                     }
-                    else if (firstLine.Equals(MainForm.ownerName + ".Research.Roc") || firstLine.Equals(MainForm.ownerName + ".Build.Roc") || firstLine.Equals(MainForm.ownerName + ".Build.Roc.Z") ||
-                           firstLine.Equals(MainForm.ownerName + ".Research.Vol") || firstLine.Equals(MainForm.ownerName + ".Build.Vol") || firstLine.Equals(MainForm.ownerName + ".Build.Vol.Z"))
+                    else if (firstLine.Equals(MainForm.ownerName + ".Research.Roc") || firstLine.Equals(MainForm.ownerName + ".Self.Roc") || firstLine.Equals(MainForm.ownerName + ".Self.Roc.Z") ||
+                           firstLine.Equals(MainForm.ownerName + ".Research.Vol") || firstLine.Equals(MainForm.ownerName + ".Self.Vol") || firstLine.Equals(MainForm.ownerName + ".Self.Vol.Z"))
                     {
                         Adder.BuildZoundsDestroy(info, false, DefendedCheckBox.Checked);
                     }

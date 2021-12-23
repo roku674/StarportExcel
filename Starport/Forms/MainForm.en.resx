@@ -23247,6 +23247,21 @@
   <data name="SortConstructionByXButton.Text" xml:space="preserve">
     <value>Sort By X Only</value>
   </data>
+  <data name="ClearWeakSolarsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ClearWeakSolarsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 400</value>
+  </data>
+  <data name="ClearWeakSolarsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="ClearWeakSolarsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="ClearWeakSolarsButton.Text" xml:space="preserve">
+    <value>Clear Weak Solars</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>590, 441</value>
   </data>

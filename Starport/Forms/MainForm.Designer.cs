@@ -88,6 +88,7 @@ namespace StarportExcel
             this.FindWeakSolarsButton = new System.Windows.Forms.Button();
             this.CheckConstructionButton = new System.Windows.Forms.Button();
             this.SortConstructionByXButton = new System.Windows.Forms.Button();
+            this.ClearWeakSolarsButton = new System.Windows.Forms.Button();
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -370,9 +371,17 @@ namespace StarportExcel
             this.SortConstructionByXButton.UseVisualStyleBackColor = true;
             this.SortConstructionByXButton.Click += new System.EventHandler(this.SortConstructionByXButton_Click);
             // 
+            // ClearWeakSolarsButton
+            // 
+            resources.ApplyResources(this.ClearWeakSolarsButton, "ClearWeakSolarsButton");
+            this.ClearWeakSolarsButton.Name = "ClearWeakSolarsButton";
+            this.ClearWeakSolarsButton.UseVisualStyleBackColor = true;
+            this.ClearWeakSolarsButton.Click += new System.EventHandler(this.ClearWeakSolarsButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.ClearWeakSolarsButton);
             this.Controls.Add(this.SortConstructionByXButton);
             this.Controls.Add(this.CheckConstructionButton);
             this.Controls.Add(this.FindWeakSolarsButton);
@@ -445,6 +454,7 @@ namespace StarportExcel
         private System.Windows.Forms.Button FindWeakSolarsButton;
         private System.Windows.Forms.Button CheckConstructionButton;
         private System.Windows.Forms.Button SortConstructionByXButton;
+        private System.Windows.Forms.Button ClearWeakSolarsButton;
     }
 }
 
