@@ -431,6 +431,7 @@ namespace StarportExcel
             double totals = excel.ReadCellDouble(12, 2);
 
             double invasions = excel.ReadCellDouble(15, 2);
+            double traded = excel.ReadCellDouble(18, 3);
 
             itsMyWindowTextBox.Text = "Arc " + arcticsZ + "/" + arctics +
                 "|~{yellow}~Des " + desertsZ + "/" + deserts +
@@ -442,6 +443,7 @@ namespace StarportExcel
                 "|~{gray}~Roc " + rockiesZ + "/" + rockies +
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
                 "|~{link}25:Captured:~ " + invasions +
+                "|~{green}~Traded: " + traded +
                 "|~{cyan}~ " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
 
             Console.WriteLine(itsMyWindowTextBox.Text);
