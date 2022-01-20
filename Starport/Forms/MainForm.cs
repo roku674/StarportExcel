@@ -431,6 +431,7 @@ namespace StarportExcel
             double totals = excel.ReadCellDouble(12, 2);
 
             double invasions = excel.ReadCellDouble(15, 2);
+            double traded = excel.ReadCellDouble(18, 3);
 
             itsMyWindowTextBox.Text = "Arc " + arcticsZ + "/" + arctics +
                 "|~{yellow}~Des " + desertsZ + "/" + deserts +
@@ -442,6 +443,7 @@ namespace StarportExcel
                 "|~{gray}~Roc " + rockiesZ + "/" + rockies +
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
                 "|~{link}25:Captured:~ " + invasions +
+                "|~{green}~Traded: " + traded +
                 "|~{cyan}~ " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
 
             Console.WriteLine(itsMyWindowTextBox.Text);
@@ -733,47 +735,91 @@ namespace StarportExcel
                         {
                             string formula = "=Arctics!C" + num;
                             Checkers.CheckTotals(totals, excel, planetName, formula);
-                            //Console.WriteLine(planetName + " found");
+
+                            if ((excel.ReadCellInt(j, 36) > 0 && excel.ReadCellInt(j, 36) <= 15) || excel.ReadCellInt(j, 37) > 0 && excel.ReadCellInt(j, 37) <= 87)
+                            {
+                                Adder.AddToWeakSolars(formula, totals);
+                            }
                         }
                         else if (k == 3)
                         {
                             string formula = "=Deserts!C" + num;
                             Checkers.CheckTotals(totals, excel, planetName, formula);
+
+                            if ((excel.ReadCellInt(j, 36) > 0 && excel.ReadCellInt(j, 36) <= 15) || excel.ReadCellInt(j, 37) > 0 && excel.ReadCellInt(j, 37) <= 87)
+                            {
+                                Adder.AddToWeakSolars(formula, totals);
+                            }
                         }
                         else if (k == 4)
                         {
                             string formula = "=Earthlikes!C" + num;
                             Checkers.CheckTotals(totals, excel, planetName, formula);
+
+                            if ((excel.ReadCellInt(j, 36) > 0 && excel.ReadCellInt(j, 36) <= 15) || excel.ReadCellInt(j, 37) > 0 && excel.ReadCellInt(j, 37) <= 87)
+                            {
+                                Adder.AddToWeakSolars(formula, totals);
+                            }
                         }
                         else if (k == 5)
                         {
                             string formula = "=Greenhouses!C" + num;
                             Checkers.CheckTotals(totals, excel, planetName, formula);
+
+                            if ((excel.ReadCellInt(j, 36) > 0 && excel.ReadCellInt(j, 36) <= 15) || excel.ReadCellInt(j, 37) > 0 && excel.ReadCellInt(j, 37) <= 87)
+                            {
+                                Adder.AddToWeakSolars(formula, totals);
+                            }
                         }
                         else if (k == 6)
                         {
                             string formula = "=Mountainous!C" + num;
                             Checkers.CheckTotals(totals, excel, planetName, formula);
+
+                            if ((excel.ReadCellInt(j, 36) > 0 && excel.ReadCellInt(j, 36) <= 15) || excel.ReadCellInt(j, 37) > 0 && excel.ReadCellInt(j, 37) <= 87)
+                            {
+                                Adder.AddToWeakSolars(formula, totals);
+                            }
                         }
                         else if (k == 7)
                         {
                             string formula = "=Oceanics!C" + num;
                             Checkers.CheckTotals(totals, excel, planetName, formula);
+
+                            if ((excel.ReadCellInt(j, 36) > 0 && excel.ReadCellInt(j, 36) <= 15) || excel.ReadCellInt(j, 37) > 0 && excel.ReadCellInt(j, 37) <= 87)
+                            {
+                                Adder.AddToWeakSolars(formula, totals);
+                            }
                         }
                         else if (k == 8)
                         {
                             string formula = "=Paradises!C" + num;
                             Checkers.CheckTotals(totals, excel, planetName, formula);
+
+                            if ((excel.ReadCellInt(j, 36) > 0 && excel.ReadCellInt(j, 36) <= 15) || excel.ReadCellInt(j, 37) > 0 && excel.ReadCellInt(j, 37) <= 87)
+                            {
+                                Adder.AddToWeakSolars(formula, totals);
+                            }
                         }
                         else if (k == 9)
                         {
                             string formula = "=Rockies!C" + num;
                             Checkers.CheckTotals(totals, excel, planetName, formula);
+
+                            if ((excel.ReadCellInt(j, 36) > 0 && excel.ReadCellInt(j, 36) <= 15) || excel.ReadCellInt(j, 37) > 0 && excel.ReadCellInt(j, 37) <= 87)
+                            {
+                                Adder.AddToWeakSolars(formula, totals);
+                            }
                         }
                         else if (k == 10)
                         {
                             string formula = "=Volcanics!C" + num;
                             Checkers.CheckTotals(totals, excel, planetName, formula);
+
+                            if ((excel.ReadCellInt(j, 36) > 0 && excel.ReadCellInt(j, 36) <= 15) || excel.ReadCellInt(j, 37) > 0 && excel.ReadCellInt(j, 37) <= 87)
+                            {
+                                Adder.AddToWeakSolars(formula, totals);
+                            }
                         }
                         else { }
                     }
@@ -786,7 +832,7 @@ namespace StarportExcel
             }// end of i loop
             totals.Close();
             Console.Write("Done");
-            MessageBox.Show("Find Totals Done", "Completed");
+            MessageBox.Show("Find Totals Done!", "Completed");
         }
 
         private void FindWeakSolarsButton_Click(object sender, EventArgs e)
@@ -799,11 +845,59 @@ namespace StarportExcel
                 int planet = excel.ReadCellInt(1, 8);
                 for (int i = 1; i <= planet; i++) // goes through the planet list
                 {
-                    if ((excel.ReadCellInt(i, 34) > 0 && excel.ReadCellInt(i, 34) <= 15) || excel.ReadCellInt(i, 35) > 0 && excel.ReadCellInt(i, 35) <= 87)
+                    if ((excel.ReadCellInt(i, 36) > 0 && excel.ReadCellInt(i, 36) <= 15) || excel.ReadCellInt(i, 37) > 0 && excel.ReadCellInt(i, 37) <= 87)
                     {
-                        Console.WriteLine("Solar is " + excel.ReadCellInt(i, 34));
-                        Console.WriteLine("Solar rate is " + excel.ReadCellInt(i, 35));
-                        Adder.AddToWeakSolars(excel.ReadCellString(i, 2), totals);
+                        Console.WriteLine("Solar shots are " + excel.ReadCellInt(i, 36));
+                        Console.WriteLine("Solar rate is " + excel.ReadCellInt(i, 37));
+
+                        string planetName = excel.ReadCellString(i, 2); //read the name of the planet
+                        int num = i + 1;
+                        if (i == 2)
+                        {
+                            string formula = "=Arctics!C" + num;
+                            Adder.AddToWeakSolars(formula, totals);
+                            //Console.WriteLine(planetName + " found");
+                        }
+                        else if (i == 3)
+                        {
+                            string formula = "=Deserts!C" + num;
+                            Adder.AddToWeakSolars(formula, totals);
+                        }
+                        else if (i == 4)
+                        {
+                            string formula = "=Earthlikes!C" + num;
+                            Adder.AddToWeakSolars(formula, totals);
+                        }
+                        else if (i == 5)
+                        {
+                            string formula = "=Greenhouses!C" + num;
+                            Adder.AddToWeakSolars(formula, totals);
+                        }
+                        else if (i == 6)
+                        {
+                            string formula = "=Mountainous!C" + num;
+                            Adder.AddToWeakSolars(formula, totals);
+                        }
+                        else if (i == 7)
+                        {
+                            string formula = "=Oceanics!C" + num;
+                            Adder.AddToWeakSolars(formula, totals);
+                        }
+                        else if (i == 8)
+                        {
+                            string formula = "=Paradises!C" + num;
+                            Adder.AddToWeakSolars(formula, totals);
+                        }
+                        else if (i == 9)
+                        {
+                            string formula = "=Rockies!C" + num;
+                            Adder.AddToWeakSolars(formula, totals);
+                        }
+                        else if (i == 10)
+                        {
+                            string formula = "=Volcanics!C" + num;
+                            Adder.AddToWeakSolars(formula, totals);
+                        }
                     }
                 }
 

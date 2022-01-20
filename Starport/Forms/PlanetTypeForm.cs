@@ -195,7 +195,7 @@ namespace StarportExcel
 
         private void CMinesListButton_Click(object sender, EventArgs e)
         {
-            WriteAllPlanetInfoIf(100, 31, true, false, true);
+            WriteAllPlanetInfoIf(100, 34, true, false, true);
             MessageBox.Show("Compound Mine Colonies to Output", "Completed!");
         }
 
@@ -515,7 +515,7 @@ namespace StarportExcel
 
         private void LasersListButton_Click(object sender, EventArgs e)
         {
-            WriteAllPlanetInfoIf(150, 32, true, false, true);
+            WriteAllPlanetInfoIf(150, 35, true, false, true);
             MessageBox.Show("Laser Colonies to Output", "Completed!");
         }
 
@@ -636,7 +636,7 @@ namespace StarportExcel
 
         private void NukesListButton_Click(object sender, EventArgs e)
         {
-            WriteAllPlanetInfoIf(250, 32, true, false, true);
+            WriteAllPlanetInfoIf(250, 33, true, false, true);
             MessageBox.Show("Nukes Colonies to Output", "Completed!");
         }
 
