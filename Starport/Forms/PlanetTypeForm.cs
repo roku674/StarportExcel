@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using static StarportExcel.Structs;
@@ -73,6 +74,8 @@ namespace StarportExcel
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
+
+                RetrievePicture("Arc", planetNumber);
             }
             else if (ArcticZoundsCheckBox.Checked && ArcticsCheckBox.Checked) //both
             {
@@ -236,6 +239,7 @@ namespace StarportExcel
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
+                RetrievePicture("Des", planetNumber);
             }
             else if (DesertZoundsCheckBox.Checked && DesertsCheckBox.Checked) //both
             {
@@ -346,6 +350,7 @@ namespace StarportExcel
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
+                RetrievePicture("Ear", planetNumber);
             }
             else if (EarthlikeZoundsCheckBox.Checked && EarthlikesCheckBox.Checked) //both
             {
@@ -427,6 +432,7 @@ namespace StarportExcel
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
+                RetrievePicture("Gre", planetNumber);
             }
             else if (GreenhouseZoundsCheckBox.Checked && GreenhousesCheckBox.Checked) //both
             {
@@ -553,6 +559,7 @@ namespace StarportExcel
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
+                RetrievePicture("Mou", planetNumber);
             }
             else if (MountainZoundsCheckBox.Checked && MountainousCheckBox.Checked) //both
             {
@@ -651,6 +658,7 @@ namespace StarportExcel
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
+                RetrievePicture("Oce", planetNumber);
             }
             else if (OceanicZoundsCheckBox.Checked && OceanicsCheckBox.Checked) //both
             {
@@ -751,6 +759,7 @@ namespace StarportExcel
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
+                RetrievePicture("IGP", planetNumber);
             }
             else
             {
@@ -812,6 +821,32 @@ namespace StarportExcel
             MessageBox.Show("Rename lists added to Output.txt", "Completed");
         }
 
+        private void RetrievePicture(string type, int planetNumber)
+        {
+            string planetNumberStr = null;
+            if (planetNumber <= 9)
+            {
+                planetNumberStr = "00" + planetNumber;
+            }
+            else if (planetNumber >= 10 && planetNumber <= 99)
+            {
+                planetNumberStr = "0" + planetNumber;
+            }
+            else if (planetNumber >= 100 && planetNumber <= 999)
+            {
+                planetNumberStr = planetNumber.ToString();
+            }
+            else
+            {
+                Console.WriteLine("We have a problem here");
+            }
+            Console.WriteLine(MainForm.planetPicturePath + type + planetNumberStr + ".png");
+            if (File.Exists(MainForm.planetPicturePath + type + planetNumberStr + ".png"))
+            {
+                planetLayoutPictureBox.Image = Image.FromFile(MainForm.planetPicturePath + type + planetNumberStr + ".png");
+            }
+        }
+
         private void RockiesButton_Click(object sender, EventArgs e)
         {
             int.TryParse(numberTextBox.Text, out int temp);
@@ -823,6 +858,7 @@ namespace StarportExcel
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
+                RetrievePicture("Roc", planetNumber);
             }
             else if (RockyZoundsCheckBox.Checked && RockiesCheckBox.Checked) //both
             {
@@ -954,6 +990,7 @@ namespace StarportExcel
                 string planet = excel.ReadCellString(planetNumber, 2); //read row planet number column c
                 excel.Close();//dellocate
                 numberTextBox.Text = planet;
+                RetrievePicture("Vol", planetNumber);
             }
             else if (VolcanicZoundsCheckBox.Checked && VolcanicsCheckBox.Checked) //both
             {
