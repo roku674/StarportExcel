@@ -113,7 +113,9 @@ namespace StarportExcel
             this.MountainZoundsCheckBox = new System.Windows.Forms.CheckBox();
             this.ConstructionListButton = new System.Windows.Forms.Button();
             this.LowMetalButton = new System.Windows.Forms.Button();
+            this.planetLayoutPictureBox = new System.Windows.Forms.PictureBox();
             this.toolStripPT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.planetLayoutPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ArcticsButton
@@ -464,10 +466,17 @@ namespace StarportExcel
             this.LowMetalButton.UseVisualStyleBackColor = true;
             this.LowMetalButton.Click += new System.EventHandler(this.LowMetalButton_Click);
             // 
+            // planetLayoutPictureBox
+            // 
+            resources.ApplyResources(this.planetLayoutPictureBox, "planetLayoutPictureBox");
+            this.planetLayoutPictureBox.Name = "planetLayoutPictureBox";
+            this.planetLayoutPictureBox.TabStop = false;
+            // 
             // PlanetTypeForm
             // 
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Controls.Add(this.planetLayoutPictureBox);
             this.Controls.Add(this.LowMetalButton);
             this.Controls.Add(this.ConstructionListButton);
             this.Controls.Add(this.VolcanicsCheckBox);
@@ -514,12 +523,12 @@ namespace StarportExcel
             this.Controls.Add(this.EarthlikesButton);
             this.Controls.Add(this.DesertsButton);
             this.Controls.Add(this.ArcticsButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "PlanetTypeForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlanetTypeForm_FormClosing);
             this.toolStripPT.ResumeLayout(false);
             this.toolStripPT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.planetLayoutPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,5 +552,6 @@ namespace StarportExcel
         private CheckBox MountainZoundsCheckBox;
         private Button ConstructionListButton;
         private Button LowMetalButton;
+        private PictureBox planetLayoutPictureBox;
     }//class
 }//namespace

@@ -325,7 +325,7 @@
     <value>He&amp;lp</value>
   </data>
   <data name="toolStripPT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 25</value>
+    <value>1119, 25</value>
   </data>
   <data name="DirectorshipListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -691,20 +691,23 @@
   <data name="LowMetalButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LowMetalButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 466</value>
-  </data>
   <data name="LowMetalButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 23</value>
-  </data>
-  <data name="LowMetalButton.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <data name="LowMetalButton.Text" xml:space="preserve">
     <value>Low Metal List</value>
   </data>
+  <data name="planetLayoutPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>597, 43</value>
+  </data>
+  <data name="planetLayoutPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>514, 478</value>
+  </data>
+  <data name="planetLayoutPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>571, 533</value>
+    <value>1119, 531</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1828,5 +1831,8 @@
         ////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////8=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

@@ -11,6 +11,7 @@ namespace StarportExcel
     public partial class MainForm : Form
     {
         public static string excelPath = @"G:\My Drive\Personal Stuff\Starport\PlanetTallies.xlsx";
+        public static string planetPicturePath = @"G:\My Drive\Personal Stuff\Starport\PlanetPictures\";
         public static string ownerName = "Autism";
         protected static string outputPath = @"G:\My Drive\Personal Stuff\Starport\Output.txt";
 
