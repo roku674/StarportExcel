@@ -1,7 +1,8 @@
-C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Release\StarportExcel.exe.config
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Release\StarportExcel.exe
-C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Release\StarportExcel.pdb
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Release\en\StarportExcel.resources.dll
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Release\StarportExcel.exe.config
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\bin\Release\StarportExcel.pdb
+C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.csproj.AssemblyReference.cache
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.MainForm.resources
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.Forms.NamePlanetForm.resources
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Release\StarportExcel.PlanetInfoForm.resources

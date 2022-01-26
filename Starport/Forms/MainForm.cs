@@ -1000,9 +1000,7 @@ namespace StarportExcel
         {
             string newPlanetName = PlanetOrganizerTextBox.Text;
 
-            Replacer.ReplacePlanetClick(newPlanetName);
-
-            PlanetOrganizerTextBox.Text = "Insert Planet Name or Start Coordinates";
+            PlanetOrganizerTextBox.Text = Replacer.ReplacePlanetClick(newPlanetName);
         }
 
         //End of Tool strip stuff

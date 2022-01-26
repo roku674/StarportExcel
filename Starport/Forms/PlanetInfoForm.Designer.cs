@@ -37,6 +37,7 @@ namespace StarportExcel
             this.DefendedCheckBox = new System.Windows.Forms.CheckBox();
             this.RenameTextBox = new System.Windows.Forms.RichTextBox();
             this.ChangeNameButton = new System.Windows.Forms.Button();
+            this.replyTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // InfoBox
@@ -119,12 +120,21 @@ namespace StarportExcel
             this.ChangeNameButton.UseVisualStyleBackColor = true;
             this.ChangeNameButton.Click += new System.EventHandler(this.ChangeNameButton_Click);
             // 
+            // replyTextBox
+            // 
+            this.replyTextBox.Location = new System.Drawing.Point(35, 12);
+            this.replyTextBox.Name = "replyTextBox";
+            this.replyTextBox.Size = new System.Drawing.Size(707, 33);
+            this.replyTextBox.TabIndex = 21;
+            this.replyTextBox.Text = "";
+            // 
             // PlanetInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(865, 511);
+            this.Controls.Add(this.replyTextBox);
             this.Controls.Add(this.ChangeNameButton);
             this.Controls.Add(this.RenameTextBox);
             this.Controls.Add(this.DefendedCheckBox);
@@ -150,5 +160,6 @@ namespace StarportExcel
         private System.Windows.Forms.CheckBox DefendedCheckBox;
         private System.Windows.Forms.RichTextBox RenameTextBox;
         private System.Windows.Forms.Button ChangeNameButton;
+        private System.Windows.Forms.RichTextBox replyTextBox;
     }
 }

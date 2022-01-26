@@ -9,7 +9,7 @@ namespace StarportExcel
 {
     internal class Adder : MainForm
     {
-        public static void AddColonyInfo(int sheet, string info, int planetNum)
+        public static string AddColonyInfo(int sheet, string info, int planetNum)
         {
             Excel excel = OpenFileAt(sheet);
 
@@ -386,7 +386,7 @@ namespace StarportExcel
             }
             Console.Write(discovered);
 
-            Replacer.ReplacePlanetMethod(excel, sheet, planetNum, colonyName);
+            string message = Replacer.ReplacePlanetMethod(excel, sheet, planetNum, colonyName);
             excel.WriteToCell(planetNum, 10, planetName);
             excel.WriteToCell(planetNum, 11, pop.ToString());
             excel.WriteToCell(planetNum, 12, morale.ToString());
@@ -418,6 +418,8 @@ namespace StarportExcel
             excel.WriteToCell(planetNum, 38, discovered);
 
             excel.Close();
+
+            return message;
         }
 
         /// <summary>
@@ -440,7 +442,7 @@ namespace StarportExcel
                 excel.WriteToCell(1, 8, temp.ToString()); //updates the planet number
             }
 
-            MessageBox.Show(planetName + " added to row " + temp + " sheet " + sheet, "Completed");
+            //MessageBox.Show(planetName + " added to row " + temp + " sheet " + sheet, "Completed");
 
             excel.Close();
         }
@@ -601,7 +603,7 @@ namespace StarportExcel
             excel.WriteToCell(2, 8, zoundsCount.ToString());// changes the total zounds
         }
 
-        public static void BuildZoundsDestroy(string colonyInfo, bool resources, bool defended)
+        public static string BuildZoundsDestroy(string colonyInfo, bool resources, bool defended)
         {
             Excel excel = OpenFileAt(11); // build list
             StringReader reader = new StringReader(colonyInfo);
@@ -671,12 +673,13 @@ namespace StarportExcel
             {
                 if (planetName.Equals(excel.ReadCellString(i, 3)))
                 {
-                    Console.WriteLine("Duplicate Found");
                     noDuplicate = false;
+                    excel.Close();
+                    return "Duplicate Found";
                 }
             }
 
-            if (research >= 8 && noDuplicate)
+            if (research >= 1 && noDuplicate)
             {
                 buildableHolder = Checkers.Buildable(discoveries, planetType);
                 zoundsable = buildableHolder[0];
@@ -700,13 +703,16 @@ namespace StarportExcel
                 excel.WriteToCell(totalBuilds, 9, research.ToString());
                 excel.WriteToCell(totalBuilds, 10, resources.ToString());
                 excel.WriteToCell(totalBuilds, 11, defended.ToString());
+
+                excel.Close();
+                return "build added";
             }
             else
             {
                 Console.WriteLine(colonyName + " is Not Finished Researching.");
-                //MessageBox.Show(colonyName + " is Not Finished Researching.", "Message");
+                excel.Close();
+                return colonyName + " is Not Finished Researching.";
             }
-            excel.Close();
         }
 
         private static Excel OpenFileAt(int num)
