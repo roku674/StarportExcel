@@ -692,7 +692,7 @@ namespace StarportExcel
                 Console.WriteLine(totalBuilds);
                 //excel.WriteToCell(1, 15, totalBuilds.ToString());
 
-                excel.WriteToCell(totalBuilds, 1, totalBuilds.ToString());
+                //excel.WriteToCell(totalBuilds, 1, totalBuilds.ToString());
                 excel.WriteToCell(totalBuilds, 2, coordinates);
                 excel.WriteToCell(totalBuilds, 3, planetName);
                 excel.WriteToCell(totalBuilds, 4, colonyName);

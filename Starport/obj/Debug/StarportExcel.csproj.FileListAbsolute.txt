@@ -13,5 +13,4 @@ C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\en\StarportExcel.r
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.exe
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.pdb
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.PlanetInfoForm.resources
-C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.csproj.AssemblyReference.cache
 C:\Users\ZANDER\source\repos\StarportExcel\Starport\obj\Debug\StarportExcel.Forms.NamePlanetForm.resources

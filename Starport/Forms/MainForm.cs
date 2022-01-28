@@ -443,7 +443,7 @@ namespace StarportExcel
                 "|~{pink}~IGPs ~{link}1:" + paradises + "~" +
                 "|~{gray}~Roc " + rockiesZ + "/" + rockies +
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
-                "|~{link}25:Captured:~ " + invasions +
+                "|~{link}25:Invaded:~ " + invasions +
                 "|~{green}~Traded: " + traded +
                 "|~{cyan}~ " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
 
