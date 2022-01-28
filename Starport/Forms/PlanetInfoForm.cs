@@ -36,6 +36,7 @@ namespace StarportExcel
                 StringReader reader = new StringReader(info);
                 string firstLine = reader.ReadLine();
                 firstLine = MainForm.RemoveSpaces(firstLine);
+                string message = "";
                 for (int i = 0; i < info.Length; i++)
                 {
                     if (firstLine.Equals(MainForm.ownerName + ".Research.Arc") || firstLine.Equals(MainForm.ownerName + ".Self.Arc") || firstLine.Equals(MainForm.ownerName + ".Self.Arc.Z") ||
@@ -48,13 +49,13 @@ namespace StarportExcel
 
                     {
                         //console.WriteLine(firstLine);
-                        Adder.BuildZoundsDestroy(info, true, DefendedCheckBox.Checked);
+                        message = Adder.BuildZoundsDestroy(info, true, DefendedCheckBox.Checked);
                         break;
                     }
                     else if (firstLine.Equals(MainForm.ownerName + ".Research.Roc") || firstLine.Equals(MainForm.ownerName + ".Self.Roc") || firstLine.Equals(MainForm.ownerName + ".Self.Roc.Z") ||
                            firstLine.Equals(MainForm.ownerName + ".Research.Vol") || firstLine.Equals(MainForm.ownerName + ".Self.Vol") || firstLine.Equals(MainForm.ownerName + ".Self.Vol.Z"))
                     {
-                        Adder.BuildZoundsDestroy(info, false, DefendedCheckBox.Checked);
+                        message = Adder.BuildZoundsDestroy(info, false, DefendedCheckBox.Checked);
                     }
                     else if (i + 2 < info.Length && info[i].Equals('A') && info[i + 1].Equals('r') && info[i + 2].Equals('c'))
                     {
@@ -65,7 +66,7 @@ namespace StarportExcel
                             string str2 = info[i + 4].ToString();
                             string s = str1 + str2;
 
-                            Adder.AddColonyInfo(2, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(2, info, int.Parse(s));
                             break;
                         }
                         else if (info[i + 6] == '.')
@@ -75,7 +76,7 @@ namespace StarportExcel
                             string str3 = info[i + 5].ToString();
                             string s = str1 + str2 + str3;
 
-                            Adder.AddColonyInfo(2, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(2, info, int.Parse(s));
                             break;
                         }
                     }
@@ -87,7 +88,7 @@ namespace StarportExcel
                             string str2 = info[i + 4].ToString();
                             string s = str1 + str2;
 
-                            Adder.AddColonyInfo(3, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(3, info, int.Parse(s));
                             break;
                         }
                         else if (info[i + 6] == '.')
@@ -97,7 +98,7 @@ namespace StarportExcel
                             string str3 = info[i + 5].ToString();
                             string s = str1 + str2 + str3;
 
-                            Adder.AddColonyInfo(3, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(3, info, int.Parse(s));
                             break;
                         }
                     }
@@ -109,7 +110,7 @@ namespace StarportExcel
                             string str2 = info[i + 4].ToString();
                             string s = str1 + str2;
 
-                            Adder.AddColonyInfo(4, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(4, info, int.Parse(s));
                             break;
                         }
                         else if (info[i + 6] == '.')
@@ -119,7 +120,7 @@ namespace StarportExcel
                             string str3 = info[i + 5].ToString();
                             string s = str1 + str2 + str3;
 
-                            Adder.AddColonyInfo(4, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(4, info, int.Parse(s));
                             break;
                         }
                     }
@@ -131,7 +132,7 @@ namespace StarportExcel
                             string str2 = info[i + 4].ToString();
                             string s = str1 + str2;
 
-                            Adder.AddColonyInfo(5, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(5, info, int.Parse(s));
                             break;
                         }
                         else if (info[i + 6] == '.')
@@ -141,7 +142,7 @@ namespace StarportExcel
                             string str3 = info[i + 5].ToString();
                             string s = str1 + str2 + str3;
 
-                            Adder.AddColonyInfo(5, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(5, info, int.Parse(s));
                             break;
                         }
                     }
@@ -153,7 +154,7 @@ namespace StarportExcel
                             string str2 = info[i + 4].ToString();
                             string s = str1 + str2;
 
-                            Adder.AddColonyInfo(6, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(6, info, int.Parse(s));
                             break;
                         }
                         else if (info[i + 6] == '.')
@@ -163,7 +164,7 @@ namespace StarportExcel
                             string str3 = info[i + 5].ToString();
                             string s = str1 + str2 + str3;
 
-                            Adder.AddColonyInfo(6, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(6, info, int.Parse(s));
                             break;
                         }
                     }
@@ -175,7 +176,7 @@ namespace StarportExcel
                             string str2 = info[i + 4].ToString();
                             string s = str1 + str2;
 
-                            Adder.AddColonyInfo(7, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(7, info, int.Parse(s));
                             break;
                         }
                         else if (info[i + 6] == '.')
@@ -185,7 +186,7 @@ namespace StarportExcel
                             string str3 = info[i + 5].ToString();
                             string s = str1 + str2 + str3;
 
-                            Adder.AddColonyInfo(7, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(7, info, int.Parse(s));
                             break;
                         }
                     }
@@ -197,7 +198,7 @@ namespace StarportExcel
                             string str2 = info[i + 4].ToString();
                             string s = str1 + str2;
 
-                            Adder.AddColonyInfo(8, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(8, info, int.Parse(s));
                             break;
                         }
                         else if (info[i + 6] == '.')
@@ -207,7 +208,7 @@ namespace StarportExcel
                             string str3 = info[i + 5].ToString();
                             string s = str1 + str2 + str3;
 
-                            Adder.AddColonyInfo(8, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(8, info, int.Parse(s));
                             break;
                         }
                     }
@@ -219,7 +220,7 @@ namespace StarportExcel
                             string str2 = info[i + 4].ToString();
                             string s = str1 + str2;
 
-                            Adder.AddColonyInfo(9, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(9, info, int.Parse(s));
                             break;
                         }
                         else if (info[i + 6] == '.')
@@ -229,7 +230,7 @@ namespace StarportExcel
                             string str3 = info[i + 5].ToString();
                             string s = str1 + str2 + str3;
 
-                            Adder.AddColonyInfo(9, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(9, info, int.Parse(s));
                             break;
                         }
                     }
@@ -241,7 +242,7 @@ namespace StarportExcel
                             string str2 = info[i + 4].ToString();
                             string s = str1 + str2;
 
-                            Adder.AddColonyInfo(10, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(10, info, int.Parse(s));
                             break;
                         }
                         else if (info[i + 6] == '.')
@@ -251,13 +252,14 @@ namespace StarportExcel
                             string str3 = info[i + 5].ToString();
                             string s = str1 + str2 + str3;
 
-                            Adder.AddColonyInfo(10, info, int.Parse(s));
+                            message = Adder.AddColonyInfo(10, info, int.Parse(s));
                             break;
                         }
                     }
                     //check for builds
                 }
-                //MessageBox.Show(firstLine + " Information Added!", "Completed");
+
+                replyTextBox.Text = message;
                 InfoBox.Text = "";
             }
         }
@@ -365,7 +367,7 @@ namespace StarportExcel
             }
             excel.Close();
             */
-            MessageBox.Show("Duplicates removed from build List!", "Message");
+            replyTextBox.Text = "Duplicates removed from build List!";
         }
 
         private void ChangeNameButton_Click(object sender, EventArgs e)
