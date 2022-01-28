@@ -15,7 +15,7 @@ namespace StarportExcel
         {
             int planets = (int)excel.ReadCellDouble(1, 15);
 
-            excel.WriteToCell(1, 15, "");
+            //excel.WriteToCell(1, 15, "");
             for (int i = 1; i <= planets; i++)
             {
                 excel.WriteToCell(i, 1, "");
