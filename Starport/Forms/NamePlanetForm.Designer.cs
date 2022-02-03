@@ -54,7 +54,7 @@ namespace StarportExcel.Forms
             this.GenerateNameButton = new System.Windows.Forms.Button();
             this.CoordinatesTextBox = new System.Windows.Forms.TextBox();
             this.ClearAllButton = new System.Windows.Forms.Button();
-            this.UnitCircleCoordinatesButton = new System.Windows.Forms.TextBox();
+            this.UnitCircleCoordinatesTextBox = new System.Windows.Forms.TextBox();
             this.ConstructingButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -263,15 +263,15 @@ namespace StarportExcel.Forms
             this.ClearAllButton.UseVisualStyleBackColor = true;
             this.ClearAllButton.Click += new System.EventHandler(this.ClearAllButton_Click);
             // 
-            // UnitCircleCoordinatesButton
+            // UnitCircleCoordinatesTextBox
             // 
-            this.UnitCircleCoordinatesButton.AllowDrop = true;
-            this.UnitCircleCoordinatesButton.Location = new System.Drawing.Point(45, 373);
-            this.UnitCircleCoordinatesButton.Name = "UnitCircleCoordinatesButton";
-            this.UnitCircleCoordinatesButton.Size = new System.Drawing.Size(181, 20);
-            this.UnitCircleCoordinatesButton.TabIndex = 28;
-            this.UnitCircleCoordinatesButton.Text = "Input Circle Coordinates";
-            this.UnitCircleCoordinatesButton.TextChanged += new System.EventHandler(this.UnitCircleCoordinatesButton_TextChanged);
+            this.UnitCircleCoordinatesTextBox.AllowDrop = true;
+            this.UnitCircleCoordinatesTextBox.Location = new System.Drawing.Point(45, 373);
+            this.UnitCircleCoordinatesTextBox.Name = "UnitCircleCoordinatesTextBox";
+            this.UnitCircleCoordinatesTextBox.Size = new System.Drawing.Size(181, 20);
+            this.UnitCircleCoordinatesTextBox.TabIndex = 28;
+            this.UnitCircleCoordinatesTextBox.Text = "Input Circle Coordinates";
+            this.UnitCircleCoordinatesTextBox.TextChanged += new System.EventHandler(this.UnitCircleCoordinatesButton_TextChanged);
             // 
             // ConstructingButton
             // 
@@ -288,9 +288,10 @@ namespace StarportExcel.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(625, 459);
             this.Controls.Add(this.ConstructingButton);
-            this.Controls.Add(this.UnitCircleCoordinatesButton);
+            this.Controls.Add(this.UnitCircleCoordinatesTextBox);
             this.Controls.Add(this.ClearAllButton);
             this.Controls.Add(this.CoordinatesTextBox);
             this.Controls.Add(this.GenerateNameButton);
@@ -338,7 +339,7 @@ namespace StarportExcel.Forms
         private System.Windows.Forms.Button GenerateNameButton;
         private System.Windows.Forms.TextBox CoordinatesTextBox;
         private System.Windows.Forms.Button ClearAllButton;
-        private System.Windows.Forms.TextBox UnitCircleCoordinatesButton;
+        private System.Windows.Forms.TextBox UnitCircleCoordinatesTextBox;
         private System.Windows.Forms.Button ConstructingButton;
     }
 }

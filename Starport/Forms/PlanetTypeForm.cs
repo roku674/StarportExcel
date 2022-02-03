@@ -845,6 +845,10 @@ namespace StarportExcel
             {
                 planetLayoutPictureBox.Image = Image.FromFile(MainForm.planetPicturePath + type + planetNumberStr + ".png");
             }
+            else
+            {
+                planetLayoutPictureBox.Image = Image.FromFile(MainForm.planetPicturePath + "null.bmp");
+            }
         }
 
         private void RockiesButton_Click(object sender, EventArgs e)

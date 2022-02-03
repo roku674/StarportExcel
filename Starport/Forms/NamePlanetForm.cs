@@ -57,7 +57,9 @@ namespace StarportExcel.Forms
 
         private void ClearAllButton_Click(object sender, EventArgs e)
         {
+            NameTagTextBox.Text = "";
             coordinates = "";
+            CoordinatesTextBox.Text = "";
             planetType = "";
             uniqueId0 = "";
             uniqueId1 = "";
@@ -65,6 +67,7 @@ namespace StarportExcel.Forms
             uniqueId3 = "";
             uniqueId4 = "";
             unitCircleLoc = "";
+            UnitCircleCoordinatesTextBox.Text = "";
 
             MessageBox.Show("All Identifiers & Names have been cleared! ", "Completed");
         }
@@ -158,7 +161,7 @@ namespace StarportExcel.Forms
 
         private void UnitCircleCoordinatesButton_TextChanged(object sender, EventArgs e)
         {
-            unitCircleLoc = UnitCircleCoordinatesButton.Text;
+            unitCircleLoc = UnitCircleCoordinatesTextBox.Text;
         }
 
         private void VolcanicsButton_Click(object sender, EventArgs e)
