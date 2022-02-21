@@ -432,7 +432,9 @@ namespace StarportExcel
             double totals = excel.ReadCellDouble(12, 2);
 
             double invasions = excel.ReadCellDouble(15, 2);
-            double traded = excel.ReadCellDouble(18, 3);
+            double traded = excel.ReadCellDouble(18, 2);
+
+            double dd = excel.ReadCellDouble(18, 3);
 
             itsMyWindowTextBox.Text = "Arc " + arcticsZ + "/" + arctics +
                 "|~{yellow}~Des " + desertsZ + "/" + deserts +
