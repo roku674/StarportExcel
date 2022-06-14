@@ -445,9 +445,9 @@ namespace StarportExcel
                 "|~{pink}~IGPs ~{link}1:" + paradises + "~" +
                 "|~{gray}~Roc " + rockiesZ + "/" + rockies +
                 "|~{red}~Volc " + volcanicsZ + "/" + volcanics +
-                "|~{link}25:Invaded:~ " + invasions +
+                "|~{link}25:Caps:~ " + invasions +
                 "|~{green}~Traded: " + traded +
-                "|~{cyan}~ " + totalsZ + " Zounds / " + totals + "~{link}21: Colonies~";
+                "|~{cyan}~" + totalsZ + " Zounds/" + totals + "~{link}21: Cols~";
 
             Console.WriteLine(itsMyWindowTextBox.Text);
 
