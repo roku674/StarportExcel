@@ -43,6 +43,7 @@ namespace StarportExcel
             int solarShots = -1; // AK
             int solarRate = -1; //AL
             string discovered = null; //AM
+            DateTime lastUpdated = DateTime.Now; //AN
 
             //StringBuilder stringBuilder = new StringBuilder();
             //stringBuilder.AppendLine("");
@@ -416,6 +417,7 @@ namespace StarportExcel
             excel.WriteToCell(planetNum, 36, solarShots.ToString());
             excel.WriteToCell(planetNum, 37, solarRate.ToString());
             excel.WriteToCell(planetNum, 38, discovered);
+            excel.WriteToCell(planetNum, 39, lastUpdated.ToString());
 
             excel.Close();
 
