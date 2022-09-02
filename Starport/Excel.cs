@@ -54,22 +54,16 @@ namespace StarportExcel
             GC.WaitForPendingFinalizers();
         }
 
-        /// <summary>
-        /// Read cell
-        /// </summary>
-        /// <param name="row"></param>
-        /// <param name="column"></param>
-        /// <returns></returns>
-        public bool ReadCellBool(int row, int column)
+        public bool ReadCellBool(int i, int j)
         {
-            row++;
-            column++;
-            if (ws.Cells[row, column].Value == null)
+            i++;
+            j++;
+            if (ws.Cells[i, j].Value == null)
             {
                 return false;
             }
 
-            if (ws.Cells[row, column].Value == true || ws.Cells[row, column].Value == 1)
+            if (ws.Cells[i, j].Value == true)
             {
                 return true;
             }
@@ -115,18 +109,11 @@ namespace StarportExcel
             else return "";
         }
 
-        /// <summary>
-        /// Save workbook
-        /// </summary>
         public void Save()
         {
             wb.Save();
         }
 
-        /// <summary>
-        /// Save workbook to path
-        /// </summary>
-        /// <param name="path"></param>
         public void SaveAs(string path)
         {
             wb.SaveAs(path);
