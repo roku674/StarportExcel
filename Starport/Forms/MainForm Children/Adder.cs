@@ -45,11 +45,8 @@ namespace StarportExcel
             string discovered = null; //AM
             DateTime lastUpdated = DateTime.Now; //AN
 
-            //StringBuilder stringBuilder = new StringBuilder();
-            //stringBuilder.AppendLine("");
             StringReader reader = new StringReader(info);
             string line;
-            //string firstLine = reader.ReadLine();
 
             for (int i = 0; i < info.Length; i++)
             {
